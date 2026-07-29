@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
@@ -122,7 +123,6 @@ export default function Sidebar() {
     { label: "My Batches",href: "/teacher/batch",     icon: <RiTeamLine size={18} />,         active: cleanPath.startsWith("/teacher/batch") },
     { label: "DPPs",      href: "/teacher/dpps",      icon: <RiFileListLine size={18} />,     active: cleanPath.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics", icon: <RiBarChartBoxLine size={18} />,  active: cleanPath.startsWith("/teacher/analytics") },
-    { label: "Doubts",    href: "/teacher/doubts",    icon: <RiInformationLine size={18} />,  active: cleanPath.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -179,9 +179,11 @@ export default function Sidebar() {
       <div className="flex flex-col gap-6 w-full">
         <div className="pl-1">
           <Link href={isSuperAdmin ? "/" : isTestDepartment ? "/test-department" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
-            <img
+            <Image
               src={tenant.logoUrl ?? "/logoC.png"}
               alt={displayName}
+              width={48}
+              height={48}
               className="size-12 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-widget"
             />
             <div className="flex flex-col min-w-0">
@@ -260,9 +262,11 @@ export default function Sidebar() {
         >
           <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface2 border border-s-stroke2/50">
             {mounted && (
-              <img
+              <Image
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}
                 alt="Avatar"
+                width={44}
+                height={44}
                 className="w-full h-full object-cover"
               />
             )}

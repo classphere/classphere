@@ -25,6 +25,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+import question_reconciler as reconciler
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 if hasattr(sys.stderr, "reconfigure"):
@@ -43,6 +45,9 @@ DEFAULT_BATCH_SIZE = max(1, int(os.environ.get("GEMINI_PAGE_BATCH_SIZE", str(DEF
 MAX_PAGE_OUTPUT_TOKENS = int(os.environ.get("GEMINI_PAGE_MAX_OUTPUT_TOKENS", "16000"))
 PAGE_TIMEOUT_SECONDS = int(os.environ.get("GEMINI_PAGE_TIMEOUT_SECONDS", "120"))
 CONTEXT_CHARS = int(os.environ.get("GEMINI_PAGE_CONTINUITY_CHARS", "2500"))
+# A page whose first pass missed anchored questions is re-asked with those
+# numbers named explicitly. Bounded so a pathological page cannot loop forever.
+MAX_RECONCILE_ROUNDS = int(os.environ.get("GEMINI_RECONCILE_ROUNDS", "2"))
 
 SYSTEM_PROMPT = r"""You extract questions from one page of a digital Indian competitive-exam paper (JEE Main, JEE Advanced, or NEET-UG).
 The attached image is the rendered source page. The supplied PyMuPDF HTML is
@@ -97,10 +102,32 @@ For each question return:
 
 
 def page_prompt(page_number: int, page_html: str, images: dict[str, Any],
-                previous_tail: str, next_head: str) -> str:
+                previous_tail: str, next_head: str,
+                focus_numbers: list[int] | None = None) -> str:
     manifest = json.dumps(images, ensure_ascii=False, separators=(",", ":"))
-    return f"""THIS PAGE: {page_number}
+    focus_block = ""
+    if focus_numbers:
+        wanted = ", ".join(str(number) for number in focus_numbers)
+        focus_block = f"""
+════════════════════════════════════════════
+  RECOVERY PASS — MISSING QUESTIONS
+════════════════════════════════════════════
+A previous pass over THIS PAGE did not return these question numbers, and the
+page text appears to contain their numbered anchors: {wanted}
 
+Look for each one and extract it if it is a real question. If it is unreadable
+but real, return it with needs_review: true and a review_reason.
+
+IMPORTANT — do not invent a question to fill a slot. A number in this list may
+be a false match on non-question text such as a cover page, an instruction list
+("Section 2: Multiple Correct Type"), or a marking scheme ("3. Marking Scheme").
+If the number does not begin an actual exam question on this page, simply omit
+it. Returning fewer questions is correct; fabricating one is not.
+
+You may return other questions from this page too; duplicates are discarded safely.
+"""
+    return f"""THIS PAGE: {page_number}
+{focus_block}
 NATIVE IMAGE MANIFEST (filename -> PDF geometry):
 {manifest}
 
@@ -170,6 +197,92 @@ def parse_json(raw: str) -> dict[str, Any]:
     return value
 
 
+def salvage_questions(raw: str) -> list[dict[str, Any]]:
+    """Recover whole question objects from a truncated JSON response.
+
+    When the model hits the output-token cap mid-array the trailing object is
+    incomplete and the document will not parse. Every *complete* object before
+    that point is still valid data, and discarding the whole page because its
+    last question was cut off is the difference between losing one question and
+    losing twenty. Objects recovered here are still reconciled against the page
+    anchors, so anything genuinely lost is re-asked rather than assumed present.
+    """
+    start = raw.find('"questions"')
+    if start == -1:
+        return []
+    open_bracket = raw.find("[", start)
+    if open_bracket == -1:
+        return []
+
+    recovered: list[dict[str, Any]] = []
+    depth = 0
+    object_start: int | None = None
+    in_string = False
+    escaped = False
+    for position in range(open_bracket + 1, len(raw)):
+        char = raw[position]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            if depth == 0:
+                object_start = position
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0 and object_start is not None:
+                try:
+                    value = json.loads(raw[object_start:position + 1])
+                    if isinstance(value, dict):
+                        recovered.append(value)
+                except (json.JSONDecodeError, ValueError):
+                    pass
+                object_start = None
+    return recovered
+
+
+def coerce_question_number(question: dict[str, Any]) -> bool:
+    """Normalise question_number to an int in place; True if usable.
+
+    Previously anything that was not already an int was dropped silently, which
+    quietly deleted every question labelled "Q.21", "21(a)" or similar. Nothing
+    is discarded here: an unparseable label is preserved verbatim and flagged
+    for review instead of vanishing from the paper.
+    """
+    raw_value = question.get("question_number")
+    if isinstance(raw_value, bool):
+        raw_value = None
+    if isinstance(raw_value, int):
+        return True
+    if isinstance(raw_value, float) and float(raw_value).is_integer():
+        question["question_number"] = int(raw_value)
+        return True
+
+    text = str(raw_value or "").strip()
+    digits = re.search(r"\d{1,3}", text)
+    if digits:
+        question["question_number"] = int(digits.group(0))
+        if text != digits.group(0):
+            question["question_number_raw"] = text
+        return True
+
+    question["question_number"] = 0
+    question["question_number_raw"] = text
+    question["needs_review"] = True
+    reasons = question.get("review_reasons")
+    question["review_reasons"] = (reasons if isinstance(reasons, list) else []) + [
+        f"Unrecognised question number label: {text or '(empty)'}"
+    ]
+    return False
+
+
 def openrouter_client():
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if not key:
@@ -187,7 +300,14 @@ def openrouter_client():
     )
 
 
-def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model: str) -> tuple[int, list[dict[str, Any]]]:
+def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model: str,
+                 focus_numbers: list[int] | None = None) -> tuple[int, list[dict[str, Any]], bool]:
+    """Extract one page. Returns (index, questions, truncated).
+
+    ``truncated`` reports that the model hit the output-token cap, which means
+    this page may be missing questions even if everything it *did* return parsed
+    cleanly. The caller reconciles that against the page's anchors.
+    """
     page = pages[index]
     page_number = index + 1
     image_rel = page.get("page_image") or f"page_images/page_{page_number:04d}.png"
@@ -199,7 +319,9 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
     page_html = str(page.get("html") or "")
     previous_tail = str(pages[index - 1].get("html") or "")[-CONTEXT_CHARS:] if index > 0 else ""
     next_head = str(pages[index + 1].get("html") or "")[:CONTEXT_CHARS] if index + 1 < len(pages) else ""
-    prompt = page_prompt(page_number, page_html, page.get("images") or {}, previous_tail, next_head)
+    prompt = page_prompt(page_number, page_html, page.get("images") or {},
+                         previous_tail, next_head, focus_numbers)
+    label = f"page {page_number}/{len(pages)}" + (f" [recovery of {focus_numbers}]" if focus_numbers else "")
 
     client = openrouter_client()
     last_error: Exception | None = None
@@ -219,32 +341,50 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
                 temperature=0.1,
                 max_tokens=MAX_PAGE_OUTPUT_TOKENS,
             )
-            parsed = parse_json(response.choices[0].message.content or "")
+            choice = response.choices[0]
+            content = choice.message.content or ""
+            truncated = getattr(choice, "finish_reason", None) == "length"
+
+            try:
+                raw_questions = parse_json(content)["questions"]
+            except (json.JSONDecodeError, ValueError):
+                # Truncated output cannot parse as a document, but the complete
+                # objects inside it are still real questions worth keeping.
+                raw_questions = salvage_questions(content)
+                if not raw_questions:
+                    raise
+                truncated = True
+                print(f"[geminiPage] {label}: response was cut off; salvaged "
+                      f"{len(raw_questions)} complete question(s)", file=sys.stderr)
+
             questions: list[dict[str, Any]] = []
-            for question in parsed["questions"]:
+            for question in raw_questions:
                 if not isinstance(question, dict):
                     continue
-                # Coerce question_number to int — Gemini sometimes returns it as a string
-                qnum = question.get("question_number")
-                if isinstance(qnum, str):
-                    try:
-                        question["question_number"] = int(qnum)
-                    except (ValueError, TypeError):
-                        continue
-                elif not isinstance(qnum, int):
-                    continue
+                question.setdefault("needs_review", False)
+                question.setdefault("review_reasons", [])
+                coerce_question_number(question)
                 question["_pages"] = [page_number]
                 question["_page_index"] = index
                 question["extractor_version"] = "gemini-page-v1"
-                question.setdefault("needs_review", False)
-                question.setdefault("review_reasons", [])
                 questions.append(question)
-            print(f"[geminiPage] page {page_number}/{len(pages)} complete: {len(questions)} question(s) in {time.monotonic() - started:.1f}s")
-            return index, questions
+
+            suffix = " (TRUNCATED)" if truncated else ""
+            print(f"[geminiPage] {label} complete: {len(questions)} question(s) "
+                  f"in {time.monotonic() - started:.1f}s{suffix}")
+            return index, questions, truncated
         except Exception as error:
             last_error = error
-            retryable = any(code in str(error) for code in ("429", "408", "500", "502", "503", "504", "timeout"))
-            print(f"[geminiPage] page {page_number} attempt {attempt}/3 failed: {error}", file=sys.stderr)
+            # A malformed/unterminated JSON response is the single most common
+            # failure here and is *worth* retrying: the model is sampled, so the
+            # same page usually returns valid JSON on a second attempt. Treating
+            # it as fatal (the previous behaviour) burned the whole batch on one
+            # bad response. FileNotFoundError and friends remain non-retryable.
+            retryable = (
+                isinstance(error, ValueError)  # includes json.JSONDecodeError
+                or any(code in str(error) for code in ("429", "408", "500", "502", "503", "504", "timeout"))
+            )
+            print(f"[geminiPage] {label} attempt {attempt}/3 failed: {error}", file=sys.stderr)
             if attempt == 3 or not retryable:
                 break
             time.sleep((2 ** (attempt - 1)) + random.random())
@@ -278,28 +418,145 @@ def parse_page_indexes(value: str | None, total_pages: int) -> list[int]:
     return sorted(indexes)
 
 
-def run_parallel(pages: list[dict[str, Any]], page_indexes: list[int], work_dir: Path, model: str, workers: int, batch_size: int) -> list[dict[str, Any]]:
+def run_parallel(pages: list[dict[str, Any]], page_indexes: list[int], work_dir: Path, model: str,
+                 workers: int, batch_size: int,
+                 focus: dict[int, list[int]] | None = None) -> tuple[list[dict[str, Any]], set[int], set[int]]:
+    """Extract the given pages in bounded parallel batches.
+
+    Returns (questions, truncated_pages, failed_pages). A page that exhausts its
+    retries is recorded rather than raised: killing all 19 pages because one
+    returned bad JSON throws away good work and forces the whole job to be
+    re-run. The reconciliation pass re-asks failed pages targetedly instead, and
+    the caller decides whether the surviving result is good enough to keep.
+
+    ``focus`` turns this into a recovery pass: each listed page is re-asked with
+    its missing question numbers named explicitly.
+    """
     collected: list[tuple[int, list[dict[str, Any]]]] = []
+    truncated_pages: set[int] = set()
+    failed_pages: set[int] = set()
     for batch_start in range(0, len(page_indexes), batch_size):
         indexes = page_indexes[batch_start:batch_start + batch_size]
         page_labels = ",".join(str(index + 1) for index in indexes)
         print(f"[geminiPage] batch {batch_start // batch_size + 1}: pages {page_labels}, workers={min(workers, len(indexes))}")
         with concurrent.futures.ThreadPoolExecutor(max_workers=min(workers, len(indexes))) as executor:
-            futures = {executor.submit(extract_page, index, pages, work_dir, model): index for index in indexes}
-            failures: list[str] = []
+            futures = {
+                executor.submit(extract_page, index, pages, work_dir, model,
+                                (focus or {}).get(index)): index
+                for index in indexes
+            }
             for future in concurrent.futures.as_completed(futures):
                 index = futures[future]
                 try:
-                    collected.append(future.result())
+                    result_index, page_questions, truncated = future.result()
+                    collected.append((result_index, page_questions))
+                    if truncated:
+                        truncated_pages.add(result_index)
                 except Exception as error:
-                    failures.append(f"page {index + 1}: {error}")
-            if failures:
-                raise RuntimeError("Gemini page batch failed; no partial test was created. " + " | ".join(failures))
+                    failed_pages.add(index)
+                    print(f"[geminiPage] page {index + 1} exhausted retries: {error}", file=sys.stderr)
 
     questions: list[dict[str, Any]] = []
     for _index, page_questions in sorted(collected, key=lambda item: item[0]):
         questions.extend(page_questions)
-    return questions
+    return questions, truncated_pages, failed_pages
+
+
+def merge_recovered(existing: list[dict[str, Any]], recovered: list[dict[str, Any]]) -> int:
+    """Add recovered questions that the first pass genuinely missed.
+
+    Identity is (page index, question number) — a recovery pass is allowed to
+    return questions it already got right, and those must not become duplicates.
+    Existing questions are never overwritten: a first-pass result is preferred
+    over a re-ask of the same slot.
+    """
+    known = {
+        (question.get("_page_index"), question.get("question_number"))
+        for question in existing
+    }
+    added = 0
+    for question in recovered:
+        key = (question.get("_page_index"), question.get("question_number"))
+        if key in known:
+            continue
+        known.add(key)
+        existing.append(question)
+        added += 1
+    return added
+
+
+def reconcile(pages: list[dict[str, Any]], page_indexes: list[int], questions: list[dict[str, Any]],
+              truncated_pages: set[int], failed_pages: set[int], work_dir: Path, model: str,
+              workers: int, batch_size: int) -> dict[str, Any]:
+    """Re-ask pages that are missing anchored questions, then report completeness.
+
+    The PDF's own numbered anchors say which questions exist; this closes the
+    gap between that and what the model returned, instead of trusting a single
+    pass to have seen everything.
+    """
+    anchor_map = reconciler.build_anchor_map(pages, page_indexes)
+    anchor_map, dropped = reconciler.prune_false_anchors(anchor_map, page_indexes)
+    if dropped:
+        print(f"[geminiPage] ignored {len(dropped)} anchor(s) that look like cover-page/instruction "
+              f"text, not questions: {[(p + 1, n) for p, n in dropped]}")
+    report = reconciler.completeness_report(anchor_map, questions, truncated_pages, failed_pages)
+    if not anchor_map or not any(anchor_map.values()):
+        print("[geminiPage] no question anchors detected; skipping reconciliation")
+        return report
+
+    print(f"[geminiPage] pass 1: {report['anchors_matched']}/{report['expected_total']} anchored "
+          f"questions matched (completeness {report['completeness']:.1%})")
+
+    for round_number in range(1, MAX_RECONCILE_ROUNDS + 1):
+        missing = reconciler.missing_by_page(anchor_map, questions, truncated_pages, failed_pages)
+        if not missing:
+            break
+        target_indexes = sorted(missing)
+        summary = ", ".join(f"p{index + 1}:{missing[index] or 'whole page'}" for index in target_indexes)
+        print(f"[geminiPage] reconcile round {round_number}: re-asking {len(target_indexes)} page(s) — {summary}")
+
+        recovered, still_truncated, still_failed = run_parallel(
+            pages, target_indexes, work_dir, model, workers, batch_size, focus=missing
+        )
+
+        added = merge_recovered(questions, recovered)
+        truncated_pages = (truncated_pages - set(target_indexes)) | still_truncated
+        failed_pages = (failed_pages - set(target_indexes)) | still_failed
+        print(f"[geminiPage] reconcile round {round_number}: recovered {added} question(s)")
+        if not added and not still_failed:
+            break
+
+    questions.sort(key=lambda q: (q.get("_page_index", 0), q.get("question_number", 0)))
+    final = reconciler.completeness_report(anchor_map, questions, truncated_pages, failed_pages)
+    runs = reconciler.assign_runs(anchor_map, page_indexes)
+    page_runs = reconciler.build_page_runs(runs, page_indexes)
+    max_anchor = max((number for numbers in anchor_map.values() for number in numbers), default=0)
+    for question in questions:
+        index = question.get("_page_index")
+        number = question.get("question_number")
+        if isinstance(index, int) and isinstance(number, int):
+            # Consumed by normalize_json.py so per-section numbering restarts are
+            # never collapsed into a single question by deduplication.
+            question["_run"] = reconciler.run_for(runs, index, number, page_runs)
+            # True when the PDF text itself has this question's numbered anchor on
+            # this page. Used by normalize_json to pick the right copy when the
+            # same number is returned from two pages.
+            question["_anchored"] = (index, number) in runs
+            # A number beyond every anchor the PDF advertises is usually the model
+            # continuing the sequence past the end of the paper. Flag rather than
+            # drop — a wrong flag costs a reviewer a glance, a wrong drop loses a
+            # real question silently.
+            if max_anchor and number > max_anchor:
+                question["needs_review"] = True
+                reasons = question.get("review_reasons")
+                question["review_reasons"] = (reasons if isinstance(reasons, list) else []) + [
+                    f"Question number {number} is beyond the last number detected in the PDF ({max_anchor})"
+                ]
+    print(f"[geminiPage] final: {final['anchors_matched']}/{final['expected_total']} anchored "
+          f"questions matched (completeness {final['completeness']:.1%})")
+    if final["missing_by_page"]:
+        print(f"[geminiPage] STILL MISSING after reconciliation: {final['missing_by_page']}", file=sys.stderr)
+    return final
 
 
 def main() -> int:
@@ -327,8 +584,28 @@ def main() -> int:
     batch_size = max(1, args.batch_size)
     page_indexes = parse_page_indexes(args.pages, len(pages))
     print(f"[geminiPage] model={args.model}; selected_pages={len(page_indexes)}/{len(pages)}; workers={workers}; batch_size={batch_size}")
-    questions = run_parallel(pages, page_indexes, work_dir, args.model, workers, batch_size)
-    output_path.write_text(json.dumps({"questions": questions}, ensure_ascii=False, indent=2), encoding="utf-8")
+    questions, truncated_pages, failed_pages = run_parallel(
+        pages, page_indexes, work_dir, args.model, workers, batch_size)
+    completeness = reconcile(pages, page_indexes, questions, truncated_pages, failed_pages,
+                             work_dir, args.model, workers, batch_size)
+
+    # Only a total wipeout is fatal. A partially-failed run still produces a
+    # reviewable draft, and the completeness block records exactly what is
+    # missing — far more useful than discarding 18 good pages because 1 failed.
+    if not questions:
+        failed_labels = ", ".join(str(index + 1) for index in sorted(failed_pages))
+        raise RuntimeError(
+            "Gemini extraction produced no questions"
+            + (f"; every attempted page failed ({failed_labels})" if failed_pages else "")
+        )
+    if completeness.get("failed_pages"):
+        print(f"[geminiPage] WARNING: pages {completeness['failed_pages']} could not be extracted "
+              f"after retries; their questions are absent from this draft", file=sys.stderr)
+
+    output_path.write_text(
+        json.dumps({"questions": questions, "completeness": completeness}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     print(f"[geminiPage] complete: {len(questions)} question(s) written to {output_path.name}")
     return 0
 

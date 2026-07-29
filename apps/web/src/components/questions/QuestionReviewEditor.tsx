@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TiptapMathField } from "./TiptapMathField";
+import dynamic from "next/dynamic";
 import { QuestionBody } from "@/components/QuestionBody";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
@@ -23,6 +23,13 @@ type Question = Record<string, any> & {
   correct_answer?: string[];
   content_version?: number;
 };
+
+// Tiptap + its extensions are a heavy, DOM-only editor dependency — keep them
+// out of every route that merely reviews questions but never edits math.
+const TiptapMathField = dynamic(() => import("./TiptapMathField"), {
+  ssr: false,
+  loading: () => <div className="h-24 w-full animate-pulse rounded-lg bg-b-surface2" />,
+});
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import {
@@ -211,9 +212,11 @@ export default function TeacherDashboardPage() {
                     >
                       {/* Left: Image + Title/Batch */}
                       <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0">
-                        <img 
-                          src={flag.avatar} 
+                        <Image
+                          src={flag.avatar}
                           alt={flag.name}
+                          width={48}
+                          height={48}
                           className="size-10 sm:size-12 rounded-[10px] shrink-0 object-cover border border-s-stroke2/20"
                         />
   

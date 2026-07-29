@@ -16,7 +16,16 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
   const pathname = usePathname();
   const router = useRouter();
   const tenant = useTenant();
-  const { user, loading } = useAuth();
+  const { user, loading, authRole } = useAuth();
+
+  // Prefer the role read straight off the JWT (instant, no network wait) and
+  // fall back to the full profile fetch until the Supabase custom-claims hook
+  // is enabled — see auth-context.tsx. `roleReady`/`hasIdentity` mirror exactly
+  // what `loading`/`user` meant before this fallback existed, so behavior is
+  // unchanged until the hook goes live.
+  const effectiveRole = authRole?.role ?? user?.role;
+  const roleReady = Boolean(authRole) || !loading;
+  const hasIdentity = Boolean(authRole) || Boolean(user);
 
   const domainPrefix = tenant.domain ? `/${tenant.domain}` : "";
 
@@ -45,18 +54,18 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
     typeof window !== "undefined" &&
     (/^admin\./.test(window.location.hostname) || window.location.hostname === "admin.localhost");
 
-  const isTestDepartment = user?.role === "test_department_head" || user?.role === "test_department_member";
-  const deniedRoleRoute = Boolean(user) && (
+  const isTestDepartment = effectiveRole === "test_department_head" || effectiveRole === "test_department_member";
+  const deniedRoleRoute = hasIdentity && (
     cleanPath.startsWith("/institute/resources") ||
-    (cleanPath.startsWith("/institute") && user?.role !== "institute_admin") ||
-    (cleanPath.startsWith("/teacher") && user?.role !== "teacher") ||
-    (cleanPath.startsWith("/student") && user?.role !== "student") ||
+    (cleanPath.startsWith("/institute") && effectiveRole !== "institute_admin") ||
+    (cleanPath.startsWith("/teacher") && effectiveRole !== "teacher") ||
+    (cleanPath.startsWith("/student") && effectiveRole !== "student") ||
     (cleanPath.startsWith("/test-department") && !isTestDepartment)
   );
 
   const homeForRole = () => {
-    if (user?.role === "institute_admin") return "/institute";
-    if (user?.role === "teacher") return "/teacher";
+    if (effectiveRole === "institute_admin") return "/institute";
+    if (effectiveRole === "teacher") return "/teacher";
     if (isTestDepartment) return "/test-department";
     return "/student/dashboard";
   };
@@ -66,12 +75,12 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
   // rule: this component controls whether a page may render at all.
   const protectedRoleRoute = cleanPath.startsWith("/institute") || cleanPath.startsWith("/teacher") || cleanPath.startsWith("/student") || cleanPath.startsWith("/test-department");
   useEffect(() => {
-    if (!protectedRoleRoute || loading) return;
-    if (!user) router.replace("/login");
+    if (!protectedRoleRoute || !roleReady) return;
+    if (!hasIdentity) router.replace("/login");
     else if (deniedRoleRoute) router.replace(homeForRole());
-  }, [protectedRoleRoute, loading, user, deniedRoleRoute, router]);
+  }, [protectedRoleRoute, roleReady, hasIdentity, deniedRoleRoute, router]);
 
-  if (protectedRoleRoute && (loading || !user || deniedRoleRoute)) {
+  if (protectedRoleRoute && (!roleReady || !hasIdentity || deniedRoleRoute)) {
     return <div className="min-h-screen w-full bg-b-surface1" aria-busy="true" />;
   }
 

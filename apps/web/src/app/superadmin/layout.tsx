@@ -13,7 +13,13 @@ export default function SuperAdminLayout({
 }) {
   const router = useRouter();
   const pathname = usePathname();
-  const { user, loading } = useAuth();
+  const { user, loading, authRole } = useAuth();
+
+  // Prefer the JWT-derived role (instant) and fall back to the full profile
+  // fetch until the Supabase custom-claims hook is enabled — see auth-context.tsx.
+  const effectiveRole = authRole?.role ?? user?.role;
+  const roleReady = Boolean(authRole) || !loading;
+  const hasIdentity = Boolean(authRole) || Boolean(user);
 
   // The login page lives at /superadmin/login (same layout tree) but must be public.
   const isLoginPage = pathname === "/superadmin/login" || pathname === "/login";
@@ -22,11 +28,11 @@ export default function SuperAdminLayout({
   // Middleware rewrites admin.classphere.com/login → /superadmin/login internally
   useEffect(() => {
     if (isLoginPage) return; // don't guard the login page itself
-    if (loading) return;
-    if (!user || user.role !== "super_admin") {
+    if (!roleReady) return;
+    if (!hasIdentity || effectiveRole !== "super_admin") {
       router.replace("/login");
     }
-  }, [user, loading, router, isLoginPage]);
+  }, [hasIdentity, effectiveRole, roleReady, router, isLoginPage]);
 
   // If this is the login page, render it directly — no auth guard, no sidebar.
   if (isLoginPage) {
@@ -34,7 +40,7 @@ export default function SuperAdminLayout({
   }
 
   // Show nothing while loading / redirecting
-  if (loading || !user || user.role !== "super_admin") {
+  if (!roleReady || !hasIdentity || effectiveRole !== "super_admin") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-b-surface1">
         <span className="size-8 border-2 border-primary-01/30 border-t-primary-01 rounded-full animate-spin" />

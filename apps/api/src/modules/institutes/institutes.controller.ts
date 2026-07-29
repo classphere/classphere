@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { provisionInstitute } from "./institutes.service";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { logAdminAction } from "../../lib/admin-audit";
+import { getOrSetCache } from "../../lib/cache";
 
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
@@ -300,9 +301,22 @@ export const getInstituteReports = async (req: Request, res: Response): Promise<
       return;
     }
 
-    // Fetch all active batches for this institute
-    const { data: batches } = await supabaseDB
-      .from("batches").select("id, name, exam").eq("institute_id", id).eq("is_active", true);
+    // This report recomputes trend/mastery/leaderboard aggregates from every
+    // submitted attempt the institute has ever had — expensive, and identical
+    // for every admin/staff viewer, so cache it for a couple of minutes.
+    const data = await getOrSetCache(`institutes:reports:${id}`, 120, () => computeInstituteReports(id));
+    res.status(200).json({ success: true, data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+async function computeInstituteReports(id: string) {
+    // Batches and institute students don't depend on each other — fetch concurrently.
+    const [{ data: batches }, { data: instituteUsers }] = await Promise.all([
+      supabaseDB.from("batches").select("id, name, exam").eq("institute_id", id).eq("is_active", true),
+      supabaseDB.from("users").select("id").eq("institute_id", id).eq("role", "student"),
+    ]);
 
     const batchIds = (batches ?? []).map((b: any) => b.id);
     
@@ -375,30 +389,31 @@ export const getInstituteReports = async (req: Request, res: Response): Promise<
 
     // 3. Top and Bottom Students
     // Query student_stats for users in this institute
-    const { data: instituteUsers } = await supabaseDB.from("users").select("id").eq("institute_id", id).eq("role", "student");
     const studentIds = (instituteUsers ?? []).map(u => u.id);
-    
-    let studentStats: any[] = [];
-    if (studentIds.length > 0) {
-      const { data: stats } = await supabaseDB
-        .from("student_stats")
-        .select("student_id, accuracy_pct, total_tests, users!inner(name)")
-        .in("student_id", studentIds)
-        .order("accuracy_pct", { ascending: false });
-      studentStats = stats ?? [];
-    }
 
-    const topStudents = studentStats.slice(0, 5).map(s => ({
-      name: s.users?.name,
-      accuracy: s.accuracy_pct,
-      tests: s.total_tests
-    }));
-    
-    const bottomStudents = studentStats.slice().reverse().slice(0, 5).map(s => ({
-      name: s.users?.name,
-      accuracy: s.accuracy_pct,
-      tests: s.total_tests
-    }));
+    // Only the top/bottom 5 are ever shown — ask the DB for exactly those
+    // instead of pulling every student's stats and sorting in JS.
+    let topStudents: any[] = [];
+    let bottomStudents: any[] = [];
+    if (studentIds.length > 0) {
+      const toRow = (s: any) => ({ name: s.users?.name, accuracy: s.accuracy_pct, tests: s.total_tests });
+      const [{ data: topStats }, { data: bottomStats }] = await Promise.all([
+        supabaseDB
+          .from("student_stats")
+          .select("student_id, accuracy_pct, total_tests, users!inner(name)")
+          .in("student_id", studentIds)
+          .order("accuracy_pct", { ascending: false })
+          .limit(5),
+        supabaseDB
+          .from("student_stats")
+          .select("student_id, accuracy_pct, total_tests, users!inner(name)")
+          .in("student_id", studentIds)
+          .order("accuracy_pct", { ascending: true })
+          .limit(5),
+      ]);
+      topStudents = (topStats ?? []).map(toRow);
+      bottomStudents = (bottomStats ?? []).map(toRow);
+    }
 
     // 4. Batch Leaderboard
     const batchStatsMap: Record<string, { totalScore: number, totalMax: number, count: number }> = {};
@@ -422,21 +437,14 @@ export const getInstituteReports = async (req: Request, res: Response): Promise<
       };
     }).sort((a, b) => b.avgScore - a.avgScore);
 
-    res.status(200).json({
-      success: true,
-      data: {
-        trendData,
-        masteryData,
-        topStudents,
-        bottomStudents,
-        batchLeaderboard,
-      }
-    });
-
-  } catch (err: any) {
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
+    return {
+      trendData,
+      masteryData,
+      topStudents,
+      bottomStudents,
+      batchLeaderboard,
+    };
+}
 
 // ─── Batch Handlers ──────────────────────────────────────────────────────────
 

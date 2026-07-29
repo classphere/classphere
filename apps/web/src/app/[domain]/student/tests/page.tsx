@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { API_V1_URL, apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { scheduleTestReminder } from "@/lib/notifications/local-reminders";
 import {
   RiSearchLine,
   RiTimeLine,
@@ -136,8 +137,14 @@ function TestsHubContent() {
     setError(null);
     apiClient.get("/api/v1/tests/assigned", session.access_token)
       .then((res) => {
-        if (res.success) setAssignedTests(res.data.tests ?? []);
-        else throw new Error(res.message || "Failed to load assigned tests");
+        if (!res.success) throw new Error(res.message || "Failed to load assigned tests");
+        const tests: AssignedTest[] = res.data.tests ?? [];
+        setAssignedTests(tests);
+        // Best-effort — schedules a local reminder ~30 min before each upcoming
+        // scheduled test; no-ops on web / already-past-due tests.
+        for (const test of tests) {
+          void scheduleTestReminder({ id: test.id, title: test.title, scheduledAt: test.scheduled_at });
+        }
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));

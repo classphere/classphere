@@ -4,7 +4,7 @@ import { firebaseMessaging } from "../../lib/firebase";
 type StudentNotification = {
   instituteId: string;
   userIds: string[];
-  type: "dpp_assigned" | "test_published" | "study_material_published" | "system";
+  type: "dpp_assigned" | "test_published" | "study_material_published" | "system" | "result_ready";
   title: string;
   body?: string;
   href?: string;
@@ -30,21 +30,38 @@ export async function notifyStudents(input: StudentNotification): Promise<void> 
   void deliverNativePush(input, userIds);
 }
 
+/** iOS app icon badges are set from the push payload itself (Android's badge is
+ *  set client-side via the Badge plugin instead) — so each recipient needs
+ *  their own current unread count baked into their message. */
+async function getUnreadCounts(userIds: string[]): Promise<Map<string, number>> {
+  const counts = new Map<string, number>();
+  try {
+    const { data } = await supabaseDB.from("notifications").select("user_id").in("user_id", userIds).is("read_at", null);
+    for (const row of data ?? []) counts.set(row.user_id, (counts.get(row.user_id) ?? 0) + 1);
+  } catch {
+    // best-effort — recipients without a resolved count fall back to 1 below
+  }
+  return counts;
+}
+
 async function deliverNativePush(input: StudentNotification, userIds: string[]): Promise<void> {
   const messaging = firebaseMessaging();
   if (!messaging || !userIds.length) return;
   try {
-    const { data: devices, error } = await supabaseDB.from("push_devices").select("id, token")
-      .in("user_id", userIds).is("disabled_at", null);
+    const [{ data: devices, error }, unreadCounts] = await Promise.all([
+      supabaseDB.from("push_devices").select("id, token, user_id").in("user_id", userIds).is("disabled_at", null),
+      getUnreadCounts(userIds),
+    ]);
     if (error || !devices?.length) return;
     for (let offset = 0; offset < devices.length; offset += 500) {
       const group = devices.slice(offset, offset + 500);
-      const result = await messaging.sendEachForMulticast({
-        tokens: group.map((device: any) => device.token),
+      const result = await messaging.sendEach(group.map((device: any) => ({
+        token: device.token,
         notification: { title: input.title, body: input.body },
         data: { href: input.href ?? "/student/dashboard", type: input.type, eventKey: input.eventKey },
         android: { priority: "high", notification: { channelId: "classphere_updates" } },
-      });
+        apns: { payload: { aps: { badge: unreadCounts.get(device.user_id) ?? 1 } } },
+      })));
       const invalidIds = result.responses.flatMap((response, index) => {
         const code = response.error?.code;
         return !response.success && ["messaging/registration-token-not-registered", "messaging/invalid-registration-token"].includes(code ?? "") ? [group[index].id] : [];

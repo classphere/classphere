@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { supabaseDB } from "../../lib/supabase";
+import { getOrSetCache } from "../../lib/cache";
 
 /**
  * GET /api/v1/rankings/me
@@ -160,6 +161,36 @@ export const getWeeklyQuestionLeaderboard = async (req: Request, res: Response):
         res.status(403).json({ success: false, message: "Batch access denied" });
         return;
       }
+    } else if (!actor.institute_id) {
+      res.status(400).json({ success: false, message: "Institute ID required for institute weekly leaderboard" });
+      return;
+    }
+
+    // The actual leaderboard computation doesn't depend on which actor asked for
+    // it (only the access-gate above does) — cache per batch/institute + week so
+    // repeated opens by many students don't each recompute from raw attempts.
+    const cacheScopeId = scope === "batch" && batchId ? `batch:${batchId}` : `inst:${actor.institute_id}`;
+    const ranked = await getOrSetCache(`rankings:weekly:${cacheScopeId}:${weekStart}`, 60, () =>
+      computeWeeklyLeaderboard(scope, batchId, actor.institute_id, weekStart)
+    );
+
+    res.status(200).json({ success: true, data: { entries: ranked, week_start: weekStart, scope } });
+  } catch (err: any) {
+    console.error("[getWeeklyQuestionLeaderboard error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+async function computeWeeklyLeaderboard(
+  scope: string,
+  batchId: string,
+  instituteId: string | null | undefined,
+  weekStart: string
+): Promise<any[]> {
+    let memberIds: string[] = [];
+    const studentBatchMap = new Map<string, string>(); // studentId -> batchName
+
+    if (scope === "batch" && batchId) {
       const { data: members } = await supabaseDB
         .from("batch_students")
         .select("student_id, batches(name)")
@@ -170,15 +201,10 @@ export const getWeeklyQuestionLeaderboard = async (req: Request, res: Response):
       }
     } else {
       // Full Institute level scope
-      const instId = actor.institute_id;
-      if (!instId) {
-        res.status(400).json({ success: false, message: "Institute ID required for institute weekly leaderboard" });
-        return;
-      }
       const { data: students } = await supabaseDB
         .from("users")
         .select("id, name")
-        .eq("institute_id", instId)
+        .eq("institute_id", instituteId)
         .eq("role", "student");
 
       memberIds = (students ?? []).map((s: any) => s.id);
@@ -197,57 +223,69 @@ export const getWeeklyQuestionLeaderboard = async (req: Request, res: Response):
       }
     }
 
-    if (!memberIds.length) {
-      res.status(200).json({ success: true, data: { entries: [], week_start: weekStart, scope } });
-      return;
-    }
+    if (!memberIds.length) return [];
 
     const questionCount = new Map(memberIds.map((id: string) => [id, 0]));
-    
+
     // Count questions from submitted test attempts this week
-    const { data: attempts } = await supabaseDB
-      .from("attempts")
-      .select("id, student_id")
-      .in("student_id", memberIds)
-      .eq("status", "submitted")
-      .gte("submitted_at", weekStart);
+    const fetchAttemptQuestionCounts = async (): Promise<Map<string, number>> => {
+      const counts = new Map<string, number>();
+      const { data: attempts } = await supabaseDB
+        .from("attempts")
+        .select("id, student_id")
+        .in("student_id", memberIds)
+        .eq("status", "submitted")
+        .gte("submitted_at", weekStart);
 
-    const attemptStudent = new Map((attempts ?? []).map((attempt: any) => [attempt.id, attempt.student_id]));
-    const attemptIds = [...attemptStudent.keys()];
-    if (attemptIds.length) {
-      const { data: answers } = await supabaseDB
-        .from("attempt_answers")
-        .select("attempt_id")
-        .in("attempt_id", attemptIds)
-        .not("selected_answer", "is", null);
-      for (const answer of answers ?? []) {
-        const answerStudentId = attemptStudent.get((answer as any).attempt_id);
-        if (answerStudentId) questionCount.set(answerStudentId, (questionCount.get(answerStudentId) ?? 0) + 1);
+      const attemptStudent = new Map((attempts ?? []).map((attempt: any) => [attempt.id, attempt.student_id]));
+      const attemptIds = [...attemptStudent.keys()];
+      if (attemptIds.length) {
+        const { data: answers } = await supabaseDB
+          .from("attempt_answers")
+          .select("attempt_id")
+          .in("attempt_id", attemptIds)
+          .not("selected_answer", "is", null);
+        for (const answer of answers ?? []) {
+          const answerStudentId = attemptStudent.get((answer as any).attempt_id);
+          if (answerStudentId) counts.set(answerStudentId, (counts.get(answerStudentId) ?? 0) + 1);
+        }
       }
-    }
+      return counts;
+    };
 
-    // Include DPP submissions
-    const { data: dppSubmissions } = await supabaseDB
-      .from("student_dpps")
-      .select("student_id, attempt_answers")
-      .in("student_id", memberIds)
-      .eq("status", "submitted")
-      .gte("submitted_at", weekStart);
+    // Include DPP submissions — independent of attempts, so fetched concurrently
+    const fetchDppQuestionCounts = async (): Promise<Map<string, number>> => {
+      const counts = new Map<string, number>();
+      const { data: dppSubmissions } = await supabaseDB
+        .from("student_dpps")
+        .select("student_id, attempt_answers")
+        .in("student_id", memberIds)
+        .eq("status", "submitted")
+        .gte("submitted_at", weekStart);
 
-    for (const submission of dppSubmissions ?? []) {
-      const answers = Array.isArray((submission as any).attempt_answers)
-        ? (submission as any).attempt_answers
-        : Object.values((submission as any).attempt_answers ?? {});
-      const solved = answers.filter((answer: any) => {
-        if (answer === null || answer === undefined) return false;
-        return typeof answer === "object" ? Boolean(answer.selected_answer) : Boolean(answer);
-      }).length;
-      const dppStudentId = (submission as any).student_id;
-      questionCount.set(dppStudentId, (questionCount.get(dppStudentId) ?? 0) + solved);
-    }
+      for (const submission of dppSubmissions ?? []) {
+        const answers = Array.isArray((submission as any).attempt_answers)
+          ? (submission as any).attempt_answers
+          : Object.values((submission as any).attempt_answers ?? {});
+        const solved = answers.filter((answer: any) => {
+          if (answer === null || answer === undefined) return false;
+          return typeof answer === "object" ? Boolean(answer.selected_answer) : Boolean(answer);
+        }).length;
+        const dppStudentId = (submission as any).student_id;
+        counts.set(dppStudentId, (counts.get(dppStudentId) ?? 0) + solved);
+      }
+      return counts;
+    };
 
-    const { data: users } = await supabaseDB
-      .from("users").select("id, name").in("id", memberIds);
+    const [attemptCounts, dppCounts, { data: users }] = await Promise.all([
+      fetchAttemptQuestionCounts(),
+      fetchDppQuestionCounts(),
+      supabaseDB.from("users").select("id, name").in("id", memberIds),
+    ]);
+
+    for (const [id, count] of attemptCounts) questionCount.set(id, (questionCount.get(id) ?? 0) + count);
+    for (const [id, count] of dppCounts) questionCount.set(id, (questionCount.get(id) ?? 0) + count);
+
     const names = new Map((users ?? []).map((user: any) => [user.id, user.name]));
 
     const entries = memberIds.map((id: string) => ({
@@ -257,13 +295,8 @@ export const getWeeklyQuestionLeaderboard = async (req: Request, res: Response):
       questions_solved: questionCount.get(id) ?? 0,
     })).sort((a, b) => b.questions_solved - a.questions_solved || a.name.localeCompare(b.name));
 
-    const ranked = entries.map((entry, index) => ({ ...entry, rank: index + 1 }));
-    res.status(200).json({ success: true, data: { entries: ranked, week_start: weekStart, scope } });
-  } catch (err: any) {
-    console.error("[getWeeklyQuestionLeaderboard error]", err);
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
+    return entries.map((entry, index) => ({ ...entry, rank: index + 1 }));
+}
 
 /** GET /api/v1/rankings/papers?batch_id= — papers this student completed in a batch. */
 export const getMyRankedPapers = async (req: Request, res: Response): Promise<void> => {
@@ -390,6 +423,31 @@ export const getBatchComparisonMatrix = async (req: Request, res: Response): Pro
       return;
     }
 
+    // Recomputing this matrix (multiple joined queries + in-memory aggregation) on
+    // every request is wasteful for a view that's opened repeatedly by the same
+    // staff/directors — cache per paper+scope for a short window instead.
+    const scopeKey = actor.role === "super_admin" ? "super" : String(actor.institute_id ?? "none");
+    const result = await getOrSetCache(`rankings:batch-comparison:${paperId}:${scopeKey}`, 60, () =>
+      computeBatchComparisonMatrix(paperId, actor.role, actor.institute_id)
+    );
+
+    if (result.notFound) {
+      res.status(404).json({ success: false, message: "Paper not found" });
+      return;
+    }
+
+    res.status(200).json({ success: true, data: result.data });
+  } catch (err: any) {
+    console.error("[getBatchComparisonMatrix error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+async function computeBatchComparisonMatrix(
+  paperId: string,
+  actorRole: string,
+  actorInstituteId: string | null | undefined
+): Promise<{ notFound: true } | { notFound: false; data: any }> {
     // 1. Get paper details
     const { data: paper } = await supabaseDB
       .from("papers")
@@ -398,26 +456,24 @@ export const getBatchComparisonMatrix = async (req: Request, res: Response): Pro
       .maybeSingle();
 
     if (!paper) {
-      res.status(404).json({ success: false, message: "Paper not found" });
-      return;
+      return { notFound: true };
     }
 
     // 2. Get all batch assignments for this paper in the actor's institute
-    let assignmentsQuery = supabaseDB
+    const { data: assignments, error: assignErr } = await supabaseDB
       .from("test_batch_assignments")
-      .select("batch_id, batches(id, name, institute_id, exam)");
-
-    const { data: assignments, error: assignErr } = await assignmentsQuery;
+      .select("batch_id, batches(id, name, institute_id, exam)")
+      .eq("test_id", paperId);
     if (assignErr) throw assignErr;
 
     // Filter by institute if not super admin
     const instBatches = (assignments ?? [])
       .map((a: any) => a.batches)
-      .filter((b: any) => b && (actor.role === "super_admin" || b.institute_id === actor.institute_id));
+      .filter((b: any) => b && (actorRole === "super_admin" || b.institute_id === actorInstituteId));
 
     if (instBatches.length === 0) {
-      res.status(200).json({
-        success: true,
+      return {
+        notFound: false,
         data: {
           paper_id: paperId,
           paper_title: paper.title,
@@ -425,24 +481,24 @@ export const getBatchComparisonMatrix = async (req: Request, res: Response): Pro
           total_batches: 0,
           batches: [],
         },
-      });
-      return;
+      };
     }
 
-    // 3. Fetch all submitted attempts for this paper in these batches
+    // 3. Fetch all submitted attempts for this paper in these batches, plus
+    // enrollment counts — independent of each other, run concurrently.
     const batchIds = instBatches.map((b: any) => b.id);
-    const { data: attempts } = await supabaseDB
-      .from("attempts")
-      .select("student_id, batch_id, score, max_score, users!inner(name)")
-      .eq("paper_id", paperId)
-      .eq("status", "submitted")
-      .in("batch_id", batchIds);
-
-    // Calculate total enrollment per batch
-    const { data: studentCounts } = await supabaseDB
-      .from("batch_students")
-      .select("batch_id")
-      .in("batch_id", batchIds);
+    const [{ data: attempts }, { data: studentCounts }] = await Promise.all([
+      supabaseDB
+        .from("attempts")
+        .select("student_id, batch_id, score, max_score, users!inner(name)")
+        .eq("paper_id", paperId)
+        .eq("status", "submitted")
+        .in("batch_id", batchIds),
+      supabaseDB
+        .from("batch_students")
+        .select("batch_id")
+        .in("batch_id", batchIds),
+    ]);
 
     const enrollmentMap: Record<string, number> = {};
     for (const row of studentCounts ?? []) {
@@ -512,8 +568,8 @@ export const getBatchComparisonMatrix = async (req: Request, res: Response): Pro
       };
     }).sort((a, b) => b.avg_percentage - a.avg_percentage);
 
-    res.status(200).json({
-      success: true,
+    return {
+      notFound: false,
       data: {
         paper_id: paperId,
         paper_title: paper.title,
@@ -521,12 +577,8 @@ export const getBatchComparisonMatrix = async (req: Request, res: Response): Pro
         total_batches: instBatches.length,
         batches: batchMatrix,
       },
-    });
-  } catch (err: any) {
-    console.error("[getBatchComparisonMatrix error]", err);
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
+    };
+}
 
 /**
  * GET /api/v1/rankings/leaderboard

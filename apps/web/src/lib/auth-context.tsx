@@ -5,6 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { Session, User } from "@supabase/supabase-js";
 import { API_URL } from "@/lib/api.client";
+import { decodeJwtClaims } from "@/lib/jwt";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -24,6 +25,14 @@ interface AuthContextValue {
   loading: boolean;
   signOut: () => Promise<void>;
   refreshUser: () => Promise<void>;
+  /**
+   * Role + institute_id read directly from the access token's custom claims
+   * (see docs/migrations/32_custom_access_token_hook.sql), available the instant
+   * `session` resolves — no /auth/me round trip needed. Null until that Supabase
+   * Auth Hook is enabled on the project, in which case route guards fall back to
+   * `user` as before.
+   */
+  authRole: { role: string; institute_id: string | null } | null;
 }
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -71,6 +80,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const pathname = usePathname();
+
+  // Derived synchronously from the token itself — no network wait. Falls back to
+  // null (and callers fall back to `user`) until the custom-access-token hook is
+  // enabled on the Supabase project. Cheap enough (base64 decode + JSON.parse of
+  // a small payload) to skip manual memoization — the React Compiler handles it.
+  const accessToken = session?.access_token;
+  const authRole = (() => {
+    if (!accessToken) return null;
+    const claims = decodeJwtClaims(accessToken);
+    const role = claims?.app_metadata?.role ?? claims?.user_metadata?.role;
+    if (!role) return null;
+    return { role, institute_id: claims?.app_metadata?.institute_id ?? null };
+  })();
 
   // Fetch the app-level user profile from our backend
   const fetchUserProfile = useCallback(async (supabaseUser: User, token: string): Promise<AppUser | null> => {
@@ -199,9 +221,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (!mounted) return;
 
       if (s?.user && s?.access_token) {
+        // Expose the session (and its access_token) immediately instead of waiting
+        // on the /auth/me profile fetch below — most pages gate their own data
+        // fetch on `session?.access_token` alone, so this lets those requests fire
+        // concurrently with the profile fetch instead of strictly after it.
+        setSession(s);
         const profile = await fetchUserProfile(s.user, s.access_token);
         if (mounted) {
-          setSession(s);
           setUser(profile);
           setLoading(false);
           // Only route on initial sign-in events (FE-2: avoid redirect loops on token refresh)
@@ -236,7 +262,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [router]);
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, signOut, refreshUser }}>
+    <AuthContext.Provider value={{ user, session, loading, signOut, refreshUser, authRole }}>
       {children}
     </AuthContext.Provider>
   );

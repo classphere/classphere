@@ -21,23 +21,78 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
   try {
     const studentId = req.user!.id;
 
-    // ── Fetch user's exam_target ──────────────────────────────────────────────
-    const { data: userData } = await supabaseDB
-      .from("users")
-      .select("exam_target")
-      .eq("id", studentId)
-      .single();
+    // ── Fetch pending DPPs (independent of attempts) ───────────────────────────
+    const fetchPendingDPPs = async (): Promise<number> => {
+      try {
+        const { count } = await supabaseDB
+          .from("student_dpps")
+          .select("id", { count: "exact", head: true })
+          .eq("student_id", studentId)
+          .neq("status", "submitted");
+        return count ?? 0;
+      } catch {
+        // student_dpps may not exist yet
+        return 0;
+      }
+    };
+
+    // ── Fetch streak from student_stats (independent of attempts) ─────────────
+    const fetchStreak = async (): Promise<number> => {
+      try {
+        const { data: stats } = await supabaseDB
+          .from("student_stats")
+          .select("streak_days")
+          .eq("student_id", studentId)
+          .maybeSingle();
+        return stats?.streak_days ?? 0;
+      } catch {
+        // student_stats may not exist yet
+        return 0;
+      }
+    };
+
+    // ── Fetch user's batch details (independent of attempts) ──────────────────
+    const fetchBatch = async (): Promise<any> => {
+      try {
+        const { data: bStudent } = await supabaseDB
+          .from("batch_students")
+          .select("batch_id, batches(id, name, exam, ends_at, is_active)")
+          .eq("student_id", studentId)
+          .order("joined_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
+        if (bStudent && (bStudent as any).batches) {
+          return {
+            id: (bStudent as any).batches.id,
+            name: (bStudent as any).batches.name,
+            exam: (bStudent as any).batches.exam,
+            ends_at: (bStudent as any).batches.ends_at,
+            is_active: (bStudent as any).batches.is_active,
+          };
+        }
+        return null;
+      } catch (e) {
+        console.error("[getStudentDashboard batch fetch error]", e);
+        return null;
+      }
+    };
+
+    // ── Fire independent queries concurrently instead of one-by-one ───────────
+    const [{ data: userData }, { data: attempts }, pendingDPPs, streakDays, batch] = await Promise.all([
+      supabaseDB.from("users").select("exam_target").eq("id", studentId).single(),
+      supabaseDB
+        .from("attempts")
+        .select("id, paper_id, exam_code, score, max_score, submitted_at, created_at")
+        .eq("student_id", studentId)
+        .eq("status", "submitted")
+        .order("submitted_at", { ascending: true }),
+      fetchPendingDPPs(),
+      fetchStreak(),
+      fetchBatch(),
+    ]);
 
     const examTarget = userData?.exam_target ?? "jee-main";
-
-    // ── Fetch all submitted attempts ──────────────────────────────────────────
-    const { data: attempts } = await supabaseDB
-      .from("attempts")
-      .select("id, paper_id, exam_code, score, max_score, submitted_at, created_at")
-      .eq("student_id", studentId)
-      .eq("status", "submitted")
-      .order("submitted_at", { ascending: true });
-
     const submitted = attempts ?? [];
     const totalTests = submitted.length;
 
@@ -88,56 +143,6 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
           ...subjectStats,
         };
       });
-    }
-
-    // ── Pending DPPs ──────────────────────────────────────────────────────────
-    let pendingDPPs = 0;
-    try {
-      const { count } = await supabaseDB
-        .from("student_dpps")
-        .select("id", { count: "exact", head: true })
-        .eq("student_id", studentId)
-        .neq("status", "submitted");
-      pendingDPPs = count ?? 0;
-    } catch {
-      // student_dpps may not exist yet
-    }
-
-    // ── Streak from student_stats (if table exists) ───────────────────────────
-    let streakDays = 0;
-    try {
-      const { data: stats } = await supabaseDB
-        .from("student_stats")
-        .select("streak_days")
-        .eq("student_id", studentId)
-        .maybeSingle();
-      streakDays = stats?.streak_days ?? 0;
-    } catch {
-      // student_stats may not exist yet
-    }
-
-    // ── Fetch user's batch details ─────────────────────────────────────────────
-    let batch: any = null;
-    try {
-      const { data: bStudent } = await supabaseDB
-        .from("batch_students")
-        .select("batch_id, batches(id, name, exam, ends_at, is_active)")
-        .eq("student_id", studentId)
-        .order("joined_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
-
-      if (bStudent && (bStudent as any).batches) {
-        batch = {
-          id: (bStudent as any).batches.id,
-          name: (bStudent as any).batches.name,
-          exam: (bStudent as any).batches.exam,
-          ends_at: (bStudent as any).batches.ends_at,
-          is_active: (bStudent as any).batches.is_active,
-        };
-      }
-    } catch (e) {
-      console.error("[getStudentDashboard batch fetch error]", e);
     }
 
     // ── Response ──────────────────────────────────────────────────────────────

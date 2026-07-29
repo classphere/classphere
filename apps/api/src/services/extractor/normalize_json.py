@@ -601,8 +601,23 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
 def validate(questions: list, report: dict, images_dir: Path = None):
     nums = [q.get("question_number", 0) for q in questions]
     max_num = max(nums) if nums else 0
-    present = set(nums)
-    gaps = [i for i in range(min(nums) if nums else 1, max_num + 1) if i not in present]
+
+    # Gaps are computed per numbering run. Across a per-section paper the
+    # combined number set looks contiguous even when a whole section is missing,
+    # so a single min..max sweep would report "no gaps" on a broken extraction.
+    by_run: dict = {}
+    for q in questions:
+        run = q.get("_run", q.get("_page_index", 0))
+        by_run.setdefault(run, set()).add(q.get("question_number", 0))
+    gaps = []
+    for run in sorted(by_run):
+        present_in_run = {n for n in by_run[run] if n}
+        if not present_in_run:
+            continue
+        gaps.extend(
+            n for n in range(min(present_in_run), max(present_in_run) + 1)
+            if n not in present_in_run
+        )
 
     empty_answers = [q["question_number"] for q in questions
                      if not q.get("correct_answer")]
@@ -668,6 +683,10 @@ def main():
         data = json.load(f)
 
     questions = data.get("questions", data) if isinstance(data, dict) else data
+    # Written by gemini_page_extractor's reconciliation pass. Carried through to
+    # the output so the orchestrator can tell a complete extraction from a
+    # partial one instead of treating any non-empty result as success.
+    completeness = data.get("completeness") if isinstance(data, dict) else None
     print(f"Loaded {len(questions)} questions. Normalizing...")
 
     report = {}
@@ -700,22 +719,49 @@ def main():
         order = {"A": 0, "B": 1, "C": 2, "D": 3}
         q["options"] = sorted(opts, key=lambda o: order.get(o.get("id", ""), 99))
 
-    # ── Deduplicate by question_number (keep first occurrence by page index) ────
-    seen_qnums: dict[int, int] = {}  # question_number -> index in list
+    # ── Deduplicate ───────────────────────────────────────────────────────────
+    # Identity is (numbering run, question number), never the number alone.
+    # Papers whose numbering restarts per section — JEE Advanced sections, NEET
+    # Section A/B, most coaching papers — legitimately contain several question
+    # 1s, and keying on the bare number deletes every section after the first.
+    # `_run` is assigned by question_reconciler via gemini_page_extractor; when
+    # it is absent (older payloads) the page index keeps sections apart rather
+    # than collapsing them.
+    seen_keys: dict[tuple, int] = {}
     deduped: list = []
     for q in questions:
         qnum = q.get("question_number", 0)
-        if qnum in seen_qnums:
-            print(f"  [dedup] Dropping duplicate Q{qnum} (already seen at index {seen_qnums[qnum]})")
+        run = q.get("_run")
+        if run is None:
+            run = q.get("_page_index", 0)
+        # A question whose number could not be parsed is always kept: those all
+        # share the placeholder 0 and are not duplicates of one another.
+        key = (run, qnum) if qnum else ("unparsed", id(q))
+        if key in seen_keys:
+            # Prefer the copy whose page actually carries this question's numbered
+            # anchor in the PDF text. Without this, a false positive extracted from
+            # an earlier page (cover-page instruction text, a running header) would
+            # win purely by sorting first and shadow the real question.
+            existing_index = seen_keys[key]
+            if q.get("_anchored") and not deduped[existing_index].get("_anchored"):
+                print(f"  [dedup] Q{qnum} in run {run}: replacing unanchored copy with the anchored one")
+                deduped[existing_index] = q
+            else:
+                print(f"  [dedup] Dropping duplicate Q{qnum} in run {run} (already seen at index {existing_index})")
         else:
-            seen_qnums[qnum] = len(deduped)
+            seen_keys[key] = len(deduped)
             deduped.append(q)
     if len(deduped) < len(questions):
         removed = len(questions) - len(deduped)
         print(f"  [dedup] Removed {removed} duplicate question(s). {len(deduped)} unique questions remain.")
     questions[:] = deduped
 
-    questions.sort(key=lambda q: q.get("question_number", 0))
+    # Sort by run first so per-section papers stay in document order instead of
+    # interleaving every section's question 1, 2, 3 together.
+    questions.sort(key=lambda q: (
+        q.get("_run", q.get("_page_index", 0)),
+        q.get("question_number", 0),
+    ))
 
     # ── Subject + type enforcement ───────────────────────────────────────────
     kind, dominant = detect_paper_kind(questions)
@@ -772,6 +818,12 @@ def main():
         print("ESCALATION_RECOMMENDED=no")
 
     output_data = {"questions": questions}
+    if completeness is not None:
+        # Normalisation can drop questions (dedup); recount so the surfaced
+        # figure describes what actually survived to the platform schema.
+        completeness = {**completeness, "normalized_total": len(questions)}
+        output_data["completeness"] = completeness
+        report["completeness"] = completeness
     with open(input_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print(f"Normalized JSON saved to {input_path}")
