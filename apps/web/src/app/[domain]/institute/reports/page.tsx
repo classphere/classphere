@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import {
   RiSearchLine,
@@ -23,8 +24,16 @@ import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid } from
 import { useBatches } from "@/lib/hooks/useBatches";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
-import { PerformanceChart } from "@/components/institute/PerformanceChart";
-import { SubjectMasteryRadar } from "@/components/institute/SubjectMasteryRadar";
+// Recharts is a heavy client-only dependency — defer it out of this route's
+// initial bundle until the report actually renders.
+const PerformanceChart = dynamic(
+  () => import("@/components/institute/PerformanceChart").then((m) => m.PerformanceChart),
+  { ssr: false, loading: () => <div className="h-72 w-full animate-pulse rounded-2xl bg-b-surface2" /> }
+);
+const SubjectMasteryRadar = dynamic(
+  () => import("@/components/institute/SubjectMasteryRadar").then((m) => m.SubjectMasteryRadar),
+  { ssr: false, loading: () => <div className="h-72 w-full animate-pulse rounded-2xl bg-b-surface2" /> }
+);
 import { RecentTestReports } from "@/components/institute/RecentTestReports";
 import { CohortBatchComparison } from "@/components/institute/CohortBatchComparison";
 import { TopPerformingStudents } from "@/components/institute/TopPerformingStudents";
