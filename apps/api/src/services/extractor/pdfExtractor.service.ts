@@ -60,10 +60,30 @@ function runCommand(command: string, timeoutMs: number, stage = "command"): Prom
 
 // ── Shared types ──────────────────────────────────────────────────────────────
 
+/**
+ * Written by the reconciliation pass in gemini_page_extractor.py, which diffs
+ * the model's output against the question-number anchors PyMuPDF detected in
+ * the PDF text itself. This is what lets the pipeline distinguish "extracted
+ * every question" from "extracted some questions".
+ */
+export interface ExtractionCompleteness {
+  expected_total: number;
+  extracted_total: number;
+  anchors_matched: number;
+  missing_total: number;
+  missing_by_page: Record<string, number[]>;
+  truncated_pages: number[];
+  /** Pages that exhausted their retries — their questions are absent entirely. */
+  failed_pages: number[];
+  completeness: number;
+  normalized_total?: number;
+}
+
 export interface ExtractionResult {
   success: boolean;
   message: string;
   questions: any[];
+  completeness?: ExtractionCompleteness | null;
 }
 
 export interface ExtractionOptions {
@@ -103,6 +123,7 @@ function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): Ex
   }
   const parsed    = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
   const questions = parsed.questions || [];
+  const completeness: ExtractionCompleteness | null = parsed.completeness ?? null;
   console.log(`[pdfExtractor] Embedding images into ${questions.length} questions…`);
   for (const q of questions) {
     if (q.question_text) q.question_text = embedImagesInText(q.question_text, imagesDir);
@@ -116,12 +137,25 @@ function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): Ex
     }
     if (q.explanation) q.explanation = embedImagesInText(q.explanation, imagesDir);
   }
+  if (!questions.length) {
+    return { success: false, message: "Extraction produced no questions.", questions, completeness };
+  }
+
+  // A partial extraction is still a failure of the user's actual intent, so say
+  // so in the message rather than reporting a clean success for 22 of 54 questions.
+  const missing = completeness?.missing_total ?? 0;
+  const shortfall = missing > 0
+    ? ` — ${missing} question(s) detected in the PDF could not be extracted` +
+      ` (${Object.entries(completeness?.missing_by_page ?? {})
+        .map(([page, numbers]) => `p${page}: ${numbers.join(", ")}`)
+        .join("; ")})`
+    : "";
+
   return {
-    success: questions.length > 0,
-    message: questions.length > 0
-      ? `Extracted ${questions.length} questions successfully${suffix}.`
-      : "Extraction produced no questions.",
+    success: true,
+    message: `Extracted ${questions.length} questions successfully${suffix}${shortfall}.`,
     questions,
+    completeness,
   };
 }
 

@@ -72,19 +72,32 @@ async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
       throw new Error(message);
     }
 
+    const completeness = result.completeness ?? null;
+    const missing = completeness?.missing_total ?? 0;
+
     await updateJobStatus(jobId, {
       status: "done",
       result: {
         questions: result.questions,
         message: result.message,
+        ...(completeness ? { completeness, needs_review: missing > 0 } : {}),
         ...(result.profile ? { profile: result.profile, extractor_version: "v4" } : {}),
       },
       completed_at: new Date().toISOString(),
     }, true);
 
     await deleteR2Object(r2Key);
+    if (missing > 0) {
+      // The PDF's own numbered anchors say questions are here that we could not
+      // extract. Log it loudly — a partial paper reaching students unnoticed is
+      // worse than a visibly failed job.
+      logStage("incomplete", `INCOMPLETE: ${result.questions.length} extracted, ${missing} missing ` +
+        `(completeness ${((completeness?.completeness ?? 0) * 100).toFixed(1)}%) — ` +
+        `missing by page: ${JSON.stringify(completeness?.missing_by_page ?? {})}`);
+    }
     logStage("complete", `Extraction completed with ${result.questions.length} questions.`);
-    console.log(`[pdfWorker] Job ${jobId} done — ${result.questions.length} questions`);
+    console.log(`[pdfWorker] Job ${jobId} done — ${result.questions.length} questions` +
+      (missing > 0 ? ` (${missing} missing — needs review)` : ""));
   } catch (error: any) {
     logStage("error", error?.message || String(error));
     throw error;
