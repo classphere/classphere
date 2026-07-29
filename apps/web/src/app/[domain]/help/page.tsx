@@ -22,12 +22,10 @@ function HelpContent() {
   const faqs = {
     student: [
       { q: "How does the Deterministic Analysis Engine work?", a: "After every mock test, the 9-stage analysis engine evaluates your pacing, identifies panic cascades, and generates a personalized fatigue curve to show you exactly where you lost focus." },
-      { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations and your mistake classification." },
-      { q: "How do I ask a doubt in the Community Forum?", a: "Go to the Doubts page, click 'New Doubt', and tag the relevant subject. If your doubt is urgent, mark it as high-priority so it escalates to your teacher." }
+      { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations and your mistake classification." }
     ],
     teacher: [
-      { q: "How do I view the Daily Batch Summary?", a: "The summary is automatically generated and available on your Teacher Dashboard every morning, highlighting key performance shifts and pending doubts." },
-      { q: "How do I endorse a student's answer in the forum?", a: "In the Doubts section, you can click the 'Verify' badge on any student's reply. This awards them reputation points and marks the thread as resolved." },
+      { q: "How do I view the Daily Batch Summary?", a: "The summary is automatically generated and available on your Teacher Dashboard every morning, highlighting key performance shifts." },
       { q: "Can I override the deterministic analysis?", a: "No, the 9-stage analysis is fully rule-based to ensure pedagogical consistency across the institute. You can, however, add manual teacher notes to the final report." }
     ],
     institute_admin: [

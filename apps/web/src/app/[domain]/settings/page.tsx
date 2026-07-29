@@ -13,8 +13,7 @@ import {
   RiShieldCheckLine,
   RiNotification3Line,
   RiBankCardLine,
-  RiPaletteLine,
-  RiTimeLine
+  RiPaletteLine
 } from "@remixicon/react";
 
 function SettingsContent() {
@@ -43,9 +42,6 @@ function SettingsContent() {
     if (role === "institute_admin") {
       baseTabs.push({ id: "billing", label: "B2B Billing", icon: <RiBankCardLine size={18} /> });
       baseTabs.push({ id: "white_label", label: "White-Labeling", icon: <RiPaletteLine size={18} /> });
-    }
-    if (role === "teacher") {
-      baseTabs.push({ id: "availability", label: "Availability", icon: <RiTimeLine size={18} /> });
     }
     return baseTabs;
   };
@@ -224,22 +220,13 @@ function SettingsContent() {
                   )}
 
                   {(role === "teacher" || role === "institute_admin") && (
-                    <>
-                      <div className="flex items-start justify-between border-b border-s-stroke2/30 pb-8">
-                        <div>
-                          <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Student Escalations</h3>
-                          <p className="text-[14px] text-t-secondary">Instant alerts when a student in your batch flags a doubt as 'urgent'.</p>
-                        </div>
-                        <Toggle defaultOn={true} />
+                    <div className="flex items-start justify-between pb-4">
+                      <div>
+                        <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Daily Batch Summary</h3>
+                        <p className="text-[14px] text-t-secondary">Receive a morning email detailing student performance shifts.</p>
                       </div>
-                      <div className="flex items-start justify-between pb-4">
-                        <div>
-                          <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Daily Batch Summary</h3>
-                          <p className="text-[14px] text-t-secondary">Receive a morning email detailing student performance shifts and unresolved doubts.</p>
-                        </div>
-                        <Toggle defaultOn={false} />
-                      </div>
-                    </>
+                      <Toggle defaultOn={false} />
+                    </div>
                   )}
                   
                   {role === "super_admin" && (
@@ -299,21 +286,6 @@ function SettingsContent() {
                       <input type="text" className="w-40 h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-bold text-t-primary dark:text-t-primary outline-none uppercase tracking-widest" defaultValue="#0A84FF" />
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {/* AVAILABILITY TAB */}
-            {activeTab === "availability" && role === "teacher" && (
-              <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">Doubt Resolution Availability</h2>
-                
-                <div className="flex items-start justify-between pb-8">
-                  <div className="pr-8">
-                    <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Accepting New Doubts</h3>
-                    <p className="text-[14px] text-t-secondary">When disabled, you will be hidden from the student doubt routing engine.</p>
-                  </div>
-                  <Toggle defaultOn={true} />
                 </div>
               </div>
             )}

@@ -229,7 +229,6 @@ export default function DPPSolvePage() {
 
           <div className="flex gap-4">
             <Link href="/student/dashboard" className="btn btn-outline flex-1">← Dashboard</Link>
-            <Link href="/doubts" className="btn btn-primary flex-1">Ask a Doubt</Link>
           </div>
         </div>
       </div>
