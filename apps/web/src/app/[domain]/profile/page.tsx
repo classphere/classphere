@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
+import Image from "next/image";
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
@@ -67,9 +68,11 @@ function ProfileContent() {
           
           <div className="mb-8">
             <div className="size-24 rounded-full border border-s-stroke2 overflow-hidden mb-3">
-              <img
+              <Image
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=3765F6&color=fff&size=100`}
                 alt="Avatar"
+                width={96}
+                height={96}
                 className="size-full object-cover"
               />
             </div>
