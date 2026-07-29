@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { RiNotification3Line } from "@remixicon/react";
 import { useRouter } from "next/navigation";
+import { Capacitor } from "@capacitor/core";
+import { Badge } from "@capawesome/capacitor-badge";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
 
@@ -11,6 +13,13 @@ export function NotificationBell() {
   const { session } = useAuth(); const router = useRouter(); const [open, setOpen] = useState(false); const [items, setItems] = useState<Notification[]>([]); const [unread, setUnread] = useState(0); const ref = useRef<HTMLDivElement>(null);
   const load = async () => { if (!session?.access_token) return; const result: any = await apiClient.get("/api/v1/notifications?limit=12", session.access_token); setItems(result.data?.notifications ?? []); setUnread(result.data?.unreadCount ?? 0); };
   useEffect(() => { void load().catch(() => undefined); }, [session?.access_token]);
+  // Android's badge is only ever set client-side (there's no OS-level push
+  // payload for it the way iOS has aps.badge) — keep the native icon in sync
+  // with whatever this component considers the unread count to be.
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+    void (unread > 0 ? Badge.set({ count: unread }) : Badge.clear()).catch(() => undefined);
+  }, [unread]);
   useEffect(() => { const onNotification = (event: Event) => { const item = (event as CustomEvent<Notification>).detail; if (!item?.id) return; setItems((current) => [item, ...current.filter((candidate) => candidate.id !== item.id)].slice(0, 12)); setUnread((current) => current + 1); }; window.addEventListener("classphere:notification", onNotification); return () => window.removeEventListener("classphere:notification", onNotification); }, []);
   useEffect(() => { const close = (event: MouseEvent) => { if (ref.current && !ref.current.contains(event.target as Node)) setOpen(false); }; document.addEventListener("mousedown", close); return () => document.removeEventListener("mousedown", close); }, []);
   const openItem = async (item: Notification) => { if (!item.read_at && session?.access_token) { await apiClient.post(`/api/v1/notifications/${item.id}/read`, {}, session.access_token).catch(() => undefined); setItems((current) => current.map((candidate) => candidate.id === item.id ? { ...candidate, read_at: new Date().toISOString() } : candidate)); setUnread((current) => Math.max(0, current - 1)); } setOpen(false); if (item.href) router.push(item.href); };
