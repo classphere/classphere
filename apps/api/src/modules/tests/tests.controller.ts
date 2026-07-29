@@ -764,6 +764,22 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       if (jobData.status === "done") {
         extractionResult = jobData.result;
         logStage("extracting_questions", `Worker completed extraction after ${Date.now() - extractionWaitStartedAt}ms.`);
+        // The worker may run in a separate process, so echo its completeness
+        // verdict here — this is the log the uploader actually watches, and a
+        // partial extraction must not look identical to a complete one.
+        const completeness = extractionResult?.completeness;
+        if (completeness) {
+          logStage("extracting_questions",
+            `Completeness: ${completeness.anchors_matched}/${completeness.expected_total} anchored questions ` +
+            `(${(completeness.completeness * 100).toFixed(1)}%)` +
+            (completeness.missing_total
+              ? ` — MISSING ${completeness.missing_total}: ${JSON.stringify(completeness.missing_by_page)}`
+              : "") +
+            (completeness.failed_pages?.length ? ` — FAILED PAGES: ${completeness.failed_pages.join(", ")}` : ""));
+        } else {
+          logStage("extracting_questions",
+            "Completeness: not reported by the extractor (reconciliation did not run — extractor may be stale).");
+        }
         break;
       } else if (jobData.status === "failed") {
         sendError(`AI extraction failed: ${jobData.error}`);
