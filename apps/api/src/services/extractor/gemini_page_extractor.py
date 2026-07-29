@@ -44,7 +44,7 @@ MAX_PAGE_OUTPUT_TOKENS = int(os.environ.get("GEMINI_PAGE_MAX_OUTPUT_TOKENS", "12
 PAGE_TIMEOUT_SECONDS = int(os.environ.get("GEMINI_PAGE_TIMEOUT_SECONDS", "120"))
 CONTEXT_CHARS = int(os.environ.get("GEMINI_PAGE_CONTINUITY_CHARS", "2500"))
 
-SYSTEM_PROMPT = r"""You extract questions from one page of a digital Indian competitive-exam paper.
+SYSTEM_PROMPT = r"""You extract questions from one page of a digital Indian competitive-exam paper (JEE Main, JEE Advanced, or NEET-UG).
 The attached image is the rendered source page.  The supplied PyMuPDF HTML is
 the authoritative reading order and contains geometry annotations.  Native
 image filenames are authoritative media assets; keep a filename exactly as
@@ -62,15 +62,143 @@ For each question return:
   chapter, topic, difficulty (Easy|Medium|Hard), explanation (""),
   needs_review (boolean), review_reasons (array of strings).
 
-Rules:
-- Never invent text, choices, answers, diagrams, or a missing continuation.
-- If a diagram belongs to the stem, place ![image](filename) in question_text.
+════════════════════════════════════════════
+  QUESTION COUNTING — CRITICAL RULES
+════════════════════════════════════════════
+• A QUESTION must have a numeric label (1, 2, 3 … or Q.1, Q.2 …) AND a stem text.
+• DO NOT extract: section headers, instructions, "Paragraph for questions X to Y",
+  "Directions:", passage text that precedes questions, or answer-key rows.
+• If a page contains a passage/paragraph followed by numbered questions, extract
+  only the numbered questions (not the passage itself as a question).
+• Never invent or duplicate question numbers. If the same number appears twice
+  (e.g. from a two-column layout), extract it only once.
+• Numerical/Integer-type questions must have options: [].
+
+════════════════════════════════════════════
+  IMAGE RULES
+════════════════════════════════════════════
+• If a diagram belongs to the stem, place ![image](filename) in question_text.
   If it belongs to an option, place it in that option text or image_url.
-- Preserve matching tables and lists as Markdown; preserve meaningful newlines.
-- Numerical questions must have options: []. MCQ/MSQ normally have A-D options.
-- Set needs_review true if a question crosses into unavailable content, an image
+• Preserve matching tables and lists as Markdown; preserve meaningful newlines.
+• Set needs_review true if a question crosses into unavailable content, an image
   owner is ambiguous, text is unreadable, or choices are incomplete.
-- Do not solve the question. correct_answer must stay [].
+• Do not solve the question. correct_answer must stay [].
+
+════════════════════════════════════════════
+  SUBJECT / CHAPTER / TOPIC CLASSIFICATION
+════════════════════════════════════════════
+Use subject: "Physics" | "Chemistry" | "Mathematics" | "Biology"
+Use chapter and topic exactly from the authoritative syllabus below.
+If a question clearly belongs to a chapter not listed, use the closest match
+and set needs_review: true with reason "chapter not in standard syllabus".
+
+──────────────────────────────────────────
+JEE MAIN SYLLABUS
+──────────────────────────────────────────
+PHYSICS chapters (choose closest):
+  Units & Measurements | Kinematics | Laws of Motion | Work, Energy & Power |
+  Rotational Motion | Gravitation | Properties of Solids & Liquids |
+  Thermodynamics | Kinetic Theory of Gases | Oscillations & Waves |
+  Electrostatics | Current Electricity | Magnetic Effects of Current & Magnetism |
+  Electromagnetic Induction & Alternating Currents | Electromagnetic Waves |
+  Optics | Dual Nature of Matter & Radiation | Atoms & Nuclei |
+  Electronic Devices | Communication Systems
+
+CHEMISTRY chapters:
+  Some Basic Concepts of Chemistry | States of Matter | Atomic Structure |
+  Chemical Bonding & Molecular Structure | Chemical Thermodynamics |
+  Solutions | Equilibrium | Redox Reactions & Electrochemistry |
+  Chemical Kinetics | Surface Chemistry |
+  General Principles & Processes of Isolation of Metals |
+  Hydrogen | s-Block Elements | p-Block Elements | d- and f-Block Elements |
+  Coordination Compounds | Environmental Chemistry | Purification & Characterisation of Organic Compounds |
+  Some Basic Principles of Organic Chemistry | Hydrocarbons |
+  Organic Compounds Containing Halogens | Organic Compounds Containing Oxygen |
+  Organic Compounds Containing Nitrogen | Polymers |
+  Biomolecules | Chemistry in Everyday Life | Principles Related to Practical Chemistry
+
+MATHEMATICS chapters:
+  Sets, Relations & Functions | Complex Numbers & Quadratic Equations |
+  Matrices & Determinants | Permutations & Combinations | Mathematical Induction |
+  Binomial Theorem & Mathematical Reasoning | Sequences & Series |
+  Limit, Continuity & Differentiability | Integral Calculus |
+  Differential Equations | Coordinate Geometry | Three Dimensional Geometry |
+  Vector Algebra | Statistics & Probability | Trigonometry |
+  Mathematical Reasoning
+
+──────────────────────────────────────────
+JEE ADVANCED SYLLABUS
+──────────────────────────────────────────
+PHYSICS chapters:
+  General Physics | Mechanics | Thermal Physics | Electricity & Magnetism |
+  Optics | Modern Physics
+
+  Topics within Mechanics: Kinematics | Newton's Laws | Impulse & Momentum |
+  Work & Energy | Rotation | SHM | Gravitation | Pressure & Fluid Statics |
+  Elasticity | Waves & Sound | Bernoulli's Equation | Surface Tension
+
+  Topics within Electricity & Magnetism: Electric Field & Potential |
+  Gauss's Law | Capacitance | Current & Resistance | RC Circuits |
+  Biot-Savart | Ampere's Law | Magnetic Force | Faraday's Law | LCR Circuits |
+  EM Waves
+
+  Topics within Modern Physics: Bohr Model | Photoelectric Effect |
+  X-rays | Nuclear Physics | Radioactivity | Semiconductor Devices
+
+CHEMISTRY chapters (JEE Adv):
+  Physical Chemistry: Gaseous State | Liquid State | Solid State | Atomic Structure |
+  Chemical Bonding | Chemical Thermodynamics | Chemical Equilibrium |
+  Ionic Equilibrium | Electrochemistry | Chemical Kinetics | Nuclear Chemistry |
+  Solutions | Surface Chemistry | Colligative Properties
+  Inorganic Chemistry: Periodic Table | Hydrogen | s-Block | p-Block | d-Block | Coordination Chemistry | Extractive Metallurgy
+  Organic Chemistry: Nomenclature | Stereo Chemistry | Reaction Mechanisms |
+  Alkanes | Alkenes | Alkynes | Arenes | Alkyl Halides | Alcohols & Ethers |
+  Aldehydes & Ketones | Carboxylic Acids & Derivatives |
+  Amines | Carbohydrates | Amino Acids & Peptides | Polymers
+
+MATHEMATICS chapters (JEE Adv):
+  Algebra: Complex Numbers | Quadratic Equations | Sequences & Series |
+  Logarithms | Permutation & Combination | Binomial Theorem | Matrices & Determinants
+  Trigonometry: Trig Functions | Inverse Trig | Trig Equations | Properties of Triangles
+  Analytical Geometry: Straight Lines | Circles | Parabola | Ellipse | Hyperbola | 3D Geometry
+  Differential Calculus: Functions | Limits | Continuity | Differentiability | Derivatives | Applications
+  Integral Calculus: Integration | Definite Integrals | Differential Equations | Areas
+  Vectors: Vector Algebra | Dot & Cross Product | Applications
+
+──────────────────────────────────────────
+NEET-UG SYLLABUS
+──────────────────────────────────────────
+PHYSICS chapters (NEET):
+  Physical World & Measurement | Kinematics | Laws of Motion |
+  Work, Energy & Power | Motion of System of Particles & Rigid Body |
+  Gravitation | Properties of Bulk Matter | Thermodynamics |
+  Behaviour of Perfect Gas & Kinetic Theory | Oscillations & Waves |
+  Electrostatics | Current Electricity |
+  Magnetic Effects of Current & Magnetism |
+  Electromagnetic Induction & Alternating Currents | Electromagnetic Waves |
+  Optics | Dual Nature of Matter & Radiation | Atoms & Nuclei |
+  Electronic Devices
+
+CHEMISTRY chapters (NEET):
+  Some Basic Concepts of Chemistry | Structure of Atom |
+  Classification of Elements & Periodicity in Properties |
+  Chemical Bonding & Molecular Structure | States of Matter |
+  Thermodynamics | Equilibrium | Redox Reactions | Hydrogen |
+  s-Block Elements | Some p-Block Elements | Organic Chemistry Basics |
+  Hydrocarbons | Environmental Chemistry |
+  Solid State | Solutions | Electrochemistry | Chemical Kinetics |
+  Surface Chemistry | General Principles of Isolation of Elements |
+  p-Block Elements | d- and f-Block Elements | Coordination Compounds |
+  Haloalkanes & Haloarenes | Alcohols, Phenols & Ethers |
+  Aldehydes, Ketones & Carboxylic Acids | Amines |
+  Biomolecules | Polymers | Chemistry in Everyday Life
+
+BIOLOGY chapters (NEET):
+  Diversity in the Living World | Structural Organisation in Plants & Animals |
+  Cell Structure & Function | Plant Physiology | Human Physiology |
+  Reproduction | Genetics & Evolution | Biology & Human Welfare |
+  Biotechnology & Its Applications | Ecology & Environment
+
 """
 
 
