@@ -21,7 +21,10 @@ export function Card({
   children,
   ...props
 }: CardProps) {
-  const base = "rounded-[24px] border border-s-stroke2/40 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)] transition-all duration-200";
+  // Matches PremiumCard, the card the dashboard uses: flat, borderless-feeling,
+  // blending into the surface. The previous shadow-widget + drop shadow made
+  // these sit visibly "above" the page and read as a different design system.
+  const base = "rounded-[24px] overflow-hidden border border-s-stroke2/40 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04)]";
   
   const variants = {
     default: "bg-b-surface2", // Main theme background
@@ -32,7 +35,11 @@ export function Card({
   const paddings = {
     none: "",
     default: "p-4 sm:p-6",
-    large: "p-8 md:p-[42px]",
+    // Ramps up from a phone-friendly base. "large" previously started at p-8,
+    // which spent 64px of a 375px screen on padding alone and left tables and
+    // stat tiles badly cramped. Mirrors PremiumCard so results cards match the
+    // dashboard's spacing.
+    large: "p-5 md:p-8 lg:p-[42px]",
   };
 
   return (
