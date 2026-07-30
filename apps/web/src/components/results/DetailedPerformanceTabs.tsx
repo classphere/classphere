@@ -23,8 +23,12 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
       title="Detailed Performance Report"
       subtitle="Deep-dive pedagogical analysis of your test attempts."
       padding="large"
-      headerRight={
-        <div className="flex items-center gap-1 p-1 rounded-full border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 w-fit max-w-full overflow-x-auto scrollbar-hide shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+    >
+      {/* The tab bar lives in the body, not headerRight. Five tabs beside the
+          heading left it ~150px of width, wrapping "Detailed Performance
+          Report" onto three lines even on a desktop. */}
+      <div className="relative z-10 -mt-2 mb-4">
+        <div className="flex items-center gap-1 p-1 rounded-full border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 w-full lg:w-fit max-w-full overflow-x-auto scrollbar-hide shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
           {[
             { id: "overview", label: "Overview" },
             { id: "analysis", label: "Analysis" },
@@ -45,9 +49,9 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
             </button>
           ))}
         </div>
-      }
-    >
-      <div className="relative z-10 pt-2 border-t border-s-stroke2/50 mt-4">
+      </div>
+
+      <div className="relative z-10 pt-2 border-t border-s-stroke2/50">
         {activeTab === "overview" && (
           <div className="space-y-6 animate-fadeIn mt-4">
             <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Summary of marks scored in the test</div>
@@ -58,10 +62,13 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
                 { label: "Qs Attempted", value: `${a.scoring.correctCount + a.scoring.incorrectCount}/${totalQuestions}`, sub: "Out of Total Questions" },
                 { label: "Time Taken", value: `${Math.round(Object.values(a.attemptStrategy?.timePerSubjectSec || {}).reduce((sum: number, val: any) => sum + val, 0) / 60)}/180 min`, sub: "Total Spent Time" }
               ].map((stat, i) => (
-                <div key={i} className="rounded-[10px] border border-s-stroke2 bg-b-surface1 p-5 text-center">
-                  <div className="text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary mb-2">{stat.label}</div>
-                  <div className="text-h3 font-black tracking-tight text-t-primary">{stat.value}</div>
-                  <div className="text-caption text-t-secondary mt-1">{stat.sub}</div>
+                <div key={i} className="min-w-0 rounded-[10px] border border-s-stroke2 bg-b-surface1 p-4 text-center">
+                  <div className="text-[10px] sm:text-[11px] font-sans font-semibold uppercase tracking-[0.06em] text-t-secondary mb-1.5 truncate">{stat.label}</div>
+                  {/* Sized like the dashboard's metric cards. At text-h3 + font-semibold
+                      a value such as "0/180 min" wrapped onto three lines in a
+                      quarter-width column and stretched every tile to match. */}
+                  <div className="font-sans text-[22px] sm:text-[26px] font-semibold leading-none tracking-[-0.03em] text-t-primary">{stat.value}</div>
+                  <div className="text-[11px] font-sans text-t-secondary mt-1.5 leading-tight">{stat.sub}</div>
                 </div>
               ))}
             </div>
