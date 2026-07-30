@@ -29,7 +29,7 @@ export function AttemptStrategyCard({ strategy, strategySubjects }: AttemptStrat
             return (
               <div key={subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4">
                 <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">{subject}</div>
-                <div className={`mt-2 text-[20px] font-sans font-black ${deviation >= 0 ? "text-primary-02" : "text-primary-03"}`}>
+                <div className={`mt-2 text-[20px] font-sans font-semibold ${deviation >= 0 ? "text-primary-02" : "text-primary-03"}`}>
                   {deviation != null ? `${deviation > 0 ? "+" : ""}${Math.round(deviation)}%` : "—"}
                 </div>
                 <div className="mt-1 text-[12px] font-sans text-t-secondary">

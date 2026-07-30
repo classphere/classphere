@@ -19,7 +19,7 @@ export function ErrorPatternsCard({ errorPatterns }: ErrorPatternsCardProps) {
     >
       <div className="relative z-10 grid gap-4 md:grid-cols-2 mt-4">
         {errorPatterns.map((ep: any) => (
-          <div key={ep.id} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-5 shadow-sm">
+          <div key={ep.id} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-5">
             <h3 className="text-[14px] font-sans font-bold text-primary-03">{ep.name}</h3>
             <p className="mt-2 text-caption leading-relaxed text-t-secondary">{ep.description}</p>
             <div className="mt-4">
