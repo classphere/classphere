@@ -122,8 +122,8 @@ def prune_false_anchors(
 ) -> tuple[dict[int, list[int]], list[tuple[int, int]]]:
     """Drop anchor-shaped text that is not actually a question.
 
-    Cover pages and instruction blocks ("Section 2: Multiple Correct Type",
-    "3. Marking Scheme") match the question-number regex and appear as a tiny
+    Cover pages and instruction blocks (\"Section 2: Multiple Correct Type\",
+    \"3. Marking Scheme\") match the question-number regex and appear as a tiny
     numbering run whose numbers all reappear in the real question sequence.
     Left in place they make a complete extraction look incomplete, and the
     recovery pass then pressures the model into inventing a question to fill a
@@ -180,7 +180,7 @@ def missing_by_page(
 
     Truncated and failed pages are always reported, even when every anchor was
     matched, because such a page may also have lost questions the anchor regex
-    never detected. An entry with an empty list means "re-ask this whole page".
+    never detected. An entry with an empty list means \"re-ask this whole page\".
     """
     found = extracted_by_page(questions)
     missing: dict[int, list[int]] = {}
