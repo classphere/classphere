@@ -23,10 +23,11 @@ export async function analyzeJeeAttempt(attemptId: string, hasTimingData = true)
     classification: classifyMistake(a, hasTimingData),
   }));
 
-  const [batchAvgs, historicalProfile, seenQIds] = await Promise.all([
+  const [batchAvgs, historicalProfile, seenQIds, batchAvg] = await Promise.all([
     db.getBatchAvgsByTopic(attempt.batch_id ?? ""),
     db.getStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "jee-main"),
     db.getSeenQuestionIds(attempt.student_id, attempt.exam_code ?? "jee-main"),
+    db.getBatchAverageScore(attempt.paper_id, attempt.batch_id ?? ""),
   ]);
 
   const topicStats    = computeTopicAccuracy(classified, batchAvgs);
@@ -50,6 +51,9 @@ export async function analyzeJeeAttempt(attemptId: string, hasTimingData = true)
   const result: AnalysisResult = {
     scoring, classified, topicStats, errorPatterns, freeMarks, skipAnalysis, studyPlan, boosterConfig, processingMs,
     attemptStrategy, longitudinalFlags, narrative, timeIntervals, subjectMovement, difficultyBreakdown, attemptClassification, panicCascade, fatigueSummary,
+    // Omitted entirely when there is no batch or too few peers — the UI hides
+    // the comparison rather than showing a placeholder.
+    ...(batchAvg ? { batchAvg } : {}),
   };
 
   const currentProfileEntries = buildCurrentTopicHistoryEntries(attemptId, topicStats);

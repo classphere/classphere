@@ -14,6 +14,7 @@ import { supabaseAdmin } from "../../../lib/supabase";
 import {
   AttemptAnswer,
   AnalysisResult,
+  BatchAverage,
   StudentErrorProfile,
   TopicErrorHistoryEntry,
   Question,
@@ -122,6 +123,40 @@ export const db = {
       } as AttemptRecord,
       answers,
     };
+  },
+
+  // ── Batch average score on the same paper ─────────────────────────────────
+  /**
+   * Mean submitted score for this paper within this batch.
+   *
+   * Returns null when there is no batch, no paper, or fewer than
+   * MIN_BATCH_SAMPLE submissions — a "batch average" drawn from one or two
+   * peers is noise, and the caller must show nothing rather than invent a
+   * comparison.
+   */
+  getBatchAverageScore: async (paperId: string, batchId: string): Promise<BatchAverage | null> => {
+    if (!paperId || !batchId) return null;
+    const MIN_BATCH_SAMPLE = 3;
+    try {
+      const { data, error } = await supabaseAdmin
+        .from("attempts")
+        .select("score")
+        .eq("paper_id", paperId)
+        .eq("batch_id", batchId)
+        .eq("status", "submitted")
+        .not("score", "is", null);
+      if (error) {
+        console.error("[db.service] getBatchAverageScore error:", error.message);
+        return null;
+      }
+      const scores = (data ?? []).map((row: any) => Number(row.score)).filter(Number.isFinite);
+      if (scores.length < MIN_BATCH_SAMPLE) return null;
+      const total = scores.reduce((sum, value) => sum + value, 0);
+      return { score: Math.round(total / scores.length), sampleSize: scores.length };
+    } catch (e: any) {
+      console.error("[db.service] getBatchAverageScore exception:", e.message);
+      return null;
+    }
   },
 
   // ── Batch averages per topic (for comparison) ──────────────────────────────

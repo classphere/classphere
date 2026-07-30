@@ -226,6 +226,23 @@ export interface AnalysisResult {
   attemptClassification: AttemptClassification[];
   panicCascade: PanicCascade;
   fatigueSummary: string;
+
+  /**
+   * Mean score of the student's batch on this same paper.
+   *
+   * Absent when there is no batch, or too few submissions to be meaningful —
+   * consumers must treat it as optional and hide any peer comparison rather
+   * than substituting a placeholder, since a fabricated average is worse than
+   * showing none.
+   */
+  batchAvg?: BatchAverage;
+}
+
+export interface BatchAverage {
+  /** Mean of submitted scores on this paper, rounded. */
+  score: number;
+  /** Number of submissions the mean was computed from. */
+  sampleSize: number;
 }
 
 // ── v3: Longitudinal Profiling ──
