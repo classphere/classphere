@@ -126,7 +126,6 @@ function SettingsContent() {
                         <option>JEE Main</option>
                         <option>JEE Advanced</option>
                         <option>NEET UG</option>
-                        <option>SSC CGL</option>
                       </select>
                     </div>
                     <div className="flex flex-col gap-2">

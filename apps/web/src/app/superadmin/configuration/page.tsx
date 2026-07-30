@@ -23,7 +23,6 @@ export default function ConfigurationPage() {
 
   const [maintenance, setMaintenance] = useState(false);
   const [deterministicEngine, setDeterministicEngine] = useState(true);
-  const [sscPacing, setSscPacing] = useState(true);
   const [customDomain, setCustomDomain] = useState(true);
   const [forumModeration, setForumModeration] = useState(false);
   
@@ -82,7 +81,6 @@ export default function ConfigurationPage() {
           const cfg = res.data;
           if (cfg.maintenance_mode !== undefined) setMaintenance(cfg.maintenance_mode);
           if (cfg.deterministic_engine !== undefined) setDeterministicEngine(cfg.deterministic_engine);
-          if (cfg.ssc_pacing !== undefined) setSscPacing(cfg.ssc_pacing);
           if (cfg.custom_domains_enabled !== undefined) setCustomDomain(cfg.custom_domains_enabled);
           if (cfg.forum_moderation_enabled !== undefined) setForumModeration(cfg.forum_moderation_enabled);
           if (cfg.max_concurrent_users !== undefined) setMaxConcurrentUsers(Number(cfg.max_concurrent_users));
@@ -199,17 +197,6 @@ export default function ConfigurationPage() {
                     <Toggle enabled={deterministicEngine} onChange={() => setDeterministicEngine(!deterministicEngine)} />
                   </div>
 
-                  <div className="w-full h-px bg-s-stroke2/30" />
-
-                  <div className="flex justify-between items-start gap-6">
-                    <div>
-                      <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Strict SSC Pacing Locks</h3>
-                      <p className="text-[13px] text-t-secondary leading-relaxed">
-                        Enforces the 15-minute intra-section locks specifically for SSC and Bank PO examinations. Applies universally across all B2B partner platforms.
-                      </p>
-                    </div>
-                    <Toggle enabled={sscPacing} onChange={() => setSscPacing(!sscPacing)} />
-                  </div>
                 </div>
               </div>
 

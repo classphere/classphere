@@ -13,10 +13,10 @@ export function FatigueCurveCard({ timeIntervals, fatigueSummary }: FatigueCurve
   return (
     <SectionCard
       title={
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-center gap-2">
           <RiPulseLine size={18} className="text-primary-01" />
-          <span>Attempts Over 3 Hours</span>
-        </div>
+          Attempts Over 3 Hours
+        </span>
       }
       subtitle="How your performance changed across the exam duration."
       padding="large"

@@ -15,7 +15,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":     ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug":      ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
-  "ssc-cgl":      ["General Intelligence & Reasoning", "General Awareness", "Quantitative Aptitude", "English Language"],
 };
 
 // Auto-detect subject from filename e.g. "Physics_Work_Energy.json" → "Physics"
@@ -64,7 +63,6 @@ const EXAMS = [
   { code: "jee-main",     label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug",      label: "NEET-UG" },
-  { code: "ssc-cgl",      label: "SSC CGL" },
 ];
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise" },
@@ -109,9 +107,6 @@ export default function BulkUpload() {
       const next = { ...prev, [k]: v };
       if (k === "exam") {
         next.subject = "";
-        if (v === "ssc-cgl" && next.test_type === "ncert") {
-          next.test_type = "chapter-wise";
-        }
       }
       // Clear shared subject when switching test_type so stale value doesn't leak
       if (k === "test_type") {
@@ -277,7 +272,7 @@ export default function BulkUpload() {
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
             <div className="flex flex-wrap gap-3">
-              {TEST_TYPES.filter(t => !(meta.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
+              {TEST_TYPES.map(t => (
                 <Pill key={t.code} active={meta.test_type === t.code} onClick={() => setMetaField("test_type", t.code)}>
                   {t.label}
                 </Pill>

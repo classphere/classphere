@@ -31,7 +31,7 @@ function HelpContent() {
     institute_admin: [
       { q: "How do I set up my Custom Domain?", a: "Navigate to Settings > White-Labeling. Enter your desired domain (e.g., portal.academy.com). SSL provisioning happens automatically within 24 hours." },
       { q: "How do I upgrade my B2B Enterprise tier?", a: "Go to Settings > B2B Billing. Click 'Manage Payment Methods' or contact your dedicated Super Admin account manager for volume discounts." },
-      { q: "Are SSC pacing locks mandatory?", a: "Yes, for SSC exams, the 15-minute intra-section locks are enforced platform-wide to simulate real-world testing conditions. This cannot be disabled per-institute." }
+
     ],
     super_admin: [
       { q: "How do I pause OMR ingestion during a spike?", a: "Go to the Global Configuration page and toggle 'System Maintenance Mode'. This will halt async ingestion queues." },

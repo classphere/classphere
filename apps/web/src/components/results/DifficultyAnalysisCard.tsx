@@ -12,10 +12,10 @@ export function DifficultyAnalysisCard({ difficultyBreakdown }: DifficultyAnalys
   return (
     <SectionCard
       title={
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-center gap-2">
           <RiBarChartBoxLine size={18} className="text-primary-05" />
-          <span>Difficulty Analysis</span>
-        </div>
+          Difficulty Analysis
+        </span>
       }
       subtitle="Performance breakdown by question difficulty, per subject."
       padding="large"

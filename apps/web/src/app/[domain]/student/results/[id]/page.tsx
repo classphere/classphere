@@ -223,7 +223,7 @@ export default function ResultsPage() {
           </div>
 
           <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 select-none">
               
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTargetLine size={20} className="text-primary-05" /> Recovery options
@@ -271,7 +271,7 @@ export default function ResultsPage() {
               )}
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 select-none">
               
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTimerLine size={20} className="text-primary-01" /> Exam snapshot

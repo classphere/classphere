@@ -175,7 +175,7 @@ export default function QuestionBankPage() {
 
   return (
     <>
-      <Navbar title="Global Question Bank" subtitle="Manage JEE, NEET, and SSC question databases." />
+      <Navbar title="Global Question Bank" subtitle="Manage JEE and NEET question databases." />
       
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
         
@@ -235,7 +235,6 @@ export default function QuestionBankPage() {
                 { id: "jee-main", label: "JEE Main" },
                 { id: "jee-advanced", label: "JEE Advanced" },
                 { id: "neet-ug", label: "NEET UG" },
-                { id: "ssc-cgl", label: "SSC CGL" },
               ].map(exam => (
                 <button
                   key={exam.id}
@@ -257,7 +256,6 @@ export default function QuestionBankPage() {
                 { id: "ncert", label: "NCERT" },
                 { id: "assigned", label: "Assigned Test" },
               ]
-                .filter(type => !(examCategory === "ssc-cgl" && type.id === "ncert"))
                 .map(type => (
                 <button
                   key={type.id}

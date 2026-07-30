@@ -12,10 +12,10 @@ export function AttemptClassificationCard({ attemptClassification }: AttemptClas
   return (
     <SectionCard
       title={
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-center gap-2">
           <RiPieChartLine size={18} className="text-primary-01" />
-          <span>Attempt Classification</span>
-        </div>
+          Attempt Classification
+        </span>
       }
       subtitle="Quality of every attempt: Perfect, Overtime, Wasted, or Confused."
       padding="large"

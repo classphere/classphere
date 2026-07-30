@@ -25,7 +25,6 @@ const EXAMS = [
   { code: "jee-main", label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug", label: "NEET-UG" },
-  { code: "ssc-cgl", label: "SSC CGL" },
 ];
 
 const TEST_TYPES = [
@@ -42,7 +41,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main": ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug": ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
-  "ssc-cgl": ["Quantitative Aptitude", "General Intelligence & Reasoning", "English Language", "General Awareness"],
 };
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -103,9 +101,6 @@ export default function UploadQuestionsPage() {
       // Reset subject when exam changes
       if (key === "exam") {
         next.subject = "";
-        if (value === "ssc-cgl" && next.test_type === "ncert") {
-          next.test_type = "chapter-wise";
-        }
       }
       return next;
     });
@@ -308,7 +303,7 @@ export default function UploadQuestionsPage() {
                 <div className="flex flex-col gap-2">
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
                   <div className="flex flex-col gap-3">
-                    {TEST_TYPES.filter(t => !(form.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
+                    {TEST_TYPES.map(t => (
                       <button
                         key={t.code}
                         onClick={() => setField("test_type", t.code)}

@@ -38,6 +38,13 @@ export default function TestPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [meta, setMeta] = useState<TestMeta | null>(null);
   const [loading, setLoading] = useState(true);
+  // Kept separate from `loading`: that flag renders the "Preparing your test"
+  // skeleton, which is the wrong thing to say while a finished test is being
+  // submitted. Both still freeze the timer and proctoring.
+  const [submitting, setSubmitting] = useState(false);
+  // Guards against a double submit from the timer, proctor and modal paths all
+  // racing. A ref applies synchronously; state would not settle until re-render.
+  const submittingRef = useRef(false);
   const [error, setError] = useState<string | null>(null);
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
@@ -253,8 +260,10 @@ export default function TestPage() {
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
-    // Guard: never submit if questions haven't loaded yet
-    if (questions.length === 0 || !attemptId) return;
+    // Guard: never submit if questions haven't loaded yet, and never submit
+    // twice — the timer, proctor and modal paths can all fire this.
+    if (questions.length === 0 || !attemptId || submittingRef.current) return;
+    submittingRef.current = true;
 
     // Flush the time for the currently active question
     const now = Date.now();
@@ -265,7 +274,7 @@ export default function TestPage() {
       currentQuestionEntryTime.current = now;
     }
 
-    setLoading(true);
+    setSubmitting(true);
     try {
       const payload = { answers: buildAttemptAnswers() };
 
@@ -281,30 +290,32 @@ export default function TestPage() {
         router.push(`/results/${data.data.attempt_id}`);
       } else {
         alert("Failed to submit: " + data.message);
-        setLoading(false);
+        submittingRef.current = false;
+        setSubmitting(false);
       }
     } catch (err) {
       console.error(err);
       alert("Submission error: " + (err instanceof Error ? err.message : String(err)));
-      setLoading(false);
+      submittingRef.current = false;
+      setSubmitting(false);
     }
   }, [attemptId, buildAttemptAnswers, questions.length, router, session?.access_token]);
 
   useEffect(() => {
-    if (timeLeft === null || timeLeft <= 0 || loading) return;
+    if (timeLeft === null || timeLeft <= 0 || loading || submitting) return;
     const t = setTimeout(() => setTimeLeft((s) => (s !== null ? s - 1 : null)), 1000);
     return () => clearTimeout(t);
-  }, [timeLeft, loading]);
+  }, [timeLeft, loading, submitting]);
 
   useEffect(() => {
-    if (!loading && timeLeft === 0 && questions.length > 0) {
+    if (!loading && !submitting && timeLeft === 0 && questions.length > 0) {
       handleSubmit();
     }
-  }, [timeLeft, loading, questions.length, handleSubmit]);
+  }, [timeLeft, loading, submitting, questions.length, handleSubmit]);
 
   // ── Anti-Cheat Tab-Switch / Focus Proctoring Listener ────────────────────────
   useEffect(() => {
-    if (loading || !attemptId || showSubmitModal || requestedTestMode === "practice") return;
+    if (loading || submitting || !attemptId || showSubmitModal || requestedTestMode === "practice") return;
 
     const handleFocusLoss = () => {
       setTabSwitchCount((prev) => {
@@ -334,7 +345,7 @@ export default function TestPage() {
       window.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("blur", handleFocusLoss);
     };
-  }, [loading, attemptId, showSubmitModal, requestedTestMode, handleSubmit]);
+  }, [loading, submitting, attemptId, showSubmitModal, requestedTestMode, handleSubmit]);
 
   // Proctor countdown timer
   useEffect(() => {
@@ -471,6 +482,21 @@ export default function TestPage() {
           <p className="text-body-2 font-semibold">Preparing your test…</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
+  // Submitting covers the modal path and the automatic ones (time expiry,
+  // proctor violation) where no modal is open to convey that anything is
+  // happening. Deliberately not the "Preparing your test" skeleton above.
+  if (submitting) {
+    return (
+      <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-b-surface1 px-6 text-center">
+        <RiLoader4Line size={28} className="animate-spin text-primary-01" />
+        <div>
+          <p className="text-body-2 font-semibold text-t-primary">Submitting your test</p>
+          <p className="mt-1 text-caption text-t-secondary">Saving your answers — don’t close this page.</p>
+        </div>
       </div>
     );
   }

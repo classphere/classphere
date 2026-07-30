@@ -18,7 +18,6 @@ const EXAMS = [
   { code: "jee-main",     label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug",      label: "NEET-UG" },
-  { code: "ssc-cgl",      label: "SSC CGL" },
 ];
 
 const TEST_TYPES = [
@@ -33,7 +32,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":     ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug":      ["Physics", "Chemistry", "Biology"],
-  "ssc-cgl":      ["Quantitative Aptitude", "General Intelligence & Reasoning", "English Language", "General Awareness"],
 };
 
 interface FormState {
