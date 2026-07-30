@@ -384,7 +384,7 @@ export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<
 /**
  * GET /api/v1/questions/tests
  * Authenticated — Returns available test papers grouped by test_type.
- * Query params: exam (jee-main|neet-ug|ssc-cgl), type (chapter-wise|mock-test|pyq)
+ * Query params: exam (jee-main|neet-ug), type (chapter-wise|mock-test|pyq)
  */
 export const listTests = async (req: Request, res: Response): Promise<void> => {
   try {

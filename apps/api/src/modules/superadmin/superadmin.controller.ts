@@ -589,7 +589,6 @@ export const updatePlatformConfig = async (req: Request, res: Response): Promise
     const allowedKeys = new Set([
       "maintenance_mode",
       "deterministic_engine",
-      "ssc_pacing",
       "custom_domains_enabled",
       "forum_moderation_enabled",
       "max_concurrent_users",
@@ -824,13 +823,11 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
     const jeeMainCount = examCount("jee-main");
     const jeeAdvCount = examCount("jee-advanced");
     const neetCount = examCount("neet-ug");
-    const sscCount = examCount("ssc-cgl");
 
     const examBreakdown = [
       { exam: "JEE Main", tests: jeeMainCount, pct: percent(jeeMainCount), color: "from-[#00A656] to-[#00E576]", shadow: "shadow-[0px_2px_12px_rgba(0,181,18,0.4)]" },
       { exam: "JEE Advanced", tests: jeeAdvCount, pct: percent(jeeAdvCount), color: "from-[#2A85FF] to-[#60A5FA]", shadow: "shadow-[0px_2px_12px_rgba(42,133,255,0.4)]" },
       { exam: "NEET", tests: neetCount, pct: percent(neetCount), color: "from-[#FFD60A] to-[#FF9F0A]", shadow: "shadow-[0px_2px_12px_rgba(255,214,10,0.4)]" },
-      { exam: "SSC / Other", tests: sscCount, pct: percent(sscCount), color: "from-[#8F5BFF] to-[#A78BFA]", shadow: "shadow-[0px_2px_12px_rgba(143,91,255,0.4)]" },
     ];
 
     const topInstitutes = [...(institutesList ?? [])]
