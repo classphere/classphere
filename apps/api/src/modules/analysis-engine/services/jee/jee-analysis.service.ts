@@ -4,6 +4,7 @@ import { classifyMistake } from "./jee-mistake-classifier";
 import { computeTopicAccuracy } from "./jee-topic-accuracy";
 import { calculateFreeMarks } from "./jee-free-marks";
 import { db } from "../db.service";
+import { recordAttemptForRevision } from "../../../revision/topic-review.service";
 import { detectAllPatterns } from "./jee-error-patterns";
 import { analyzeSkips } from "./jee-skip-analysis";
 import { generateStudyPlan } from "./jee-study-plan";
@@ -62,6 +63,11 @@ export async function analyzeJeeAttempt(attemptId: string, hasTimingData = true)
     db.upsertAnalysis(attemptId, attempt.student_id, attempt.exam_code ?? "jee-main", result),
     db.saveAnswerClassifications(attemptId, classified),
     db.persistStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "jee-main", currentProfileEntries),
+    // Sitting a test counts as revision: seed unseen topics and advance ones
+    // already scheduled. Best-effort — a scheduling failure must never
+    // invalidate an analysis that is otherwise complete.
+    recordAttemptForRevision(attempt.student_id, attempt.exam_code ?? "jee-main", topicStats)
+      .catch((error) => console.error("[jee-analysis] revision scheduling failed:", error)),
   ]);
 
   return result;

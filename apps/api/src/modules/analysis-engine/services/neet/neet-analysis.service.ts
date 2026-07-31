@@ -4,6 +4,7 @@ import { classifyMistake } from "./neet-mistake-classifier";
 import { computeTopicAccuracy } from "./neet-topic-accuracy";
 import { calculateFreeMarks } from "./neet-free-marks";
 import { db } from "../db.service";
+import { recordAttemptForRevision } from "../../../revision/topic-review.service";
 import { detectAllPatterns } from "./neet-error-patterns";
 import { analyzeSkips } from "./neet-skip-analysis";
 import { generateStudyPlan } from "./neet-study-plan";
@@ -62,6 +63,11 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
     db.upsertAnalysis(attemptId, attempt.student_id, attempt.exam_code ?? "neet", result),
     db.saveAnswerClassifications(attemptId, classified),
     db.persistStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "neet", currentProfileEntries),
+    // Sitting a test counts as revision: seed unseen topics and advance ones
+    // already scheduled. Best-effort — a scheduling failure must never
+    // invalidate an analysis that is otherwise complete.
+    recordAttemptForRevision(attempt.student_id, attempt.exam_code ?? "neet", topicStats)
+      .catch((error) => console.error("[neet-analysis] revision scheduling failed:", error)),
   ]);
 
   return result;
