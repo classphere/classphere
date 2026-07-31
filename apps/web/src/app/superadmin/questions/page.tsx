@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiSearchLine, 
   RiFilter3Line, 
@@ -28,10 +30,7 @@ export default function QuestionBankPage() {
   const { session } = useAuth();
   const token = session?.access_token;
 
-  const [questions, setQuestions] = useState<any[]>([]);
-  const [total, setTotal] = useState(0);
-  const [allFilteredIds, setAllFilteredIds] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [page, setPage] = useState(1);
   const [subject, setSubject] = useState("");
   const [search, setSearch] = useState("");
@@ -51,43 +50,37 @@ export default function QuestionBankPage() {
   });
   const [saving, setSaving] = useState(false);
 
-  const fetchQuestions = useCallback(async () => {
-    if (!token) return;
-    setLoading(true);
-    try {
-      const qs = new URLSearchParams();
-      if (examCategory !== "all") qs.set("exam", examCategory);
-      if (testType !== "all") qs.set("type", testType);
+  // Only exam and type are server-side filters. Subject, search and paging are
+  // applied below over the response we already hold — previously all six were
+  // in the fetch dependencies, so every keystroke in the search box refetched
+  // the entire paper list.
+  const listPath = (() => {
+    const qs = new URLSearchParams();
+    if (examCategory !== "all") qs.set("exam", examCategory);
+    if (testType !== "all") qs.set("type", testType);
+    return `/api/v1/questions/tests?${qs.toString()}`;
+  })();
+  const { data: listData, isPending: loading } = useApiQuery<{ papers: any[] }>(listPath);
+  const fetchQuestions = () => queryClient.invalidateQueries({ queryKey: [listPath] });
 
-      const res = await apiClient.get(`/api/v1/questions/tests?${qs.toString()}`, token);
-      if (res.success) {
-        let qs2 = res.data.papers ?? [];
-        if (subject) {
-          qs2 = qs2.filter((item: any) => item.subject === subject);
-        }
-        if (search) {
-          const q = search.toLowerCase();
-          qs2 = qs2.filter((item: any) =>
-            (item.subject ?? "").toLowerCase().includes(q) ||
-            (item.chapter ?? "").toLowerCase().includes(q) ||
-            (item.topic ?? "").toLowerCase().includes(q) ||
-            (item.title ?? "").toLowerCase().includes(q) ||
-            (item.id ?? "").toLowerCase().includes(q)
-          );
-        }
-        setTotal(qs2.length);
-        setAllFilteredIds(qs2.map((item: any) => item.id));
-        const startIndex = (page - 1) * LIMIT;
-        setQuestions(qs2.slice(startIndex, startIndex + LIMIT));
-      }
-    } catch (e) {
-      console.error("[QuestionBank]", e);
-    } finally {
-      setLoading(false);
+  const filteredPapers = (() => {
+    let rows = listData?.papers ?? [];
+    if (subject) rows = rows.filter((item: any) => item.subject === subject);
+    if (search) {
+      const q = search.toLowerCase();
+      rows = rows.filter((item: any) =>
+        (item.subject ?? "").toLowerCase().includes(q) ||
+        (item.chapter ?? "").toLowerCase().includes(q) ||
+        (item.topic ?? "").toLowerCase().includes(q) ||
+        (item.title ?? "").toLowerCase().includes(q) ||
+        (item.id ?? "").toLowerCase().includes(q)
+      );
     }
-  }, [token, page, subject, search, examCategory, testType]);
-
-  useEffect(() => { fetchQuestions(); }, [fetchQuestions]);
+    return rows;
+  })();
+  const total = filteredPapers.length;
+  const allFilteredIds = filteredPapers.map((item: any) => item.id);
+  const questions = filteredPapers.slice((page - 1) * LIMIT, (page - 1) * LIMIT + LIMIT);
 
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to permanently delete this test?")) return;
@@ -125,7 +118,6 @@ export default function QuestionBankPage() {
   const handleBulkDelete = async () => {
     if (!confirm(`Are you sure you want to permanently delete ${selectedIds.size} selected tests?`)) return;
     if (!token) return;
-    setLoading(true);
     try {
       await apiClient.deleteWithBody<{ success: boolean }>(
         "/api/v1/tests/bulk/global",
@@ -136,8 +128,6 @@ export default function QuestionBankPage() {
       await fetchQuestions();
     } catch (err: any) {
       alert("Error deleting tests: " + (err.message ?? ""));
-    } finally {
-      setLoading(false);
     }
   };
 

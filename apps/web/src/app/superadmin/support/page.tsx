@@ -14,16 +14,19 @@ import {
   RiLoader4Line
 } from "@remixicon/react";
 
-import { useEffect, useState, useCallback } from "react";
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useAuth } from "@/lib/auth-context";
 
 export default function SupportPage() {
   const { session } = useAuth();
   const token = session?.access_token;
 
-  const [tickets, setTickets] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
+  const TICKETS_PATH = "/api/v1/superadmin/tickets";
+  const { data: tickets = [], isPending: loading } = useApiQuery<any[]>(TICKETS_PATH);
 
   // Filters
   const [search, setSearch] = useState("");
@@ -32,55 +35,26 @@ export default function SupportPage() {
 
   // Modal / Conversation details
   const [selectedTicket, setSelectedTicket] = useState<any | null>(null);
-  const [ticketReplies, setTicketReplies] = useState<any[]>([]);
-  const [loadingReplies, setLoadingReplies] = useState(false);
+  // Replies are per-ticket and disabled until one is open, so opening a ticket
+  // you have already looked at renders its thread straight from cache.
+  const repliesPath = selectedTicket ? `/api/v1/superadmin/tickets/${selectedTicket.id}/replies` : null;
+  const { data: ticketReplies = [], isLoading: loadingReplies } = useApiQuery<any[]>(repliesPath);
   const [replyMessage, setReplyMessage] = useState("");
   const [submittingReply, setSubmittingReply] = useState(false);
   const [ticketStatus, setTicketStatus] = useState("");
   const [ticketPriority, setTicketPriority] = useState("");
 
-  const fetchTickets = useCallback(async () => {
-    if (!token) return;
-    try {
-      const res = await apiClient.get("/api/v1/superadmin/tickets", token);
-      if (res.success) {
-        setTickets(res.data);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  }, [token]);
-
-  useEffect(() => {
-    fetchTickets();
-  }, [fetchTickets]);
-
-  const loadReplies = async (ticketId: string) => {
-    if (!token) return;
-    setLoadingReplies(true);
-    try {
-      const res = await apiClient.get<{ success: boolean; data: any[] }>(
-        `/api/v1/superadmin/tickets/${ticketId}/replies`,
-        token
-      );
-      if (res.success) {
-        setTicketReplies(res.data);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoadingReplies(false);
-    }
-  };
+  // Replying or changing status alters the ticket row, so the list is dropped
+  // rather than patched — status and priority are derived server-side.
+  const fetchTickets = () => queryClient.invalidateQueries({ queryKey: [TICKETS_PATH] });
+  const loadReplies = (ticketId: string) =>
+    queryClient.invalidateQueries({ queryKey: [`/api/v1/superadmin/tickets/${ticketId}/replies`] });
 
   const handleOpenTicketDetails = (ticket: any) => {
     setSelectedTicket(ticket);
     setTicketStatus(ticket.status);
     setTicketPriority(ticket.priority);
     setReplyMessage("");
-    loadReplies(ticket.id);
   };
 
   const handleUpdateTicket = async (status: string, priority: string) => {

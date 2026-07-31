@@ -5,25 +5,26 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
 import { useAuth } from "@/lib/auth-context";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { detectExamCode } from "@/lib/exam-config";
 
 export default function GlobalPaperReviewPage() {
   const params = useParams<{ id: string }>();
   const { session } = useAuth();
-  const [data, setData] = useState<any>(null);
+  const queryClient = useQueryClient();
   const [index, setIndex] = useState(0);
   const [message, setMessage] = useState("");
 
-  const load = async () => {
-    if (!session?.access_token || !params.id) return;
-    const result: any = await apiClient.get(`/api/v1/tests/${params.id}`, session.access_token);
-    setData(result.data);
-  };
+  const PAPER_PATH = params.id ? `/api/v1/tests/${params.id}` : null;
+  const { data, error: loadError } = useApiQuery<any>(PAPER_PATH);
+  // Edits here rewrite the paper, so the cached copy is dropped after a save.
+  const load = () => queryClient.invalidateQueries({ queryKey: [PAPER_PATH] });
 
   useEffect(() => {
-    load().catch((error) => setMessage(error.message));
-  }, [session?.access_token, params.id]);
+    if (loadError) setMessage(loadError.message);
+  }, [loadError]);
 
   const questions: any[] = data?.questions ?? [];
   const question = useMemo(() => questions[index], [data, index]);

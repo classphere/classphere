@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiErrorWarningLine, 
   RiSave3Line,
@@ -32,28 +34,31 @@ export default function ConfigurationPage() {
   const [maxBulkUploadSize, setMaxBulkUploadSize] = useState(500);
   const [sessionTimeout, setSessionTimeout] = useState(120);
 
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   // Exam Calendar
   type CalRow = { exam_code: string; exam_label: string; suggested_ends_at: string; notes: string | null };
-  const [calendar, setCalendar] = useState<CalRow[]>([]);
   const [calEdits, setCalEdits] = useState<Record<string, { suggested_ends_at: string; notes: string }>>({});
   const [calSaving, setCalSaving] = useState<Record<string, boolean>>({});
   const [calMsg, setCalMsg] = useState<Record<string, string>>({});
 
-  const loadCalendar = () => {
-    apiClient.get<{ success: boolean; data: { calendar: CalRow[] } }>("/api/v1/batches/exam-calendar")
-      .then((res) => {
-        if (res.success) {
-          setCalendar(res.data.calendar);
-          const edits: Record<string, { suggested_ends_at: string; notes: string }> = {};
-          res.data.calendar.forEach((row) => { edits[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" }; });
-          setCalEdits(edits);
-        }
-      }).catch(() => {});
-  };
+  const CALENDAR_PATH = "/api/v1/batches/exam-calendar";
+  const CONFIG_PATH = "/api/v1/superadmin/config";
+  const { data: calendarData } = useApiQuery<{ calendar: CalRow[] }>(CALENDAR_PATH);
+  const calendar = calendarData?.calendar ?? [];
+  const loadCalendar = () => queryClient.invalidateQueries({ queryKey: [CALENDAR_PATH] });
+
+  // Each row is editable, so server values seed the edit buffer when they land
+  // and the buffer owns the fields from then on.
+  const calendarRows = calendarData?.calendar;
+  useEffect(() => {
+    if (!calendarRows) return;
+    const edits: Record<string, { suggested_ends_at: string; notes: string }> = {};
+    calendarRows.forEach((row) => { edits[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" }; });
+    setCalEdits(edits);
+  }, [calendarRows]);
 
   const saveCalRow = async (examCode: string) => {
     if (!token) return;
@@ -71,30 +76,19 @@ export default function ConfigurationPage() {
     finally { setCalSaving((s) => ({ ...s, [examCode]: false })); }
   };
 
-  // Load config on mount
+  const { data: config, isPending: loading } = useApiQuery<Record<string, any>>(CONFIG_PATH);
   useEffect(() => {
-    if (!token) return;
-    setLoading(true);
-    apiClient.get("/api/v1/superadmin/config", token)
-      .then(res => {
-        if (res.success && res.data) {
-          const cfg = res.data;
-          if (cfg.maintenance_mode !== undefined) setMaintenance(cfg.maintenance_mode);
-          if (cfg.deterministic_engine !== undefined) setDeterministicEngine(cfg.deterministic_engine);
-          if (cfg.custom_domains_enabled !== undefined) setCustomDomain(cfg.custom_domains_enabled);
-          if (cfg.forum_moderation_enabled !== undefined) setForumModeration(cfg.forum_moderation_enabled);
-          if (cfg.max_concurrent_users !== undefined) setMaxConcurrentUsers(Number(cfg.max_concurrent_users));
-          if (cfg.omr_ingestion_rate !== undefined) setOmrIngestionRate(Number(cfg.omr_ingestion_rate));
-          if (cfg.max_bulk_upload_size !== undefined) setMaxBulkUploadSize(Number(cfg.max_bulk_upload_size));
-          if (cfg.session_timeout !== undefined) setSessionTimeout(Number(cfg.session_timeout));
-        }
-      })
-      .catch(console.error)
-      .finally(() => {
-        setLoading(false);
-        loadCalendar();
-      });
-  }, [token]);
+    if (!config) return;
+    const cfg = config;
+    if (cfg.maintenance_mode !== undefined) setMaintenance(cfg.maintenance_mode);
+    if (cfg.deterministic_engine !== undefined) setDeterministicEngine(cfg.deterministic_engine);
+    if (cfg.custom_domains_enabled !== undefined) setCustomDomain(cfg.custom_domains_enabled);
+    if (cfg.forum_moderation_enabled !== undefined) setForumModeration(cfg.forum_moderation_enabled);
+    if (cfg.max_concurrent_users !== undefined) setMaxConcurrentUsers(Number(cfg.max_concurrent_users));
+    if (cfg.omr_ingestion_rate !== undefined) setOmrIngestionRate(Number(cfg.omr_ingestion_rate));
+    if (cfg.max_bulk_upload_size !== undefined) setMaxBulkUploadSize(Number(cfg.max_bulk_upload_size));
+    if (cfg.session_timeout !== undefined) setSessionTimeout(Number(cfg.session_timeout));
+  }, [config]);
 
   const handleSave = async () => {
     setMessage("These controls are disabled until each setting has a real runtime implementation. No configuration was saved.");

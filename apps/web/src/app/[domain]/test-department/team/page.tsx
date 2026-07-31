@@ -1,10 +1,12 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type TeamMember = { user_id: string; title: string | null; access_level?: "head" | "editor"; users?: { name?: string; email?: string; role?: string } | Array<{ name?: string; email?: string; role?: string }> };
 const memberProfile = (member: TeamMember) => Array.isArray(member.users) ? member.users[0] : member.users;
@@ -12,7 +14,7 @@ const memberProfile = (member: TeamMember) => Array.isArray(member.users) ? memb
 export default function TestDepartmentTeamPage() {
   const { session, user } = useAuth();
   const router = useRouter();
-  const [members, setMembers] = useState<TeamMember[]>([]);
+  const queryClient = useQueryClient();
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
   const [removingId, setRemovingId] = useState<string | null>(null);
@@ -20,16 +22,25 @@ export default function TestDepartmentTeamPage() {
   const isHead = user?.role === "test_department_head";
   const [form, setForm] = useState({ name: "", email: "", title: "", password: "", access_level: isInstituteAdmin ? "head" : "editor" });
 
-  const load = async () => {
-    if (!session?.access_token) return;
-    const response: any = await apiClient.get("/api/v1/test-department/members", session.access_token);
-    setMembers(response.data?.members ?? []);
-  };
+  // Only fetched for roles allowed to see the team; everyone else is redirected
+  // below, and a null path keeps the request from firing on the way out.
+  const MEMBERS_PATH = "/api/v1/test-department/members";
+  const allowed = isInstituteAdmin || isHead;
+  const { data: memberData, error: memberError } = useApiQuery<{ members: TeamMember[] }>(
+    allowed ? MEMBERS_PATH : null,
+  );
+  const members = memberData?.members ?? [];
+  // Adding or removing an account changes this list, so both drop the cache.
+  const load = () => queryClient.invalidateQueries({ queryKey: [MEMBERS_PATH] });
+
   useEffect(() => {
-    if (!user) return;
-    if (!isInstituteAdmin && !isHead) { router.replace(user?.role === "test_department_member" ? "/test-department" : "/student/dashboard"); return; }
-    void load().catch((error) => setMessage(error.message));
-  }, [user, session?.access_token]);
+    if (!user || allowed) return;
+    router.replace(user.role === "test_department_member" ? "/test-department" : "/student/dashboard");
+  }, [user, allowed, router]);
+
+  useEffect(() => {
+    if (memberError) setMessage(memberError.message);
+  }, [memberError]);
 
   const create = async (event: FormEvent) => {
     event.preventDefault(); if (!session?.access_token) return;
