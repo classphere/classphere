@@ -21,6 +21,7 @@ import {
   RiLifebuoyLine,
   RiFileList3Line,
   RiBookmarkLine,
+  RiRepeat2Line,
   RiFileListLine,
   RiSunLine,
   RiMoonLine,
@@ -114,6 +115,7 @@ export default function Sidebar() {
     { label: "My DPPs",      href: "/student/assignments",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/student/assignments") },
     { label: "Test History", href: "/student/history",         icon: <RiBookOpenLine size={18} />,   active: cleanPath.startsWith("/student/history") },
     { label: "Mistake Diary",href: "/student/mistakes",        icon: <RiBookmarkLine size={18} />,   active: cleanPath.startsWith("/student/mistakes") },
+    { label: "Daily Revision", href: "/student/revision/daily", icon: <RiRepeat2Line size={18} />, active: cleanPath.startsWith("/student/revision") },
     { label: "Analytics",   href: "/student/analytics",       icon: <RiLineChartLine size={18} />,  active: cleanPath.startsWith("/student/analytics") },
     { label: "Leaderboard", href: "/student/leaderboard",     icon: <RiTrophyLine size={18} />,     active: cleanPath.startsWith("/student/leaderboard") },
   ];
@@ -176,7 +178,7 @@ export default function Sidebar() {
     <aside className="hidden lg:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-b-surface1 border-r border-transparent px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
 
       {/* ── Top: Logo ── */}
-      <div className="flex flex-col gap-6 w-full">
+      <div className="flex flex-col gap-3 w-full">
         <div className="pl-1">
           <Link href={isSuperAdmin ? "/" : isTestDepartment ? "/test-department" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
             <Image
@@ -255,7 +257,7 @@ export default function Sidebar() {
       </div>
 
       {/* ── Bottom: Profile + Actions ── */}
-      <div className="mt-auto flex flex-col gap-5 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
+      <div className="mt-auto flex flex-col gap-3 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
         <Link
           href="/profile"
           className="flex items-center gap-3 w-full p-2.5 rounded-[10px] bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
