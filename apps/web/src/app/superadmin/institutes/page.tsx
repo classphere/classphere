@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
@@ -76,6 +76,21 @@ export default function InstitutesPage() {
   const { stats, loading: statsLoading, refetch: refetchStats } = useSuperadminStats();
 
   const [activeDropdownId, setActiveDropdownId] = useState<string | null>(null);
+
+  // Dismiss the actions menu on an outside click or Escape. Without this it
+  // stays open until the same button is pressed again, so it lingers over the
+  // page while the user works elsewhere.
+  useEffect(() => {
+    if (!activeDropdownId) return;
+    const close = () => setActiveDropdownId(null);
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") close(); };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", close);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [activeDropdownId]);
 
   // Modal state
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -232,7 +247,7 @@ export default function InstitutesPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
 
         {/* KPI Cards */}
-        <MetricGrid cols={4} className="mb-8">
+        <MetricGrid cols={4} className="mb-3">
           <MetricCard
             label="Total Institutes"
             value={statsLoading ? "—" : (stats?.totalInstitutes ?? 0)}
@@ -301,7 +316,7 @@ export default function InstitutesPage() {
 
             {/* Loading state */}
             {listLoading && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiLoader4Line size={24} className="animate-spin text-t-secondary" />
                 <span className="text-sm">Loading institutes...</span>
               </div>
@@ -309,7 +324,7 @@ export default function InstitutesPage() {
 
             {/* Error state */}
             {!listLoading && listError && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiErrorWarningLine size={24} className="text-primary-03" />
                 <span className="text-sm">Failed to load institutes: {listError}</span>
                 <button onClick={refetch} className="text-sm font-semibold text-t-primary underline">Try again</button>
@@ -318,7 +333,7 @@ export default function InstitutesPage() {
 
             {/* Empty state */}
             {!listLoading && !listError && filteredInstitutes.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiBuilding4Line size={28} className="text-t-secondary opacity-40" />
                 <p className="text-sm font-semibold text-t-primary">
                   {search ? "No institutes match your search" : "No institutes yet"}
@@ -331,9 +346,15 @@ export default function InstitutesPage() {
 
             {/* Data rows */}
             {!listLoading && !listError && filteredInstitutes.map((institute) => (
+              /* No overflow-hidden: it clipped the actions dropdown to this row's
+                 80px height. The scale-on-hover transform also creates a stacking
+                 context, so the open row is lifted above its siblings — otherwise
+                 the menu renders behind the rows below it. */
               <div
                 key={institute.id}
-                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]"
+                className={`group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] transition-all cursor-pointer h-[64px] sm:h-[68px] ${
+                  activeDropdownId === institute.id ? "z-30" : "hover:scale-[1.005]"
+                }`}
               >
                 {/* Institute Name & Email */}
                 <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0">
@@ -436,7 +457,7 @@ export default function InstitutesPage() {
         maxWidth="max-w-[500px]"
         scrollable
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
 
           {/* Feedback banner inside modal */}
           {feedback && <FeedbackBanner type={feedback.type} message={feedback.message} />}
@@ -668,7 +689,7 @@ export default function InstitutesPage() {
         maxWidth="max-w-[480px]"
       >
         {credentials && (
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
 
             {/* Success header */}
             <div className="flex items-start gap-3 px-4 py-3 rounded-[10px] bg-[rgba(0,166,86,0.07)] border border-[rgba(0,166,86,0.18)]">
