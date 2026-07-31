@@ -47,23 +47,21 @@ export const getDailyRevision = async (req: Request, res: Response): Promise<voi
       return;
     }
 
-    // Exclude anything already answered, so revision never repeats a question.
-    const { data: seenRows } = await supabaseAdmin
-      .from("attempt_answers")
-      .select("question_id, attempts!inner(student_id)")
-      .eq("attempts.student_id", studentId);
-    const seen = new Set((seenRows ?? []).map((row: any) => row.question_id));
-
     const topics = await Promise.all(
       due.map(async (review: TopicReviewRow) => {
         // Prefer an exact topic match, widening to the chapter when the topic
         // is exhausted — a student should never get an empty revision card.
-        let questions = await fetchQuestions(review, seen, true);
-        if (questions.length < QUESTIONS_PER_TOPIC) {
-          const extra = await fetchQuestions(review, seen, false);
+        let questions = await fetchQuestions(review, true);
+        if (questions.length < QUESTIONS_PER_TOPIC * 2) {
+          const extra = await fetchQuestions(review, false);
           const have = new Set(questions.map((q: any) => q.id));
           questions = [...questions, ...extra.filter((q: any) => !have.has(q.id))];
         }
+        // Filter out already-answered questions by asking only about THESE
+        // candidates. Fetching the student's whole answer history instead was
+        // both unbounded and silently truncated at PostgREST's 1000-row cap,
+        // so revision quietly began repeating questions.
+        questions = await excludeSeen(studentId, questions);
         const overdueDays = Math.max(
           0,
           Math.floor((Date.now() - new Date(review.due_at).getTime()) / 86400000),
@@ -93,17 +91,39 @@ export const getDailyRevision = async (req: Request, res: Response): Promise<voi
   }
 };
 
-async function fetchQuestions(review: TopicReviewRow, seen: Set<string>, exactTopic: boolean) {
+/**
+ * Drop questions this student has already answered.
+ *
+ * Scoped to the candidate ids rather than the student's full history, so the
+ * query size is bounded by what we're about to show (tens of rows) instead of
+ * by how long they've been preparing (tens of thousands).
+ */
+async function excludeSeen<T extends { id: string }>(studentId: string, candidates: T[]): Promise<T[]> {
+  if (!candidates.length) return candidates;
+  const { data, error } = await supabaseAdmin
+    .from("attempt_answers")
+    .select("question_id, attempts!inner(student_id)")
+    .eq("attempts.student_id", studentId)
+    .in("question_id", candidates.map((q) => q.id));
+  if (error) {
+    console.error("[daily-revision] seen lookup failed:", error.message);
+    return candidates; // showing a repeat beats showing nothing
+  }
+  const seen = new Set((data ?? []).map((row: any) => row.question_id));
+  return candidates.filter((q) => !seen.has(q.id));
+}
+
+async function fetchQuestions(review: TopicReviewRow, exactTopic: boolean) {
   let query = supabaseAdmin
     .from("questions")
     .select(QUESTION_FIELDS)
     .eq("is_active", true)
     .eq("chapter", review.chapter)
-    .limit(QUESTIONS_PER_TOPIC * 4);
+    .limit(QUESTIONS_PER_TOPIC * 6);
   if (exactTopic && review.topic) query = query.eq("topic", review.topic);
 
   const { data } = await query;
-  return (data ?? []).filter((q: any) => !seen.has(q.id));
+  return (data ?? []) as Array<{ id: string } & Record<string, unknown>>;
 }
 
 /**

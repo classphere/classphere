@@ -189,12 +189,33 @@ export const db = {
   },
 
   // ── Seen question IDs (for booster config de-duplication) ─────────────────
+  /**
+   * Question ids the student has already been served.
+   *
+   * PostgREST caps a response at 1000 rows, so the previous unbounded select
+   * silently truncated once a student passed ~1000 answered questions — a few
+   * months of serious preparation. Boosters and revision then began repeating
+   * questions with no error anywhere. This pages until the source is exhausted.
+   */
   getSeenQuestionIds: async (studentId: string, _examCode: string): Promise<string[]> => {
-    const { data } = await supabaseAdmin
-      .from("attempt_answers")
-      .select("question_id, attempts!inner(student_id)")
-      .eq("attempts.student_id", studentId);
-    return (data ?? []).map((r: any) => r.question_id);
+    const PAGE_SIZE = 1000;
+    const ids: string[] = [];
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data, error } = await supabaseAdmin
+        .from("attempt_answers")
+        .select("question_id, attempts!inner(student_id)")
+        .eq("attempts.student_id", studentId)
+        .range(from, from + PAGE_SIZE - 1);
+      if (error) {
+        console.error("[db.service] getSeenQuestionIds page failed:", error.message);
+        break;
+      }
+      const page = data ?? [];
+      for (const row of page) ids.push((row as any).question_id);
+      // A short page means we've reached the end.
+      if (page.length < PAGE_SIZE) break;
+    }
+    return ids;
   },
 
   // ── Upsert analysis result ─────────────────────────────────────────────────
