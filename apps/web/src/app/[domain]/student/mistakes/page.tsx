@@ -113,7 +113,7 @@ export default function MistakeDiary() {
 
       <PageWrapper>
         {/* Filters Row */}
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 mb-8 select-none">
+        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-4 mb-4 select-none">
           <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
           {/* Subject Filter Dropdown */}
@@ -152,7 +152,7 @@ export default function MistakeDiary() {
         {/* Content */}
         {loading ? (
           <SectionCard padding="none">
-            <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+            <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
               <RiLoader4Line size={22} className="animate-spin text-primary-01" />
               <span className="font-sans font-semibold text-[14px]">Loading your mistake diary...</span>
             </div>

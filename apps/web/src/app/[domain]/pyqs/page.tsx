@@ -148,7 +148,7 @@ export default function PYQsPage() {
         </MetricGrid>
 
         {/* Filters Row */}
-        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 md:p-8 rounded-[24px] bg-b-surface2 dark:bg-[#1C1C1C] border border-black/5 dark:border-white/5 select-none mb-8 shadow-depth">
+        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-3 p-6 md:p-8 rounded-[24px] bg-b-surface2 dark:bg-[#1C1C1C] border border-black/5 dark:border-white/5 select-none mb-3 shadow-depth">
 
           {/* Search Box */}
           <div className="relative flex-1 min-w-[240px]">
@@ -163,7 +163,7 @@ export default function PYQsPage() {
             />
           </div>
 
-          <div className="flex flex-row flex-wrap items-center gap-6">
+          <div className="flex flex-row flex-wrap items-center gap-3">
             <FilterGroup label="Exam" options={EXAMS} active={activeExam} onChange={setActiveExam} />
             <FilterGroup label="Year" options={YEARS} active={activeYear} onChange={setActiveYear} />
             <FilterGroup label="Difficulty" options={DIFFICULTIES} active={activeDiff} onChange={setActiveDiff} />
@@ -181,7 +181,7 @@ export default function PYQsPage() {
         </div>
 
         {/* Results Metadata Info */}
-        <div className="flex justify-between items-center mb-6 px-2 select-none border-b border-[#ebebeb] dark:border-[#282828] pb-4">
+        <div className="flex justify-between items-center mb-3 px-2 select-none border-b border-[#ebebeb] dark:border-[#282828] pb-4">
           <span className="text-[12px] font-sans text-t-secondary font-semibold uppercase tracking-wider">
             Showing <strong className="text-t-primary">{filtered.length}</strong> papers
           </span>
@@ -214,7 +214,7 @@ export default function PYQsPage() {
             />
           </SectionCard>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {filtered.map((paper) => (
               <PaperCard
                 key={paper.id}
@@ -305,7 +305,7 @@ function PaperCard({
         </div>
 
         {/* Meta specs row */}
-        <div className="flex flex-row flex-wrap items-center gap-4 mt-5 text-[12px] font-sans font-semibold text-t-secondary">
+        <div className="flex flex-row flex-wrap items-center gap-4 mt-3 text-[12px] font-sans font-semibold text-t-secondary">
           <span className="flex items-center gap-1.5">
             <RiQuestionLine size={16} />
             <span>{paper.questions} Questions</span>
@@ -322,7 +322,7 @@ function PaperCard({
       </div>
 
       {/* Footer row with simple difficulty badge and action button */}
-      <div className="flex justify-between items-center mt-5 pt-4 border-t border-[#ebebeb] dark:border-[#282828]">
+      <div className="flex justify-between items-center mt-3 pt-4 border-t border-[#ebebeb] dark:border-[#282828]">
         <span className="px-2.5 py-1 rounded-[6px] border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-secondary text-[10px] font-bold uppercase tracking-wider">
           {paper.difficulty}
         </span>

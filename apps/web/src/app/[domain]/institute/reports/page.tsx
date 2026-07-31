@@ -111,10 +111,10 @@ export default function ReportsPage() {
   }, [fetchStats]);
 
   return (
-    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
+    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-3 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
 
       {/* ── Top Navigation Row (Figma Style) ── */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center w-full gap-4 lg:gap-6 mb-2">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center w-full gap-4 lg:gap-3 mb-2">
         {/* Title */}
         <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
           Reports & Analytics
@@ -158,7 +158,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-6 gap-4">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-3 gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">Performance Analytics</h2>
           <p className="text-xs text-t-secondary dark:text-t-tertiary">Track general average test outcomes, monthly progress trends, and syllabus area coverage.</p>
@@ -222,7 +222,7 @@ export default function ReportsPage() {
           </MetricGrid>
 
           {/* Visual Chart Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-4 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 w-full mt-4 items-stretch">
             {/* Batch Performance Area Chart Card (ColSpan 2) */}
             <PerformanceChart
               title="Batch Performance Trend"

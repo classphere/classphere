@@ -149,7 +149,7 @@ export default function SupportPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
         
         {/* KPI Cards */}
-        <MetricGrid cols={3} className="mb-8">
+        <MetricGrid cols={3} className="mb-3">
           <MetricCard
             icon={<RiCustomerService2Fill size={20} />}
             label="Open Escalations"
@@ -233,12 +233,12 @@ export default function SupportPage() {
 
             {/* Data rows */}
             {loading ? (
-              <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+              <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
                 <RiLoader4Line size={22} className="animate-spin text-primary-01" />
                 <span className="font-sans font-semibold text-[14px]">Loading tickets...</span>
               </div>
             ) : filteredTickets.length === 0 ? (
-              <div className="py-16 text-center text-t-secondary font-sans text-sm">
+              <div className="py-10 text-center text-t-secondary font-sans text-sm">
                 No support tickets found.
               </div>
             ) : (
@@ -246,7 +246,7 @@ export default function SupportPage() {
                 <div
                   key={ticket.id}
                   onClick={() => handleOpenTicketDetails(ticket)}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px]"
+                  className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px]"
                 >
                   {/* ID & Institute */}
                   <div className="flex flex-col justify-center shrink-0 w-[100px] sm:w-[150px]">
@@ -321,7 +321,7 @@ export default function SupportPage() {
           title={`Ticket Detail: #${selectedTicket.id.split('-')[0]}`}
           maxWidth="max-w-[700px]"
         >
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             
             {/* Meta status modifiers */}
             <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-b-surface2 dark:bg-b-surface2/30 rounded-[12px] border border-s-stroke2/40">

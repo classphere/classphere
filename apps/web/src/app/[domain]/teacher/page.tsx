@@ -100,7 +100,7 @@ export default function TeacherDashboardPage() {
         </MetricGrid>
 
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
-        <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
+        <div className="mb-3 grid gap-3 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
           <SectionCard
@@ -116,7 +116,7 @@ export default function TeacherDashboardPage() {
             }
           >
 
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1 w-full">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1 w-full">
               {batches.length === 0 ? (
                 <div className="col-span-1 sm:col-span-2 flex flex-col items-center justify-center p-8 w-full text-center">
                   <p className="text-[14px] font-sans text-t-secondary">No batches assigned yet.</p>
@@ -256,7 +256,7 @@ export default function TeacherDashboardPage() {
             </div>
 
             {/* Footer / All Products Button */}
-            <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-6">
+            <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-3">
               <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-t-secondary hover:text-t-primary dark:hover:text-t-primary active:scale-98 cursor-pointer">
                 View All Flags
               </button>
@@ -281,7 +281,7 @@ export default function TeacherDashboardPage() {
         >
 
           {/* DPPs Grid Wrapper */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
             {recentDPPs.length === 0 ? (
               <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center p-8 w-full text-center">
                 <p className="text-[14px] font-sans text-t-secondary">No DPP activity yet.</p>

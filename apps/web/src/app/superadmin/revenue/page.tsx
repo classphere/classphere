@@ -40,7 +40,7 @@ export default function RevenuePage() {
   return (
     <>
       <Navbar title="Trials & Future Billing" subtitle="Billing is intentionally disabled while the platform operates on free trials." />
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-3 px-6 bg-transparent">
         
         {/* ── KPI Cards (Full Width) ── */}
         <div className="flex flex-col gap-4 w-full">
@@ -99,7 +99,7 @@ export default function RevenuePage() {
               </div>
             )}
             {transactions.map((txn, i) => (
-              <div key={txn.id} className="group/item relative flex flex-row items-center w-full p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]">
+              <div key={txn.id} className="group/item relative flex flex-row items-center w-full p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[64px] sm:h-[68px]">
                 
                 {/* ID & Institute */}
                 <div className="flex flex-col justify-center flex-1 min-w-0 md:flex-row md:items-center md:gap-4 md:flex-none md:w-[370px]">

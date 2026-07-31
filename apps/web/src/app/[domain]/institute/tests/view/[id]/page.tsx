@@ -250,9 +250,9 @@ export default function InstituteTestViewPage() {
             </div>
           </div>
         </header>
-        <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <main className="mx-auto grid w-full max-w-screen-2xl gap-3 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card min-w-0 p-5 md:p-7">
-            <div className="mb-5 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-2">
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
             </div>
@@ -263,7 +263,7 @@ export default function InstituteTestViewPage() {
             </div>
           </section>
           <aside className="card min-w-0 p-5 md:p-6">
-            <div className="mb-5 grid grid-cols-3 gap-3">
+            <div className="mb-3 grid grid-cols-3 gap-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
@@ -340,7 +340,7 @@ export default function InstituteTestViewPage() {
         formatTime={formatTime}
       />
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-3 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
         <QuestionContent
           question={q}
           current={current}

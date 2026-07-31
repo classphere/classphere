@@ -23,7 +23,7 @@ export function ProctorWarningModal({
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md animate-in fade-in duration-150 select-none">
       <div className="card w-full max-w-md p-6 text-center md:p-8 animate-in zoom-in-95 duration-150 bg-b-surface1 border-red-500/40 shadow-2xl">
-        <div className="mb-5 flex justify-center">
+        <div className="mb-3 flex justify-center">
           <div className="flex size-20 items-center justify-center rounded-full bg-red-500/10 text-red-500 border border-red-500/20 animate-pulse">
             {isFinalWarning ? (
               <RiShieldCrossLine size={44} />

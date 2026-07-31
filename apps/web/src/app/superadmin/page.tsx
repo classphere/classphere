@@ -132,10 +132,10 @@ export default function SuperAdminDashboardPage() {
         subtitle="Superadmin overview and system analytics." 
       />
       
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-3 px-6 bg-transparent">
 
         {/* ── Main Layout: All widgets ── */}
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col gap-3 w-full">
           
           {/* Top Row: Dashboard Overview (Full Width) */}
           <div className="flex flex-col gap-4 w-full">
@@ -190,7 +190,7 @@ export default function SuperAdminDashboardPage() {
           </div>
 
           {/* Middle Row: 2-column layout for Resources and Tickets */}
-          <div className="flex flex-col xl:flex-row items-start gap-6 w-full">
+          <div className="flex flex-col xl:flex-row items-start gap-3 w-full">
             
             {/* Left Column (System Resources) */}
             <SectionCard title="System Resources" className="flex-1 min-w-0">
@@ -273,7 +273,7 @@ export default function SuperAdminDashboardPage() {
                                   'bg-primary-01/10 text-primary-01 border-primary-01/20';
                 
                 return (
-                  <div key={log.id} className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
+                  <div key={log.id} className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
                     
                     <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0 h-full">
                       <div className={`flex items-center justify-center size-10 rounded-[10px] shrink-0 border ${statusClass}`}>
@@ -285,7 +285,7 @@ export default function SuperAdminDashboardPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row justify-center items-end sm:items-center gap-1 sm:gap-6 shrink-0 h-full">
+                    <div className="flex flex-col sm:flex-row justify-center items-end sm:items-center gap-1 sm:gap-3 shrink-0 h-full">
                       <span className="text-[11px] sm:text-[13px] font-medium text-t-tertiary">
                         {log.time}
                       </span>

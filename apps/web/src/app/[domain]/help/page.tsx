@@ -49,7 +49,7 @@ function HelpContent() {
   return (
     <>
       <Navbar title="Help & Support" subtitle="Documentation, FAQs, and contact pathways." />
-      <main className="mx-auto flex w-full max-w-[1000px] flex-col gap-10 px-6 pb-16 pt-6">
+      <main className="mx-auto flex w-full max-w-[1000px] flex-col gap-3 px-6 pb-16 pt-6">
 
         {/* Search Bar */}
         <div className="relative w-full max-w-[600px] mx-auto mb-4">
@@ -64,7 +64,7 @@ function HelpContent() {
         </div>
 
         {/* Support Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           
           <div className="group relative card flex flex-col p-8 card overflow-hidden cursor-pointer hover:border-t-primary dark:hover:border-t-primary transition-colors">
             
@@ -112,7 +112,7 @@ function HelpContent() {
 
         {/* FAQs */}
         <div className="mt-4">
-          <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">Frequently Asked Questions</h2>
           
           <div className="flex flex-col gap-4">
             {filteredFaqs.length > 0 ? (

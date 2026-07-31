@@ -18,8 +18,8 @@ export function ResultSummaryHeader({ analysis: a, totalQuestions, batchAvgScore
 
   return (
     <SectionCard className="select-none">
-      <div className="grid gap-6 min-w-0 xl:grid-cols-[minmax(0,1fr)_20rem]">
-        <div className="space-y-5">
+      <div className="grid gap-3 min-w-0 xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="space-y-3">
           <div>
             <p className="text-[12px] font-sans font-bold uppercase tracking-[0.24em] text-t-secondary">Test Results</p>
             {/* Scaled to the app's heading size. At 32px/black it dwarfed every

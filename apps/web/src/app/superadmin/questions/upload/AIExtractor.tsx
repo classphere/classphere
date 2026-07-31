@@ -323,17 +323,17 @@ export default function AIExtractor() {
   const subjects = form.exam ? EXAM_SUBJECTS[form.exam] ?? [] : [];
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-3 w-full">
       {/* ── Section 1: Extraction Settings ────────────────────────────────────── */}
       <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-        <div className="relative z-10 flex items-center gap-3 mb-6">
+        <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
             Extraction Settings
           </h2>
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
           {/* Exam Selection */}
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Exam *</label>
@@ -479,7 +479,7 @@ export default function AIExtractor() {
 
       {/* ── Section 2: PDF File Drag & Drop ────────────────────────────────────── */}
       <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-        <div className="relative z-10 flex items-center gap-3 mb-6">
+        <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
             Select Exam PDF File
@@ -542,7 +542,7 @@ export default function AIExtractor() {
 
         {/* Page Range Input */}
         {pdfFile && (
-          <div className="relative z-10 mt-6 flex flex-col gap-2">
+          <div className="relative z-10 mt-3 flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
               Page Selection (Optional)
             </label>
@@ -602,7 +602,7 @@ export default function AIExtractor() {
       {/* ── Section 3: Extracted Questions Preview ────────────────────────────── */}
       {extractedQuestions && extractedQuestions.length > 0 && (
         <div className="group relative flex flex-col p-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-          <div className="relative z-10 flex items-center justify-between mb-6 px-2">
+          <div className="relative z-10 flex items-center justify-between mb-3 px-2">
             <div className="flex items-center gap-3">
               <RiEyeLine size={20} className="text-t-primary" />
               <h3 className="font-sans font-semibold text-[18px] text-t-primary m-0">
@@ -615,7 +615,7 @@ export default function AIExtractor() {
           </div>
 
           {/* Paper Title input for submission */}
-          <div className="relative z-10 flex flex-col gap-2 mb-6 px-2">
+          <div className="relative z-10 flex flex-col gap-2 mb-3 px-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
               Final Paper Title *
             </label>
@@ -628,7 +628,7 @@ export default function AIExtractor() {
             />
           </div>
 
-          <div className="relative z-10 flex flex-col gap-6 w-full">
+          <div className="relative z-10 flex flex-col gap-3 w-full">
             {extractedQuestions.map((q, idx) => {
               const isEditing = editingIndex === idx;
 
@@ -746,7 +746,7 @@ export default function AIExtractor() {
           </div>
 
           {/* Action Row */}
-          <div className="relative z-10 flex justify-end gap-4 w-full mt-8 border-t border-s-stroke2/20 pt-6 px-2">
+          <div className="relative z-10 flex justify-end gap-4 w-full mt-3 border-t border-s-stroke2/20 pt-6 px-2">
             <button
               onClick={handleFinalUpload}
               disabled={!canUpload}
@@ -802,7 +802,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
   };
 
   return (
-    <div className="flex flex-col gap-5 text-t-primary">
+    <div className="flex flex-col gap-3 text-t-primary">
       {/* Text Area for Question Text */}
       <div className="flex flex-col gap-2">
         <label className="text-[12px] font-bold text-t-secondary uppercase tracking-[0.02em]">Question Text (LaTeX supported)</label>

@@ -113,7 +113,7 @@ export default function InstituteTestsPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8">
 
         {/* Header Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-3">
           <div className="relative flex-1 max-w-[360px]">
             <RiSearchLine size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-t-secondary" />
             <input
@@ -262,7 +262,7 @@ function TestCard({
       </div>
 
       {/* Actions */}
-      <div className="relative z-10 flex items-center gap-2 mt-5">
+      <div className="relative z-10 flex items-center gap-2 mt-3">
         <button
           onClick={onView}
           className="flex-1 flex items-center justify-center gap-1.5 h-11 px-4 rounded-[10px] bg-shade-02 text-white text-[13px] font-sans font-semibold hover:opacity-90 transition-all active:scale-[0.98]"

@@ -286,11 +286,11 @@ export function QuestionReviewEditor({
       </div>
 
       {/* ── Body ────────────────────────────────────────────────────────── */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
 
         {preview ? (
           /* ── Student preview: render exactly as a student sees it ─────── */
-          <div className="space-y-5">
+          <div className="space-y-3">
             <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 p-4">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Question (student view)</p>
               <div className="text-[15px] leading-relaxed text-t-primary">

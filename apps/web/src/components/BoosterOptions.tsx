@@ -28,7 +28,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
     <div className="p-6 max-w-lg mx-auto bg-b-surface2 text-t-primary rounded-[16px] border border-s-stroke2/40 shadow-depth dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0_12px_32px_rgba(0,0,0,.22)]">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">🎯 Improvement Options Ready</h2>
       
-      <div className="mb-6">
+      <div className="mb-3">
         <p className="text-sm text-t-secondary mb-2">Based on your analysis, {weakTopics.length} topics need work:</p>
         <ul className="list-disc pl-5 text-sm text-t-primary space-y-1">
           {weakTopics.map(topic => (
@@ -37,7 +37,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
         </ul>
       </div>
 
-      <div className="space-y-4 mb-6">
+      <div className="space-y-4 mb-3">
         <p className="font-semibold text-t-primary">Choose your practice mode:</p>
         
         {/* Micro Booster Option */}

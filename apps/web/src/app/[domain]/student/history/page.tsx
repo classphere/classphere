@@ -20,7 +20,7 @@ function TestHistoryCard({ item }: { item: HistoryItem }) {
 
   return (
     <Card variant="default" padding="default" className="group relative overflow-hidden hover:-translate-y-1 hover:shadow-depth transition-all duration-300 select-none">
-      <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+      <div className="relative z-10 flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0 flex-1">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="text-[10px] font-sans font-bold px-2 py-0.5 border border-black/5 dark:border-white/5 bg-b-surface1 text-t-secondary rounded-[6px] uppercase tracking-wider">{testTypeLabel}</span>
@@ -79,7 +79,7 @@ export default function HistoryPage() {
           <MetricCard icon={<RiLineChartLine size={18} />} label="Average Score" value={loading ? "—" : `${avgPct}%`} badge="Overall" badgeLabel="across all tests" />
         </MetricGrid>
         {loading ? (
-          <SectionCard padding="none"><div className="flex items-center justify-center gap-3 py-16 text-t-secondary"><RiLoader4Line size={22} className="animate-spin text-primary-01" /><span className="font-sans font-semibold text-[14px]">Loading your test history...</span></div></SectionCard>
+          <SectionCard padding="none"><div className="flex items-center justify-center gap-3 py-10 text-t-secondary"><RiLoader4Line size={22} className="animate-spin text-primary-01" /><span className="font-sans font-semibold text-[14px]">Loading your test history...</span></div></SectionCard>
         ) : error ? (
           <SectionCard padding="none"><EmptyState icon={<RiLineChartLine size={48} />} title="Couldn't load history" description={error} /></SectionCard>
         ) : history.length === 0 ? (

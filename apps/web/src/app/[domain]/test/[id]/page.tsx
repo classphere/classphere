@@ -434,33 +434,33 @@ export default function TestPage() {
             </div>
           </div>
         </header>
-        <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-3 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card h-full min-h-[420px] min-w-0 p-5 md:p-7">
-            <div className="mb-5 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-2">
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="mb-6 h-6 w-40 rounded-full bg-b-surface2" />
+            <div className="mb-3 h-6 w-40 rounded-full bg-b-surface2" />
             <div className="space-y-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="mt-8 flex gap-3 border-t border-s-stroke2 pt-6">
+            <div className="mt-3 flex gap-3 border-t border-s-stroke2 pt-6">
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
             </div>
           </section>
           <aside className="card h-full min-h-[420px] min-w-0 p-5 md:p-6">
-            <div className="mb-5 grid grid-cols-3 gap-3">
+            <div className="mb-3 grid grid-cols-3 gap-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="space-y-5">
+            <div className="space-y-3">
               <div className="h-28 rounded-[10px] bg-b-surface2" />
               <div className="h-28 rounded-[10px] bg-b-surface2" />
             </div>
@@ -560,7 +560,7 @@ export default function TestPage() {
         formatTime={formatTime}
       />
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-6 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-3 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
         <div className="lg:hidden">
           <button
             type="button"

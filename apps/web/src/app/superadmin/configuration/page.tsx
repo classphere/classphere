@@ -123,25 +123,25 @@ export default function ConfigurationPage() {
       <main className="mx-auto w-full max-w-[1200px] px-6 pb-16 pt-6">
         
         {message && (
-          <div className="mb-6 p-4 rounded-[10px] border border-s-stroke2/40 bg-b-surface2 text-t-primary font-sans text-sm font-semibold flex items-center justify-between">
+          <div className="mb-3 p-4 rounded-[10px] border border-s-stroke2/40 bg-b-surface2 text-t-primary font-sans text-sm font-semibold flex items-center justify-between">
             <span>{message}</span>
             <button onClick={() => setMessage(null)} className="text-t-secondary hover:text-t-primary font-bold">✕</button>
           </div>
         )}
 
         {loading ? (
-          <div className="flex items-center justify-center gap-3 py-32 text-t-secondary">
+          <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
             <RiLoader4Line size={24} className="animate-spin text-primary-01" />
             <span className="font-sans font-semibold text-[15px]">Loading system settings...</span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
             
             {/* Left Column: Toggles */}
-            <div className="lg:col-span-8 flex flex-col gap-8">
+            <div className="lg:col-span-8 flex flex-col gap-3">
               
               {/* System Maintenance */}
-              <div className={`group relative flex flex-col p-8 rounded-[24px] border overflow-hidden transition-colors ${
+              <div className={`group relative flex flex-col p-5 rounded-[24px] border overflow-hidden transition-colors ${
                 maintenance 
                   ? 'bg-white dark:bg-white/[0.02] border-red-500/40' 
                   : 'bg-white dark:bg-white/[0.02] border-s-stroke2/40'
@@ -159,7 +159,7 @@ export default function ConfigurationPage() {
                   <Toggle enabled={maintenance} onChange={() => setMaintenance(!maintenance)} />
                 </div>
                 
-                <p className="relative z-10 text-[14px] text-t-secondary leading-relaxed mb-5 pl-13">
+                <p className="relative z-10 text-[14px] text-t-secondary leading-relaxed mb-3 pl-13">
                   Maintenance mode is not connected yet. This control is intentionally non-operative and does not change user access.
                 </p>
                 
@@ -176,7 +176,7 @@ export default function ConfigurationPage() {
               {/* Analysis Engine Config */}
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiCpuLine size={20} />
                   </div>
@@ -186,8 +186,8 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="flex justify-between items-start gap-6">
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Deterministic Pedagogical Reporting</h3>
                       <p className="text-[13px] text-t-secondary leading-relaxed">
@@ -203,7 +203,7 @@ export default function ConfigurationPage() {
               {/* B2B Settings */}
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiBuilding3Line size={20} />
                   </div>
@@ -213,8 +213,8 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="flex justify-between items-start gap-6">
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Custom Domain Routing</h3>
                       <p className="text-[13px] text-t-secondary leading-relaxed">
@@ -226,7 +226,7 @@ export default function ConfigurationPage() {
 
                   <div className="w-full h-px bg-s-stroke2/30" />
 
-                  <div className="flex justify-between items-start gap-6">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary">Community Forum Moderation</h3>
@@ -244,10 +244,10 @@ export default function ConfigurationPage() {
             </div>
 
             {/* Right Column: Infrastructure Limits */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="lg:col-span-4 flex flex-col gap-3">
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden sticky top-6">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiServerLine size={20} />
                   </div>
@@ -257,7 +257,7 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-5">
+                <div className="relative z-10 flex flex-col gap-3">
                   <div className="flex flex-col gap-2">
                     <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Max Concurrent Users</label>
                     <input 
@@ -325,8 +325,8 @@ export default function ConfigurationPage() {
         )}
 
         {/* ── Exam Calendar ── */}
-        <div className="relative z-10 overflow-hidden rounded-[20px] border border-s-stroke2/40 bg-b-surface2/60 dark:bg-b-surface2/40 p-6 shadow-widget backdrop-blur-sm mt-6">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="relative z-10 overflow-hidden rounded-[20px] border border-s-stroke2/40 bg-b-surface2/60 dark:bg-b-surface2/40 p-6 shadow-widget backdrop-blur-sm mt-3">
+          <div className="flex items-center gap-3 mb-3">
             <div className="flex size-9 items-center justify-center rounded-[10px] bg-primary-05/10 border border-primary-05/20">
               <RiCalendarEventLine size={18} className="text-primary-05" />
             </div>

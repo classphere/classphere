@@ -161,7 +161,7 @@ export default function AssignmentsPage() {
 
         {loading ? (
           <SectionCard padding="none">
-            <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+            <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
               <RiLoader4Line size={22} className="animate-spin text-primary-01" />
               <span className="font-sans font-semibold text-[14px]">Loading your DPPs...</span>
             </div>
@@ -177,7 +177,7 @@ export default function AssignmentsPage() {
         ) : (
           <>
             {late.length > 0 && (
-              <SectionCard title="Overdue DPPs" subtitle="These practice papers have passed their deadline" className="mb-6">
+              <SectionCard title="Overdue DPPs" subtitle="These practice papers have passed their deadline" className="mb-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {late.map((dpp) => <DPPCard key={dpp.dppId} dpp={dpp} />)}
                 </div>
@@ -185,7 +185,7 @@ export default function AssignmentsPage() {
             )}
 
             {pending.length > 0 && (
-              <SectionCard title="Pending DPPs" subtitle="Complete these before their due dates" className="mb-6">
+              <SectionCard title="Pending DPPs" subtitle="Complete these before their due dates" className="mb-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {pending.map((dpp) => <DPPCard key={dpp.dppId} dpp={dpp} />)}
                 </div>

@@ -69,11 +69,11 @@ export default function InstituteSettingsPage() {
       <Navbar title="White-Label Studio" subtitle="Customize your platform branding and domain" breadcrumbs="Dashboard > Settings" />
       <main className="mx-auto w-full max-w-screen-xl px-6 pb-12 pt-6">
         
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           
           {/* Branding Section */}
           <SectionCard title="Brand Appearance">
-            <div className="flex flex-col gap-5 p-2">
+            <div className="flex flex-col gap-3 p-2">
               <div>
                 <label className="text-sm font-semibold text-t-primary mb-1.5 block">Primary Theme Color</label>
                 <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ export default function InstituteSettingsPage() {
 
           {/* Domain Section */}
           <SectionCard title="Domain Configuration">
-            <div className="flex flex-col gap-5 p-2">
+            <div className="flex flex-col gap-3 p-2">
               <div>
                 <label className="text-sm font-semibold text-t-primary mb-1.5 block">Classphere Subdomain</label>
                 <div className="flex items-center">
@@ -141,7 +141,7 @@ export default function InstituteSettingsPage() {
 
           {/* Communication Section */}
           <SectionCard title="Communication">
-            <div className="flex flex-col gap-5 p-2">
+            <div className="flex flex-col gap-3 p-2">
               <div>
                 <label className="text-sm font-semibold text-t-primary mb-1.5 block">Support Email</label>
                 <input 
@@ -158,7 +158,7 @@ export default function InstituteSettingsPage() {
 
         </div>
 
-        <div className="mt-8 flex justify-end">
+        <div className="mt-3 flex justify-end">
           <button 
             onClick={handleSave} 
             disabled={saving}

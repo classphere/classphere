@@ -229,7 +229,7 @@ export default function QuestionBankPage() {
           {/* Categories / Filters */}
           <div className="flex flex-col gap-4 mt-2">
             {/* Exam Tabs */}
-            <div className="flex flex-row gap-6 border-b border-s-stroke2/40 overflow-x-auto hide-scrollbar">
+            <div className="flex flex-row gap-3 border-b border-s-stroke2/40 overflow-x-auto hide-scrollbar">
               {[
                 { id: "all", label: "All Exams" },
                 { id: "jee-main", label: "JEE Main" },
@@ -269,7 +269,7 @@ export default function QuestionBankPage() {
           </div>
 
           {/* Table */}
-          <div className="flex flex-col gap-3 mt-6">
+          <div className="flex flex-col gap-3 mt-3">
             <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
               <div className="w-[40px] flex items-center justify-center">
                 <input 
@@ -293,12 +293,12 @@ export default function QuestionBankPage() {
             </div>
 
             {loading ? (
-              <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+              <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
                 <RiLoader4Line size={22} className="animate-spin text-primary-01" />
                 <span className="font-sans font-semibold text-[14px]">Loading tests...</span>
               </div>
             ) : questions.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary">
                 <p className="font-sans font-semibold text-[14px]">No tests found.</p>
                 <p className="font-sans text-[13px] mt-1">Try adjusting your filters.</p>
               </div>
@@ -399,7 +399,7 @@ export default function QuestionBankPage() {
           title={editingQuestion.id === "bulk" ? `Edit details for ${selectedIds.size} selected tests` : `Edit Test details: #${editingQuestion.id.slice(0, 10)}`}
           maxWidth="max-w-[500px]"
         >
-          <form onSubmit={handleSaveEdit} className="flex flex-col gap-6">
+          <form onSubmit={handleSaveEdit} className="flex flex-col gap-3">
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Subject</label>
               <select

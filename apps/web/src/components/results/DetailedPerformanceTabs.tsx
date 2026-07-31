@@ -53,7 +53,7 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
 
       <div className="relative z-10 pt-2 border-t border-s-stroke2/50">
         {activeTab === "overview" && (
-          <div className="space-y-6 animate-fadeIn mt-4">
+          <div className="space-y-3 animate-fadeIn mt-4">
             <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Summary of marks scored in the test</div>
             <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
               {[
@@ -76,7 +76,7 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
         )}
 
         {activeTab === "analysis" && (
-          <div className="space-y-6 animate-fadeIn mt-4">
+          <div className="space-y-3 animate-fadeIn mt-4">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Detailed analysis of your performance</div>
               <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
@@ -129,7 +129,7 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
         )}
 
         {activeTab === "time" && (
-          <div className="space-y-6 animate-fadeIn mt-4">
+          <div className="space-y-3 animate-fadeIn mt-4">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Time and Accuracy</div>
               <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
@@ -183,14 +183,14 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
         )}
 
         {activeTab === "missed" && (
-          <div className="space-y-6 animate-fadeIn mt-4">
+          <div className="space-y-3 animate-fadeIn mt-4">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Missed Concepts</div>
               <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
                 This section lists all the concepts you got wrong in the exam on an individual subject level. This information becomes relevant for you as you will now need to spend some time brushing up these concepts.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-3 md:grid-cols-3">
               {["Physics", "Chemistry", "Mathematics"].map((subj) => {
                 const missed = a.classified
                   .filter((ans: any) => ans.question.subject === subj && ans.selected_answer && !ans.is_correct)
@@ -216,7 +216,7 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
         )}
 
         {activeTab === "complete" && (
-          <div className="space-y-6 animate-fadeIn mt-4">
+          <div className="space-y-3 animate-fadeIn mt-4">
             <div className="overflow-x-auto rounded-[10px] border border-s-stroke2">
               <table className="rayum-table">
                 <thead>

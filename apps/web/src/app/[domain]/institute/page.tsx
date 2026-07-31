@@ -153,7 +153,7 @@ export default function InstituteDashboardPage() {
       
       <PageWrapper>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-3 mb-3 w-full">
           <MetricCard
             icon={<RiGroupLine size={20} />}
             label="Total Students"
@@ -178,7 +178,7 @@ export default function InstituteDashboardPage() {
         </div>
 
         {/* ── Main Content Grid (Recent Batches + Top Students) ── */}
-        <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
+        <div className="grid gap-3 lg:grid-cols-2 items-start w-full">
 
           {/* Recent Batches Section */}
           <SectionCard
@@ -212,10 +212,10 @@ export default function InstituteDashboardPage() {
                   return (
                     <div
                       key={batch.id}
-                      className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 rounded-[16px] border border-transparent transition-all w-full h-[76px] sm:h-[88px] overflow-hidden hover:border-s-stroke2/50 hover:bg-b-surface2/70"
+                      className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 rounded-[16px] border border-transparent transition-all w-full h-[76px] sm:h-[88px] overflow-hidden hover:border-s-stroke2/50 hover:bg-b-surface2/70"
                     >
                       {/* Left */}
-                      <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                      <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                         <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                           <RiTeamLine size={24} className="text-t-secondary scale-75 sm:scale-100" />
                         </div>
@@ -272,9 +272,9 @@ export default function InstituteDashboardPage() {
                   return (
                     <div
                       key={student.id}
-                      className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
+                      className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
                     >
-                      <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                      <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                         <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
                           <RiTeamLine size={24} className="scale-75 sm:scale-100" />
                         </div>
@@ -317,7 +317,7 @@ export default function InstituteDashboardPage() {
         title="Create New Batch"
         subtitle="Create a batch, then add students and assign faculty when ready."
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           {/* Batch Name */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>

@@ -88,7 +88,7 @@ export default function TeacherAnalyticsPage() {
       
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 sm:px-6 md:px-8">
         {/* Batch Selector */}
-        <div className="flex items-center gap-4 mb-8 mt-6">
+        <div className="flex items-center gap-4 mb-3 mt-3">
           <span className="text-body-2 font-bold text-t-secondary">Viewing batch:</span>
           <div className="flex gap-2 flex-wrap">
             {batches.length === 0 && <span className="text-t-secondary text-sm">Loading batches...</span>}
@@ -128,11 +128,11 @@ export default function TeacherAnalyticsPage() {
         </MetricGrid>
 
         {/* RECENT TESTS & TRAPS (MICRO LEVEL) */}
-        <div className="mb-8">
+        <div className="mb-3">
           <h2 className="text-[20px] font-sans font-bold text-t-primary mb-1">Recent Tests & Traps</h2>
           <p className="text-body-2 text-t-secondary mb-4">Immediate feedback from the most recent tests in this batch.</p>
           
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             {loading ? (
               <div className="flex items-center justify-center py-8 text-t-secondary gap-2 border border-s-stroke2/40 rounded-[24px]">
                 <RiLoader4Line className="animate-spin" /> Loading recent tests...
@@ -198,21 +198,21 @@ export default function TeacherAnalyticsPage() {
         </div>
 
         {/* OVERALL TRENDS (MACRO LEVEL) */}
-        <h2 className="text-[20px] font-sans font-bold text-t-primary mt-12 mb-1">Overall Trends</h2>
+        <h2 className="text-[20px] font-sans font-bold text-t-primary mt-3 mb-1">Overall Trends</h2>
         <p className="text-body-2 text-t-secondary mb-4">Macro performance calculated from the last 100 test attempts.</p>
 
         {/* Subject Breakdown */}
         <SectionCard
           title="Subject-wise Performance"
           subtitle="Average accuracy and error distribution across subjects"
-          className="mb-8"
+          className="mb-3"
           headerRight={
             <div className="flex items-center justify-center size-10 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/30 text-t-secondary dark:text-t-secondary shadow-xs">
               <RiBarChartBoxLine size={20} />
             </div>
           }
         >
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-2">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-3 w-full mt-2">
             {loading ? (
               <div className="col-span-full flex items-center justify-center py-8 text-t-secondary gap-2">
                 <RiLoader4Line className="animate-spin" /> Loading subjects...
@@ -256,7 +256,7 @@ export default function TeacherAnalyticsPage() {
         </SectionCard>
 
         {/* Weak Topics + Trap Questions */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4">
 
           {/* Weak Topics */}
           <SectionCard
@@ -287,7 +287,7 @@ export default function TeacherAnalyticsPage() {
                     key={i} 
                     className="group/item relative flex flex-row items-center p-3 gap-3 sm:gap-4 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
                   >
-                    <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                    <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                       <div className="size-12 sm:size-16 rounded-[10px] flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
                         <RiAlertLine size={24} className="scale-75 sm:scale-100" />
                       </div>
@@ -300,7 +300,7 @@ export default function TeacherAnalyticsPage() {
                         </span>
                       </div>
                     </div>
-                    <div className="flex flex-row justify-end items-center gap-2 sm:gap-8 shrink-0">
+                    <div className="flex flex-row justify-end items-center gap-2 sm:gap-3 shrink-0">
                       <div className="flex flex-col justify-center items-end gap-1">
                         <span className="font-sans font-semibold text-[13px] sm:text-[16px] text-t-primary dark:text-t-primary">
                           {t.affectedStudents} <span className="hidden sm:inline">students</span>
@@ -338,7 +338,7 @@ export default function TeacherAnalyticsPage() {
         <SectionCard
           title="All Batches — Quick Comparison"
           subtitle="Average score, top performer, and trend across every batch."
-          className="mb-8"
+          className="mb-3"
         >
           <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
             {batches.map((b, i) => (
@@ -347,7 +347,7 @@ export default function TeacherAnalyticsPage() {
                 className="group/item relative flex flex-row items-center p-3 gap-3 sm:gap-4 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
               >
                 {/* Left — icon + batch name + exam */}
-                <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                   <div className="size-12 sm:size-16 rounded-[10px] flex items-center justify-center bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
                     <RiGroupLine size={24} className="scale-75 sm:scale-100" />
                   </div>
@@ -364,7 +364,7 @@ export default function TeacherAnalyticsPage() {
                 </div>
 
                 {/* Right — avg score bar + top score + trend badge + action */}
-                <div className="flex flex-row items-center gap-2 sm:gap-6 shrink-0 pl-1 sm:pl-0">
+                <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0 pl-1 sm:pl-0">
                   {/* Avg score with progress bar */}
                   <div className="hidden lg:flex flex-col items-end gap-1.5">
                     <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">

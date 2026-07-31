@@ -17,13 +17,13 @@ export default function ErrorBoundary({
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
       <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-10 max-w-md w-full shadow-lg">
-        <div className="mx-auto w-16 h-16 bg-primary-03/10 text-primary-03 rounded-full flex items-center justify-center mb-6">
+        <div className="mx-auto w-16 h-16 bg-primary-03/10 text-primary-03 rounded-full flex items-center justify-center mb-3">
           <RiAlertFill size={32} />
         </div>
         <h1 className="text-[22px] font-black tracking-tight text-t-primary mb-3">
           Something went wrong
         </h1>
-        <p className="text-[14px] text-t-secondary mb-8 leading-relaxed">
+        <p className="text-[14px] text-t-secondary mb-3 leading-relaxed">
           {error.message || "An unexpected error occurred while loading this page."}
         </p>
         <div className="flex flex-col sm:flex-row gap-3">

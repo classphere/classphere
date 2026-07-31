@@ -72,7 +72,7 @@ export default function GlobalPaperReviewPage() {
         </button>
       </Navbar>
 
-      <main className="mx-auto grid w-full max-w-[1560px] gap-5 px-4 pb-12 pt-5 md:px-6 lg:grid-cols-[250px_minmax(0,1fr)]">
+      <main className="mx-auto grid w-full max-w-[1560px] gap-3 px-4 pb-12 pt-5 md:px-6 lg:grid-cols-[250px_minmax(0,1fr)]">
         <aside className="card h-fit p-3">
           <p className="px-2 pb-3 text-xs font-bold uppercase tracking-wider text-t-secondary">Questions</p>
           <div className="grid grid-cols-6 gap-2 lg:grid-cols-4">

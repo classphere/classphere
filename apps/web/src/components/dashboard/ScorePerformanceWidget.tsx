@@ -20,7 +20,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
         <div className="flex flex-col gap-2">
           {payload.map((entry: any, index: number) => (
-            <div key={index} className="flex justify-between items-center gap-6">
+            <div key={index} className="flex justify-between items-center gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
                 <span className="text-[13px] font-medium text-t-secondary">{entry.name}</span>
@@ -60,7 +60,7 @@ export function ScorePerformanceWidget({
       title="Score Performance"
       subtitle="Marks per mock test"
     >
-      <div className="flex flex-col w-full pt-2 gap-8">
+      <div className="flex flex-col w-full pt-2 gap-3">
         
         {/* Stats Container (Top) */}
         <div className="flex flex-col items-start gap-3 w-full mt-2">

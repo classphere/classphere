@@ -81,7 +81,7 @@ export default function DPPAnalyticsPage() {
           />
         </MetricGrid>
 
-        <div className="grid gap-6 lg:grid-cols-[2fr_1fr] mt-6">
+        <div className="grid gap-3 lg:grid-cols-[2fr_1fr] mt-3">
           <SectionCard title="Submitted Students" subtitle="Ranked by score">
             {analytics.submitted.length === 0 ? (
               <div className="text-center py-10 text-t-secondary text-sm">No submissions yet.</div>

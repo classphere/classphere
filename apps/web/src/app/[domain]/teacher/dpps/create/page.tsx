@@ -128,11 +128,11 @@ export default function CreateDPPPage() {
         breadcrumbs="Dashboard > DPPs > Create"
       />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-12 pt-4 md:px-8 overflow-x-hidden flex flex-col lg:flex-row gap-6">
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-12 pt-4 md:px-8 overflow-x-hidden flex flex-col lg:flex-row gap-3">
         
         {/* Left Column: Configuration */}
-        <div className="w-full lg:w-[400px] flex flex-col gap-6 shrink-0">
-          <div className="card !p-6 flex flex-col gap-5">
+        <div className="w-full lg:w-[400px] flex flex-col gap-3 shrink-0">
+          <div className="card !p-6 flex flex-col gap-3">
             <h3 className="text-sub-title-2 font-bold text-t-primary border-b border-s-stroke2/40 pb-4">DPP Settings</h3>
             
             <div>
@@ -175,7 +175,7 @@ export default function CreateDPPPage() {
             </div>
           </div>
 
-          <div className="card !p-6 flex flex-col gap-5">
+          <div className="card !p-6 flex flex-col gap-3">
             <h3 className="text-sub-title-2 font-bold text-t-primary border-b border-s-stroke2/40 pb-4">Curriculum Filter</h3>
             
             {!selectedBatch ? (

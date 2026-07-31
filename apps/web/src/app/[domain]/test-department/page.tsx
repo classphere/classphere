@@ -61,7 +61,7 @@ function PaperCard({ paper }: { paper: any }) {
         </div>
       </div>
 
-      <div className="relative z-10 mt-5 pt-4 border-t border-s-stroke2 flex justify-end">
+      <div className="relative z-10 mt-3 pt-4 border-t border-s-stroke2 flex justify-end">
         <span className="flex items-center gap-1.5 h-9 px-4 rounded-[10px] text-[13px] font-semibold bg-b-surface1 border border-s-stroke2 text-t-secondary group-hover:border-t-secondary/50 group-hover:text-t-primary transition-all">
           <RiFileTextLine size={14} />
           Open
@@ -101,11 +101,11 @@ export default function TestDepartmentPage() {
 
       <main className="mx-auto w-full max-w-[1560px] px-4 pb-12 pt-5 md:px-6">
         {loading ? (
-          <div className="flex items-center justify-center py-32">
+          <div className="flex items-center justify-center py-10">
             <RiLoader4Line size={32} className="animate-spin text-t-secondary" />
           </div>
         ) : papers.length === 0 ? (
-          <div className="flex flex-col items-center py-32 gap-4 text-center">
+          <div className="flex flex-col items-center py-10 gap-4 text-center">
             <div className="w-16 h-16 rounded-2xl bg-b-surface2 flex items-center justify-center">
               <RiFileTextLine size={28} className="text-t-secondary" />
             </div>

@@ -136,13 +136,13 @@ export default function ResultsPage() {
         <Navbar title="Test Submitted" />
         <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-10 md:px-6">
           <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-8 md:p-10 max-w-lg w-full text-center">
-            <div className="mx-auto w-16 h-16 bg-primary-01/10 text-primary-01 rounded-full flex items-center justify-center mb-6">
+            <div className="mx-auto w-16 h-16 bg-primary-01/10 text-primary-01 rounded-full flex items-center justify-center mb-3">
               <RiCheckboxCircleFill size={32} />
             </div>
             <h1 className="text-[24px] font-semibold tracking-tight text-t-primary mb-3">
               Thank you for the test
             </h1>
-            <p className="text-[14px] text-t-secondary mb-8">
+            <p className="text-[14px] text-t-secondary mb-3">
               {analysisDelayed
                 ? "Your result is taking longer than expected. You can safely retry the analysis; your submitted test will not be affected."
                 : "Your test has been successfully submitted. We are crunching the numbers and preparing your personalized analysis."}
@@ -181,7 +181,7 @@ export default function ResultsPage() {
       <PageWrapper>
         {/* flex-wrap so the badge row drops below the back link on a phone
             instead of the two squeezing each other on one line. */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <Link href="/student/dashboard" className="inline-flex items-center gap-2 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary transition-colors hover:text-t-primary">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
@@ -201,15 +201,15 @@ export default function ResultsPage() {
 
         {/* Explicit gap: this card sits outside the grid below, so it had no
             spacing of its own and butted up against the next card. */}
-        <div className="mb-6">
+        <div className="mb-3">
           <ResultSummaryHeader analysis={a} totalQuestions={totalQuestions} batchAvgScore={batchAvgScore} batchAvgSampleSize={a.batchAvg?.sampleSize} />
         </div>
 
         {/* min-w-0 on both tracks: grid items default to min-width:auto, so the
             wide tables inside the tabs would otherwise stretch the column past
             the viewport and scroll the whole page sideways on mobile. */}
-        <div className="grid gap-6 items-start xl:grid-cols-[minmax(0,1fr)_22rem]">
-          <div className="min-w-0 space-y-6">
+        <div className="grid gap-3 items-start xl:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="min-w-0 space-y-3">
             <DetailedPerformanceTabs analysis={a} totalQuestions={totalQuestions} strategySubjects={strategySubjects} />
 
             <SyllabusGapsCard unattemptedChapters={unattemptedChapters} />
@@ -235,7 +235,7 @@ export default function ResultsPage() {
             <DailyRecoveryPlanCard studyPlan={a.studyPlan} />
           </div>
 
-          <aside className="min-w-0 space-y-6 xl:sticky xl:top-6 xl:self-start">
+          <aside className="min-w-0 space-y-3 xl:sticky xl:top-6 xl:self-start">
             <section className="group relative rounded-[24px] border border-s-stroke2/40 bg-b-surface2 flex flex-col overflow-hidden p-5 md:p-8 select-none">
               
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
@@ -243,7 +243,7 @@ export default function ResultsPage() {
               </div>
               <p className="relative z-10 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
 
-              <div className="relative z-10 mt-5 space-y-3">
+              <div className="relative z-10 mt-3 space-y-3">
                 <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
                   <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
@@ -255,7 +255,7 @@ export default function ResultsPage() {
               </div>
 
               {showBooster && (
-                <div className="relative z-10 mt-5 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5">
+                <div className="relative z-10 mt-3 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5">
                   <div className="mb-3 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Quick set</div>
                   <div className="grid grid-cols-4 gap-2">
                     {[15, 20, 25, 30].map((n) => (

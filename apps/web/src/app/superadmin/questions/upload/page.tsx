@@ -233,7 +233,7 @@ export default function UploadQuestionsPage() {
         subtitle="Single file or bulk drop — tag with exam, type, and subject. Live in Tests Hub instantly."
       />
 
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-start pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-start pb-12 pt-6 gap-3 px-6 bg-transparent">
 
         {/* Tab Switcher */}
         <div className="flex items-center gap-2 p-1.5 bg-b-surface2 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] dark:bg-[#161616] border border-transparent rounded-[14px] w-fit select-none">
@@ -266,19 +266,19 @@ export default function UploadQuestionsPage() {
         ) : activeTab === "ai" ? (
           <AIExtractor />
         ) : (
-          <div className="flex flex-col gap-6 w-full">
+          <div className="flex flex-col gap-3 w-full">
 
             {/* ── Section 1: Exam Metadata ─────────────────────────────────── */}
             <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
-              <div className="relative z-10 flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex items-center gap-3 mb-3">
                 <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
                 <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                   Paper Metadata
                 </h2>
               </div>
 
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
 
                 {/* Exam */}
                 <div className="flex flex-col gap-2">
@@ -423,7 +423,7 @@ export default function UploadQuestionsPage() {
             {/* ── Section 2: JSON Upload ───────────────────────────────────── */}
             <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
-              <div className="relative z-10 flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex items-center gap-3 mb-3">
                 <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
                 <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                   Question JSON File
@@ -496,7 +496,7 @@ export default function UploadQuestionsPage() {
               </div>
 
               {/* JSON Schema hint */}
-              <div className="relative z-10 mt-6 p-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/20">
+              <div className="relative z-10 mt-3 p-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/20">
                 <p className="text-[12px] font-semibold text-t-secondary uppercase tracking-[0.02em] mb-3">Required JSON Schema</p>
                 <pre className="text-[13px] text-t-secondary font-mono leading-relaxed overflow-x-auto">{`[
   {

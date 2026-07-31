@@ -36,10 +36,10 @@ export default function BillingPage() {
 
   return (
     <>
-      <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
+      <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-3 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
         
         {/* ── Top Navigation Row (Figma Style) ── */}
-        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-3">
           {/* Title */}
           <h1 className="font-sans font-semibold text-[24px] md:text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
             Billing & Subscription
@@ -90,7 +90,7 @@ export default function BillingPage() {
                 <p className="text-sm text-white/80 m-0">You are currently enjoying full access during your trial period.</p>
               </div>
 
-              <div className="flex flex-col items-start md:items-end gap-3 mt-6 md:mt-0 w-full md:w-auto border-t md:border-none border-white/20 pt-4 md:pt-0">
+              <div className="flex flex-col items-start md:items-end gap-3 mt-3 md:mt-0 w-full md:w-auto border-t md:border-none border-white/20 pt-4 md:pt-0">
                 <div className="flex items-baseline gap-1">
                   <span className="font-sans font-bold text-[36px] text-white leading-none">₹0</span>
                   <span className="text-white/70 text-sm">/mo</span>
@@ -110,7 +110,7 @@ export default function BillingPage() {
           <div className="w-full h-[200px] animate-pulse bg-s-stroke2/50 rounded-[24px] mt-4"></div>
         ) : null}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 w-full items-stretch">
           
           {/* Usage This Month */}
           <PremiumSectionCard 
@@ -118,7 +118,7 @@ export default function BillingPage() {
             subtitle="Track your current billing cycle limits" 
             className="w-full"
           >
-            <div className="relative z-10 flex flex-col gap-6 mt-2">
+            <div className="relative z-10 flex flex-col gap-3 mt-2">
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-semibold text-t-primary dark:text-t-primary">Active Students</span>
@@ -183,10 +183,10 @@ export default function BillingPage() {
             {([] as any[]).map((invoice, index) => (
               <div 
                 key={invoice.id}
-                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
               >
                 {/* Left: ID & Date */}
-                <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                   <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-sm sm:text-lg">
                     #{index + 1}
                   </div>
@@ -201,7 +201,7 @@ export default function BillingPage() {
                 </div>
 
                 {/* Right: Metrics & Actions */}
-                <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+                <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                   <div className="flex flex-col items-end justify-center">
                     <span className="hidden sm:inline text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                       Amount
@@ -243,7 +243,7 @@ export default function BillingPage() {
               </button>
               
               <div className="flex flex-col items-center text-center mt-2">
-                <div className="w-16 h-16 bg-primary-05/10 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-primary-05/10 rounded-full flex items-center justify-center mb-3">
                   <RiNotification3Line size={32} className="text-primary-05" />
                 </div>
                 
@@ -251,7 +251,7 @@ export default function BillingPage() {
                   Payment Integration Coming Soon
                 </h3>
                 
-                <p className="text-t-secondary text-[15px] leading-relaxed mb-8 px-2">
+                <p className="text-t-secondary text-[15px] leading-relaxed mb-3 px-2">
                   We are currently setting up our GST and billing infrastructure. 
                   Enjoy your 2-month free trial in the meantime! We will notify you when you can upgrade to a paid tier.
                 </p>

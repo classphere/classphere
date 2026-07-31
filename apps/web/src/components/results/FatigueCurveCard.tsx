@@ -21,7 +21,7 @@ export function FatigueCurveCard({ timeIntervals, fatigueSummary }: FatigueCurve
       subtitle="How your performance changed across the exam duration."
       padding="large"
     >
-      <div className="relative z-10 mt-2 space-y-5">
+      <div className="relative z-10 mt-2 space-y-3">
         {/* Fatigue summary narrative */}
         {fatigueSummary && (
           <div className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">

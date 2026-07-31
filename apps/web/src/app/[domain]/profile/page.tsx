@@ -37,7 +37,7 @@ function ProfileContent() {
     <>
       <Navbar title="My Profile" subtitle="Manage your profile, account security, and notification preferences" breadcrumbs="Dashboard > My Profile" />
       
-      <main className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-5 px-4 pb-12 sm:px-6 lg:flex-row lg:gap-8 lg:px-8">
+      <main className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-3 px-4 pb-12 sm:px-6 lg:flex-row lg:gap-3 lg:px-8">
         
         {/* Left Nav Menu */}
         <div className="w-full shrink-0 lg:sticky lg:top-24 lg:w-[220px]">
@@ -64,9 +64,9 @@ function ProfileContent() {
         {/* Right Content Form Card */}
         <div className="card w-full flex-1 p-4 sm:p-6 lg:p-8 border border-s-stroke2 bg-b-surface1">
           
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Profile information</h2>
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-3">Profile information</h2>
           
-          <div className="mb-8">
+          <div className="mb-3">
             <div className="size-24 rounded-full border border-s-stroke2 overflow-hidden mb-3">
               <Image
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=3765F6&color=fff&size=100`}
@@ -81,8 +81,8 @@ function ProfileContent() {
             </button>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+          <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">First name</label>
                 <input type="text" className="input" defaultValue={data.name.split(" ")[0]} />
@@ -103,7 +103,7 @@ function ProfileContent() {
               <input type="text" className="input" defaultValue={data.exam} />
             </div>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">Role</label>
                 <input type="text" className="input bg-b-surface2 text-t-secondary font-bold" defaultValue={role.toUpperCase()} readOnly />
@@ -126,14 +126,14 @@ function ProfileContent() {
 
           <div className="border-b border-s-stroke2 my-8" />
 
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Account Settings</h2>
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-3">Account Settings</h2>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
             <div>
               <label className="block text-caption font-bold text-t-secondary mb-2">Current password</label>
               <input type="password" className="input" defaultValue="password123456" />
             </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">New password</label>
                 <input type="password" className="input" placeholder="Please enter your password" />
@@ -147,7 +147,7 @@ function ProfileContent() {
 
           <div className="border-b border-s-stroke2 my-8" />
 
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Notifications</h2>
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-3">Notifications</h2>
 
           <div className="flex flex-col">
             {[
@@ -170,7 +170,7 @@ function ProfileContent() {
           </div>
 
           {/* Action Footer */}
-          <div className="mt-8 flex flex-col-reverse justify-end gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
+          <div className="mt-3 flex flex-col-reverse justify-end gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
             <button className="btn btn-outline w-full sm:w-auto">Discard Changes</button>
             <button className="btn btn-primary w-full sm:min-w-[140px] sm:w-auto" onClick={handleSave} disabled={saving}>
               {saving ? "Saving..." : saved ? "Saved!" : "Save Changes"}

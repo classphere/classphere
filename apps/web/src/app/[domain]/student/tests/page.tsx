@@ -238,7 +238,7 @@ function TestsHubContent() {
       <Navbar title="Tests Hub" subtitle="All your chapter-wise tests, mock tests, and PYQs in one place." breadcrumbs="Student > Tests Hub" />
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden">
         {/* Type Tabs */}
-        <div className="no-scrollbar mb-5 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-[14px] border border-s-stroke2/40 bg-b-surface2 p-1 shadow-widget select-none dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)]">
+        <div className="no-scrollbar mb-3 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-[14px] border border-s-stroke2/40 bg-b-surface2 p-1 shadow-widget select-none dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)]">
           {TYPES.map(type => {
             const isActive = activeType === type.id;
             return (
@@ -253,7 +253,7 @@ function TestsHubContent() {
 
         {/* Filters — only for non-assigned tabs */}
         {activeType !== "assigned" && activeType !== "topic-wise" && activeType !== "resources" && (
-          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-b-surface2 border border-s-stroke2/40 p-4 sm:p-5 rounded-[24px] select-none">
+          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-3 bg-b-surface2 border border-s-stroke2/40 p-4 sm:p-5 rounded-[24px] select-none">
             <div className="relative flex-1 min-w-0 sm:min-w-[240px]">
               <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
               <input type="text" placeholder={`Search...`} value={search} onChange={e => setSearch(e.target.value)}
@@ -268,7 +268,7 @@ function TestsHubContent() {
 
         {activeType === "topic-wise" && (
           <section className="card mx-auto max-w-3xl p-5 sm:p-8">
-            <div className="mb-6"><h2 className="text-lg font-bold text-t-primary">Practice a topic</h2><p className="mt-1 text-sm text-t-secondary">Build a private practice set from one topic. It will not affect your institute tests.</p></div>
+            <div className="mb-3"><h2 className="text-lg font-bold text-t-primary">Practice a topic</h2><p className="mt-1 text-sm text-t-secondary">Build a private practice set from one topic. It will not affect your institute tests.</p></div>
             <div className="grid gap-4 sm:grid-cols-2">
               <SelectField label="Exam" value={activeExam} onChange={(value) => { setActiveExam(value); setTopicSubject(""); setTopicChapter(""); setTopic(""); }} options={examMeta.map((entry) => ({ value: entry.code, label: entry.full_name }))} />
               <SelectField label="Subject" value={topicSubject} onChange={(value) => { setTopicSubject(value); setTopicChapter(""); setTopic(""); }} options={(selectedExamMeta?.subjects ?? []).map((entry) => ({ value: entry.name, label: entry.name }))} />
@@ -277,16 +277,16 @@ function TestsHubContent() {
               <SelectField label="Difficulty (optional)" value={topicDifficulty} onChange={setTopicDifficulty} options={[{ value: "", label: "Mixed difficulty" }, { value: "easy", label: "Easy" }, { value: "medium", label: "Medium" }, { value: "hard", label: "Hard" }]} />
             </div>
             {error && <p className="mt-4 text-sm text-primary-03">{error}</p>}
-            <button disabled={!topic || creatingTopicPractice} onClick={startTopicPractice} className="mt-7 flex h-11 items-center justify-center rounded-[10px] bg-shade-02 px-5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50">{creatingTopicPractice ? "Creating practice set…" : "Practice Questions"}</button>
+            <button disabled={!topic || creatingTopicPractice} onClick={startTopicPractice} className="mt-3 flex h-11 items-center justify-center rounded-[10px] bg-shade-02 px-5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50">{creatingTopicPractice ? "Creating practice set…" : "Practice Questions"}</button>
           </section>
         )}
 
         {activeType === "resources" && (
           <section>
-            <div className="mb-5"><h2 className="text-lg font-bold text-t-primary">Study Material</h2><p className="mt-1 text-sm text-t-secondary">Notes and resources shared with your batch by your institute.</p></div>
-            {loading ? <div className="card py-16 text-center"><RiLoader4Line size={30} className="mx-auto animate-spin text-t-secondary" /></div>
+            <div className="mb-3"><h2 className="text-lg font-bold text-t-primary">Study Material</h2><p className="mt-1 text-sm text-t-secondary">Notes and resources shared with your batch by your institute.</p></div>
+            {loading ? <div className="card py-10 text-center"><RiLoader4Line size={30} className="mx-auto animate-spin text-t-secondary" /></div>
               : error ? <div className="card py-12 text-center text-sm text-primary-03">{error}</div>
-              : resources.length === 0 ? <div className="card py-16 text-center text-sm text-t-secondary">Your institute has not shared study material with this batch yet.</div>
+              : resources.length === 0 ? <div className="card py-10 text-center text-sm text-t-secondary">Your institute has not shared study material with this batch yet.</div>
               : <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.map((resource) => <ResourceCard key={resource.id} resource={resource} />)}</div>}
           </section>
         )}
@@ -295,7 +295,7 @@ function TestsHubContent() {
         {activeType === "assigned" && (
           <>
             {/* Search bar for assigned */}
-            <div className="relative max-w-[360px] mb-6">
+            <div className="relative max-w-[360px] mb-3">
               <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
               <input type="text" placeholder="Search assigned tests..." value={search} onChange={e => setSearch(e.target.value)}
                 className="w-full h-10 pl-10 pr-4 border border-s-stroke2 rounded-[10px] bg-b-surface1 text-[13px] font-sans text-t-primary placeholder-t-secondary focus:border-t-secondary outline-none transition-all" />
@@ -304,9 +304,9 @@ function TestsHubContent() {
             {loading ? (
               <TestCardsSkeleton />
             ) : error ? (
-              <div className="card text-center py-20"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
+              <div className="card text-center py-10"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
             ) : filteredAssigned.length === 0 ? (
-              <div className="flex flex-col items-center py-24 gap-4 text-center">
+              <div className="flex flex-col items-center py-10 gap-4 text-center">
                 <div className="w-16 h-16 rounded-2xl bg-b-surface2 flex items-center justify-center">
                   <RiCalendarEventLine size={28} className="text-t-secondary" />
                 </div>
@@ -339,11 +339,11 @@ function TestsHubContent() {
             {loading ? (
               <TestCardsSkeleton />
             ) : error ? (
-              <div className="card text-center py-20"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
+              <div className="card text-center py-10"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
             ) : filtered.length === 0 ? (
-              <div className="card text-center py-20"><div className="text-4xl mb-4">📋</div><h3 className="font-semibold text-[14px] text-t-primary mb-1">No tests found</h3></div>
+              <div className="card text-center py-10"><div className="text-4xl mb-4">📋</div><h3 className="font-semibold text-[14px] text-t-primary mb-1">No tests found</h3></div>
             ) : (
-              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
                 {filtered.map(paper => (
                   <TestCard key={paper.id} paper={paper} isAdmin={isAdmin}
                     onDelete={() => handleDelete(paper.id, paper.title)}
@@ -434,7 +434,7 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
         </div>
       </div>
 
-      <div className="relative z-10 mt-5 pt-4 border-t border-s-stroke2 flex justify-end">
+      <div className="relative z-10 mt-3 pt-4 border-t border-s-stroke2 flex justify-end">
         <button
           onClick={onStart}
           disabled={isUpcoming}
@@ -480,13 +480,13 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
       <div className="relative z-10">
         <h3 className="font-sans font-bold text-[17px] leading-[1.3] text-t-primary mb-1.5 tracking-[-0.01em]">{paper.title}</h3>
         {subtitle && subtitle !== "null" && <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>}
-        <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-5 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
+        <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-3 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5"><RiQuestionLine size={14} className="opacity-70" />{paper.total_questions} Qs</span>
           {paper.duration_min > 0 && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>}
           <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>
         </div>
       </div>
-      <div className="relative z-10 mt-5 flex w-full items-center">
+      <div className="relative z-10 mt-3 flex w-full items-center">
         <div className="flex w-full flex-col gap-2">
           {isAdmin && onDelete && (
             <button onClick={onDelete} className="flex h-10 w-full items-center justify-center rounded-[10px] border border-red-200 text-primary-03 transition-all active:scale-95 hover:bg-red-50 sm:w-10" title="Delete">
@@ -505,15 +505,15 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
 
 function TestCardsSkeleton() {
   return (
-    <div aria-label="Loading tests" aria-busy="true" className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+    <div aria-label="Loading tests" aria-busy="true" className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
       {Array.from({ length: 6 }).map((_, index) => (
         <div key={index} className="flex min-h-[236px] flex-col justify-between rounded-[24px] border border-s-stroke2/40 bg-b-surface2 p-5 sm:p-[22px]">
           <div className="animate-pulse">
             <div className="h-5 w-2/3 rounded-md bg-b-surface1" />
             <div className="mt-3 h-3 w-1/3 rounded-md bg-b-surface1" />
-            <div className="mt-7 flex gap-4"><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-16 rounded bg-b-surface1" /></div>
+            <div className="mt-3 flex gap-4"><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-16 rounded bg-b-surface1" /></div>
           </div>
-          <div className="mt-5 flex gap-2">
+          <div className="mt-3 flex gap-2">
             <div className="h-11 flex-1 rounded-[8px] bg-b-surface1" />
             <div className="h-11 flex-1 rounded-[8px] bg-b-surface1" />
           </div>

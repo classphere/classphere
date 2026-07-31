@@ -129,10 +129,10 @@ export default function BatchesPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-3 select-none bg-transparent">
 
       {/* ── Top Navigation Row ── */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-6 mb-2">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-3 mb-2">
         <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
           Batches
         </h1>
@@ -196,7 +196,7 @@ export default function BatchesPage() {
 
         {/* Empty state */}
         {!loading && !error && filtered.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-20 gap-4 text-t-tertiary">
+          <div className="flex flex-col items-center justify-center py-10 gap-4 text-t-tertiary">
             <RiInboxLine size={48} className="opacity-40" />
             <p className="text-sm font-medium">
               {searchQuery ? "No batches match your search." : "No batches yet. Create your first batch!"}
@@ -223,11 +223,11 @@ export default function BatchesPage() {
           return (
             <div
               key={batch.id}
-              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+              className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
             >
 
               {/* Left */}
-              <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+              <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                 <div className={`flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] border shrink-0 font-bold ${colorClass}`}>
                   <RiTeamLine size={24} className="scale-75 sm:scale-100" />
                 </div>
@@ -242,7 +242,7 @@ export default function BatchesPage() {
               </div>
 
               {/* Right */}
-              <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+              <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                 <div className="hidden sm:flex flex-col gap-1 sm:gap-1.5 justify-center min-w-[50px] sm:min-w-[90px]">
                   {/* Students Row */}
                   <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
@@ -303,7 +303,7 @@ export default function BatchesPage() {
         title="Create New Batch"
         subtitle="Fill in the details to create a new batch"
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           {/* Name */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
@@ -383,7 +383,7 @@ export default function BatchesPage() {
       </Modal>
 
       <Modal open={Boolean(editingBatch)} onClose={() => setEditingBatch(null)} title="Manage batch" subtitle={editingBatch?.name ?? ""}>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={expiryValue} onChange={(event) => setExpiryValue(event.target.value)} /><p className="mt-2 text-xs text-t-secondary">Leave empty only for a batch that is intentionally ongoing. Expired batches cannot receive new tests, DPPs, or study material.</p></div>
           <div className="flex items-center justify-between gap-3 border-t border-s-stroke2/50 pt-4"><button onClick={() => retireBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-03" disabled={!editingBatch?.is_active || savingExpiry}>Deactivate batch</button><div className="flex gap-3"><button onClick={() => setEditingBatch(null)} className="btn btn-ghost px-4" disabled={savingExpiry}>Cancel</button><button onClick={saveExpiry} className="btn btn-primary px-5" disabled={savingExpiry}>{savingExpiry ? "Saving…" : "Save"}</button></div></div>
         </div>

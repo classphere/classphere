@@ -71,7 +71,7 @@ export function BatchMatrixModal({ show, paperId, token, onClose }: BatchMatrixM
           <RiCloseLine size={20} />
         </button>
 
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-3">
           <div className="flex size-11 items-center justify-center rounded-[12px] bg-primary-01/10 text-primary-01 border border-primary-01/20">
             <RiBarChartGroupedLine size={24} />
           </div>
@@ -84,7 +84,7 @@ export function BatchMatrixModal({ show, paperId, token, onClose }: BatchMatrixM
         </div>
 
         {loading ? (
-          <div className="flex items-center justify-center gap-3 py-20 text-t-secondary">
+          <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
             <RiLoader4Line size={24} className="animate-spin text-primary-01" />
             <span className="font-semibold text-sm">Computing batch analytics matrix...</span>
           </div>
@@ -93,11 +93,11 @@ export function BatchMatrixModal({ show, paperId, token, onClose }: BatchMatrixM
             ⚠️ {error}
           </div>
         ) : !data || data.batches.length === 0 ? (
-          <div className="py-16 text-center text-t-secondary text-sm">
+          <div className="py-10 text-center text-t-secondary text-sm">
             No submitted student attempts recorded across assigned batches yet.
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-3">
             {/* Top Stat Summary Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-[14px] border border-s-stroke2 bg-b-surface2/60 p-4">

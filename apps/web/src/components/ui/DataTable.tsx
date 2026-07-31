@@ -53,7 +53,7 @@ export function DataTable<T>({
           {data.length === 0 ? (
             emptyState ? (
               <tr>
-                <td colSpan={columns.length} className="py-20 text-center text-[14px] font-sans font-medium text-[#838383]">
+                <td colSpan={columns.length} className="py-10 text-center text-[14px] font-sans font-medium text-[#838383]">
                   {emptyState}
                 </td>
               </tr>

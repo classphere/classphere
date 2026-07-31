@@ -38,7 +38,7 @@ export function QuestionContent({
 }: QuestionContentProps) {
   return (
     <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
-      <div className="relative z-10 mb-5 flex flex-wrap items-center justify-between gap-2">
+      <div className="relative z-10 mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
           <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
           <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
@@ -60,7 +60,7 @@ export function QuestionContent({
         )}
       </div>
 
-      <div className="relative z-10 mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
+      <div className="relative z-10 mb-3 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
         <div className="min-w-0 flex-1">
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
@@ -167,7 +167,7 @@ export function QuestionContent({
       </div>
 
       {/* Nav buttons */}
-      <div className="relative z-10 mt-8 grid grid-cols-2 gap-3 border-t border-s-stroke2 pt-5 lg:grid-cols-4">
+      <div className="relative z-10 mt-3 grid grid-cols-2 gap-3 border-t border-s-stroke2 pt-5 lg:grid-cols-4">
         <button
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#008b49] bg-primary-02 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#008e49] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {

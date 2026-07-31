@@ -57,7 +57,7 @@ export default function StudentAnalyticsPage() {
           <MetricCard icon={<RiLineChartLine size={18} />} label="Tests Attempted" value={metrics.totalTests} />
         </MetricGrid>
 
-        {data?.chapters.length ? <div className="grid gap-6 xl:grid-cols-2">
+        {data?.chapters.length ? <div className="grid gap-3 xl:grid-cols-2">
           <SectionCard title="Chapter Readiness" subtitle={`${data.syllabus?.label ?? "Official syllabus"} ${data.syllabus?.version ?? ""} · unattempted chapters are shown as not started.`}>
             <div className="space-y-3">
               {data.chapters.slice(0, 12).map((chapter) => (
