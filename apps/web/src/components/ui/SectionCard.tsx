@@ -29,14 +29,14 @@ export function SectionCard({
           squeezed a heading like "Detailed Performance Report" into a 3-line
           sliver beside its tab bar. Matches PremiumSectionCard (dashboard). */}
       {(title || headerRight) && (
-        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-6">
+        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
           {title && (
             <div className="min-w-0">
-              <h3 className="font-sans text-[20px] font-semibold tracking-[-0.02em] text-t-primary leading-snug">
+              <h3 className="font-sans text-[16px] font-semibold tracking-[-0.02em] text-t-primary leading-snug">
                 {title}
               </h3>
               {subtitle && (
-                <p className="text-[13px] font-sans text-t-secondary mt-0.5">{subtitle}</p>
+                <p className="text-[12px] font-sans text-t-secondary mt-0.5">{subtitle}</p>
               )}
             </div>
           )}

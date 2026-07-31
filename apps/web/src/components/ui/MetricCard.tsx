@@ -72,7 +72,7 @@ export function MetricGrid({ children, cols = 4, className = "" }: MetricGridPro
   }[cols];
 
   return (
-    <div className={`grid ${colClass} gap-3 sm:gap-6 mb-6 sm:mb-8 ${className}`}>
+    <div className={`grid ${colClass} gap-3 ${className}`}>
       {children}
     </div>
   );

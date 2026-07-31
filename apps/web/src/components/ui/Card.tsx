@@ -39,7 +39,7 @@ export function Card({
     // which spent 64px of a 375px screen on padding alone and left tables and
     // stat tiles badly cramped. Mirrors PremiumCard so results cards match the
     // dashboard's spacing.
-    large: "p-5 md:p-8 lg:p-[42px]",
+    large: "p-4 md:p-5",
   };
 
   return (

@@ -11,7 +11,7 @@ interface PageWrapperProps {
  */
 export function PageWrapper({ children, className = "" }: PageWrapperProps) {
   return (
-    <main className={`mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden ${className}`}>
+    <main className={`mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden space-y-3 ${className}`}>
       {children}
     </main>
   );
