@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   RiCloseLine,
   RiLoader4Line,
@@ -6,7 +6,7 @@ import {
   RiAlertLine,
   RiTrophyLine,
 } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 interface BatchMatrixRow {
   batch_id: string;
@@ -39,25 +39,12 @@ interface BatchMatrixModalProps {
 }
 
 export function BatchMatrixModal({ show, paperId, token, onClose }: BatchMatrixModalProps) {
-  const [data, setData] = useState<BatchMatrixData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!show || !paperId || !token) return;
-    setLoading(true);
-    setError(null);
-    apiClient.get<{ success: boolean; data: BatchMatrixData; message?: string }>(
-      `/api/v1/rankings/batch-comparison?paper_id=${paperId}`,
-      token
-    )
-      .then((res) => {
-        if (res.success) setData(res.data);
-        else setError(res.message || "Failed to load comparative matrix");
-      })
-      .catch((err) => setError(err.message || "Failed to fetch analytics"))
-      .finally(() => setLoading(false));
-  }, [show, paperId, token]);
+  const { data, isPending, error: queryError } = useApiQuery<BatchMatrixData>(
+    show && paperId ? `/api/v1/rankings/batch-comparison?paper_id=${paperId}` : null,
+  );
+  const loading = show && isPending;
+  const error = queryError?.message ?? null;
 
   if (!show) return null;
 

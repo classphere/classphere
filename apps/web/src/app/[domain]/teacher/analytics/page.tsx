@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
@@ -37,34 +38,17 @@ export default function TeacherAnalyticsPage() {
   const { session } = useAuth();
   
   // Real data states
-  const [batches, setBatches] = useState<any[]>([]);
   const [selectedBatchIdx, setSelectedBatchIdx] = useState(0);
-  const [batchAnalytics, setBatchAnalytics] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
   // Fetch batches initially
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get("/api/v1/dashboard/teacher", session.access_token).then((res: any) => {
-      if (res.success && res.data.batches) {
-        setBatches(res.data.batches);
-      }
-    });
-  }, [session?.access_token]);
+  const { data: teacherData } = useApiQuery<{ batches: any[] }>("/api/v1/dashboard/teacher");
+  const batches = teacherData?.batches ?? [];
 
   // Fetch analytics for selected batch
-  useEffect(() => {
-    if (!session?.access_token || batches.length === 0) return;
-    const batchId = batches[selectedBatchIdx]?.id;
-    if (!batchId) return;
-
-    setLoading(true);
-    apiClient.get(`/api/v1/dashboard/teacher/batch/${batchId}/analytics`, session.access_token)
-      .then((res: any) => {
-        if (res.success) setBatchAnalytics(res.data);
-      })
-      .finally(() => setLoading(false));
-  }, [session?.access_token, batches, selectedBatchIdx]);
+  const selectedBatchId = batches[selectedBatchIdx]?.id;
+  const { data: batchAnalytics, isPending: loading } = useApiQuery<any>(
+    selectedBatchId ? `/api/v1/dashboard/teacher/batch/${selectedBatchId}/analytics` : null,
+  );
 
   const stat = {
     avg: batchAnalytics?.overall?.batchAvgScore ?? 0,

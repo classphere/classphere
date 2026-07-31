@@ -18,6 +18,7 @@ import {
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { apiClient } from "@/lib/api.client";
 
 // Exam codes must match the `exams` table in Supabase
@@ -40,8 +41,6 @@ export default function BatchesPage() {
   const { session } = useAuth();
   const { batches, loading, error, createBatch, updateBatch, deactivateBatch, refetch } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
-  const [enabledExamCodes, setEnabledExamCodes] = useState<string[]>([]);
-  const [examCalendar, setExamCalendar] = useState<Record<string, { suggested_ends_at: string; notes: string | null }>>({});
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,25 +56,14 @@ export default function BatchesPage() {
   );
   const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get<{ success: boolean; data: { institute: { enabled_exam_codes?: string[] } } }>(
-      "/api/v1/institutes/me",
-      session.access_token,
-    ).then((response) => {
-      if (response.success) setEnabledExamCodes(response.data.institute.enabled_exam_codes ?? []);
-    }).catch(() => setEnabledExamCodes([]));
-    // Fetch exam calendar for auto-fill
-    apiClient.get<{ success: boolean; data: { calendar: { exam_code: string; suggested_ends_at: string; notes: string | null }[] } }>(
-      "/api/v1/batches/exam-calendar"
-    ).then((resp) => {
-      if (resp.success) {
-        const map: Record<string, { suggested_ends_at: string; notes: string | null }> = {};
-        resp.data.calendar.forEach((row) => { map[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes }; });
-        setExamCalendar(map);
-      }
-    }).catch(() => {});
-  }, [session?.access_token]);
+  const { data: instituteData } = useApiQuery<{ institute: { enabled_exam_codes?: string[] } }>("/api/v1/institutes/me");
+  const enabledExamCodes = instituteData?.institute?.enabled_exam_codes ?? [];
+
+  const { data: calendarData } = useApiQuery<{ calendar: { exam_code: string; suggested_ends_at: string; notes: string | null }[] }>(
+    "/api/v1/batches/exam-calendar",
+  );
+  const examCalendar: Record<string, { suggested_ends_at: string; notes: string | null }> =
+    Object.fromEntries((calendarData?.calendar ?? []).map((row) => [row.exam_code, { suggested_ends_at: row.suggested_ends_at, notes: row.notes }]));
 
   const openModal = () => {
     setForm({ name: "", exam: "", starts_at: "", ends_at: "" });

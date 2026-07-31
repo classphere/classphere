@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import {
@@ -22,8 +22,7 @@ import {
 } from "@remixicon/react";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid } from "@/components/premium-ui";
 import { useBatches } from "@/lib/hooks/useBatches";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 // Recharts is a heavy client-only dependency — defer it out of this route's
 // initial bundle until the report actually renders.
 const PerformanceChart = dynamic(
@@ -39,76 +38,34 @@ import { CohortBatchComparison } from "@/components/institute/CohortBatchCompari
 import { TopPerformingStudents } from "@/components/institute/TopPerformingStudents";
 
 export default function ReportsPage() {
-  const { session } = useAuth();
   const { batches, loading: batchesLoading } = useBatches();
   const [mounted, setMounted] = useState(false);
   const [timeRange, setTimeRange] = useState("Last 30 Days");
   const [activeTab, setActiveTab] = useState<"Overview" | "Batch Performance" | "Student Performance">("Overview");
 
-  const [realStats, setRealStats] = useState<{
-    avgScore: string;
-    testsCount: number;
-    activeStudents: number;
-    trendData: any[];
-    masteryData: any[];
-    topStudents: any[];
-    batchLeaderboard: any[];
-  } | null>(null);
-  const [statsLoading, setStatsLoading] = useState(true);
+  // Three cached reads. The reports call is dependent — it needs the institute
+  // id from /institutes/me — so it stays disabled until that resolves.
+  const { data: teacherData, isPending: teacherPending } = useApiQuery<{ metrics: any }>("/api/v1/dashboard/teacher");
+  const { data: instituteData, isPending: institutePending } = useApiQuery<{ institute: { id: string } }>("/api/v1/institutes/me");
+  const instituteId = instituteData?.institute?.id;
+  const { data: reportData, isPending: reportPending } = useApiQuery<{
+    trendData: any[]; masteryData: any[]; topStudents: any[]; batchLeaderboard: any[];
+  }>(instituteId ? `/api/v1/institutes/${instituteId}/reports` : null);
 
-  const fetchStats = useCallback(async () => {
-    if (!session?.access_token) return;
-    setStatsLoading(true);
-    try {
-      // Fetch teacher dashboard data reused for institute-level aggregate
-      const res = await apiClient.get("/api/v1/dashboard/teacher", session.access_token);
-      let avgScore = "—";
-      let totalStudents = 0;
-      if (res.success) {
-        const m = res.data.metrics;
-        avgScore = m.avgBatchScore ? `${m.avgBatchScore}%` : "—";
-        totalStudents = m.totalStudents ?? 0;
-      }
-      
-      // Fetch institute reports data
-      const idRes = await apiClient.get("/api/v1/institutes/me", session.access_token);
-      let trendData: any[] = [];
-      let masteryData: any[] = [];
-      let topStudents: any[] = [];
-      let batchLeaderboard: any[] = [];
-      
-      if (idRes.success && idRes.data?.institute?.id) {
-        const instId = idRes.data.institute.id;
-        const repRes = await apiClient.get(`/api/v1/institutes/${instId}/reports`, session.access_token);
-        if (repRes.success) {
-          trendData = repRes.data.trendData || [];
-          masteryData = repRes.data.masteryData || [];
-          topStudents = repRes.data.topStudents || [];
-          batchLeaderboard = repRes.data.batchLeaderboard || [];
-        }
-      }
-
-      setRealStats({
-        avgScore,
-        testsCount: 0, // future: from attempts aggregate
-        activeStudents: totalStudents,
-        trendData,
-        masteryData,
-        topStudents,
-        batchLeaderboard,
-      });
-
-    } catch (e) {
-      console.error("[Reports] stats error", e);
-    } finally {
-      setStatsLoading(false);
-    }
-  }, [session?.access_token]);
+  const statsLoading = teacherPending || institutePending || (Boolean(instituteId) && reportPending);
+  const realStats = {
+    avgScore: teacherData?.metrics?.avgBatchScore ? `${teacherData.metrics.avgBatchScore}%` : "—",
+    testsCount: 0, // future: from attempts aggregate
+    activeStudents: teacherData?.metrics?.totalStudents ?? 0,
+    trendData: reportData?.trendData ?? [],
+    masteryData: reportData?.masteryData ?? [],
+    topStudents: reportData?.topStudents ?? [],
+    batchLeaderboard: reportData?.batchLeaderboard ?? [],
+  };
 
   useEffect(() => {
     setMounted(true);
-    fetchStats();
-  }, [fetchStats]);
+  }, []);
 
   return (
     <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-3 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
