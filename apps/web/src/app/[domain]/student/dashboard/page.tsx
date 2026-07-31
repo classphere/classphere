@@ -21,6 +21,7 @@ const ScorePerformanceWidget = dynamic(
   { ssr: false, loading: () => <div className="h-72 w-full animate-pulse rounded-2xl bg-b-surface2" /> }
 );
 import { PendingDPPsWidget } from "@/components/dashboard/PendingDPPsWidget";
+import { UpcomingTestsWidget } from "@/components/dashboard/UpcomingTestsWidget";
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
@@ -98,12 +99,13 @@ export default function Dashboard() {
           <MetricCard icon={<RiAlertFill size={18} className="text-primary-05" />} label="Pending DPPs" value={metrics?.pendingDPPs ?? 0} badge={metrics?.pendingDPPs > 0 ? "Action needed" : undefined} badgeLabel={metrics?.pendingDPPs > 0 ? "assigned" : undefined} />
         </MetricGrid>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] items-start overflow-x-hidden">
-          <div className="grid gap-6 min-w-0 overflow-x-hidden">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_420px] items-start overflow-x-hidden">
+          <div className="grid gap-3 min-w-0 overflow-x-hidden">
+            <UpcomingTestsWidget />
             <ScorePerformanceWidget data={chartData || []} isNEET={isNEET} latestAttempt={history[0]} />
             <PendingDPPsWidget dpps={dpps} />
           </div>
-          <div className="grid gap-6 min-w-0 overflow-x-hidden">
+          <div className="grid gap-3 min-w-0 overflow-x-hidden">
             <StudentBatchWidget batch={batch} />
             <LeaderboardWidget />
             <ActionRequiredWidget />
