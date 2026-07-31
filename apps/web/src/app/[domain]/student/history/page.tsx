@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { SectionCard, MetricCard, MetricGrid, EmptyState, PageWrapper, SecondaryButton, Card } from "@/components/ui";
 import { RiFlashlightFill, RiCheckboxCircleFill, RiPlayLine, RiGitMergeLine, RiLineChartLine, RiLoader4Line } from "@remixicon/react";
 
@@ -48,22 +48,11 @@ function TestHistoryCard({ item }: { item: HistoryItem }) {
 }
 
 export default function HistoryPage() {
-  const { session } = useAuth();
-  const [history, setHistory] = useState<HistoryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    setLoading(true);
-    apiClient.get("/api/v1/dashboard/student/history?limit=50", session.access_token)
-      .then((res: any) => {
-        if (res.success) setHistory(res.data.history ?? []);
-        else setError(res.message ?? "Failed to load history");
-      })
-      .catch((e: any) => setError(e.message ?? "Network error"))
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  // Cached — returning from a result page repaints instantly.
+  const { data, isPending: loading, error } = useApiQuery<{ history: HistoryItem[] }>(
+    "/api/v1/dashboard/student/history?limit=50",
+  );
+  const history = data?.history ?? [];
 
   const totalTests = history.length;
   const bestScore = history.length > 0 ? Math.max(...history.map(h => h.percentage)) : 0;
@@ -81,7 +70,7 @@ export default function HistoryPage() {
         {loading ? (
           <SectionCard padding="none"><div className="flex items-center justify-center gap-3 py-10 text-t-secondary"><RiLoader4Line size={22} className="animate-spin text-primary-01" /><span className="font-sans font-semibold text-[14px]">Loading your test history...</span></div></SectionCard>
         ) : error ? (
-          <SectionCard padding="none"><EmptyState icon={<RiLineChartLine size={48} />} title="Couldn't load history" description={error} /></SectionCard>
+          <SectionCard padding="none"><EmptyState icon={<RiLineChartLine size={48} />} title="Couldn't load history" description={error.message} /></SectionCard>
         ) : history.length === 0 ? (
           <SectionCard padding="none"><EmptyState icon={<RiLineChartLine size={48} />} title="No tests completed yet" description="Once you complete a test, it will appear here along with your full performance analysis." /></SectionCard>
         ) : (

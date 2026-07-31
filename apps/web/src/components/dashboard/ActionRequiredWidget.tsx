@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useRouter } from "next/navigation";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiArrowRightLine, RiLoader4Line, RiRepeat2Line } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
-import { useAuth } from "@/lib/auth-context";
 
 type DueTopic = {
   reviewId: string;
@@ -25,29 +23,12 @@ type DueTopic = {
  * was permanently empty as a result.
  */
 export function ActionRequiredWidget() {
-  const { session } = useAuth();
   const router = useRouter();
-  const [topics, setTopics] = useState<DueTopic[]>([]);
-  const [nextDueAt, setNextDueAt] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient
-      .get<{ success: boolean; data: { topics: DueTopic[]; nextDueAt?: string | null } }>(
-        "/api/v1/revision/daily",
-        session.access_token,
-      )
-      .then((response) => {
-        if (!response.success) return;
-        setTopics(response.data.topics ?? []);
-        setNextDueAt(response.data.nextDueAt ?? null);
-      })
-      // A missing schedule must not make the dashboard unusable during a rolling
-      // deployment. The API still records the real failure.
-      .catch(() => setTopics([]))
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  const { data, isPending: loading } = useApiQuery<{ topics: DueTopic[]; nextDueAt?: string | null }>(
+    "/api/v1/revision/daily",
+  );
+  const topics = data?.topics ?? [];
+  const nextDueAt = data?.nextDueAt ?? null;
 
   const daysUntilNext = nextDueAt
     ? Math.max(0, Math.ceil((new Date(nextDueAt).getTime() - Date.now()) / 86400000))

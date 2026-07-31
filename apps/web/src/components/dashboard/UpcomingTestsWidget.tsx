@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiArrowRightLine, RiLoader4Line, RiCalendarEventLine } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
-import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type AssignedTest = {
   id: string;
@@ -28,31 +26,27 @@ function countdown(scheduledAt: string): { label: string; live: boolean; soon: b
   return { label: `in ${days} day${days === 1 ? "" : "s"}`, live: false, soon: days <= 2 };
 }
 
-export function UpcomingTestsWidget() {
-  const { session } = useAuth();
-  const [tests, setTests] = useState<AssignedTest[]>([]);
-  const [loading, setLoading] = useState(true);
+/**
+ * Upcoming tests first in date order, then any already open, most recent first.
+ *
+ * A test that opened days ago is still actionable, so it is kept rather than
+ * filtered out for being in the past. Kept out of the component body because it
+ * reads the clock, which is not allowed during render.
+ */
+function orderByUrgency(tests: AssignedTest[]): AssignedTest[] {
+  const scheduled = tests
+    .filter((test) => test.scheduled_at)
+    .sort((a, b) => new Date(a.scheduled_at!).getTime() - new Date(b.scheduled_at!).getTime());
+  const now = Date.now();
+  return [
+    ...scheduled.filter((t) => new Date(t.scheduled_at!).getTime() > now),
+    ...scheduled.filter((t) => new Date(t.scheduled_at!).getTime() <= now).reverse(),
+  ];
+}
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient
-      .get<{ success: boolean; data: { tests: AssignedTest[] } }>("/api/v1/tests/assigned", session.access_token)
-      .then((response) => {
-        if (!response.success) return;
-        // Anything already open stays at the top; scheduled ones follow in date
-        // order. A test that opened days ago is still actionable, so it is kept
-        // rather than filtered out for being in the past.
-        const sorted = [...(response.data.tests ?? [])]
-          .filter((test) => test.scheduled_at)
-          .sort((a, b) => new Date(a.scheduled_at!).getTime() - new Date(b.scheduled_at!).getTime());
-        const now = Date.now();
-        const open = sorted.filter((t) => new Date(t.scheduled_at!).getTime() <= now).reverse();
-        const future = sorted.filter((t) => new Date(t.scheduled_at!).getTime() > now);
-        setTests([...future, ...open]);
-      })
-      .catch(() => setTests([]))
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+export function UpcomingTestsWidget() {
+  const { data, isPending: loading } = useApiQuery<{ tests: AssignedTest[] }>("/api/v1/tests/assigned");
+  const tests = orderByUrgency(data?.tests ?? []);
 
   return (
     <SectionCard

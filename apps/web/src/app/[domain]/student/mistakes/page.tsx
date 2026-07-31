@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   PageWrapper,
   SectionCard,
@@ -48,31 +49,18 @@ type TabID = "unresolved" | "resolved";
 export default function MistakeDiary() {
   const { session } = useAuth();
   const [mistakes, setMistakes] = useState<Mistake[]>([]);
-  const [loading, setLoading] = useState(true);
   const [resolving, setResolving] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabID>("unresolved");
   const [filterSubject, setFilterSubject] = useState<string>("All");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  // Cached list; local state below still holds optimistic resolve toggles.
+  const { data: mistakesData, isPending: loading } = useApiQuery<{ mistakes: Mistake[] }>(
+    "/api/v1/dashboard/student/mistakes",
+  );
   useEffect(() => {
-    if (!session?.access_token) return;
-
-    const fetchMistakes = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dashboard/student/mistakes", session.access_token);
-        if (res.success) {
-          setMistakes(res.data.mistakes ?? []);
-        }
-      } catch (e) {
-        console.error("[MistakeDiary] fetch error", e);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMistakes();
-  }, [session?.access_token]);
+    if (mistakesData?.mistakes) setMistakes(mistakesData.mistakes);
+  }, [mistakesData]);
 
   const toggleResolved = async (topic: string) => {
     if (!session?.access_token) return;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
@@ -25,43 +25,41 @@ import { UpcomingTestsWidget } from "@/components/dashboard/UpcomingTestsWidget"
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
-import { apiClient } from "@/lib/api.client";
+import { useQueryClient } from "@tanstack/react-query";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { scheduleDppReminder } from "@/lib/notifications/local-reminders";
 
 export default function Dashboard() {
-  const { user, session } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [stats, setStats] = useState<any>(null);
-  const [history, setHistory] = useState<any[]>([]);
-  const [dpps, setDpps] = useState<any[]>([]);
-  const [notificationVersion, setNotificationVersion] = useState(0);
+  const { user } = useAuth();
+  const queryClient = useQueryClient();
 
+  // Cached: revisiting the dashboard paints instantly from memory and
+  // revalidates in the background, instead of showing a spinner every time.
+  const statsQuery = useApiQuery<any>("/api/v1/dashboard/student");
+  const historyQuery = useApiQuery<any>("/api/v1/dashboard/student/history?limit=3");
+  const dppsQuery = useApiQuery<any>("/api/v1/dpps/student");
+
+  // A push/realtime notification means the server state moved — drop the cache
+  // so the next paint reflects it rather than serving a stale dashboard.
   useEffect(() => {
-    const refresh = () => setNotificationVersion((version) => version + 1);
+    const refresh = () => queryClient.invalidateQueries();
     window.addEventListener("classphere:notification", refresh);
     return () => window.removeEventListener("classphere:notification", refresh);
-  }, []);
+  }, [queryClient]);
 
+  const stats = statsQuery.data ?? null;
+  const history = historyQuery.data?.history ?? [];
+  const dpps = dppsQuery.data?.dpps ?? [];
+  // Only block on the first load. A background revalidation must not throw the
+  // student back to a spinner on a page they can already read.
+  const loading = statsQuery.isPending || historyQuery.isPending || dppsQuery.isPending;
+
+  const pendingDPPs = stats?.metrics?.pendingDPPs;
   useEffect(() => {
-    if (!session?.access_token) return;
-
-    Promise.all([
-      apiClient.get("/api/v1/dashboard/student", session.access_token),
-      apiClient.get("/api/v1/dashboard/student/history?limit=3", session.access_token),
-      apiClient.get("/api/v1/dpps/student", session.access_token),
-    ])
-      .then(([statsRes, historyRes, dppsRes]) => {
-        if (statsRes.success) {
-          setStats(statsRes.data);
-          // Best-effort — no-ops on web / when permission isn't granted.
-          void scheduleDppReminder(statsRes.data?.metrics?.pendingDPPs ?? 0);
-        }
-        if (historyRes.success) setHistory(historyRes.data.history || []);
-        if (dppsRes.success) setDpps(dppsRes.data.dpps || []);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token, notificationVersion]);
+    if (pendingDPPs === undefined) return;
+    // Best-effort — no-ops on web / when permission isn't granted.
+    void scheduleDppReminder(pendingDPPs ?? 0);
+  }, [pendingDPPs]);
 
   const getGreeting = () => {
     const hours = new Date().getHours();
