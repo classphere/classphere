@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { 
   RiAddLine, 
   RiTicketLine, 
@@ -11,16 +11,19 @@ import {
   RiCloseLine,
   RiLoader4Line
 } from "@remixicon/react";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { PremiumSectionCard, PremiumCard } from "@/components/premium-ui";
 
 export default function InstituteSupportPage() {
   const { session } = useAuth();
   const [showNewTicket, setShowNewTicket] = useState(false);
   
-  const [tickets, setTickets] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
+  const TICKETS_PATH = "/api/v1/support/tickets";
+  const { data: tickets = [], isPending: loading } = useApiQuery<any[]>(TICKETS_PATH);
   const [submitting, setSubmitting] = useState(false);
 
   // Form State
@@ -34,23 +37,9 @@ export default function InstituteSupportPage() {
     return "Medium";
   };
 
-  const fetchTickets = async () => {
-    if (!session?.access_token) return;
-    try {
-      const res = await apiClient.get("/api/v1/support/tickets", session.access_token);
-      if (res.success) {
-        setTickets(res.data);
-      }
-    } catch (err) {
-      console.error("Failed to fetch tickets:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchTickets();
-  }, [session?.access_token]);
+  // A new ticket has to show up in the list immediately, so the cached list is
+  // dropped once the POST succeeds.
+  const fetchTickets = () => queryClient.invalidateQueries({ queryKey: [TICKETS_PATH] });
 
   const handleSubmitTicket = async () => {
     if (!subject.trim() || !message.trim()) return;

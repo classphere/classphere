@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   SectionCard,
   MetricCard,
@@ -114,34 +112,10 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
 }
 
 export default function AssignmentsPage() {
-  const { session } = useAuth();
-  const [dpps, setDpps] = useState<StudentDPP[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [notificationVersion, setNotificationVersion] = useState(0);
-
-  useEffect(() => {
-    const refresh = () => setNotificationVersion((version) => version + 1);
-    window.addEventListener("classphere:notification", refresh);
-    return () => window.removeEventListener("classphere:notification", refresh);
-  }, []);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-
-    const fetchDPPs = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dpps/student", session.access_token) as any;
-        if (res.success) setDpps(res.data.dpps ?? []);
-      } catch (e) {
-        console.error("[Assignments] fetch error", e);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDPPs();
-  }, [session?.access_token, notificationVersion]);
+  // Refetch-on-notification is handled centrally by QueryProvider, so a newly
+  // assigned DPP still lands here without this page tracking it itself.
+  const { data, isPending: loading } = useApiQuery<{ dpps: StudentDPP[] }>("/api/v1/dpps/student");
+  const dpps = data?.dpps ?? [];
 
   const late = dpps.filter((d) => d.status === "late");
   const pending = dpps.filter((d) => d.status === "pending");

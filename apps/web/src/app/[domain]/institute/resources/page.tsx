@@ -1,34 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type Batch = { id: string; name: string };
 type Resource = { id: string; title: string; resource_type: string; status: string; created_at: string };
 
 export default function InstituteResourcesPage() {
   const { session } = useAuth();
-  const [batches, setBatches] = useState<Batch[]>([]);
-  const [resources, setResources] = useState<Resource[]>([]);
+  const queryClient = useQueryClient();
+  const { data: batchData } = useApiQuery<{ batches: Batch[] }>("/api/v1/batches");
+  const { data: resourceData } = useApiQuery<{ resources: Resource[] }>("/api/v1/resources/mine");
+  const batches = batchData?.batches ?? [];
+  const resources = resourceData?.resources ?? [];
   const [selectedBatchIds, setSelectedBatchIds] = useState<string[]>([]);
   const [form, setForm] = useState({ title: "", description: "", content: "", resource_type: "note", resource_url: "", subject: "", chapter: "", topic: "" });
   const [status, setStatus] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
-  const load = async () => {
-    if (!session?.access_token) return;
-    try {
-      const [batchResponse, resourceResponse] = await Promise.all([
-        apiClient.get("/api/v1/batches", session.access_token),
-        apiClient.get("/api/v1/resources/mine", session.access_token),
-      ]);
-      setBatches(batchResponse.data?.batches ?? []);
-      setResources(resourceResponse.data?.resources ?? []);
-    } catch (error: any) { setStatus(error.message ?? "Could not load study material."); }
-  };
-  useEffect(() => { void load(); }, [session]);
+  // Publishing adds to the list this page is showing, so the cached list has
+  // to be dropped afterwards or the new item would not appear until it expired.
+  const load = () => queryClient.invalidateQueries({ queryKey: ["/api/v1/resources/mine"] });
 
   const publish = async (event: React.FormEvent) => {
     event.preventDefault();

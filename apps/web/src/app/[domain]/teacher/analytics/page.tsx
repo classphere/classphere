@@ -46,7 +46,10 @@ export default function TeacherAnalyticsPage() {
 
   // Fetch analytics for selected batch
   const selectedBatchId = batches[selectedBatchIdx]?.id;
-  const { data: batchAnalytics, isPending: loading } = useApiQuery<any>(
+  // isLoading rather than isPending: with no batches the path is null and the
+  // query is disabled, and a disabled query reports `pending` forever — which
+  // would leave a teacher who has no batches yet staring at a spinner.
+  const { data: batchAnalytics, isLoading: loading } = useApiQuery<any>(
     selectedBatchId ? `/api/v1/dashboard/teacher/batch/${selectedBatchId}/analytics` : null,
   );
 

@@ -25,27 +25,17 @@ import { UpcomingTestsWidget } from "@/components/dashboard/UpcomingTestsWidget"
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
-import { useQueryClient } from "@tanstack/react-query";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { scheduleDppReminder } from "@/lib/notifications/local-reminders";
 
 export default function Dashboard() {
   const { user } = useAuth();
-  const queryClient = useQueryClient();
 
   // Cached: revisiting the dashboard paints instantly from memory and
   // revalidates in the background, instead of showing a spinner every time.
   const statsQuery = useApiQuery<any>("/api/v1/dashboard/student");
   const historyQuery = useApiQuery<any>("/api/v1/dashboard/student/history?limit=3");
   const dppsQuery = useApiQuery<any>("/api/v1/dpps/student");
-
-  // A push/realtime notification means the server state moved — drop the cache
-  // so the next paint reflects it rather than serving a stale dashboard.
-  useEffect(() => {
-    const refresh = () => queryClient.invalidateQueries();
-    window.addEventListener("classphere:notification", refresh);
-    return () => window.removeEventListener("classphere:notification", refresh);
-  }, [queryClient]);
 
   const stats = statsQuery.data ?? null;
   const history = historyQuery.data?.history ?? [];

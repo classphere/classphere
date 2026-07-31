@@ -3,14 +3,24 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiPaletteLine, RiGlobalLine, RiMailSendLine, RiSaveLine } from "@remixicon/react";
+
+type Settings = {
+  subdomain?: string;
+  custom_domain?: string;
+  theme_primary_color?: string;
+  theme_logo_url?: string;
+  support_email?: string;
+};
 
 export default function InstituteSettingsPage() {
   const baseDomain = process.env.NEXT_PUBLIC_BASE_DOMAIN || "classphere.com";
   const { session } = useAuth();
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
     subdomain: "",
@@ -20,35 +30,28 @@ export default function InstituteSettingsPage() {
     support_email: "",
   });
 
+  const SETTINGS_PATH = "/api/v1/institutes/me/settings";
+  const { data: settings, isPending: loading } = useApiQuery<Settings>(SETTINGS_PATH);
+
+  // Server values seed the form once they arrive; after that the form is the
+  // source of truth so a background revalidation cannot overwrite typing.
   useEffect(() => {
-    if (!session?.access_token) return;
-    const fetchSettings = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/institutes/me/settings", session.access_token);
-        if (res.success && res.data) {
-          setForm({
-            subdomain: res.data.subdomain || "",
-            custom_domain: res.data.custom_domain || "",
-            theme_primary_color: res.data.theme_primary_color || "#4F46E5",
-            theme_logo_url: res.data.theme_logo_url || "",
-            support_email: res.data.support_email || "",
-          });
-        }
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchSettings();
-  }, [session?.access_token]);
+    if (!settings) return;
+    setForm({
+      subdomain: settings.subdomain || "",
+      custom_domain: settings.custom_domain || "",
+      theme_primary_color: settings.theme_primary_color || "#4F46E5",
+      theme_logo_url: settings.theme_logo_url || "",
+      support_email: settings.support_email || "",
+    });
+  }, [settings]);
 
   const handleSave = async () => {
     setSaving(true);
     try {
       const res = await apiClient.patch("/api/v1/institutes/me/settings", form, session?.access_token || "");
       if (res.success) {
+        await queryClient.invalidateQueries({ queryKey: [SETTINGS_PATH] });
         alert("Settings saved successfully!");
       } else {
         alert("Failed to save: " + res.message);

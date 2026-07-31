@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 /**
@@ -45,6 +45,22 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
         },
       }),
   );
+
+  // A push/realtime notification means something server-side changed — a result
+  // finished analysing, a test was assigned, a DPP was published. Marking every
+  // query stale here is what pages used to do by hand, each with its own
+  // `notificationVersion` counter threaded through a fetch effect.
+  //
+  // Invalidate rather than refetch: only queries with a mounted observer go to
+  // the network, so the page the student is actually looking at updates and
+  // everything else just refreshes next time it is shown.
+  useEffect(() => {
+    const onNotification = () => {
+      void client.invalidateQueries();
+    };
+    window.addEventListener("classphere:notification", onNotification);
+    return () => window.removeEventListener("classphere:notification", onNotification);
+  }, [client]);
 
   return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
 }

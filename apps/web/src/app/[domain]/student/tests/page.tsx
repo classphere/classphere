@@ -2,8 +2,10 @@
 
 import { useState, useMemo, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
 import Navbar from "@/components/layout/Navbar";
 import { API_V1_URL, apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useAuth } from "@/lib/auth-context";
 import { scheduleTestReminder } from "@/lib/notifications/local-reminders";
 import {
@@ -92,29 +94,58 @@ function TestsHubContent() {
   const role = user?.role ?? searchParams.get("role") ?? "student";
   const isAdmin = role === "super_admin" || role === "institute_admin";
 
-  const [papers, setPapers] = useState<Paper[]>([]);
-  const [assignedTests, setAssignedTests] = useState<AssignedTest[]>([]);
-  const [resources, setResources] = useState<Resource[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const queryClient = useQueryClient();
+  const [actionError, setActionError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState("jee-main");
   const EXAM_OPTIONS = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
   const [activeType, setActiveType] = useState(() => searchParams.get("tab") === "resources" ? "resources" : "assigned");
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
-  const [examMeta, setExamMeta] = useState<ExamMeta[]>([]);
   const [topicSubject, setTopicSubject] = useState("");
   const [topicChapter, setTopicChapter] = useState("");
   const [topic, setTopic] = useState("");
   const [topicDifficulty, setTopicDifficulty] = useState("");
   const [creatingTopicPractice, setCreatingTopicPractice] = useState(false);
-  const [notificationVersion, setNotificationVersion] = useState(0);
 
-  useEffect(() => {
-    const refresh = () => setNotificationVersion((version) => version + 1);
-    window.addEventListener("classphere:notification", refresh);
-    return () => window.removeEventListener("classphere:notification", refresh);
-  }, []);
+  // One cached query per tab, each disabled (null path) while its tab is not
+  // showing. Tabs therefore load once and stay loaded — switching back and
+  // forth no longer refetches, which was the bulk of this page's traffic.
+  const papersPath =
+    activeType === "assigned" || activeType === "topic-wise" || activeType === "resources"
+      ? null
+      : `/api/v1/questions/tests?exam=${activeExam}&type=${activeType}`;
+
+  const assignedQuery = useApiQuery<{ tests: AssignedTest[] }>(
+    activeType === "assigned" ? "/api/v1/tests/assigned" : null,
+  );
+  const resourcesQuery = useApiQuery<{ resources: Resource[] }>(
+    activeType === "resources" ? "/api/v1/resources/student" : null,
+  );
+  const papersQuery = useApiQuery<{ papers: Paper[] }>(papersPath);
+  const examMetaQuery = useApiQuery<{ exams: ExamMeta[] }>(
+    activeType === "topic-wise" ? "/api/v1/questions/meta/exams" : null,
+  );
+
+  const assignedTests = assignedQuery.data?.tests ?? [];
+  const resources = resourcesQuery.data?.resources ?? [];
+  const papers = papersQuery.data?.papers ?? [];
+  const examMeta = examMetaQuery.data?.exams ?? [];
+
+  // isLoading, not isPending: a disabled query stays `pending` forever, so
+  // isPending would leave this page spinning on whichever tabs are inactive.
+  // isLoading is also false during background revalidation, so returning to an
+  // already-loaded tab shows the content instead of a spinner.
+  const loading =
+    assignedQuery.isLoading || resourcesQuery.isLoading || papersQuery.isLoading;
+  const fetchError =
+    assignedQuery.error?.message ??
+    resourcesQuery.error?.message ??
+    papersQuery.error?.message ??
+    examMetaQuery.error?.message ??
+    null;
+  // A failed action (starting topic practice) takes priority over a stale
+  // fetch error, since it is the thing the student just tried to do.
+  const error = actionError ?? fetchError;
 
   const handleDelete = async (paperId: string, title: string) => {
     if (!window.confirm(`Delete "${title}"?`)) return;
@@ -124,67 +155,32 @@ function TestsHubContent() {
       const res = await fetch(`${API_BASE}/tests/${paperId}`, { method: "DELETE", headers });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Failed to delete test.");
-      setPapers(prev => prev.filter(p => p.id !== paperId));
+      // Refetch rather than splicing local state: the list is cached now, so a
+      // local filter would be undone the moment the cache was read again.
+      await queryClient.invalidateQueries({ queryKey: [papersPath] });
     } catch (err: any) {
       alert(err.message || "An error occurred during deletion.");
     }
   };
 
-  // Load assigned tests from institute
+  // Best-effort — schedules a local reminder ~30 min before each upcoming
+  // scheduled test; no-ops on web / already-past-due tests.
+  // Depends on the query data itself, not the `?? []` fallback — that fallback
+  // is a fresh array every render, which would re-run this on every render.
+  const assignedForReminders = assignedQuery.data?.tests;
   useEffect(() => {
-    if (!session?.access_token || activeType !== "assigned") return;
-    setLoading(true);
-    setError(null);
-    apiClient.get("/api/v1/tests/assigned", session.access_token)
-      .then((res) => {
-        if (!res.success) throw new Error(res.message || "Failed to load assigned tests");
-        const tests: AssignedTest[] = res.data.tests ?? [];
-        setAssignedTests(tests);
-        // Best-effort — schedules a local reminder ~30 min before each upcoming
-        // scheduled test; no-ops on web / already-past-due tests.
-        for (const test of tests) {
-          void scheduleTestReminder({ id: test.id, title: test.title, scheduledAt: test.scheduled_at });
-        }
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [activeType, session, notificationVersion]);
+    for (const test of assignedForReminders ?? []) {
+      void scheduleTestReminder({ id: test.id, title: test.title, scheduledAt: test.scheduled_at });
+    }
+  }, [assignedForReminders]);
 
+  // The exam picker defaults to jee-main, which a given institute may not
+  // offer; fall back to the first exam the question bank actually has.
+  const examMetaData = examMetaQuery.data?.exams;
   useEffect(() => {
-    if (!session?.access_token || activeType !== "resources") return;
-    setLoading(true);
-    setError(null);
-    apiClient.get("/api/v1/resources/student", session.access_token)
-      .then((res) => setResources(res.data?.resources ?? []))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [activeType, session, notificationVersion]);
-
-  // Load PYQ / chapter-wise / mock tests from superadmin question bank
-  useEffect(() => {
-    if (!session?.access_token || activeType === "assigned" || activeType === "topic-wise" || activeType === "resources") return;
-    setLoading(true);
-    setError(null);
-    apiClient.get(`/api/v1/questions/tests?exam=${activeExam}&type=${activeType}`, session.access_token)
-      .then(res => {
-        if (res.success) setPapers(res.data.papers);
-        else throw new Error(res.message || "Failed to load tests");
-      })
-      .catch(err => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [activeType, activeExam, session]);
-
-  useEffect(() => {
-    if (!session?.access_token || activeType !== "topic-wise") return;
-    apiClient.get("/api/v1/questions/meta/exams", session.access_token)
-      .then((res) => {
-        const exams = res.data?.exams ?? [];
-        setExamMeta(exams);
-        const chosen = exams.find((entry: ExamMeta) => entry.code === activeExam) ?? exams[0];
-        if (chosen && chosen.code !== activeExam) setActiveExam(chosen.code);
-      })
-      .catch((err) => setError(err.message));
-  }, [activeType, session, activeExam]);
+    if (!examMetaData?.length) return;
+    if (!examMetaData.some((entry) => entry.code === activeExam)) setActiveExam(examMetaData[0].code);
+  }, [examMetaData, activeExam]);
 
   const selectedExamMeta = examMeta.find((entry) => entry.code === activeExam);
   const selectedSubjectMeta = selectedExamMeta?.subjects.find((entry) => entry.name === topicSubject);
@@ -193,14 +189,14 @@ function TestsHubContent() {
   const startTopicPractice = async () => {
     if (!session?.access_token || !topicSubject || !topicChapter || !topic) return;
     setCreatingTopicPractice(true);
-    setError(null);
+    setActionError(null);
     try {
       const response = await apiClient.post("/api/v1/questions/topic-practice", {
         exam: activeExam, subject: topicSubject, chapter: topicChapter, topic, difficulty: topicDifficulty || undefined,
       }, session.access_token);
       window.location.href = `/test/${response.data.paper_id}?mode=practice`;
     } catch (err: any) {
-      setError(err.message ?? "Could not start topic practice.");
+      setActionError(err.message ?? "Could not start topic practice.");
     } finally {
       setCreatingTopicPractice(false);
     }
