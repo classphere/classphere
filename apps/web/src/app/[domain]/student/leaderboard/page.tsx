@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { PageWrapper, SectionCard, DataTable, DataTableColumn, Card } from "@/components/ui";
 import { RiMedalFill, RiLoader4Line, RiTrophyLine } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type Batch = { id: string; name: string };
 type Paper = { id: string; title: string };
@@ -15,64 +15,47 @@ type LeaderboardTab = "test" | "weekly";
 
 export default function LeaderboardPage() {
   const { user, session } = useAuth();
-  const [batch, setBatch] = useState<Batch | null>(null);
-  const [papers, setPapers] = useState<Paper[]>([]);
   const [paperId, setPaperId] = useState("");
   const [tab, setTab] = useState<LeaderboardTab>("test");
-  const [testEntries, setTestEntries] = useState<TestEntry[]>([]);
-  const [weeklyEntries, setWeeklyEntries] = useState<WeeklyEntry[]>([]);
-  const [median, setMedian] = useState<number | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get<{ success: boolean; data: { batches: Batch[] } }>("/api/v1/rankings/batches", session.access_token)
-      .then((response) => {
-        if (!response.success) return;
-        const currentBatch = response.data.batches[0] ?? null;
-        setBatch(currentBatch);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  // Four steps, each depending on the one above: which batch the student is in,
+  // which papers that batch has completed, then the ranking for the selected
+  // paper or the week. Passing a null path keeps a step from firing until its
+  // input exists, and each step caches on its own — switching between the two
+  // tabs no longer refetches the batch and paper lookups every time.
+  const { data: batchData, isLoading: batchLoading } = useApiQuery<{ batches: Batch[] }>(
+    "/api/v1/rankings/batches",
+  );
+  const batch = batchData?.batches?.[0] ?? null;
 
-  useEffect(() => {
-    if (!session?.access_token || !batch?.id) return;
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { papers: Paper[] } }>(`/api/v1/rankings/papers?batch_id=${batch.id}`, session.access_token)
-      .then((response) => {
-        if (!response.success) return;
-        const completedPapers = response.data.papers ?? [];
-        setPapers(completedPapers);
-        setPaperId(completedPapers[0]?.id ?? "");
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, session?.access_token]);
+  const { data: paperData, isLoading: papersLoading } = useApiQuery<{ papers: Paper[] }>(
+    batch?.id ? `/api/v1/rankings/papers?batch_id=${batch.id}` : null,
+  );
+  const papers = paperData?.papers ?? [];
 
+  // The picker defaults to the most recent completed paper, then the student
+  // owns the selection.
+  const firstPaperId = paperData?.papers?.[0]?.id;
   useEffect(() => {
-    if (!session?.access_token || !batch?.id || tab !== "test") return;
-    if (!paperId) { setTestEntries([]); return; }
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { entries: TestEntry[]; batch_median: number } }>(`/api/v1/rankings/paper?batch_id=${batch.id}&paper_id=${paperId}`, session.access_token)
-      .then((response) => {
-        if (response.success) {
-          setTestEntries(response.data.entries);
-          setMedian(response.data.batch_median);
-        }
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, paperId, session?.access_token, tab]);
+    if (firstPaperId && !paperId) setPaperId(firstPaperId);
+  }, [firstPaperId, paperId]);
 
-  useEffect(() => {
-    if (!session?.access_token || !batch?.id || tab !== "weekly") return;
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { entries: WeeklyEntry[] } }>(`/api/v1/rankings/weekly?batch_id=${batch.id}`, session.access_token)
-      .then((response) => { if (response.success) setWeeklyEntries(response.data.entries); })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, session?.access_token, tab]);
+  const { data: testData, isLoading: testLoading } = useApiQuery<{ entries: TestEntry[]; batch_median: number }>(
+    tab === "test" && batch?.id && paperId
+      ? `/api/v1/rankings/paper?batch_id=${batch.id}&paper_id=${paperId}`
+      : null,
+  );
+  const testEntries = testData?.entries ?? [];
+  const median = testData?.batch_median ?? null;
+
+  const { data: weeklyData, isLoading: weeklyLoading } = useApiQuery<{ entries: WeeklyEntry[] }>(
+    tab === "weekly" && batch?.id ? `/api/v1/rankings/weekly?batch_id=${batch.id}` : null,
+  );
+  const weeklyEntries = weeklyData?.entries ?? [];
+
+  // isLoading rather than isPending: the steps that are disabled report
+  // `pending` forever, which would pin this page to a spinner.
+  const loading = batchLoading || papersLoading || testLoading || weeklyLoading;
 
   const mine = testEntries.find((entry) => entry.student_id === user?.id);
   const weeklyMine = weeklyEntries.find((entry) => entry.student_id === user?.id);

@@ -5,7 +5,9 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
 import { useAuth } from "@/lib/auth-context";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
+import { apiQueryKey, useApiQuery } from "@/lib/hooks/useApiQuery";
 import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR, detectExamCode } from "@/lib/exam-config";
 import { RiShieldCheckLine, RiErrorWarningLine, RiAlertLine } from "@remixicon/react";
 
@@ -65,7 +67,7 @@ export default function ReviewPaperPage() {
   const params = useParams<{ id: string }>();
   const { session, user } = useAuth();
 
-  const [data, setData]           = useState<any>(null);
+  const queryClient = useQueryClient();
   const [activeId, setActiveId]   = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<string | null>(null); // subject tab
   const [message, setMessage]     = useState("");
@@ -78,20 +80,22 @@ export default function ReviewPaperPage() {
   const isDepartmentUser = isHead || isMember;
 
   // ── Load ──────────────────────────────────────────────────────────────────
-  const load = useCallback(async () => {
-    if (!session?.access_token || !params.id) return;
-    const result: any = await apiClient.get(
-      `/api/v1/test-department/papers/${params.id}`,
-      session.access_token,
-    );
-    setData(result.data);
-    setActiveId((cur) => cur ?? result.data?.questions?.[0]?.id ?? null);
-    // set the initial subject tab to the first question's subject
-    const firstSub = result.data?.questions?.[0]?.subject ?? null;
-    setActiveTab((cur) => cur ?? firstSub);
-  }, [session?.access_token, params.id]);
+  const PAPER_PATH = params.id ? `/api/v1/test-department/papers/${params.id}` : null;
+  const { data, error: loadError } = useApiQuery<any>(PAPER_PATH);
 
-  useEffect(() => { load().catch((e) => setMessage(e.message)); }, [load]);
+  useEffect(() => {
+    if (loadError) setMessage(loadError.message);
+  }, [loadError]);
+
+  // First question and its subject select themselves once, then the reviewer
+  // owns the selection — the `cur ??` guards keep a revalidation from yanking
+  // them back to the top of the paper mid-review.
+  const firstQuestion = data?.questions?.[0];
+  useEffect(() => {
+    if (!firstQuestion) return;
+    setActiveId((cur) => cur ?? firstQuestion.id ?? null);
+    setActiveTab((cur) => cur ?? firstQuestion.subject ?? null);
+  }, [firstQuestion]);
 
   // ── Derived ───────────────────────────────────────────────────────────────
   const paper        = data?.paper;
@@ -172,7 +176,11 @@ export default function ReviewPaperPage() {
     setTransacting(true);
     try {
       const r: any = await apiClient.post(`/api/v1/test-department/papers/${params.id}/workflow`, { action }, session!.access_token);
-      setData({ ...data, paper: r.data.paper });
+      // Workflow only moves the paper's status; the questions are untouched, so
+      // the cached copy is patched rather than the whole paper refetched.
+      queryClient.setQueryData<any>(apiQueryKey(PAPER_PATH as string), (prev: any) =>
+        prev ? { ...prev, paper: r.data.paper } : prev,
+      );
       setMessage(
         action === "publish"         ? "Test published." :
         action === "approve"         ? "Paper approved." :
@@ -201,10 +209,14 @@ export default function ReviewPaperPage() {
       session!.access_token,
     );
     const saved = r.data?.question ?? payload;
-    setData((prev: any) => ({
-      ...prev,
-      questions: prev.questions.map((q: any) => q.id === question.id ? { ...q, ...saved } : q),
-    }));
+    // Written straight into the cache rather than refetched: the reviewer is
+    // editing one field at a time and a full reload between keystrokes would
+    // be both slow and disruptive.
+    queryClient.setQueryData<any>(apiQueryKey(PAPER_PATH as string), (prev: any) =>
+      prev
+        ? { ...prev, questions: prev.questions.map((q: any) => q.id === question.id ? { ...q, ...saved } : q) }
+        : prev,
+    );
   };
 
   // ── Stats ─────────────────────────────────────────────────────────────────

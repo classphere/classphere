@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useAuth } from "@/lib/auth-context";
 import { RiCheckLine, RiCloseLine, RiLoader4Line, RiArrowRightLine } from "@remixicon/react";
 
@@ -11,8 +12,10 @@ export default function CreateDPPPage() {
   const router = useRouter();
   const { session } = useAuth();
   
-  const [batches, setBatches] = useState<any[]>([]);
-  const [examsMeta, setExamsMeta] = useState<any[]>([]);
+  const { data: dashData } = useApiQuery<{ batches: any[] }>("/api/v1/dashboard/teacher");
+  const { data: metaData } = useApiQuery<{ exams: any[] }>("/api/v1/questions/meta/exams");
+  const batches = dashData?.batches ?? [];
+  const examsMeta = metaData?.exams ?? [];
   
   const [form, setForm] = useState({
     title: "",
@@ -24,23 +27,8 @@ export default function CreateDPPPage() {
   
   const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set());
   
-  const [questions, setQuestions] = useState<any[]>([]);
-  const [loadingQuestions, setLoadingQuestions] = useState(false);
   const [selectedQuestions, setSelectedQuestions] = useState<Set<string>>(new Set());
   const [publishing, setPublishing] = useState(false);
-
-  // 1. Fetch Batches and Exams Meta
-  useEffect(() => {
-    if (!session?.access_token) return;
-    
-    Promise.all([
-      apiClient.get("/api/v1/dashboard/teacher", session.access_token),
-      apiClient.get("/api/v1/questions/meta/exams", session.access_token)
-    ]).then(([dashRes, metaRes]) => {
-      if (dashRes.success) setBatches(dashRes.data.batches ?? []);
-      if (metaRes.success) setExamsMeta(metaRes.data.exams ?? []);
-    }).catch(console.error);
-  }, [session?.access_token]);
 
   // Derived selections based on batch's exam
   const selectedBatch = batches.find(b => b.id === form.batchId);
@@ -69,27 +57,19 @@ export default function CreateDPPPage() {
     setSelectedQuestions(newSet);
   };
 
-  // 2. Fetch Questions based on filters
-  useEffect(() => {
-    if (!session?.access_token || !selectedExamCode || !form.subject || !form.chapter) {
-      setQuestions([]);
-      return;
-    }
-    
-    setLoadingQuestions(true);
+  // Questions for the current exam/subject/chapter/topic selection. The path
+  // carries every filter, so it doubles as the cache key: stepping back to a
+  // chapter already looked at re-renders its questions with no request.
+  const questionsPath = (() => {
+    if (!selectedExamCode || !form.subject || !form.chapter) return null;
     let url = `/api/v1/questions?exam=${encodeURIComponent(selectedExamCode)}&subject=${encodeURIComponent(form.subject)}&chapter=${encodeURIComponent(form.chapter)}&limit=100`;
     if (selectedTopics.size > 0) {
-      url += `&topics=${encodeURIComponent(Array.from(selectedTopics).join(","))}`;
+      url += `&topics=${encodeURIComponent(Array.from(selectedTopics).sort().join(","))}`;
     }
-    
-    apiClient.get(url, session.access_token)
-      .then(res => {
-        if (res.success) setQuestions(res.data.questions ?? []);
-        else setQuestions([]);
-      })
-      .catch(console.error)
-      .finally(() => setLoadingQuestions(false));
-  }, [session?.access_token, selectedExamCode, form.subject, form.chapter, selectedTopics]);
+    return url;
+  })();
+  const { data: questionData, isLoading: loadingQuestions } = useApiQuery<{ questions: any[] }>(questionsPath);
+  const questions = questionData?.questions ?? [];
 
   // 3. Publish
   const handlePublish = async () => {
