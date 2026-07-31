@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
@@ -15,34 +15,21 @@ import {
   RiArrowDownSLine
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 export default function TeacherDashboardPage() {
   const { user, session } = useAuth();
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
 
   // ── Real dashboard data ──────────────────────────────────────────────────
-  const [metrics, setMetrics] = useState<any>(null);
-  const [batches, setBatches] = useState<any[]>([]);
-  const [recentDPPs, setRecentDPPs] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetch = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dashboard/teacher", session.access_token);
-        if (res.success) {
-          setMetrics(res.data.metrics);
-          setBatches(res.data.batches ?? []);
-          setRecentDPPs(res.data.recentDPPs ?? []);
-        }
-      } catch (e) { console.error("[TeacherDashboard]", e); }
-      finally { setLoading(false); }
-    };
-    fetch();
-  }, [session?.access_token]);
+  const { data, isPending: loading } = useApiQuery<{
+    metrics: any;
+    batches: any[];
+    recentDPPs: any[];
+  }>("/api/v1/dashboard/teacher");
+  const metrics = data?.metrics ?? null;
+  const batches = data?.batches ?? [];
+  const recentDPPs = data?.recentDPPs ?? [];
 
   const pendingDPPs = recentDPPs.filter((d) => d.pendingCount > 0);
   const completedDPPs = recentDPPs.filter((d) => d.pendingCount === 0 && d.submittedCount > 0);

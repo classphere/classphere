@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
@@ -24,7 +25,6 @@ import {
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
 import { useBatches } from "@/lib/hooks/useBatches";
-import { apiClient } from "@/lib/api.client";
 
 const EXAM_LABELS: Record<string, string> = {
   "jee-main":          "JEE Main",
@@ -47,32 +47,13 @@ export default function InstituteDashboardPage() {
   const { batches, loading: batchesLoading, createBatch } = useBatches();
 
   // ── Real institute data ──────────────────────────────────────────────────
-  const [institute, setInstitute] = useState<any>(null);
-  const [topPerformers, setTopPerformers] = useState<any[]>([]);
-  const [subscription, setSubscription] = useState<{ status?: string; current_period_end?: string | null } | null>(null);
-  const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const [realStudentCount, setRealStudentCount] = useState(0);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetchInstitute = async () => {
-      try {
-        const [instituteResponse, subscriptionResponse] = await Promise.allSettled([
-          apiClient.get("/api/v1/institutes/me", session.access_token),
-          apiClient.get<{ success: boolean; data: { status?: string; current_period_end?: string | null } }>("/api/v1/institutes/me/subscription", session.access_token),
-        ]);
-        if (instituteResponse.status === "fulfilled" && instituteResponse.value.success) {
-           setInstitute(instituteResponse.value.data.institute);
-           setTopPerformers(instituteResponse.value.data.topPerformers || []);
-        }
-        if (subscriptionResponse.status === "fulfilled" && subscriptionResponse.value.success) {
-          setSubscription(subscriptionResponse.value.data);
-        }
-      } catch (e) { console.error("[Institute]", e); }
-      finally { setSubscriptionLoading(false); }
-    };
-    fetchInstitute();
-  }, [session?.access_token]);
+  const { data: instituteData } = useApiQuery<{ institute: any; topPerformers?: any[] }>("/api/v1/institutes/me");
+  const { data: subscription, isPending: subscriptionLoading } =
+    useApiQuery<{ status?: string; current_period_end?: string | null }>("/api/v1/institutes/me/subscription");
+  const institute = instituteData?.institute ?? null;
+  const topPerformers = instituteData?.topPerformers ?? [];
 
   // Derived stats from real batch data
   const activeBatchesCount = batches.length;

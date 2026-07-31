@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import {
@@ -19,7 +19,7 @@ import {
 } from "@remixicon/react";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 type MockDPP = any;
 
 const SUBJECTS = ["Physics", "Chemistry", "Mathematics", "Biology"];
@@ -61,26 +61,12 @@ type FilterStatus = "all" | "pending" | "completed" | "upcoming";
 
 export default function TeacherDPPsPage() {
   const { session } = useAuth();
-  const [dpps, setDpps] = useState<MockDPP[]>([]);
-  const [loadingDPPs, setLoadingDPPs] = useState(true);
   const [filter, setFilter] = useState<FilterStatus>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // ── Fetch real DPPs and batches ──────────────────────────────────────────────
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const load = async () => {
-      setLoadingDPPs(true);
-      try {
-        const [dppsRes] = await Promise.all([
-          apiClient.get("/api/v1/dpps/teacher", session.access_token),
-        ]);
-        if (dppsRes.success) setDpps(dppsRes.data.dpps ?? []);
-      } catch (e) { console.error("[TeacherDPPs]", e); }
-      finally { setLoadingDPPs(false); }
-    };
-    load();
-  }, [session?.access_token]);
+  const { data: dppData, isPending: loadingDPPs } = useApiQuery<{ dpps: any[] }>("/api/v1/dpps/teacher");
+  const dpps = dppData?.dpps ?? [];
 
   const filtered = dpps.filter(d => {
     const matchesStatus = filter === "all" ? true : d.status === filter;

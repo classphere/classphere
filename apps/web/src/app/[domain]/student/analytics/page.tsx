@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PageWrapper, SectionCard, MetricGrid, MetricCard } from "@/components/ui";
 import { RiLineChartLine, RiTimeLine, RiCrosshair2Line, RiBookOpenLine, RiLoader4Line } from "@remixicon/react";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type Chapter = {
   subject: string;
@@ -27,17 +25,12 @@ const statusClass: Record<Chapter["status"], string> = {
 };
 
 export default function StudentAnalyticsPage() {
-  const { session } = useAuth();
-  const [data, setData] = useState<{ metrics: any; chapters: Chapter[]; subjects: Subject[]; syllabus?: { label: string; version: string; sourceUrl: string; sourcePageLimit?: number } } | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get<{ success: boolean; data: any }>("/api/v1/dashboard/student/analytics", session.access_token)
-      .then((response) => { if (response.success) setData(response.data); })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  const { data, isPending: loading } = useApiQuery<{
+    metrics: any;
+    chapters: Chapter[];
+    subjects: Subject[];
+    syllabus?: { label: string; version: string; sourceUrl: string; sourcePageLimit?: number };
+  }>("/api/v1/dashboard/student/analytics");
 
   if (loading) {
     return <><Navbar title="My Performance Analytics" /><PageWrapper><div className="flex min-h-64 items-center justify-center text-t-secondary"><RiLoader4Line className="animate-spin" size={28} /></div></PageWrapper></>;

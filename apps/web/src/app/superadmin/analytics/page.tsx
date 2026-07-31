@@ -3,35 +3,17 @@
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiBrainLine, RiGlobalLine, RiBookOpenLine, RiRobot2Line, RiLoader4Line } from "@remixicon/react";
-import { useEffect, useState } from "react";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 export default function GlobalAnalyticsPage() {
-  const { session } = useAuth();
-  const token = session?.access_token;
-
-  const [loading, setLoading] = useState(true);
-  const [analyticsData, setAnalyticsData] = useState<{
+  const { data: analyticsData, isPending: loading } = useApiQuery<{
     totalAttempts: number;
     activePapers: number;
     examBreakdown: any[];
     topInstitutes: any[];
     aiUsageAvailable: boolean;
-  } | null>(null);
+  }>("/api/v1/superadmin/analytics");
 
-  useEffect(() => {
-    if (!token) return;
-    setLoading(true);
-    apiClient.get<any>("/api/v1/superadmin/analytics", token)
-      .then(res => {
-        if (res.success && res.data) {
-          setAnalyticsData(res.data);
-        }
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [token]);
 
   if (loading || !analyticsData) {
     return (

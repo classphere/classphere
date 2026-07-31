@@ -1,36 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
-import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { apiClient } from "@/lib/api.client";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiCheckLine, RiTimeLine, RiTeamLine, RiTimerLine, RiMedalLine } from "@remixicon/react";
 
 export default function DPPAnalyticsPage() {
   const { id } = useParams();
-  const { session } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<any>(null);
+  const { data, isPending: loading } = useApiQuery<any>(id ? `/api/v1/dpps/${id}/analytics` : null);
 
-  useEffect(() => {
-    if (!session?.access_token || !id) return;
-    const fetchAnalytics = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get(`/api/v1/dpps/${id}/analytics`, session.access_token);
-        if (res.success) {
-          setData(res.data);
-        }
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchAnalytics();
-  }, [id, session?.access_token]);
 
   if (loading || !data) {
     return (

@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   RiQuestionLine,
   RiTimeLine,
@@ -73,18 +73,11 @@ function PaperCard({ paper }: { paper: any }) {
 
 export default function TestDepartmentPage() {
   const { session, user } = useAuth();
-  const [papers, setPapers] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
   const canOperate = user?.role === "test_department_head" || user?.role === "test_department_member";
   const roleLabel = user?.role === "test_department_head" ? "Department Head" : "Test Editor";
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get("/api/v1/test-department/papers", session.access_token)
-      .then((res: any) => setPapers(res.data?.papers ?? []))
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  const { data: paperData, isPending: loading } = useApiQuery<{ papers: any[] }>("/api/v1/test-department/papers");
+  const papers = paperData?.papers ?? [];
 
   return (
     <>

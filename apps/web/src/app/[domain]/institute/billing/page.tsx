@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiCheckFill, 
   RiDownload2Line, 
@@ -19,20 +19,8 @@ import { PremiumSectionCard } from "@/components/premium-ui";
 export default function BillingPage() {
   const { session } = useAuth();
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-  const [subscription, setSubscription] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetchSub = async () => {
-      try {
-        const res = await apiClient.get("/api/v1/institutes/me/subscription", session.access_token);
-        if (res.success) setSubscription(res.data);
-      } catch (e) { console.error(e); }
-      finally { setLoading(false); }
-    };
-    fetchSub();
-  }, [session?.access_token]);
+  const { data: subscription, isPending: loading } = useApiQuery<any>("/api/v1/institutes/me/subscription");
 
   return (
     <>
