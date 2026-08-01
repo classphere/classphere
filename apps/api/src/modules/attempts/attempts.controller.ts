@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import path from "path";
 import fs from "fs";
+import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { supabaseDB } from "../../lib/supabase";
 import { PYQ_REGISTRY, ROOT } from "../pyqs/pyqs.service";
 import { analyzeAttempt } from "../analysis-engine/services/analysis.service";
@@ -75,11 +76,47 @@ function normalizeAnswerSet(answer: unknown): string[] {
   return [...new Set(values.map((value) => String(value).trim().toUpperCase()).filter(Boolean))].sort();
 }
 
+/**
+ * The correct answers as option ids.
+ *
+ * Two answer-key formats exist in the bank: letters ("C") for ~49,700
+ * questions and 1-based option indices (2, "3") for ~740. The student always
+ * submits an option id, so an index key never matches and the question is
+ * marked wrong however it is answered. Indices are resolved through the
+ * question's own options.
+ *
+ * Only for choice questions: on an integer question the answer genuinely is a
+ * number, and "2" means two, not the second option.
+ */
+function canonicalCorrectAnswers(question: any): string[] {
+  const raw = Array.isArray(question.correct_answer) ? question.correct_answer : [question.correct_answer];
+  const options = Array.isArray(question.options) ? question.options : [];
+  if (!isChoiceQuestion(question.question_type) || options.length === 0) {
+    return normalizeAnswerSet(raw);
+  }
+  return normalizeAnswerSet(
+    raw.map((value: unknown) => {
+      const text = String(value ?? "").trim();
+      if (!/^[1-9]\d*$/.test(text)) return value;
+      const option = options[Number(text) - 1];
+      return option?.id ?? value;
+    }),
+  );
+}
+
 function scoreAnswer(question: any, selectedAnswer: unknown, scheme: { correct?: number; incorrect?: number }): { isCorrect: boolean; marks: number } {
   const selectedAnswers = normalizeAnswerSet(selectedAnswer);
   if (selectedAnswers.length === 0) return { isCorrect: false, marks: 0 };
 
-  const correctAnswersList = normalizeAnswerSet(question.correct_answer);
+  const correctAnswersList = canonicalCorrectAnswers(question);
+
+  // ~3,795 questions carry no answer key at all. Scoring them as incorrect
+  // penalises a student for a gap in our data, so they are neutral instead:
+  // no marks either way, as though the question were not on the paper.
+  if (correctAnswersList.length === 0) {
+    console.warn(`[scoreAnswer] Question ${question.id} has no correct_answer; scoring it neutral.`);
+    return { isCorrect: false, marks: 0 };
+  }
   // Multiple-correct questions require the complete correct set. Awarding full
   // marks for selecting just one correct option is an exam-scoring defect.
   const isCorrect = selectedAnswers.length === correctAnswersList.length &&
