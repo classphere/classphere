@@ -55,6 +55,24 @@ export function imageUrlsInText(text: string | null | undefined): string[] {
  * that supplies genuine URLs of its own is kept as-is, which is the hand-built
  * JSON case.
  */
+/**
+ * Remove inline image markdown once the URLs are held in an array.
+ *
+ * Applied at ingest rather than in normalize_json.py, because
+ * pdfExtractor.service.ts runs immediately after normalisation and needs the
+ * ![image](filename) markdown in place to swap each filename for base64. By
+ * the time a question reaches ingest that embedding has happened and the
+ * images have been uploaded to R2, so the markdown has done its job.
+ *
+ * Stripping here is what stops a figure rendering twice. A hand-built bank
+ * with images inline in question_text and a PDF-extracted paper both end up
+ * the same way: text without figures, figures in the array, rendered once.
+ */
+export function stripInlineImages(text: string | null | undefined): string {
+  if (!text) return text ?? "";
+  return text.replace(IMAGE_MARKDOWN, "").replace(/\n{3,}/g, "\n\n").trim();
+}
+
 export function figuresForStorage(processedText: string | null | undefined, supplied: unknown): string[] {
   const fromText = imageUrlsInText(processedText);
   const fromPayload = Array.isArray(supplied)

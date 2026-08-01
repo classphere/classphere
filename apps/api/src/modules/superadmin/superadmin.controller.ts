@@ -9,7 +9,7 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
-import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // Supabase credentials are read from the validated env via the supabaseDB
@@ -306,20 +306,23 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // "MSQ" | "Numerical" while the rest of the system uses snake_case,
           // and storing the raw value is what split one category into two.
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
-          question_text:  normalizedMedia.question_text,
-          // image_url stays the first figure so every existing reader is
-          // unaffected; question_images carries all of them. The extractor has
-          // always emitted the array and ingest has always dropped it.
-          // Derived from the processed text, whose inline images have by now
-          // been uploaded to R2 and rewritten as real URLs. The extractor's own
-          // array holds bare filenames that resolve to nothing once stored.
+          // Figures are pulled out of the text and stored in the array, so a
+          // question bank with images inline and a PDF-extracted paper end up
+          // identical — and neither renders the same figure twice.
+          question_text:  stripInlineImages(normalizedMedia.question_text),
+          // Read from the unstripped text above — stripInlineImages returns a
+          // new string, so both see the same input. The URLs are real by now:
+          // inline images were uploaded to R2 earlier in this function, whereas
+          // the extractor's own array holds bare filenames that resolve to
+          // nothing. image_url keeps the first figure for readers not yet
+          // migrated to the array.
           ...reconcileQuestionImages(
             normalizedMedia.image_url,
             figuresForStorage(normalizedMedia.question_text, q.question_images),
           ),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
-          explanation:    processedExplanation,
+          explanation:    stripInlineImages(processedExplanation),
           // Produced by normalize_json.py and, until now, dropped here.
           explanation_images: figuresForStorage(processedExplanation, q.explanation_images),
           tags:           q.tags || [],

@@ -13,7 +13,7 @@ import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfEx
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
-import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1012,14 +1012,14 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           year:           new Date(date).getFullYear() || null,
           source:         title,
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
-          question_text:  normalizedMedia.question_text,
+          question_text:  stripInlineImages(normalizedMedia.question_text),
           ...reconcileQuestionImages(
             normalizedMedia.image_url,
             figuresForStorage(normalizedMedia.question_text, q.question_images),
           ),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
-          explanation:    finalExplanation,
+          explanation:    stripInlineImages(finalExplanation),
           explanation_images: figuresForStorage(finalExplanation, q.explanation_images),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
