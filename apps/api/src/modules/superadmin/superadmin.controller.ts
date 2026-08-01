@@ -311,6 +311,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    processedExplanation,
+          // Produced by normalize_json.py and, until now, dropped here.
+          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

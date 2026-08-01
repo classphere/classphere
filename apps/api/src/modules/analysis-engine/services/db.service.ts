@@ -64,14 +64,15 @@ export const db = {
     let questionMap: Record<string, Question> = {};
 
     if (questionIds.length > 0) {
-      // explanation_image_url was in this list and does not exist on the table.
-      // PostgREST answered 42703, the error was discarded, `questions` came
-      // back undefined, and every answer was then filtered out below — so the
-      // engine analysed zero answers and wrote a structurally valid but
-      // entirely empty result for every attempt ever submitted.
+      // This list previously named explanation_image_url, which no column has
+      // ever been called. PostgREST answered 42703, the error was discarded,
+      // `questions` came back undefined, and every answer was filtered out
+      // below — so the engine analysed zero answers and wrote a structurally
+      // valid but entirely empty result for every attempt ever submitted.
+      // The real column is explanation_images (migration 43), an array.
       const { data: questions, error: qErr } = await supabaseAdmin
         .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
+        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
 
       // Throw rather than continue. An analysis with no questions is not a
@@ -85,9 +86,7 @@ export const db = {
           ...q,
           question_number: 0, // will be set below
           image_url: q.image_url || null,
-          // The column does not exist; the type keeps the field so downstream
-          // code is unchanged, and it is simply always null.
-          explanation_image_url: null,
+          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
         } as Question;

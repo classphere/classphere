@@ -1017,6 +1017,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
           explanation:    finalExplanation,
+          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

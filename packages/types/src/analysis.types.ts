@@ -38,8 +38,10 @@ export interface Question {
   options: QuestionOption[] | null;
   correct_answer: string[];
   explanation: string;
-  explanation_image_url: string | null;
-  question_type: "mcq_single" | "mcq_multi" | "integer";
+  /** Images supporting the explanation, in reading order. Was explanation_image_url,
+   *  a singular name no column ever had — see migration 43. */
+  explanation_images: string[];
+  question_type: "mcq_single" | "mcq_multi" | "integer" | "matching" | "assertion_reason";
   subject: string;
   chapter: string;
   topic: string;
