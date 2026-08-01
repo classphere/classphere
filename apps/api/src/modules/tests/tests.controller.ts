@@ -1013,6 +1013,8 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           source:         title,
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
           question_text:  normalizedMedia.question_text,
+          // question_images is the stem's figures. image_url is written only
+          // so rows predating it keep rendering; new payloads need not send it.
           ...reconcileQuestionImages(normalizedMedia.image_url, q.question_images),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,

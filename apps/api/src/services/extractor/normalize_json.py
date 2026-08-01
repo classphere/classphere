@@ -234,6 +234,23 @@ def wrap_bare_latex(text: str) -> str:
     return "".join(out)
 
 
+def strip_inline_images(text: str) -> str:
+    """Remove ![...](...) markdown once the references are held in an array.
+
+    Leaving them inline stores every figure twice and makes the renderer
+    de-duplicate by comparing URL strings. With the array authoritative the
+    text is text, and the figures are data.
+    """
+    if not text:
+        return text or ""
+    stripped = MD_IMG_RE.sub("", text)
+    # Collapse the blank lines the removal leaves behind.
+    return re.sub(r"
+{3,}", "
+
+", stripped).strip()
+
+
 def clean_dead_images(text: str, available: set) -> str:
     """Remove ![image](f) references whose file is not present on disk, so the
     frontend never renders an 'Image unavailable' placeholder. If `available`
@@ -553,9 +570,18 @@ def apply_structural_lock(questions: list, kind: str, report: dict):
 
 
 def to_platform_schema(questions: list, legacy_types: bool, available: set = None):
-    """Emit doc §4 schema fields. Keeps ![image](f) markdown in text fields
-    (pdfExtractor.service.ts embeds base64 from it) while also populating
-    question_images / explanation_images / options[].image_url.
+    """Emit doc §4 schema fields.
+
+    Figures are moved out of the text into question_images / explanation_images
+    rather than left inline as ![image](f) markdown. They used to be kept in
+    place for pdfExtractor.service.ts to embed base64 from; that file no longer
+    exists and the code that read it is commented out in extract_common.py, so
+    the duplication had no remaining consumer — it only meant every figure was
+    stored twice, once as markdown and once in the array, with the renderer
+    de-duplicating them by string comparison.
+
+    Options keep their inline handling: a single image_url per option is the
+    right shape there, and one option never carries two figures.
 
     When `available` (set of existing image filenames) is provided, image
     references whose file is missing are removed so the frontend never shows
@@ -570,12 +596,12 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
         q.setdefault("id", str(uuid.uuid4()))
 
         qt = clean_dead_images(q.get("question_text", "") or "", available)
-        q["question_text"] = qt
         q["question_images"] = [f for f in MD_IMG_RE.findall(qt) if resolvable(f)]
+        q["question_text"] = strip_inline_images(qt)
 
         exp = clean_dead_images(q.get("explanation", "") or "", available)
-        q["explanation"] = exp
         q["explanation_images"] = [f for f in MD_IMG_RE.findall(exp) if resolvable(f)]
+        q["explanation"] = strip_inline_images(exp)
 
         for opt in q.get("options", []) or []:
             text = clean_dead_images(opt.get("text", "") or "", available)

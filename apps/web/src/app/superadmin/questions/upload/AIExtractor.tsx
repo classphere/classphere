@@ -681,6 +681,7 @@ export default function AIExtractor() {
                         <QuestionBody
                           blocks={q.content_blocks}
                           legacyText={q.question_text || ""}
+                          images={q.question_images}
                           legacyImageUrl={q.image_url}
                           legacyImageAlt={`Figure for question ${q.question_number}`}
                           reviewerMode

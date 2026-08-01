@@ -21,6 +21,8 @@ interface RevisionQuestion {
   id: string;
   question_text?: string;
   image_url?: string | null;
+  /** All figures for the stem; image_url is the legacy single-figure field. */
+  question_images?: string[] | null;
   content_blocks?: unknown[] | null;
   options?: Array<{ id: string; text?: string; image_url?: string | null; content_blocks?: unknown[] | null }>;
   question_type?: string;
@@ -288,6 +290,7 @@ export default function DailyRevisionPage() {
                     <QuestionBody
                       blocks={q.content_blocks as never}
                       legacyText={q.question_text}
+                      images={q.question_images}
                       legacyImageUrl={q.image_url}
                       legacyImageAlt={`Figure for question ${qIndex + 1}`}
                     />

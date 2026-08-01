@@ -310,6 +310,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // image_url stays the first figure so every existing reader is
           // unaffected; question_images carries all of them. The extractor has
           // always emitted the array and ingest has always dropped it.
+          // question_images is the stem's figures. image_url is written only
+          // so rows predating it keep rendering; new payloads need not send it.
           ...reconcileQuestionImages(normalizedMedia.image_url, q.question_images),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],

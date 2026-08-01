@@ -89,6 +89,9 @@ export interface Question {
   id: string;
   question_number: number;
   question_text: string;
+  /** All figures for the stem, in reading order. */
+  question_images?: string[] | null;
+  /** Legacy single figure, kept for rows uploaded before question_images existed. */
   image_url?: string | null;
   options: Option[] | null;
   correct_answer: string[];

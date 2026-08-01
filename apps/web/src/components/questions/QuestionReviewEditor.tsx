@@ -297,6 +297,7 @@ export function QuestionReviewEditor({
                 <QuestionBody
                   blocks={draft.content_blocks}
                   legacyText={draft.question_text ?? ""}
+                  images={draft.question_images}
                   legacyImageUrl={draft.image_url}
                   legacyImageAlt="Question figure"
                   reviewerMode
