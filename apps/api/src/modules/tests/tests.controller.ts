@@ -567,6 +567,15 @@ async function processBase64ImagesInText(text: string | null): Promise<string> {
   return updatedText;
 }
 
+/** Same trip to R2 for figure arrays, which now carry base64 from the extractor. */
+async function processBase64ImageList(images: unknown): Promise<string[]> {
+  if (!Array.isArray(images)) return [];
+  const uploaded = await Promise.all(
+    images.map((entry) => processBase64ImageUrl(String(entry ?? "").trim() || null)),
+  );
+  return uploaded.filter((url): url is string => Boolean(url));
+}
+
 async function processBase64ImageUrl(imageUrl: string | null): Promise<string | null> {
   if (!imageUrl || !imageUrl.startsWith("data:")) return imageUrl;
   const match = imageUrl.match(/^data:(image\/[a-zA-Z+.-]+);base64,(.+)$/);
@@ -901,6 +910,8 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const processedText = await processBase64ImagesInText(q.question_text);
         const processedExplanation = await processBase64ImagesInText(q.explanation);
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
+        const processedQuestionImages = await processBase64ImageList(q.question_images);
+        const processedExplanationImages = await processBase64ImageList(q.explanation_images);
 
         const processedOptions = await Promise.all(
           (q.options ?? []).map(async (opt: any) => {
@@ -1015,12 +1026,12 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           question_text:  stripInlineImages(normalizedMedia.question_text),
           ...reconcileQuestionImages(
             normalizedMedia.image_url,
-            figuresForStorage(normalizedMedia.question_text, q.question_images),
+            figuresForStorage(normalizedMedia.question_text, processedQuestionImages),
           ),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
           explanation:    stripInlineImages(finalExplanation),
-          explanation_images: figuresForStorage(finalExplanation, q.explanation_images),
+          explanation_images: figuresForStorage(finalExplanation, processedExplanationImages),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

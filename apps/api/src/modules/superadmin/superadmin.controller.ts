@@ -161,6 +161,22 @@ async function processBase64ImageUrl(imageUrl: string | null): Promise<string | 
   }
 }
 
+/**
+ * Upload every data URL in a figure list to R2, returning storage URLs.
+ *
+ * The extractor embeds base64 into question_images and explanation_images now
+ * that it reads those arrays directly. Only text used to carry base64, so only
+ * text was uploaded; an array of data URLs would otherwise be written to the
+ * database verbatim, bloating rows and defeating the CDN.
+ */
+async function processBase64ImageList(images: unknown): Promise<string[]> {
+  if (!Array.isArray(images)) return [];
+  const uploaded = await Promise.all(
+    images.map((entry) => processBase64ImageUrl(String(entry ?? "").trim() || null)),
+  );
+  return uploaded.filter((url): url is string => Boolean(url));
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/superadmin/upload-questions
@@ -259,6 +275,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         const processedText = await processBase64ImagesInText(q.question_text);
         const processedExplanation = await processBase64ImagesInText(q.explanation);
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
+        // Figures now arrive as base64 inside the arrays, not only inline in
+        // the text, so they need the same trip to R2.
+        const processedQuestionImages = await processBase64ImageList(q.question_images);
+        const processedExplanationImages = await processBase64ImageList(q.explanation_images);
 
         const processedOptions = await Promise.all(
           (q.options ?? []).map(async (opt: any) => {
@@ -318,13 +338,13 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // migrated to the array.
           ...reconcileQuestionImages(
             normalizedMedia.image_url,
-            figuresForStorage(normalizedMedia.question_text, q.question_images),
+            figuresForStorage(normalizedMedia.question_text, processedQuestionImages),
           ),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    stripInlineImages(processedExplanation),
           // Produced by normalize_json.py and, until now, dropped here.
-          explanation_images: figuresForStorage(processedExplanation, q.explanation_images),
+          explanation_images: figuresForStorage(processedExplanation, processedExplanationImages),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

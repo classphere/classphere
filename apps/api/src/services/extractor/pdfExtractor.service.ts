@@ -117,6 +117,35 @@ function embedImagesInText(text: string, imagesDir: string): string {
   });
 }
 
+/**
+ * Turn a list of extracted filenames into data URLs.
+ *
+ * normalize_json.py has already catalogued every figure into question_images
+ * and explanation_images, so the array is the direct source — scanning the
+ * text for markdown was only ever a way of reaching the same filenames before
+ * those arrays existed.
+ *
+ * A filename with no file on disk is dropped rather than kept: it would reach
+ * the database as a bare name that resolves to nothing, and an absent figure
+ * is easier to spot than a broken one.
+ */
+function embedImageList(images: unknown, imagesDir: string): string[] {
+  if (!Array.isArray(images)) return [];
+  const embedded: string[] = [];
+  for (const entry of images) {
+    const filename = String(entry ?? "").trim();
+    if (!filename) continue;
+    if (filename.startsWith("data:") || /^https?:/i.test(filename)) {
+      embedded.push(filename);
+      continue;
+    }
+    const filePath = path.join(imagesDir, filename);
+    if (fs.existsSync(filePath)) embedded.push(fileToBase64(filePath));
+    else console.warn(`[pdfExtractor] Figure "${filename}" not found in ${imagesDir}; dropping it.`);
+  }
+  return embedded;
+}
+
 function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): ExtractionResult {
   if (!fs.existsSync(jsonPath)) {
     return { success: false, message: "Pipeline completed but no output JSON was found.", questions: [] };
@@ -126,16 +155,22 @@ function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): Ex
   const completeness: ExtractionCompleteness | null = parsed.completeness ?? null;
   console.log(`[pdfExtractor] Embedding images into ${questions.length} questions…`);
   for (const q of questions) {
-    if (q.question_text) q.question_text = embedImagesInText(q.question_text, imagesDir);
+    // Figures come from the arrays normalize_json.py built. The text fields no
+    // longer carry image markdown at all, so there is nothing left to scan and
+    // nothing stored twice.
+    q.question_images = embedImageList(q.question_images, imagesDir);
+    q.explanation_images = embedImageList(q.explanation_images, imagesDir);
+
     if (Array.isArray(q.options)) {
       for (const opt of q.options) {
+        // An option carries at most one figure and keeps it in image_url, so
+        // the text scan still applies here.
         if (opt.text) opt.text = embedImagesInText(opt.text, imagesDir);
         if (opt.image_url)
           opt.image_url = embedImagesInText(`![image](${opt.image_url})`, imagesDir)
             .replace(/^!\[image\]\(|\)$/g, "");
       }
     }
-    if (q.explanation) q.explanation = embedImagesInText(q.explanation, imagesDir);
   }
   if (!questions.length) {
     return { success: false, message: "Extraction produced no questions.", questions, completeness };
