@@ -70,7 +70,6 @@ export function QuestionContent({
               blocks={q.content_blocks}
               legacyText={q.question_text}
               images={q.question_images}
-              legacyImageUrl={q.image_url}
               legacyImageAlt={`Figure for question ${q.question_number}`}
               confidence={q.extraction_confidence}
               needs_review={q.needs_review ?? q._needs_review}

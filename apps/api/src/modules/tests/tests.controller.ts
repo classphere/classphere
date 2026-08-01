@@ -13,7 +13,7 @@ import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfEx
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
-import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages, stripInlineImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1024,9 +1024,9 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           source:         title,
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
           question_text:  stripInlineImages(normalizedMedia.question_text),
-          ...reconcileQuestionImages(
-            normalizedMedia.image_url,
-            figuresForStorage(normalizedMedia.question_text, processedQuestionImages),
+          question_images: figuresForStorage(
+            normalizedMedia.question_text,
+            [...processedQuestionImages, ...(processedImageUrl ? [processedImageUrl] : [])],
           ),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,

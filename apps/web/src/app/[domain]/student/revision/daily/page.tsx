@@ -291,7 +291,6 @@ export default function DailyRevisionPage() {
                       blocks={q.content_blocks as never}
                       legacyText={q.question_text}
                       images={q.question_images}
-                      legacyImageUrl={q.image_url}
                       legacyImageAlt={`Figure for question ${qIndex + 1}`}
                     />
                   </div>

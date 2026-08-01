@@ -682,7 +682,6 @@ export default function AIExtractor() {
                           blocks={q.content_blocks}
                           legacyText={q.question_text || ""}
                           images={q.question_images}
-                          legacyImageUrl={q.image_url}
                           legacyImageAlt={`Figure for question ${q.question_number}`}
                           reviewerMode
                           confidence={q.extraction_metadata?.confidence ?? q.extraction_confidence}

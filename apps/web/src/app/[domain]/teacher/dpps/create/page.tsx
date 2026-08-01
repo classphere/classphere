@@ -292,9 +292,11 @@ export default function CreateDPPPage() {
                               {q.question_text}
                             </p>
                             
-                            {q.image_url && (
-                              <img src={q.image_url} alt="Question" className="mt-4 max-w-full h-auto max-h-48 rounded-[10px]" />
-                            )}
+                            {/* A question can carry several figures; image_url
+                                held only the first and is no longer written. */}
+                            {(q.question_images ?? []).map((src: string) => (
+                              <img key={src} src={src} alt="Question" className="mt-4 max-w-full h-auto max-h-48 rounded-[10px]" />
+                            ))}
                           </div>
                         </div>
                       </div>

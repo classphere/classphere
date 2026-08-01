@@ -1,4 +1,4 @@
-/** Keep legacy inline markdown images and image_url from rendering one figure twice. */
+/** Matches ![alt](url) markdown, capturing the url. */
 const IMAGE_MARKDOWN = /!\[[^\]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)/g;
 
 function removeDuplicateInlineImage(text: string | null | undefined, imageUrl: string | null | undefined) {
@@ -9,6 +9,13 @@ function removeDuplicateInlineImage(text: string | null | undefined, imageUrl: s
     .trim();
 }
 
+/**
+ * Options carry one figure each, in image_url, and may also repeat it inline in
+ * their text. This drops the inline copy so it is not rendered twice.
+ *
+ * Questions are handled by stripInlineImages instead: their figures live in an
+ * array, so there is no single url to compare against.
+ */
 export function normalizeQuestionMedia<T extends { question_text?: string | null; image_url?: string | null; options?: any }>(question: T): T {
   return {
     ...question,
@@ -19,18 +26,6 @@ export function normalizeQuestionMedia<T extends { question_text?: string | null
   };
 }
 
-/**
- * Reconcile the two ways a question's figures arrive.
- *
- * The extractor emits `question_images` as an array; the table has carried a
- * single `image_url` since the beginning and 37 API sites plus 7 renderers
- * read it. Rather than migrate them all at once, both are kept in step:
- * image_url is the first figure, question_images is all of them.
- *
- * Whichever the payload supplies, the other is derived — so an older upload
- * with only image_url still populates the array, and a new one with only the
- * array still satisfies every existing reader.
- */
 /** Image URLs referenced by markdown in a text field, in order. */
 export function imageUrlsInText(text: string | null | undefined): string[] {
   if (!text) return [];
@@ -43,61 +38,38 @@ export function imageUrlsInText(text: string | null | undefined): string[] {
 }
 
 /**
- * The figure list for a stored question.
- *
- * The extractor's array holds bare filenames — "_page_2_Figure_1.jpeg" — because
- * finalizeQuestions embeds base64 into the text fields and never updates the
- * arrays alongside them. Those filenames resolve to nothing once stored, so
- * they are not what should be persisted.
- *
- * The processed text is authoritative instead: by the time it reaches here its
- * inline images have been uploaded to R2 and rewritten as real URLs. A payload
- * that supplies genuine URLs of its own is kept as-is, which is the hand-built
- * JSON case.
- */
-/**
  * Remove inline image markdown once the URLs are held in an array.
  *
- * Applied at ingest rather than in normalize_json.py, because
- * pdfExtractor.service.ts runs immediately after normalisation and needs the
- * ![image](filename) markdown in place to swap each filename for base64. By
- * the time a question reaches ingest that embedding has happened and the
- * images have been uploaded to R2, so the markdown has done its job.
+ * Applied at ingest rather than in the extractor, because the images have to
+ * survive as markdown long enough for pdfExtractor.service.ts to resolve them;
+ * by the time a question reaches ingest they have been uploaded to R2 and the
+ * markdown has served its purpose.
  *
- * Stripping here is what stops a figure rendering twice. A hand-built bank
- * with images inline in question_text and a PDF-extracted paper both end up
- * the same way: text without figures, figures in the array, rendered once.
+ * This is what stops a figure rendering twice. A hand-built bank with images
+ * inline in question_text and a PDF-extracted paper both end up the same way:
+ * text without figures, figures in the array, each rendered once.
  */
 export function stripInlineImages(text: string | null | undefined): string {
   if (!text) return text ?? "";
   return text.replace(IMAGE_MARKDOWN, "").replace(/\n{3,}/g, "\n\n").trim();
 }
 
+/**
+ * The figure list to store for a question.
+ *
+ * The processed text is authoritative: by the time it reaches here its inline
+ * images have been uploaded to R2 and rewritten as real URLs. A payload that
+ * supplies genuine URLs of its own is kept as well — that is the hand-built
+ * JSON case — while bare filenames are discarded, since they resolve to
+ * nothing once stored and the text already holds the usable version.
+ */
 export function figuresForStorage(processedText: string | null | undefined, supplied: unknown): string[] {
   const fromText = imageUrlsInText(processedText);
   const fromPayload = Array.isArray(supplied)
     ? supplied.map((value) => String(value ?? "").trim()).filter(Boolean)
     : [];
-  // Only absolute URLs or data URIs are usable; anything else is a local
-  // filename from the extractor and is superseded by the text.
   const usable = fromPayload.filter((value) => /^(https?:|data:)/i.test(value));
   const merged = [...fromText];
   for (const url of usable) if (!merged.includes(url)) merged.push(url);
   return merged;
-}
-
-export function reconcileQuestionImages(
-  imageUrl: unknown,
-  images: unknown,
-): { image_url: string | null; question_images: string[] } {
-  const fromArray = Array.isArray(images)
-    ? images.map((value) => String(value ?? "").trim()).filter(Boolean)
-    : [];
-  const single = String(imageUrl ?? "").trim();
-
-  // A single image_url not already in the array belongs at the front: it is
-  // the figure every existing reader is currently showing.
-  const ordered = single && !fromArray.includes(single) ? [single, ...fromArray] : fromArray;
-
-  return { image_url: ordered[0] ?? null, question_images: ordered };
 }

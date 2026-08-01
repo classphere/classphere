@@ -9,7 +9,7 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
-import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages, stripInlineImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // Supabase credentials are read from the validated env via the supabaseDB
@@ -334,11 +334,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // new string, so both see the same input. The URLs are real by now:
           // inline images were uploaded to R2 earlier in this function, whereas
           // the extractor's own array holds bare filenames that resolve to
-          // nothing. image_url keeps the first figure for readers not yet
-          // migrated to the array.
-          ...reconcileQuestionImages(
-            normalizedMedia.image_url,
-            figuresForStorage(normalizedMedia.question_text, processedQuestionImages),
+          // nothing.
+          question_images: figuresForStorage(
+            normalizedMedia.question_text,
+            [...processedQuestionImages, ...(processedImageUrl ? [processedImageUrl] : [])],
           ),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],

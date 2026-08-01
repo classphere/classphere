@@ -44,7 +44,7 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
 
   const { data: rawQs } = await supabaseDB
     .from("questions")
-    .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
+    .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
     .in("id", questionIds)
     .eq("is_active", true);
 
@@ -571,7 +571,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         question: {
           ...q,
           question_number: i + 1,
-          image_url: q.image_url || null,
+          question_images: Array.isArray(q.question_images) ? q.question_images : [],
           explanation_images: q.explanation_images ?? [],
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
