@@ -73,7 +73,10 @@ export default function Dashboard() {
   }
 
   const { metrics, chartData, examTarget, batch } = stats || {};
-  const isNEET = examTarget === "neet";
+  // The most recent attempt's exam_code is the most reliable signal — it is
+  // recorded when the paper is taken. examTarget is the fallback for a student
+  // who has not sat anything yet.
+  const examCode = history[0]?.exam_code ?? examTarget;
 
   return (
     <>
@@ -90,7 +93,7 @@ export default function Dashboard() {
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_420px] items-start overflow-x-hidden">
           <div className="grid gap-3 min-w-0 overflow-x-hidden">
             <UpcomingTestsWidget />
-            <ScorePerformanceWidget data={chartData || []} isNEET={isNEET} latestAttempt={history[0]} />
+            <ScorePerformanceWidget data={chartData || []} examCode={examCode} latestAttempt={history[0]} />
             <PendingDPPsWidget dpps={dpps} />
           </div>
           <div className="grid gap-3 min-w-0 overflow-x-hidden">
