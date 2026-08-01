@@ -99,15 +99,21 @@ WHERE s.institute_id = i.id
 
 -- ─── 4. Billed student counts ────────────────────────────────────────────────
 --
--- The CRM list derived student counts by pulling every batch_students row and
--- tallying them in Node. That is wrong twice over for billing: it counts
--- enrolments rather than students, so anyone in two batches is charged twice,
--- and the fetch is unbounded, so it silently truncates at PostgREST's 1000-row
--- cap and *under*-counts large institutes.
+-- An institute is billed for the students it is currently teaching: those in a
+-- batch that is active, has started, and has not passed its expiry date.
 --
--- users.institute_id is set at registration, so one row per student is the
--- honest source. Aggregating here keeps it a single index scan and avoids
--- either failure mode. PostgREST cannot express GROUP BY, hence a function.
+-- Tying the count to batch lifecycle is what makes a session a renewal
+-- boundary. Without it an institute could run one immortal batch and rotate
+-- new cohorts through it forever on a single year's fee; and, in the other
+-- direction, would keep being billed for students who left years ago.
+--
+-- The CRM list previously tallied batch_students rows in Node, which was wrong
+-- twice over for money: it counted enrolments rather than students, so anyone
+-- in two batches was billed twice, and the fetch was unbounded, so it
+-- truncated at PostgREST's 1000-row cap and *under*-counted exactly the large
+-- institutes worth the most. count(DISTINCT ...) settles the first; doing it
+-- in Postgres settles the second. PostgREST cannot express GROUP BY, hence a
+-- function.
 
 CREATE OR REPLACE FUNCTION public.institute_student_counts()
 RETURNS TABLE (institute_id UUID, student_count BIGINT)
@@ -116,19 +122,17 @@ STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
-  SELECT u.institute_id, count(*)::BIGINT
-  FROM public.users u
-  WHERE u.role = 'student'
-    AND u.institute_id IS NOT NULL
-  GROUP BY u.institute_id;
+  SELECT b.institute_id, count(DISTINCT bs.student_id)::BIGINT
+  FROM public.batch_students bs
+  JOIN public.batches b ON b.id = bs.batch_id
+  WHERE b.is_active = true
+    AND (b.starts_at IS NULL OR b.starts_at <= now())
+    AND (b.ends_at   IS NULL OR b.ends_at   >  now())
+  GROUP BY b.institute_id;
 $$;
 
 REVOKE ALL ON FUNCTION public.institute_student_counts() FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.institute_student_counts() TO service_role;
-
-CREATE INDEX IF NOT EXISTS idx_users_institute_students
-  ON public.users (institute_id)
-  WHERE role = 'student';
 
 -- ─── 5. Index ────────────────────────────────────────────────────────────────
 -- Revenue rollups scan every active subscription and read the terms; this

@@ -71,14 +71,7 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
     }
   }
 
-  // 3. Student counts per institute.
-  //
-  // This used to walk batch_students and tally in Node, which counted
-  // enrolments rather than students — anyone in two batches was counted twice
-  // — and pulled an unbounded set, so it silently truncated at PostgREST's
-  // 1000-row cap for large institutes. Both errors now land on an invoice, so
-  // it aggregates over users.institute_id instead, which is one row per
-  // student and set at registration.
+  // 3. Billable students per institute — those in an active, unexpired batch.
   const studentCountMap = await getStudentCountsByInstitute();
 
   // 4. Commercial terms, so the CRM row can show what the institute is worth
@@ -384,11 +377,17 @@ export function annualValuePaise(terms: Pick<SubscriptionTerms, "billing_mode" |
 }
 
 /**
- * Students per institute, keyed by institute id.
+ * Billable students per institute, keyed by institute id.
  *
- * Aggregated in Postgres (see migration 36) rather than by pulling rows: the
- * previous approach counted batch enrolments and truncated at 1000 rows, and
- * both mistakes now reach an invoice.
+ * "Billable" means enrolled in a batch that is active, started, and not past
+ * its expiry — see migration 36. Tying the count to batch lifecycle is what
+ * makes the end of a session a renewal boundary: an immortal batch would
+ * otherwise let an institute rotate new cohorts through one year's fee
+ * forever, and, in the other direction, expired cohorts would keep billing.
+ *
+ * Aggregated in Postgres rather than by pulling rows: the previous approach
+ * counted enrolments rather than students and truncated at 1000 rows, and both
+ * mistakes now reach an invoice.
  */
 export async function getStudentCountsByInstitute(): Promise<Record<string, number>> {
   const { data, error } = await supabaseDB.rpc("institute_student_counts");

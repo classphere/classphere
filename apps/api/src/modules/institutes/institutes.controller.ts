@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { annualValuePaise, provisionInstitute } from "./institutes.service";
+import { annualValuePaise, getStudentCountsByInstitute, provisionInstitute } from "./institutes.service";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { logAdminAction } from "../../lib/admin-audit";
 import { getOrSetCache } from "../../lib/cache";
@@ -997,15 +997,14 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
     }
 
     // The stored row holds the rate; what the institute owes depends on how
-    // many students they actually have, so it is computed rather than stored —
-    // a cached total would drift the moment anyone enrolled.
-    const { count: studentCount } = await supabaseDB
-      .from("users")
-      .select("id", { count: "exact", head: true })
-      .eq("institute_id", user.institute_id)
-      .eq("role", "student");
-
-    const students = studentCount ?? 0;
+    // many students they are currently teaching, so it is computed rather than
+    // stored — a cached total would drift the moment anyone enrolled.
+    //
+    // Deliberately the same rollup the CRM reads, not a separate query here:
+    // an institute checking its own bill must see the number it will be
+    // invoiced for, including the batch-expiry rule that decides it.
+    const studentCounts = await getStudentCountsByInstitute();
+    const students = studentCounts[user.institute_id] ?? 0;
     res.status(200).json({
       success: true,
       data: {
