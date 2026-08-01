@@ -9,7 +9,7 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
-import { normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // Supabase credentials are read from the validated env via the supabaseDB
@@ -310,14 +310,18 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // image_url stays the first figure so every existing reader is
           // unaffected; question_images carries all of them. The extractor has
           // always emitted the array and ingest has always dropped it.
-          // question_images is the stem's figures. image_url is written only
-          // so rows predating it keep rendering; new payloads need not send it.
-          ...reconcileQuestionImages(normalizedMedia.image_url, q.question_images),
+          // Derived from the processed text, whose inline images have by now
+          // been uploaded to R2 and rewritten as real URLs. The extractor's own
+          // array holds bare filenames that resolve to nothing once stored.
+          ...reconcileQuestionImages(
+            normalizedMedia.image_url,
+            figuresForStorage(normalizedMedia.question_text, q.question_images),
+          ),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    processedExplanation,
           // Produced by normalize_json.py and, until now, dropped here.
-          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
+          explanation_images: figuresForStorage(processedExplanation, q.explanation_images),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

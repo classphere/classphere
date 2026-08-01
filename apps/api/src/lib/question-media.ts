@@ -31,6 +31,43 @@ export function normalizeQuestionMedia<T extends { question_text?: string | null
  * with only image_url still populates the array, and a new one with only the
  * array still satisfies every existing reader.
  */
+/** Image URLs referenced by markdown in a text field, in order. */
+export function imageUrlsInText(text: string | null | undefined): string[] {
+  if (!text) return [];
+  const found: string[] = [];
+  for (const match of text.matchAll(IMAGE_MARKDOWN)) {
+    const url = String(match[1] ?? "").trim();
+    if (url) found.push(url);
+  }
+  return found;
+}
+
+/**
+ * The figure list for a stored question.
+ *
+ * The extractor's array holds bare filenames — "_page_2_Figure_1.jpeg" — because
+ * finalizeQuestions embeds base64 into the text fields and never updates the
+ * arrays alongside them. Those filenames resolve to nothing once stored, so
+ * they are not what should be persisted.
+ *
+ * The processed text is authoritative instead: by the time it reaches here its
+ * inline images have been uploaded to R2 and rewritten as real URLs. A payload
+ * that supplies genuine URLs of its own is kept as-is, which is the hand-built
+ * JSON case.
+ */
+export function figuresForStorage(processedText: string | null | undefined, supplied: unknown): string[] {
+  const fromText = imageUrlsInText(processedText);
+  const fromPayload = Array.isArray(supplied)
+    ? supplied.map((value) => String(value ?? "").trim()).filter(Boolean)
+    : [];
+  // Only absolute URLs or data URIs are usable; anything else is a local
+  // filename from the extractor and is superseded by the text.
+  const usable = fromPayload.filter((value) => /^(https?:|data:)/i.test(value));
+  const merged = [...fromText];
+  for (const url of usable) if (!merged.includes(url)) merged.push(url);
+  return merged;
+}
+
 export function reconcileQuestionImages(
   imageUrl: unknown,
   images: unknown,

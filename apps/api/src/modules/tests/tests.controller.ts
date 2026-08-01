@@ -13,7 +13,7 @@ import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfEx
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
-import { normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1013,13 +1013,14 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           source:         title,
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
           question_text:  normalizedMedia.question_text,
-          // question_images is the stem's figures. image_url is written only
-          // so rows predating it keep rendering; new payloads need not send it.
-          ...reconcileQuestionImages(normalizedMedia.image_url, q.question_images),
+          ...reconcileQuestionImages(
+            normalizedMedia.image_url,
+            figuresForStorage(normalizedMedia.question_text, q.question_images),
+          ),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
           explanation:    finalExplanation,
-          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
+          explanation_images: figuresForStorage(finalExplanation, q.explanation_images),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({
