@@ -64,17 +64,30 @@ export const db = {
     let questionMap: Record<string, Question> = {};
 
     if (questionIds.length > 0) {
-      const { data: questions } = await supabaseAdmin
+      // explanation_image_url was in this list and does not exist on the table.
+      // PostgREST answered 42703, the error was discarded, `questions` came
+      // back undefined, and every answer was then filtered out below — so the
+      // engine analysed zero answers and wrote a structurally valid but
+      // entirely empty result for every attempt ever submitted.
+      const { data: questions, error: qErr } = await supabaseAdmin
         .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, source, year, tags")
+        .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
+
+      // Throw rather than continue. An analysis with no questions is not a
+      // degraded analysis, it is a wrong one, and it looks fine on the way out.
+      if (qErr) {
+        throw new Error(`[db.service] Failed to fetch questions for attempt ${attemptId}: ${qErr.message}`);
+      }
 
       for (const q of questions ?? []) {
         questionMap[q.id] = {
           ...q,
           question_number: 0, // will be set below
           image_url: q.image_url || null,
-          explanation_image_url: q.explanation_image_url || null,
+          // The column does not exist; the type keeps the field so downstream
+          // code is unchanged, and it is simply always null.
+          explanation_image_url: null,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
         } as Question;
@@ -90,6 +103,13 @@ export const db = {
     const positionMap: Record<string, number> = {};
     for (const pq of paperQs ?? []) {
       positionMap[pq.question_id] = pq.position;
+    }
+
+    if ((rawAnswers ?? []).length > 0 && Object.keys(questionMap).length === 0) {
+      throw new Error(
+        `[db.service] Attempt ${attemptId} has ${(rawAnswers ?? []).length} answers but none of their questions could be loaded. ` +
+        `Refusing to analyse zero answers.`,
+      );
     }
 
     const answers: AttemptAnswer[] = (rawAnswers ?? [])

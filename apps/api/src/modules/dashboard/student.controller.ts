@@ -130,9 +130,14 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
         const analysis = analysisMap[a.id];
         const subjectStats: Record<string, number> = {};
 
-        if (analysis?.subjectBreakdown) {
-          for (const [subj, stats] of Object.entries(analysis.subjectBreakdown as Record<string, any>)) {
-            subjectStats[subj] = stats.score ?? 0;
+        // subjectBreakdown lives under `scoring`, not at the top level. Read
+        // from the wrong path it was always undefined, so the per-subject
+        // lines on the score chart had nothing to plot even once the engine
+        // started producing real numbers.
+        const breakdown = analysis?.scoring?.subjectBreakdown ?? analysis?.subjectBreakdown;
+        if (breakdown) {
+          for (const [subj, stats] of Object.entries(breakdown as Record<string, any>)) {
+            subjectStats[subj] = (stats as any)?.score ?? 0;
           }
         }
 
