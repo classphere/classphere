@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { normaliseQuestionType, normaliseSubject } from "../../lib/question-taxonomy";
-import { isChoiceQuestion } from "../../lib/question-taxonomy";
+import { isChoiceQuestion, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
@@ -1006,13 +1005,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           id:             randomUUID(),
           exam_id:        examId,
           test_type:      "mock-test",
-          subject:        normaliseSubject(q.subject),
+          subject:        subjectForStorage(q.subject),
           chapter:        q.chapter  || "General",
           topic:          q.topic    || null,
           difficulty:     q.difficulty || difficulty,
           year:           new Date(date).getFullYear() || null,
           source:         title,
-          question_type:  normaliseQuestionType(q.question_type ?? type),
+          question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
           question_text:  normalizedMedia.question_text,
           image_url:      normalizedMedia.image_url,
           options:        normalizedMedia.options,

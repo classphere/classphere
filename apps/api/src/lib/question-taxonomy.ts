@@ -79,6 +79,21 @@ export function normaliseQuestionType(value: unknown): QuestionType | null {
   return TYPE_SYNONYMS[key] ?? null;
 }
 
+/**
+ * Question type to write to the database. Always one of the canonical five,
+ * because questions.question_type is NOT NULL and constrained.
+ *
+ * When the label is unrecognised the fallback comes from the question's own
+ * shape rather than a fixed default. A question carrying options is a choice
+ * question whatever its label says, and one carrying none expects a typed
+ * answer — that is stronger evidence than a string the extractor guessed at,
+ * and defaulting everything to mcq_single would silently grade numerical
+ * questions as multiple choice.
+ */
+export function questionTypeForStorage(value: unknown, optionCount: number): QuestionType {
+  return normaliseQuestionType(value) ?? (optionCount >= 2 ? "mcq_single" : "integer");
+}
+
 /** Types whose answer is chosen from options, so having none is a defect. */
 export const CHOICE_TYPES: QuestionType[] = ["mcq_single", "mcq_multi", "matching", "assertion_reason"];
 
@@ -111,11 +126,10 @@ const SUBJECT_SYNONYMS: Record<string, Subject> = {
 /**
  * Canonical subject, or null when unrecognised.
  *
- * Null matters: the ingest path used to fall back to the string "General",
- * which is not a subject any exam has. Those rows belong to no axis on any
- * chart and were invisible rather than obviously wrong.
+ * Null is the answer to "is this a real subject", which is what report axes
+ * need to ask. It is deliberately not what gets stored — see below.
  *
- * "Biology" is accepted but is not a NEET section — NEET is examined as Botany
+ * "Biology" is accepted but is not a NEET section: NEET is examined as Botany
  * and Zoology. It survives as a holding value for questions whose stream has
  * not been determined.
  */
@@ -123,4 +137,22 @@ export function normaliseSubject(value: unknown): Subject | null {
   const key = squash(value);
   if (!key) return null;
   return SUBJECT_SYNONYMS[key] ?? null;
+}
+
+/**
+ * The one value meaning "no subject could be determined".
+ *
+ * questions.subject is NOT NULL, so unknown needs a representable value rather
+ * than null. The previous default was "General", which reads like a real
+ * category and sorted in among the genuine subjects; this does not, so it can
+ * be filtered out of every report by name and counted as work outstanding.
+ */
+export const UNCLASSIFIED_SUBJECT = "Unclassified";
+
+/**
+ * Subject to write to the database. Always a string, so ingestion cannot fail
+ * on the NOT NULL constraint, and never an unrecognised spelling.
+ */
+export function subjectForStorage(value: unknown, fallback?: unknown): string {
+  return normaliseSubject(value) ?? normaliseSubject(fallback) ?? UNCLASSIFIED_SUBJECT;
 }

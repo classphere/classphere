@@ -67,11 +67,15 @@ ALTER TABLE public.questions ADD CONSTRAINT questions_question_type_check
 --
 -- 'General' is not a subject any exam has. It comes from the bulk-upload path
 -- defaulting with `q.subject || subject || "General"`, so these rows belong to
--- no axis on any chart — invisible rather than obviously wrong. Only 7 rows,
--- and there is no signal to infer the real subject from, so they are marked
--- for review rather than guessed at.
+-- no axis on any chart. Only 7 rows, and nothing to infer the real subject
+-- from, so they are marked for review rather than guessed at.
+--
+-- NULL would be the natural way to say "unknown", but questions.subject is NOT
+-- NULL. 'Unclassified' is the sentinel instead: unlike 'General' it does not
+-- read as a real category, so it cannot be mistaken for one in a report and is
+-- trivially excluded by name.
 
-UPDATE public.questions SET subject = NULL WHERE subject = 'General';
+UPDATE public.questions SET subject = 'Unclassified' WHERE subject = 'General';
 
 -- Case and spelling variants, in case any exist beyond the known set.
 UPDATE public.questions SET subject = 'Physics'     WHERE lower(subject) IN ('physics', 'phy');
