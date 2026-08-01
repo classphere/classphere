@@ -1,8 +1,11 @@
 import { Request, Response } from "express";
-import { provisionInstitute } from "./institutes.service";
+import { annualValuePaise, provisionInstitute } from "./institutes.service";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { logAdminAction } from "../../lib/admin-audit";
 import { getOrSetCache } from "../../lib/cache";
+
+/** Lifecycle values institute_subscriptions.status accepts (see migration 10). */
+const SUBSCRIPTION_STATUSES = ["trialing", "active", "past_due", "cancelled"];
 
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
@@ -984,13 +987,124 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
     if (!user) { res.status(404).json({ success: false, message: "User not found" }); return; }
 
     let { data: sub, error } = await supabaseDB.from("institute_subscriptions").select("*").eq("institute_id", user.institute_id).single();
-    
+
     // Auto-create trial if not exists
     if (!sub && error?.code === 'PGRST116') {
       res.status(404).json({ success: false, message: "No subscription entitlement exists for this institute." });
       return;
     } else if (error) {
       res.status(500).json({ success: false, message: error.message }); return;
+    }
+
+    // The stored row holds the rate; what the institute owes depends on how
+    // many students they actually have, so it is computed rather than stored —
+    // a cached total would drift the moment anyone enrolled.
+    const { count: studentCount } = await supabaseDB
+      .from("users")
+      .select("id", { count: "exact", head: true })
+      .eq("institute_id", user.institute_id)
+      .eq("role", "student");
+
+    const students = studentCount ?? 0;
+    res.status(200).json({
+      success: true,
+      data: {
+        ...sub,
+        student_count: students,
+        annual_value_paise: annualValuePaise(sub, students),
+      },
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * PATCH /api/v1/institutes/:id/subscription
+ * [super_admin] — Set an institute's commercial terms.
+ *
+ * Separate from PATCH /:id because this is the only place money is decided,
+ * and institute admins can reach that route. Pricing must never be editable by
+ * the party being billed.
+ */
+export const updateInstituteSubscription = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const { status, billing_mode, price_per_student_paise, flat_annual_paise, trial_ends_at } = req.body ?? {};
+
+    const updates: Record<string, any> = {};
+
+    if (status !== undefined) {
+      if (!SUBSCRIPTION_STATUSES.includes(status)) {
+        res.status(400).json({ success: false, message: `status must be one of: ${SUBSCRIPTION_STATUSES.join(", ")}` });
+        return;
+      }
+      updates.status = status;
+    }
+
+    if (billing_mode !== undefined) {
+      if (billing_mode !== "per_student" && billing_mode !== "flat") {
+        res.status(400).json({ success: false, message: "billing_mode must be 'per_student' or 'flat'" });
+        return;
+      }
+      updates.billing_mode = billing_mode;
+    }
+
+    // Rates arrive in paise as integers. Rejecting anything else here keeps
+    // rupee-denominated floats from silently becoming a ₹590 charge of ₹5.90.
+    for (const [key, value] of [
+      ["price_per_student_paise", price_per_student_paise],
+      ["flat_annual_paise", flat_annual_paise],
+    ] as const) {
+      if (value === undefined) continue;
+      if (value === null) { updates[key] = null; continue; }
+      if (!Number.isInteger(value) || value < 0) {
+        res.status(400).json({ success: false, message: `${key} must be a non-negative integer in paise` });
+        return;
+      }
+      updates[key] = value;
+    }
+
+    if (trial_ends_at !== undefined) updates.trial_ends_at = trial_ends_at || null;
+
+    if (Object.keys(updates).length === 0) {
+      res.status(400).json({ success: false, message: "No valid fields to update" });
+      return;
+    }
+
+    // A flat deal with no number is the one combination the DB constraint
+    // rejects; catching it here returns something the UI can show.
+    const { data: existing } = await supabaseDB
+      .from("institute_subscriptions")
+      .select("billing_mode, flat_annual_paise")
+      .eq("institute_id", id)
+      .maybeSingle();
+    const nextMode = updates.billing_mode ?? existing?.billing_mode;
+    const nextFlat = updates.flat_annual_paise !== undefined ? updates.flat_annual_paise : existing?.flat_annual_paise;
+    if (nextMode === "flat" && (nextFlat === null || nextFlat === undefined)) {
+      res.status(400).json({ success: false, message: "A flat-billed institute needs flat_annual_paise" });
+      return;
+    }
+
+    updates.updated_at = new Date().toISOString();
+
+    const { data: sub, error } = await supabaseDB
+      .from("institute_subscriptions")
+      .update(updates)
+      .eq("institute_id", id)
+      .select()
+      .single();
+
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    if (!sub) { res.status(404).json({ success: false, message: "No subscription exists for this institute." }); return; }
+
+    // is_active gates sign-in, so a cancelled subscription has to switch it off
+    // or a non-paying institute keeps full access.
+    if (updates.status) {
+      await supabaseDB
+        .from("institutes")
+        .update({ is_active: updates.status !== "cancelled", updated_at: new Date().toISOString() })
+        .eq("id", id);
     }
 
     res.status(200).json({ success: true, data: sub });

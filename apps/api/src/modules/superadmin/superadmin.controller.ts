@@ -87,8 +87,14 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
         newInstitutesThisWeek: newInstitutesRes.count ?? 0,
         newStudentsThisWeek: newStudentsRes.count ?? 0,
         activeTrials: activeTrials ?? 0,
-        enterprisePlans: crmStats.enterprisePlans,
-        estimatedMRR: crmStats.estimatedMRR,
+        // Classphere bills per student per year, so the book is measured in
+        // paying institutes and billed students — not in how many sit on an
+        // "enterprise" tier that was never sold. estimatedMRR was summed from
+        // institute_invoices, a table nothing writes to, so it always read 0.
+        activeInstitutes: crmStats.activeInstitutes,
+        trialInstitutes: crmStats.trialInstitutes,
+        billedStudents: crmStats.billedStudents,
+        estimatedARRPaise: crmStats.estimatedARRPaise,
         systemUptime: null, // Uptime requires retained synthetic-monitor history.
       },
     });

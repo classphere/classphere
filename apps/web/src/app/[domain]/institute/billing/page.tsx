@@ -16,6 +16,14 @@ import {
 } from "@remixicon/react";
 import { PremiumSectionCard } from "@/components/premium-ui";
 
+/** Subscription lifecycle, phrased for the institute rather than the database. */
+const STATUS_LABEL: Record<string, string> = {
+  trialing: "Trial Active",
+  active: "Active",
+  past_due: "Payment Overdue",
+  cancelled: "Cancelled",
+};
+
 export default function BillingPage() {
   const { session } = useAuth();
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
@@ -72,18 +80,35 @@ export default function BillingPage() {
               
               <div className="flex flex-col gap-2 text-white">
                 <div className="w-max px-3 py-1 rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white/90 border border-white/20 mb-2 flex items-center gap-1">
-                  <RiTimeLine size={14} /> Trial Active
+                  <RiTimeLine size={14} /> {STATUS_LABEL[subscription.status] ?? "Subscription"}
                 </div>
-                <h2 className="font-sans font-semibold text-[28px] m-0 capitalize">{subscription.plan_tier} Plan</h2>
-                <p className="text-sm text-white/80 m-0">You are currently enjoying full access during your trial period.</p>
+                <h2 className="font-sans font-semibold text-[28px] m-0">
+                  {subscription.billing_mode === "flat"
+                    ? "Annual plan"
+                    : `₹${(subscription.price_per_student_paise ?? 0) / 100} per student`}
+                </h2>
+                <p className="text-sm text-white/80 m-0">
+                  {subscription.status === "trialing"
+                    ? "Full access while your trial runs. Nothing is charged yet."
+                    : `Billed annually for ${subscription.student_count ?? 0} enrolled student${subscription.student_count === 1 ? "" : "s"}.`}
+                </p>
               </div>
 
               <div className="flex flex-col items-start md:items-end gap-3 mt-3 md:mt-0 w-full md:w-auto border-t md:border-none border-white/20 pt-4 md:pt-0">
                 <div className="flex items-baseline gap-1">
-                  <span className="font-sans font-bold text-[36px] text-white leading-none">₹0</span>
-                  <span className="text-white/70 text-sm">/mo</span>
+                  {/* The real figure, not a placeholder: rate x enrolled students,
+                      recomputed server-side so it tracks the roll as it grows. */}
+                  <span className="font-sans font-bold text-[36px] text-white leading-none">
+                    ₹{((subscription.annual_value_paise ?? 0) / 100).toLocaleString("en-IN")}
+                  </span>
+                  <span className="text-white/70 text-sm">/yr</span>
                 </div>
-                <p className="text-xs text-white/80 m-0">Trial ends on {new Date(subscription.current_period_end).toLocaleDateString()}</p>
+                {(subscription.trial_ends_at || subscription.current_period_end) && (
+                  <p className="text-xs text-white/80 m-0">
+                    {subscription.status === "trialing" ? "Trial ends on " : "Renews on "}
+                    {new Date(subscription.trial_ends_at ?? subscription.current_period_end).toLocaleDateString()}
+                  </p>
+                )}
                 <button 
                   className="btn bg-white text-[#4F46E5] hover:bg-white/90 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer shadow-md"
                   onClick={() => setShowUpgradeModal(true)}

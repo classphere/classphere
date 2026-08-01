@@ -16,8 +16,11 @@ export interface SuperadminStats {
   totalAttempts: number;
   newInstitutesThisWeek: number;
   newStudentsThisWeek: number;
-  enterprisePlans: number;
-  estimatedMRR: number;
+  activeInstitutes: number;
+  trialInstitutes: number;
+  billedStudents: number;
+  /** Rate x students summed over active subscriptions, in paise. */
+  estimatedARRPaise: number;
   systemUptime: string;
 }
 
