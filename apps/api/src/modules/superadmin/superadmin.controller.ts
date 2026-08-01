@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { normaliseQuestionType, normaliseSubject } from "../../lib/question-taxonomy";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 import { randomUUID } from "crypto";
@@ -292,13 +293,19 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           id:             ensureUUID(q.id),    // auto-generate UUID if missing/invalid
           exam_id:        examId,
           test_type,
-          subject:        q.subject  || subject  || "General",
+          // "General" is not a subject any exam has; rows defaulted to it
+          // belonged to no axis on any report and were invisible rather than
+          // visibly wrong. NULL is the honest value for "not known".
+          subject:        normaliseSubject(q.subject || subject),
           chapter:        q.chapter  || chapter  || "General",
           topic:          q.topic    || null,
           difficulty:     q.difficulty || difficulty,
           year:           q.year     || year     || null,
           source:         q.source   || title,
-          question_type:  type,
+          // Normalised on the way in. The extractor is prompted for "MCQ" |
+          // "MSQ" | "Numerical" while the rest of the system uses snake_case,
+          // and storing the raw value is what split one category into two.
+          question_type:  normaliseQuestionType(q.question_type ?? type),
           question_text:  normalizedMedia.question_text,
           image_url:      normalizedMedia.image_url,
           options:        normalizedMedia.options,

@@ -93,7 +93,11 @@ For each question return:
 ════════════════════════════════════════════
   CLASSIFICATION (best-effort, do not skip questions for this)
 ════════════════════════════════════════════
-• subject: "Physics" | "Chemistry" | "Mathematics" | "Biology"
+• subject: "Physics" | "Chemistry" | "Mathematics" | "Botany" | "Zoology"
+  For NEET biology, choose Botany for plant topics and Zoology for animal or
+  human topics — NEET is examined as two separate sections, and "Biology"
+  cannot be assigned to either afterwards. Use "Biology" only if genuinely
+  undecidable from the question.
 • chapter: NCERT/JEE/NEET canonical chapter name (e.g. "Electrostatics", "Kinematics")
 • topic: specific sub-topic within that chapter (e.g. "Capacitance", "Projectile Motion")
 • difficulty: "Easy" | "Medium" | "Hard"

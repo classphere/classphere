@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import { normaliseQuestionType, normaliseSubject } from "../../lib/question-taxonomy";
+import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
@@ -365,7 +367,12 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     const invalidQuestion = (publishRows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).find((question: any) => {
       const answers = Array.isArray(question?.correct_answer) ? question.correct_answer : [];
       const options = Array.isArray(question?.options) ? question.options : [];
-      const choiceQuestion = ["mcq_single", "mcq_multiple", "assertion_reason", "matching"].includes(question?.question_type);
+      // Was an inline list containing "mcq_multiple", which the table has never
+      // stored — it holds mcq_multi — and comparing raw values also missed the
+      // "Assertion-Reason" and "Matching" spellings. All three types therefore
+      // skipped the options check entirely, so a multi-correct question with no
+      // options passed validation.
+      const choiceQuestion = isChoiceQuestion(question?.question_type);
       return !String(question?.question_text ?? "").trim() || answers.length === 0 || (choiceQuestion && options.length < 2);
     });
     if (invalidQuestion) {
@@ -999,13 +1006,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           id:             randomUUID(),
           exam_id:        examId,
           test_type:      "mock-test",
-          subject:        q.subject  || "General",
+          subject:        normaliseSubject(q.subject),
           chapter:        q.chapter  || "General",
           topic:          q.topic    || null,
           difficulty:     q.difficulty || difficulty,
           year:           new Date(date).getFullYear() || null,
           source:         title,
-          question_type:  type,
+          question_type:  normaliseQuestionType(q.question_type ?? type),
           question_text:  normalizedMedia.question_text,
           image_url:      normalizedMedia.image_url,
           options:        normalizedMedia.options,

@@ -163,7 +163,11 @@ FIELD RULES:
 • options: 4 items for MCQ/MSQ/Assertion-Reason/Matching; [] for Numerical
 • correct_answer: [] (no answer key); numerical_answer: null; explanation: ""
 • question_type: "MCQ" | "MSQ" | "Numerical" | "Matching" | "Assertion-Reason"
-• subject: "Physics" | "Chemistry" | "Mathematics" | "Biology"
+• subject: "Physics" | "Chemistry" | "Mathematics" | "Botany" | "Zoology"
+  For NEET biology, choose Botany for plant topics and Zoology for animal or
+  human topics — NEET is examined as two separate sections, and "Biology"
+  cannot be assigned to either afterwards. Use "Biology" only if genuinely
+  undecidable from the question.
 • chapter: NCERT/JEE syllabus chapter; topic: short keyword
 • difficulty: "Easy" | "Medium" | "Hard"
 • Return one entry per requested question — no extras, none missing
