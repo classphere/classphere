@@ -9,7 +9,7 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
-import { normalizeQuestionMedia } from "../../lib/question-media";
+import { normalizeQuestionMedia, reconcileQuestionImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // Supabase credentials are read from the validated env via the supabaseDB
@@ -307,7 +307,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // and storing the raw value is what split one category into two.
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
           question_text:  normalizedMedia.question_text,
-          image_url:      normalizedMedia.image_url,
+          // image_url stays the first figure so every existing reader is
+          // unaffected; question_images carries all of them. The extractor has
+          // always emitted the array and ingest has always dropped it.
+          ...reconcileQuestionImages(normalizedMedia.image_url, q.question_images),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    processedExplanation,

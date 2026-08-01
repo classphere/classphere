@@ -72,7 +72,7 @@ export const db = {
       // The real column is explanation_images (migration 43), an array.
       const { data: questions, error: qErr } = await supabaseAdmin
         .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
+        .select("id, question_text, image_url, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
 
       // Throw rather than continue. An analysis with no questions is not a
@@ -87,6 +87,7 @@ export const db = {
           question_number: 0, // will be set below
           image_url: q.image_url || null,
           explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
+          question_images: Array.isArray(q.question_images) ? q.question_images : [],
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
         } as Question;

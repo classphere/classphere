@@ -38,6 +38,8 @@ export interface Question {
   options: QuestionOption[] | null;
   correct_answer: string[];
   explanation: string;
+  /** Every figure in the question stem, in reading order. image_url mirrors the first. */
+  question_images: string[];
   /** Images supporting the explanation, in reading order. Was explanation_image_url,
    *  a singular name no column ever had — see migration 43. */
   explanation_images: string[];
