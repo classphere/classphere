@@ -304,11 +304,6 @@ export default function BatchesPage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Starts on</label><input type="datetime-local" className="input-field w-full" value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></div>
-            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} /></div>
-          </div>
-
           {/* Exam */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
@@ -331,6 +326,20 @@ export default function BatchesPage() {
                 {examCalendar[form.exam].notes ? ` · ${examCalendar[form.exam].notes}` : ""}
               </p>
             )}
+          </div>
+
+
+          {/* Dates sit after the exam because picking one prefills the expiry
+              from the exam calendar. Above it, an admin filling the form
+              top-down met an empty "Expires on" with nothing to suggest a
+              value, which read as though the session had no end date at all. */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Starts on</label><input type="datetime-local" className="input-field w-full" value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></div>
+            <div>
+              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label>
+              <input type="datetime-local" className="input-field w-full" value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} />
+              <p className="mt-1.5 text-xs text-t-secondary">Students lose access when the batch expires. Set this to the end of the session you are enrolling for.</p>
+            </div>
           </div>
 
           <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">
