@@ -945,7 +945,16 @@ export const updateInstituteSettings = async (req: Request, res: Response): Prom
 
     const allowed = ["subdomain", "custom_domain", "theme_primary_color", "theme_logo_url", "theme_favicon_url", "support_email"];
     const updates: Record<string, any> = {};
-    for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
+    for (const k of allowed) {
+      if (req.body[k] === undefined) continue;
+      // The settings form submits every field it holds, so untouched inputs
+      // arrive as "". Storing that instead of NULL is what made logos vanish:
+      // the clients fall back with ?? , which treats "" as a real value and
+      // renders a zero-width broken image. Creation already did this (see
+      // institutes.service.ts `logoUrl || null`); the update path did not.
+      const value = typeof req.body[k] === "string" ? req.body[k].trim() : req.body[k];
+      updates[k] = value === "" ? null : value;
+    }
 
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields to update" }); return; }
     updates.updated_at = new Date().toISOString();

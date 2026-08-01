@@ -45,7 +45,10 @@ export default async function DomainLayout({
           domain,
           instituteId: data.institutes?.id || data.institute_id,
           instituteName: data.institutes?.name || "Institute",
-          logoUrl: data.theme_logo_url,
+          // "" is not a logo. Older rows hold an empty string from the settings
+          // form submitting untouched fields, and every consumer falls back with
+          // ?? , which would treat "" as a real URL and render a broken image.
+          logoUrl: data.theme_logo_url || null,
           primaryColor: validatedColor,
           isLoading: false,
         };

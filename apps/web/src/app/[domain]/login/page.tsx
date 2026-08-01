@@ -96,14 +96,17 @@ function LoginForm() {
 
   const displayName = tenant.instituteName ?? "Classphere";
 
-  // Left Panel Logo Overlay
-  const leftPanelLogo = (
+  // The institute's own mark, falling back to Classphere's when a tenant has
+  // not uploaded one. Rendered at two sizes because the cover panel it used to
+  // sit on is hidden below md — without the second placement a student signing
+  // in on a phone sees no institute branding at all.
+  const instituteLogo = (size: number, className: string) => (
     <Image
       src={tenant.logoUrl ?? "/logoC.png"}
       alt={displayName}
-      width={44}
-      height={44}
-      className="max-h-11 w-auto object-contain rounded-[8px]"
+      width={size}
+      height={size}
+      className={className}
     />
   );
 
@@ -127,6 +130,16 @@ function LoginForm() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
 
+          {/* Institute mark, over the gradient so it stays legible on any cover */}
+          <div className="absolute left-6 top-6 z-10 flex items-center gap-2.5">
+            <span className="flex size-11 items-center justify-center rounded-[10px] border border-white/15 bg-white/95 p-1.5 shadow-lg backdrop-blur-sm">
+              {instituteLogo(44, "max-h-full w-auto object-contain")}
+            </span>
+            <span className="max-w-[180px] truncate font-urbanist text-[15px] font-bold text-white/95 drop-shadow">
+              {displayName}
+            </span>
+          </div>
+
           {/* Slogan at the bottom */}
           <div className="absolute bottom-8 left-6 right-6 z-10">
             <h2 className="font-urbanist text-[22px] font-bold leading-snug text-white/95">
@@ -144,6 +157,11 @@ function LoginForm() {
             
             {/* Header */}
             <div>
+              {/* Phones never see the cover panel, so the mark belongs here too.
+                  Hidden on md+ to avoid showing it twice on the split layout. */}
+              <span className="mb-4 flex size-12 items-center justify-center rounded-[12px] border border-s-stroke2 bg-b-surface1 p-2 shadow-widget md:hidden">
+                {instituteLogo(48, "max-h-full w-auto object-contain")}
+              </span>
               <h1 className="font-urbanist text-[26px] font-bold tracking-tight text-t-primary leading-tight">
                 Welcome back
               </h1>

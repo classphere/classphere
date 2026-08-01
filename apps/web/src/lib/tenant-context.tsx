@@ -118,7 +118,9 @@ export function TenantProvider({ children, initialConfig }: { children: React.Re
             domain,
             instituteId: data.institutes?.id || data.institute_id,
             instituteName: data.institutes?.name || "Institute",
-            logoUrl: data.theme_logo_url,
+            // Normalised for the same reason as the server layout: an empty
+            // string must fall through to the Classphere mark, not past it.
+            logoUrl: data.theme_logo_url || null,
             primaryColor: data.theme_primary_color ?? "#6366f1",
             isLoading: false,
           });
