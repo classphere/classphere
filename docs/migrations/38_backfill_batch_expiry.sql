@@ -19,15 +19,26 @@
 
 -- ─── 1. Backfill ─────────────────────────────────────────────────────────────
 
+-- Where migration 39 has already established a target year, that year decides
+-- the cycle and the calendar supplies only the month and day — the same rule
+-- createBatch applies. Rolling the stored date forward a year is the fallback
+-- for batches with no target year, and it is only correct for the next cycle:
+-- a class 11 cohort sitting in 2028 would otherwise be handed a 2027 expiry.
+--
+-- No updated_at is set: public.batches does not have that column. Its only
+-- timestamp is created_at.
 UPDATE public.batches b
-SET ends_at = (
-      CASE
-        WHEN c.suggested_ends_at < CURRENT_DATE
-          THEN c.suggested_ends_at + INTERVAL '1 year'
-        ELSE c.suggested_ends_at
-      END
-    )::timestamptz + INTERVAL '23 hours 59 minutes',
-    updated_at = now()
+SET ends_at = make_date(
+      COALESCE(
+        b.target_year,
+        EXTRACT(YEAR FROM CASE
+          WHEN c.suggested_ends_at < CURRENT_DATE THEN c.suggested_ends_at + INTERVAL '1 year'
+          ELSE c.suggested_ends_at
+        END)::INTEGER
+      ),
+      EXTRACT(MONTH FROM c.suggested_ends_at)::INTEGER,
+      EXTRACT(DAY   FROM c.suggested_ends_at)::INTEGER
+    )::timestamptz + INTERVAL '23 hours 59 minutes'
 FROM public.exam_calendar c
 WHERE b.exam = c.exam_code
   AND b.ends_at IS NULL;
