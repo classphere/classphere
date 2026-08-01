@@ -1068,6 +1068,69 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
 };
 
 /**
+ * PATCH /api/v1/institutes/:id/branding
+ * [super_admin] — Set an institute's logo and brand colour.
+ *
+ * Branding is applied on the institute's behalf rather than self-served: they
+ * send us a logo, we place it. The institute's own settings page can still
+ * edit these, but this is the path that matters, and it is the only one that
+ * can reach an institute other than the caller's own.
+ */
+export const updateInstituteBranding = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const { theme_primary_color, theme_logo_url } = req.body ?? {};
+    const updates: Record<string, any> = {};
+
+    if (theme_primary_color !== undefined) {
+      const color = String(theme_primary_color ?? "").trim();
+      // Anything not a hex colour would land in a stylesheet verbatim, so it is
+      // rejected here rather than quietly breaking every page for that tenant.
+      if (color && !/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(color)) {
+        res.status(400).json({ success: false, message: "theme_primary_color must be a hex colour such as #4F46E5" });
+        return;
+      }
+      updates.theme_primary_color = color || null;
+    }
+
+    if (theme_logo_url !== undefined) {
+      const url = String(theme_logo_url ?? "").trim();
+      // "" is not a logo — storing it makes every consumer render a broken
+      // image, since they fall back with ?? rather than ||.
+      updates.theme_logo_url = url || null;
+    }
+
+    if (Object.keys(updates).length === 0) {
+      res.status(400).json({ success: false, message: "No valid fields to update" });
+      return;
+    }
+    updates.updated_at = new Date().toISOString();
+
+    const { data, error } = await supabaseDB
+      .from("institute_settings")
+      .update(updates)
+      .eq("institute_id", id)
+      .select("theme_primary_color, theme_logo_url")
+      .maybeSingle();
+
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    if (!data) { res.status(404).json({ success: false, message: "No settings row exists for this institute." }); return; }
+
+    // institutes.logo_url is a second copy read by parts of the CRM; keep the
+    // two from disagreeing about what this institute's logo is.
+    if (updates.theme_logo_url !== undefined) {
+      await supabaseDB.from("institutes").update({ logo_url: updates.theme_logo_url }).eq("id", id);
+    }
+
+    await logAdminAction(req.user?.id, "Institute branding updated", `Updated branding for institute ${id}.`, "institutes", "success");
+    res.status(200).json({ success: true, data });
+  } catch (err: any) {
+    console.error("[updateInstituteBranding error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
  * PATCH /api/v1/institutes/:id/subscription
  * [super_admin] — Set an institute's commercial terms.
  *

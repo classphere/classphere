@@ -1,5 +1,6 @@
 import { TenantProvider, TenantConfig } from "@/lib/tenant-context";
 import { API_URL } from "@/lib/api.client";
+import { themeStyleBlock } from "@/lib/theme";
 
 export default async function DomainLayout({
   children,
@@ -60,9 +61,11 @@ export default async function DomainLayout({
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{
-        __html: `:root { --primary-institute: ${tenantConfig.primaryColor}; }`
-      }} />
+      {/* Server-rendered so the branded colours are present on first paint
+          rather than swapping in after hydration. Emits the hover, active and
+          gradient stops too, plus a foreground computed for contrast — a
+          single colour is not enough to style a button safely. */}
+      <style dangerouslySetInnerHTML={{ __html: themeStyleBlock(tenantConfig.primaryColor) }} />
       <TenantProvider initialConfig={tenantConfig}>
         {children}
       </TenantProvider>

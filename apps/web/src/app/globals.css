@@ -16,7 +16,12 @@
   --shade-09: #f1f1f1;
   --shade-10: #fdfdfd;
   
-  --primary-01: #2a85ff;
+  /* The institute's brand colour when a tenant sets one, Classphere blue
+     otherwise. --primary-institute is injected server-side by the [domain]
+     layout, so there is no unbranded flash on first paint. This variable was
+     written for months and read by nothing, which is why every institute
+     looked the same. */
+  --primary-01: var(--primary-institute, #2a85ff);
   --primary-02: #00a656;
   --primary-03: #ff381c;
   --primary-04: #7f5fff;
@@ -465,9 +470,42 @@
     @apply h-10 px-5 text-button rounded-[10px];
   }
   
+  /* .btn-dark keeps the original near-black gradient. .btn-primary follows the
+     institute, falling back to that same near-black when no tenant colour is
+     set — so Classphere's own surfaces are unchanged while an institute's
+     main call to action carries their brand.
+
+     The text colour is computed from the brand colour rather than fixed to
+     white: white on a navy is fine and white on a yellow is unreadable. See
+     lib/theme.ts. */
   .btn-primary, .btn-dark {
     @apply relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
+
+  .btn-primary {
+    background-image: linear-gradient(
+      342.29deg,
+      var(--primary-institute-from, #070707) 12.1%,
+      var(--primary-institute-to, #2F2E31) 87.9%
+    );
+    border-color: var(--primary-institute, #161616);
+    color: var(--primary-institute-fg, #ffffff);
+    fill: var(--primary-institute-fg, #ffffff);
+  }
+  .btn-primary:hover,
+  .btn-primary:hover * {
+    color: var(--primary-institute-fg, #ffffff);
+    fill: var(--primary-institute-fg, #ffffff);
+  }
+  [data-theme="dark"] .btn-primary {
+    background-image: linear-gradient(
+      to bottom,
+      var(--primary-institute-to, #343432),
+      var(--primary-institute-from, #252523)
+    );
+    border-color: var(--primary-institute, #3e3e3b);
+  }
+
   .btn-outline {
     @apply border-s-stroke2 bg-b-surface2 text-t-secondary fill-t-secondary hover:border-s-highlight hover:text-t-primary hover:fill-t-primary disabled:border-transparent;
   }

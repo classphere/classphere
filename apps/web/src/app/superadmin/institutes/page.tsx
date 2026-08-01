@@ -6,6 +6,7 @@ import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, Premi
 import { Modal } from "@/components/shared/Modal";
 import { useInstitutes, type Institute, type SubscriptionStatus } from "@/lib/hooks/useInstitutes";
 import { PricingModal } from "@/components/superadmin/PricingModal";
+import { BrandingModal } from "@/components/superadmin/BrandingModal";
 import { useSuperadminStats } from "@/lib/hooks/useSuperadminStats";
 import {
   RiBuilding4Line,
@@ -87,6 +88,7 @@ export default function InstitutesPage() {
     refetch,
     updateInstitute,
     updateSubscription,
+    updateBranding,
     deleteInstitute
   } = useInstitutes();
   const { stats, loading: statsLoading, refetch: refetchStats } = useSuperadminStats();
@@ -94,6 +96,7 @@ export default function InstitutesPage() {
   const [activeDropdownId, setActiveDropdownId] = useState<string | null>(null);
   // Which institute's commercial terms are open for editing, if any.
   const [pricingFor, setPricingFor] = useState<Institute | null>(null);
+  const [brandingFor, setBrandingFor] = useState<Institute | null>(null);
 
   // Dismiss the actions menu on an outside click or Escape. Without this it
   // stays open until the same button is pressed again, so it lingers over the
@@ -433,6 +436,13 @@ export default function InstitutesPage() {
                         className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
                       >
                         Edit pricing…
+                      </button>
+
+                      <button
+                        onClick={() => { setActiveDropdownId(null); setBrandingFor(institute); }}
+                        className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
+                      >
+                        Edit branding…
                       </button>
 
                       <div className="h-px bg-s-stroke2/30 my-1" />
@@ -785,6 +795,14 @@ export default function InstitutesPage() {
           </div>
         )}
       </Modal>
+
+      {brandingFor && (
+        <BrandingModal
+          institute={brandingFor}
+          onClose={() => setBrandingFor(null)}
+          onSave={updateBranding}
+        />
+      )}
 
       {pricingFor && (
         <PricingModal

@@ -25,6 +25,8 @@ export interface Institute {
   updated_at: string;
   student_count: number;
   enabled_exam_codes?: string[] | null;
+  /** Brand colour driving the tenant theme. Null means the Classphere default. */
+  theme_primary_color: string | null;
   subscription: SubscriptionTerms | null;
   /** Rate x students, or the flat fee. Computed server-side so every screen agrees. */
   annual_value_paise: number;
@@ -162,6 +164,25 @@ export function useInstitutes() {
     [token, fetchInstitutes],
   );
 
+  /** Brand colour and logo. Super-admin only — institutes do not self-serve branding. */
+  const updateBranding = useCallback(
+    async (id: string, payload: { theme_primary_color?: string; theme_logo_url?: string | null }): Promise<{ success: boolean; message: string }> => {
+      if (!token) return { success: false, message: "Authentication required" };
+      try {
+        const res = await apiClient.patch<{ success: boolean; message: string }>(
+          `/api/v1/institutes/${id}/branding`,
+          payload,
+          token,
+        );
+        await fetchInstitutes();
+        return { success: res.success, message: res.message ?? "Branding updated" };
+      } catch (err: any) {
+        return { success: false, message: err.message ?? "Could not update branding" };
+      }
+    },
+    [token, fetchInstitutes],
+  );
+
   const updateInstitute = useCallback(
     async (id: string, payload: Partial<Institute>): Promise<{ success: boolean; message: string }> => {
       if (!token) return { success: false, message: "Authentication required" };
@@ -205,6 +226,7 @@ export function useInstitutes() {
     createInstitute, 
     uploadImage,
     updateSubscription,
+    updateBranding,
     updateInstitute,
     deleteInstitute
   };

@@ -26,6 +26,7 @@ export interface InstituteRow {
   owner_email?: string;
   owner_name?: string;
   student_count?: number;
+  theme_primary_color?: string | null;
   subscription?: SubscriptionTerms | null;
   annual_value_paise?: number;
 }
@@ -81,6 +82,14 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
     .select("institute_id, status, billing_mode, price_per_student_paise, flat_annual_paise, trial_ends_at, current_period_end");
   const subsByInstitute = Object.fromEntries((subs ?? []).map((s: any) => [s.institute_id, s]));
 
+  // Branding, so the CRM can show and edit what an institute actually looks
+  // like. theme_logo_url is the authoritative logo; institutes.logo_url is a
+  // second copy that predates it.
+  const { data: settings } = await supabaseDB
+    .from("institute_settings")
+    .select("institute_id, theme_primary_color, theme_logo_url");
+  const settingsByInstitute = Object.fromEntries((settings ?? []).map((s: any) => [s.institute_id, s]));
+
   // 5. Merge everything
   return institutes.map((inst: any) => {
     const sub = subsByInstitute[inst.id] ?? null;
@@ -90,6 +99,8 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
       owner_email: usersMap[inst.owner_id]?.email ?? null,
       owner_name:  usersMap[inst.owner_id]?.name ?? null,
       student_count: students,
+      theme_primary_color: settingsByInstitute[inst.id]?.theme_primary_color ?? null,
+      logo_url: settingsByInstitute[inst.id]?.theme_logo_url ?? inst.logo_url ?? null,
       subscription: sub,
       annual_value_paise: sub ? annualValuePaise(sub, students) : 0,
     };
