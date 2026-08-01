@@ -522,11 +522,20 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
 
     // Auto-fill ends_at from exam_calendar if not provided
     if (!ends_at && batch) {
-      const { data: calRow } = await supabaseDB
+      const { data: calRow, error: calErr } = await supabaseDB
         .from("exam_calendar")
         .select("suggested_ends_at")
         .eq("exam_code", exam.trim())
         .maybeSingle();
+      // This error used to be discarded. A batch that fails to get an expiry
+      // date never expires, which silently costs a renewal — so the failure is
+      // loud even though the batch itself was created successfully.
+      if (calErr) {
+        console.error(
+          `[createBatch] exam_calendar lookup failed for "${exam.trim()}" — batch ${batch.id} has NO expiry date:`,
+          calErr.message,
+        );
+      }
       if (calRow?.suggested_ends_at) {
         let suggestedDate = new Date(calRow.suggested_ends_at);
         // If the suggested date is in the past, push to next year

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { PageWrapper } from "@/components/ui";
-import { Modal } from "@/components/shared/Modal";
+import { CreateBatchModal } from "@/components/institute/CreateBatchModal";
 import {
   RiTeamLine,
   RiGroupLine,
@@ -36,12 +36,6 @@ const EXAM_LABELS: Record<string, string> = {
 export default function InstituteDashboardPage() {
   const router = useRouter();
   const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
-  const [newBatchData, setNewBatchData] = useState({
-    name: "",
-    exam: "",
-  });
-  const [batchSubmitting, setBatchSubmitting] = useState(false);
-  const [batchFeedback, setBatchFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
   const { user, session } = useAuth();
   const { batches, loading: batchesLoading, createBatch } = useBatches();
@@ -78,33 +72,8 @@ export default function InstituteDashboardPage() {
     .map((id: string) => ({ id, label: EXAM_LABELS[id] }))
     .filter((exam: { id: string; label?: string }): exam is { id: string; label: string } => Boolean(exam.label));
 
-  const handleOpenBatchModal = () => {
-    setNewBatchData({ name: "", exam: "" });
-    setBatchFeedback(null);
-    setIsBatchModalOpen(true);
-  };
-
-  const handleCreateBatch = async () => {
-    if (!newBatchData.name || !newBatchData.exam) return;
-    setBatchSubmitting(true);
-    setBatchFeedback(null);
-    const result = await createBatch({
-      name: newBatchData.name,
-      exam: newBatchData.exam,
-    });
-    setBatchSubmitting(false);
-    if (result.success) {
-      setBatchFeedback({ ok: true, msg: "Batch created!" });
-      setTimeout(() => {
-        setIsBatchModalOpen(false);
-        router.push(`/institute/students?batch=${result.batch?.id}`);
-      }, 800);
-    } else {
-      setBatchFeedback({ ok: false, msg: result.message });
-    }
-  };
-
-  const availableExamsForModal = availableExams;
+  // The shared modal owns its own form state and clears it on close.
+  const handleOpenBatchModal = () => setIsBatchModalOpen(true);
 
   return (
     <>
@@ -291,81 +260,16 @@ export default function InstituteDashboardPage() {
 
       </PageWrapper>
 
-      {/* Create Batch Modal */}
-      <Modal
+      <CreateBatchModal
         open={isBatchModalOpen}
         onClose={() => setIsBatchModalOpen(false)}
-        title="Create New Batch"
-        subtitle="Create a batch, then add students and assign faculty when ready."
-      >
-        <div className="flex flex-col gap-3">
-          {/* Batch Name */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
-            <input
-              type="text"
-              className="input-field w-full"
-              placeholder="e.g., Target 2026 Morning"
-              value={newBatchData.name}
-              onChange={(e) => setNewBatchData({ ...newBatchData, name: e.target.value })}
-            />
-          </div>
-
-          {/* Target Exam */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
-            <div className="relative">
-              <select
-                className="input-field w-full appearance-none pr-10"
-                value={newBatchData.exam}
-                onChange={(e) => setNewBatchData({ ...newBatchData, exam: e.target.value })}
-              >
-                <option value="" disabled>Select Exam...</option>
-                {availableExamsForModal.map(exam => (
-                  <option key={exam.id} value={exam.id}>{exam.label}</option>
-                ))}
-              </select>
-              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
-            </div>
-            <p className="text-xs text-t-secondary mt-2">
-              Only examinations enabled by your superadmin are available.
-            </p>
-          </div>
-
-          {/* Feedback */}
-          {batchFeedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
-              batchFeedback.ok
-                ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
-                : "bg-primary-03/5 border-primary-03/20 text-primary-03"
-            }`}>
-              {batchFeedback.ok
-                ? <RiCheckLine size={16} />
-                : <RiAlertLine size={16} />}
-              {batchFeedback.msg}
-            </div>
-          )}
-
-          {/* Actions */}
-          <div className="mt-2 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
-            <button
-              onClick={() => setIsBatchModalOpen(false)}
-              className="btn btn-ghost px-5"
-              disabled={batchSubmitting}
-            >
-              Cancel
-            </button>
-            <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
-              onClick={handleCreateBatch}
-              disabled={!newBatchData.name || !newBatchData.exam || batchSubmitting}
-            >
-              {batchSubmitting && <RiLoaderLine size={16} className="animate-spin" />}
-              {batchSubmitting ? "Creating..." : "Create Batch"}
-            </button>
-          </div>
-        </div>
-      </Modal>
+        availableExams={availableExams}
+        onCreate={createBatch}
+        onCreated={(batchId) => {
+          setIsBatchModalOpen(false);
+          router.push(`/institute/students?batch=${batchId}`);
+        }}
+      />
     </>
   );
 }

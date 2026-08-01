@@ -17,6 +17,7 @@ import {
 } from "@remixicon/react";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
+import { CreateBatchModal } from "@/components/institute/CreateBatchModal";
 import { useAuth } from "@/lib/auth-context";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { apiClient } from "@/lib/api.client";
@@ -44,9 +45,6 @@ export default function BatchesPage() {
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", exam: "", starts_at: "", ends_at: "" });
-  const [submitting, setSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
   const [editingBatch, setEditingBatch] = useState<any | null>(null);
   const [expiryValue, setExpiryValue] = useState("");
   const [savingExpiry, setSavingExpiry] = useState(false);
@@ -59,43 +57,9 @@ export default function BatchesPage() {
   const { data: instituteData } = useApiQuery<{ institute: { enabled_exam_codes?: string[] } }>("/api/v1/institutes/me");
   const enabledExamCodes = instituteData?.institute?.enabled_exam_codes ?? [];
 
-  const { data: calendarData } = useApiQuery<{ calendar: { exam_code: string; suggested_ends_at: string; notes: string | null }[] }>(
-    "/api/v1/batches/exam-calendar",
-  );
-  const examCalendar: Record<string, { suggested_ends_at: string; notes: string | null }> =
-    Object.fromEntries((calendarData?.calendar ?? []).map((row) => [row.exam_code, { suggested_ends_at: row.suggested_ends_at, notes: row.notes }]));
-
-  const openModal = () => {
-    setForm({ name: "", exam: "", starts_at: "", ends_at: "" });
-    setFeedback(null);
-    setIsModalOpen(true);
-  };
-
-  const handleExamChange = (examCode: string) => {
-    const cal = examCalendar[examCode];
-    const suggestedDate = cal?.suggested_ends_at
-      ? new Date(cal.suggested_ends_at).toISOString().slice(0, 10) + "T23:59"
-      : "";
-    setForm((f) => ({ ...f, exam: examCode, ends_at: suggestedDate }));
-  };
-
-  const handleCreate = async () => {
-    if (!form.name || !form.exam) return;
-    setSubmitting(true);
-    setFeedback(null);
-    const result = await createBatch({
-      name: form.name,
-      exam: form.exam,
-      starts_at: form.starts_at ? new Date(form.starts_at).toISOString() : undefined,
-      ends_at: form.ends_at ? new Date(form.ends_at).toISOString() : undefined,
-    });
-    setSubmitting(false);
-    if (result.success) {
-      router.push(`/institute/students?batch=${result.batch?.id}`);
-    } else {
-      setFeedback({ ok: false, msg: result.message });
-    }
-  };
+  // The exam calendar and the create form now live in CreateBatchModal, which
+  // both this page and the institute dashboard render.
+  const openModal = () => setIsModalOpen(true);
 
   const openExpiryEditor = (batch: any) => {
     setEditingBatch(batch);
@@ -284,100 +248,16 @@ export default function BatchesPage() {
         })}
       </div>
 
-      {/* ── Create Batch Modal ── */}
-      <Modal
+      <CreateBatchModal
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Create New Batch"
-        subtitle="Fill in the details to create a new batch"
-      >
-        <div className="flex flex-col gap-3">
-          {/* Name */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
-            <input
-              type="text"
-              className="input-field w-full"
-              placeholder="e.g., Target 2026 Morning"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-            />
-          </div>
-
-          {/* Exam */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
-            <div className="relative">
-              <select
-                className="input-field w-full appearance-none pr-10"
-                value={form.exam}
-                onChange={(e) => handleExamChange(e.target.value)}
-              >
-                <option value="" disabled>Select Exam...</option>
-                {availableExams.map((e) => (
-                  <option key={e.id} value={e.id}>{e.label}</option>
-                ))}
-              </select>
-              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
-            </div>
-            {form.exam && examCalendar[form.exam] && (
-              <p className="mt-1.5 text-xs text-t-secondary">
-                📅 Suggested expiry: <strong>{new Date(examCalendar[form.exam].suggested_ends_at).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</strong>
-                {examCalendar[form.exam].notes ? ` · ${examCalendar[form.exam].notes}` : ""}
-              </p>
-            )}
-          </div>
-
-
-          {/* Dates sit after the exam because picking one prefills the expiry
-              from the exam calendar. Above it, an admin filling the form
-              top-down met an empty "Expires on" with nothing to suggest a
-              value, which read as though the session had no end date at all. */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Starts on</label><input type="datetime-local" className="input-field w-full" value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></div>
-            <div>
-              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label>
-              <input type="datetime-local" className="input-field w-full" value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} />
-              <p className="mt-1.5 text-xs text-t-secondary">Students lose access when the batch expires. Set this to the end of the session you are enrolling for.</p>
-            </div>
-          </div>
-
-          <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">
-            After creating the batch, you will add students from an Excel or CSV file. Expired batches cannot receive new learning activity, but their records remain available.
-          </p>
-
-          {/* Feedback */}
-          {feedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
-              feedback.ok
-                ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
-                : "bg-primary-03/5 border-primary-03/20 text-primary-03"
-            }`}>
-              {feedback.ok ? <RiCheckLine size={16} /> : <RiAlertLine size={16} />}
-              {feedback.msg}
-            </div>
-          )}
-
-          {/* Actions */}
-          <div className="mt-2 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="btn btn-ghost px-5"
-              disabled={submitting}
-            >
-              Cancel
-            </button>
-            <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
-              onClick={handleCreate}
-              disabled={!form.name || !form.exam || submitting}
-            >
-              {submitting && <RiLoaderLine size={16} className="animate-spin" />}
-              {submitting ? "Creating..." : "Create Batch"}
-            </button>
-          </div>
-        </div>
-      </Modal>
+        availableExams={availableExams}
+        onCreate={createBatch}
+        onCreated={(batchId) => {
+          setIsModalOpen(false);
+          router.push(`/institute/students?batch=${batchId}`);
+        }}
+      />
 
       <Modal open={Boolean(editingBatch)} onClose={() => setEditingBatch(null)} title="Manage batch" subtitle={editingBatch?.name ?? ""}>
         <div className="flex flex-col gap-3">
