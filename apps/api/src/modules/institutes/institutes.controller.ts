@@ -7,6 +7,29 @@ import { getOrSetCache } from "../../lib/cache";
 /** Lifecycle values institute_subscriptions.status accepts (see migration 10). */
 const SUBSCRIPTION_STATUSES = ["trialing", "active", "past_due", "cancelled"];
 
+/** Cohort stage. Not derivable from target_year — 2027 is class 12 for one institute and droppers for another. */
+const CLASS_LEVELS = ["class_11", "class_12", "dropper"];
+
+/**
+ * The date a batch should expire: the exam's month and day, in the target year.
+ *
+ * Falls back to rolling the calendar entry forward to the next future date when
+ * no target year was given, which is what the old inline logic did for every
+ * batch regardless of how far out its cohort sat.
+ */
+function deriveExpiry(suggestedEndsAt: string | null, targetYear: number | null): string | null {
+  if (!suggestedEndsAt) return null;
+  const suggested = new Date(suggestedEndsAt);
+  if (Number.isNaN(suggested.getTime())) return null;
+
+  if (targetYear) {
+    suggested.setUTCFullYear(targetYear);
+  } else if (suggested < new Date()) {
+    suggested.setUTCFullYear(suggested.getUTCFullYear() + 1);
+  }
+  return suggested.toISOString().split("T")[0];
+}
+
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
   const { data } = await supabaseDB
@@ -458,10 +481,21 @@ async function computeInstituteReports(id: string) {
 export const createBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user?.id;
-    const { name, exam, starts_at, ends_at } = req.body;
+    const { name, exam, starts_at, ends_at, target_year, class_level } = req.body;
 
     if (!name || !exam) {
       res.status(400).json({ success: false, message: "name and exam are required" });
+      return;
+    }
+
+    if (target_year !== undefined && target_year !== null) {
+      if (!Number.isInteger(target_year) || target_year < 2020 || target_year > 2100) {
+        res.status(400).json({ success: false, message: "target_year must be a four-digit exam year" });
+        return;
+      }
+    }
+    if (class_level !== undefined && class_level !== null && !CLASS_LEVELS.includes(class_level)) {
+      res.status(400).json({ success: false, message: `class_level must be one of: ${CLASS_LEVELS.join(", ")}` });
       return;
     }
 
@@ -504,11 +538,10 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         name: name.trim(),
         exam: exam.trim(),
         starts_at: starts_at || null,
-        ends_at: (() => {
-          if (ends_at) return ends_at;
-          // Auto-fill from exam_calendar
-          return null; // will be patched below after insert
-        })(),
+        // Filled in below once the exam calendar has been consulted.
+        ends_at: ends_at || null,
+        target_year: target_year ?? null,
+        class_level: class_level || null,
         is_active: true,
       })
       .select()
@@ -520,32 +553,39 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    // Auto-fill ends_at from exam_calendar if not provided
+    // Derive the expiry from the exam calendar when the caller did not set one.
+    //
+    // The target year decides which cycle this is, so the calendar supplies
+    // only the month and day. Previously the stored date was used whole and
+    // bumped a year whenever it had already passed, which produced the right
+    // answer for next year's batch and the wrong one for anything further out
+    // — a class 11 cohort sitting in 2028 got a 2027 expiry.
     if (!ends_at && batch) {
       const { data: calRow, error: calErr } = await supabaseDB
         .from("exam_calendar")
         .select("suggested_ends_at")
         .eq("exam_code", exam.trim())
         .maybeSingle();
+
       // This error used to be discarded. A batch that fails to get an expiry
-      // date never expires, which silently costs a renewal — so the failure is
-      // loud even though the batch itself was created successfully.
+      // never expires, which silently costs a renewal, so the failure is loud
+      // even though the batch itself was created successfully.
       if (calErr) {
         console.error(
           `[createBatch] exam_calendar lookup failed for "${exam.trim()}" — batch ${batch.id} has NO expiry date:`,
           calErr.message,
         );
       }
-      if (calRow?.suggested_ends_at) {
-        let suggestedDate = new Date(calRow.suggested_ends_at);
-        // If the suggested date is in the past, push to next year
-        if (suggestedDate < new Date()) {
-          suggestedDate.setFullYear(suggestedDate.getFullYear() + 1);
-        }
-        await supabaseDB.from("batches").update({
-          ends_at: suggestedDate.toISOString().split("T")[0]
-        }).eq("id", batch.id);
-        (batch as any).ends_at = suggestedDate.toISOString().split("T")[0];
+
+      const derived = deriveExpiry(calRow?.suggested_ends_at ?? null, target_year ?? null);
+      if (derived) {
+        const patch: Record<string, any> = { ends_at: derived };
+        // A batch created without a stated target year still belongs to a
+        // cycle; take it from the date we just settled on so the grouped list
+        // has somewhere to put it.
+        if (target_year == null) patch.target_year = new Date(derived).getUTCFullYear();
+        await supabaseDB.from("batches").update(patch).eq("id", batch.id);
+        Object.assign(batch as any, patch);
       }
     }
 
@@ -679,7 +719,7 @@ export const updateBatch = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    const allowed = ["name", "exam", "description", "max_students", "max_teachers", "starts_at", "ends_at"];
+    const allowed = ["name", "exam", "description", "max_students", "max_teachers", "starts_at", "ends_at", "target_year", "class_level"];
     const updates: Record<string, any> = {};
     for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields" }); return; }

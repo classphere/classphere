@@ -22,12 +22,17 @@ export interface Batch {
   is_active: boolean;
   starts_at: string | null;
   ends_at: string | null;
+  /** Exam year this cohort sits for — how the institute batch list is grouped. */
+  target_year: number | null;
+  class_level: "class_11" | "class_12" | "dropper" | null;
   created_at: string;
 }
 
 export interface CreateBatchPayload {
   name: string;
   exam: string;
+  target_year?: number;
+  class_level?: string;
   starts_at?: string;
   ends_at?: string;
 }

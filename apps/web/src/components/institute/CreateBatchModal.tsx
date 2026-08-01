@@ -29,10 +29,20 @@ export function CreateBatchModal({
   open: boolean;
   onClose: () => void;
   availableExams: ExamOption[];
-  onCreate: (payload: { name: string; exam: string; starts_at?: string; ends_at?: string }) => Promise<CreateBatchResult>;
+  onCreate: (payload: {
+    name: string; exam: string; starts_at?: string; ends_at?: string;
+    target_year?: number; class_level?: string;
+  }) => Promise<CreateBatchResult>;
   onCreated: (batchId?: string) => void;
 }) {
-  const [form, setForm] = useState({ name: "", exam: "", starts_at: "", ends_at: "" });
+  // Target year defaults to the next cycle: a batch created mid-2026 is almost
+  // never sitting the 2026 exam, which has already been written.
+  const NEXT_CYCLE = new Date().getFullYear() + 1;
+  const YEAR_OPTIONS = [NEXT_CYCLE, NEXT_CYCLE + 1, NEXT_CYCLE + 2, NEXT_CYCLE + 3];
+  const [form, setForm] = useState({
+    name: "", exam: "", starts_at: "", ends_at: "",
+    target_year: NEXT_CYCLE, class_level: "",
+  });
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
@@ -48,20 +58,30 @@ export function CreateBatchModal({
       ]),
     );
 
-  // Choosing the exam proposes the session's end date. It stays editable —
-  // the calendar is a suggestion, and an institute running a two-year
-  // foundation course needs to overrule it.
-  const handleExamChange = (examCode: string) => {
+  /**
+   * The expiry is the exam's month and day in the target year, so it follows
+   * from the two facts the admin has already given rather than being a date
+   * they must reason about. Still editable — a foundation course that runs
+   * past the exam needs to overrule it.
+   */
+  const expiryFor = (examCode: string, year: number) => {
     const suggested = examCalendar[examCode]?.suggested_ends_at;
-    setForm((f) => ({
-      ...f,
-      exam: examCode,
-      ends_at: suggested ? new Date(suggested).toISOString().slice(0, 10) + "T23:59" : f.ends_at,
-    }));
+    if (!suggested) return "";
+    const date = new Date(suggested);
+    date.setFullYear(year);
+    return date.toISOString().slice(0, 10) + "T23:59";
+  };
+
+  const handleExamChange = (examCode: string) => {
+    setForm((f) => ({ ...f, exam: examCode, ends_at: expiryFor(examCode, f.target_year) || f.ends_at }));
+  };
+
+  const handleYearChange = (year: number) => {
+    setForm((f) => ({ ...f, target_year: year, ends_at: expiryFor(f.exam, year) || f.ends_at }));
   };
 
   const close = () => {
-    setForm({ name: "", exam: "", starts_at: "", ends_at: "" });
+    setForm({ name: "", exam: "", starts_at: "", ends_at: "", target_year: NEXT_CYCLE, class_level: "" });
     setFeedback(null);
     onClose();
   };
@@ -75,6 +95,8 @@ export function CreateBatchModal({
       exam: form.exam,
       starts_at: form.starts_at ? new Date(form.starts_at).toISOString() : undefined,
       ends_at: form.ends_at ? new Date(form.ends_at).toISOString() : undefined,
+      target_year: form.target_year,
+      class_level: form.class_level || undefined,
     });
     setSubmitting(false);
     if (result.success) {
@@ -116,9 +138,9 @@ export function CreateBatchModal({
           </div>
           {form.exam && examCalendar[form.exam] ? (
             <p className="mt-1.5 text-xs text-t-secondary">
-              📅 Suggested expiry:{" "}
+              📅 Expires{" "}
               <strong>
-                {new Date(examCalendar[form.exam].suggested_ends_at).toLocaleDateString("en-IN", {
+                {new Date(expiryFor(form.exam, form.target_year)).toLocaleDateString("en-IN", {
                   day: "numeric", month: "long", year: "numeric",
                 })}
               </strong>
@@ -127,6 +149,46 @@ export function CreateBatchModal({
           ) : (
             <p className="mt-1.5 text-xs text-t-secondary">Only examinations enabled by your superadmin are available.</p>
           )}
+        </div>
+
+        {/* Target year is how the batch list is organised, and it decides the
+            expiry above. In 2026 a batch targeting 2028 is class 11; targeting
+            2027 it is class 12 or droppers — which is why the stage is asked
+            separately rather than inferred. */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target exam year</label>
+            <div className="relative">
+              <select
+                className="input-field w-full appearance-none pr-10"
+                value={form.target_year}
+                onChange={(e) => handleYearChange(Number(e.target.value))}
+              >
+                {YEAR_OPTIONS.map((year) => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
+              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
+            </div>
+          </div>
+          <div>
+            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">
+              Class <span className="font-normal text-t-tertiary">(optional)</span>
+            </label>
+            <div className="relative">
+              <select
+                className="input-field w-full appearance-none pr-10"
+                value={form.class_level}
+                onChange={(e) => setForm({ ...form, class_level: e.target.value })}
+              >
+                <option value="">Not specified</option>
+                <option value="class_11">Class 11</option>
+                <option value="class_12">Class 12</option>
+                <option value="dropper">Dropper</option>
+              </select>
+              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
+            </div>
+          </div>
         </div>
 
         {/* Dates follow the exam because picking one prefills the expiry. Above

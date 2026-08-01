@@ -37,6 +37,13 @@ const COLORS = [
   "bg-primary-03/10 text-primary-03 border-primary-03/20",
 ];
 
+/** Cohort stage, for the row subtitle. Target 2027 alone cannot say which of these it is. */
+const CLASS_LABELS: Record<string, string> = {
+  class_11: "Class 11",
+  class_12: "Class 12",
+  dropper: "Dropper",
+};
+
 export default function BatchesPage() {
   const router = useRouter();
   const { session } = useAuth();
@@ -52,6 +59,36 @@ export default function BatchesPage() {
   const filtered = batches.filter((b) =>
     b.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Grouped by the exam year the cohort sits for, newest first. A flat list
+  // mixed live cohorts with ones that finished two sessions ago, and the only
+  // thing telling them apart was whatever the admin typed into the name.
+  const CURRENT_YEAR = new Date().getFullYear();
+  const groups = (() => {
+    const byYear = new Map<number | null, typeof filtered>();
+    for (const batch of filtered) {
+      const year = batch.target_year ?? null;
+      byYear.set(year, [...(byYear.get(year) ?? []), batch]);
+    }
+    return [...byYear.entries()].sort((a, b) => {
+      // Unclassified batches sit at the bottom rather than pretending to be
+      // year zero — they need attention, not burial.
+      if (a[0] === null) return 1;
+      if (b[0] === null) return -1;
+      return b[0] - a[0];
+    });
+  })();
+
+  // Past cycles collapse: they stay reachable without pushing this session's
+  // cohorts off the screen.
+  const [openYears, setOpenYears] = useState<Record<string, boolean>>({});
+  const isYearOpen = (year: number | null) => {
+    const key = String(year);
+    if (key in openYears) return openYears[key];
+    return year === null || year >= CURRENT_YEAR;
+  };
+  const toggleYear = (year: number | null) =>
+    setOpenYears((prev) => ({ ...prev, [String(year)]: !isYearOpen(year) }));
   const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
 
   const { data: instituteData } = useApiQuery<{ institute: { enabled_exam_codes?: string[] } }>("/api/v1/institutes/me");
@@ -164,8 +201,31 @@ export default function BatchesPage() {
           </div>
         )}
 
-        {/* Batch rows */}
-        {!loading && !error && filtered.map((batch, idx) => {
+        {/* Batch rows, grouped by target year */}
+        {!loading && !error && groups.map(([year, yearBatches]) => (
+          <div key={String(year)} className="flex flex-col gap-2">
+            <button
+              onClick={() => toggleYear(year)}
+              className="flex w-full items-center gap-2.5 rounded-[10px] px-1 py-1.5 text-left transition-colors hover:bg-b-surface2/60"
+            >
+              <RiArrowDownSLine
+                size={18}
+                className={`shrink-0 text-t-secondary transition-transform ${isYearOpen(year) ? "" : "-rotate-90"}`}
+              />
+              <span className="text-[13px] font-bold text-t-primary">
+                {year === null ? "No target year set" : `Target ${year}`}
+              </span>
+              {year !== null && year < CURRENT_YEAR && (
+                <span className="rounded-[6px] border border-s-stroke2/50 bg-b-surface2 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-t-secondary">
+                  Past
+                </span>
+              )}
+              <span className="text-[11px] text-t-secondary">
+                {yearBatches.length} batch{yearBatches.length === 1 ? "" : "es"}
+              </span>
+            </button>
+
+            {isYearOpen(year) && yearBatches.map((batch, idx) => {
           const colorClass = COLORS[idx % COLORS.length];
           const now = Date.now();
           const expired = Boolean(batch.ends_at && Date.parse(batch.ends_at) <= now);
@@ -188,7 +248,10 @@ export default function BatchesPage() {
                     {batch.name}
                   </span>
                   <span className="text-[11px] sm:text-xs text-t-secondary mt-0.5 uppercase tracking-wide truncate">
-                    {EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam}
+                    {[
+                      EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam,
+                      batch.class_level ? CLASS_LABELS[batch.class_level] : null,
+                    ].filter(Boolean).join(" · ")}
                   </span>
                 </div>
               </div>
@@ -245,7 +308,9 @@ export default function BatchesPage() {
               </div>
             </div>
           );
-        })}
+            })}
+          </div>
+        ))}
       </div>
 
       <CreateBatchModal
