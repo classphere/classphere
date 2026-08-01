@@ -106,7 +106,9 @@ export const createDPP = async (req: Request, res: Response): Promise<void> => {
     const { data: batchStudents } = await supabaseDB
       .from("batch_students")
       .select("student_id")
-      .eq("batch_id", batch_id);
+      .eq("batch_id", batch_id)
+      // Students who have left the batch are not assigned new work.
+      .is("left_at", null);
 
     if (batchStudents && batchStudents.length > 0) {
       const studentDppRows = batchStudents.map((bs: any) => ({

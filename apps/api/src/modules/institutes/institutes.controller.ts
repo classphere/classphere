@@ -296,7 +296,8 @@ export const getInstituteStats = async (req: Request, res: Response): Promise<vo
     if (batchIds.length > 0) {
       const { count } = await supabaseDB
         .from("batch_students").select("student_id", { count: "exact", head: true })
-        .in("batch_id", batchIds);
+        .in("batch_id", batchIds)
+        .is("left_at", null);
       totalStudents = count ?? 0;
     }
 
@@ -481,7 +482,7 @@ async function computeInstituteReports(id: string) {
 export const createBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user?.id;
-    const { name, exam, starts_at, ends_at, target_year, class_level } = req.body;
+    const { name, exam, starts_at, ends_at, target_year, class_level, entry_class_level } = req.body;
 
     if (!name || !exam) {
       res.status(400).json({ success: false, message: "name and exam are required" });
@@ -494,8 +495,12 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         return;
       }
     }
-    if (class_level !== undefined && class_level !== null && !CLASS_LEVELS.includes(class_level)) {
-      res.status(400).json({ success: false, message: `class_level must be one of: ${CLASS_LEVELS.join(", ")}` });
+    // `class_level` is accepted as an alias so an older client keeps working;
+    // the column is entry_class_level because it records the class the cohort
+    // joined in, not the class it is in today.
+    const entryClass = entry_class_level ?? class_level;
+    if (entryClass !== undefined && entryClass !== null && !CLASS_LEVELS.includes(entryClass)) {
+      res.status(400).json({ success: false, message: `entry_class_level must be one of: ${CLASS_LEVELS.join(", ")}` });
       return;
     }
 
@@ -541,7 +546,7 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         // Filled in below once the exam calendar has been consulted.
         ends_at: ends_at || null,
         target_year: target_year ?? null,
-        class_level: class_level || null,
+        entry_class_level: entryClass || null,
         is_active: true,
       })
       .select()
@@ -682,6 +687,9 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
         .select("student_id")
         .eq("batch_id", id)
         .eq("student_id", req.user.id)
+        // Leaving the batch ends access to it, so a departed student cannot
+        // keep reading the roster they were once part of.
+        .is("left_at", null)
         .maybeSingle();
 
       if (!enrollment) {
@@ -696,8 +704,13 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
     if (!batch) { res.status(404).json({ success: false, message: "Batch not found" }); return; }
 
     // Students in batch
+    // Current roster. Departed students keep their row for history and for
+    // reconstructing past billing, but they are not who is in the batch now.
     const { data: studentLinks } = await supabaseDB
-      .from("batch_students").select("student_id, users(id, name, phone, date_of_birth)").eq("batch_id", id);
+      .from("batch_students")
+      .select("student_id, users(id, name, phone, date_of_birth)")
+      .eq("batch_id", id)
+      .is("left_at", null);
     const students = (studentLinks ?? []).map((r: any) => r.users).filter(Boolean);
 
     res.status(200).json({ success: true, data: { batch, students, teachers: [] } });
@@ -719,7 +732,7 @@ export const updateBatch = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    const allowed = ["name", "exam", "description", "max_students", "max_teachers", "starts_at", "ends_at", "target_year", "class_level"];
+    const allowed = ["name", "exam", "description", "max_students", "max_teachers", "starts_at", "ends_at", "target_year", "entry_class_level"];
     const updates: Record<string, any> = {};
     for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields" }); return; }
@@ -787,7 +800,11 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
     }
 
     const { error } = await supabaseDB
-      .from("batch_students").upsert({ batch_id: id, student_id }, { onConflict: "batch_id,student_id", ignoreDuplicates: true });
+      // ignoreDuplicates would silently no-op for a student who previously
+      // left, leaving them marked as departed after being re-added. Clearing
+      // left_at is what "add to batch" has to mean for a returning student.
+      .from("batch_students")
+      .upsert({ batch_id: id, student_id, left_at: null }, { onConflict: "batch_id,student_id" });
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
     res.status(201).json({ success: true, message: "Student added to batch" });
   } catch (err: any) {
@@ -808,10 +825,18 @@ export const removeStudentFromBatch = async (req: Request, res: Response): Promi
       return;
     }
 
+    // Recorded, not deleted. A cohort batch runs for two years and a few
+    // students leave partway; deleting the row stopped the billing but also
+    // destroyed the evidence they were ever enrolled, so no past period could
+    // be reconstructed. left_at both stops the billing and keeps the history.
     const { error } = await supabaseDB
-      .from("batch_students").delete().eq("batch_id", id).eq("student_id", student_id);
+      .from("batch_students")
+      .update({ left_at: new Date().toISOString() })
+      .eq("batch_id", id)
+      .eq("student_id", student_id)
+      .is("left_at", null);
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
-    res.status(200).json({ success: true, message: "Student removed from batch" });
+    res.status(200).json({ success: true, message: "Student marked as left. Their records remain in the batch." });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -1063,6 +1088,92 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
       },
     });
   } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/batches/:id/students/move
+ * Body: { student_ids: string[], target_batch_id: string }
+ *
+ * [institute_admin] — Move students from one batch to another.
+ *
+ * Sections change, and a class 12 student who does not clear the exam joins
+ * the droppers. Without this the only route was to remove and re-import, which
+ * used to destroy the enrolment record and always loses the join date.
+ *
+ * The move is a departure from one batch and an enrolment in the other, so the
+ * student's history reads as a continuous line rather than starting afresh.
+ */
+export const moveStudentsBetweenBatches = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const { student_ids, target_batch_id } = req.body ?? {};
+
+    if (!Array.isArray(student_ids) || student_ids.length === 0) {
+      res.status(400).json({ success: false, message: "student_ids must be a non-empty array" });
+      return;
+    }
+    if (!target_batch_id) {
+      res.status(400).json({ success: false, message: "target_batch_id is required" });
+      return;
+    }
+    if (target_batch_id === id) {
+      res.status(400).json({ success: false, message: "Source and destination batch are the same" });
+      return;
+    }
+
+    // Both batches must belong to the caller's institute. Checking only the
+    // source would let an admin push their students into another tenant's
+    // batch, which is a cross-tenant write dressed up as a move.
+    if (!(await checkBatchTenant(id, req.user)) || !(await checkBatchTenant(target_batch_id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Both batches must belong to your institute." });
+      return;
+    }
+
+    const { data: destination } = await supabaseDB
+      .from("batches")
+      .select("id, is_active, ends_at")
+      .eq("id", target_batch_id)
+      .maybeSingle();
+    if (!destination) {
+      res.status(404).json({ success: false, message: "Destination batch not found" });
+      return;
+    }
+    // Moving students into a batch that has already expired would leave them
+    // with no access at all, which is never what the admin meant.
+    if (!destination.is_active || (destination.ends_at && Date.parse(destination.ends_at) <= Date.now())) {
+      res.status(400).json({ success: false, message: "Destination batch has expired. Choose an active batch." });
+      return;
+    }
+
+    const now = new Date().toISOString();
+
+    const { error: leaveErr } = await supabaseDB
+      .from("batch_students")
+      .update({ left_at: now })
+      .eq("batch_id", id)
+      .in("student_id", student_ids)
+      .is("left_at", null);
+    if (leaveErr) { res.status(500).json({ success: false, message: leaveErr.message }); return; }
+
+    // left_at is cleared explicitly so a student returning to a batch they
+    // once left is enrolled again rather than staying marked as departed.
+    const { error: joinErr } = await supabaseDB
+      .from("batch_students")
+      .upsert(
+        student_ids.map((student_id: string) => ({ batch_id: target_batch_id, student_id, left_at: null })),
+        { onConflict: "batch_id,student_id" },
+      );
+    if (joinErr) { res.status(500).json({ success: false, message: joinErr.message }); return; }
+
+    res.status(200).json({
+      success: true,
+      message: `Moved ${student_ids.length} student${student_ids.length === 1 ? "" : "s"}.`,
+      data: { moved: student_ids.length },
+    });
+  } catch (err: any) {
+    console.error("[moveStudentsBetweenBatches error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
 };

@@ -33,7 +33,7 @@ export function CreateBatchModal({
   onClose: () => void;
   availableExams: ExamOption[];
   onCreate: (payload: {
-    name: string; exam: string; target_year?: number; class_level?: string;
+    name: string; exam: string; target_year?: number; entry_class_level?: string;
   }) => Promise<CreateBatchResult>;
   onCreated: (batchId?: string) => void;
 }) {
@@ -42,7 +42,7 @@ export function CreateBatchModal({
   const NEXT_CYCLE = new Date().getFullYear() + 1;
   const YEAR_OPTIONS = [NEXT_CYCLE, NEXT_CYCLE + 1, NEXT_CYCLE + 2, NEXT_CYCLE + 3];
 
-  const [form, setForm] = useState({ name: "", exam: "", target_year: NEXT_CYCLE, class_level: "" });
+  const [form, setForm] = useState({ name: "", exam: "", target_year: NEXT_CYCLE, entry_class_level: "" });
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
@@ -76,7 +76,7 @@ export function CreateBatchModal({
   const selectedExamLabel = availableExams.find((e) => e.id === form.exam)?.label ?? "";
 
   const close = () => {
-    setForm({ name: "", exam: "", target_year: NEXT_CYCLE, class_level: "" });
+    setForm({ name: "", exam: "", target_year: NEXT_CYCLE, entry_class_level: "" });
     setFeedback(null);
     onClose();
   };
@@ -91,7 +91,7 @@ export function CreateBatchModal({
       name: form.name,
       exam: form.exam,
       target_year: form.target_year,
-      class_level: form.class_level || undefined,
+      entry_class_level: form.entry_class_level || undefined,
     });
     setSubmitting(false);
     if (result.success) {
@@ -156,13 +156,13 @@ export function CreateBatchModal({
 
         <div>
           <label className="mb-1.5 block text-sm font-semibold text-t-secondary">
-            Class <span className="font-normal text-t-tertiary">(optional)</span>
+            Joining class <span className="font-normal text-t-tertiary">(optional)</span>
           </label>
           <div className="relative">
             <select
               className="input-field w-full appearance-none pr-10"
-              value={form.class_level}
-              onChange={(e) => setForm({ ...form, class_level: e.target.value })}
+              value={form.entry_class_level}
+              onChange={(e) => setForm({ ...form, entry_class_level: e.target.value })}
             >
               <option value="">Not specified</option>
               <option value="class_11">Class 11</option>
@@ -172,7 +172,8 @@ export function CreateBatchModal({
             <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
           </div>
           <p className="mt-1.5 text-xs text-t-secondary">
-            {form.target_year} cannot say this on its own — it is class 12 for one institute and droppers for another.
+            The class they join in. A class 11 cohort shows as Class 12 next
+            year by itself — you never edit this again.
           </p>
         </div>
 

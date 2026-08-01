@@ -58,6 +58,7 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
           .from("batch_students")
           .select("batch_id, batches(id, name, exam, ends_at, is_active)")
           .eq("student_id", studentId)
+          .is("left_at", null)
           .order("joined_at", { ascending: false })
           .limit(1)
           .maybeSingle();

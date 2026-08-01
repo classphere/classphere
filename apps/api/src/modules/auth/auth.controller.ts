@@ -517,7 +517,8 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
     const { data: batchRows } = await supabaseDB
       .from("batch_students")
       .select("batch_id, batches(id, name, exam, institute_id)")
-      .eq("student_id", userId);
+      .eq("student_id", userId)
+      .is("left_at", null);
 
     const batches = (batchRows ?? []).map((row: any) => row.batches).filter(Boolean);
 

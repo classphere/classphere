@@ -8,6 +8,7 @@ import {
   updateBatch,
   deactivateBatch,
   addStudentToBatch,
+  moveStudentsBetweenBatches,
   removeStudentFromBatch,
   addTeacherToBatch,
   removeTeacherFromBatch,
@@ -32,6 +33,8 @@ router.delete("/:id", authenticate, requireRole("institute_admin", "super_admin"
 
 // Batch membership management
 router.post("/:id/students", authenticate, requireRole("institute_admin", "super_admin"), addStudentToBatch);
+// Section changes and class 12 -> droppers, without re-importing anyone.
+router.post("/:id/students/move", authenticate, requireRole("institute_admin", "super_admin"), moveStudentsBetweenBatches);
 router.delete("/:id/students/:student_id", authenticate, requireRole("institute_admin", "super_admin"), removeStudentFromBatch);
 router.post("/:id/teachers", authenticate, requireRole("institute_admin", "super_admin"), addTeacherToBatch);
 router.delete("/:id/teachers/:teacher_id", authenticate, requireRole("institute_admin", "super_admin"), removeTeacherFromBatch);

@@ -18,6 +18,7 @@ import {
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
 import { CreateBatchModal } from "@/components/institute/CreateBatchModal";
+import { cohortLabel } from "@/lib/batch-class";
 import { useAuth } from "@/lib/auth-context";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { apiClient } from "@/lib/api.client";
@@ -36,13 +37,6 @@ const COLORS = [
   "bg-primary-05/10 text-primary-05 border-primary-05/20",
   "bg-primary-03/10 text-primary-03 border-primary-03/20",
 ];
-
-/** Cohort stage, for the row subtitle. Target 2027 alone cannot say which of these it is. */
-const CLASS_LABELS: Record<string, string> = {
-  class_11: "Class 11",
-  class_12: "Class 12",
-  dropper: "Dropper",
-};
 
 export default function BatchesPage() {
   const router = useRouter();
@@ -250,7 +244,9 @@ export default function BatchesPage() {
                   <span className="text-[11px] sm:text-xs text-t-secondary mt-0.5 uppercase tracking-wide truncate">
                     {[
                       EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam,
-                      batch.class_level ? CLASS_LABELS[batch.class_level] : null,
+                      // Derived, not stored: a class 11 cohort reads as class
+                      // 12 in its second year without anyone editing it.
+                      cohortLabel(batch.entry_class_level, batch.target_year),
                     ].filter(Boolean).join(" · ")}
                   </span>
                 </div>

@@ -83,7 +83,9 @@ export const listStudents = async (req: Request, res: Response): Promise<void> =
       const { data: batchLinks } = await supabaseDB
         .from("batch_students")
         .select("student_id, batches(name)")
-        .in("student_id", studentIds);
+        .in("student_id", studentIds)
+        // Shows the batch a student is in, not one they have left.
+        .is("left_at", null);
 
       if (batchLinks) {
         for (const link of batchLinks as any[]) {
