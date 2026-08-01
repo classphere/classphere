@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -42,13 +43,27 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
       }
     }
 
-    // exam filter: join via exams table — filter by exam code
-    if (exam) {
-      // First resolve exam_id from code
-      const { data: examRow } = await supabaseDB.from("exams").select("id").eq("code", exam).maybeSingle();
-      if (examRow) {
-        query = (query as any).eq("exam_id", examRow.id);
+    // Exam filter, constrained to what this student's batches entitle them to.
+    // The code used to come straight from the query string, so a NEET student
+    // could ask for jee-main and be served it.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    const { codes: examCodes, denied } = resolveExamFilter(exam, entitled);
+
+    if (denied) {
+      // Deliberately an empty page rather than no filter: falling through to
+      // unfiltered is exactly how the restriction gets bypassed.
+      res.status(200).json({ success: true, data: { questions: [], total: 0, page: pageNum, limit: limitNum } });
+      return;
+    }
+
+    if (examCodes && examCodes.length > 0) {
+      const { data: examRows } = await supabaseDB.from("exams").select("id").in("code", examCodes);
+      const ids = (examRows ?? []).map((row: any) => row.id);
+      if (ids.length === 0) {
+        res.status(200).json({ success: true, data: { questions: [], total: 0, page: pageNum, limit: limitNum } });
+        return;
       }
+      query = (query as any).in("exam_id", ids);
     }
 
     const { data: questions, count, error } = await query;
@@ -73,11 +88,17 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
  */
 export const getExamsMeta = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { data: exams } = await supabaseDB
+    // Students are offered only the exams their batches prepare them for, so
+    // the picker cannot suggest content the endpoints will refuse to serve.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    let examQuery = supabaseDB
       .from("exams")
       .select("id, code, full_name")
       .eq("is_active", true)
       .order("code");
+    if (entitled.length > 0) examQuery = examQuery.in("code", entitled);
+
+    const { data: exams } = await examQuery;
 
     if (!exams || exams.length === 0) {
       res.status(200).json({ success: true, data: { exams: [] } });
@@ -140,6 +161,15 @@ export const createTopicPractice = async (req: Request, res: Response): Promise<
     const count = Math.max(5, Math.min(50, Number(question_count) || 20));
     if (![exam, subject, chapter, topic].every((value) => typeof value === "string" && value.trim())) {
       res.status(400).json({ success: false, message: "exam, subject, chapter, and topic are required." });
+      return;
+    }
+
+    // A student may only generate practice for an exam their batches prepare
+    // them for. Without this, topic practice was an unguarded route to any
+    // exam's question bank regardless of what they are enrolled in.
+    const entitledExams = await getStudentExamCodes(req.user!.id);
+    if (entitledExams.length > 0 && !entitledExams.includes(exam.trim())) {
+      res.status(403).json({ success: false, message: "This examination is not part of your batch." });
       return;
     }
 
@@ -407,11 +437,20 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const filtered = exam
+    // Same entitlement rule as the question bank: a student sees papers for
+    // the exams their batches are preparing them for, and nothing else.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    const { codes: allowedCodes, denied } = resolveExamFilter(exam as string | undefined, entitled);
+    if (denied) {
+      res.status(200).json({ success: true, data: { papers: [] } });
+      return;
+    }
+
+    const filtered = allowedCodes
       ? (data ?? []).filter((p: any) => {
           if (!p.exams) return false;
           const codes = Array.isArray(p.exams) ? p.exams.map((e: any) => e.code) : [p.exams.code];
-          return codes.some((c: any) => c && c.toLowerCase() === (exam as string).toLowerCase());
+          return codes.some((c: any) => c && allowedCodes.some((allowed) => allowed.toLowerCase() === String(c).toLowerCase()));
         })
       : (data ?? []).filter((p: any) => {
           if (!p.exams) return false;

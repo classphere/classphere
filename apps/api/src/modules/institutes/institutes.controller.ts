@@ -30,6 +30,27 @@ function deriveExpiry(suggestedEndsAt: string | null, targetYear: number | null)
   return suggested.toISOString().split("T")[0];
 }
 
+/**
+ * Keep users.exam_target in step with the batch a student sits in.
+ *
+ * Entitlement is derived from batches on every request, so this column no
+ * longer gates access — but analytics, syllabus coverage and daily revision
+ * still read it, and it defaulted to "JEE" at registration and was never
+ * updated. A student moved into a NEET batch would otherwise keep seeing JEE
+ * analytics indefinitely.
+ */
+async function syncExamTargetToBatch(studentIds: string[], batchId: string): Promise<void> {
+  if (studentIds.length === 0) return;
+  const { data: batch } = await supabaseDB.from("batches").select("exam").eq("id", batchId).maybeSingle();
+  if (!batch?.exam) return;
+  const { error } = await supabaseDB
+    .from("users")
+    .update({ exam_target: batch.exam })
+    .in("id", studentIds)
+    .eq("role", "student");
+  if (error) console.error("[syncExamTargetToBatch] failed:", error.message);
+}
+
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
   const { data } = await supabaseDB
@@ -805,6 +826,7 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
       // left_at is what "add to batch" has to mean for a returning student.
       .from("batch_students")
       .upsert({ batch_id: id, student_id, left_at: null }, { onConflict: "batch_id,student_id" });
+    await syncExamTargetToBatch([student_id], id);
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
     res.status(201).json({ success: true, message: "Student added to batch" });
   } catch (err: any) {
@@ -1166,6 +1188,8 @@ export const moveStudentsBetweenBatches = async (req: Request, res: Response): P
         { onConflict: "batch_id,student_id" },
       );
     if (joinErr) { res.status(500).json({ success: false, message: joinErr.message }); return; }
+
+    await syncExamTargetToBatch(student_ids, target_batch_id);
 
     res.status(200).json({
       success: true,

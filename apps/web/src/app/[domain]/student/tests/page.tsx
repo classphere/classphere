@@ -97,7 +97,6 @@ function TestsHubContent() {
   const queryClient = useQueryClient();
   const [actionError, setActionError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState("jee-main");
-  const EXAM_OPTIONS = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
   const [activeType, setActiveType] = useState(() => searchParams.get("tab") === "resources" ? "resources" : "assigned");
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
@@ -122,14 +121,20 @@ function TestsHubContent() {
     activeType === "resources" ? "/api/v1/resources/student" : null,
   );
   const papersQuery = useApiQuery<{ papers: Paper[] }>(papersPath);
-  const examMetaQuery = useApiQuery<{ exams: ExamMeta[] }>(
-    activeType === "topic-wise" ? "/api/v1/questions/meta/exams" : null,
-  );
+  // Always fetched, not just on the topic-wise tab: the exam picker above the
+  // list needs it too. The endpoint is scoped to the student's own batches, so
+  // this is also the list of exams they are entitled to.
+  const examMetaQuery = useApiQuery<{ exams: ExamMeta[] }>("/api/v1/questions/meta/exams");
 
   const assignedTests = assignedQuery.data?.tests ?? [];
   const resources = resourcesQuery.data?.resources ?? [];
   const papers = papersQuery.data?.papers ?? [];
   const examMeta = examMetaQuery.data?.exams ?? [];
+  // Offering an exam the student's batch does not cover would show a filter
+  // that returns nothing — the API refuses content outside their entitlement.
+  const EXAM_OPTIONS = examMeta.length
+    ? examMeta.map((entry) => entry.code)
+    : ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
 
   // isLoading, not isPending: a disabled query stays `pending` forever, so
   // isPending would leave this page spinning on whichever tabs are inactive.
