@@ -19,7 +19,7 @@ where the two disagree the handler is right and this file is a bug.
   // All three optional — omit them and they are derived. See below.
   "duration": 180,                // minutes; override only
   "marks": 720,                   // override only
-  "difficulty": "Medium",         // per-question fallback; usually omit
+  "difficulty": "medium",         // per-question fallback; usually omit
 
   // Required for jee-advanced, optional elsewhere. See below.
   "marking_scheme": null,
@@ -116,7 +116,7 @@ outright, so a 56,000-question bank needs ~113 calls. Chunk it.
   "subject": "Botany",
   "chapter": "Plant Kingdom",
   "topic": "Algae",
-  "difficulty": "Medium",
+  "difficulty": "medium",
 
   "question_type": "mcq_single",
   "question_text": "Which pigment is characteristic of Rhodophyceae?",
@@ -214,7 +214,23 @@ none means `integer`.
 
 **NEET has no `integer` questions.** Every NEET question is one of the MCQ types.
 
-### 5. `subject` — Botany and Zoology, not Biology
+### 5. `difficulty` — lowercase, and it matters more than it looks
+
+`easy` | `medium` | `hard`, lowercase, as `docs/analysis_engine.md` has always
+specified.
+
+It is the **second most-read field in the analysis engine**, after subject:
+32 references. The error-pattern and attempt-strategy services compare it by
+exact string — `question.difficulty === "easy"` — and the mistake classifier
+keys its expected-time table on it. A question stored as `"Easy"` matches
+nothing, so it silently vanishes from the "careless on easy questions" finding,
+from the easy-before-hard ordering check, and falls back to the medium timing
+default in the classifier.
+
+5,773 questions were stored capitalised. Ingest normalises now, and migration
+47 fixes the history behind a CHECK.
+
+### 6. `subject` — Botany and Zoology, not Biology
 
 NEET is examined as two separate sections. `"Biology"` is accepted but cannot be
 assigned to either afterwards, and 2,863 rows are already stuck that way.
