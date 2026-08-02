@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import {
   RiUploadCloud2Line, RiCheckLine, RiCloseLine,
@@ -64,6 +65,10 @@ export default function AIExtractor() {
     marks: "",
     difficulty: "",
   });
+
+  // Only exams without a uniform scheme need this; NEET and JEE Main default.
+  const [markingScheme, setMarkingScheme] = useState<MarkingScheme>({});
+  const needsScheme = form.exam === "jee-advanced";
 
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [pagesRange, setPagesRange] = useState<string>(""); // e.g. "1-2"
@@ -185,6 +190,7 @@ export default function AIExtractor() {
               duration: form.duration ? parseInt(form.duration) : undefined,
               marks: form.marks ? parseInt(form.marks) : undefined,
               difficulty: form.difficulty || undefined,
+              marking_scheme: needsScheme ? markingScheme : undefined,
               questions: jobState.result.questions,
             };
 
@@ -277,6 +283,7 @@ export default function AIExtractor() {
         duration: form.duration ? parseInt(form.duration) : undefined,
         marks: form.marks ? parseInt(form.marks) : undefined,
         difficulty: form.difficulty || undefined,
+        marking_scheme: needsScheme ? markingScheme : undefined,
         questions: extractedQuestions,
       };
 
@@ -459,24 +466,15 @@ export default function AIExtractor() {
             />
           </div>
 
-          {/* Difficulty */}
-          <div className="flex flex-col gap-2 sm:col-span-2">
-            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty *</label>
-            <div className="flex flex-row gap-3">
-              {DIFFICULTY.map(d => (
-                <button
-                  key={d}
-                  onClick={() => setField("difficulty", d)}
-                  className={`flex-1 h-11 rounded-[10px] border text-[14px] font-semibold capitalize transition-all cursor-pointer ${form.difficulty === d
-                      ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                      : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
-                    }`}
-                >
-                  {d}
-                </button>
-              ))}
+          {/* Difficulty is a property of a question, not of a paper — a real
+              paper mixes all three — so it is no longer asked for here. Each
+              question carries its own. */}
+
+          {needsScheme && (
+            <div className="sm:col-span-2">
+              <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
             </div>
-          </div>
+          )}
         </div>
       </div>
 

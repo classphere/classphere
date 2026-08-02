@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";
@@ -83,6 +84,10 @@ export default function UploadQuestionsPage() {
   const [fileName, setFileName] = useState<string | null>(null);
   const [status, setStatus] = useState<UploadStatus>("idle");
   const [resultMsg, setResultMsg] = useState<string>("");
+
+  // Only exams without a uniform scheme need this; NEET and JEE Main default.
+  const [markingScheme, setMarkingScheme] = useState<MarkingScheme>({});
+  const needsScheme = form.exam === "jee-advanced";
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const redirectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -177,6 +182,7 @@ export default function UploadQuestionsPage() {
         duration: form.duration ? parseInt(form.duration) : undefined,
         marks: form.marks ? parseInt(form.marks) : undefined,
         difficulty: form.difficulty || undefined,
+        marking_scheme: needsScheme ? markingScheme : undefined,
         questions: parsedQuestions,
       };
 
@@ -398,25 +404,34 @@ export default function UploadQuestionsPage() {
 
                 {/* Duration */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (minutes) *</label>
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (minutes)</label>
                   <input
                     type="number"
                     value={form.duration}
                     onChange={e => setField("duration", e.target.value)}
+                    placeholder="Leave blank to use the exam's standard"
                     className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                   />
                 </div>
 
-                {/* Total Marks */}
+                {/* Duration and marks are derived from the exam and the
+                    question count when left blank, so neither is required. */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Total Marks *</label>
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Total Marks</label>
                   <input
                     type="number"
                     value={form.marks}
                     onChange={e => setField("marks", e.target.value)}
+                    placeholder="Leave blank to sum from the questions"
                     className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                   />
                 </div>
+
+                {needsScheme && (
+                  <div className="sm:col-span-2">
+                    <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
+                  </div>
+                )}
 
 
 

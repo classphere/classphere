@@ -12,7 +12,7 @@ import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 import { deriveDurationMin } from "../../lib/exam-profile";
-import { defaultMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
+import { defaultMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -38,6 +38,8 @@ function ensureUUID(id: any): string {
 // ─── Validation ───────────────────────────────────────────────────────────────
 function validateQuestion(q: any, index: number): string | null {
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
+  const markErrors = validateQuestionMarks(q.marks);
+  if (markErrors.length > 0) return `Question #${index + 1}: ${markErrors.join("; ")}`;
   // Drafts are intentionally allowed to have missing keys or damaged matching
   // options. The review editor surfaces these defects; publication validates
   // them before a learner can access the paper.
@@ -381,6 +383,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           explanation:    stripInlineImages(processedExplanation),
           // Produced by normalize_json.py and, until now, dropped here.
           explanation_images: figuresForStorage(processedExplanation, processedExplanationImages),
+          // Overrides the paper scheme for this question alone. Null for
+          // essentially everything — only a paper scoring two sections of the
+          // same question type differently needs it.
+          marks:          q.marks ?? null,
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

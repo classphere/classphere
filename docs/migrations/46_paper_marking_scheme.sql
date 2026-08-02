@@ -23,6 +23,21 @@ ALTER TABLE public.papers
 COMMENT ON COLUMN public.papers.marking_scheme IS
   'Marks per question type, e.g. {"mcq_single":{"correct":3,"incorrect":-1},"mcq_multi":{"correct":4,"incorrect":-2,"partial":"per_correct_option"}}. NULL falls back to the exam default. Stored per paper because JEE Advanced changes its scheme between years.';
 
+-- ─── Per-question override ───────────────────────────────────────────────────
+--
+-- The paper's scheme keys on question type, which holds within a paper in most
+-- years: Advanced sections are defined by type. It breaks when one paper has
+-- two sections of the same type scored differently, which does happen and
+-- cannot be expressed by type alone.
+--
+-- NULL for essentially every question. Nothing in NEET or JEE Main needs it.
+
+ALTER TABLE public.questions
+  ADD COLUMN IF NOT EXISTS marks JSONB;
+
+COMMENT ON COLUMN public.questions.marks IS
+  'Overrides the paper marking_scheme for this question alone, e.g. {"correct":4,"incorrect":-2}. NULL means use the paper scheme for this question type. Needed only where one paper scores two sections of the same type differently.';
+
 -- ─── Backfill the uniform exams ──────────────────────────────────────────────
 --
 -- Every existing paper was scored +4/-1 on every question, so recording that
@@ -113,7 +128,7 @@ BEGIN
     INSERT INTO public.questions (
       id, exam_id, test_type, subject, chapter, topic, difficulty, year, source,
       question_type, question_text, question_images, options, correct_answer,
-      explanation, explanation_images, tags, is_active, content_scope,
+      explanation, explanation_images, marks, tags, is_active, content_scope,
       review_status, created_by, content_blocks, extraction_metadata,
       extractor_version, source_crop_url, source_reference
     ) VALUES (
@@ -133,6 +148,8 @@ BEGIN
       NULLIF(v_question ->> 'explanation', ''),
       CASE WHEN jsonb_typeof(v_question -> 'explanation_images') = 'array'
         THEN v_question -> 'explanation_images' ELSE '[]'::jsonb END,
+      CASE WHEN jsonb_typeof(v_question -> 'marks') = 'object'
+        THEN v_question -> 'marks' ELSE NULL END,
       COALESCE(v_question -> 'tags', '[]'::jsonb),
       true, 'global', 'draft', p_created_by,
       CASE WHEN jsonb_typeof(v_question -> 'content_blocks') = 'array'

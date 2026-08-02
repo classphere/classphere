@@ -59,11 +59,28 @@ export function requiresExplicitScheme(examCode: string | null | undefined): boo
 
 const FALLBACK: QuestionMarking = { correct: 4, incorrect: -1, unattempted: 0 };
 
-/** The marks for one question type, falling back to the scheme's default. */
-export function marksFor(scheme: MarkingScheme | null | undefined, questionType: unknown): QuestionMarking {
+/**
+ * The marks for one question.
+ *
+ * A question may carry its own `marks`, which wins. That is the escape hatch
+ * for a paper with two sections of the same question type scored differently —
+ * rare, but real in JEE Advanced, and impossible to express by type alone.
+ * Nothing needs it for NEET or JEE Main, where every question is +4/-1.
+ */
+export function marksFor(
+  scheme: MarkingScheme | null | undefined,
+  questionType: unknown,
+  override?: Partial<QuestionMarking> | null,
+): QuestionMarking {
   const type = normaliseQuestionType(questionType);
-  if (!scheme) return FALLBACK;
-  return (type ? scheme[type] : undefined) ?? scheme.default ?? FALLBACK;
+  const base = (scheme ? (type ? scheme[type] : undefined) ?? scheme.default : undefined) ?? FALLBACK;
+  if (!override || typeof override !== "object") return base;
+  return {
+    correct: typeof override.correct === "number" ? override.correct : base.correct,
+    incorrect: typeof override.incorrect === "number" ? override.incorrect : base.incorrect,
+    unattempted: typeof override.unattempted === "number" ? override.unattempted : base.unattempted,
+    partial: override.partial !== undefined ? override.partial : base.partial,
+  };
 }
 
 /**
@@ -112,8 +129,9 @@ export function scoreQuestion(
   selected: string[],
   correct: string[],
   scheme: MarkingScheme | null | undefined,
+  override?: Partial<QuestionMarking> | null,
 ): { marks: number; isCorrect: boolean } {
-  const marking = marksFor(scheme, questionType);
+  const marking = marksFor(scheme, questionType, override);
 
   if (selected.length === 0) return { marks: marking.unattempted ?? 0, isCorrect: false };
 
@@ -143,8 +161,28 @@ export function scoreQuestion(
  * every question carries the same marks.
  */
 export function totalMarksForQuestions(
-  questions: Array<{ question_type?: unknown }>,
+  questions: Array<{ question_type?: unknown; marks?: Partial<QuestionMarking> | null }>,
   scheme: MarkingScheme | null | undefined,
 ): number {
-  return questions.reduce((sum, question) => sum + marksFor(scheme, question.question_type).correct, 0);
+  return questions.reduce(
+    (sum, question) => sum + marksFor(scheme, question.question_type, question.marks).correct,
+    0,
+  );
+}
+
+/** Validate a per-question override. Same shape as a scheme entry, all fields optional. */
+export function validateQuestionMarks(marks: unknown): string[] {
+  if (marks === null || marks === undefined) return [];
+  if (typeof marks !== "object" || Array.isArray(marks)) return ["marks must be an object"];
+  const errors: string[] = [];
+  const entry = marks as Record<string, unknown>;
+  for (const field of ["correct", "incorrect", "unattempted"]) {
+    if (entry[field] !== undefined && (typeof entry[field] !== "number" || !Number.isFinite(entry[field] as number))) {
+      errors.push(`marks.${field} must be a number`);
+    }
+  }
+  if (entry.partial !== undefined && entry.partial !== null && entry.partial !== "per_correct_option") {
+    errors.push(`marks.partial must be "per_correct_option" or null`);
+  }
+  return errors;
 }
