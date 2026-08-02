@@ -11,7 +11,8 @@ import * as fs from "fs";
 import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
-import { deriveDurationMin, deriveTotalMarks } from "../../lib/exam-profile";
+import { deriveDurationMin } from "../../lib/exam-profile";
+import { defaultMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -199,6 +200,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       duration,
       marks,
       difficulty,
+      marking_scheme,
       questions,
     } = req.body;
 
@@ -247,6 +249,23 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     const validExams = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
     if (!validExams.includes(exam)) {
       res.status(400).json({ success: false, message: `Invalid exam. Must be one of: ${validExams.join(", ")}` });
+      return;
+    }
+
+    // A paper whose exam has no uniform scheme must state one. JEE Advanced
+    // marks differ by question type and change between years, so inventing a
+    // default would silently score real attempts by the wrong rules.
+    const schemeErrors = validateMarkingScheme(marking_scheme);
+    if (schemeErrors.length > 0) {
+      res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors });
+      return;
+    }
+    if (!marking_scheme && requiresExplicitScheme(exam)) {
+      res.status(400).json({
+        success: false,
+        message: `${exam} has no uniform marking scheme, so the paper must supply one. ` +
+          `Example: {"mcq_single":{"correct":3,"incorrect":-1},"mcq_multi":{"correct":4,"incorrect":-2,"partial":"per_correct_option"},"integer":{"correct":4,"incorrect":0}}`,
+      });
       return;
     }
 
@@ -390,9 +409,13 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     // — 180 NEET questions are out of 720 over 180 minutes — and a partial set
     // is counted and paced from its own questions rather than inheriting a
     // three-hour slot for twenty questions.
+    // Summed from what each question is actually worth, so a paper mixing
+    // +3 single-correct with +4 multiple-correct totals correctly instead of
+    // assuming four marks across the board.
+    const paperScheme = marking_scheme ?? defaultMarkingScheme(exam);
     const totalMarks = marks !== undefined && marks !== null
       ? Number(marks)
-      : deriveTotalMarks(exam, questionRows.length);
+      : totalMarksForQuestions(questionRows, paperScheme);
     const durationMin = duration !== undefined && duration !== null
       ? Number(duration)
       : deriveDurationMin(exam, questionRows.length);
@@ -413,6 +436,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         // Null rather than a guess: a real paper mixes difficulties, and the
         // column is nullable precisely because there is no honest single value.
         p_difficulty: difficulty ?? null,
+        p_marking_scheme: paperScheme ?? null,
         p_created_by: req.user?.id ?? null,
         p_questions: questionRows,
       }

@@ -21,6 +21,9 @@ where the two disagree the handler is right and this file is a bug.
   "marks": 720,                   // override only
   "difficulty": "Medium",         // per-question fallback; usually omit
 
+  // Required for jee-advanced, optional elsewhere. See below.
+  "marking_scheme": null,
+
   "subject": "Botany",            // optional — per-question default
   "chapter": "Plant Kingdom",     // optional — per-question default
   "year": 2024,                   // optional — per-question default
@@ -63,6 +66,35 @@ paper — so its total is always four marks a question.
 
 Send `marks` or `duration` explicitly only for a paper with a non-standard
 marking scheme.
+
+### Marking scheme
+
+NEET and JEE Main mark every question the same way (+4 correct, −1 wrong), so
+they have a default and `marking_scheme` can be omitted.
+
+**JEE Advanced does not.** Its marks differ by question type and change between
+years, so an Advanced paper must state its own and the upload rejects it
+otherwise — no default can be right for every year, and guessing one would
+score real attempts by the wrong rules.
+
+```jsonc
+"marking_scheme": {
+  "mcq_single": { "correct": 3, "incorrect": -1 },
+  "mcq_multi":  { "correct": 4, "incorrect": -2, "partial": "per_correct_option" },
+  "integer":    { "correct": 4, "incorrect": 0 },
+  "matching":   { "correct": 3, "incorrect": -1 }
+}
+```
+
+`"partial": "per_correct_option"` gives one mark per correct option chosen when
+none of the chosen options is wrong: three of four correct scores 3, one of
+three scores 1, and touching a single wrong option takes `incorrect` instead.
+
+`total_marks` is then the sum of what each question is worth, so a paper mixing
++3 and +4 questions totals correctly rather than assuming four throughout.
+
+Stored on the paper, so a 2019 and a 2024 Advanced paper keep their own rules
+and re-scoring an old attempt gives the answer it gave at the time.
 
 ### Difficulty belongs to questions
 
