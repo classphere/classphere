@@ -12,6 +12,7 @@ const execAsync = promisify(exec);
 import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfExtractor.service";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
+import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -372,6 +373,31 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
+    // Publishing is the moment a paper can be sat, so it is the moment its
+    // marks have to be right. An Advanced paper carries no default — its marks
+    // differ by question type and change between years — and scoring one on the
+    // fallback +4/-1 would quietly mis-score every attempt.
+    //
+    // Upload deliberately does not check this. A paper whose instructions page
+    // was missing or unreadable is still worth keeping as a draft; it just
+    // cannot go out until someone says what it is worth.
+    const { data: paperRow, error: paperRowError } = await supabaseDB
+      .from("papers")
+      .select("marking_scheme, exams(code)")
+      .eq("id", id)
+      .maybeSingle();
+    if (paperRowError) throw paperRowError;
+    const paperExamCode = (paperRow as any)?.exams?.code ?? "";
+    const hasScheme = paperRow?.marking_scheme && Object.keys(paperRow.marking_scheme).length > 0;
+    if (!hasScheme && requiresExplicitScheme(paperExamCode)) {
+      res.status(400).json({
+        success: false,
+        message: `Cannot publish: ${paperExamCode} has no standard marking scheme, so this paper must state its own. ` +
+          `Set the marks per question type on the review screen, then publish.`,
+      });
+      return;
+    }
+
     const { data: publishRows, error: publishRowsError } = await supabaseDB
       .from("paper_questions")
       .select("questions(question_text, question_type, options, correct_answer)")
@@ -465,6 +491,39 @@ export const updateGlobalTest = async (req: Request, res: Response): Promise<voi
     const allowed = ["title", "subject", "chapter", "year", "shift", "difficulty", "duration_min", "total_marks"];
     const updates: Record<string, unknown> = {};
     for (const key of allowed) if (req.body[key] !== undefined) updates[key] = req.body[key];
+
+    // The marks per question type, set on the review screen for a paper whose
+    // instructions page did not state them. Validated the same way as at
+    // upload — this is the number every attempt is scored against, and it is
+    // the only field here that can silently produce wrong results.
+    if (req.body.marking_scheme !== undefined) {
+      const schemeErrors = validateMarkingScheme(req.body.marking_scheme);
+      if (schemeErrors.length > 0) {
+        res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors });
+        return;
+      }
+      updates.marking_scheme = req.body.marking_scheme;
+
+      // total_marks was summed when the paper was uploaded, against whatever
+      // scheme existed then — for a paper that had none, that means the +4
+      // fallback. Leaving it would make the paper permanently claim a total its
+      // own questions do not add up to, so it is resummed here unless this
+      // request is also setting it explicitly.
+      if (updates.total_marks === undefined) {
+        const { data: rows, error: rowsError } = await supabaseDB
+          .from("paper_questions")
+          .select("questions(question_type, marks)")
+          .eq("paper_id", req.params.id);
+        if (rowsError) throw rowsError;
+        const paperQuestions = (rows ?? [])
+          .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
+          .filter(Boolean);
+        if (paperQuestions.length > 0) {
+          updates.total_marks = totalMarksForQuestions(paperQuestions, req.body.marking_scheme);
+        }
+      }
+    }
+
     if (Object.keys(updates).length === 0) {
       res.status(400).json({ success: false, message: "No supported paper fields supplied." });
       return;

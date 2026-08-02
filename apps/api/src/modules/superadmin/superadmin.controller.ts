@@ -260,20 +260,21 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    // A paper whose exam has no uniform scheme must state one. JEE Advanced
-    // marks differ by question type and change between years, so inventing a
-    // default would silently score real attempts by the wrong rules.
+    // A scheme that is present must be well-formed. A scheme that is absent is
+    // not an upload error: JEE Advanced still has no safe default, but the
+    // place to insist on one is publish, not here.
+    //
+    // Most Advanced papers state their marks on the instructions page and the
+    // profiler reads them. The ones that do not — a paper typed by hand, or
+    // scanned without its first page — need a person to enter them, and
+    // rejecting the upload throws away a completed extraction to ask for four
+    // numbers. The draft is saved instead and the numbers are entered on the
+    // review screen, where the questions they apply to are visible.
+    //
+    // Nothing is scored in the meantime: a draft is not sat by anyone.
     const schemeErrors = validateMarkingScheme(marking_scheme);
     if (schemeErrors.length > 0) {
       res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors });
-      return;
-    }
-    if (!marking_scheme && requiresExplicitScheme(exam)) {
-      res.status(400).json({
-        success: false,
-        message: `${exam} has no uniform marking scheme, so the paper must supply one. ` +
-          `Example: {"mcq_single":{"correct":3,"incorrect":-1},"mcq_multi":{"correct":4,"incorrect":-2,"partial":"per_correct_option"},"integer":{"correct":4,"incorrect":0}}`,
-      });
       return;
     }
 

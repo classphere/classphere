@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
 import { PaperComposition } from "@/components/superadmin/PaperComposition";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
 import { useAuth } from "@/lib/auth-context";
 import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
@@ -40,6 +41,40 @@ export default function GlobalPaperReviewPage() {
     () => detectExamCode(questions, data?.paper?.exam_code ?? ""),
     [questions, data?.paper?.exam_code]
   );
+
+  // A paper is missing its marks when some question type it contains has no
+  // entry and there is no paper-wide default. That is the state a JEE Advanced
+  // paper lands in when its instructions page was absent or unreadable — the
+  // upload no longer rejects it, so the numbers get entered here instead,
+  // where the questions they apply to are on screen.
+  const scheme: MarkingScheme = (data?.paper?.marking_scheme as MarkingScheme) ?? {};
+  const unpricedTypes = useMemo(() => {
+    if (scheme.default) return [];
+    const present = new Set(questions.map((q) => String(q?.question_type ?? "").trim()).filter(Boolean));
+    return [...present].filter((type) => !scheme[type]);
+  }, [questions, data?.paper?.marking_scheme]);
+
+  const [draftScheme, setDraftScheme] = useState<MarkingScheme | null>(null);
+  const [savingScheme, setSavingScheme] = useState(false);
+  const editingScheme = draftScheme ?? scheme;
+
+  const saveScheme = async () => {
+    setSavingScheme(true);
+    try {
+      await apiClient.patch(
+        `/api/v1/tests/${params.id}/global`,
+        { marking_scheme: editingScheme },
+        session!.access_token,
+      );
+      setDraftScheme(null);
+      await load();
+      setMessage("Marking scheme saved. The totals above now reflect it.");
+    } catch (error: any) {
+      setMessage(error.message);
+    } finally {
+      setSavingScheme(false);
+    }
+  };
 
   const save = async (payload: Record<string, unknown>) => {
     await apiClient.patch(`/api/v1/questions/${question.id}`, payload, session!.access_token);
@@ -105,6 +140,27 @@ export default function GlobalPaperReviewPage() {
             markingScheme={data.paper.marking_scheme}
             statedTotal={data.paper.total_marks}
           />
+
+          {unpricedTypes.length > 0 && (
+            <div className="card mb-4 p-4">
+              <p className="mb-1 text-xs font-bold uppercase tracking-wider text-t-secondary">
+                This paper does not say what its questions are worth
+              </p>
+              <p className="mb-4 text-xs text-t-secondary">
+                Its instructions page either was not included or could not be read. Enter the marks
+                below — the paper cannot be published until it has them, because there is no safe
+                default to score it against.
+              </p>
+              <MarkingSchemeEditor value={editingScheme} onChange={setDraftScheme} />
+              <button
+                onClick={saveScheme}
+                disabled={savingScheme || draftScheme === null}
+                className="mt-4 h-11 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white disabled:opacity-40 dark:bg-white dark:text-black"
+              >
+                {savingScheme ? "Saving…" : "Save marking scheme"}
+              </button>
+            </div>
+          )}
           {question && (
             <QuestionReviewEditor
               question={{ ...question, position: question.question_number ?? index + 1 }}
