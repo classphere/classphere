@@ -156,3 +156,39 @@ export const UNCLASSIFIED_SUBJECT = "Unclassified";
 export function subjectForStorage(value: unknown, fallback?: unknown): string {
   return normaliseSubject(value) ?? normaliseSubject(fallback) ?? UNCLASSIFIED_SUBJECT;
 }
+
+// ─── Difficulty ──────────────────────────────────────────────────────────────
+
+/**
+ * The analysis engine compares difficulty by exact lowercase string —
+ * `question.difficulty === "easy"` in the error-pattern and attempt-strategy
+ * services — so "Easy" and "Medium" are not merely untidy, they are invisible.
+ * 5,773 questions were stored capitalised and silently excluded from every
+ * difficulty-based finding.
+ */
+export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
+export type Difficulty = (typeof DIFFICULTIES)[number];
+
+const DIFFICULTY_SYNONYMS: Record<string, Difficulty> = {
+  easy: "easy", e: "easy", low: "easy", simple: "easy", basic: "easy",
+  medium: "medium", med: "medium", m: "medium", moderate: "medium", average: "medium",
+  hard: "hard", h: "hard", high: "hard", difficult: "hard", tough: "hard", advanced: "hard",
+};
+
+/** Canonical difficulty, or null when unrecognised. */
+export function normaliseDifficulty(value: unknown): Difficulty | null {
+  const key = squash(value);
+  if (!key) return null;
+  return DIFFICULTY_SYNONYMS[key] ?? null;
+}
+
+/**
+ * Difficulty to store. Always one of the three, because the column feeds
+ * comparisons that silently drop anything else.
+ *
+ * Unknown falls back to medium rather than null: an unlabelled question still
+ * belongs somewhere, and medium is the value that skews a distribution least.
+ */
+export function difficultyForStorage(value: unknown, fallback?: unknown): Difficulty {
+  return normaliseDifficulty(value) ?? normaliseDifficulty(fallback) ?? "medium";
+}

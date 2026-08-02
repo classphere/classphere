@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { isChoiceQuestion, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
+import { difficultyForStorage, isChoiceQuestion, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
@@ -1019,7 +1019,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           subject:        subjectForStorage(q.subject),
           chapter:        q.chapter  || "General",
           topic:          q.topic    || null,
-          difficulty:     q.difficulty || difficulty,
+          difficulty:     difficultyForStorage(q.difficulty, difficulty),
           year:           new Date(date).getFullYear() || null,
           source:         title,
           question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),

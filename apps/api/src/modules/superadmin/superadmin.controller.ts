@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
+import { difficultyForStorage, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 import { randomUUID } from "crypto";
@@ -358,7 +358,9 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           subject:        subjectForStorage(q.subject, subject),
           chapter:        q.chapter  || chapter  || "General",
           topic:          q.topic    || null,
-          difficulty:     q.difficulty || difficulty,
+          // Lowercased: the engine compares difficulty by exact string, so
+          // "Medium" is invisible to every difficulty-based finding.
+          difficulty:     difficultyForStorage(q.difficulty, difficulty),
           year:           q.year     || year     || null,
           source:         q.source   || title,
           // Normalised on the way in. The extractor is prompted for "MCQ" |
