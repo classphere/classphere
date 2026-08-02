@@ -1,7 +1,7 @@
 import React from "react";
 import { QuestionBody, hasRenderableQuestionContent } from "@/components/QuestionBody";
 import { RiFlag2Line } from "@remixicon/react";
-import { Question, AnswerMap, StatusMap } from "./TestTypes";
+import { Question, AnswerMap, StatusMap, answerToList, hasAnswer, isMultiSelect } from "./TestTypes";
 
 interface QuestionContentProps {
   question: Question;
@@ -114,9 +114,21 @@ export function QuestionContent({
             />
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="flex flex-col gap-3">
+            {/* Said plainly: nothing else on screen distinguishes a
+                multiple-correct question, and a student who assumes one answer
+                loses the partial credit they were entitled to. */}
+            {isMultiSelect(q.question_type) && (
+              <p className="text-[13px] font-semibold text-primary-01">
+                Select all correct options — more than one may be right.
+              </p>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {q.options.map((opt) => {
-              const selected = answers[q.id] === opt.id;
+              const multi = isMultiSelect(q.question_type);
+              // An array answer never equals an option id, so a multiple-correct
+              // question would have rendered every option unselected.
+              const selected = answerToList(answers[q.id]).includes(opt.id);
               const disabled = isSectionBLimitReached(q) && !selected;
               const isEmpty = !hasRenderableQuestionContent(opt.content_blocks, opt.text, opt.image_url);
 
@@ -136,7 +148,7 @@ export function QuestionContent({
                   }`}
                   onClick={() => !isEmpty && selectAnswer(q.id, opt.id)}
                 >
-                  <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold shadow-sm transition-colors ${
+                  <div className={`flex size-9 shrink-0 items-center justify-center ${multi ? "rounded-[8px]" : "rounded-full"} text-sm font-bold shadow-sm transition-colors ${
                     selected
                       ? "bg-primary-01 text-t-light"
                       : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"
@@ -162,6 +174,7 @@ export function QuestionContent({
                 </button>
               );
             })}
+            </div>
           </div>
         )}
       </div>
@@ -172,7 +185,7 @@ export function QuestionContent({
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#008b49] bg-primary-02 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#008e49] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
-            if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
+            if (hasAnswer(answers[q.id])) setStatus((s) => ({ ...s, [q.id]: "answered" }));
             else setStatus((s) => ({ ...s, [q.id]: "not_answered" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
@@ -200,7 +213,7 @@ export function QuestionContent({
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#d98700] bg-primary-05 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#e58d00] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
-            const newStatus = answers[q.id] ? "answered_and_marked_for_review" : "marked_for_review";
+            const newStatus = hasAnswer(answers[q.id]) ? "answered_and_marked_for_review" : "marked_for_review";
             setStatus((s) => ({ ...s, [q.id]: newStatus }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
@@ -213,7 +226,7 @@ export function QuestionContent({
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#245bd2] bg-primary-01 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#1478e9] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
-            const newStatus = answers[q.id] ? "answered_and_marked_for_review" : "marked_for_review";
+            const newStatus = hasAnswer(answers[q.id]) ? "answered_and_marked_for_review" : "marked_for_review";
             setStatus((s) => ({ ...s, [q.id]: newStatus }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);

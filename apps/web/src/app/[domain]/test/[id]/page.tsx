@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { answerToList, isMultiSelect } from "@/components/test/TestTypes";
 import { useRouter, useParams, useSearchParams } from "next/navigation";
 import {
   RiTimerLine,
@@ -405,7 +406,23 @@ export default function TestPage() {
     }
     recordQuestionOpen(qId);
     markAttemptDirty();
-    setAnswers((a) => ({ ...a, [qId]: optId }));
+    setAnswers((a) => {
+      // Multiple-correct questions accumulate a set: clicking an option adds
+      // it, clicking it again takes it back out. Every other type replaces,
+      // which is what a single-correct question means.
+      if (!isMultiSelect(q?.question_type)) return { ...a, [qId]: optId };
+      const current = answerToList(a[qId]);
+      const next = current.includes(optId)
+        ? current.filter((id) => id !== optId)
+        : [...current, optId].sort();
+      // An emptied set is no answer at all, not an empty one — the grader
+      // treats [] as unattempted and it must not read as a wrong attempt.
+      if (next.length === 0) {
+        const { [qId]: _removed, ...rest } = a;
+        return rest;
+      }
+      return { ...a, [qId]: next };
+    });
     setStatus((s) => ({ ...s, [qId]: "answered" }));
   };
 

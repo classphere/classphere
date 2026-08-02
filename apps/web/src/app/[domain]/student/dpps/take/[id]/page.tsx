@@ -14,7 +14,7 @@ import {
   RiCloseLine,
 } from "@remixicon/react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
-import { Question, Option, TestMeta, AnswerMap, StatusMap } from "@/components/test/TestTypes";
+import { Question, Option, TestMeta, AnswerMap, AnswerValue, StatusMap } from "@/components/test/TestTypes";
 import { TestHeader } from "@/components/test/TestHeader";
 import { QuestionContent } from "@/components/test/QuestionContent";
 import { QuestionNavigator } from "@/components/test/QuestionNavigator";
@@ -137,7 +137,7 @@ export default function TestPage() {
             acc[q.id] = answers[q.id];
           }
           return acc;
-        }, {} as Record<string, string>),
+        }, {} as Record<string, AnswerValue>),
         timeTaken: Math.floor((now - (examStartMsRef.current ?? now)) / 1000)
       };
 
