@@ -73,16 +73,35 @@ BEGIN
   -- Recomputed rather than incremented. An attempt can be re-analysed and an
   -- answer corrected, and a counter that only ever goes up would drift away
   -- from the answers it claims to summarise.
-  WITH answered AS (
+  -- selected_answer is JSONB, not text. A single-correct answer is stored as a
+  -- JSON string ("A"), a multiple-correct one as an array (["A","C"]), and an
+  -- index-style key as a number. Each is reduced to one comparable label:
+  -- arrays are sorted and joined, so choosing A and C is the same choice
+  -- whichever order the student clicked them, and the pair is counted as its
+  -- own distractor — which is what it is on a multiple-correct question.
+  WITH raw AS (
     SELECT aa.question_id,
-           upper(btrim(aa.selected_answer)) AS choice,
+           CASE jsonb_typeof(aa.selected_answer)
+             WHEN 'array' THEN (
+               SELECT string_agg(upper(btrim(v)), ',' ORDER BY upper(btrim(v)))
+               FROM jsonb_array_elements_text(aa.selected_answer) AS v
+               WHERE btrim(v) <> ''
+             )
+             WHEN 'string' THEN upper(btrim(aa.selected_answer #>> '{}'))
+             WHEN 'number' THEN upper(btrim(aa.selected_answer #>> '{}'))
+             ELSE NULL
+           END AS choice,
            aa.is_correct
     FROM public.attempt_answers aa
     JOIN public.attempts a ON a.id = aa.attempt_id
     WHERE aa.selected_answer IS NOT NULL
-      AND btrim(aa.selected_answer) <> ''
       AND a.status = 'submitted'
       AND (p_question_ids IS NULL OR aa.question_id = ANY(p_question_ids))
+  ),
+  answered AS (
+    SELECT question_id, choice, is_correct
+    FROM raw
+    WHERE choice IS NOT NULL AND choice <> ''
   ),
   totals AS (
     SELECT question_id,

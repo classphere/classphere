@@ -29,6 +29,24 @@ export interface QuestionStats {
 export const MIN_SAMPLE_FOR_STATS = 30;
 
 /**
+ * One comparable label for whatever the student selected.
+ *
+ * selected_answer is JSONB: a string for single-correct, an array for
+ * multiple-correct. The rollup keys option_counts by sorting and joining an
+ * array, so choosing A and C is one choice however it was clicked — and this
+ * has to reduce it identically or the lookup silently misses and every
+ * multiple-correct answer looks unremarkable.
+ */
+function normaliseChoice(value: unknown): string {
+  const parts = Array.isArray(value) ? value : [value];
+  return parts
+    .map((v) => String(v ?? "").trim().toUpperCase())
+    .filter(Boolean)
+    .sort()
+    .join(",");
+}
+
+/**
  * Share of wrong answers a distractor must take to count as one.
  *
  * With four options there are three wrong ones, so chance alone puts about a
@@ -70,12 +88,13 @@ export interface DistractorVerdict {
  */
 export function classifyDistractor(
   stats: QuestionStats | null | undefined,
-  chosen: string | null | undefined,
+  chosen: unknown,
 ): DistractorVerdict {
   const empty: DistractorVerdict = { isCommonTrap: false, share: 0, note: null };
-  if (!stats || !chosen || stats.sample_size < MIN_SAMPLE_FOR_STATS) return empty;
+  if (!stats || chosen === null || chosen === undefined || stats.sample_size < MIN_SAMPLE_FOR_STATS) return empty;
 
-  const choice = String(chosen).trim().toUpperCase();
+  const choice = normaliseChoice(chosen);
+  if (!choice) return empty;
   const wrongTotal = stats.sample_size - stats.correct_count;
   if (wrongTotal <= 0) return empty;
 
