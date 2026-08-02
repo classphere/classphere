@@ -12,6 +12,18 @@ export interface DocumentProfile {
   page_kind_counts: Record<string, number>;
   two_column_pages: number[];
   answer_key_pages: number[];
+  instruction_pages: number[];
+  /**
+   * Marks read off the paper's own instructions page, when it states them.
+   * A proposal, not a decision — the upload form shows it pre-filled beside
+   * the text it came from and a person confirms it. Empty for NEET and JEE
+   * Main, which have no per-section marking to read.
+   */
+  marking_scheme_hint: {
+    scheme: Record<string, { correct: number; incorrect: number; unattempted?: number; partial?: string }>;
+    evidence: Record<string, string>;
+    unread: string[];
+  };
   solution_pages: number[];
   numbering_reset_count: number;
   numbering_reset_pages: number[];

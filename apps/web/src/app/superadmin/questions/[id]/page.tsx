@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
+import { PaperComposition } from "@/components/superadmin/PaperComposition";
 import { useAuth } from "@/lib/auth-context";
 import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
@@ -87,7 +88,7 @@ export default function GlobalPaperReviewPage() {
                     : "border-s-stroke2 bg-b-surface2 text-t-primary"
                 }`}
               >
-                {itemIndex + 1}
+                {item.question_number ?? itemIndex + 1}
               </button>
             ))}
           </div>
@@ -99,9 +100,14 @@ export default function GlobalPaperReviewPage() {
               {message}
             </p>
           )}
+          <PaperComposition
+            questions={questions}
+            markingScheme={data.paper.marking_scheme}
+            statedTotal={data.paper.total_marks}
+          />
           {question && (
             <QuestionReviewEditor
-              question={{ ...question, position: index + 1 }}
+              question={{ ...question, position: question.question_number ?? index + 1 }}
               canEdit
               examCode={examCode}
               onSave={save}

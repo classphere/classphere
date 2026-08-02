@@ -137,8 +137,17 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
           byId[q.id] = normalized;
         }
       }
+      // The paper's own numbering, not the array index. Migration 48 stores
+      // position from the number printed on the paper precisely so a missing
+      // question leaves a hole — renumbering here would close that hole again
+      // and file every later question under the wrong number.
+      const positionById = new Map<string, number>(
+        (pqs ?? []).map((r: any) => [r.question_id, r.position])
+      );
       questions = questionIds
-        .map((qid, idx) => byId[qid] ? { ...byId[qid], question_number: idx + 1 } : null)
+        .map((qid, idx) => byId[qid]
+          ? { ...byId[qid], question_number: positionById.get(qid) ?? idx + 1 }
+          : null)
         .filter(Boolean);
     }
 
@@ -154,6 +163,11 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       duration: paper.duration_min,
       title: paper.title,
       test_type: paper.test_type,
+      // What each question type is worth on this paper. Without it the review
+      // screen cannot show what the paper actually adds up to, which is the
+      // one thing worth checking before publishing a JEE Advanced paper.
+      marking_scheme: (paper as any).marking_scheme ?? null,
+      total_marks: paper.total_marks ?? null,
     };
 
     res.json({ success: true, data: { paper: meta, questions, total: questions.length } });

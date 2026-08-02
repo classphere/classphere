@@ -70,6 +70,15 @@ export default function AIExtractor() {
   const [markingScheme, setMarkingScheme] = useState<MarkingScheme>({});
   const needsScheme = form.exam === "jee-advanced";
 
+  // Marks read off the paper's instructions page, with the sentence each
+  // reading came from. Shown so the scheme is checked against the paper rather
+  // than trusted because a parser produced it.
+  const [schemeHint, setSchemeHint] = useState<{
+    scheme: Record<string, any>;
+    evidence: Record<string, string>;
+    unread: string[];
+  } | null>(null);
+
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [pagesRange, setPagesRange] = useState<string>(""); // e.g. "1-2"
   
@@ -170,14 +179,34 @@ export default function AIExtractor() {
           
           if (jobState.status === "done") {
             setResultMsg("Extraction complete! Saving to global draft for review...");
-            
+
             // Auto-fill paper title from PDF name if blank
             let finalTitle = form.title;
             if (!finalTitle) {
               finalTitle = pdfFile.name.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
               setField("title", finalTitle);
             }
-            
+
+            // An Advanced paper prints its own marking scheme on the
+            // instructions page, and the profiler reads it — but only once the
+            // extraction has run, by which point the scheme entered blind on
+            // this form has already been used. So when the paper states marks,
+            // stop before saving and show them: confirming four numbers against
+            // the page they came from beats having typed them from memory.
+            const hint = jobState.result?.profile?.marking_scheme_hint;
+            if (needsScheme && hint?.scheme && Object.keys(hint.scheme).length > 0) {
+              setSchemeHint(hint);
+              setMarkingScheme((current) => ({ ...current, ...hint.scheme }));
+              setExtractedQuestions(jobState.result.questions);
+              setStatus("success");
+              setResultMsg(
+                `Extraction complete. This paper states its own marking scheme — it has been filled in below. ` +
+                `Check it against the paper, then save the draft.`
+              );
+              jobDone = true;
+              break;
+            }
+
             // Automatically push to DB as a draft
             const uploadBody = {
               exam: form.exam,
@@ -473,6 +502,34 @@ export default function AIExtractor() {
           {needsScheme && (
             <div className="sm:col-span-2">
               <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
+
+              {schemeHint && (
+                <div className="mt-3 rounded-[12px] border border-s-stroke2/40 bg-b-surface1 p-4">
+                  <p className="mb-2 text-[13px] font-semibold text-t-primary">
+                    Read from this paper&apos;s instructions page
+                  </p>
+                  <p className="mb-3 text-[12px] text-t-secondary">
+                    Filled in above. Check each line against the paper before saving — these
+                    numbers decide how every student is scored.
+                  </p>
+                  <ul className="flex flex-col gap-2">
+                    {Object.entries(schemeHint.evidence).map(([type, sentence]) => (
+                      <li key={type} className="text-[12px] leading-relaxed text-t-secondary">
+                        <span className="font-semibold text-t-primary">{type}</span>
+                        {" — "}
+                        <span className="italic">&ldquo;{sentence}&rdquo;</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {schemeHint.unread.length > 0 && (
+                    <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-[12px] text-t-primary">
+                      {schemeHint.unread.length} section
+                      {schemeHint.unread.length === 1 ? "" : "s"} on the instructions page
+                      state marks but could not be matched to a question type. Enter those by hand.
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>
