@@ -1,4 +1,5 @@
 import { AnalysisResult, ClassifiedAnswer } from "../../../../../../../packages/types/src/analysis.types";
+import { getQuestionStats } from "../../../../lib/question-stats";
 import { scoreAttempt } from "./jee-scoring.service";
 import { classifyMistake } from "./jee-mistake-classifier";
 import { computeTopicAccuracy } from "./jee-topic-accuracy";
@@ -19,9 +20,15 @@ export async function analyzeJeeAttempt(attemptId: string, hasTimingData = true)
   const { attempt, answers } = await db.getAttemptWithAnswers(attemptId);
   const scheme = attempt.marking_scheme || { correct: 4, incorrect: -1, unattempted: 0 };
   const scoring = scoreAttempt(answers, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
+  // How the rest of the cohort answered these same questions. Empty until a
+  // question has been answered enough times to mean anything, at which point
+  // the classifier can tell a common trap from an unusual slip.
+  const questionStats = await getQuestionStats(
+    [...new Set(scoring.answers.map((a) => a.question_id).filter(Boolean))],
+  );
   const classified: ClassifiedAnswer[] = scoring.answers.map((a) => ({
     ...a,
-    classification: classifyMistake(a, hasTimingData),
+    classification: classifyMistake(a, hasTimingData, questionStats[a.question_id]),
   }));
 
   const [batchAvgs, historicalProfile, seenQIds, batchAvg] = await Promise.all([

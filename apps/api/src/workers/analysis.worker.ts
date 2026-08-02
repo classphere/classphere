@@ -5,6 +5,7 @@ import { analyzeAttempt } from "../modules/analysis-engine/services/analysis.ser
 import { db } from "../modules/analysis-engine/services/db.service";
 import { supabaseAdmin } from "../lib/supabase";
 import { notifyStudents } from "../modules/notifications/notifications.service";
+import { refreshQuestionStats } from "../lib/question-stats";
 
 async function notifyResultReady(attemptId: string, studentId: string): Promise<void> {
   try {
@@ -31,6 +32,28 @@ async function notifyResultReady(attemptId: string, studentId: string): Promise<
   }
 }
 
+export /**
+ * Refresh the answer rollup for the questions in one attempt.
+ *
+ * Scoped rather than global: rebuilding all 56,000 questions after every
+ * submission would be wasteful, and only the ones just answered can have
+ * changed.
+ */
+async function refreshStatsForAttempt(attemptId: string): Promise<void> {
+  try {
+    const { data } = await supabaseAdmin
+      .from("attempt_answers")
+      .select("question_id")
+      .eq("attempt_id", attemptId);
+    const ids = [...new Set((data ?? []).map((row: any) => row.question_id).filter(Boolean))];
+    if (ids.length === 0) return;
+    const n = await refreshQuestionStats(ids);
+    console.log(`[Worker] Refreshed answer stats for ${n} question(s) from attempt ${attemptId}`);
+  } catch (err: any) {
+    console.error(`[Worker] Answer-stats refresh failed for ${attemptId}:`, err.message);
+  }
+}
+
 export const analysisWorker = new Worker(
   ANALYSIS_QUEUE_NAME,
   async (job: Job) => {
@@ -41,6 +64,13 @@ export const analysisWorker = new Worker(
     try {
       await analyzeAttempt(attemptId);
       void notifyResultReady(attemptId, studentId);
+
+      // Fold this submission into the per-question rollup, so observed
+      // difficulty and the wrong-answer distribution stay current as students
+      // work through a paper. Scoped to the questions this attempt touched.
+      // Best-effort: a stale rollup is a slightly weaker insight next time,
+      // not a failed analysis, so it must not retry the whole job.
+      void refreshStatsForAttempt(attemptId);
 
       console.log(`[Worker] Successfully analyzed attempt: ${attemptId}`);
       return { success: true };

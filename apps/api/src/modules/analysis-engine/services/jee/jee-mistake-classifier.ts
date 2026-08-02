@@ -1,4 +1,5 @@
 import { AttemptAnswer, MistakeClassification } from "../../../../../../../packages/types/src/analysis.types";
+import { classifyDistractor, QuestionStats } from "../../../../lib/question-stats";
 
 const AVG_TIME: Record<string, number> = {
   easy: 60,
@@ -6,7 +7,11 @@ const AVG_TIME: Record<string, number> = {
   hard: 180,
 };
 
-export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): MistakeClassification {
+export function classifyMistake(
+  ans: AttemptAnswer,
+  hasTimingData = true,
+  stats?: QuestionStats | null,
+): MistakeClassification {
   if (ans.is_correct) {
     if (!hasTimingData) {
       return { type: "correct", detail: "", tip: "", confidence: "high", source: "graded" };
@@ -40,8 +45,25 @@ export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): Mista
     return classifySkip(ans, hasTimingData);
   }
 
-  // Heuristic fallback
-  return classifyByHeuristics(ans, hasTimingData);
+  const base = classifyByHeuristics(ans, hasTimingData);
+
+  // What the rest of the cohort did with this question. The heuristics can say
+  // a mistake looks rushed or careless; only the distribution can say whether
+  // it is the mistake everyone makes here or one almost nobody else made, and
+  // those want different advice.
+  //
+  // Silent until enough students have answered — see MIN_SAMPLE_FOR_STATS.
+  // This is what the never-built distractor_map was meant to provide, taken
+  // from behaviour instead of from tagging.
+  const verdict = classifyDistractor(stats, ans.selected_answer as string);
+  if (!verdict.note) return base;
+
+  return {
+    ...base,
+    detail: `${base.detail} ${verdict.note}`.trim(),
+    // A choice most of the cohort also made is a firmer read than timing alone.
+    confidence: verdict.isCommonTrap ? "high" : base.confidence,
+  };
 }
 
 function classifyByHeuristics(ans: AttemptAnswer, hasTimingData: boolean): MistakeClassification {
