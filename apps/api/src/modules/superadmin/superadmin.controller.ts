@@ -11,6 +11,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
+import { deriveDurationMin, deriveTotalMarks } from "../../lib/exam-profile";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -202,13 +203,23 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     } = req.body;
 
     // ── 1. Validate required metadata ───────────────────────────────────────
+    //
+    // duration, marks and difficulty are no longer required.
+    //
+    // A paper's total is the exam's marks per question times the number of
+    // questions, and its length follows from the exam's pace, so asking for
+    // them only invited a guess: the stored papers include a 106-question
+    // paper out of 360, a 179-question paper out of the same 360, and a
+    // 75-question JEE Main paper out of 360 rather than 300.
+    //
+    // Difficulty is a property of a question, not of a paper — a real paper
+    // mixes all three — so there is nothing truthful to put at this level.
+    // It stays accepted for callers that send it, and applies per question
+    // only when the question itself does not say.
     const missing = [];
     if (!exam)      missing.push("exam");
     if (!test_type) missing.push("test_type");
     if (!title)     missing.push("title");
-    if (duration === undefined || duration === null)  missing.push("duration");
-    if (marks === undefined || marks === null)     missing.push("marks");
-    if (!difficulty) missing.push("difficulty");
 
     if (missing.length > 0) {
       res.status(400).json({ success: false, message: `Missing required fields: ${missing.join(", ")}` });
@@ -220,9 +231,16 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    if (!Number.isInteger(Number(duration)) || Number(duration) <= 0 ||
-        !Number.isInteger(Number(marks)) || Number(marks) < 0) {
-      res.status(400).json({ success: false, message: "duration must be positive and marks must be a non-negative integer." });
+    // Validated only when supplied — an override has to be sane, an absent
+    // value is computed below.
+    if (duration !== undefined && duration !== null &&
+        (!Number.isInteger(Number(duration)) || Number(duration) <= 0)) {
+      res.status(400).json({ success: false, message: "duration must be a positive integer when provided." });
+      return;
+    }
+    if (marks !== undefined && marks !== null &&
+        (!Number.isInteger(Number(marks)) || Number(marks) < 0)) {
+      res.status(400).json({ success: false, message: "marks must be a non-negative integer when provided." });
       return;
     }
 
@@ -367,6 +385,18 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       })
     );
 
+    // Marks and duration follow from the exam and the number of questions
+    // unless the caller states otherwise. A full sitting gets the real figures
+    // — 180 NEET questions are out of 720 over 180 minutes — and a partial set
+    // is counted and paced from its own questions rather than inheriting a
+    // three-hour slot for twenty questions.
+    const totalMarks = marks !== undefined && marks !== null
+      ? Number(marks)
+      : deriveTotalMarks(exam, questionRows.length);
+    const durationMin = duration !== undefined && duration !== null
+      ? Number(duration)
+      : deriveDurationMin(exam, questionRows.length);
+
     // ── 5. Bulk upsert questions via a single RPC ───────────────────────────
     const { data: paperId, error: uploadError } = await supabaseDB.rpc(
       "create_global_review_draft_with_questions",
@@ -378,9 +408,11 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         p_chapter: chapter ?? "",
         p_year: year ? Number(year) : null,
         p_shift: shift ?? "",
-        p_duration_min: Number(duration),
-        p_total_marks: Number(marks),
-        p_difficulty: difficulty,
+        p_duration_min: durationMin,
+        p_total_marks: totalMarks,
+        // Null rather than a guess: a real paper mixes difficulties, and the
+        // column is nullable precisely because there is no honest single value.
+        p_difficulty: difficulty ?? null,
         p_created_by: req.user?.id ?? null,
         p_questions: questionRows,
       }

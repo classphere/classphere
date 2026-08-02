@@ -73,9 +73,9 @@ export default function UploadQuestionsPage() {
     chapter: "",
     year: "",
     shift: "",
-    duration: "180",
-    marks: "300",
-    difficulty: "medium",
+    duration: "",
+    marks: "",
+    difficulty: "",
   });
 
   const [parsedQuestions, setParsedQuestions] = useState<any[] | null>(null);
@@ -171,9 +171,12 @@ export default function UploadQuestionsPage() {
         chapter: form.chapter || null,
         year: form.year ? parseInt(form.year) : null,
         shift: form.shift || null,
-        duration: parseInt(form.duration),
-        marks: parseInt(form.marks),
-        difficulty: form.difficulty,
+        // Omitted when blank so the server derives them from the exam and the
+        // question count — a NEET paper is out of 720, not the 300 this form
+        // used to send for everything.
+        duration: form.duration ? parseInt(form.duration) : undefined,
+        marks: form.marks ? parseInt(form.marks) : undefined,
+        difficulty: form.difficulty || undefined,
         questions: parsedQuestions,
       };
 
@@ -198,9 +201,9 @@ export default function UploadQuestionsPage() {
           chapter: "",
           year: "",
           shift: "",
-          duration: "180",
-          marks: "300",
-          difficulty: "medium",
+          duration: "",
+          marks: "",
+          difficulty: "",
         });
         setParsedQuestions(null);
         setFileName(null);

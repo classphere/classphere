@@ -15,9 +15,11 @@ where the two disagree the handler is right and this file is a bug.
   "exam": "neet-ug",              // required
   "test_type": "pyq",             // required
   "title": "NEET 2024 Paper",     // required
-  "duration": 200,                // required — positive integer, minutes
-  "marks": 720,                   // required — non-negative integer
-  "difficulty": "Medium",         // required — per-question default
+
+  // All three optional — omit them and they are derived. See below.
+  "duration": 180,                // minutes; override only
+  "marks": 720,                   // override only
+  "difficulty": "Medium",         // per-question fallback; usually omit
 
   "subject": "Botany",            // optional — per-question default
   "chapter": "Plant Kingdom",     // optional — per-question default
@@ -33,9 +35,40 @@ where the two disagree the handler is right and this file is a bug.
 | `exam` | yes | `jee-main`, `jee-advanced`, `jee-main-advanced`, `neet-ug` |
 | `test_type` | yes | `chapter-wise`, `mock-test`, `pyq`, `ncert` |
 | `title` | yes | any non-empty string |
-| `duration` | yes | positive integer |
-| `marks` | yes | integer ≥ 0 |
-| `difficulty` | yes | any string; used when a question omits its own |
+| `duration` | **no** | positive integer; derived when omitted |
+| `marks` | **no** | integer ≥ 0; derived when omitted |
+| `difficulty` | **no** | fallback for questions that omit their own |
+
+### Marks and duration are derived
+
+A paper is worth four marks a question, and runs at the pace its exam runs at,
+so neither needs stating. They were required, and the stored papers show what
+that produced: a 106-question paper out of 360, a 179-question paper out of the
+same 360, a 75-question JEE Main paper out of 360 rather than 300.
+
+An upload matching a real sitting gets the real figures; anything smaller is
+counted and paced from its own questions:
+
+| exam | questions | marks | minutes |
+|---|---|---|---|
+| `neet-ug` | 180 | 720 | 180 |
+| `neet-ug` | 45 | 180 | 45 |
+| `jee-main` | 75 | 300 | 180 |
+| `jee-main` | 30 | 120 | 72 |
+| `jee-advanced` | 54 | 216 | 180 |
+| `jee-advanced` | 18 | 72 | 60 |
+
+JEE Advanced has no fixed structure — question count and total vary by year and
+paper — so its total is always four marks a question.
+
+Send `marks` or `duration` explicitly only for a paper with a non-standard
+marking scheme.
+
+### Difficulty belongs to questions
+
+A real paper mixes easy, medium and hard, so there is no truthful single value
+for the paper. The column is nullable and stays null unless you send one.
+Per-question `difficulty` is the field that carries meaning.
 
 **`questions` is capped at 500 per request.** A larger array is rejected
 outright, so a 56,000-question bank needs ~113 calls. Chunk it.
@@ -83,7 +116,7 @@ outright, so a 56,000-question bank needs ~113 calls. Chunk it.
 | `subject` | no | Falls back to the body-level `subject`, then `"Unclassified"`. |
 | `chapter` | no | Falls back to body-level, then `"General"`. |
 | `topic` | no | `null` when absent. |
-| `difficulty` | no | Falls back to body-level. |
+| `difficulty` | no | The meaningful one. Falls back to body-level, else null. |
 | `question_type` | no | Normalised; inferred from shape if unrecognised. |
 | `question_images` | no | Array of absolute URLs. |
 | `options` | no | Array of `{ id, text, image_url }`. |

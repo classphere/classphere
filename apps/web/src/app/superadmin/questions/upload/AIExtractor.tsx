@@ -60,9 +60,9 @@ export default function AIExtractor() {
     chapter: "",
     year: "",
     shift: "",
-    duration: "180",
-    marks: "300",
-    difficulty: "medium",
+    duration: "",
+    marks: "",
+    difficulty: "",
   });
 
   const [pdfFile, setPdfFile] = useState<File | null>(null);
@@ -182,9 +182,9 @@ export default function AIExtractor() {
               chapter: form.chapter || null,
               year: form.year ? parseInt(form.year) : null,
               shift: form.shift || null,
-              duration: parseInt(form.duration),
-              marks: parseInt(form.marks),
-              difficulty: form.difficulty,
+              duration: form.duration ? parseInt(form.duration) : undefined,
+              marks: form.marks ? parseInt(form.marks) : undefined,
+              difficulty: form.difficulty || undefined,
               questions: jobState.result.questions,
             };
 
@@ -271,9 +271,12 @@ export default function AIExtractor() {
         chapter: form.chapter || null,
         year: form.year ? parseInt(form.year) : null,
         shift: form.shift || null,
-        duration: parseInt(form.duration),
-        marks: parseInt(form.marks),
-        difficulty: form.difficulty,
+        // Omitted when blank so the server derives them from the exam and the
+        // question count — a NEET paper is out of 720, not the 300 this form
+        // used to send for everything.
+        duration: form.duration ? parseInt(form.duration) : undefined,
+        marks: form.marks ? parseInt(form.marks) : undefined,
+        difficulty: form.difficulty || undefined,
         questions: extractedQuestions,
       };
 
@@ -298,9 +301,9 @@ export default function AIExtractor() {
           chapter: "",
           year: "",
           shift: "",
-          duration: "180",
-          marks: "300",
-          difficulty: "medium",
+          duration: "",
+          marks: "",
+          difficulty: "",
         });
 
         setTimeout(() => {
