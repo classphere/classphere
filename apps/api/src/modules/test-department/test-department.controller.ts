@@ -1,4 +1,5 @@
 import { randomUUID } from "crypto";
+import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -36,7 +37,11 @@ function validQuestion(question: any): string | null {
   const type = question.question_type ?? "mcq_single";
   const options = Array.isArray(question.options) ? question.options : [];
   const answers = Array.isArray(question.correct_answer) ? question.correct_answer : [question.correct_answer].filter(Boolean);
-  if (["mcq_single", "mcq_multiple", "assertion_reason", "matching"].includes(type) && options.length < 2) return "This question type requires at least two options.";
+  // Was an inline list containing "mcq_multiple", a value the table has never
+  // stored — it holds mcq_multi — so every multiple-correct question skipped
+  // this check and could be saved with no options at all. The same list was
+  // wrong in tests.controller; this is its twin.
+  if (isChoiceQuestion(type) && options.length < 2) return "This question type requires at least two options.";
   if (answers.length === 0) return "A correct answer is required.";
   if (type === "mcq_single" && answers.length !== 1) return "A single-correct question needs exactly one correct answer.";
   return null;
