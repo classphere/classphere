@@ -9,7 +9,7 @@ const AVG_TIME: Record<string, number> = {
 export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): MistakeClassification {
   if (ans.is_correct) {
     if (!hasTimingData) {
-      return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
+      return { type: "correct", detail: "", tip: "", confidence: "high", source: "graded" };
     }
     const avgT = AVG_TIME[ans.question.difficulty] ?? 120;
     const isGuessed =
@@ -33,7 +33,7 @@ export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): Mista
       };
     }
 
-    return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
+    return { type: "correct", detail: "", tip: "", confidence: "high", source: "graded" };
   }
 
   if (!ans.selected_answer) {

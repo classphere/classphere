@@ -529,7 +529,9 @@ export default function UploadQuestionsPage() {
     "difficulty": "medium",       // optional
     "subject": "Physics",         // optional (overrides form)
     "chapter": "Kinematics",      // optional (overrides form)
-    "distractor_map": { ... },    // optional
+    "topic": "Projectile Motion", // optional, but drives revision
+    "question_images": [],        // figure URLs
+    "question_number": 1,         // paper numbering; keeps gaps as gaps
   }
 ]`}</pre>
               </div>

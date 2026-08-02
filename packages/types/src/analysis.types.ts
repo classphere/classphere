@@ -19,7 +19,21 @@ export interface MistakeClassification {
   detail: string;        // Human-readable explanation of WHY
   tip: string;           // Actionable advice
   confidence: "high" | "medium" | "low" | "very_low";
-  source: "distractor_map" | "heuristic";
+  /**
+   * Where the classification came from.
+   *
+   * "graded"    — read straight off the grading result; the answer simply was
+   *               or was not correct.
+   * "heuristic" — inferred from timing and behaviour.
+   *
+   * There was a third value, "distractor_map", naming a per-option table of
+   * what each wrong choice implies. No such column exists and nothing ever
+   * read one — the classifier returned that source on the branch where the
+   * answer was *correct*, so it claimed a data source that neither existed nor
+   * would have been consulted. Removed rather than left in the union, so the
+   * claim cannot be made again by accident.
+   */
+  source: "graded" | "heuristic";
 }
 
 // ── Question Schema Interfaces ──

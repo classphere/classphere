@@ -54,7 +54,11 @@ The ExamPrep Analysis Engine v2 is a **zero-AI, fully deterministic** performanc
 | Auditability | Black box | Every decision is a traceable `if` statement |
 | Accuracy on structured data | Good | Equal or better (rules fit this domain perfectly) |
 
-The rule engine achieves **~70% classification accuracy out of the box** (heuristics only), rising to **~90%+ once teachers populate `distractor_map`** for questions.
+The rule engine achieves **~70% classification accuracy** from heuristics
+alone, which is what it runs on today. The design assumed a `distractor_map`
+would lift that to ~90%; it was never built and the column was dropped in
+migration 08, so every figure below that depends on it describes an intended
+design rather than current behaviour. See §2.1.
 
 ---
 
@@ -130,8 +134,24 @@ The engine **depends entirely** on the enriched question schema. Every stage tha
 | `difficulty` | enum | Stages 2, 5 | `"easy"` / `"medium"` / `"hard"` |
 | `question_type` | enum | Stage 1 | `"mcq_single"` / `"integer"` / `"mcq_multi"` |
 | `correct_answer` | JSONB | Stage 1 | `["A"]` for MCQ, `[4]` for integer |
-| `distractor_map` | JSONB | Stage 2 | Optional but upgrades accuracy 70% → 90% |
+| ~~`distractor_map`~~ | — | — | **Not implemented.** No column exists and nothing reads one. See below. |
 | `marking_scheme` | JSONB | Stages 1, 5 | `{"correct":4,"incorrect":-1,"unattempted":0}` |
+
+> **On `distractor_map`.** It was specified as an optional per-option table of
+> what each wrong choice implies — "picked B, so they stopped at the
+> intermediate value" — and credited with taking classification accuracy from
+> roughly 70% to 90%. It was never built. There is no column, and the only
+> mention in the code was a `source: "distractor_map"` label the classifier
+> returned on the branch where the answer was *correct*, so it named a source
+> that neither existed nor would have been consulted. That label now reads
+> `"graded"`.
+>
+> Mistake classification therefore runs entirely on timing and behaviour
+> heuristics. Building the table by hand is impractical — roughly three wrong
+> options across tens of thousands of questions — but most of the value is
+> recoverable from attempts instead: once enough students have answered a
+> question, the distribution of *which* wrong option they chose identifies the
+> meaningful distractor empirically, with nobody tagging anything.
 
 ### Enriched Question JSON Structure
 
@@ -221,7 +241,7 @@ interface MistakeClassification {
   detail: string;        // Human-readable explanation of WHY
   tip: string;           // Actionable advice
   confidence: "high" | "medium" | "low";
-  source: "distractor_map" | "heuristic";
+  source: "graded" | "heuristic";   // "distractor_map" was removed — see §2.1
 }
 
 // ── Classified answer (answer + question + classification) ────────────────────
