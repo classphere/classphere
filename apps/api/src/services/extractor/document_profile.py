@@ -127,6 +127,23 @@ def _role(text: str) -> Tuple[str, List[str]]:
     return "unknown", matches
 
 
+def _marking_scheme_hint(pages: List[dict]) -> dict:
+    """Marks read off the instructions page, if the paper states them."""
+    try:
+        from marking_scheme_parser import parse_marking_scheme
+    except ImportError:
+        from .marking_scheme_parser import parse_marking_scheme  # type: ignore
+
+    text = "\n".join(
+        page.get("instructions_text") or ""
+        for page in pages
+        if page.get("role") == "instructions"
+    ).strip()
+    if not text:
+        return {"scheme": {}, "evidence": {}, "unread": []}
+    return parse_marking_scheme(text)
+
+
 def _page_profile(page: fitz.Page, page_number: int) -> Dict[str, Any]:
     blocks = _text_blocks(page)
     plain_text = "\n".join(item[4] for item in blocks)
@@ -158,6 +175,10 @@ def _page_profile(page: fitz.Page, page_number: int) -> Dict[str, Any]:
     return {
         "page": page_number,
         "content_kind": content_kind,
+        # Only for the instructions page, and only so the marking scheme can be
+        # read off it. Every other page's prose is noise once the questions are
+        # extracted.
+        "instructions_text": plain_text if role == "instructions" else None,
         "likely_columns": columns,
         "role": role,
         "role_signals": role_signals,
@@ -239,6 +260,12 @@ def profile_document(document: fitz.Document) -> Dict[str, Any]:
         "page_kind_counts": dict(kinds),
         "two_column_pages": [page["page"] for page in pages if page["likely_columns"] == 2],
         "answer_key_pages": [page["page"] for page in pages if page["role"] == "answer_key"],
+        "instruction_pages": [page["page"] for page in pages if page["role"] == "instructions"],
+        # A JEE Advanced paper states its own marking scheme here. Parsed
+        # deterministically and offered as a proposal — the upload form shows it
+        # pre-filled beside the text it came from, and a person confirms it.
+        # Empty for NEET and JEE Main, which have no per-section marking.
+        "marking_scheme_hint": _marking_scheme_hint(pages),
         "solution_pages": [page["page"] for page in pages if page["role"] == "solutions"],
         "numbering_reset_count": len(reset_pages),
         "numbering_reset_pages": reset_pages,
