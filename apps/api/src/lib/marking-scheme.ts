@@ -84,18 +84,54 @@ export function marksFor(
 }
 
 /**
+ * Accept the flat shape as well as the keyed one.
+ *
+ * The system used to carry a single object —
+ * { correct: 4, incorrect: -1, unattempted: 0, partial: false } — and existing
+ * banks were written against it. That shape is exactly a scheme with one
+ * default and no per-type entries, so it is translated rather than rejected:
+ * a NEET paper marking everything +4/-1 should not have to be rewritten to say
+ * so in a new spelling.
+ *
+ * `partial` was a boolean there and is a named rule here, so true becomes the
+ * only rule that existed.
+ */
+export function normaliseMarkingScheme(raw: unknown): MarkingScheme | null {
+  if (raw === null || raw === undefined) return null;
+  if (typeof raw !== "object" || Array.isArray(raw)) return null;
+
+  const entries = raw as Record<string, unknown>;
+  const looksFlat = typeof entries.correct === "number" || typeof entries.incorrect === "number";
+  if (!looksFlat) return raw as MarkingScheme;
+
+  return {
+    default: {
+      correct: Number(entries.correct ?? 4),
+      incorrect: Number(entries.incorrect ?? -1),
+      unattempted: Number(entries.unattempted ?? 0),
+      partial: entries.partial === true || entries.partial === "per_correct_option"
+        ? "per_correct_option"
+        : null,
+    },
+  };
+}
+
+/**
  * Validate a scheme supplied by an upload.
  *
  * Returns the problems rather than throwing, so a bad paper reports every
  * mistake at once instead of one per attempt.
  */
-export function validateMarkingScheme(scheme: unknown): string[] {
+export function validateMarkingScheme(raw: unknown): string[] {
   const errors: string[] = [];
-  if (scheme === null || scheme === undefined) return errors;
-  if (typeof scheme !== "object" || Array.isArray(scheme)) {
+  if (raw === null || raw === undefined) return errors;
+  if (typeof raw !== "object" || Array.isArray(raw)) {
     return ["marking_scheme must be an object keyed by question type"];
   }
 
+  // Validate what will actually be stored, so a legacy flat scheme is judged
+  // as the default entry it becomes rather than as four unknown keys.
+  const scheme = normaliseMarkingScheme(raw) ?? {};
   const allowedKeys = [...QUESTION_TYPES, "default"];
   for (const [key, value] of Object.entries(scheme as Record<string, unknown>)) {
     if (!allowedKeys.includes(key as any)) {

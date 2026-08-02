@@ -12,7 +12,7 @@ import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 import { deriveDurationMin } from "../../lib/exam-profile";
-import { defaultMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
+import { defaultMarkingScheme, normaliseMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -418,7 +418,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     // Summed from what each question is actually worth, so a paper mixing
     // +3 single-correct with +4 multiple-correct totals correctly instead of
     // assuming four marks across the board.
-    const paperScheme = marking_scheme ?? defaultMarkingScheme(exam);
+    const paperScheme = normaliseMarkingScheme(marking_scheme) ?? defaultMarkingScheme(exam);
     const totalMarks = marks !== undefined && marks !== null
       ? Number(marks)
       : totalMarksForQuestions(questionRows, paperScheme);
