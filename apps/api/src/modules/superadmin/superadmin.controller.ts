@@ -37,7 +37,13 @@ function ensureUUID(id: any): string {
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 function validateQuestion(q: any, index: number): string | null {
-  if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
+  // A gap is a slot the extractor could not fill — question 24 of 75 that the
+  // model missed. It is uploaded deliberately so the paper keeps its numbering
+  // and a reviewer can open that slot and type the question in. Publication
+  // already refuses a paper containing empty question_text, so a gap cannot
+  // reach a student.
+  const isGap = q.is_gap === true;
+  if (!isGap && !q.question_text) return `Question #${index + 1}: missing 'question_text'`;
   const markErrors = validateQuestionMarks(q.marks);
   if (markErrors.length > 0) return `Question #${index + 1}: ${markErrors.join("; ")}`;
   // Drafts are intentionally allowed to have missing keys or damaged matching
@@ -371,6 +377,12 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // question bank with images inline and a PDF-extracted paper end up
           // identical — and neither renders the same figure twice.
           question_text:  stripInlineImages(normalizedMedia.question_text),
+          // The paper's own numbering, so a missed question leaves a hole
+          // rather than pulling every later question forward into its slot.
+          question_number: Number.isInteger(q.question_number) && q.question_number > 0
+            ? q.question_number
+            : undefined,
+          is_gap:         q.is_gap === true,
           // Read from the unstripped text above — stripInlineImages returns a
           // new string, so both see the same input. The URLs are real by now:
           // inline images were uploaded to R2 earlier in this function, whereas

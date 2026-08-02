@@ -21,6 +21,7 @@ import re
 import os
 import random
 import sys
+import uuid
 import time
 from pathlib import Path
 from typing import Any
@@ -556,11 +557,62 @@ def reconcile(pages: list[dict[str, Any]], page_indexes: list[int], questions: l
                 question["review_reasons"] = (reasons if isinstance(reasons, list) else []) + [
                     f"Question number {number} is beyond the last number detected in the PDF ({max_anchor})"
                 ]
+    # Every anchor the PDF advertises that no page returned becomes an empty
+    # slot in the output, rather than simply being absent.
+    #
+    # Without this the paper silently renumbers itself: a 75-question paper
+    # that extracts 73 files everything after the first gap one number early,
+    # so Chemistry starts at 24 instead of 26 and a reviewer comparing against
+    # the PDF sees 73 questions that all look correctly numbered. A placeholder
+    # keeps the numbering honest and gives the reviewer somewhere to type the
+    # question in.
+    placeholders = _gap_placeholders(anchor_map, questions, truncated_pages, failed_pages)
+    if placeholders:
+        questions.extend(placeholders)
+        questions.sort(key=lambda q: (q.get("_page_index", 0), q.get("question_number", 0)))
+        print(f"[geminiPage] inserted {len(placeholders)} placeholder(s) for questions "
+              f"the extraction did not return", file=sys.stderr)
+
     print(f"[geminiPage] final: {final['anchors_matched']}/{final['expected_total']} anchored "
           f"questions matched (completeness {final['completeness']:.1%})")
     if final["missing_by_page"]:
         print(f"[geminiPage] STILL MISSING after reconciliation: {final['missing_by_page']}", file=sys.stderr)
     return final
+
+
+def _gap_placeholders(
+    anchor_map: dict,
+    questions: list,
+    truncated_pages: set | None,
+    failed_pages: set | None,
+) -> list:
+    """One empty question per anchor the extraction never returned.
+
+    Marked is_gap so the upload accepts the empty text, and needs_review so the
+    editor surfaces it. Publication already refuses a paper containing empty
+    question_text, so a placeholder cannot reach a student.
+    """
+    missing = reconciler.missing_by_page(anchor_map, questions, truncated_pages, failed_pages)
+    out: list = []
+    for page_index, numbers in sorted(missing.items()):
+        for number in numbers:
+            out.append({
+                "id": str(uuid.uuid4()),
+                "question_number": number,
+                "question_text": "",
+                "options": [],
+                "correct_answer": [],
+                "explanation": "",
+                "is_gap": True,
+                "needs_review": True,
+                "review_reasons": [
+                    f"Question {number} was detected on page {page_index + 1} of the PDF "
+                    f"but not extracted. Open this slot and enter it from the source."
+                ],
+                "_page_index": page_index,
+                "_pages": [page_index + 1],
+            })
+    return out
 
 
 def main() -> int:
