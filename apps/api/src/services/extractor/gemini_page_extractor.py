@@ -57,6 +57,11 @@ the authoritative reading order and contains geometry annotations. Native
 image filenames are authoritative media assets; keep a filename exactly as
 given when the figure belongs to a question or option.
 
+A second image may follow: the next page, supplied only so a question that
+begins on this page can be finished from it. Options routinely run past the
+page break, and an option is often a picture rather than text — read those off
+the second image rather than leaving them blank.
+
 Return ONLY JSON: {"questions": [...]}. Extract ONLY questions whose numbered
 anchor begins on THIS PAGE; do not duplicate a question that began on the
 previous page. A small next-page text window may be supplied solely to complete
@@ -88,6 +93,10 @@ For each question return:
 ════════════════════════════════════════════
 • If a diagram belongs to the stem, place ![image](filename) in question_text.
   If it belongs to an option, place it in that option text or image_url.
+• An option you can see in either image must never be returned with empty text
+  and no image_url. A choice question must come back with every option it has —
+  if the stem shows four and you can read only two, extract all four from the
+  page images and set needs_review: true rather than returning empty ones.
 • Preserve matching tables and lists as Markdown; preserve meaningful newlines.
 • Numerical/Integer-type questions must have options: [].
 • Do not solve the question. correct_answer must stay [].
@@ -146,7 +155,8 @@ def context_tail(page: dict[str, Any]) -> str:
 def page_prompt(page_number: int, page_html: str, images: dict[str, Any],
                 previous_tail: str, next_head: str,
                 focus_numbers: list[int] | None = None,
-                next_images: dict[str, Any] | None = None) -> str:
+                next_images: dict[str, Any] | None = None,
+                has_next_image: bool = False) -> str:
     manifest = json.dumps(images, ensure_ascii=False, separators=(",", ":"))
     # A question that begins on this page can carry an option whose figure sits
     # past the break. The page's own manifest cannot name that file, so the
@@ -175,8 +185,21 @@ it. Returning fewer questions is correct; fabricating one is not.
 
 You may return other questions from this page too; duplicates are discarded safely.
 """
+    two_page_note = "" if not has_next_image else f"""
+YOU HAVE TWO IMAGES. The first is page {page_number}, the page you are
+extracting. The second is page {page_number + 1}, supplied ONLY so a question
+that begins on page {page_number} can be completed from it.
+
+A question's options frequently run past the page break, and in this paper an
+option is often a picture -- a structural formula, a circuit, a graph -- rather
+than text. When that happens, read the options off the second image and give
+each one the filename from the next-page manifest whose geometry matches where
+it sits on that page. An option you can see must never be returned empty.
+
+Still return only questions whose numbered anchor begins on page {page_number}.
+"""
     return f"""THIS PAGE: {page_number}
-{focus_block}
+{focus_block}{two_page_note}
 NATIVE IMAGE MANIFEST (filename -> PDF geometry):
 {manifest}
 
@@ -420,12 +443,31 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
         raise FileNotFoundError(f"Rendered page image missing: {image_path}")
 
     image_data_url = "data:image/png;base64," + base64.b64encode(image_path.read_bytes()).decode("ascii")
+
+    # The next page, rendered, when there is one.
+    #
+    # A question whose options run past the page break has them printed on the
+    # following page, and in a JEE paper those options are very often pictures:
+    # structural formulae, circuit diagrams, graphs. The model was given that
+    # page's text and its image *filenames*, but never the page itself, so it
+    # could not see which filename was option B. On a real paper that left 6 of
+    # 51 choice questions with fewer than two options -- one with none at all,
+    # and one with four empty shells -- because naming an option it cannot see
+    # is not something it can do from a filename.
+    next_image_data_url: str | None = None
+    if index + 1 < len(pages):
+        next_rel = pages[index + 1].get("page_image") or f"page_images/page_{index + 2:04d}.png"
+        next_path = work_dir / next_rel
+        if next_path.exists():
+            next_image_data_url = "data:image/png;base64," + base64.b64encode(next_path.read_bytes()).decode("ascii")
+
     page_html = str(page.get("html") or "")
     previous_tail = context_tail(pages[index - 1]) if index > 0 else ""
     next_head = context_head(pages[index + 1]) if index + 1 < len(pages) else ""
     next_images = pages[index + 1].get("images") or {} if index + 1 < len(pages) else {}
     prompt = page_prompt(page_number, page_html, page.get("images") or {},
-                         previous_tail, next_head, focus_numbers, next_images)
+                         previous_tail, next_head, focus_numbers, next_images,
+                         has_next_image=next_image_data_url is not None)
     label = f"page {page_number}/{len(pages)}" + (f" [recovery of {focus_numbers}]" if focus_numbers else "")
 
     client = openrouter_client()
@@ -440,6 +482,11 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
                     {"role": "user", "content": [
                         {"type": "text", "text": prompt},
                         {"type": "image_url", "image_url": {"url": image_data_url}},
+                        # Second image is the following page, so a question that
+                        # starts on this one can be completed from what is
+                        # actually printed there rather than from filenames.
+                        *([{"type": "image_url", "image_url": {"url": next_image_data_url}}]
+                          if next_image_data_url else []),
                     ]},
                 ],
                 response_format={"type": "json_object"},

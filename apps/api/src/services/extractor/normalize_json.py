@@ -642,6 +642,32 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
 
 
 def validate(questions: list, report: dict, images_dir: Path = None):
+    # A choice question missing its options, or carrying options with neither
+    # text nor a figure, is the signature of a page break between the stem and
+    # what follows it. Flagged here so it reaches the reviewer as a named defect
+    # rather than as a question that merely looks finished until someone opens
+    # it. On one real paper this was 6 of 51 questions.
+    incomplete = 0
+    for q in questions:
+        qtype = str(q.get("question_type") or "").upper()
+        if qtype in ("MCQ", "MSQ", "MATCHING", "ASSERTION-REASON"):
+            options = q.get("options") or []
+            blank = [o for o in options
+                     if not str(o.get("text") or "").strip() and not str(o.get("image_url") or "").strip()]
+            problem = None
+            if len(options) < 2:
+                problem = f"only {len(options)} option(s) extracted for a choice question"
+            elif blank:
+                problem = f"{len(blank)} of {len(options)} options are empty"
+            if problem:
+                q["_needs_review"] = True
+                q["_defects"] = q.get("_defects", []) + [
+                    f"{problem} — check whether they continue on the next page"]
+                incomplete += 1
+    report["incomplete_option_sets"] = incomplete
+    if incomplete:
+        print(f"  Incomplete option sets: {incomplete} question(s) flagged for review")
+
     nums = [q.get("question_number", 0) for q in questions]
     max_num = max(nums) if nums else 0
 
