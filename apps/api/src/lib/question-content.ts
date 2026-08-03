@@ -203,13 +203,21 @@ function containsInlineImage(markdown: string, url: string): boolean {
 export function deriveLegacyContentBlocks(input: Record<string, unknown>): QuestionContentBlock[] {
   const blocks: QuestionContentBlock[] = [];
   const questionText = typeof input.question_text === "string" ? input.question_text : "";
-  const imageUrl = text(input.image_url);
   const metadata = reviewMetadata(input);
   let order = 0;
 
   if (questionText.trim()) blocks.push({ type: "markdown", content: questionText, order: order++, ...metadata });
-  if (imageUrl && !containsInlineImage(questionText, imageUrl)) {
-    blocks.push({ type: "image", url: imageUrl, alt: "Question figure", order: order++, ...metadata });
+
+  // Every figure on the stem, not just the first. This read image_url, which
+  // held one url and no longer exists — so a question with figures produced a
+  // block projection containing none of them.
+  const figures = Array.isArray(input.question_images)
+    ? input.question_images.map((figure) => text(figure)).filter(Boolean)
+    : [text(input.image_url)].filter(Boolean);
+
+  for (const url of figures) {
+    if (containsInlineImage(questionText, url as string)) continue;
+    blocks.push({ type: "image", url: url as string, alt: "Question figure", order: order++, ...metadata });
   }
 
   const crop = sourceCrop(input.source_crop);

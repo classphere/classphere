@@ -92,7 +92,7 @@ export const getPYQQuestions = async (req: Request, res: Response): Promise<void
         .select(`
           id,
           question_text,
-          image_url,
+          question_images,
           options,
           correct_answer,
           explanation,

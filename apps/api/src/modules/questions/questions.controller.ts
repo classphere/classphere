@@ -271,7 +271,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
  */
 export const createQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, source, year, tags, image_url } = req.body;
+    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, source, year, tags, question_images } = req.body;
 
     if (!exam_id || !subject || !chapter || !difficulty || !question_type || !question_text || !correct_answer) {
       res.status(400).json({ success: false, message: "Missing required fields: exam_id, subject, chapter, difficulty, question_type, question_text, correct_answer" });
@@ -288,7 +288,11 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
         difficulty,
         question_type,
         question_text,
-        image_url: image_url || null,
+        question_images: Array.isArray(question_images) ? question_images : [],
+        // NOT NULL with no default, and this insert never supplied it, so every
+        // call failed on the constraint before reaching anything else. A
+        // hand-written question belongs to no paper, which is what this means.
+        test_type: req.body.test_type ?? "chapter-wise",
         options: options ?? null,
         correct_answer: Array.isArray(correct_answer) ? correct_answer : [correct_answer],
         explanation: explanation ?? null,
@@ -320,7 +324,7 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
     const { id } = req.params;
     const allowed = [
       "subject", "chapter", "topic", "difficulty", "question_type", "question_text",
-      "image_url", "options", "correct_answer", "explanation", "source", "year", "tags",
+      "question_images", "explanation_images", "options", "correct_answer", "explanation", "source", "year", "tags",
       "content_blocks", "extraction_metadata", "extractor_version", "source_crop_url", "source_reference",
     ];
     const updates: Record<string, any> = {};
@@ -328,7 +332,7 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
       if (req.body[key] !== undefined) updates[key] = req.body[key];
     }
     // Never leave an extracted block projection stale after a legacy-only edit.
-    if ((req.body.question_text !== undefined || req.body.image_url !== undefined) && req.body.content_blocks === undefined) {
+    if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
       updates.content_blocks = null;
     }
     if (Object.keys(updates).length === 0) {

@@ -13,13 +13,27 @@ function removeDuplicateInlineImage(text: string | null | undefined, imageUrl: s
  * Options carry one figure each, in image_url, and may also repeat it inline in
  * their text. This drops the inline copy so it is not rendered twice.
  *
- * Questions are handled by stripInlineImages instead: their figures live in an
- * array, so there is no single url to compare against.
+ * A question's figures live in question_images, so every entry in that array is
+ * compared rather than one url. The parameter used to be image_url, and kept
+ * that name after the column was replaced by the array — which quietly turned
+ * the question half of this function into a no-op, since nothing passes an
+ * image_url any more.
  */
-export function normalizeQuestionMedia<T extends { question_text?: string | null; image_url?: string | null; options?: any }>(question: T): T {
+export function normalizeQuestionMedia<
+  T extends { question_text?: string | null; question_images?: unknown; image_url?: string | null; options?: any }
+>(question: T): T {
+  const figures = Array.isArray(question.question_images)
+    ? question.question_images
+    : (question.image_url ? [question.image_url] : []);
+
+  const questionText = figures.reduce<string>(
+    (text, figure) => removeDuplicateInlineImage(text, typeof figure === "string" ? figure : null),
+    question.question_text ?? "",
+  );
+
   return {
     ...question,
-    question_text: removeDuplicateInlineImage(question.question_text, question.image_url),
+    question_text: questionText,
     options: Array.isArray(question.options)
       ? question.options.map((option: any) => ({ ...option, text: removeDuplicateInlineImage(option?.text, option?.image_url) }))
       : question.options,
