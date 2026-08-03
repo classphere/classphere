@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { uploadDataUrlList } from "../../lib/question-figures";
+import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
@@ -231,6 +231,7 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     for (const field of ["question_images", "explanation_images"] as const) {
       if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
     }
+    if (updates.options !== undefined) updates.options = await uploadOptionFigures(updates.options);
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
     // No per-save content validation — "Validate paper" button handles structural checks.
     // validQuestion only runs at publish time (see transitionReviewPaper → publish).

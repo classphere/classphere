@@ -33,6 +33,20 @@ export async function uploadDataUrl(imageUrl: string | null): Promise<string | n
   }
 }
 
+/**
+ * An option's own figure, which lives in image_url rather than an array.
+ *
+ * A chemistry paper's options are often structures with no text at all, so a
+ * reviewer replacing one is replacing the only content that option has.
+ */
+export async function uploadOptionFigures(options: unknown): Promise<unknown> {
+  if (!Array.isArray(options)) return options;
+  return Promise.all(options.map(async (option: any) => {
+    if (!option || typeof option !== "object" || !option.image_url) return option;
+    return { ...option, image_url: await uploadDataUrl(String(option.image_url)) };
+  }));
+}
+
 /** A whole figure list. Entries already stored pass through. */
 export async function uploadDataUrlList(images: unknown): Promise<string[]> {
   if (!Array.isArray(images)) return [];

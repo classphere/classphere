@@ -1,4 +1,5 @@
 import { spawn } from "child_process";
+import { createHash } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -132,17 +133,40 @@ function embedImagesInText(text: string, imagesDir: string): string {
 function embedImageList(images: unknown, imagesDir: string): string[] {
   if (!Array.isArray(images)) return [];
   const embedded: string[] = [];
+
+  // The same picture can arrive under two filenames. A question whose figure
+  // sits past the page break is now read with both pages in view, and the same
+  // diagram is catalogued once per page it appears on, so the model can name
+  // both. Deduplicating on filename would not catch it — the names differ — and
+  // the reviewer sees one figure twice with no way to tell which to delete.
+  //
+  // Compared by content, so two names for identical bytes collapse to one and
+  // two genuinely different figures both survive.
+  const seen = new Set<string>();
+  const keep = (value: string, fingerprint: string) => {
+    if (seen.has(fingerprint)) return;
+    seen.add(fingerprint);
+    embedded.push(value);
+  };
+
   for (const entry of images) {
     const filename = String(entry ?? "").trim();
     if (!filename) continue;
     if (filename.startsWith("data:") || /^https?:/i.test(filename)) {
-      embedded.push(filename);
+      keep(filename, filename);
       continue;
     }
     const filePath = path.join(imagesDir, filename);
-    if (fs.existsSync(filePath)) embedded.push(fileToBase64(filePath));
-    else console.warn(`[pdfExtractor] Figure "${filename}" not found in ${imagesDir}; dropping it.`);
+    if (!fs.existsSync(filePath)) {
+      console.warn(`[pdfExtractor] Figure "${filename}" not found in ${imagesDir}; dropping it.`);
+      continue;
+    }
+    const bytes = fs.readFileSync(filePath);
+    keep(fileToBase64(filePath), createHash("sha1").update(bytes).digest("hex"));
   }
+
+  const dropped = images.length - embedded.length;
+  if (dropped > 0) console.log(`[pdfExtractor] Collapsed ${dropped} repeated figure(s) to their single original.`);
   return embedded;
 }
 

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { uploadDataUrlList } from "../../lib/question-figures";
+import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
 import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 
@@ -339,6 +339,7 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
     for (const field of ["question_images", "explanation_images"] as const) {
       if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
     }
+    if (updates.options !== undefined) updates.options = await uploadOptionFigures(updates.options);
     // Never leave an extracted block projection stale after a legacy-only edit.
     if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
       updates.content_blocks = null;

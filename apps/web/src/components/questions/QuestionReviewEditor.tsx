@@ -193,6 +193,18 @@ export function QuestionReviewEditor({
 
   const removeFigure = (index: number) => setFigures(figures.filter((_, i) => i !== index));
 
+  /** An option's own figure. Options hold one each, in image_url. */
+  const setOptionImage = (index: number, url: string | null) => {
+    const opts = [...(draft.options ?? [])];
+    opts[index] = { ...opts[index], image_url: url, content_blocks: null };
+    set({ options: opts });
+  };
+
+  const replaceOptionImage = async (index: number, file: File) => {
+    try { setOptionImage(index, await readAsDataUrl(file)); }
+    catch { setError("Could not read that image file."); }
+  };
+
   const removeOption = (index: number) => {
     const opts = [...(draft.options ?? [])].filter((_, i) => i !== index);
     const removed = draft.options?.[index]?.id;
@@ -548,11 +560,42 @@ export function QuestionReviewEditor({
 
                       {/* Option text (WYSIWYG inline math) */}
                       <div className="flex-1 min-w-0">
+                        {/* An option that is a picture — a structural formula, a
+                            circuit, a graph — keeps it in image_url and has no
+                            text at all. This field only ever drew the text, so
+                            a chemistry paper whose options are all structures
+                            showed four empty boxes and read as a failed
+                            extraction when every option was in fact present. */}
+                        {opt.image_url && (
+                          <div className="group/fig relative mb-2 inline-block">
+                            <img
+                              src={opt.image_url}
+                              alt={`Option ${letter}`}
+                              className="max-h-32 max-w-full rounded-[8px] border border-s-stroke2 bg-white object-contain p-1"
+                            />
+                            {canEdit && (
+                              <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover/fig:opacity-100">
+                                <label title="Replace this option's image"
+                                  className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
+                                  <RiImageAddLine size={10} />
+                                  <input type="file" accept="image/*" className="hidden"
+                                    onChange={(e) => { const f = e.target.files?.[0]; if (f) replaceOptionImage(i, f); e.target.value = ""; }} />
+                                </label>
+                                <button type="button" title="Remove this option's image"
+                                  onClick={() => setOptionImage(i, null)}
+                                  className="flex h-5 w-5 items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-red-500">
+                                  <RiDeleteBin7Line size={10} />
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        )}
                         <TiptapMathField
                           value={opt.text ?? ""}
                           disabled={!canEdit}
                           onChange={(v: string) => updateOptionText(i, v)}
-                          placeholder={`Option ${letter}`}
+                          placeholder={opt.image_url ? "Caption (optional)" : `Option ${letter}`}
+                          onImageAdd={canEdit && !opt.image_url ? (url: string) => setOptionImage(i, url) : undefined}
                         />
                       </div>
 
