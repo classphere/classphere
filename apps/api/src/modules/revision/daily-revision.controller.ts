@@ -7,7 +7,7 @@ const DEFAULT_TOPIC_LIMIT = 5;
 /** Questions drawn per topic. */
 const QUESTIONS_PER_TOPIC = 4;
 
-const QUESTION_FIELDS = "id, question_text, image_url, options, question_type, subject, chapter, topic, difficulty, content_blocks";
+const QUESTION_FIELDS = "id, question_text, question_images, options, question_type, subject, chapter, topic, difficulty, content_blocks";
 
 async function resolveExamCode(studentId: string): Promise<string> {
   const { data } = await supabaseAdmin.from("users").select("exam_target").eq("id", studentId).maybeSingle();

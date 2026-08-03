@@ -19,8 +19,8 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
 
     const isSuperAdmin = req.user?.role === "super_admin";
     const selectCols = isSuperAdmin
-      ? "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
-      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
+      ? "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
+      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
 
     let query = supabaseDB
       .from("questions")
@@ -240,7 +240,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
     // only after an authorised submission or scheduled result release.
     const selectCols = isSuperAdmin
       ? "*"
-      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
+      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
 
     const { data: question, error } = await supabaseDB
       .from("questions")

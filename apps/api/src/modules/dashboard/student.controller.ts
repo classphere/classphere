@@ -469,7 +469,7 @@ export const getRevisionTaskQuestions = async (req: Request, res: Response): Pro
       return;
     }
 
-    const fields = "id, question_text, image_url, options, question_type, subject, chapter, topic, difficulty";
+    const fields = "id, question_text, question_images, options, question_type, subject, chapter, topic, difficulty";
     const { data: questions } = await supabaseDB
       .from("questions").select(fields)
       .eq("is_active", true).eq("subject", task.subject).eq("chapter", task.chapter).limit(10);

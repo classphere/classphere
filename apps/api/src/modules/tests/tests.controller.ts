@@ -85,7 +85,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       const rawQs: any[] = [];
       for (let i = 0; i < questionIds.length; i += BATCH_SIZE) {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
-        const legacyFields = "id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version";
+        const legacyFields = "id, question_text, question_images, explanation_images, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version";
         let { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
           .select(`${legacyFields}, content_blocks, extraction_metadata, extractor_version, source_crop_url`)
