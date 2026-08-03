@@ -106,6 +106,42 @@ For each question return:
 """
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+_STYLE_RE = re.compile(r"<style[^>]*>.*?</style>", re.S | re.I)
+
+
+def visible_text(html: str) -> str:
+    """The words on a page, with the markup that carries them removed.
+
+    The continuity windows used to be raw slices of PyMuPDF HTML, which is
+    mostly not words: a stylesheet, per-span font attributes, and — on any page
+    carrying figures — base64 image payloads inline in the markup. On a real
+    paper the first visible character of one page sat 48,000 characters into
+    its HTML, so a 2,500-character window over that page handed the model an
+    empty string while looking like it had supplied context.
+
+    That window exists so a question whose options run past a page break can
+    still be completed, which is exactly what fails on figure-heavy pages —
+    the pages where a question is most likely to be split in the first place.
+    Slicing text rather than markup makes the window carry what it claims to.
+    """
+    if not html:
+        return ""
+    return _TAG_RE.sub(" ", _STYLE_RE.sub(" ", html)).replace("&nbsp;", " ").strip()
+
+
+def context_head(page: dict[str, Any]) -> str:
+    """Opening words of the next page — enough to finish this page's last question."""
+    text = re.sub(r"[ \t]+", " ", visible_text(str(page.get("html") or "")))
+    return text[:CONTEXT_CHARS]
+
+
+def context_tail(page: dict[str, Any]) -> str:
+    """Closing words of the previous page, so a continuation is recognised as one."""
+    text = re.sub(r"[ \t]+", " ", visible_text(str(page.get("html") or "")))
+    return text[-CONTEXT_CHARS:]
+
+
 def page_prompt(page_number: int, page_html: str, images: dict[str, Any],
                 previous_tail: str, next_head: str,
                 focus_numbers: list[int] | None = None) -> str:
@@ -322,8 +358,8 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
 
     image_data_url = "data:image/png;base64," + base64.b64encode(image_path.read_bytes()).decode("ascii")
     page_html = str(page.get("html") or "")
-    previous_tail = str(pages[index - 1].get("html") or "")[-CONTEXT_CHARS:] if index > 0 else ""
-    next_head = str(pages[index + 1].get("html") or "")[:CONTEXT_CHARS] if index + 1 < len(pages) else ""
+    previous_tail = context_tail(pages[index - 1]) if index > 0 else ""
+    next_head = context_head(pages[index + 1]) if index + 1 < len(pages) else ""
     prompt = page_prompt(page_number, page_html, page.get("images") or {},
                          previous_tail, next_head, focus_numbers)
     label = f"page {page_number}/{len(pages)}" + (f" [recovery of {focus_numbers}]" if focus_numbers else "")
