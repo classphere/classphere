@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import base64
 import concurrent.futures
+import ast
 import json
 import re
 import os
@@ -243,12 +244,54 @@ def clean_raw_json_response(raw: str) -> str:
                 result.append(ch); i += 1
     return "".join(result)
 
+# Keys the model wrote as Python would: {'questions': ...} or {questions: ...}.
+# Anchored to a brace or comma so an apostrophe inside prose is never touched.
+_SINGLE_QUOTED_KEY = re.compile(r"([{,]\s*)'([^'\\]{1,64})'(\s*:)")
+_UNQUOTED_KEY = re.compile(r"([{,]\s*)([A-Za-z_][A-Za-z0-9_]{0,63})(\s*:)")
+
+
 def parse_json(raw: str) -> dict[str, Any]:
+    """Parse the model's reply, tolerating the ways it writes not-quite-JSON.
+
+    response_format=json_object asks for strict JSON and the provider does not
+    always deliver it. Observed on a real 23-page run: four pages came back
+    with Python-style quoting, page 12 twice, costing three full model calls
+    and about 100 seconds of a 240-second extraction. A page that exhausts all
+    three attempts loses its questions outright.
+
+    Repair is tried in order of how much it assumes. json.loads first, then
+    ast.literal_eval -- which reads a Python dict literal, and evaluates only
+    literals, so it cannot run anything the model wrote -- and only then a
+    regex that quotes bare keys.
+    """
     cleaned = clean_raw_json_response(raw)
-    value = json.loads(cleaned)
+
+    value: Any
+    try:
+        value = json.loads(cleaned)
+    except (json.JSONDecodeError, ValueError):
+        try:
+            # Handles {'questions': [...]}, True/False/None, the whole
+            # Python-literal dialect, without touching apostrophes in prose.
+            value = ast.literal_eval(cleaned)
+        except (ValueError, SyntaxError, MemoryError, RecursionError):
+            repaired = _UNQUOTED_KEY.sub(r'\1"\2"\3', _SINGLE_QUOTED_KEY.sub(r'\1"\2"\3', cleaned))
+            value = json.loads(repaired)
+
     if not isinstance(value, dict) or not isinstance(value.get("questions"), list):
         raise ValueError("Gemini returned JSON without a questions array")
     return value
+
+
+def _loads_either(fragment: str) -> Any:
+    """One recovered object, in whichever dialect the model wrote it."""
+    try:
+        return json.loads(fragment)
+    except (json.JSONDecodeError, ValueError):
+        try:
+            return ast.literal_eval(fragment)
+        except (ValueError, SyntaxError, MemoryError, RecursionError):
+            return None
 
 
 def salvage_questions(raw: str) -> list[dict[str, Any]]:
@@ -261,7 +304,14 @@ def salvage_questions(raw: str) -> list[dict[str, Any]]:
     losing twenty. Objects recovered here are still reconciled against the page
     anchors, so anything genuinely lost is re-asked rather than assumed present.
     """
-    start = raw.find('"questions"')
+    # Either quote style, or none. This looked only for the double-quoted form,
+    # so a page whose reply used Python quoting salvaged nothing and the whole
+    # page was retried instead of recovered.
+    start = -1
+    for spelling in ('"questions"', "'questions'", "questions"):
+        start = raw.find(spelling)
+        if start != -1:
+            break
     if start == -1:
         return []
     open_bracket = raw.find("[", start)
@@ -271,20 +321,23 @@ def salvage_questions(raw: str) -> list[dict[str, Any]]:
     recovered: list[dict[str, Any]] = []
     depth = 0
     object_start: int | None = None
-    in_string = False
+    # Whichever quote opened the current string, so a brace inside a
+    # single-quoted value does not shift the depth count and split an object in
+    # the wrong place.
+    quote: str | None = None
     escaped = False
     for position in range(open_bracket + 1, len(raw)):
         char = raw[position]
-        if in_string:
+        if quote is not None:
             if escaped:
                 escaped = False
             elif char == "\\":
                 escaped = True
-            elif char == '"':
-                in_string = False
+            elif char == quote:
+                quote = None
             continue
-        if char == '"':
-            in_string = True
+        if char in ('"', "'"):
+            quote = char
         elif char == "{":
             if depth == 0:
                 object_start = position
@@ -292,12 +345,9 @@ def salvage_questions(raw: str) -> list[dict[str, Any]]:
         elif char == "}":
             depth -= 1
             if depth == 0 and object_start is not None:
-                try:
-                    value = json.loads(raw[object_start:position + 1])
-                    if isinstance(value, dict):
-                        recovered.append(value)
-                except (json.JSONDecodeError, ValueError):
-                    pass
+                value = _loads_either(raw[object_start:position + 1])
+                if isinstance(value, dict):
+                    recovered.append(value)
                 object_start = None
     return recovered
 

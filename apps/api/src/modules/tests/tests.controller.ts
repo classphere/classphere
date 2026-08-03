@@ -937,14 +937,15 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           }
         }
       }
-    } else {
-      // Separate Answer Key PDF OR fallback to Master PDF
-      let targetPdfPath = tempPdfPath; // fallback: Master PDF
-
-      if (answerKeyFile && isPdf) {
-        targetPdfPath = path.join(tempWorkingDir, "answer_key_document.pdf");
-        fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
-      }
+    } else if (answerKeyFile && isPdf) {
+      // Only a separate key file is read here. The question PDF has already
+      // been searched for its own key by the extractor, which runs before this
+      // and applies whatever it finds. Repeating that meant spawning the parser
+      // twice over the same document and reporting two coverage figures for one
+      // paper -- 41% and 47% on the same 51 questions -- which reads like two
+      // findings rather than one measurement made twice.
+      const targetPdfPath = path.join(tempWorkingDir, "answer_key_document.pdf");
+      fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
 
       // Pass the extracted question count as an upper bound. The answer/solution
       // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
@@ -961,11 +962,11 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           clearInterval(keyKeepAlive);
         }
 
-        // When no key file was supplied this has just re-read the question PDF,
-        // which may carry no key at all. The regexes are broad enough to find
-        // "answers" in ordinary question text — on a real 51-question paper with
-        // no key they returned 14 — so a sparse reading is discarded whole
-        // rather than used to mark a seventh of the paper wrong.
+        // A supplied key file can still be the wrong document, or a scan the
+        // regexes cannot read. They are broad enough to find "answers" in
+        // ordinary prose — over a 51-question paper carrying no key they
+        // returned 14 — so a sparse reading is discarded whole rather than used
+        // to mark part of the paper wrong.
         const numbers = Object.keys(parsed.answers).filter((n) => {
           const qNum = parseInt(n, 10);
           return !isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber;
