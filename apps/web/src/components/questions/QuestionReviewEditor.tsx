@@ -180,10 +180,8 @@ export function QuestionReviewEditor({
 
   const setFigures = (next: string[]) => set({ question_images: next, content_blocks: null });
 
-  const addFigure = async (file: File) => {
-    try { setFigures([...figures, await readAsDataUrl(file)]); }
-    catch { setError("Could not read that image file."); }
-  };
+  /** Appends a figure the toolbar's image button has already read. */
+  const addFigure = (dataUrl: string) => setFigures([...figures, dataUrl]);
 
   const replaceFigure = async (index: number, file: File) => {
     try {
@@ -413,6 +411,7 @@ export function QuestionReviewEditor({
               disabled={!canEdit}
               onChange={(v: string) => set({ question_text: v, content_blocks: null })}
               placeholder="Type question text…"
+              onImageAdd={canEdit ? addFigure : undefined}
             />
 
             {/* The question's figures, beside the text that refers to them.
@@ -423,26 +422,21 @@ export function QuestionReviewEditor({
 
                 Editable, because the reviewer is the person who can see that a
                 figure is the wrong one or missing — that is most of what
-                reviewing an extracted paper is. A replacement is read as a data
-                URL here and uploaded to storage on save. */}
+                reviewing an extracted paper is.
+
+                Adding one is the image button on the text toolbar above, so
+                there is a single way to attach a figure rather than a second
+                control beside it. It appends here rather than embedding the
+                image in the sentence, because the figure belongs to the
+                question, not to its prose. */}
             <div>
-              <div className="mb-2 flex items-center justify-between">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
-                  Figures{figures.length > 0 ? ` — ${figures.length}` : ""}
-                </p>
-                {canEdit && (
-                  <label className="flex h-6 cursor-pointer items-center gap-1 rounded-full border border-s-stroke2 px-2 text-[11px] text-t-secondary hover:text-primary-01">
-                    <RiAddLine size={11} />
-                    Add figure
-                    <input type="file" accept="image/*" className="hidden"
-                      onChange={(e) => { const f = e.target.files?.[0]; if (f) addFigure(f); e.target.value = ""; }} />
-                  </label>
-                )}
-              </div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                Figures{figures.length > 0 ? ` — ${figures.length}` : ""}
+              </p>
 
               {figures.length === 0 ? (
                 <p className="rounded-[10px] border border-dashed border-s-stroke2 px-3 py-4 text-center text-[12px] text-t-secondary">
-                  No figures on this question. Add one if the paper shows a diagram here.
+                  No figures. Use the image button on the toolbar above to add one.
                 </p>
               ) : (
                 <div className="flex flex-wrap gap-2">
