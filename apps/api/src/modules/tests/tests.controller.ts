@@ -4,15 +4,13 @@ import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
-import { execSync, exec } from "child_process";
-import { promisify } from "util";
 import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
 
-const execAsync = promisify(exec);
 import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfExtractor.service";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
+import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -925,7 +923,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       }
     } else {
       // Separate Answer Key PDF OR fallback to Master PDF
-      const tempAnswersJsonPath = path.join(tempWorkingDir, "answers.json");
       let targetPdfPath = tempPdfPath; // fallback: Master PDF
 
       if (answerKeyFile && isPdf) {
@@ -937,29 +934,39 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
       // bound the regex can misread that as a fictitious Q300→4 entry.
       const maxQuestionNumber = extractionResult.questions.length;
-      const parseKeyCmd = `python "${path.join(EXTRACTOR_SCRIPT_DIR, "parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
       try {
         const keyKeepAlive = setInterval(() => {
           sendProgress("extracting_answers", "AI is reading correct answers and extracting worked solutions...");
         }, 4000);
+        let parsed;
         try {
-          await execAsync(parseKeyCmd, { timeout: 120000 });
+          parsed = await parseAnswerKeyFromPdf(targetPdfPath, maxQuestionNumber);
         } finally {
           clearInterval(keyKeepAlive);
         }
-        if (fs.existsSync(tempAnswersJsonPath)) {
-          const parsed = JSON.parse(fs.readFileSync(tempAnswersJsonPath, "utf-8"));
-          // v2 parser returns { answers, solutions }; v1 returned a flat dict.
-          // Handle both for backward compatibility.
-          const answersMap = parsed.answers ?? parsed;
-          const solutionsMap = parsed.solutions ?? {};
-          for (const [qNumStr, ans] of Object.entries(answersMap)) {
-            const qNum = parseInt(qNumStr, 10);
-            if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && Array.isArray(ans)) {
-              csvAnswers[qNum] = ans;
-            }
+
+        // When no key file was supplied this has just re-read the question PDF,
+        // which may carry no key at all. The regexes are broad enough to find
+        // "answers" in ordinary question text — on a real 51-question paper with
+        // no key they returned 14 — so a sparse reading is discarded whole
+        // rather than used to mark a seventh of the paper wrong.
+        const numbers = Object.keys(parsed.answers).filter((n) => {
+          const qNum = parseInt(n, 10);
+          return !isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber;
+        });
+        const coverage = maxQuestionNumber > 0 ? numbers.length / maxQuestionNumber : 0;
+
+        if (numbers.length > 0 && coverage < MIN_KEY_COVERAGE) {
+          console.warn(
+            `[uploadTestController] Answer key discarded: covered ${numbers.length}/${maxQuestionNumber} ` +
+            `(${Math.round(coverage * 100)}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key reaches.`,
+          );
+        } else {
+          for (const qNumStr of numbers) {
+            const ans = parsed.answers[qNumStr];
+            if (Array.isArray(ans)) csvAnswers[parseInt(qNumStr, 10)] = ans;
           }
-          for (const [qNumStr, sol] of Object.entries(solutionsMap)) {
+          for (const [qNumStr, sol] of Object.entries(parsed.solutions)) {
             const qNum = parseInt(qNumStr, 10);
             if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && typeof sol === "string" && sol.trim()) {
               pdfSolutions[qNum] = sol;
@@ -1038,40 +1045,10 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         //      Never risk converting "4" to "D" on a numerical question.
         //   4. Any token > 4 or < 1 or decimal or negative → definitely
         //      numerical, keep raw regardless of exam or type.
-        const NUM_TO_LETTER: Record<string, string> = { "1": "A", "2": "B", "3": "C", "4": "D" };
-        const isNeetExam = examCode === "neet-ug";
-
-        function isDefinitelyNumerical(val: string): boolean {
-          const n = Number(val);
-          return !isNaN(n) && (n > 4 || n < 1 || !Number.isInteger(n));
-        }
-
-        let correctAnswers: string[];
-        const hasRealOptions = finalOptions && finalOptions.length >= 2;
-        const anyDefinitelyNumerical = rawAnswers.some(isDefinitelyNumerical);
-
-        if (anyDefinitelyNumerical) {
-          // Any answer > 4 / decimal / negative → definitely numerical, keep raw
-          // regardless of exam type or question type.
-          correctAnswers = rawAnswers;
-        } else if (isNeetExam) {
-          // NEET: no numericals, ever. All answers 1-4 are option indices.
-          // Convert even if the extractor dropped options (safe for NEET).
-          correctAnswers = rawAnswers.map((a: string) => {
-            const upper = a.toUpperCase().trim();
-            return NUM_TO_LETTER[upper] ?? upper;
-          });
-        } else if (hasRealOptions) {
-          // JEE (Main/Adv/Main+Adv) MCQ with real options: convert 1-4 to A-D.
-          correctAnswers = rawAnswers.map((a: string) => {
-            const upper = a.toUpperCase().trim();
-            return NUM_TO_LETTER[upper] ?? upper;
-          });
-        } else {
-          // JEE with NO options extracted: could be numerical (answer "4" is
-          // the value, not option D). Keep raw and let review catch it.
-          correctAnswers = rawAnswers;
-        }
+        // The queued upload reads a paper's own key with these same rules, so
+        // they live in one place — a paper is keyed identically whichever door
+        // it came through.
+        const correctAnswers = convertAnswers(rawAnswers, type, finalOptions?.length ?? 0, examCode);
 
         // Use the solution from the answer-key PDF if available; otherwise keep
         // the LLM-extracted explanation. The answer-key PDF's solution is

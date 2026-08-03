@@ -277,13 +277,33 @@ def normalize_type(raw: str, options: list, question_text: str = "") -> str:
 
 
 def apply_answer_key(questions: list, key: dict, report: dict):
-    """Fill correct_answer / numerical_answer and cross-correct types."""
-    filled = type_fixes = mismatches = 0
+    """Fill correct_answer / numerical_answer / explanation and cross-correct types.
+
+    Accepts both key shapes. parse_pdf_answer_key.py returns
+    {"answers": {...}, "solutions": {...}}; older files were a flat
+    {qnum: answer} map. This indexed the outer dict directly, so a current
+    parser file matched nothing at all -- every lookup found the literal keys
+    "answers" and "solutions" instead of question numbers, and the whole key
+    was silently discarded.
+    """
+    answers = key.get("answers") if isinstance(key.get("answers"), dict) else key
+    solutions = key.get("solutions") if isinstance(key.get("solutions"), dict) else {}
+
+    filled = type_fixes = mismatches = solutions_filled = 0
     for q in questions:
         qnum = str(q.get("question_number"))
-        if qnum not in key:
+
+        # The paper's own worked solution, where it prints one. Kept separate
+        # from the answer branch below: a paper can carry solutions for
+        # questions whose answers were already read off the question page.
+        solution = solutions.get(qnum)
+        if isinstance(solution, str) and solution.strip() and not str(q.get("explanation") or "").strip():
+            q["explanation"] = solution.strip()
+            solutions_filled += 1
+
+        if qnum not in answers:
             continue
-        ans = key[qnum]
+        ans = answers[qnum]
         if isinstance(ans, str):
             ans = [ans]
         ans = [str(a).strip() for a in ans if str(a).strip()]
@@ -323,8 +343,10 @@ def apply_answer_key(questions: list, key: dict, report: dict):
                 type_fixes += 1
 
     report["answer_key"] = {"filled": filled, "type_fixes": type_fixes,
-                            "conflicts": mismatches}
-    print(f"  Answer key: filled {filled}, type fixes {type_fixes}, conflicts {mismatches}")
+                            "conflicts": mismatches,
+                            "solutions_filled": solutions_filled}
+    print(f"  Answer key: filled {filled}, solutions {solutions_filled}, "
+          f"type fixes {type_fixes}, conflicts {mismatches}")
 
 
 def detect_paper_kind(questions: list):

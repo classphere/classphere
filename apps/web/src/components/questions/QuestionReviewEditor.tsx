@@ -137,6 +137,11 @@ export function QuestionReviewEditor({
   const set = (patch: Partial<Question>) => setDraft((d) => ({ ...d, ...patch }));
 
   // ── Option helpers ──────────────────────────────────────────────────────────
+  // A numerical question has no options — the student types a value. Every type
+  // used to be treated as a choice question here, so an integer question showed
+  // an empty option list and invited the reviewer to add options it should
+  // never have.
+  const isNumeric = ["integer", "numerical"].includes(draft.question_type ?? "");
   const isSingle = !["mcq_multi", "msq"].includes(draft.question_type ?? "");
 
   const toggleAnswer = (id: string) => {
@@ -306,6 +311,18 @@ export function QuestionReviewEditor({
                 />
               </div>
             </div>
+            {isNumeric ? (
+              <div>
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
+                  Answer — a typed value, no options
+                </p>
+                <p className="rounded-[12px] border border-green-500/40 bg-green-500/5 p-3 font-mono text-[14px] text-t-primary">
+                  {(draft.correct_answer ?? []).join(", ") || (
+                    <span className="font-sans text-t-secondary">No answer recorded</span>
+                  )}
+                </p>
+              </div>
+            ) : (
             <div>
               <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
                 Options {isSingle ? "— select one correct" : "— select all correct"}
@@ -343,6 +360,7 @@ export function QuestionReviewEditor({
                 })}
               </div>
             </div>
+            )}
             {draft.explanation?.trim() && (
               <div className="rounded-[12px] border border-s-stroke2 bg-b-surface2/40 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Explanation</p>
@@ -363,7 +381,37 @@ export function QuestionReviewEditor({
               placeholder="Type question text…"
             />
 
-            {/* Options */}
+            {/* A numerical question is answered by typing a value, so it gets a
+                field for that value rather than a list of options to choose
+                between. Kept as a plain text input: an answer can be negative,
+                a decimal, or written to a fixed number of places, and a number
+                input would quietly reformat it. */}
+            {isNumeric ? (
+              <div>
+                <label className="mb-2 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                  Correct answer — a typed value
+                </label>
+                <input
+                  type="text"
+                  inputMode="decimal"
+                  disabled={!canEdit}
+                  value={(draft.correct_answer ?? []).join(", ")}
+                  onChange={(e) =>
+                    set({
+                      correct_answer: e.target.value
+                        .split(",")
+                        .map((v) => v.trim())
+                        .filter(Boolean),
+                    })
+                  }
+                  placeholder="e.g. 42, -3.5 or 0.25"
+                  className="h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 font-mono text-[14px] text-t-primary outline-none focus:border-primary-01 disabled:opacity-60"
+                />
+                <p className="mt-1.5 text-[11px] text-t-secondary">
+                  Separate with commas only if the paper accepts more than one value.
+                </p>
+              </div>
+            ) : (
             <div>
               <div className="mb-2 flex items-center justify-between">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
@@ -441,6 +489,7 @@ export function QuestionReviewEditor({
                 })}
               </div>
             </div>
+            )}
 
             <TiptapMathField
               label="Explanation"

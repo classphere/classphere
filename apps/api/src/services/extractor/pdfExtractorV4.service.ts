@@ -4,6 +4,7 @@ import * as path from "path";
 import { extractPDF } from "./pdfExtractor.service";
 import type { ExtractionResult, ExtractionOptions } from "./pdfExtractor.service";
 import { enrichQuestionContentV4 } from "../../lib/question-content";
+import { applyAnswerKey, parseAnswerKeyFromPdf, shouldParseAnswerKey } from "./answer-key.service";
 
 export interface DocumentProfile {
   profile_version: number;
@@ -157,5 +158,20 @@ export async function extractPDFV4(
 
   const effectivePages = pagesRange || questionPageRange(profile);
   const result = await extractPDF(pdfPath, effectivePages, options);
+
+  // A paper that carries its own answer key after the questions needs no
+  // separate key file. The question pages were excluded from those back pages
+  // above, so the key is still there to read.
+  if (result.success && Array.isArray(result.questions) && shouldParseAnswerKey(result.questions, profile)) {
+    const key = await parseAnswerKeyFromPdf(pdfPath, result.questions.length);
+    const applied = applyAnswerKey(result.questions, key, String(options.examCategory ?? ""));
+    if (applied.answersFilled || applied.solutionsFilled) {
+      console.log(
+        `[pdfExtractorV4] Read from the paper's own key: ${applied.answersFilled} answers, ` +
+        `${applied.solutionsFilled} solutions.`,
+      );
+    }
+  }
+
   return { ...enrichResult(result, profile), profile, effectivePages };
 }
