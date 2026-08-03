@@ -1,4 +1,5 @@
 import { randomUUID } from "crypto";
+import { uploadDataUrlList } from "../../lib/question-figures";
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
@@ -224,6 +225,11 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     // Never leave an extracted block projection stale after a legacy-only edit.
     if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
       updates.content_blocks = null;
+    }
+    // A replaced figure arrives as a data URL from the reviewer's browser and
+    // belongs in object storage, not inside the row.
+    for (const field of ["question_images", "explanation_images"] as const) {
+      if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
     }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
     // No per-save content validation — "Validate paper" button handles structural checks.

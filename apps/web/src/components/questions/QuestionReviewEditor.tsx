@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { QuestionBody } from "@/components/QuestionBody";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine, RiImageAddLine,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -164,6 +164,37 @@ export function QuestionReviewEditor({
     set({ options: opts });
   };
 
+  // ── Figure helpers ──────────────────────────────────────────────────────────
+  // A chosen file is held as a data URL until save, which is what the browser
+  // gives us and what the API converts to storage. Nothing uploads on pick, so
+  // abandoning an edit leaves no orphaned image behind.
+  const figures: string[] = draft.question_images ?? [];
+
+  const readAsDataUrl = (file: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+
+  const setFigures = (next: string[]) => set({ question_images: next, content_blocks: null });
+
+  const addFigure = async (file: File) => {
+    try { setFigures([...figures, await readAsDataUrl(file)]); }
+    catch { setError("Could not read that image file."); }
+  };
+
+  const replaceFigure = async (index: number, file: File) => {
+    try {
+      const next = [...figures];
+      next[index] = await readAsDataUrl(file);
+      setFigures(next);
+    } catch { setError("Could not read that image file."); }
+  };
+
+  const removeFigure = (index: number) => setFigures(figures.filter((_, i) => i !== index));
+
   const removeOption = (index: number) => {
     const opts = [...(draft.options ?? [])].filter((_, i) => i !== index);
     const removed = draft.options?.[index]?.id;
@@ -184,6 +215,7 @@ export function QuestionReviewEditor({
         topic: draft.topic,
         difficulty: draft.difficulty,
         question_text: draft.question_text,
+        question_images: draft.question_images,
         options: draft.options,
         correct_answer: draft.correct_answer,
         explanation: draft.explanation,
@@ -384,28 +416,59 @@ export function QuestionReviewEditor({
             />
 
             {/* The question's figures, beside the text that refers to them.
-                They used to be inline markdown inside question_text, so this
-                field displayed them; once they moved to question_images the
-                text was stripped and the editor showed a question about a
-                diagram with no diagram. Read-only here — a figure is not text,
-                and nothing in this editor edits one. */}
-            {(draft.question_images?.length ?? 0) > 0 && (
-              <div>
-                <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-secondary">
-                  Figures — {draft.question_images!.length} extracted from the paper
+                They were inline markdown inside question_text once, so this
+                field drew them; when they moved to question_images the text was
+                stripped and the editor began showing a question about a diagram
+                with no diagram.
+
+                Editable, because the reviewer is the person who can see that a
+                figure is the wrong one or missing — that is most of what
+                reviewing an extracted paper is. A replacement is read as a data
+                URL here and uploaded to storage on save. */}
+            <div>
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                  Figures{figures.length > 0 ? ` — ${figures.length}` : ""}
                 </p>
+                {canEdit && (
+                  <label className="flex h-6 cursor-pointer items-center gap-1 rounded-full border border-s-stroke2 px-2 text-[11px] text-t-secondary hover:text-primary-01">
+                    <RiAddLine size={11} />
+                    Add figure
+                    <input type="file" accept="image/*" className="hidden"
+                      onChange={(e) => { const f = e.target.files?.[0]; if (f) addFigure(f); e.target.value = ""; }} />
+                  </label>
+                )}
+              </div>
+
+              {figures.length === 0 ? (
+                <p className="rounded-[10px] border border-dashed border-s-stroke2 px-3 py-4 text-center text-[12px] text-t-secondary">
+                  No figures on this question. Add one if the paper shows a diagram here.
+                </p>
+              ) : (
                 <div className="flex flex-wrap gap-2">
-                  {draft.question_images!.map((src) => (
-                    <img
-                      key={src}
-                      src={src}
-                      alt="Question figure"
-                      className="max-h-44 max-w-full rounded-[10px] border border-s-stroke2 bg-white object-contain p-1"
-                    />
+                  {figures.map((src, i) => (
+                    <div key={`${src.slice(0, 40)}-${i}`} className="group relative">
+                      <img src={src} alt={`Figure ${i + 1}`}
+                        className="max-h-44 max-w-full rounded-[10px] border border-s-stroke2 bg-white object-contain p-1" />
+                      {canEdit && (
+                        <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
+                          <label title="Replace this figure"
+                            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
+                            <RiImageAddLine size={12} />
+                            <input type="file" accept="image/*" className="hidden"
+                              onChange={(e) => { const f = e.target.files?.[0]; if (f) replaceFigure(i, f); e.target.value = ""; }} />
+                          </label>
+                          <button type="button" title="Remove this figure" onClick={() => removeFigure(i)}
+                            className="flex h-6 w-6 items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-red-500">
+                            <RiDeleteBin7Line size={12} />
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
-              </div>
-            )}
+              )}
+            </div>
 
             {/* A numerical question is answered by typing a value, so it gets a
                 field for that value rather than a list of options to choose

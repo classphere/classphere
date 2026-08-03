@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { uploadDataUrlList } from "../../lib/question-figures";
 import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 
@@ -330,6 +331,13 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
     const updates: Record<string, any> = {};
     for (const key of allowed) {
       if (req.body[key] !== undefined) updates[key] = req.body[key];
+    }
+
+    // A reviewer replacing a figure sends it as a data URL, because that is
+    // what the browser produces from a chosen file. Storing that verbatim would
+    // put a whole image inside the row, so it goes to object storage first.
+    for (const field of ["question_images", "explanation_images"] as const) {
+      if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
     }
     // Never leave an extracted block projection stale after a legacy-only edit.
     if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
