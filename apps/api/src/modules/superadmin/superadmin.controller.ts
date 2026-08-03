@@ -12,6 +12,7 @@ import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 import { deriveDurationMin } from "../../lib/exam-profile";
+import { questionShapeDefects } from "../../lib/question-shape";
 import { defaultMarkingScheme, normaliseMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
 
 // Supabase credentials are read from the validated env via the supabaseDB
@@ -46,6 +47,17 @@ function validateQuestion(q: any, index: number): string | null {
   if (!isGap && !q.question_text) return `Question #${index + 1}: missing 'question_text'`;
   const markErrors = validateQuestionMarks(q.marks);
   if (markErrors.length > 0) return `Question #${index + 1}: ${markErrors.join("; ")}`;
+
+  // options and correct_answer are JSONB, which accepts any JSON at all, so a
+  // question keyed to an option it does not have reaches the database without
+  // complaint and is then unanswerable by every student. Recorded rather than
+  // rejected: an upload is a draft, and the review screen is where a person
+  // fixes it. Publication refuses the same defects.
+  const shapeDefects = questionShapeDefects(q);
+  if (shapeDefects.length > 0) {
+    q._defects = [...(Array.isArray(q._defects) ? q._defects : []), ...shapeDefects.map((d) => d.message)];
+    q._needs_review = true;
+  }
   // Drafts are intentionally allowed to have missing keys or damaged matching
   // options. The review editor surfaces these defects; publication validates
   // them before a learner can access the paper.

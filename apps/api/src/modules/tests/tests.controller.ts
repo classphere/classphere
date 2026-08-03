@@ -11,6 +11,7 @@ import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
+import { blockingShapeDefects } from "../../lib/question-shape";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -401,6 +402,21 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
       .select("questions(question_text, question_type, options, correct_answer)")
       .eq("paper_id", id);
     if (publishRowsError) throw publishRowsError;
+    // A question whose answer names an option it does not have is unanswerable
+    // by everyone who sits the paper, and nothing downstream would ever say so.
+    // JSONB accepts that shape, so publication is where it has to be caught.
+    const shapeBroken = (publishRows ?? [])
+      .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
+      .flatMap((question: any) => blockingShapeDefects(question ?? {}));
+    if (shapeBroken.length > 0) {
+      res.status(400).json({
+        success: false,
+        message: `Cannot publish: ${shapeBroken.length} question(s) are structurally broken. Fix them in review first.`,
+        errors: [...new Set(shapeBroken.map((d) => d.message))].slice(0, 5),
+      });
+      return;
+    }
+
     const invalidQuestion = (publishRows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).find((question: any) => {
       const answers = Array.isArray(question?.correct_answer) ? question.correct_answer : [];
       const options = Array.isArray(question?.options) ? question.options : [];
