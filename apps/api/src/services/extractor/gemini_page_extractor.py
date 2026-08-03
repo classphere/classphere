@@ -144,8 +144,15 @@ def context_tail(page: dict[str, Any]) -> str:
 
 def page_prompt(page_number: int, page_html: str, images: dict[str, Any],
                 previous_tail: str, next_head: str,
-                focus_numbers: list[int] | None = None) -> str:
+                focus_numbers: list[int] | None = None,
+                next_images: dict[str, Any] | None = None) -> str:
     manifest = json.dumps(images, ensure_ascii=False, separators=(",", ":"))
+    # A question that begins on this page can carry an option whose figure sits
+    # past the break. The page's own manifest cannot name that file, so the
+    # option arrives with its text and no figure. Every page writes into one
+    # image directory, so a filename from the next page resolves downstream
+    # exactly like one from this page.
+    next_manifest = json.dumps(next_images or {}, ensure_ascii=False, separators=(",", ":"))
     focus_block = ""
     if focus_numbers:
         wanted = ", ".join(str(number) for number in focus_numbers)
@@ -180,6 +187,12 @@ PREVIOUS-PAGE TAIL (context only; do not extract questions starting there):
 
 NEXT-PAGE HEAD (use only to complete a question that starts on this page):
 {next_head or '(none)'}
+
+NEXT-PAGE IMAGE MANIFEST (filename -> PDF geometry):
+{next_manifest}
+Use a filename from this manifest only when a question that BEGINS on this page
+has an option or figure that continues onto the next page. Do not extract the
+next page's own questions.
 """
 
 
@@ -360,8 +373,9 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
     page_html = str(page.get("html") or "")
     previous_tail = context_tail(pages[index - 1]) if index > 0 else ""
     next_head = context_head(pages[index + 1]) if index + 1 < len(pages) else ""
+    next_images = pages[index + 1].get("images") or {} if index + 1 < len(pages) else {}
     prompt = page_prompt(page_number, page_html, page.get("images") or {},
-                         previous_tail, next_head, focus_numbers)
+                         previous_tail, next_head, focus_numbers, next_images)
     label = f"page {page_number}/{len(pages)}" + (f" [recovery of {focus_numbers}]" if focus_numbers else "")
 
     client = openrouter_client()
