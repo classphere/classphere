@@ -21,6 +21,8 @@ type Option = {
 type Question = Record<string, any> & {
   options?: Option[];
   correct_answer?: string[];
+  /** Figures belonging to the stem, in reading order. */
+  question_images?: string[];
   content_version?: number;
 };
 
@@ -380,6 +382,30 @@ export function QuestionReviewEditor({
               onChange={(v: string) => set({ question_text: v, content_blocks: null })}
               placeholder="Type question text…"
             />
+
+            {/* The question's figures, beside the text that refers to them.
+                They used to be inline markdown inside question_text, so this
+                field displayed them; once they moved to question_images the
+                text was stripped and the editor showed a question about a
+                diagram with no diagram. Read-only here — a figure is not text,
+                and nothing in this editor edits one. */}
+            {(draft.question_images?.length ?? 0) > 0 && (
+              <div>
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                  Figures — {draft.question_images!.length} extracted from the paper
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {draft.question_images!.map((src) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt="Question figure"
+                      className="max-h-44 max-w-full rounded-[10px] border border-s-stroke2 bg-white object-contain p-1"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* A numerical question is answered by typing a value, so it gets a
                 field for that value rather than a list of options to choose
