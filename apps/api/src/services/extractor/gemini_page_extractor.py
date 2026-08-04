@@ -92,7 +92,10 @@ For each question return:
   IMAGE RULES
 ════════════════════════════════════════════
 • If a diagram belongs to the stem, place ![image](filename) in question_text.
-  If it belongs to an option, place it in that option text or image_url.
+• If a diagram belongs to an option, put the filename in that option's
+  image_url and NOT in its text. Never put the same figure in both — an option
+  carries its figure in image_url, and its text carries only the words printed
+  beside that figure, or "" when there are none.
 • An option you can see in either image must never be returned with empty text
   and no image_url. A choice question must come back with every option it has —
   if the stem shows four and you can read only two, extract all four from the
