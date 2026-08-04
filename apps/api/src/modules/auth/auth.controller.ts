@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { randomUUID } from "crypto";
 import { createRequestAuthClient, supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { invalidateAuthContext, expectedBoundSessionToken } from "../../middleware/auth.middleware";
+import { isMaintenanceMode, MAINTENANCE_RESPONSE } from "../../lib/maintenance";
 
 // Helper: resolve a custom domain or subdomain to its canonical institute subdomain_slug
 async function resolveCanonicalInstituteSlug(input: string): Promise<string> {
@@ -186,6 +187,17 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    // ── Maintenance drain ──────────────────────────────────────────────────────
+    // Checked here rather than at the top of the handler because the decision
+    // depends on the role, and the role is only known once the credentials have
+    // resolved to a profile. Nothing has been granted at this point — no session
+    // token is issued and active_session_token is untouched — so a refused login
+    // leaves the account exactly as it was.
+    if (userRecord.role !== "super_admin" && await isMaintenanceMode()) {
+      res.status(503).json(MAINTENANCE_RESPONSE);
+      return;
+    }
+
     // ── Tenant isolation check ─────────────────────────────────────────────────
     // If user belongs to an institute, require institute_slug (except for super_admin)
     if (userRecord.institute_id && userRecord.role !== "super_admin" && !institute_slug) {
@@ -314,6 +326,13 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
 
     if (authError || !user) {
       res.status(401).json({ success: false, message: "Invalid or expired token." });
+      return;
+    }
+
+    // Self-signup creates an account, which is exactly the new work maintenance
+    // is meant to stop. No role exists to exempt here — a signup is a student.
+    if (await isMaintenanceMode()) {
+      res.status(503).json(MAINTENANCE_RESPONSE);
       return;
     }
 

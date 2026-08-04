@@ -7,6 +7,7 @@ import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
+import { invalidateMaintenanceCache } from "../../lib/maintenance";
 import * as fs from "fs";
 import * as path from "path";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
@@ -715,42 +716,46 @@ export const updatePlatformConfig = async (req: Request, res: Response): Promise
       return;
     }
 
-    res.status(409).json({
-      success: false,
-      message: "Runtime configuration controls are not enabled. No settings were changed.",
-    });
-    return;
-
-    const allowedKeys = new Set([
-      "maintenance_mode",
-      "deterministic_engine",
-      "custom_domains_enabled",
-      "forum_moderation_enabled",
-      "max_concurrent_users",
-      "omr_ingestion_rate",
-      "max_bulk_upload_size",
-      "session_timeout",
-    ]);
+    // Maintenance mode is the only platform-wide setting this endpoint accepts.
+    // The other seven keys were removed: three named features that were never
+    // built (OMR ingestion rate, bulk upload caps, session timeout), a forum
+    // that does not exist, a concurrent-user cap we do not want to impose,
+    // custom domains which are provisioned by hand, and a switch over the
+    // analysis engine, which is core behaviour and not runtime-configurable.
+    const allowedKeys = new Set(["maintenance_mode"]);
     const entries = Object.entries(settings).filter(([key]) => allowedKeys.has(key));
     if (entries.length === 0) {
       res.status(400).json({ success: false, message: "No supported settings supplied" });
       return;
     }
 
+    // Stored as a real JSON boolean. The column is JSONB and would accept the
+    // string "false", which is truthy — the switch would then read as ON while
+    // displaying OFF, and lock the platform nobody meant to lock.
+    if (entries.some(([, value]) => typeof value !== "boolean")) {
+      res.status(400).json({ success: false, message: "maintenance_mode must be true or false" });
+      return;
+    }
+
     for (const [key, val] of entries) {
       const { error } = await supabaseDB
         .from("system_settings")
-        .upsert({ key, value: val, updated_at: new Date().toISOString() });
+        .upsert({ key, value: val, updated_at: new Date().toISOString() }, { onConflict: "key" });
       if (error) throw error;
 
       await logAdminAction(
         req.user?.id,
         "Configuration Update",
-        `Updated configuration setting '${key}' to '${val}'`,
+        `Set ${key} to ${val}.`,
         "system",
         "success"
       );
     }
+
+    // Take effect on the next request rather than after the cache TTL. Turning
+    // maintenance off is the urgent direction — nobody wants to wait out a
+    // timer while the platform is refusing users.
+    await invalidateMaintenanceCache();
 
     res.status(200).json({ success: true, message: "Configuration saved successfully" });
   } catch (err: any) {

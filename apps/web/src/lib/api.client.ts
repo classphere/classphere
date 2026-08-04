@@ -65,6 +65,27 @@ async function request<T = any>(
     throw new Error(`API 401: ${text}`);
   }
 
+  // Platform maintenance. Sent to the maintenance screen rather than left to
+  // render as a generic error on whatever page they happened to be on — a
+  // signed-in user would otherwise see every widget fail one by one with no
+  // explanation.
+  //
+  // In-flight test calls are exempt server-side, so a student mid-paper never
+  // reaches this branch and is never pulled out of their paper. The maintenance
+  // page itself makes no API calls, so there is nothing here to loop on, and
+  // the path guard covers a stray call from a component still mounted during
+  // the navigation.
+  if (res.status === 503) {
+    const body = await res.json().catch(() => ({} as any));
+    if (body?.code === "MAINTENANCE_MODE") {
+      if (typeof window !== "undefined" && !window.location.pathname.endsWith("/maintenance")) {
+        window.location.href = "/maintenance";
+      }
+      throw new Error(body.message ?? "Classphere is under maintenance. Please try again shortly.");
+    }
+    throw new Error(`API 503: ${JSON.stringify(body)}`);
+  }
+
   if (!res.ok) {
     const text = await res.text().catch(() => res.statusText);
     throw new Error(`API ${res.status}: ${text}`);

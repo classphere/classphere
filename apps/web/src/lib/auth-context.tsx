@@ -42,7 +42,12 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 // Routes that never require auth
 // Note: on the admin subdomain, /login is rewritten to /superadmin/login by middleware,
 // so both forms must be public.
-const PUBLIC_ROUTES = ["/login", "/signup", "/superadmin/login"];
+//
+// /maintenance is public because during maintenance the profile fetch itself
+// returns 503, so `user` resolves to null — without this the guard below would
+// read that as "signed out" and bounce the visitor to /login, straight back off
+// the page explaining why nothing works.
+const PUBLIC_ROUTES = ["/login", "/signup", "/superadmin/login", "/maintenance"];
 
 const SESSION_TOKEN_KEY = "classphere_session_token";
 
@@ -160,6 +165,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       : path;
 
     const isPublicPath = PUBLIC_ROUTES.some((r) => cleanPath.startsWith(r)) || cleanPath === "/";
+
+    // The maintenance screen routes nowhere, in either direction. Sending a
+    // signed-out visitor to /login would hide the explanation, and sending a
+    // signed-in one "home" would land them on a page whose every call 503s and
+    // redirects straight back here.
+    if (cleanPath.startsWith("/maintenance")) return;
 
     if (!appUser) {
       if (!isPublicPath) {
