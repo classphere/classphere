@@ -13,7 +13,7 @@ import {
  * Authenticated (student) — Aggregate stats for the student dashboard.
  *
  * Returns:
- *   - metric cards: total tests, accuracy, avg score, streak
+ *   - metric cards: total tests, accuracy, avg score
  *   - performance chart: subject scores per attempt (last 10)
  *   - pending DPPs count
  */
@@ -32,21 +32,6 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
         return count ?? 0;
       } catch {
         // student_dpps may not exist yet
-        return 0;
-      }
-    };
-
-    // ── Fetch streak from student_stats (independent of attempts) ─────────────
-    const fetchStreak = async (): Promise<number> => {
-      try {
-        const { data: stats } = await supabaseDB
-          .from("student_stats")
-          .select("streak_days")
-          .eq("student_id", studentId)
-          .maybeSingle();
-        return stats?.streak_days ?? 0;
-      } catch {
-        // student_stats may not exist yet
         return 0;
       }
     };
@@ -80,7 +65,7 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
     };
 
     // ── Fire independent queries concurrently instead of one-by-one ───────────
-    const [{ data: userData }, { data: attempts }, pendingDPPs, streakDays, batch] = await Promise.all([
+    const [{ data: userData }, { data: attempts }, pendingDPPs, batch] = await Promise.all([
       supabaseDB.from("users").select("exam_target").eq("id", studentId).single(),
       supabaseDB
         .from("attempts")
@@ -89,7 +74,6 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
         .eq("status", "submitted")
         .order("submitted_at", { ascending: true }),
       fetchPendingDPPs(),
-      fetchStreak(),
       fetchBatch(),
     ]);
 
@@ -161,7 +145,6 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
           totalTests,
           accuracyPct,
           avgScore,
-          streakDays,
           pendingDPPs,
         },
         chartData,
