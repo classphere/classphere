@@ -622,18 +622,38 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
 
         for opt in q.get("options", []) or []:
             text = clean_dead_images(opt.get("text", "") or "", available)
-            imgs = [f for f in MD_IMG_RE.findall(text) if resolvable(f)]
+            inline = [f for f in MD_IMG_RE.findall(text) if resolvable(f)]
             existing = opt.get("image_url")
             if existing and not resolvable(existing):
                 existing = None
-            opt["image_url"] = imgs[0] if imgs else (existing or None)
-            # Once the figure is held in image_url it must come out of the text,
-            # exactly as it does for the question stem above. Leaving it in
-            # stored the same picture twice, and because each copy was uploaded
-            # separately the two ended up under different URLs -- so the
-            # renderer, which skips a figure whose URL already appears in the
-            # text, could not tell they were the same picture and drew both.
-            opt["text"] = strip_inline_images(text) if imgs else text
+
+            # Every figure this option carries, in reading order, counted once.
+            figures = list(inline)
+            if existing and existing not in figures:
+                figures.append(existing)
+
+            if len(figures) == 1:
+                # The ordinary case: one picture, and text that is either a
+                # caption or nothing. It belongs in image_url, and must come out
+                # of the text — left in both, it was stored twice, uploaded
+                # twice, and became two different URLs for one picture, which
+                # the renderer could not recognise as duplicates.
+                opt["image_url"] = figures[0]
+                opt["text"] = strip_inline_images(text)
+            elif len(figures) > 1:
+                # An option can be several figures with labels between them —
+                # "X: <structure> Y: <structure> Z: <structure>" is one option of
+                # one question, not three. image_url holds a single url and
+                # cannot express that, so the figures stay inline in the text
+                # where their order and their labels survive. Moving one out
+                # here would silently drop the rest.
+                if existing and existing not in inline:
+                    text = f"{text}\n\n![image]({existing})"
+                opt["text"] = text
+                opt["image_url"] = None
+            else:
+                opt["text"] = text
+                opt["image_url"] = None
 
         if not legacy_types:
             q["question_type"] = PLATFORM_TYPE.get(q.get("question_type", "MCQ"),
