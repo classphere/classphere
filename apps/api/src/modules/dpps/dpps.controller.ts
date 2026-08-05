@@ -560,49 +560,51 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
     const pct = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
     const correctCount = answerRecords.filter((a) => a.is_correct).length;
 
-    let xpGained = correctCount * 4; // 4 XP per correct answer
-    // Gamification: Update student_stats and leaderboards
+    // Roll this submission into the student's totals, which the institute
+    // reports read.
+    //
+    // An XP counter and a `leaderboards` row were maintained here as well. Both
+    // were write-only: no screen has ever shown a student their XP, and nothing
+    // read that table at all. They existed to feed a platform-wide merit list
+    // that was retired, so they are gone — along with the compare-and-swap retry
+    // loop, which could spin five times with backoff on every DPP submission to
+    // protect a number nobody saw. The guard below moves to total_tests, which
+    // is the value actually being incremented.
     try {
       let statsUpdated = false;
-      let newXp = xpGained;
-      let currentXp = 0;
-      const MAX_XP_RETRIES = 5; // Prevent infinite spin under high concurrency (DATA-3)
-      let xpRetries = 0;
-      
-      while (!statsUpdated && xpRetries < MAX_XP_RETRIES) {
-        xpRetries++;
+      const MAX_RETRIES = 5;
+      let retries = 0;
+
+      while (!statsUpdated && retries < MAX_RETRIES) {
+        retries++;
         const { data: stats } = await supabaseDB
           .from("student_stats")
-          .select("xp, total_score, total_tests")
+          .select("total_score, total_tests")
           .eq("student_id", studentId)
           .maybeSingle();
 
         if (stats) {
-          newXp = (stats.xp ?? 0) + xpGained;
-          currentXp = stats.xp ?? 0;
           const { data: updatedRows } = await supabaseDB
             .from("student_stats")
             .update({
-              xp: newXp,
               total_score: (stats.total_score ?? 0) + totalScore,
               total_tests: (stats.total_tests ?? 0) + 1,
             })
             .eq("student_id", studentId)
-            .eq("xp", currentXp) // CAS guard: only update if xp hasn't changed
+            .eq("total_tests", stats.total_tests ?? 0) // CAS guard
             .select();
 
           if (updatedRows && updatedRows.length > 0) {
             statsUpdated = true;
           } else {
             // Another concurrent update beat us — backoff and retry
-            await new Promise(r => setTimeout(r, 50 * xpRetries));
+            await new Promise(r => setTimeout(r, 50 * retries));
           }
         } else {
           const { error: insertErr } = await supabaseDB
             .from("student_stats")
             .insert({
               student_id: studentId,
-              xp: xpGained,
               total_score: totalScore,
               total_tests: 1,
             });
@@ -610,28 +612,17 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
           if (!insertErr) {
             statsUpdated = true;
           } else {
-            await new Promise(r => setTimeout(r, 50 * xpRetries));
+            await new Promise(r => setTimeout(r, 50 * retries));
           }
         }
       }
 
       if (!statsUpdated) {
-        console.warn(`[submitDPP] XP update failed after ${MAX_XP_RETRIES} retries for student ${studentId}. Skipping gamification.`);
+        console.warn(`[submitDPP] student_stats update failed after ${MAX_RETRIES} retries for student ${studentId}.`);
       }
-      
-      // Update leaderboard
-      const { data: dppBatch } = await supabaseDB.from("dpps").select("batch_id").eq("id", dppId).maybeSingle();
-      if (dppBatch?.batch_id) {
-        await supabaseDB.from("leaderboards").upsert({
-          batch_id: dppBatch.batch_id,
-          student_id: studentId,
-          xp: newXp,
-          updated_at: new Date().toISOString(),
-        }, { onConflict: "batch_id,student_id" });
-      }
-    } catch (gamificationErr) {
-      console.error("[submitDPP gamification error]", gamificationErr);
-      // Don't fail the request if gamification fails
+    } catch (statsErr) {
+      console.error("[submitDPP stats error]", statsErr);
+      // Never fail the request over this — the DPP is already graded and saved.
     }
 
     res.status(200).json({
@@ -641,7 +632,6 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
         maxScore,
         percentage: pct,
         correct: correctCount,
-        xpGained,
         total: questions?.length ?? 0,
       },
     });

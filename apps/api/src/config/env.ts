@@ -38,9 +38,6 @@ const envSchema = z.object({
   APP_BASE_DOMAIN: z.string().default("classphere.com"),
   ALLOWED_WEB_ORIGINS: z.string().default(""),
 
-  // Internal cron auth
-  INTERNAL_API_KEY: z.string().min(1).optional(),
-
   // HMAC key used to bind the one-device session token to the Supabase JWT.
   // Optional but strongly recommended; when absent, session binding is skipped
   // (legacy behavior) with a startup warning in production.
@@ -77,7 +74,6 @@ function parseEnv() {
     if (!e.REDIS_URL) console.warn("[config] REDIS_URL missing in production — rate limiting & queues will not work.");
     if (!e.SUPABASE_JWT_SECRET) console.warn("[config] SUPABASE_JWT_SECRET missing — auth will make a network round-trip per request.");
     if (!e.SESSION_BINDING_SECRET) console.warn("[config] SESSION_BINDING_SECRET missing — session token is not cryptographically bound to the JWT.");
-    if (!e.INTERNAL_API_KEY) console.warn("[config] INTERNAL_API_KEY missing — internal cron routes will reject all calls.");
     if (!e.OPENROUTER_API_KEY) console.warn("[config] OPENROUTER_API_KEY missing — PDF extraction will fail.");
   }
 
