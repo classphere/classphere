@@ -3,6 +3,7 @@ import { annualValuePaise, getStudentCountsByInstitute, provisionInstitute } fro
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { logAdminAction } from "../../lib/admin-audit";
 import { getOrSetCache } from "../../lib/cache";
+import { rankLifetimePerformance } from "../rankings/lifetime-ranking.service";
 
 /** Lifecycle values institute_subscriptions.status accepts (see migration 10). */
 const SUBSCRIPTION_STATUSES = ["trialing", "active", "past_due", "cancelled"];
@@ -144,67 +145,40 @@ export const getMyInstitute = async (req: Request, res: Response): Promise<void>
         .not("max_score", "is", null)
       : { data: [] };
 
-    const attemptsByPaper = new Map<string, number[]>();
-    const attemptsByStudent = new Map<string, Array<{ paper_id: string; percentage: number; submitted_at: string | null }>>();
-    for (const attempt of submittedAttempts ?? []) {
-      const maxScore = Number((attempt as any).max_score);
-      if (!Number.isFinite(maxScore) || maxScore <= 0) continue;
-      const percentage = Math.max(0, Math.min(100, (Number((attempt as any).score ?? 0) / maxScore) * 100));
-      const paperId = String((attempt as any).paper_id ?? "");
-      if (!paperId) continue;
-      attemptsByPaper.set(paperId, [...(attemptsByPaper.get(paperId) ?? []), percentage]);
-      const studentId = String((attempt as any).student_id);
-      attemptsByStudent.set(studentId, [...(attemptsByStudent.get(studentId) ?? []), {
-        paper_id: paperId,
-        percentage,
-        submitted_at: (attempt as any).submitted_at ?? null,
-      }]);
-    }
+    // Same weighting as the batch lifetime leaderboard, from the same function.
+    // This algorithm used to live inline here, which meant an institute admin's
+    // "top performers" and a student's own leaderboard position could have been
+    // computed two different ways and disagreed about who was doing well.
+    //
+    // Peers are institute-wide here rather than per batch, because that is the
+    // population this dashboard compares: the whole institute's students.
+    const rankedPerformers = rankLifetimePerformance(
+      (submittedAttempts ?? []).flatMap((attempt: any) => {
+        const maxScore = Number(attempt.max_score);
+        const paperId = String(attempt.paper_id ?? "");
+        if (!Number.isFinite(maxScore) || maxScore <= 0 || !paperId) return [];
+        return [{
+          studentId: String(attempt.student_id),
+          paperId,
+          percentage: (Number(attempt.score ?? 0) / maxScore) * 100,
+          submittedAt: attempt.submitted_at ?? null,
+        }];
+      }),
+    );
 
-    const topPerformers = [...attemptsByStudent.entries()]
-      .filter(([, attempts]) => attempts.length >= 3)
-      .map(([studentId, attempts]) => {
-        const ordered = [...attempts].sort((a, b) =>
-          new Date(b.submitted_at ?? 0).getTime() - new Date(a.submitted_at ?? 0).getTime()
-        ).slice(0, 8);
-        const weighted = ordered.reduce((sum, attempt, index) => {
-          const weight = 1 + ((ordered.length - index - 1) * 0.12);
-          const peerScores = [...(attemptsByPaper.get(attempt.paper_id) ?? [])].sort((a, b) => b - a);
-          const higherOrEqual = peerScores.filter((score) => score >= attempt.percentage).length;
-          const percentile = peerScores.length > 1
-            ? ((peerScores.length - higherOrEqual) / (peerScores.length - 1)) * 100
-            : attempt.percentage;
-          return {
-            weight: sum.weight + weight,
-            percentage: sum.percentage + (attempt.percentage * weight),
-            percentile: sum.percentile + (percentile * weight),
-          };
-        }, { weight: 0, percentage: 0, percentile: 0 });
-        const averagePercentage = weighted.percentage / weighted.weight;
-        const averagePercentile = weighted.percentile / weighted.weight;
-        const variance = ordered.reduce((sum, attempt) => sum + Math.pow(attempt.percentage - averagePercentage, 2), 0) / ordered.length;
-        const consistency = Math.max(0, Math.min(100, 100 - Math.sqrt(variance) * 2));
-        const recentAverage = ordered.slice(0, Math.min(3, ordered.length)).reduce((sum, attempt) => sum + attempt.percentage, 0) / Math.min(3, ordered.length);
-        const previous = ordered.slice(3);
-        const previousAverage = previous.length
-          ? previous.reduce((sum, attempt) => sum + attempt.percentage, 0) / previous.length
-          : recentAverage;
-        const trend = Math.max(-15, Math.min(15, recentAverage - previousAverage));
-        const performanceScore = (averagePercentile * 0.60) + (averagePercentage * 0.22) + (consistency * 0.12) + ((trend + 15) / 30 * 100 * 0.06);
-        const student = studentById.get(studentId);
-        return {
-          id: studentId,
-          name: student?.name ?? "Student",
-          email: student?.email ?? null,
-          tests_taken: attempts.length,
-          average_percentage: Math.round(averagePercentage),
-          consistency: Math.round(consistency),
-          trend: Math.round(trend),
-          performance_score: Math.round(performanceScore),
-        };
-      })
-      .sort((a, b) => b.performance_score - a.performance_score || b.tests_taken - a.tests_taken)
-      .slice(0, 5);
+    const topPerformers = rankedPerformers.slice(0, 5).map((entry) => {
+      const student = studentById.get(entry.student_id);
+      return {
+        id: entry.student_id,
+        name: student?.name ?? "Student",
+        email: student?.email ?? null,
+        tests_taken: entry.tests_taken,
+        average_percentage: entry.average_percentage,
+        consistency: entry.consistency,
+        trend: entry.trend,
+        performance_score: entry.performance_score,
+      };
+    });
 
     // Map DB schema to UI expectations
     const mappedInstitute = {
