@@ -10,6 +10,7 @@ import { AttemptAnswer } from "../../../../../packages/types/src/analysis.types"
 import { enqueueAnalysis } from "../../lib/queue/analysis.queue";
 import { connection as redis } from "../../lib/queue/redis";
 import { getStudentTestAccess } from "../tests/test-access.service";
+import { isMaintenanceMode, MAINTENANCE_RESPONSE } from "../../lib/maintenance";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -190,6 +191,15 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
         message: "Resuming existing in-progress attempt",
         data: { attempt: existing, resumed: true },
       });
+      return;
+    }
+
+    // Past this point the request is starting a genuinely new attempt, which is
+    // exactly what maintenance is meant to stop. The resume branch above is
+    // deliberately ahead of this check — the middleware lets POST /attempts
+    // through precisely so a student mid-paper can still reload and continue.
+    if (await isMaintenanceMode()) {
+      res.status(503).json(MAINTENANCE_RESPONSE);
       return;
     }
 
@@ -634,8 +644,11 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         const newTotalTests = (currentStats?.total_tests ?? 0) + 1;
         const newTotalScore = (currentStats?.total_score ?? 0) + totalScore;
         const newTotalMax = (currentStats?.total_max_score ?? 0) + maxScore;
+        // accuracy_pct and total_tests are read by the institute reports.
+        // rank_score used to be computed here too — a lifetime "score × accuracy"
+        // figure that ordered a platform-wide merit list. That list is gone, so
+        // the column is no longer written; see rankings.routes.ts.
         const newAccuracy = newTotalMax > 0 ? Math.round((newTotalScore / newTotalMax) * 100) : 0;
-        const newRankScore = Math.round((newTotalScore * newAccuracy) / 100);
 
         if (currentStats) {
           const { data: updatedRows } = await supabaseDB
@@ -645,7 +658,6 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
               total_score: newTotalScore,
               total_max_score: newTotalMax,
               accuracy_pct: newAccuracy,
-              rank_score: newRankScore,
               last_test_date: new Date().toISOString(),
               updated_at: new Date().toISOString()
             })
@@ -668,7 +680,6 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
               total_score: totalScore,
               total_max_score: maxScore,
               accuracy_pct: newAccuracy,
-              rank_score: newRankScore,
               last_test_date: new Date().toISOString(),
               updated_at: new Date().toISOString()
             });

@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { createRequestAuthClient, supabaseDB } from "../lib/supabase";
 import { env } from "../config/env";
 import { connection as redisConnection } from "../lib/queue/redis";
+import { isMaintenanceMode, MAINTENANCE_RESPONSE } from "../lib/maintenance";
 import crypto from "crypto";
 
 // Extend Express Request to carry decoded user info
@@ -142,10 +143,54 @@ function expectedBoundToken(userId: string, sessionToken: string): string {
  *  stores/compares the bound form. */
 export const expectedBoundSessionToken = expectedBoundToken;
 
+// ─── Maintenance drain list ───────────────────────────────────────────────────
+// The calls a student already sitting a paper must still be able to make while
+// the platform is in maintenance. Everything else is refused for non-superadmin.
+//
+// /auth/me is included because the client re-reads its own profile whenever the
+// Supabase session refreshes, and a test running for three hours will refresh at
+// least once.
+//
+// POST /attempts is here despite being the "start a test" call, because the test
+// page issues it on *every* load — that is how it resumes, and the controller
+// returns the existing in-progress attempt rather than a new one. Blocking it
+// would strand a mid-paper student the moment they refreshed or their phone
+// re-woke the tab. It is gated inside startAttempt instead, which can tell a
+// resume from a genuinely new attempt; only the latter is refused.
+//
+// GET /analysis/:id keeps the post-submit redirect from dead-ending: the test
+// page sends the student straight to their result the instant they submit.
+const MAINTENANCE_DRAIN_ALLOWED: Array<{ method: string; pattern: RegExp }> = [
+  { method: "GET", pattern: /^\/auth\/me$/ },
+  { method: "GET", pattern: /^\/tests\/[^/]+$/ },
+  { method: "POST", pattern: /^\/attempts$/ },
+  { method: "GET", pattern: /^\/attempts\/[^/]+$/ },
+  { method: "PATCH", pattern: /^\/attempts\/[^/]+$/ },
+  { method: "POST", pattern: /^\/attempts\/[^/]+\/submit$/ },
+  { method: "GET", pattern: /^\/analysis\/[^/]+$/ },
+];
+
+/**
+ * Match against `req.originalUrl`, not `req.path`.
+ *
+ * Express rewrites `req.url` as a request descends through mounted routers, so
+ * by the time this middleware runs inside attempts.routes the path has been
+ * stripped to `/:id` and the patterns above would never match. originalUrl is
+ * the one value that is still the whole path.
+ */
+function allowedWhileDraining(method: string, originalUrl: string): boolean {
+  const path = originalUrl.split("?")[0].replace(/^\/api\/v1/, "");
+  return MAINTENANCE_DRAIN_ALLOWED.some(
+    (entry) => entry.method === method.toUpperCase() && entry.pattern.test(path),
+  );
+}
+
 /**
  * Validates the Bearer JWT issued by Supabase Auth.
  * On success, attaches `req.user` with { id, email, role, institute_id }.
  * Enforces one-device login for all non-super_admin roles via x-session-token.
+ * Refuses non-superadmin traffic while the platform is in maintenance, except
+ * for the in-flight test calls listed above.
  */
 export const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
 
@@ -224,6 +269,16 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     }
 
     req.user = { id: userId, email: userEmail, role, institute_id };
+
+    // Maintenance drain. Checked before entitlement so a suspended-institute or
+    // expired-subscription message never masks the real reason the call failed.
+    // super_admin is exempt — otherwise the switch could not be turned back off.
+    if (role !== "super_admin" && !allowedWhileDraining(req.method, req.originalUrl)) {
+      if (await isMaintenanceMode()) {
+        res.status(503).json(MAINTENANCE_RESPONSE);
+        return;
+      }
+    }
 
     // Service-role queries bypass RLS, so entitlement must be enforced centrally.
     if (role !== "super_admin" && institute_id) {

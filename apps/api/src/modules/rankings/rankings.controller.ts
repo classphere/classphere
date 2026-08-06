@@ -1,117 +1,11 @@
 import { Request, Response } from "express";
 import { supabaseDB } from "../../lib/supabase";
 import { getOrSetCache } from "../../lib/cache";
-
-/**
- * GET /api/v1/rankings/me
- * Authenticated — Return the current student's rank stats across all batches.
- */
-export const getMyRanks = async (req: Request, res: Response): Promise<void> => {
-  try {
-    res.status(410).json({ success: false, message: "Legacy aggregate rankings are retired. Use same-paper batch rankings." });
-    return;
-    const studentId = req.user!.id;
-    const { exam } = req.query as { exam?: string };
-
-    // Get all batches for this student
-    const { data: batchLinks } = await supabaseDB
-      .from("batch_students")
-      .select("batch_id, batches(id, name, institute_id, exam)")
-      .eq("student_id", studentId);
-
-    const batches = (batchLinks ?? []).map((r: any) => r.batches).filter(Boolean);
-
-    // Filter by exam if provided
-    const filteredBatches = exam ? batches.filter((b: any) => b.exam === exam) : batches;
-
-    // Get all submitted attempts for this student
-    const { data: attempts } = await supabaseDB
-      .from("attempts")
-      .select("id, paper_id, exam_code, score, max_score, submitted_at")
-      .eq("student_id", studentId)
-      .eq("status", "submitted")
-      .order("submitted_at", { ascending: false });
-
-    const totalTests = (attempts ?? []).length;
-    const bestScore = Math.max(0, ...(attempts ?? []).map((a: any) => a.score ?? 0));
-    const avgScore = totalTests > 0
-      ? Math.round((attempts ?? []).reduce((s: number, a: any) => s + (a.score ?? 0), 0) / totalTests)
-      : 0;
-
-    // Get all batch members and attempts in batch query aggregates to prevent N+1 query loops (REL-2)
-    const batchIds = filteredBatches.map((b: any) => b.id);
-    const { data: allMembers } = batchIds.length > 0 ? await supabaseDB
-      .from("batch_students")
-      .select("batch_id, student_id")
-      .in("batch_id", batchIds) : { data: [] };
-
-    const studentsByBatch: Record<string, string[]> = {};
-    const allStudentIds: string[] = [];
-    for (const m of allMembers ?? []) {
-      if (!studentsByBatch[m.batch_id]) studentsByBatch[m.batch_id] = [];
-      studentsByBatch[m.batch_id].push(m.student_id);
-      allStudentIds.push(m.student_id);
-    }
-    const uniqueStudentIds = Array.from(new Set(allStudentIds));
-
-    const { data: allBatchAttempts } = uniqueStudentIds.length > 0 ? await supabaseDB
-      .from("attempts")
-      .select("student_id, score")
-      .eq("status", "submitted")
-      .in("student_id", uniqueStudentIds) : { data: [] };
-
-    const attemptsByStudent: Record<string, Array<{ score: number }>> = {};
-    for (const a of allBatchAttempts ?? []) {
-      if (!attemptsByStudent[a.student_id]) attemptsByStudent[a.student_id] = [];
-      attemptsByStudent[a.student_id].push(a);
-    }
-
-    const batchRanks = filteredBatches.map((batch: any) => {
-      const memberIds = studentsByBatch[batch.id] ?? [];
-      if (!memberIds.includes(studentId)) return null;
-
-      const bestScoreByStudent: Record<string, number> = {};
-      for (const mId of memberIds) {
-        const studentAttempts = attemptsByStudent[mId] ?? [];
-        const maxScore = studentAttempts.length > 0
-          ? Math.max(...studentAttempts.map(a => a.score ?? 0))
-          : 0;
-        bestScoreByStudent[mId] = maxScore;
-      }
-
-      const sorted = Object.entries(bestScoreByStudent).sort(([, a], [, b]) => b - a);
-      const myIdx = sorted.findIndex(([id]) => id === studentId);
-      const myRank = myIdx >= 0 ? myIdx + 1 : null;
-      const myScore = bestScoreByStudent[studentId] ?? 0;
-      const percentile = myRank && sorted.length > 1
-        ? Math.round(((sorted.length - myRank) / (sorted.length - 1)) * 100)
-        : 100;
-
-      return {
-        batch_id: batch.id,
-        batch_name: batch.name,
-        rank: myRank,
-        total_students: sorted.length,
-        best_score: myScore,
-        percentile,
-      };
-    }).filter(Boolean);
-
-    res.status(200).json({
-      success: true,
-      data: {
-        student_id: studentId,
-        total_tests: totalTests,
-        best_score: bestScore,
-        avg_score: avgScore,
-        batch_ranks: batchRanks.filter(Boolean),
-      },
-    });
-  } catch (err: any) {
-    console.error("[getMyRanks error]", err);
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
+import {
+  LifetimeAttempt,
+  MIN_TESTS_FOR_LIFETIME_RANK,
+  rankLifetimePerformance,
+} from "./lifetime-ranking.service";
 
 /** GET /api/v1/rankings/batches — batches available to the signed-in student. */
 export const getMyRankingBatches = async (req: Request, res: Response): Promise<void> => {
@@ -225,11 +119,31 @@ async function computeWeeklyLeaderboard(
 
     if (!memberIds.length) return [];
 
-    const questionCount = new Map(memberIds.map((id: string) => [id, 0]));
+    /**
+     * Distinct question ids each student answered correctly this week.
+     *
+     * Sets rather than running totals, for two reasons. Correctness: the board
+     * counts questions *solved*, and two things previously inflated that — a
+     * wrong answer counted the same as a right one, and re-sitting a paper
+     * counted the same questions again. A question also counts once whether it
+     * was met in a DPP or in a test.
+     */
+    const solvedByStudent = new Map<string, Set<string>>();
+    const markSolved = (studentId: string, questionId: string) => {
+      const existing = solvedByStudent.get(studentId);
+      if (existing) existing.add(questionId);
+      else solvedByStudent.set(studentId, new Set([questionId]));
+    };
 
-    // Count questions from submitted test attempts this week
-    const fetchAttemptQuestionCounts = async (): Promise<Map<string, number>> => {
-      const counts = new Map<string, number>();
+    // Questions answered CORRECTLY in submitted test attempts this week.
+    //
+    // This counted every question with a selected answer, correct or not. The
+    // board is titled "questions solved" and ranks on it, so guessing paid: a
+    // student who blind-clicked all 180 questions of a NEET mock scored 180 and
+    // beat one who genuinely solved 120. is_correct is set during submitAttempt
+    // for exactly this kind of question and was simply never consulted here.
+    const fetchAttemptSolved = async (): Promise<Array<[string, string]>> => {
+      const pairs: Array<[string, string]> = [];
       const { data: attempts } = await supabaseDB
         .from("attempts")
         .select("id, student_id")
@@ -239,23 +153,39 @@ async function computeWeeklyLeaderboard(
 
       const attemptStudent = new Map((attempts ?? []).map((attempt: any) => [attempt.id, attempt.student_id]));
       const attemptIds = [...attemptStudent.keys()];
-      if (attemptIds.length) {
-        const { data: answers } = await supabaseDB
+      if (!attemptIds.length) return pairs;
+
+      // Paged, and ordered so the pages are stable. One batch of 30 students
+      // sitting a single 180-question paper already produces 5,400 rows — well
+      // past PostgREST's 1,000-row ceiling. Unpaged, everyone after the first
+      // thousand rows silently showed as having solved nothing.
+      const PAGE_SIZE = 1000;
+      for (let from = 0; ; from += PAGE_SIZE) {
+        const { data, error } = await supabaseDB
           .from("attempt_answers")
-          .select("attempt_id")
+          .select("attempt_id, question_id")
           .in("attempt_id", attemptIds)
-          .not("selected_answer", "is", null);
-        for (const answer of answers ?? []) {
-          const answerStudentId = attemptStudent.get((answer as any).attempt_id);
-          if (answerStudentId) counts.set(answerStudentId, (counts.get(answerStudentId) ?? 0) + 1);
+          .eq("is_correct", true)
+          .order("id", { ascending: true })
+          .range(from, from + PAGE_SIZE - 1);
+        if (error) {
+          console.error("[rankings] weekly answer page failed:", error.message);
+          break;
         }
+        const page = data ?? [];
+        for (const row of page) {
+          const studentId = attemptStudent.get((row as any).attempt_id);
+          const questionId = String((row as any).question_id ?? "");
+          if (studentId && questionId) pairs.push([studentId, questionId]);
+        }
+        if (page.length < PAGE_SIZE) break;
       }
-      return counts;
+      return pairs;
     };
 
     // Include DPP submissions — independent of attempts, so fetched concurrently
-    const fetchDppQuestionCounts = async (): Promise<Map<string, number>> => {
-      const counts = new Map<string, number>();
+    const fetchDppSolved = async (): Promise<Array<[string, string]>> => {
+      const pairs: Array<[string, string]> = [];
       const { data: dppSubmissions } = await supabaseDB
         .from("student_dpps")
         .select("student_id, attempt_answers")
@@ -267,24 +197,31 @@ async function computeWeeklyLeaderboard(
         const answers = Array.isArray((submission as any).attempt_answers)
           ? (submission as any).attempt_answers
           : Object.values((submission as any).attempt_answers ?? {});
-        const solved = answers.filter((answer: any) => {
-          if (answer === null || answer === undefined) return false;
-          return typeof answer === "object" ? Boolean(answer.selected_answer) : Boolean(answer);
-        }).length;
-        const dppStudentId = (submission as any).student_id;
-        counts.set(dppStudentId, (counts.get(dppStudentId) ?? 0) + solved);
+        // submitDPP grades every answer and stores is_correct and question_id
+        // beside it, so correctness is read here rather than recomputed.
+        //
+        // A non-object entry is an older payload shape that recorded only what
+        // was chosen, never whether it was right, and cannot be counted without
+        // guessing. Harmless in practice — this board only looks at the current
+        // week, and everything written this week carries the graded shape. The
+        // is_meta timing record has no is_correct and is skipped by the same test.
+        for (const answer of answers) {
+          if (!answer || typeof answer !== "object") continue;
+          if ((answer as any).is_correct !== true) continue;
+          const questionId = String((answer as any).question_id ?? "");
+          if (questionId) pairs.push([String((submission as any).student_id), questionId]);
+        }
       }
-      return counts;
+      return pairs;
     };
 
-    const [attemptCounts, dppCounts, { data: users }] = await Promise.all([
-      fetchAttemptQuestionCounts(),
-      fetchDppQuestionCounts(),
+    const [attemptPairs, dppPairs, { data: users }] = await Promise.all([
+      fetchAttemptSolved(),
+      fetchDppSolved(),
       supabaseDB.from("users").select("id, name").in("id", memberIds),
     ]);
 
-    for (const [id, count] of attemptCounts) questionCount.set(id, (questionCount.get(id) ?? 0) + count);
-    for (const [id, count] of dppCounts) questionCount.set(id, (questionCount.get(id) ?? 0) + count);
+    for (const [studentId, questionId] of [...attemptPairs, ...dppPairs]) markSolved(studentId, questionId);
 
     const names = new Map((users ?? []).map((user: any) => [user.id, user.name]));
 
@@ -292,10 +229,121 @@ async function computeWeeklyLeaderboard(
       student_id: id,
       name: names.get(id) ?? "Student",
       batch_name: studentBatchMap.get(id) ?? "Batch",
-      questions_solved: questionCount.get(id) ?? 0,
+      questions_solved: solvedByStudent.get(id)?.size ?? 0,
     })).sort((a, b) => b.questions_solved - a.questions_solved || a.name.localeCompare(b.name));
 
     return entries.map((entry, index) => ({ ...entry, rank: index + 1 }));
+}
+
+/**
+ * GET /api/v1/rankings/lifetime?batch_id=
+ *
+ * Sustained performance across every paper the batch has sat, rather than one
+ * paper or one week. Scoped to the batch because that is the only comparison
+ * that holds everything else steady — same exam, same papers, same teaching.
+ * Ranking a NEET student against a JEE one, or class 11 against droppers, would
+ * put a number on a difference that has nothing to do with ability.
+ */
+export const getLifetimeLeaderboard = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const batchId = String(req.query.batch_id ?? "");
+    const actor = req.user!;
+    if (!batchId) {
+      res.status(400).json({ success: false, message: "batch_id is required" });
+      return;
+    }
+
+    // Same gate as the weekly board: a student may only read a batch they are in.
+    const { data: membership } = await supabaseDB
+      .from("batch_students")
+      .select("batch_id")
+      .eq("batch_id", batchId)
+      .eq("student_id", actor.id)
+      .is("left_at", null)
+      .maybeSingle();
+    if (!membership && actor.role === "student") {
+      res.status(403).json({ success: false, message: "Batch access denied" });
+      return;
+    }
+    if (actor.role !== "student" && actor.role !== "super_admin") {
+      const { data: batch } = await supabaseDB.from("batches").select("institute_id").eq("id", batchId).maybeSingle();
+      if (!batch || batch.institute_id !== actor.institute_id) {
+        res.status(403).json({ success: false, message: "Batch is outside your institute." });
+        return;
+      }
+    }
+
+    // Identical for everyone who can see this batch, so it is cached per batch
+    // rather than per viewer. Sixty seconds matches the weekly board.
+    const entries = await getOrSetCache(`rankings:lifetime:batch:${batchId}`, 60, () =>
+      computeLifetimeLeaderboard(batchId),
+    );
+
+    res.status(200).json({
+      success: true,
+      data: { entries, min_tests: MIN_TESTS_FOR_LIFETIME_RANK, scope: "batch" },
+    });
+  } catch (err: any) {
+    console.error("[getLifetimeLeaderboard error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+async function computeLifetimeLeaderboard(batchId: string): Promise<any[]> {
+  // The current roster. A student who left the batch is not part of the cohort
+  // being compared, though their attempts remain for their own history.
+  const { data: members } = await supabaseDB
+    .from("batch_students")
+    .select("student_id")
+    .eq("batch_id", batchId)
+    .is("left_at", null);
+
+  const memberIds = (members ?? []).map((row: any) => row.student_id);
+  if (!memberIds.length) return [];
+
+  // Paged: a batch of forty students thirty papers deep is 1,200 rows, past
+  // PostgREST's 1,000-row ceiling. Unpaged, the students who happened to sort
+  // last would silently rank as though they had never sat anything.
+  const PAGE_SIZE = 1000;
+  const attempts: LifetimeAttempt[] = [];
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabaseDB
+      .from("attempts")
+      .select("student_id, paper_id, score, max_score, submitted_at")
+      .in("student_id", memberIds)
+      .eq("batch_id", batchId)
+      .eq("status", "submitted")
+      .gt("max_score", 0)
+      .order("id", { ascending: true })
+      .range(from, from + PAGE_SIZE - 1);
+    if (error) {
+      console.error("[rankings] lifetime attempt page failed:", error.message);
+      break;
+    }
+    const page = data ?? [];
+    for (const row of page) {
+      const maxScore = Number((row as any).max_score);
+      if (!Number.isFinite(maxScore) || maxScore <= 0) continue;
+      attempts.push({
+        studentId: String((row as any).student_id),
+        paperId: String((row as any).paper_id ?? ""),
+        percentage: (Number((row as any).score ?? 0) / maxScore) * 100,
+        submittedAt: (row as any).submitted_at ?? null,
+      });
+    }
+    if (page.length < PAGE_SIZE) break;
+  }
+
+  const ranked = rankLifetimePerformance(attempts);
+  if (!ranked.length) return [];
+
+  const { data: users } = await supabaseDB
+    .from("users")
+    .select("id, name")
+    .in("id", ranked.map((entry) => entry.student_id));
+  const names = new Map((users ?? []).map((user: any) => [user.id, user.name]));
+
+  return ranked.map((entry) => ({ ...entry, name: names.get(entry.student_id) ?? "Student" }));
 }
 
 /** GET /api/v1/rankings/papers?batch_id= — papers this student completed in a batch. */
@@ -579,83 +627,6 @@ async function computeBatchComparisonMatrix(
       },
     };
 }
-
-/**
- * GET /api/v1/rankings/leaderboard
- * Authenticated — Get paginated leaderboard for a batch.
- * Query params: batch_id (required), exam, page=1, limit=50
- */
-export const getLeaderboard = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { scope = "global", batch_id, institute_id, page = "1", limit = "50" } = req.query as Record<string, string>;
-    const pageNum = Math.max(1, parseInt(page));
-    const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
-    const offset = (pageNum - 1) * limitNum;
-    const actor = req.user!;
-
-    if (actor.role !== "super_admin") {
-      res.status(410).json({ success: false, message: "Legacy aggregate leaderboards are retired. Use same-paper batch rankings." });
-      return;
-    }
-
-    // Global rankings are an administrative view only. Tenant users may see
-    // their own institute or a batch to which they belong/work.
-    if (scope === "global" && actor.role !== "super_admin") {
-      res.status(403).json({ success: false, message: "Global leaderboard access is restricted." });
-      return;
-    }
-
-    let memberIds: string[] = [];
-
-    if (scope === "batch") {
-      if (!batch_id) { res.status(400).json({ success: false, message: "batch_id is required for batch scope" }); return; }
-      const { data: batch } = await supabaseDB.from("batches").select("institute_id").eq("id", batch_id).maybeSingle();
-      if (!batch || (actor.role !== "super_admin" && batch.institute_id !== actor.institute_id)) {
-        res.status(403).json({ success: false, message: "Batch is outside your institute." }); return;
-      }
-      const { data: members } = await supabaseDB.from("batch_students").select("student_id").eq("batch_id", batch_id);
-      memberIds = (members ?? []).map((m: any) => m.student_id);
-      if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }
-    } else if (scope === "institute") {
-      if (!institute_id) { res.status(400).json({ success: false, message: "institute_id is required for institute scope" }); return; }
-      if (actor.role !== "super_admin" && institute_id !== actor.institute_id) {
-        res.status(403).json({ success: false, message: "Institute is outside your access scope." }); return;
-      }
-      const { data: members } = await supabaseDB.from("users").select("id").eq("institute_id", institute_id).eq("role", "student");
-      memberIds = (members ?? []).map((m: any) => m.id);
-      if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }
-    }
-
-    // Query student_stats
-    let query = supabaseDB
-      .from("student_stats")
-      .select("student_id, total_tests, accuracy_pct, rank_score, streak_days, users!inner(name)", { count: "exact" });
-      
-    if (scope !== "global") {
-      query = query.in("student_id", memberIds);
-    }
-    
-    query = query.order("rank_score", { ascending: false }).range(offset, offset + limitNum - 1);
-
-    const { data: stats, count, error } = await query;
-    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
-
-    const entries = (stats ?? []).map((s: any, idx) => ({
-      student_id: s.student_id,
-      name: s.users?.name ?? "Student",
-      rank: offset + idx + 1,
-      avgScore: s.accuracy_pct ?? 0,
-      totalTests: s.total_tests ?? 0,
-      streak: s.streak_days ?? 0,
-      rankScore: s.rank_score ?? 0,
-    }));
-
-    res.status(200).json({ success: true, data: { entries, total: count ?? 0, page: pageNum, limit: limitNum } });
-  } catch (err: any) {
-    console.error("[getLeaderboard error]", err);
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
 
 /**
  * GET /api/v1/rankings/rank-card

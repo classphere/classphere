@@ -9,7 +9,6 @@ import institutesRouter from "../modules/institutes/institutes.routes";
 import batchesRouter from "../modules/batches/batches.routes";
 import facultyRouter from "../modules/institutes/faculty/faculty.routes";
 import studentsRouter from "../modules/institutes/students/students.routes";
-import internalRouter from "../modules/internal/internal.routes";
 import pyqsRouter from "../modules/pyqs/pyqs.routes";
 import superadminRouter from "../modules/superadmin/superadmin.routes";
 import dashboardRouter from "../modules/dashboard/dashboard.routes";
@@ -49,7 +48,9 @@ router.use("/notifications", notificationsRouter);
 // ─── SuperAdmin (super_admin role required) ───────────────────────────────────
 router.use("/superadmin", superadminRouter);
 
-// ─── Internal (cron only — INTERNAL_API_KEY protected) ───────────────────────
-router.use("/internal", internalRouter);
+// The /internal cron routes are gone. All three were 501 stubs: nightly rank
+// computation (for a merit list that was retired), streak maintenance (for a
+// streak nothing ever incremented) and weekly institute reports (which an
+// institute admin reads live from their own dashboard instead).
 
 export default router;
