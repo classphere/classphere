@@ -107,6 +107,8 @@ const globalLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: "Too many requests from this IP, please try again after 15 minutes" },
+  // Redis is optional infrastructure: keep serving requests if it is unavailable.
+  passOnStoreError: true,
   // @ts-ignore — store is optional in the type but accepted at runtime
   store: rateLimitStore,
 });

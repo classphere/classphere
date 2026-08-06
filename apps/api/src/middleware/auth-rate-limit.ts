@@ -15,6 +15,8 @@ export const authLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: "Too many login attempts. Please try again after 15 minutes." },
+  // An unavailable optional Redis store must not block authentication requests.
+  passOnStoreError: true,
   // @ts-ignore — store is optional in the type but accepted at runtime
   store: getRateLimitStore("rl:auth:"),
 });
