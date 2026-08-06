@@ -292,7 +292,7 @@ export async function extractPDF(
     console.log("[pdfExtractor] Normalising…");
     await runCommand(
       `python "${path.join(scriptDir, "normalize_json.py")}" "${finalJson}" ` +
-      `--images-dir "${imagesDir}" --source pymupdf`,
+      `--images-dir "${imagesDir}"`,
       300_000,
       "normalization",
     );

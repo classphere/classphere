@@ -1476,7 +1476,7 @@ def run():
     print(f"Page images rendered: {len(doc)}  ->  {page_img_dir}")
     print(f"Raw JSON saved     : {raw_path}")
     print(f"{'='*50}")
-    print(f"\nNext step: run cerebras_from_marker.py {out_dir}")
+    print(f"\nNext step: run gemini_page_extractor.py {out_dir}")
 
 
 if __name__ == "__main__":

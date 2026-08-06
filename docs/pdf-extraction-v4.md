@@ -13,7 +13,9 @@ The safety contract is **no silent loss**. Structured text, math, diagrams, opti
 1. `document_profile.py` classifies digital/scanned/hybrid pages, likely columns, page roles, and OCR/escalation needs without writing files.
 2. When the user did not request a page range, confidently detected answer-key and worked-solution pages are excluded from question segmentation.
 3. Section-local numbering resets are segmented independently and deterministically renumbered into CBT order while retaining the printed source number as provenance.
-4. The existing PyMuPDF/Marker/Cerebras pipeline still performs extraction; profile-detected hybrid/OCR pages force the existing Marker best-of-both merge instead of trusting an incomplete text layer.
+4. The PyMuPDF/Gemini pipeline performs extraction. `pymupdf_extractor.py` renders each page and emits geometry-annotated HTML with question-number anchors; `gemini_page_extractor.py` sends the page image, the next page's image and that HTML to Gemini per page, then reconciles the result against the anchors and re-asks any page that came back short.
+
+   Scanned pages are **rejected, not escalated** — `is_digital_pdf()` requires a text layer and the job fails with "Scanned PDF detected". The Datalab Marker best-of-both merge that used to handle hybrid/OCR pages no longer exists; OCR input is an open gap rather than a fallback path.
 5. `pdfExtractorV4.service.ts` adds extraction metadata.
 6. Upload controllers persist R2-backed ordered blocks while preserving `question_text`, `image_url`, `options`, and `explanation`.
 

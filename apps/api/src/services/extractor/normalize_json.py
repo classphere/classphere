@@ -40,12 +40,9 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 try:
-    from extract_common import (diagnose_question, KNOWN_LATEX_COMMANDS,
-                                 vector_math_signature)
+    from question_diagnostics import diagnose_question
 except ImportError:
     diagnose_question = None
-    KNOWN_LATEX_COMMANDS = set()
-    vector_math_signature = None
 
 SUBJECT_MAP = {
     "physics": "Physics",
@@ -768,9 +765,6 @@ def main():
     ap.add_argument("--legacy-types", action="store_true",
                     help="Keep MCQ/MSQ/Numerical instead of mcq_single/mcq_multi/integer")
     ap.add_argument("--report", default=None, help="Write QA report JSON here")
-    ap.add_argument("--source", default="pymupdf",
-                    help="Extractor source ('pymupdf' or 'marker'). A 'marker' "
-                         "result is never recommended for escalation.")
     args = ap.parse_args()
 
     input_path = Path(args.json_file)
@@ -897,20 +891,6 @@ def main():
     # ── Validate + save ───────────────────────────────────────────────────────
     validate(questions, report,
              images_dir=Path(args.images_dir) if args.images_dir else None)
-
-    # ── Vector-math escalation recommendation (PyMuPDF source only) ────────────
-    if vector_math_signature is not None and args.source.lower() != "marker":
-        sig = vector_math_signature(questions)
-        report["escalation"] = sig
-        verdict = "yes" if sig["escalate"] else "no"
-        print(f"  Marker escalation recommended: {verdict}"
-              + (f"  ({'; '.join(sig['reasons'])})" if sig["reasons"] else ""))
-        # Machine-readable line for the orchestrator (pdfExtractor.service.ts)
-        print(f"ESCALATION_RECOMMENDED={verdict}")
-    else:
-        report["escalation"] = {"escalate": False, "reasons": [],
-                                "source": args.source}
-        print("ESCALATION_RECOMMENDED=no")
 
     output_data = {"questions": questions}
     if completeness is not None:
