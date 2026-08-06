@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
+import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -18,8 +20,8 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
 
     const isSuperAdmin = req.user?.role === "super_admin";
     const selectCols = isSuperAdmin
-      ? "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
-      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
+      ? "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
+      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
 
     let query = supabaseDB
       .from("questions")
@@ -42,13 +44,27 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
       }
     }
 
-    // exam filter: join via exams table — filter by exam code
-    if (exam) {
-      // First resolve exam_id from code
-      const { data: examRow } = await supabaseDB.from("exams").select("id").eq("code", exam).maybeSingle();
-      if (examRow) {
-        query = (query as any).eq("exam_id", examRow.id);
+    // Exam filter, constrained to what this student's batches entitle them to.
+    // The code used to come straight from the query string, so a NEET student
+    // could ask for jee-main and be served it.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    const { codes: examCodes, denied } = resolveExamFilter(exam, entitled);
+
+    if (denied) {
+      // Deliberately an empty page rather than no filter: falling through to
+      // unfiltered is exactly how the restriction gets bypassed.
+      res.status(200).json({ success: true, data: { questions: [], total: 0, page: pageNum, limit: limitNum } });
+      return;
+    }
+
+    if (examCodes && examCodes.length > 0) {
+      const { data: examRows } = await supabaseDB.from("exams").select("id").in("code", examCodes);
+      const ids = (examRows ?? []).map((row: any) => row.id);
+      if (ids.length === 0) {
+        res.status(200).json({ success: true, data: { questions: [], total: 0, page: pageNum, limit: limitNum } });
+        return;
       }
+      query = (query as any).in("exam_id", ids);
     }
 
     const { data: questions, count, error } = await query;
@@ -73,11 +89,17 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
  */
 export const getExamsMeta = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { data: exams } = await supabaseDB
+    // Students are offered only the exams their batches prepare them for, so
+    // the picker cannot suggest content the endpoints will refuse to serve.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    let examQuery = supabaseDB
       .from("exams")
       .select("id, code, full_name")
       .eq("is_active", true)
       .order("code");
+    if (entitled.length > 0) examQuery = examQuery.in("code", entitled);
+
+    const { data: exams } = await examQuery;
 
     if (!exams || exams.length === 0) {
       res.status(200).json({ success: true, data: { exams: [] } });
@@ -140,6 +162,15 @@ export const createTopicPractice = async (req: Request, res: Response): Promise<
     const count = Math.max(5, Math.min(50, Number(question_count) || 20));
     if (![exam, subject, chapter, topic].every((value) => typeof value === "string" && value.trim())) {
       res.status(400).json({ success: false, message: "exam, subject, chapter, and topic are required." });
+      return;
+    }
+
+    // A student may only generate practice for an exam their batches prepare
+    // them for. Without this, topic practice was an unguarded route to any
+    // exam's question bank regardless of what they are enrolled in.
+    const entitledExams = await getStudentExamCodes(req.user!.id);
+    if (entitledExams.length > 0 && !entitledExams.includes(exam.trim())) {
+      res.status(403).json({ success: false, message: "This examination is not part of your batch." });
       return;
     }
 
@@ -210,7 +241,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
     // only after an authorised submission or scheduled result release.
     const selectCols = isSuperAdmin
       ? "*"
-      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
+      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
 
     const { data: question, error } = await supabaseDB
       .from("questions")
@@ -241,7 +272,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
  */
 export const createQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, source, year, tags, image_url } = req.body;
+    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, source, year, tags, question_images } = req.body;
 
     if (!exam_id || !subject || !chapter || !difficulty || !question_type || !question_text || !correct_answer) {
       res.status(400).json({ success: false, message: "Missing required fields: exam_id, subject, chapter, difficulty, question_type, question_text, correct_answer" });
@@ -258,7 +289,11 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
         difficulty,
         question_type,
         question_text,
-        image_url: image_url || null,
+        question_images: Array.isArray(question_images) ? question_images : [],
+        // NOT NULL with no default, and this insert never supplied it, so every
+        // call failed on the constraint before reaching anything else. A
+        // hand-written question belongs to no paper, which is what this means.
+        test_type: req.body.test_type ?? "chapter-wise",
         options: options ?? null,
         correct_answer: Array.isArray(correct_answer) ? correct_answer : [correct_answer],
         explanation: explanation ?? null,
@@ -290,15 +325,23 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
     const { id } = req.params;
     const allowed = [
       "subject", "chapter", "topic", "difficulty", "question_type", "question_text",
-      "image_url", "options", "correct_answer", "explanation", "source", "year", "tags",
+      "question_images", "explanation_images", "options", "correct_answer", "explanation", "source", "year", "tags",
       "content_blocks", "extraction_metadata", "extractor_version", "source_crop_url", "source_reference",
     ];
     const updates: Record<string, any> = {};
     for (const key of allowed) {
       if (req.body[key] !== undefined) updates[key] = req.body[key];
     }
+
+    // A reviewer replacing a figure sends it as a data URL, because that is
+    // what the browser produces from a chosen file. Storing that verbatim would
+    // put a whole image inside the row, so it goes to object storage first.
+    for (const field of ["question_images", "explanation_images"] as const) {
+      if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
+    }
+    if (updates.options !== undefined) updates.options = await uploadOptionFigures(updates.options);
     // Never leave an extracted block projection stale after a legacy-only edit.
-    if ((req.body.question_text !== undefined || req.body.image_url !== undefined) && req.body.content_blocks === undefined) {
+    if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
       updates.content_blocks = null;
     }
     if (Object.keys(updates).length === 0) {
@@ -384,7 +427,7 @@ export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<
 /**
  * GET /api/v1/questions/tests
  * Authenticated — Returns available test papers grouped by test_type.
- * Query params: exam (jee-main|neet-ug|ssc-cgl), type (chapter-wise|mock-test|pyq)
+ * Query params: exam (jee-main|neet-ug), type (chapter-wise|mock-test|pyq)
  */
 export const listTests = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -407,11 +450,20 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const filtered = exam
+    // Same entitlement rule as the question bank: a student sees papers for
+    // the exams their batches are preparing them for, and nothing else.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    const { codes: allowedCodes, denied } = resolveExamFilter(exam as string | undefined, entitled);
+    if (denied) {
+      res.status(200).json({ success: true, data: { papers: [] } });
+      return;
+    }
+
+    const filtered = allowedCodes
       ? (data ?? []).filter((p: any) => {
           if (!p.exams) return false;
           const codes = Array.isArray(p.exams) ? p.exams.map((e: any) => e.code) : [p.exams.code];
-          return codes.some((c: any) => c && c.toLowerCase() === (exam as string).toLowerCase());
+          return codes.some((c: any) => c && allowedCodes.some((allowed) => allowed.toLowerCase() === String(c).toLowerCase()));
         })
       : (data ?? []).filter((p: any) => {
           if (!p.exams) return false;

@@ -228,6 +228,14 @@ QCAND_PATTERNS = [
     # after the period so decimals like "3.14" are never treated as anchors.
     re.compile(r'^\s*(\d{1,3})\.(?=[A-Z])(.*)$'),
     re.compile(r'^\s*(\d{1,3})\s*[\.\)]$'),
+    # Option row glued to the next question's number. Two-column/compact layouts
+    # frequently merge the previous question's option labels and the following
+    # anchor into one text run, e.g. "(A)(B)(C)(D)Q.33". Every pattern above is
+    # line-anchored, so such a question was invisible to anchor detection even
+    # though the PDF is perfectly regular. Requiring at least one bracketed
+    # option label immediately before "Q<number>" keeps this specific and avoids
+    # matching ordinary prose.
+    re.compile(r'^\s*(?:\(\s*[A-Da-d]\s*\)\s*)+Q\s*[\.:]?\s*(\d{1,3})\s*[\.\):]?(.*)$'),
 ]
 
 OPT_LABEL_RE = re.compile(r'^\s*\(?([A-Da-d])[\.\)]\s*(.*)$')

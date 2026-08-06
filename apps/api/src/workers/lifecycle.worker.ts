@@ -90,10 +90,15 @@ export const lifecycleWorker = new Worker(
       }
 
       // Record lifecycle events for this page.
+      // Column names must match migration 28: the table is (batch_id, event,
+      // triggered_by). This wrote event_type/details, neither of which exists,
+      // and `event` is NOT NULL with no default — so every insert was rejected.
+      // The error is swallowed below by design, which is why the deactivations
+      // looked fine while the audit trail stayed permanently empty.
       const events = expiredBatches.map((b) => ({
         batch_id: b.id,
-        event_type: "expired",
-        details: { ends_at: b.ends_at, auto_deactivated: true },
+        event: "auto_expired",
+        triggered_by: "system",
       }));
       const { error: eventErr } = await supabaseDB
         .from("batch_lifecycle_events")

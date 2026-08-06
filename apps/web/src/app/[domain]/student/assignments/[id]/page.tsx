@@ -165,7 +165,7 @@ export default function DPPSolvePage() {
     return (
       <div className="min-h-screen bg-b-surface2 flex items-center justify-center p-8">
         <div className="card max-w-[560px] w-full p-8 text-center border border-s-stroke2 bg-b-surface1 shadow-depth">
-          <div className={`size-20 rounded-full flex items-center justify-center mx-auto mb-6 text-h4 ${
+          <div className={`size-20 rounded-full flex items-center justify-center mx-auto mb-3 text-h4 ${
             pct >= 70
               ? "bg-primary-02/10 text-primary-02"
               : pct >= 40
@@ -176,9 +176,9 @@ export default function DPPSolvePage() {
           </div>
           <span className="label label-gray mb-4">DPP Completed</span>
           <h1 className="text-h5 font-bold text-t-primary mb-1">{dpp.title}</h1>
-          <p className="text-caption text-t-secondary mb-8">{dpp.chapter} · {dpp.subject}</p>
+          <p className="text-caption text-t-secondary mb-3">{dpp.chapter} · {dpp.subject}</p>
 
-          <div className="grid grid-cols-2 gap-3 mb-8 sm:grid-cols-3 sm:gap-4">
+          <div className="grid grid-cols-2 gap-3 mb-4 sm:grid-cols-3 sm:gap-4">
             <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-[10px]">
               <div className="text-h4 font-bold text-primary-02 mb-1">{score.correct}</div>
               <div className="text-caption text-t-secondary">Correct</div>
@@ -194,7 +194,7 @@ export default function DPPSolvePage() {
           </div>
 
           {/* Correct answer review */}
-          <div className="text-left mb-8">
+          <div className="text-left mb-3">
             <h3 className="text-body-2 font-bold text-t-primary mb-4">Answer Review</h3>
             <div className="flex flex-col gap-3">
               {questions.map((q, i) => {
@@ -229,7 +229,6 @@ export default function DPPSolvePage() {
 
           <div className="flex gap-4">
             <Link href="/student/dashboard" className="btn btn-outline flex-1">← Dashboard</Link>
-            <Link href="/doubts" className="btn btn-primary flex-1">Ask a Doubt</Link>
           </div>
         </div>
       </div>
@@ -291,7 +290,7 @@ export default function DPPSolvePage() {
         <div className="flex-1 overflow-y-auto p-4 sm:p-8">
           <div className="card mx-auto max-w-[860px] border border-s-stroke2 bg-b-surface1 p-4 sm:p-8">
             {/* Tags */}
-            <div className="flex gap-2 mb-6 flex-wrap">
+            <div className="flex gap-2 mb-3 flex-wrap">
               <span className="label label-gray">{q.subject}</span>
               <span className="label label-yellow">{q.chapter}</span>
               {q.topic && <span className="label label-gray">{q.topic}</span>}
@@ -307,7 +306,7 @@ export default function DPPSolvePage() {
             </div>
 
             {/* Question */}
-            <div className="mb-8">
+            <div className="mb-3">
               <div className="text-caption font-bold text-t-secondary mb-2 uppercase tracking-wider">
                 QUESTION {current + 1} OF {questions.length}
               </div>
@@ -344,7 +343,7 @@ export default function DPPSolvePage() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="mt-8 flex flex-wrap gap-3 border-t border-s-stroke2 pt-6 sm:gap-4">
+            <div className="mt-3 flex flex-wrap gap-3 border-t border-s-stroke2 pt-6 sm:gap-4">
               <button
                 className="btn btn-outline flex items-center gap-1"
                 onClick={() => setCurrent((c) => Math.max(0, c - 1))}
@@ -390,7 +389,7 @@ export default function DPPSolvePage() {
 
         {/* ── Right Navigator Sidebar ── */}
         <div className="flex w-full flex-col border-t border-s-stroke2 bg-b-surface1 p-4 lg:w-[280px] lg:border-t-0 lg:border-l lg:p-6">
-          <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-[10px] mb-6">
+          <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-[10px] mb-3">
             {[
               { label: "Done", value: answered, color: "text-primary-02" },
               { label: "Review", value: marked, color: "text-primary-05" },
@@ -432,7 +431,7 @@ export default function DPPSolvePage() {
             })}
           </div>
 
-          <div className="mt-8 p-4 bg-b-surface2 border border-s-stroke2 rounded-[10px]">
+          <div className="mt-3 p-4 bg-b-surface2 border border-s-stroke2 rounded-[10px]">
             <div className="text-caption font-bold text-t-primary mb-1">📌 Due Date</div>
             <div className="text-caption text-t-secondary">{dpp.dueDate}</div>
             
@@ -448,7 +447,7 @@ export default function DPPSolvePage() {
           <div className="card max-w-[440px] w-[90%] p-8 text-center border border-s-stroke2 bg-b-surface1 shadow-depth">
             <RiFlag2Fill size={48} className="mx-auto mb-4 text-t-primary" />
             <h2 className="text-sub-title-2 font-bold text-t-primary mb-2">Submit DPP?</h2>
-            <p className="text-caption text-t-secondary leading-relaxed mb-6">
+            <p className="text-caption text-t-secondary leading-relaxed mb-3">
               You&apos;ve answered <strong className="text-t-primary">{answered}</strong> of{" "}
               <strong className="text-t-primary">{questions.length}</strong> questions.
               {unanswered > 0 && ` ${unanswered} left unanswered.`}

@@ -5,10 +5,12 @@ import Link from "next/link";
 import { RiArrowRightLine } from "@remixicon/react";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
+import { EXAM_TOTAL_MARKS, normaliseExamCode } from "@/lib/exam";
 
 interface ScorePerformanceWidgetProps {
   data: any[];
-  isNEET: boolean;
+  /** Exam code, so the subject lines and the total match what the student sits. */
+  examCode: string | null | undefined;
   latestAttempt?: { id: string; title?: string; score?: number; max_score?: number };
 }
 
@@ -20,7 +22,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
         <div className="flex flex-col gap-2">
           {payload.map((entry: any, index: number) => (
-            <div key={index} className="flex justify-between items-center gap-6">
+            <div key={index} className="flex justify-between items-center gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
                 <span className="text-[13px] font-medium text-t-secondary">{entry.name}</span>
@@ -37,9 +39,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function ScorePerformanceWidget({
   data,
-  isNEET,
+  examCode,
   latestAttempt,
 }: ScorePerformanceWidgetProps) {
+  const exam = normaliseExamCode(examCode);
+  const isNEET = exam === "neet-ug";
   // Using custom colors for subjects
   const colors = {
     Overall: "url(#colorOverall)",
@@ -50,17 +54,25 @@ export function ScorePerformanceWidget({
     Zoology: "#F43F5E",     // Rose
   };
 
-  const currentScore = data[data.length - 1]?.Overall || 0;
-  const prevScore = data[data.length - 2]?.Overall || 0;
+  // The API sends `overall`; this read `.Overall`, so the headline score was
+  // undefined and rendered 0 for every student on every test.
+  const latest = data[data.length - 1];
+  const previous = data[data.length - 2];
+  const currentScore = latest?.overall ?? 0;
+  const prevScore = previous?.overall ?? 0;
   const diff = currentScore - prevScore;
-  const maxMarks = isNEET ? 720 : 300;
+
+  // The paper's own total, not the exam's full-syllabus figure. Practice papers
+  // and chapter tests are routinely 176 or 4 marks, so "/300" was wrong for a
+  // JEE student too — not only for the NEET student seeing a JEE denominator.
+  const maxMarks = latest?.max || latestAttempt?.max_score || EXAM_TOTAL_MARKS[exam];
 
   return (
     <SectionCard 
       title="Score Performance"
       subtitle="Marks per mock test"
     >
-      <div className="flex flex-col w-full pt-2 gap-8">
+      <div className="flex flex-col w-full pt-2 gap-3">
         
         {/* Stats Container (Top) */}
         <div className="flex flex-col items-start gap-3 w-full mt-2">

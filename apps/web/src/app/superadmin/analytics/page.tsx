@@ -3,41 +3,23 @@
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiBrainLine, RiGlobalLine, RiBookOpenLine, RiRobot2Line, RiLoader4Line } from "@remixicon/react";
-import { useEffect, useState } from "react";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 export default function GlobalAnalyticsPage() {
-  const { session } = useAuth();
-  const token = session?.access_token;
-
-  const [loading, setLoading] = useState(true);
-  const [analyticsData, setAnalyticsData] = useState<{
+  const { data: analyticsData, isPending: loading } = useApiQuery<{
     totalAttempts: number;
     activePapers: number;
     examBreakdown: any[];
     topInstitutes: any[];
     aiUsageAvailable: boolean;
-  } | null>(null);
+  }>("/api/v1/superadmin/analytics");
 
-  useEffect(() => {
-    if (!token) return;
-    setLoading(true);
-    apiClient.get<any>("/api/v1/superadmin/analytics", token)
-      .then(res => {
-        if (res.success && res.data) {
-          setAnalyticsData(res.data);
-        }
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [token]);
 
   if (loading || !analyticsData) {
     return (
       <>
         <Navbar title="Global Analytics & AI Usage" subtitle="Platform-wide engagement and AI consumption metrics." />
-        <main className="mx-auto w-full max-w-[1560px] flex items-center justify-center py-32 text-t-secondary">
+        <main className="mx-auto w-full max-w-[1560px] flex items-center justify-center py-10 text-t-secondary">
           <RiLoader4Line size={24} className="animate-spin text-primary-01" />
           <span className="font-sans font-semibold text-[15px] ml-2">Loading platform analytics...</span>
         </main>
@@ -50,7 +32,7 @@ export default function GlobalAnalyticsPage() {
   return (
     <>
       <Navbar title="Global Analytics & AI Usage" subtitle="Platform-wide engagement and AI consumption metrics." />
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-3 px-6 bg-transparent">
 
         {/* ── KPI Cards (Full Width) ── */}
         <div className="flex flex-col gap-4 w-full">
@@ -81,12 +63,12 @@ export default function GlobalAnalyticsPage() {
         </div>
 
         {/* ── Middle Row: Exam Breakdown + Top Institutes ── */}
-        <div className="flex flex-col xl:flex-row items-start gap-6 w-full">
+        <div className="flex flex-col xl:flex-row items-start gap-3 w-full">
           
           {/* Tests by Exam Type */}
           <SectionCard title="Tests by Exam Type" className="flex-1 min-w-0 h-full">
-            <div className="flex flex-col items-start w-full gap-5 mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across {activePapers >= 1000 ? `${(activePapers / 1000).toFixed(0)}K` : activePapers} active catalog papers</span>
+            <div className="flex flex-col items-start w-full gap-3 mt-4">
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-3">Distribution across {activePapers >= 1000 ? `${(activePapers / 1000).toFixed(0)}K` : activePapers} active catalog papers</span>
               {examBreakdown.map((exam, i) => (
                 <div key={i} className="group/item relative flex flex-col w-full p-3 sm:p-4 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[88px] justify-center">
                   <div className="flex flex-row justify-between items-center w-full">
@@ -110,7 +92,7 @@ export default function GlobalAnalyticsPage() {
           {/* Top Institutes by Activity */}
           <SectionCard title="Top Institutes" className="w-full xl:w-[600px] shrink-0 h-full min-h-[354px]">
             <div className="flex flex-col items-start gap-3 w-full mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Ranked by students enrolled in active batches</span>
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-3">Ranked by students enrolled in active batches</span>
 
               {/* Table Header */}
               <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
@@ -140,7 +122,7 @@ export default function GlobalAnalyticsPage() {
         <SectionCard title="AI Usage" className="w-full">
           <div className="flex flex-col items-start gap-4 w-full mt-4">
             
-            <div className="flex flex-row justify-between items-center w-full mb-2 -mt-6">
+            <div className="flex flex-row justify-between items-center w-full mb-2 -mt-3">
               <span className="font-sans text-sm text-t-secondary">Usage metering is not enabled. No estimated token total is displayed.</span>
               <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] rounded-[10px]">
                 <span className="text-sm font-semibold text-primary-03 leading-none">Awaiting metering</span>

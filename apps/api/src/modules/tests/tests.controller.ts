@@ -1,18 +1,19 @@
 import { Request, Response } from "express";
+import { difficultyForStorage, isChoiceQuestion, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
 import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
-import { execSync, exec } from "child_process";
-import { promisify } from "util";
 import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
 
-const execAsync = promisify(exec);
 import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfExtractor.service";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
+import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
+import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
+import { blockingShapeDefects } from "../../lib/question-shape";
 import { logAdminAction } from "../../lib/admin-audit";
-import { normalizeQuestionMedia } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -83,7 +84,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       const rawQs: any[] = [];
       for (let i = 0; i < questionIds.length; i += BATCH_SIZE) {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
-        const legacyFields = "id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version";
+        const legacyFields = "id, question_text, question_images, explanation_images, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version";
         let { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
           .select(`${legacyFields}, content_blocks, extraction_metadata, extractor_version, source_crop_url`)
@@ -136,8 +137,17 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
           byId[q.id] = normalized;
         }
       }
+      // The paper's own numbering, not the array index. Migration 48 stores
+      // position from the number printed on the paper precisely so a missing
+      // question leaves a hole — renumbering here would close that hole again
+      // and file every later question under the wrong number.
+      const positionById = new Map<string, number>(
+        (pqs ?? []).map((r: any) => [r.question_id, r.position])
+      );
       questions = questionIds
-        .map((qid, idx) => byId[qid] ? { ...byId[qid], question_number: idx + 1 } : null)
+        .map((qid, idx) => byId[qid]
+          ? { ...byId[qid], question_number: positionById.get(qid) ?? idx + 1 }
+          : null)
         .filter(Boolean);
     }
 
@@ -153,6 +163,11 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       duration: paper.duration_min,
       title: paper.title,
       test_type: paper.test_type,
+      // What each question type is worth on this paper. Without it the review
+      // screen cannot show what the paper actually adds up to, which is the
+      // one thing worth checking before publishing a JEE Advanced paper.
+      marking_scheme: (paper as any).marking_scheme ?? null,
+      total_marks: paper.total_marks ?? null,
     };
 
     res.json({ success: true, data: { paper: meta, questions, total: questions.length } });
@@ -357,15 +372,60 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
+    // Publishing is the moment a paper can be sat, so it is the moment its
+    // marks have to be right. An Advanced paper carries no default — its marks
+    // differ by question type and change between years — and scoring one on the
+    // fallback +4/-1 would quietly mis-score every attempt.
+    //
+    // Upload deliberately does not check this. A paper whose instructions page
+    // was missing or unreadable is still worth keeping as a draft; it just
+    // cannot go out until someone says what it is worth.
+    const { data: paperRow, error: paperRowError } = await supabaseDB
+      .from("papers")
+      .select("marking_scheme, exams(code)")
+      .eq("id", id)
+      .maybeSingle();
+    if (paperRowError) throw paperRowError;
+    const paperExamCode = (paperRow as any)?.exams?.code ?? "";
+    const hasScheme = paperRow?.marking_scheme && Object.keys(paperRow.marking_scheme).length > 0;
+    if (!hasScheme && requiresExplicitScheme(paperExamCode)) {
+      res.status(400).json({
+        success: false,
+        message: `Cannot publish: ${paperExamCode} has no standard marking scheme, so this paper must state its own. ` +
+          `Set the marks per question type on the review screen, then publish.`,
+      });
+      return;
+    }
+
     const { data: publishRows, error: publishRowsError } = await supabaseDB
       .from("paper_questions")
       .select("questions(question_text, question_type, options, correct_answer)")
       .eq("paper_id", id);
     if (publishRowsError) throw publishRowsError;
+    // A question whose answer names an option it does not have is unanswerable
+    // by everyone who sits the paper, and nothing downstream would ever say so.
+    // JSONB accepts that shape, so publication is where it has to be caught.
+    const shapeBroken = (publishRows ?? [])
+      .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
+      .flatMap((question: any) => blockingShapeDefects(question ?? {}));
+    if (shapeBroken.length > 0) {
+      res.status(400).json({
+        success: false,
+        message: `Cannot publish: ${shapeBroken.length} question(s) are structurally broken. Fix them in review first.`,
+        errors: [...new Set(shapeBroken.map((d) => d.message))].slice(0, 5),
+      });
+      return;
+    }
+
     const invalidQuestion = (publishRows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).find((question: any) => {
       const answers = Array.isArray(question?.correct_answer) ? question.correct_answer : [];
       const options = Array.isArray(question?.options) ? question.options : [];
-      const choiceQuestion = ["mcq_single", "mcq_multiple", "assertion_reason", "matching"].includes(question?.question_type);
+      // Was an inline list containing "mcq_multiple", which the table has never
+      // stored — it holds mcq_multi — and comparing raw values also missed the
+      // "Assertion-Reason" and "Matching" spellings. All three types therefore
+      // skipped the options check entirely, so a multi-correct question with no
+      // options passed validation.
+      const choiceQuestion = isChoiceQuestion(question?.question_type);
       return !String(question?.question_text ?? "").trim() || answers.length === 0 || (choiceQuestion && options.length < 2);
     });
     if (invalidQuestion) {
@@ -445,6 +505,39 @@ export const updateGlobalTest = async (req: Request, res: Response): Promise<voi
     const allowed = ["title", "subject", "chapter", "year", "shift", "difficulty", "duration_min", "total_marks"];
     const updates: Record<string, unknown> = {};
     for (const key of allowed) if (req.body[key] !== undefined) updates[key] = req.body[key];
+
+    // The marks per question type, set on the review screen for a paper whose
+    // instructions page did not state them. Validated the same way as at
+    // upload — this is the number every attempt is scored against, and it is
+    // the only field here that can silently produce wrong results.
+    if (req.body.marking_scheme !== undefined) {
+      const schemeErrors = validateMarkingScheme(req.body.marking_scheme);
+      if (schemeErrors.length > 0) {
+        res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors });
+        return;
+      }
+      updates.marking_scheme = req.body.marking_scheme;
+
+      // total_marks was summed when the paper was uploaded, against whatever
+      // scheme existed then — for a paper that had none, that means the +4
+      // fallback. Leaving it would make the paper permanently claim a total its
+      // own questions do not add up to, so it is resummed here unless this
+      // request is also setting it explicitly.
+      if (updates.total_marks === undefined) {
+        const { data: rows, error: rowsError } = await supabaseDB
+          .from("paper_questions")
+          .select("questions(question_type, marks)")
+          .eq("paper_id", req.params.id);
+        if (rowsError) throw rowsError;
+        const paperQuestions = (rows ?? [])
+          .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
+          .filter(Boolean);
+        if (paperQuestions.length > 0) {
+          updates.total_marks = totalMarksForQuestions(paperQuestions, req.body.marking_scheme);
+        }
+      }
+    }
+
     if (Object.keys(updates).length === 0) {
       res.status(400).json({ success: false, message: "No supported paper fields supplied." });
       return;
@@ -559,6 +652,15 @@ async function processBase64ImagesInText(text: string | null): Promise<string> {
     }
   }
   return updatedText;
+}
+
+/** Same trip to R2 for figure arrays, which now carry base64 from the extractor. */
+async function processBase64ImageList(images: unknown): Promise<string[]> {
+  if (!Array.isArray(images)) return [];
+  const uploaded = await Promise.all(
+    images.map((entry) => processBase64ImageUrl(String(entry ?? "").trim() || null)),
+  );
+  return uploaded.filter((url): url is string => Boolean(url));
 }
 
 async function processBase64ImageUrl(imageUrl: string | null): Promise<string | null> {
@@ -764,6 +866,22 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       if (jobData.status === "done") {
         extractionResult = jobData.result;
         logStage("extracting_questions", `Worker completed extraction after ${Date.now() - extractionWaitStartedAt}ms.`);
+        // The worker may run in a separate process, so echo its completeness
+        // verdict here — this is the log the uploader actually watches, and a
+        // partial extraction must not look identical to a complete one.
+        const completeness = extractionResult?.completeness;
+        if (completeness) {
+          logStage("extracting_questions",
+            `Completeness: ${completeness.anchors_matched}/${completeness.expected_total} anchored questions ` +
+            `(${(completeness.completeness * 100).toFixed(1)}%)` +
+            (completeness.missing_total
+              ? ` — MISSING ${completeness.missing_total}: ${JSON.stringify(completeness.missing_by_page)}`
+              : "") +
+            (completeness.failed_pages?.length ? ` — FAILED PAGES: ${completeness.failed_pages.join(", ")}` : ""));
+        } else {
+          logStage("extracting_questions",
+            "Completeness: not reported by the extractor (reconciliation did not run — extractor may be stale).");
+        }
         break;
       } else if (jobData.status === "failed") {
         sendError(`AI extraction failed: ${jobData.error}`);
@@ -819,43 +937,53 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           }
         }
       }
-    } else {
-      // Separate Answer Key PDF OR fallback to Master PDF
-      const tempAnswersJsonPath = path.join(tempWorkingDir, "answers.json");
-      let targetPdfPath = tempPdfPath; // fallback: Master PDF
-
-      if (answerKeyFile && isPdf) {
-        targetPdfPath = path.join(tempWorkingDir, "answer_key_document.pdf");
-        fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
-      }
+    } else if (answerKeyFile && isPdf) {
+      // Only a separate key file is read here. The question PDF has already
+      // been searched for its own key by the extractor, which runs before this
+      // and applies whatever it finds. Repeating that meant spawning the parser
+      // twice over the same document and reporting two coverage figures for one
+      // paper -- 41% and 47% on the same 51 questions -- which reads like two
+      // findings rather than one measurement made twice.
+      const targetPdfPath = path.join(tempWorkingDir, "answer_key_document.pdf");
+      fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
 
       // Pass the extracted question count as an upper bound. The answer/solution
       // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
       // bound the regex can misread that as a fictitious Q300→4 entry.
       const maxQuestionNumber = extractionResult.questions.length;
-      const parseKeyCmd = `python "${path.join(EXTRACTOR_SCRIPT_DIR, "parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
       try {
         const keyKeepAlive = setInterval(() => {
           sendProgress("extracting_answers", "AI is reading correct answers and extracting worked solutions...");
         }, 4000);
+        let parsed;
         try {
-          await execAsync(parseKeyCmd, { timeout: 120000 });
+          parsed = await parseAnswerKeyFromPdf(targetPdfPath, maxQuestionNumber);
         } finally {
           clearInterval(keyKeepAlive);
         }
-        if (fs.existsSync(tempAnswersJsonPath)) {
-          const parsed = JSON.parse(fs.readFileSync(tempAnswersJsonPath, "utf-8"));
-          // v2 parser returns { answers, solutions }; v1 returned a flat dict.
-          // Handle both for backward compatibility.
-          const answersMap = parsed.answers ?? parsed;
-          const solutionsMap = parsed.solutions ?? {};
-          for (const [qNumStr, ans] of Object.entries(answersMap)) {
-            const qNum = parseInt(qNumStr, 10);
-            if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && Array.isArray(ans)) {
-              csvAnswers[qNum] = ans;
-            }
+
+        // A supplied key file can still be the wrong document, or a scan the
+        // regexes cannot read. They are broad enough to find "answers" in
+        // ordinary prose — over a 51-question paper carrying no key they
+        // returned 14 — so a sparse reading is discarded whole rather than used
+        // to mark part of the paper wrong.
+        const numbers = Object.keys(parsed.answers).filter((n) => {
+          const qNum = parseInt(n, 10);
+          return !isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber;
+        });
+        const coverage = maxQuestionNumber > 0 ? numbers.length / maxQuestionNumber : 0;
+
+        if (numbers.length > 0 && coverage < MIN_KEY_COVERAGE) {
+          console.warn(
+            `[uploadTestController] Answer key discarded: covered ${numbers.length}/${maxQuestionNumber} ` +
+            `(${Math.round(coverage * 100)}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key reaches.`,
+          );
+        } else {
+          for (const qNumStr of numbers) {
+            const ans = parsed.answers[qNumStr];
+            if (Array.isArray(ans)) csvAnswers[parseInt(qNumStr, 10)] = ans;
           }
-          for (const [qNumStr, sol] of Object.entries(solutionsMap)) {
+          for (const [qNumStr, sol] of Object.entries(parsed.solutions)) {
             const qNum = parseInt(qNumStr, 10);
             if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && typeof sol === "string" && sol.trim()) {
               pdfSolutions[qNum] = sol;
@@ -879,6 +1007,8 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const processedText = await processBase64ImagesInText(q.question_text);
         const processedExplanation = await processBase64ImagesInText(q.explanation);
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
+        const processedQuestionImages = await processBase64ImageList(q.question_images);
+        const processedExplanationImages = await processBase64ImageList(q.explanation_images);
 
         const processedOptions = await Promise.all(
           (q.options ?? []).map(async (opt: any) => {
@@ -932,40 +1062,10 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         //      Never risk converting "4" to "D" on a numerical question.
         //   4. Any token > 4 or < 1 or decimal or negative → definitely
         //      numerical, keep raw regardless of exam or type.
-        const NUM_TO_LETTER: Record<string, string> = { "1": "A", "2": "B", "3": "C", "4": "D" };
-        const isNeetExam = examCode === "neet-ug";
-
-        function isDefinitelyNumerical(val: string): boolean {
-          const n = Number(val);
-          return !isNaN(n) && (n > 4 || n < 1 || !Number.isInteger(n));
-        }
-
-        let correctAnswers: string[];
-        const hasRealOptions = finalOptions && finalOptions.length >= 2;
-        const anyDefinitelyNumerical = rawAnswers.some(isDefinitelyNumerical);
-
-        if (anyDefinitelyNumerical) {
-          // Any answer > 4 / decimal / negative → definitely numerical, keep raw
-          // regardless of exam type or question type.
-          correctAnswers = rawAnswers;
-        } else if (isNeetExam) {
-          // NEET: no numericals, ever. All answers 1-4 are option indices.
-          // Convert even if the extractor dropped options (safe for NEET).
-          correctAnswers = rawAnswers.map((a: string) => {
-            const upper = a.toUpperCase().trim();
-            return NUM_TO_LETTER[upper] ?? upper;
-          });
-        } else if (hasRealOptions) {
-          // JEE (Main/Adv/Main+Adv) MCQ with real options: convert 1-4 to A-D.
-          correctAnswers = rawAnswers.map((a: string) => {
-            const upper = a.toUpperCase().trim();
-            return NUM_TO_LETTER[upper] ?? upper;
-          });
-        } else {
-          // JEE with NO options extracted: could be numerical (answer "4" is
-          // the value, not option D). Keep raw and let review catch it.
-          correctAnswers = rawAnswers;
-        }
+        // The queued upload reads a paper's own key with these same rules, so
+        // they live in one place — a paper is keyed identically whichever door
+        // it came through.
+        const correctAnswers = convertAnswers(rawAnswers, type, finalOptions?.length ?? 0, examCode);
 
         // Use the solution from the answer-key PDF if available; otherwise keep
         // the LLM-extracted explanation. The answer-key PDF's solution is
@@ -983,18 +1083,22 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           id:             randomUUID(),
           exam_id:        examId,
           test_type:      "mock-test",
-          subject:        q.subject  || "General",
+          subject:        subjectForStorage(q.subject),
           chapter:        q.chapter  || "General",
           topic:          q.topic    || null,
-          difficulty:     q.difficulty || difficulty,
+          difficulty:     difficultyForStorage(q.difficulty, difficulty),
           year:           new Date(date).getFullYear() || null,
           source:         title,
-          question_type:  type,
-          question_text:  normalizedMedia.question_text,
-          image_url:      normalizedMedia.image_url,
+          question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
+          question_text:  stripInlineImages(normalizedMedia.question_text),
+          question_images: figuresForStorage(
+            normalizedMedia.question_text,
+            [...processedQuestionImages, ...(processedImageUrl ? [processedImageUrl] : [])],
+          ),
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
-          explanation:    finalExplanation,
+          explanation:    stripInlineImages(finalExplanation),
+          explanation_images: figuresForStorage(finalExplanation, processedExplanationImages),
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({

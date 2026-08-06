@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiErrorWarningLine, 
   RiSave3Line,
@@ -23,7 +25,6 @@ export default function ConfigurationPage() {
 
   const [maintenance, setMaintenance] = useState(false);
   const [deterministicEngine, setDeterministicEngine] = useState(true);
-  const [sscPacing, setSscPacing] = useState(true);
   const [customDomain, setCustomDomain] = useState(true);
   const [forumModeration, setForumModeration] = useState(false);
   
@@ -33,28 +34,31 @@ export default function ConfigurationPage() {
   const [maxBulkUploadSize, setMaxBulkUploadSize] = useState(500);
   const [sessionTimeout, setSessionTimeout] = useState(120);
 
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   // Exam Calendar
   type CalRow = { exam_code: string; exam_label: string; suggested_ends_at: string; notes: string | null };
-  const [calendar, setCalendar] = useState<CalRow[]>([]);
   const [calEdits, setCalEdits] = useState<Record<string, { suggested_ends_at: string; notes: string }>>({});
   const [calSaving, setCalSaving] = useState<Record<string, boolean>>({});
   const [calMsg, setCalMsg] = useState<Record<string, string>>({});
 
-  const loadCalendar = () => {
-    apiClient.get<{ success: boolean; data: { calendar: CalRow[] } }>("/api/v1/batches/exam-calendar")
-      .then((res) => {
-        if (res.success) {
-          setCalendar(res.data.calendar);
-          const edits: Record<string, { suggested_ends_at: string; notes: string }> = {};
-          res.data.calendar.forEach((row) => { edits[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" }; });
-          setCalEdits(edits);
-        }
-      }).catch(() => {});
-  };
+  const CALENDAR_PATH = "/api/v1/batches/exam-calendar";
+  const CONFIG_PATH = "/api/v1/superadmin/config";
+  const { data: calendarData } = useApiQuery<{ calendar: CalRow[] }>(CALENDAR_PATH);
+  const calendar = calendarData?.calendar ?? [];
+  const loadCalendar = () => queryClient.invalidateQueries({ queryKey: [CALENDAR_PATH] });
+
+  // Each row is editable, so server values seed the edit buffer when they land
+  // and the buffer owns the fields from then on.
+  const calendarRows = calendarData?.calendar;
+  useEffect(() => {
+    if (!calendarRows) return;
+    const edits: Record<string, { suggested_ends_at: string; notes: string }> = {};
+    calendarRows.forEach((row) => { edits[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" }; });
+    setCalEdits(edits);
+  }, [calendarRows]);
 
   const saveCalRow = async (examCode: string) => {
     if (!token) return;
@@ -72,31 +76,19 @@ export default function ConfigurationPage() {
     finally { setCalSaving((s) => ({ ...s, [examCode]: false })); }
   };
 
-  // Load config on mount
+  const { data: config, isPending: loading } = useApiQuery<Record<string, any>>(CONFIG_PATH);
   useEffect(() => {
-    if (!token) return;
-    setLoading(true);
-    apiClient.get("/api/v1/superadmin/config", token)
-      .then(res => {
-        if (res.success && res.data) {
-          const cfg = res.data;
-          if (cfg.maintenance_mode !== undefined) setMaintenance(cfg.maintenance_mode);
-          if (cfg.deterministic_engine !== undefined) setDeterministicEngine(cfg.deterministic_engine);
-          if (cfg.ssc_pacing !== undefined) setSscPacing(cfg.ssc_pacing);
-          if (cfg.custom_domains_enabled !== undefined) setCustomDomain(cfg.custom_domains_enabled);
-          if (cfg.forum_moderation_enabled !== undefined) setForumModeration(cfg.forum_moderation_enabled);
-          if (cfg.max_concurrent_users !== undefined) setMaxConcurrentUsers(Number(cfg.max_concurrent_users));
-          if (cfg.omr_ingestion_rate !== undefined) setOmrIngestionRate(Number(cfg.omr_ingestion_rate));
-          if (cfg.max_bulk_upload_size !== undefined) setMaxBulkUploadSize(Number(cfg.max_bulk_upload_size));
-          if (cfg.session_timeout !== undefined) setSessionTimeout(Number(cfg.session_timeout));
-        }
-      })
-      .catch(console.error)
-      .finally(() => {
-        setLoading(false);
-        loadCalendar();
-      });
-  }, [token]);
+    if (!config) return;
+    const cfg = config;
+    if (cfg.maintenance_mode !== undefined) setMaintenance(cfg.maintenance_mode);
+    if (cfg.deterministic_engine !== undefined) setDeterministicEngine(cfg.deterministic_engine);
+    if (cfg.custom_domains_enabled !== undefined) setCustomDomain(cfg.custom_domains_enabled);
+    if (cfg.forum_moderation_enabled !== undefined) setForumModeration(cfg.forum_moderation_enabled);
+    if (cfg.max_concurrent_users !== undefined) setMaxConcurrentUsers(Number(cfg.max_concurrent_users));
+    if (cfg.omr_ingestion_rate !== undefined) setOmrIngestionRate(Number(cfg.omr_ingestion_rate));
+    if (cfg.max_bulk_upload_size !== undefined) setMaxBulkUploadSize(Number(cfg.max_bulk_upload_size));
+    if (cfg.session_timeout !== undefined) setSessionTimeout(Number(cfg.session_timeout));
+  }, [config]);
 
   const handleSave = async () => {
     setMessage("These controls are disabled until each setting has a real runtime implementation. No configuration was saved.");
@@ -125,25 +117,25 @@ export default function ConfigurationPage() {
       <main className="mx-auto w-full max-w-[1200px] px-6 pb-16 pt-6">
         
         {message && (
-          <div className="mb-6 p-4 rounded-[10px] border border-s-stroke2/40 bg-b-surface2 text-t-primary font-sans text-sm font-semibold flex items-center justify-between">
+          <div className="mb-3 p-4 rounded-[10px] border border-s-stroke2/40 bg-b-surface2 text-t-primary font-sans text-sm font-semibold flex items-center justify-between">
             <span>{message}</span>
             <button onClick={() => setMessage(null)} className="text-t-secondary hover:text-t-primary font-bold">✕</button>
           </div>
         )}
 
         {loading ? (
-          <div className="flex items-center justify-center gap-3 py-32 text-t-secondary">
+          <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
             <RiLoader4Line size={24} className="animate-spin text-primary-01" />
             <span className="font-sans font-semibold text-[15px]">Loading system settings...</span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
             
             {/* Left Column: Toggles */}
-            <div className="lg:col-span-8 flex flex-col gap-8">
+            <div className="lg:col-span-8 flex flex-col gap-3">
               
               {/* System Maintenance */}
-              <div className={`group relative flex flex-col p-8 rounded-[24px] border overflow-hidden transition-colors ${
+              <div className={`group relative flex flex-col p-5 rounded-[24px] border overflow-hidden transition-colors ${
                 maintenance 
                   ? 'bg-white dark:bg-white/[0.02] border-red-500/40' 
                   : 'bg-white dark:bg-white/[0.02] border-s-stroke2/40'
@@ -161,7 +153,7 @@ export default function ConfigurationPage() {
                   <Toggle enabled={maintenance} onChange={() => setMaintenance(!maintenance)} />
                 </div>
                 
-                <p className="relative z-10 text-[14px] text-t-secondary leading-relaxed mb-5 pl-13">
+                <p className="relative z-10 text-[14px] text-t-secondary leading-relaxed mb-3 pl-13">
                   Maintenance mode is not connected yet. This control is intentionally non-operative and does not change user access.
                 </p>
                 
@@ -178,7 +170,7 @@ export default function ConfigurationPage() {
               {/* Analysis Engine Config */}
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiCpuLine size={20} />
                   </div>
@@ -188,8 +180,8 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="flex justify-between items-start gap-6">
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Deterministic Pedagogical Reporting</h3>
                       <p className="text-[13px] text-t-secondary leading-relaxed">
@@ -199,24 +191,13 @@ export default function ConfigurationPage() {
                     <Toggle enabled={deterministicEngine} onChange={() => setDeterministicEngine(!deterministicEngine)} />
                   </div>
 
-                  <div className="w-full h-px bg-s-stroke2/30" />
-
-                  <div className="flex justify-between items-start gap-6">
-                    <div>
-                      <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Strict SSC Pacing Locks</h3>
-                      <p className="text-[13px] text-t-secondary leading-relaxed">
-                        Enforces the 15-minute intra-section locks specifically for SSC and Bank PO examinations. Applies universally across all B2B partner platforms.
-                      </p>
-                    </div>
-                    <Toggle enabled={sscPacing} onChange={() => setSscPacing(!sscPacing)} />
-                  </div>
                 </div>
               </div>
 
               {/* B2B Settings */}
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiBuilding3Line size={20} />
                   </div>
@@ -226,8 +207,8 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="flex justify-between items-start gap-6">
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-1">Custom Domain Routing</h3>
                       <p className="text-[13px] text-t-secondary leading-relaxed">
@@ -239,7 +220,7 @@ export default function ConfigurationPage() {
 
                   <div className="w-full h-px bg-s-stroke2/30" />
 
-                  <div className="flex justify-between items-start gap-6">
+                  <div className="flex justify-between items-start gap-3">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-[15px] font-bold text-t-primary dark:text-t-primary">Community Forum Moderation</h3>
@@ -257,10 +238,10 @@ export default function ConfigurationPage() {
             </div>
 
             {/* Right Column: Infrastructure Limits */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="lg:col-span-4 flex flex-col gap-3">
               <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden sticky top-6">
 
-                <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="relative z-10 flex items-center gap-3 mb-3 pb-6 border-b border-s-stroke2/30">
                   <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                     <RiServerLine size={20} />
                   </div>
@@ -270,7 +251,7 @@ export default function ConfigurationPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col gap-5">
+                <div className="relative z-10 flex flex-col gap-3">
                   <div className="flex flex-col gap-2">
                     <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Max Concurrent Users</label>
                     <input 
@@ -338,8 +319,8 @@ export default function ConfigurationPage() {
         )}
 
         {/* ── Exam Calendar ── */}
-        <div className="relative z-10 overflow-hidden rounded-[20px] border border-s-stroke2/40 bg-b-surface2/60 dark:bg-b-surface2/40 p-6 shadow-widget backdrop-blur-sm mt-6">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="relative z-10 overflow-hidden rounded-[20px] border border-s-stroke2/40 bg-b-surface2/60 dark:bg-b-surface2/40 p-6 shadow-widget backdrop-blur-sm mt-3">
+          <div className="flex items-center gap-3 mb-3">
             <div className="flex size-9 items-center justify-center rounded-[10px] bg-primary-05/10 border border-primary-05/20">
               <RiCalendarEventLine size={18} className="text-primary-05" />
             </div>

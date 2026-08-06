@@ -19,7 +19,7 @@ export function PendingDPPsWidget({ dpps = [] }: { dpps?: any[] }) {
       }
     >
       {pending.length === 0 ? (
-        <div className="relative z-10 flex flex-col items-center justify-center py-16 w-full text-center bg-black/[0.02] dark:bg-white/[0.02] rounded-[16px]">
+        <div className="relative z-10 flex flex-col items-center justify-center py-10 w-full text-center bg-black/[0.02] dark:bg-white/[0.02] rounded-[16px]">
           <p className="text-[14px] font-sans font-medium text-[#838383]">No DPPs assigned yet.</p>
           <p className="text-[13px] font-sans text-t-secondary/60 mt-1">Your teacher will assign practice papers here.</p>
         </div>

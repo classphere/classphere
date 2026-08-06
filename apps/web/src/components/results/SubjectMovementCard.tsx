@@ -12,10 +12,10 @@ export function SubjectMovementCard({ subjectMovement }: SubjectMovementCardProp
   return (
     <SectionCard
       title={
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-center gap-2">
           <RiExchangeLine size={18} className="text-t-secondary dark:text-t-secondary" />
-          <span>Subject Movement</span>
-        </div>
+          Subject Movement
+        </span>
       }
       subtitle="How you navigated between subjects during the test."
       padding="large"

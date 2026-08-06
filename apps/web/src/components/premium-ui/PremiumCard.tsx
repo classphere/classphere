@@ -22,8 +22,10 @@ export function PremiumCard({ variant = 'light', padding = 'default', className 
   
   const paddings = {
     none: "",
-    default: "p-4 md:p-6",
-    large: "p-5 md:p-8 lg:p-[42px]",
+    default: "p-3.5 md:p-4",
+    // Dashboard widgets, not marketing panels: 42px of padding pushed most
+    // cards below the fold on a laptop.
+    large: "p-4 md:p-5",
   };
 
   return (

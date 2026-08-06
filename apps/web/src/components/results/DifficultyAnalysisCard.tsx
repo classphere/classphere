@@ -12,17 +12,20 @@ export function DifficultyAnalysisCard({ difficultyBreakdown }: DifficultyAnalys
   return (
     <SectionCard
       title={
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-center gap-2">
           <RiBarChartBoxLine size={18} className="text-primary-05" />
-          <span>Difficulty Analysis</span>
-        </div>
+          Difficulty Analysis
+        </span>
       }
       subtitle="Performance breakdown by question difficulty, per subject."
       padding="large"
     >
-      <div className="relative z-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2 mt-4">
+      {/* Only split into columns when there is more than one subject. A
+          single-subject paper ("Overall") was rendering at half width with the
+          other half left empty. */}
+      <div className={`relative z-10 grid gap-4 mt-4 ${difficultyBreakdown.length > 1 ? "sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2" : ""}`}>
         {difficultyBreakdown.map((row: any) => (
-          <div key={row.subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+          <div key={row.subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{row.subject}</h3>
             </div>
@@ -41,10 +44,10 @@ export function DifficultyAnalysisCard({ difficultyBreakdown }: DifficultyAnalys
                         <span className="font-bold">{d.correct}✓</span>
                         <span className="font-bold">{d.incorrect}✗</span>
                         <span className="text-t-secondary dark:text-t-tertiary">{d.skipped} skip</span>
-                        {attempted > 0 && <span className={`font-black ${acc >= 70 ? "text-primary-02" : acc >= 40 ? "text-primary-05" : "text-primary-03"}`}>{acc}%</span>}
+                        {attempted > 0 && <span className={`font-semibold ${acc >= 70 ? "text-primary-02" : acc >= 40 ? "text-primary-05" : "text-primary-03"}`}>{acc}%</span>}
                       </div>
                     </div>
-                    <div className="h-2 w-full rounded-full bg-s-stroke2 overflow-hidden shadow-[inset_0px_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_1px_3px_rgba(0,0,0,0.2)]">
+                    <div className="h-2 w-full rounded-full bg-s-stroke2 overflow-hidden">
                       <div className={`h-full rounded-full ${barColor}`} style={{ width: `${acc}%` }} />
                     </div>
                   </div>

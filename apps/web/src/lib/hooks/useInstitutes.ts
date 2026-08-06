@@ -17,13 +17,39 @@ export interface Institute {
   owner_id: string;
   owner_email: string | null;
   owner_name: string | null;
-  plan: string;           // 'free' | 'trial' | 'active' | 'enterprise'
+  /** @deprecated Pricing lives on `subscription`; kept only for legacy invoice rows. */
+  plan: string;
   logo_url: string | null;
   is_active: boolean;
   created_at: string;
   updated_at: string;
   student_count: number;
   enabled_exam_codes?: string[] | null;
+  /** Brand colour driving the tenant theme. Null means the Classphere default. */
+  theme_primary_color: string | null;
+  subscription: SubscriptionTerms | null;
+  /** Rate x students, or the flat fee. Computed server-side so every screen agrees. */
+  annual_value_paise: number;
+}
+
+export type SubscriptionStatus = "trialing" | "active" | "past_due" | "cancelled";
+
+export interface SubscriptionTerms {
+  status: SubscriptionStatus;
+  billing_mode: "per_student" | "flat";
+  /** Annual rate per student in paise. 59000 = Rs 590/student/year. */
+  price_per_student_paise: number;
+  flat_annual_paise: number | null;
+  trial_ends_at: string | null;
+  current_period_end: string | null;
+}
+
+export interface SubscriptionUpdate {
+  status?: SubscriptionStatus;
+  billing_mode?: "per_student" | "flat";
+  price_per_student_paise?: number;
+  flat_annual_paise?: number | null;
+  trial_ends_at?: string | null;
 }
 
 export interface CreateInstitutePayload {
@@ -116,6 +142,47 @@ export function useInstitutes() {
     return data.url;
   }, [token]);
 
+  /**
+   * Set an institute's commercial terms. Separate from updateInstitute because
+   * only a super admin may price an account — the route rejects anyone else.
+   */
+  const updateSubscription = useCallback(
+    async (id: string, payload: SubscriptionUpdate): Promise<{ success: boolean; message: string }> => {
+      if (!token) return { success: false, message: "Authentication required" };
+      try {
+        const res = await apiClient.patch<{ success: boolean; message: string }>(
+          `/api/v1/institutes/${id}/subscription`,
+          payload,
+          token,
+        );
+        await fetchInstitutes();
+        return { success: res.success, message: res.message ?? "Pricing updated" };
+      } catch (err: any) {
+        return { success: false, message: err.message ?? "Could not update pricing" };
+      }
+    },
+    [token, fetchInstitutes],
+  );
+
+  /** Brand colour and logo. Super-admin only — institutes do not self-serve branding. */
+  const updateBranding = useCallback(
+    async (id: string, payload: { theme_primary_color?: string; theme_logo_url?: string | null }): Promise<{ success: boolean; message: string }> => {
+      if (!token) return { success: false, message: "Authentication required" };
+      try {
+        const res = await apiClient.patch<{ success: boolean; message: string }>(
+          `/api/v1/institutes/${id}/branding`,
+          payload,
+          token,
+        );
+        await fetchInstitutes();
+        return { success: res.success, message: res.message ?? "Branding updated" };
+      } catch (err: any) {
+        return { success: false, message: err.message ?? "Could not update branding" };
+      }
+    },
+    [token, fetchInstitutes],
+  );
+
   const updateInstitute = useCallback(
     async (id: string, payload: Partial<Institute>): Promise<{ success: boolean; message: string }> => {
       if (!token) return { success: false, message: "Authentication required" };
@@ -158,6 +225,8 @@ export function useInstitutes() {
     refetch: fetchInstitutes, 
     createInstitute, 
     uploadImage,
+    updateSubscription,
+    updateBranding,
     updateInstitute,
     deleteInstitute
   };

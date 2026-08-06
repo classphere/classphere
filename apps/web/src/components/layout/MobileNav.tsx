@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import {
@@ -25,6 +26,7 @@ import {
   RiLifebuoyLine,
   RiFileList3Line,
   RiBookmarkLine,
+  RiRepeat2Line,
   RiFileListLine,
   RiSunLine,
   RiMoonLine,
@@ -160,6 +162,7 @@ export default function MobileNav() {
     { label: "My DPPs",      href: "/student/assignments",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/student/assignments") },
     { label: "Test History", href: "/student/history",         icon: <RiBookOpenLine size={18} />,   active: cleanPath.startsWith("/student/history") },
     { label: "Mistake Diary",href: "/student/mistakes",        icon: <RiBookmarkLine size={18} />,   active: cleanPath.startsWith("/student/mistakes") },
+    { label: "Daily Revision", href: "/student/revision/daily", icon: <RiRepeat2Line size={18} />,active: cleanPath.startsWith("/student/revision") },
     { label: "Analytics",   href: "/student/analytics",       icon: <RiLineChartLine size={18} />,  active: cleanPath.startsWith("/student/analytics") },
     { label: "Leaderboard", href: "/student/leaderboard",     icon: <RiTrophyLine size={18} />,     active: cleanPath.startsWith("/student/leaderboard") },
   ];
@@ -169,7 +172,6 @@ export default function MobileNav() {
     { label: "My Batches", href: "/teacher/batch",   icon: <RiTeamLine size={18} />,       active: cleanPath.startsWith("/teacher/batch") },
     { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: cleanPath.startsWith("/teacher/analytics") },
-    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiInformationLine size={18} />,active: cleanPath.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -222,9 +224,11 @@ export default function MobileNav() {
       {/* ── Mobile Top Bar ── */}
       <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
         <Link href={isSuperAdmin ? "/superadmin" : (isTestDepartment ? "/test-department" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard")))} className="flex items-center gap-3">
-          <img
+          <Image
             src={tenant.logoUrl ?? "/logoC.png"}
             alt={displayName}
+            width={36}
+            height={36}
             className="size-9 rounded-[8px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-sm"
           />
           <span className="font-sans text-[18px] font-bold text-t-primary tracking-tight">
@@ -279,7 +283,7 @@ export default function MobileNav() {
         </div>
 
         {/* Drawer Content */}
-        <div className="flex-1 overflow-y-auto px-4 py-6 scrollbar-none flex flex-col gap-6">
+        <div className="flex-1 overflow-y-auto px-4 py-6 scrollbar-none flex flex-col gap-3">
           <div className="flex flex-col gap-2 w-full">
             <nav className="flex flex-col gap-1 w-full">
               {currentNav.map((item) => (
@@ -361,9 +365,11 @@ export default function MobileNav() {
             >
               <div className="size-10 rounded-full overflow-hidden shrink-0 bg-b-surface2 border border-s-stroke2 shadow-sm">
                 {mounted && (
-                  <img
+                  <Image
                     src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}
                     alt="Avatar"
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover"
                   />
                 )}

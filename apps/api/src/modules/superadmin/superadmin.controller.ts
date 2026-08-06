@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { difficultyForStorage, questionTypeForStorage, subjectForStorage } from "../../lib/question-taxonomy";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 import { randomUUID } from "crypto";
@@ -8,8 +9,11 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
-import { normalizeQuestionMedia } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
+import { deriveDurationMin } from "../../lib/exam-profile";
+import { questionShapeDefects } from "../../lib/question-shape";
+import { defaultMarkingScheme, normaliseMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -34,7 +38,26 @@ function ensureUUID(id: any): string {
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 function validateQuestion(q: any, index: number): string | null {
-  if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
+  // A gap is a slot the extractor could not fill — question 24 of 75 that the
+  // model missed. It is uploaded deliberately so the paper keeps its numbering
+  // and a reviewer can open that slot and type the question in. Publication
+  // already refuses a paper containing empty question_text, so a gap cannot
+  // reach a student.
+  const isGap = q.is_gap === true;
+  if (!isGap && !q.question_text) return `Question #${index + 1}: missing 'question_text'`;
+  const markErrors = validateQuestionMarks(q.marks);
+  if (markErrors.length > 0) return `Question #${index + 1}: ${markErrors.join("; ")}`;
+
+  // options and correct_answer are JSONB, which accepts any JSON at all, so a
+  // question keyed to an option it does not have reaches the database without
+  // complaint and is then unanswerable by every student. Recorded rather than
+  // rejected: an upload is a draft, and the review screen is where a person
+  // fixes it. Publication refuses the same defects.
+  const shapeDefects = questionShapeDefects(q);
+  if (shapeDefects.length > 0) {
+    q._defects = [...(Array.isArray(q._defects) ? q._defects : []), ...shapeDefects.map((d) => d.message)];
+    q._needs_review = true;
+  }
   // Drafts are intentionally allowed to have missing keys or damaged matching
   // options. The review editor surfaces these defects; publication validates
   // them before a learner can access the paper.
@@ -87,8 +110,14 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
         newInstitutesThisWeek: newInstitutesRes.count ?? 0,
         newStudentsThisWeek: newStudentsRes.count ?? 0,
         activeTrials: activeTrials ?? 0,
-        enterprisePlans: crmStats.enterprisePlans,
-        estimatedMRR: crmStats.estimatedMRR,
+        // Classphere bills per student per year, so the book is measured in
+        // paying institutes and billed students — not in how many sit on an
+        // "enterprise" tier that was never sold. estimatedMRR was summed from
+        // institute_invoices, a table nothing writes to, so it always read 0.
+        activeInstitutes: crmStats.activeInstitutes,
+        trialInstitutes: crmStats.trialInstitutes,
+        billedStudents: crmStats.billedStudents,
+        estimatedARRPaise: crmStats.estimatedARRPaise,
         systemUptime: null, // Uptime requires retained synthetic-monitor history.
       },
     });
@@ -154,6 +183,22 @@ async function processBase64ImageUrl(imageUrl: string | null): Promise<string | 
   }
 }
 
+/**
+ * Upload every data URL in a figure list to R2, returning storage URLs.
+ *
+ * The extractor embeds base64 into question_images and explanation_images now
+ * that it reads those arrays directly. Only text used to carry base64, so only
+ * text was uploaded; an array of data URLs would otherwise be written to the
+ * database verbatim, bloating rows and defeating the CDN.
+ */
+async function processBase64ImageList(images: unknown): Promise<string[]> {
+  if (!Array.isArray(images)) return [];
+  const uploaded = await Promise.all(
+    images.map((entry) => processBase64ImageUrl(String(entry ?? "").trim() || null)),
+  );
+  return uploaded.filter((url): url is string => Boolean(url));
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/superadmin/upload-questions
@@ -175,17 +220,28 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       duration,
       marks,
       difficulty,
+      marking_scheme,
       questions,
     } = req.body;
 
     // ── 1. Validate required metadata ───────────────────────────────────────
+    //
+    // duration, marks and difficulty are no longer required.
+    //
+    // A paper's total is the exam's marks per question times the number of
+    // questions, and its length follows from the exam's pace, so asking for
+    // them only invited a guess: the stored papers include a 106-question
+    // paper out of 360, a 179-question paper out of the same 360, and a
+    // 75-question JEE Main paper out of 360 rather than 300.
+    //
+    // Difficulty is a property of a question, not of a paper — a real paper
+    // mixes all three — so there is nothing truthful to put at this level.
+    // It stays accepted for callers that send it, and applies per question
+    // only when the question itself does not say.
     const missing = [];
     if (!exam)      missing.push("exam");
     if (!test_type) missing.push("test_type");
     if (!title)     missing.push("title");
-    if (duration === undefined || duration === null)  missing.push("duration");
-    if (marks === undefined || marks === null)     missing.push("marks");
-    if (!difficulty) missing.push("difficulty");
 
     if (missing.length > 0) {
       res.status(400).json({ success: false, message: `Missing required fields: ${missing.join(", ")}` });
@@ -197,15 +253,40 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    if (!Number.isInteger(Number(duration)) || Number(duration) <= 0 ||
-        !Number.isInteger(Number(marks)) || Number(marks) < 0) {
-      res.status(400).json({ success: false, message: "duration must be positive and marks must be a non-negative integer." });
+    // Validated only when supplied — an override has to be sane, an absent
+    // value is computed below.
+    if (duration !== undefined && duration !== null &&
+        (!Number.isInteger(Number(duration)) || Number(duration) <= 0)) {
+      res.status(400).json({ success: false, message: "duration must be a positive integer when provided." });
+      return;
+    }
+    if (marks !== undefined && marks !== null &&
+        (!Number.isInteger(Number(marks)) || Number(marks) < 0)) {
+      res.status(400).json({ success: false, message: "marks must be a non-negative integer when provided." });
       return;
     }
 
     const validExams = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
     if (!validExams.includes(exam)) {
       res.status(400).json({ success: false, message: `Invalid exam. Must be one of: ${validExams.join(", ")}` });
+      return;
+    }
+
+    // A scheme that is present must be well-formed. A scheme that is absent is
+    // not an upload error: JEE Advanced still has no safe default, but the
+    // place to insist on one is publish, not here.
+    //
+    // Most Advanced papers state their marks on the instructions page and the
+    // profiler reads them. The ones that do not — a paper typed by hand, or
+    // scanned without its first page — need a person to enter them, and
+    // rejecting the upload throws away a completed extraction to ask for four
+    // numbers. The draft is saved instead and the numbers are entered on the
+    // review screen, where the questions they apply to are visible.
+    //
+    // Nothing is scored in the meantime: a draft is not sat by anyone.
+    const schemeErrors = validateMarkingScheme(marking_scheme);
+    if (schemeErrors.length > 0) {
+      res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors });
       return;
     }
 
@@ -252,6 +333,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         const processedText = await processBase64ImagesInText(q.question_text);
         const processedExplanation = await processBase64ImagesInText(q.explanation);
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
+        // Figures now arrive as base64 inside the arrays, not only inline in
+        // the text, so they need the same trip to R2.
+        const processedQuestionImages = await processBase64ImageList(q.question_images);
+        const processedExplanationImages = await processBase64ImageList(q.explanation_images);
 
         const processedOptions = await Promise.all(
           (q.options ?? []).map(async (opt: any) => {
@@ -286,18 +371,49 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           id:             ensureUUID(q.id),    // auto-generate UUID if missing/invalid
           exam_id:        examId,
           test_type,
-          subject:        q.subject  || subject  || "General",
+          // "General" is not a subject any exam has; rows defaulted to it
+          // belonged to no axis on any report and were invisible rather than
+          // visibly wrong. NULL is the honest value for "not known".
+          subject:        subjectForStorage(q.subject, subject),
           chapter:        q.chapter  || chapter  || "General",
           topic:          q.topic    || null,
-          difficulty:     q.difficulty || difficulty,
+          // Lowercased: the engine compares difficulty by exact string, so
+          // "Medium" is invisible to every difficulty-based finding.
+          difficulty:     difficultyForStorage(q.difficulty, difficulty),
           year:           q.year     || year     || null,
           source:         q.source   || title,
-          question_type:  type,
-          question_text:  normalizedMedia.question_text,
-          image_url:      normalizedMedia.image_url,
+          // Normalised on the way in. The extractor is prompted for "MCQ" |
+          // "MSQ" | "Numerical" while the rest of the system uses snake_case,
+          // and storing the raw value is what split one category into two.
+          question_type:  questionTypeForStorage(q.question_type ?? type, normalizedMedia.options?.length ?? 0),
+          // Figures are pulled out of the text and stored in the array, so a
+          // question bank with images inline and a PDF-extracted paper end up
+          // identical — and neither renders the same figure twice.
+          question_text:  stripInlineImages(normalizedMedia.question_text),
+          // The paper's own numbering, so a missed question leaves a hole
+          // rather than pulling every later question forward into its slot.
+          question_number: Number.isInteger(q.question_number) && q.question_number > 0
+            ? q.question_number
+            : undefined,
+          is_gap:         q.is_gap === true,
+          // Read from the unstripped text above — stripInlineImages returns a
+          // new string, so both see the same input. The URLs are real by now:
+          // inline images were uploaded to R2 earlier in this function, whereas
+          // the extractor's own array holds bare filenames that resolve to
+          // nothing.
+          question_images: figuresForStorage(
+            normalizedMedia.question_text,
+            [...processedQuestionImages, ...(processedImageUrl ? [processedImageUrl] : [])],
+          ),
           options:        normalizedMedia.options,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
-          explanation:    processedExplanation,
+          explanation:    stripInlineImages(processedExplanation),
+          // Produced by normalize_json.py and, until now, dropped here.
+          explanation_images: figuresForStorage(processedExplanation, processedExplanationImages),
+          // Overrides the paper scheme for this question alone. Null for
+          // essentially everything — only a paper scoring two sections of the
+          // same question type differently needs it.
+          marks:          q.marks ?? null,
           tags:           q.tags || [],
           ...(q.extractor_version === "v4" ? {
             content_blocks: deriveLegacyContentBlocks({
@@ -321,6 +437,22 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       })
     );
 
+    // Marks and duration follow from the exam and the number of questions
+    // unless the caller states otherwise. A full sitting gets the real figures
+    // — 180 NEET questions are out of 720 over 180 minutes — and a partial set
+    // is counted and paced from its own questions rather than inheriting a
+    // three-hour slot for twenty questions.
+    // Summed from what each question is actually worth, so a paper mixing
+    // +3 single-correct with +4 multiple-correct totals correctly instead of
+    // assuming four marks across the board.
+    const paperScheme = normaliseMarkingScheme(marking_scheme) ?? defaultMarkingScheme(exam);
+    const totalMarks = marks !== undefined && marks !== null
+      ? Number(marks)
+      : totalMarksForQuestions(questionRows, paperScheme);
+    const durationMin = duration !== undefined && duration !== null
+      ? Number(duration)
+      : deriveDurationMin(exam, questionRows.length);
+
     // ── 5. Bulk upsert questions via a single RPC ───────────────────────────
     const { data: paperId, error: uploadError } = await supabaseDB.rpc(
       "create_global_review_draft_with_questions",
@@ -332,9 +464,12 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         p_chapter: chapter ?? "",
         p_year: year ? Number(year) : null,
         p_shift: shift ?? "",
-        p_duration_min: Number(duration),
-        p_total_marks: Number(marks),
-        p_difficulty: difficulty,
+        p_duration_min: durationMin,
+        p_total_marks: totalMarks,
+        // Null rather than a guess: a real paper mixes difficulties, and the
+        // column is nullable precisely because there is no honest single value.
+        p_difficulty: difficulty ?? null,
+        p_marking_scheme: paperScheme ?? null,
         p_created_by: req.user?.id ?? null,
         p_questions: questionRows,
       }
@@ -589,7 +724,6 @@ export const updatePlatformConfig = async (req: Request, res: Response): Promise
     const allowedKeys = new Set([
       "maintenance_mode",
       "deterministic_engine",
-      "ssc_pacing",
       "custom_domains_enabled",
       "forum_moderation_enabled",
       "max_concurrent_users",
@@ -824,13 +958,11 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
     const jeeMainCount = examCount("jee-main");
     const jeeAdvCount = examCount("jee-advanced");
     const neetCount = examCount("neet-ug");
-    const sscCount = examCount("ssc-cgl");
 
     const examBreakdown = [
       { exam: "JEE Main", tests: jeeMainCount, pct: percent(jeeMainCount), color: "from-[#00A656] to-[#00E576]", shadow: "shadow-[0px_2px_12px_rgba(0,181,18,0.4)]" },
       { exam: "JEE Advanced", tests: jeeAdvCount, pct: percent(jeeAdvCount), color: "from-[#2A85FF] to-[#60A5FA]", shadow: "shadow-[0px_2px_12px_rgba(42,133,255,0.4)]" },
       { exam: "NEET", tests: neetCount, pct: percent(neetCount), color: "from-[#FFD60A] to-[#FF9F0A]", shadow: "shadow-[0px_2px_12px_rgba(255,214,10,0.4)]" },
-      { exam: "SSC / Other", tests: sscCount, pct: percent(sscCount), color: "from-[#8F5BFF] to-[#A78BFA]", shadow: "shadow-[0px_2px_12px_rgba(143,91,255,0.4)]" },
     ];
 
     const topInstitutes = [...(institutesList ?? [])]

@@ -15,7 +15,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":     ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug":      ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
-  "ssc-cgl":      ["General Intelligence & Reasoning", "General Awareness", "Quantitative Aptitude", "English Language"],
 };
 
 // Auto-detect subject from filename e.g. "Physics_Work_Energy.json" → "Physics"
@@ -64,7 +63,6 @@ const EXAMS = [
   { code: "jee-main",     label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug",      label: "NEET-UG" },
-  { code: "ssc-cgl",      label: "SSC CGL" },
 ];
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise" },
@@ -109,9 +107,6 @@ export default function BulkUpload() {
       const next = { ...prev, [k]: v };
       if (k === "exam") {
         next.subject = "";
-        if (v === "ssc-cgl" && next.test_type === "ncert") {
-          next.test_type = "chapter-wise";
-        }
       }
       // Clear shared subject when switching test_type so stale value doesn't leak
       if (k === "test_type") {
@@ -251,16 +246,16 @@ export default function BulkUpload() {
   // ─────────────────────────────────────────────────────────────────────────────
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-3 w-full">
 
       {/* ── Shared Metadata ─────────────────────────────────────────────────── */}
       <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
-        <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-t-secondary mb-6">
+        <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-t-secondary mb-3">
           Shared Metadata — applies to all files
         </p>
 
-        <div className="relative z-10 flex flex-wrap gap-8">
+        <div className="relative z-10 flex flex-wrap gap-3">
           {/* Exam */}
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Exam *</label>
@@ -277,7 +272,7 @@ export default function BulkUpload() {
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
             <div className="flex flex-wrap gap-3">
-              {TEST_TYPES.filter(t => !(meta.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
+              {TEST_TYPES.map(t => (
                 <Pill key={t.code} active={meta.test_type === t.code} onClick={() => setMetaField("test_type", t.code)}>
                   {t.label}
                 </Pill>
@@ -306,7 +301,7 @@ export default function BulkUpload() {
 
         {/* Chapter-wise: Subject pill selector + Chapter input + Info note */}
         {isChapterWise && (
-          <div className="relative z-10 mt-6 pt-6 border-t border-s-stroke2/30 flex flex-col gap-5">
+          <div className="relative z-10 mt-3 pt-6 border-t border-s-stroke2/30 flex flex-col gap-3">
 
             {/* Info callout */}
             <div className="flex items-start gap-3 p-4 rounded-[10px] bg-[rgba(42,133,255,0.06)] border border-[rgba(42,133,255,0.2)]">
@@ -317,7 +312,7 @@ export default function BulkUpload() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-3">
               {/* Subject pill selector */}
               <div className="flex flex-col gap-2">
                 <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
@@ -358,7 +353,7 @@ export default function BulkUpload() {
 
         {/* PYQ: optional shared subject selector */}
         {isPyq && (
-          <div className="relative z-10 mt-6 pt-6 border-t border-s-stroke2/30 flex flex-col gap-5">
+          <div className="relative z-10 mt-3 pt-6 border-t border-s-stroke2/30 flex flex-col gap-3">
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
                 Subject{" "}

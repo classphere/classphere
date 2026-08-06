@@ -41,7 +41,10 @@ export const getTeacherDashboard = async (req: Request, res: Response): Promise<
       const { data: batchStudents } = await supabaseDB
         .from("batch_students")
         .select("batch_id, student_id")
-        .in("batch_id", batchIds);
+        .in("batch_id", batchIds)
+        // A teacher's roster is who is in the batch now, not everyone who
+        // ever was — a departed student would skew every batch average.
+        .is("left_at", null);
 
       for (const bs of batchStudents ?? []) {
         batchStudentCounts[bs.batch_id] = (batchStudentCounts[bs.batch_id] ?? 0) + 1;
@@ -194,7 +197,8 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
     const { data: batchStudents } = await supabaseDB
       .from("batch_students")
       .select("student_id")
-      .eq("batch_id", batchId);
+      .eq("batch_id", batchId)
+      .is("left_at", null);
 
     const studentIds = (batchStudents ?? []).map((bs: any) => bs.student_id);
     if (studentIds.length === 0) {

@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   RiAddLine,
   RiLoader4Line,
@@ -60,24 +62,14 @@ export default function InstituteTestsPage() {
   const router = useRouter();
   const { session } = useAuth();
 
-  const [tests, setTests] = useState<Test[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const queryClient = useQueryClient();
+  const TESTS_PATH = "/api/v1/tests/my";
+  const { data, isPending: loading, error: queryError } = useApiQuery<{ tests: Test[] }>(TESTS_PATH);
+  const tests = data?.tests ?? [];
+  const error = queryError?.message ?? null;
   const [search, setSearch] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [selectedPaperIdForMatrix, setSelectedPaperIdForMatrix] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    setLoading(true);
-    apiClient.get("/api/v1/tests/my", session.access_token)
-      .then((res) => {
-        if (res.success) setTests(res.data.tests ?? []);
-        else throw new Error(res.message || "Failed to load tests");
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [session]);
 
   const handleDelete = async (test: Test) => {
     if (!window.confirm(`Delete "${test.title}"? This cannot be undone.`)) return;
@@ -85,7 +77,9 @@ export default function InstituteTestsPage() {
     try {
       const res = await apiClient.delete(`/api/v1/tests/${test.id}`, session?.access_token || "");
       if (!res.success) throw new Error(res.message || "Delete failed");
-      setTests((prev) => prev.filter((t) => t.id !== test.id));
+      // Refetch instead of splicing local state — the list is cached, so a
+      // local filter would be undone on the next read from the cache.
+      await queryClient.invalidateQueries({ queryKey: [TESTS_PATH] });
     } catch (err: any) {
       alert(err.message || "Failed to delete test.");
     } finally {
@@ -113,7 +107,7 @@ export default function InstituteTestsPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8">
 
         {/* Header Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-3">
           <div className="relative flex-1 max-w-[360px]">
             <RiSearchLine size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-t-secondary" />
             <input
@@ -262,7 +256,7 @@ function TestCard({
       </div>
 
       {/* Actions */}
-      <div className="relative z-10 flex items-center gap-2 mt-5">
+      <div className="relative z-10 flex items-center gap-2 mt-3">
         <button
           onClick={onView}
           className="flex-1 flex items-center justify-center gap-1.5 h-11 px-4 rounded-[10px] bg-shade-02 text-white text-[13px] font-sans font-semibold hover:opacity-90 transition-all active:scale-[0.98]"

@@ -130,10 +130,10 @@ export default function InstituteFacultyPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-3 select-none bg-transparent">
 
       {/* ── Top Navigation Row ── */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-6 mb-2">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-3 mb-2">
         <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
           Faculty
         </h1>
@@ -199,7 +199,7 @@ export default function InstituteFacultyPage() {
         )}
 
         {!loading && !error && filteredFaculty.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-20 gap-4 text-t-tertiary">
+          <div className="flex flex-col items-center justify-center py-10 gap-4 text-t-tertiary">
             <RiInboxLine size={48} className="opacity-40" />
             <p className="text-sm font-medium">
               {searchQuery ? "No faculty members match your search." : "No faculty members yet. Add your first faculty!"}
@@ -225,9 +225,9 @@ export default function InstituteFacultyPage() {
           return (
             <div
               key={fac.id}
-              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+              className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
             >
-              <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+              <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                 <div className={`flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] border border-s-stroke2/40 shrink-0 font-sans font-bold text-[13px] sm:text-[16px] ${subjectColorMap.initials}`}>
                   {initials}
                 </div>
@@ -242,7 +242,7 @@ export default function InstituteFacultyPage() {
                 </div>
               </div>
 
-              <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+              <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                 <div className="hidden sm:flex flex-col gap-1 sm:gap-1.5 justify-center min-w-[50px] sm:min-w-[90px]">
                   {/* Batches Row */}
                   <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
@@ -300,7 +300,7 @@ export default function InstituteFacultyPage() {
         title="Add Faculty Member"
         subtitle="Faculty will receive a login invite via email"
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
 
           {/* Name */}
           <div>

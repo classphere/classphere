@@ -28,10 +28,10 @@ export function RecentTestReports({ reports }: RecentTestReportsProps) {
         {reports.map((report) => (
           <div
             key={report.id}
-            className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+            className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-3 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
           >
             {/* Left: Avatar/Icon + Title & Batch details */}
-            <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+            <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
               <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                 {report.exam === "JEE" ? <RiRulerLine size={24} className="scale-75 sm:scale-100" /> : <RiTestTubeLine size={24} className="scale-75 sm:scale-100" />}
               </div>
@@ -46,7 +46,7 @@ export function RecentTestReports({ reports }: RecentTestReportsProps) {
             </div>
 
             {/* Right Info & Actions */}
-            <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+            <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
               <div className="hidden sm:flex flex-col items-end justify-center">
                 <span className="text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                   Avg Accuracy

@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TiptapMathField } from "./TiptapMathField";
+import dynamic from "next/dynamic";
 import { QuestionBody } from "@/components/QuestionBody";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine, RiImageAddLine,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -21,8 +21,17 @@ type Option = {
 type Question = Record<string, any> & {
   options?: Option[];
   correct_answer?: string[];
+  /** Figures belonging to the stem, in reading order. */
+  question_images?: string[];
   content_version?: number;
 };
+
+// Tiptap + its extensions are a heavy, DOM-only editor dependency — keep them
+// out of every route that merely reviews questions but never edits math.
+const TiptapMathField = dynamic(() => import("./TiptapMathField"), {
+  ssr: false,
+  loading: () => <div className="h-24 w-full animate-pulse rounded-lg bg-b-surface2" />,
+});
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
@@ -130,6 +139,11 @@ export function QuestionReviewEditor({
   const set = (patch: Partial<Question>) => setDraft((d) => ({ ...d, ...patch }));
 
   // ── Option helpers ──────────────────────────────────────────────────────────
+  // A numerical question has no options — the student types a value. Every type
+  // used to be treated as a choice question here, so an integer question showed
+  // an empty option list and invited the reviewer to add options it should
+  // never have.
+  const isNumeric = ["integer", "numerical"].includes(draft.question_type ?? "");
   const isSingle = !["mcq_multi", "msq"].includes(draft.question_type ?? "");
 
   const toggleAnswer = (id: string) => {
@@ -148,6 +162,47 @@ export function QuestionReviewEditor({
     // projection. The backend can regenerate ordered blocks from the saved text.
     opts[index] = { ...opts[index], text, content_blocks: null };
     set({ options: opts });
+  };
+
+  // ── Figure helpers ──────────────────────────────────────────────────────────
+  // A chosen file is held as a data URL until save, which is what the browser
+  // gives us and what the API converts to storage. Nothing uploads on pick, so
+  // abandoning an edit leaves no orphaned image behind.
+  const figures: string[] = draft.question_images ?? [];
+
+  const readAsDataUrl = (file: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+
+  const setFigures = (next: string[]) => set({ question_images: next, content_blocks: null });
+
+  /** Appends a figure the toolbar's image button has already read. */
+  const addFigure = (dataUrl: string) => setFigures([...figures, dataUrl]);
+
+  const replaceFigure = async (index: number, file: File) => {
+    try {
+      const next = [...figures];
+      next[index] = await readAsDataUrl(file);
+      setFigures(next);
+    } catch { setError("Could not read that image file."); }
+  };
+
+  const removeFigure = (index: number) => setFigures(figures.filter((_, i) => i !== index));
+
+  /** An option's own figure. Options hold one each, in image_url. */
+  const setOptionImage = (index: number, url: string | null) => {
+    const opts = [...(draft.options ?? [])];
+    opts[index] = { ...opts[index], image_url: url, content_blocks: null };
+    set({ options: opts });
+  };
+
+  const replaceOptionImage = async (index: number, file: File) => {
+    try { setOptionImage(index, await readAsDataUrl(file)); }
+    catch { setError("Could not read that image file."); }
   };
 
   const removeOption = (index: number) => {
@@ -170,6 +225,7 @@ export function QuestionReviewEditor({
         topic: draft.topic,
         difficulty: draft.difficulty,
         question_text: draft.question_text,
+        question_images: draft.question_images,
         options: draft.options,
         correct_answer: draft.correct_answer,
         explanation: draft.explanation,
@@ -279,18 +335,18 @@ export function QuestionReviewEditor({
       </div>
 
       {/* ── Body ────────────────────────────────────────────────────────── */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
 
         {preview ? (
           /* ── Student preview: render exactly as a student sees it ─────── */
-          <div className="space-y-5">
+          <div className="space-y-3">
             <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 p-4">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Question (student view)</p>
               <div className="text-[15px] leading-relaxed text-t-primary">
                 <QuestionBody
                   blocks={draft.content_blocks}
                   legacyText={draft.question_text ?? ""}
-                  legacyImageUrl={draft.image_url}
+                  images={draft.question_images}
                   legacyImageAlt="Question figure"
                   reviewerMode
                   confidence={draft.extraction_metadata?.confidence}
@@ -299,6 +355,18 @@ export function QuestionReviewEditor({
                 />
               </div>
             </div>
+            {isNumeric ? (
+              <div>
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
+                  Answer — a typed value, no options
+                </p>
+                <p className="rounded-[12px] border border-green-500/40 bg-green-500/5 p-3 font-mono text-[14px] text-t-primary">
+                  {(draft.correct_answer ?? []).join(", ") || (
+                    <span className="font-sans text-t-secondary">No answer recorded</span>
+                  )}
+                </p>
+              </div>
+            ) : (
             <div>
               <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
                 Options {isSingle ? "— select one correct" : "— select all correct"}
@@ -336,6 +404,7 @@ export function QuestionReviewEditor({
                 })}
               </div>
             </div>
+            )}
             {draft.explanation?.trim() && (
               <div className="rounded-[12px] border border-s-stroke2 bg-b-surface2/40 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Explanation</p>
@@ -354,9 +423,90 @@ export function QuestionReviewEditor({
               disabled={!canEdit}
               onChange={(v: string) => set({ question_text: v, content_blocks: null })}
               placeholder="Type question text…"
+              onImageAdd={canEdit ? addFigure : undefined}
             />
 
-            {/* Options */}
+            {/* The question's figures, beside the text that refers to them.
+                They were inline markdown inside question_text once, so this
+                field drew them; when they moved to question_images the text was
+                stripped and the editor began showing a question about a diagram
+                with no diagram.
+
+                Editable, because the reviewer is the person who can see that a
+                figure is the wrong one or missing — that is most of what
+                reviewing an extracted paper is.
+
+                Adding one is the image button on the text toolbar above, so
+                there is a single way to attach a figure rather than a second
+                control beside it. It appends here rather than embedding the
+                image in the sentence, because the figure belongs to the
+                question, not to its prose. */}
+            <div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                Figures{figures.length > 0 ? ` — ${figures.length}` : ""}
+              </p>
+
+              {figures.length === 0 ? (
+                <p className="rounded-[10px] border border-dashed border-s-stroke2 px-3 py-4 text-center text-[12px] text-t-secondary">
+                  No figures. Use the image button on the toolbar above to add one.
+                </p>
+              ) : (
+                <div className="flex flex-wrap gap-2">
+                  {figures.map((src, i) => (
+                    <div key={`${src.slice(0, 40)}-${i}`} className="group relative">
+                      <img src={src} alt={`Figure ${i + 1}`}
+                        className="max-h-44 max-w-full rounded-[10px] border border-s-stroke2 bg-white object-contain p-1" />
+                      {canEdit && (
+                        <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
+                          <label title="Replace this figure"
+                            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
+                            <RiImageAddLine size={12} />
+                            <input type="file" accept="image/*" className="hidden"
+                              onChange={(e) => { const f = e.target.files?.[0]; if (f) replaceFigure(i, f); e.target.value = ""; }} />
+                          </label>
+                          <button type="button" title="Remove this figure" onClick={() => removeFigure(i)}
+                            className="flex h-6 w-6 items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-red-500">
+                            <RiDeleteBin7Line size={12} />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* A numerical question is answered by typing a value, so it gets a
+                field for that value rather than a list of options to choose
+                between. Kept as a plain text input: an answer can be negative,
+                a decimal, or written to a fixed number of places, and a number
+                input would quietly reformat it. */}
+            {isNumeric ? (
+              <div>
+                <label className="mb-2 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                  Correct answer — a typed value
+                </label>
+                <input
+                  type="text"
+                  inputMode="decimal"
+                  disabled={!canEdit}
+                  value={(draft.correct_answer ?? []).join(", ")}
+                  onChange={(e) =>
+                    set({
+                      correct_answer: e.target.value
+                        .split(",")
+                        .map((v) => v.trim())
+                        .filter(Boolean),
+                    })
+                  }
+                  placeholder="e.g. 42, -3.5 or 0.25"
+                  className="h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 font-mono text-[14px] text-t-primary outline-none focus:border-primary-01 disabled:opacity-60"
+                />
+                <p className="mt-1.5 text-[11px] text-t-secondary">
+                  Separate with commas only if the paper accepts more than one value.
+                </p>
+              </div>
+            ) : (
             <div>
               <div className="mb-2 flex items-center justify-between">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
@@ -410,11 +560,42 @@ export function QuestionReviewEditor({
 
                       {/* Option text (WYSIWYG inline math) */}
                       <div className="flex-1 min-w-0">
+                        {/* An option that is a picture — a structural formula, a
+                            circuit, a graph — keeps it in image_url and has no
+                            text at all. This field only ever drew the text, so
+                            a chemistry paper whose options are all structures
+                            showed four empty boxes and read as a failed
+                            extraction when every option was in fact present. */}
+                        {opt.image_url && (
+                          <div className="group/fig relative mb-2 inline-block">
+                            <img
+                              src={opt.image_url}
+                              alt={`Option ${letter}`}
+                              className="max-h-32 max-w-full rounded-[8px] border border-s-stroke2 bg-white object-contain p-1"
+                            />
+                            {canEdit && (
+                              <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover/fig:opacity-100">
+                                <label title="Replace this option's image"
+                                  className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
+                                  <RiImageAddLine size={10} />
+                                  <input type="file" accept="image/*" className="hidden"
+                                    onChange={(e) => { const f = e.target.files?.[0]; if (f) replaceOptionImage(i, f); e.target.value = ""; }} />
+                                </label>
+                                <button type="button" title="Remove this option's image"
+                                  onClick={() => setOptionImage(i, null)}
+                                  className="flex h-5 w-5 items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-red-500">
+                                  <RiDeleteBin7Line size={10} />
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        )}
                         <TiptapMathField
                           value={opt.text ?? ""}
                           disabled={!canEdit}
                           onChange={(v: string) => updateOptionText(i, v)}
-                          placeholder={`Option ${letter}`}
+                          placeholder={opt.image_url ? "Caption (optional)" : `Option ${letter}`}
+                          onImageAdd={canEdit && !opt.image_url ? (url: string) => setOptionImage(i, url) : undefined}
                         />
                       </div>
 
@@ -434,6 +615,7 @@ export function QuestionReviewEditor({
                 })}
               </div>
             </div>
+            )}
 
             <TiptapMathField
               label="Explanation"

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
@@ -20,6 +21,7 @@ import {
   RiLifebuoyLine,
   RiFileList3Line,
   RiBookmarkLine,
+  RiRepeat2Line,
   RiFileListLine,
   RiSunLine,
   RiMoonLine,
@@ -113,6 +115,7 @@ export default function Sidebar() {
     { label: "My DPPs",      href: "/student/assignments",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/student/assignments") },
     { label: "Test History", href: "/student/history",         icon: <RiBookOpenLine size={18} />,   active: cleanPath.startsWith("/student/history") },
     { label: "Mistake Diary",href: "/student/mistakes",        icon: <RiBookmarkLine size={18} />,   active: cleanPath.startsWith("/student/mistakes") },
+    { label: "Daily Revision", href: "/student/revision/daily", icon: <RiRepeat2Line size={18} />, active: cleanPath.startsWith("/student/revision") },
     { label: "Analytics",   href: "/student/analytics",       icon: <RiLineChartLine size={18} />,  active: cleanPath.startsWith("/student/analytics") },
     { label: "Leaderboard", href: "/student/leaderboard",     icon: <RiTrophyLine size={18} />,     active: cleanPath.startsWith("/student/leaderboard") },
   ];
@@ -122,7 +125,6 @@ export default function Sidebar() {
     { label: "My Batches",href: "/teacher/batch",     icon: <RiTeamLine size={18} />,         active: cleanPath.startsWith("/teacher/batch") },
     { label: "DPPs",      href: "/teacher/dpps",      icon: <RiFileListLine size={18} />,     active: cleanPath.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics", icon: <RiBarChartBoxLine size={18} />,  active: cleanPath.startsWith("/teacher/analytics") },
-    { label: "Doubts",    href: "/teacher/doubts",    icon: <RiInformationLine size={18} />,  active: cleanPath.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -176,12 +178,14 @@ export default function Sidebar() {
     <aside className="hidden lg:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-b-surface1 border-r border-transparent px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
 
       {/* ── Top: Logo ── */}
-      <div className="flex flex-col gap-6 w-full">
+      <div className="flex flex-col gap-3 w-full">
         <div className="pl-1">
           <Link href={isSuperAdmin ? "/" : isTestDepartment ? "/test-department" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
-            <img
+            <Image
               src={tenant.logoUrl ?? "/logoC.png"}
               alt={displayName}
+              width={48}
+              height={48}
               className="size-12 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-widget"
             />
             <div className="flex flex-col min-w-0">
@@ -253,16 +257,18 @@ export default function Sidebar() {
       </div>
 
       {/* ── Bottom: Profile + Actions ── */}
-      <div className="mt-auto flex flex-col gap-5 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
+      <div className="mt-auto flex flex-col gap-3 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
         <Link
           href="/profile"
           className="flex items-center gap-3 w-full p-2.5 rounded-[10px] bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
         >
           <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface2 border border-s-stroke2/50">
             {mounted && (
-              <img
+              <Image
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}
                 alt="Avatar"
+                width={44}
+                height={44}
                 className="w-full h-full object-cover"
               />
             )}

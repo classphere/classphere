@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
+import { PageWrapper } from "@/components/ui";
 import {
   RiArrowLeftLine,
   RiArrowRightLine,
@@ -134,14 +135,14 @@ export default function ResultsPage() {
       <>
         <Navbar title="Test Submitted" />
         <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-10 md:px-6">
-          <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-10 max-w-lg w-full text-center shadow-lg">
-            <div className="mx-auto w-16 h-16 bg-primary-01/10 text-primary-01 rounded-full flex items-center justify-center mb-6">
+          <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-8 md:p-10 max-w-lg w-full text-center">
+            <div className="mx-auto w-16 h-16 bg-primary-01/10 text-primary-01 rounded-full flex items-center justify-center mb-3">
               <RiCheckboxCircleFill size={32} />
             </div>
-            <h1 className="text-[24px] font-black tracking-tight text-t-primary mb-3">
+            <h1 className="text-[24px] font-semibold tracking-tight text-t-primary mb-3">
               Thank you for the test
             </h1>
-            <p className="text-[14px] text-t-secondary mb-8">
+            <p className="text-[14px] text-t-secondary mb-3">
               {analysisDelayed
                 ? "Your result is taking longer than expected. You can safely retry the analysis; your submitted test will not be affected."
                 : "Your test has been successfully submitted. We are crunching the numbers and preparing your personalized analysis."}
@@ -165,7 +166,10 @@ export default function ResultsPage() {
   const pctBorderColor = pct >= 70 ? "border-primary-02" : pct >= 50 ? "border-primary-05" : "border-primary-03";
   const pctBgClass = pct >= 70 ? "bg-primary-02/5" : pct >= 50 ? "bg-primary-05/5" : "bg-primary-03/5";
   const totalQuestions = a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount;
-  const batchAvgScore = a.batchAvg?.score ?? 148; // realistic batch average marks
+  // Null when the batch had too few submissions to average. Previously this
+  // fell back to a hardcoded 148, so every student was compared against a
+  // number no service had ever computed.
+  const batchAvgScore: number | null = a.batchAvg?.score ?? null;
   const attemptedChapters = [...a.topicStats].filter((t: any) => t.attempted > 0);
   const unattemptedChapters = [...a.topicStats].filter((t: any) => t.attempted === 0);
   const strategySubjects = a.attemptStrategy?.subjectOrder ?? Object.keys(a.attemptStrategy?.timeDeviationPct ?? {});
@@ -174,8 +178,10 @@ export default function ResultsPage() {
     <>
       <Navbar title="Results & Analysis" />
 
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8">
-        <div className="mb-6 flex items-center justify-between gap-4">
+      <PageWrapper>
+        {/* flex-wrap so the badge row drops below the back link on a phone
+            instead of the two squeezing each other on one line. */}
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <Link href="/student/dashboard" className="inline-flex items-center gap-2 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary transition-colors hover:text-t-primary">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
@@ -193,10 +199,17 @@ export default function ResultsPage() {
           </div>
         </div>
 
-        <ResultSummaryHeader analysis={a} totalQuestions={totalQuestions} batchAvgScore={batchAvgScore} />
+        {/* Explicit gap: this card sits outside the grid below, so it had no
+            spacing of its own and butted up against the next card. */}
+        <div className="mb-3">
+          <ResultSummaryHeader analysis={a} totalQuestions={totalQuestions} batchAvgScore={batchAvgScore} batchAvgSampleSize={a.batchAvg?.sampleSize} />
+        </div>
 
-        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
-          <div className="space-y-6">
+        {/* min-w-0 on both tracks: grid items default to min-width:auto, so the
+            wide tables inside the tabs would otherwise stretch the column past
+            the viewport and scroll the whole page sideways on mobile. */}
+        <div className="grid gap-3 items-start xl:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="min-w-0 space-y-3">
             <DetailedPerformanceTabs analysis={a} totalQuestions={totalQuestions} strategySubjects={strategySubjects} />
 
             <SyllabusGapsCard unattemptedChapters={unattemptedChapters} />
@@ -209,7 +222,7 @@ export default function ResultsPage() {
             <AttemptClassificationCard attemptClassification={a.attemptClassification} />
             <SubjectMovementCard subjectMovement={a.subjectMovement} />
 
-            <section className="flex flex-col gap-4  bg-[rgba(55,101,246,0.05)] p-6 md:flex-row md:items-center md:justify-between md:p-8 card">
+            <section className="flex flex-col gap-4 rounded-[24px] border border-s-stroke2/40 bg-[rgba(55,101,246,0.05)] p-5 md:flex-row md:items-center md:justify-between md:p-8">
               <div>
                 <h2 className="text-[16px] font-sans font-bold text-primary-01">Stop repeating these mistakes</h2>
                 <p className="mt-1 text-[12px] font-sans text-t-secondary dark:text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
@@ -222,15 +235,15 @@ export default function ResultsPage() {
             <DailyRecoveryPlanCard studyPlan={a.studyPlan} />
           </div>
 
-          <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+          <aside className="min-w-0 space-y-3 xl:sticky xl:top-6 xl:self-start">
+            <section className="group relative rounded-[24px] border border-s-stroke2/40 bg-b-surface2 flex flex-col overflow-hidden p-5 md:p-8 select-none">
               
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTargetLine size={20} className="text-primary-05" /> Recovery options
               </div>
               <p className="relative z-10 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
 
-              <div className="relative z-10 mt-5 space-y-3">
+              <div className="relative z-10 mt-3 space-y-3">
                 <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
                   <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
@@ -242,7 +255,7 @@ export default function ResultsPage() {
               </div>
 
               {showBooster && (
-                <div className="relative z-10 mt-5 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                <div className="relative z-10 mt-3 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5">
                   <div className="mb-3 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Quick set</div>
                   <div className="grid grid-cols-4 gap-2">
                     {[15, 20, 25, 30].map((n) => (
@@ -271,7 +284,7 @@ export default function ResultsPage() {
               )}
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+            <section className="group relative rounded-[24px] border border-s-stroke2/40 bg-b-surface2 flex flex-col overflow-hidden p-5 md:p-8 select-none">
               
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTimerLine size={20} className="text-primary-01" /> Exam snapshot
@@ -279,21 +292,21 @@ export default function ResultsPage() {
               <div className="relative z-10 space-y-3 text-[12px] font-sans text-t-secondary dark:text-t-secondary">
                 <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Correct</span>
-                  <strong className="text-primary-02 text-[16px] font-black">{a.scoring.correctCount}</strong>
+                  <strong className="text-primary-02 text-[16px] font-semibold">{a.scoring.correctCount}</strong>
                 </div>
                 <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Incorrect</span>
-                  <strong className="text-primary-03 text-[16px] font-black">{a.scoring.incorrectCount}</strong>
+                  <strong className="text-primary-03 text-[16px] font-semibold">{a.scoring.incorrectCount}</strong>
                 </div>
                 <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Skipped</span>
-                  <strong className="text-t-primary dark:text-t-primary text-[16px] font-black">{a.scoring.skippedCount}</strong>
+                  <strong className="text-t-primary dark:text-t-primary text-[16px] font-semibold">{a.scoring.skippedCount}</strong>
                 </div>
               </div>
             </section>
           </aside>
         </div>
-      </main>
+      </PageWrapper>
     </>
   );
 }

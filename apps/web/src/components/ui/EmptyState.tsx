@@ -20,7 +20,7 @@ export function EmptyState({
   className = "",
 }: EmptyStateProps) {
   return (
-    <div className={`flex flex-col items-center justify-center py-16 text-center select-none ${className}`}>
+    <div className={`flex flex-col items-center justify-center py-10 text-center select-none ${className}`}>
       {icon && (
         <div className="mb-4 text-t-secondary/25">{icon}</div>
       )}
@@ -33,7 +33,7 @@ export function EmptyState({
         </p>
       )}
       {action && (
-        <div className="mt-5">{action}</div>
+        <div className="mt-3">{action}</div>
       )}
     </div>
   );

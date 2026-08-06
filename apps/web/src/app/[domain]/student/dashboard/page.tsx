@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { PageWrapper } from "@/components/ui";
@@ -13,43 +14,42 @@ import {
   RiLoader4Line
 } from "@remixicon/react";
 
-import { ScorePerformanceWidget } from "@/components/dashboard/ScorePerformanceWidget";
+// Recharts is a heavy client-only dependency — keep it out of this route's
+// initial bundle and only fetch it once the dashboard actually renders.
+const ScorePerformanceWidget = dynamic(
+  () => import("@/components/dashboard/ScorePerformanceWidget").then((m) => m.ScorePerformanceWidget),
+  { ssr: false, loading: () => <div className="h-72 w-full animate-pulse rounded-2xl bg-b-surface2" /> }
+);
 import { PendingDPPsWidget } from "@/components/dashboard/PendingDPPsWidget";
+import { UpcomingTestsWidget } from "@/components/dashboard/UpcomingTestsWidget";
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
+import { scheduleDppReminder } from "@/lib/notifications/local-reminders";
 
 export default function Dashboard() {
-  const { user, session } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [stats, setStats] = useState<any>(null);
-  const [history, setHistory] = useState<any[]>([]);
-  const [dpps, setDpps] = useState<any[]>([]);
-  const [notificationVersion, setNotificationVersion] = useState(0);
+  const { user } = useAuth();
 
+  // Cached: revisiting the dashboard paints instantly from memory and
+  // revalidates in the background, instead of showing a spinner every time.
+  const statsQuery = useApiQuery<any>("/api/v1/dashboard/student");
+  const historyQuery = useApiQuery<any>("/api/v1/dashboard/student/history?limit=3");
+  const dppsQuery = useApiQuery<any>("/api/v1/dpps/student");
+
+  const stats = statsQuery.data ?? null;
+  const history = historyQuery.data?.history ?? [];
+  const dpps = dppsQuery.data?.dpps ?? [];
+  // Only block on the first load. A background revalidation must not throw the
+  // student back to a spinner on a page they can already read.
+  const loading = statsQuery.isPending || historyQuery.isPending || dppsQuery.isPending;
+
+  const pendingDPPs = stats?.metrics?.pendingDPPs;
   useEffect(() => {
-    const refresh = () => setNotificationVersion((version) => version + 1);
-    window.addEventListener("classphere:notification", refresh);
-    return () => window.removeEventListener("classphere:notification", refresh);
-  }, []);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-
-    Promise.all([
-      apiClient.get("/api/v1/dashboard/student", session.access_token),
-      apiClient.get("/api/v1/dashboard/student/history?limit=3", session.access_token),
-      apiClient.get("/api/v1/dpps/student", session.access_token),
-    ])
-      .then(([statsRes, historyRes, dppsRes]) => {
-        if (statsRes.success) setStats(statsRes.data);
-        if (historyRes.success) setHistory(historyRes.data.history || []);
-        if (dppsRes.success) setDpps(dppsRes.data.dpps || []);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token, notificationVersion]);
+    if (pendingDPPs === undefined) return;
+    // Best-effort — no-ops on web / when permission isn't granted.
+    void scheduleDppReminder(pendingDPPs ?? 0);
+  }, [pendingDPPs]);
 
   const getGreeting = () => {
     const hours = new Date().getHours();
@@ -73,7 +73,10 @@ export default function Dashboard() {
   }
 
   const { metrics, chartData, examTarget, batch } = stats || {};
-  const isNEET = examTarget === "neet";
+  // The most recent attempt's exam_code is the most reliable signal — it is
+  // recorded when the paper is taken. examTarget is the fallback for a student
+  // who has not sat anything yet.
+  const examCode = history[0]?.exam_code ?? examTarget;
 
   return (
     <>
@@ -87,12 +90,13 @@ export default function Dashboard() {
           <MetricCard icon={<RiAlertFill size={18} className="text-primary-05" />} label="Pending DPPs" value={metrics?.pendingDPPs ?? 0} badge={metrics?.pendingDPPs > 0 ? "Action needed" : undefined} badgeLabel={metrics?.pendingDPPs > 0 ? "assigned" : undefined} />
         </MetricGrid>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] items-start overflow-x-hidden">
-          <div className="grid gap-6 min-w-0 overflow-x-hidden">
-            <ScorePerformanceWidget data={chartData || []} isNEET={isNEET} latestAttempt={history[0]} />
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_420px] items-start overflow-x-hidden">
+          <div className="grid gap-3 min-w-0 overflow-x-hidden">
+            <UpcomingTestsWidget />
+            <ScorePerformanceWidget data={chartData || []} examCode={examCode} latestAttempt={history[0]} />
             <PendingDPPsWidget dpps={dpps} />
           </div>
-          <div className="grid gap-6 min-w-0 overflow-x-hidden">
+          <div className="grid gap-3 min-w-0 overflow-x-hidden">
             <StudentBatchWidget batch={batch} />
             <LeaderboardWidget />
             <ActionRequiredWidget />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { answerToList, isMultiSelect } from "@/components/test/TestTypes";
 import { useRouter, useParams, useSearchParams } from "next/navigation";
 import {
   RiTimerLine,
@@ -38,6 +39,13 @@ export default function TestPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [meta, setMeta] = useState<TestMeta | null>(null);
   const [loading, setLoading] = useState(true);
+  // Kept separate from `loading`: that flag renders the "Preparing your test"
+  // skeleton, which is the wrong thing to say while a finished test is being
+  // submitted. Both still freeze the timer and proctoring.
+  const [submitting, setSubmitting] = useState(false);
+  // Guards against a double submit from the timer, proctor and modal paths all
+  // racing. A ref applies synchronously; state would not settle until re-render.
+  const submittingRef = useRef(false);
   const [error, setError] = useState<string | null>(null);
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
@@ -132,14 +140,20 @@ export default function TestPage() {
     const loadTestAndAttempt = async () => {
       setLoading(true);
       try {
-        const testResponse = await apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token);
+        // Starting an attempt only needs testId from the URL, not the test-details
+        // response — the backend independently re-validates the paper (existence,
+        // access, delivery mode) and resumes an existing in-progress attempt rather
+        // than duplicating, so these two calls are safe to run concurrently instead
+        // of one after the other.
+        const [testResponse, startResponse] = await Promise.all([
+          apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token),
+          apiClient.post<{ success: boolean; data: { attempt: { id: string } }; message?: string }>(
+            "/api/v1/attempts",
+            { paper_id: testId, test_mode: requestedTestMode },
+            token
+          ),
+        ]);
         if (!testResponse.success) throw new Error(testResponse.message ?? "Failed to load questions.");
-
-        const startResponse = await apiClient.post<{ success: boolean; data: { attempt: { id: string } }; message?: string }>(
-          "/api/v1/attempts",
-          { paper_id: testId, test_mode: requestedTestMode },
-          token
-        );
         if (!startResponse.success) throw new Error(startResponse.message ?? "Failed to start your test attempt.");
 
         const startedAttemptId = startResponse.data.attempt.id;
@@ -247,8 +261,10 @@ export default function TestPage() {
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
-    // Guard: never submit if questions haven't loaded yet
-    if (questions.length === 0 || !attemptId) return;
+    // Guard: never submit if questions haven't loaded yet, and never submit
+    // twice — the timer, proctor and modal paths can all fire this.
+    if (questions.length === 0 || !attemptId || submittingRef.current) return;
+    submittingRef.current = true;
 
     // Flush the time for the currently active question
     const now = Date.now();
@@ -259,7 +275,7 @@ export default function TestPage() {
       currentQuestionEntryTime.current = now;
     }
 
-    setLoading(true);
+    setSubmitting(true);
     try {
       const payload = { answers: buildAttemptAnswers() };
 
@@ -275,30 +291,32 @@ export default function TestPage() {
         router.push(`/results/${data.data.attempt_id}`);
       } else {
         alert("Failed to submit: " + data.message);
-        setLoading(false);
+        submittingRef.current = false;
+        setSubmitting(false);
       }
     } catch (err) {
       console.error(err);
       alert("Submission error: " + (err instanceof Error ? err.message : String(err)));
-      setLoading(false);
+      submittingRef.current = false;
+      setSubmitting(false);
     }
   }, [attemptId, buildAttemptAnswers, questions.length, router, session?.access_token]);
 
   useEffect(() => {
-    if (timeLeft === null || timeLeft <= 0 || loading) return;
+    if (timeLeft === null || timeLeft <= 0 || loading || submitting) return;
     const t = setTimeout(() => setTimeLeft((s) => (s !== null ? s - 1 : null)), 1000);
     return () => clearTimeout(t);
-  }, [timeLeft, loading]);
+  }, [timeLeft, loading, submitting]);
 
   useEffect(() => {
-    if (!loading && timeLeft === 0 && questions.length > 0) {
+    if (!loading && !submitting && timeLeft === 0 && questions.length > 0) {
       handleSubmit();
     }
-  }, [timeLeft, loading, questions.length, handleSubmit]);
+  }, [timeLeft, loading, submitting, questions.length, handleSubmit]);
 
   // ── Anti-Cheat Tab-Switch / Focus Proctoring Listener ────────────────────────
   useEffect(() => {
-    if (loading || !attemptId || showSubmitModal || requestedTestMode === "practice") return;
+    if (loading || submitting || !attemptId || showSubmitModal || requestedTestMode === "practice") return;
 
     const handleFocusLoss = () => {
       setTabSwitchCount((prev) => {
@@ -328,7 +346,7 @@ export default function TestPage() {
       window.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("blur", handleFocusLoss);
     };
-  }, [loading, attemptId, showSubmitModal, requestedTestMode, handleSubmit]);
+  }, [loading, submitting, attemptId, showSubmitModal, requestedTestMode, handleSubmit]);
 
   // Proctor countdown timer
   useEffect(() => {
@@ -388,7 +406,23 @@ export default function TestPage() {
     }
     recordQuestionOpen(qId);
     markAttemptDirty();
-    setAnswers((a) => ({ ...a, [qId]: optId }));
+    setAnswers((a) => {
+      // Multiple-correct questions accumulate a set: clicking an option adds
+      // it, clicking it again takes it back out. Every other type replaces,
+      // which is what a single-correct question means.
+      if (!isMultiSelect(q?.question_type)) return { ...a, [qId]: optId };
+      const current = answerToList(a[qId]);
+      const next = current.includes(optId)
+        ? current.filter((id) => id !== optId)
+        : [...current, optId].sort();
+      // An emptied set is no answer at all, not an empty one — the grader
+      // treats [] as unattempted and it must not read as a wrong attempt.
+      if (next.length === 0) {
+        const { [qId]: _removed, ...rest } = a;
+        return rest;
+      }
+      return { ...a, [qId]: next };
+    });
     setStatus((s) => ({ ...s, [qId]: "answered" }));
   };
 
@@ -417,33 +451,33 @@ export default function TestPage() {
             </div>
           </div>
         </header>
-        <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-3 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card h-full min-h-[420px] min-w-0 p-5 md:p-7">
-            <div className="mb-5 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-2">
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="mb-6 h-6 w-40 rounded-full bg-b-surface2" />
+            <div className="mb-3 h-6 w-40 rounded-full bg-b-surface2" />
             <div className="space-y-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="mt-8 flex gap-3 border-t border-s-stroke2 pt-6">
+            <div className="mt-3 flex gap-3 border-t border-s-stroke2 pt-6">
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
             </div>
           </section>
           <aside className="card h-full min-h-[420px] min-w-0 p-5 md:p-6">
-            <div className="mb-5 grid grid-cols-3 gap-3">
+            <div className="mb-3 grid grid-cols-3 gap-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
-            <div className="space-y-5">
+            <div className="space-y-3">
               <div className="h-28 rounded-[10px] bg-b-surface2" />
               <div className="h-28 rounded-[10px] bg-b-surface2" />
             </div>
@@ -465,6 +499,21 @@ export default function TestPage() {
           <p className="text-body-2 font-semibold">Preparing your test…</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
+  // Submitting covers the modal path and the automatic ones (time expiry,
+  // proctor violation) where no modal is open to convey that anything is
+  // happening. Deliberately not the "Preparing your test" skeleton above.
+  if (submitting) {
+    return (
+      <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-b-surface1 px-6 text-center">
+        <RiLoader4Line size={28} className="animate-spin text-primary-01" />
+        <div>
+          <p className="text-body-2 font-semibold text-t-primary">Submitting your test</p>
+          <p className="mt-1 text-caption text-t-secondary">Saving your answers — don’t close this page.</p>
+        </div>
       </div>
     );
   }
@@ -528,7 +577,7 @@ export default function TestPage() {
         formatTime={formatTime}
       />
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-6 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-3 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
         <div className="lg:hidden">
           <button
             type="button"

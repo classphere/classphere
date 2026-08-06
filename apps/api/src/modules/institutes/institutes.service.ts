@@ -15,7 +15,8 @@ export interface InstituteRow {
   name: string;
   slug: string | null;
   owner_id: string;
-  plan: string;           // 'free' | 'pro' | 'enterprise'
+  /** @deprecated Pricing lives on institute_subscriptions; retained for institute_invoices' join. */
+  plan: string;
   logo_url: string | null;
   is_active: boolean;
   created_at: string;
@@ -25,6 +26,9 @@ export interface InstituteRow {
   owner_email?: string;
   owner_name?: string;
   student_count?: number;
+  theme_primary_color?: string | null;
+  subscription?: SubscriptionTerms | null;
+  annual_value_paise?: number;
 }
 
 export interface CreateInstituteInput {
@@ -68,44 +72,39 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
     }
   }
 
-  // 3. Fetch student counts per institute via batch_students → batches
-  const instituteIds = institutes.map((i: any) => i.id);
-  let studentCountMap: Record<string, number> = {};
+  // 3. Billable students per institute — those in an active, unexpired batch.
+  const studentCountMap = await getStudentCountsByInstitute();
 
-  if (instituteIds.length > 0) {
-    const { data: batches } = await supabaseDB
-      .from("batches")
-      .select("id, institute_id")
-      .in("institute_id", instituteIds)
-      .eq("is_active", true);
+  // 4. Commercial terms, so the CRM row can show what the institute is worth
+  // rather than a plan tier that never mapped to a price.
+  const { data: subs } = await supabaseDB
+    .from("institute_subscriptions")
+    .select("institute_id, status, billing_mode, price_per_student_paise, flat_annual_paise, trial_ends_at, current_period_end");
+  const subsByInstitute = Object.fromEntries((subs ?? []).map((s: any) => [s.institute_id, s]));
 
-    if (batches && batches.length > 0) {
-      const batchIds = batches.map((b: any) => b.id);
-      const batchToInstitute = Object.fromEntries(batches.map((b: any) => [b.id, b.institute_id]));
+  // Branding, so the CRM can show and edit what an institute actually looks
+  // like. theme_logo_url is the authoritative logo; institutes.logo_url is a
+  // second copy that predates it.
+  const { data: settings } = await supabaseDB
+    .from("institute_settings")
+    .select("institute_id, theme_primary_color, theme_logo_url");
+  const settingsByInstitute = Object.fromEntries((settings ?? []).map((s: any) => [s.institute_id, s]));
 
-      const { data: batchStudents } = await supabaseDB
-        .from("batch_students")
-        .select("batch_id")
-        .in("batch_id", batchIds);
-
-      if (batchStudents) {
-        for (const bs of batchStudents) {
-          const instId = batchToInstitute[bs.batch_id];
-          if (instId) {
-            studentCountMap[instId] = (studentCountMap[instId] ?? 0) + 1;
-          }
-        }
-      }
-    }
-  }
-
-  // 4. Merge everything
-  return institutes.map((inst: any) => ({
-    ...inst,
-    owner_email: usersMap[inst.owner_id]?.email ?? null,
-    owner_name:  usersMap[inst.owner_id]?.name ?? null,
-    student_count: studentCountMap[inst.id] ?? 0,
-  }));
+  // 5. Merge everything
+  return institutes.map((inst: any) => {
+    const sub = subsByInstitute[inst.id] ?? null;
+    const students = studentCountMap[inst.id] ?? 0;
+    return {
+      ...inst,
+      owner_email: usersMap[inst.owner_id]?.email ?? null,
+      owner_name:  usersMap[inst.owner_id]?.name ?? null,
+      student_count: students,
+      theme_primary_color: settingsByInstitute[inst.id]?.theme_primary_color ?? null,
+      logo_url: settingsByInstitute[inst.id]?.theme_logo_url ?? inst.logo_url ?? null,
+      subscription: sub,
+      annual_value_paise: sub ? annualValuePaise(sub, students) : 0,
+    };
+  });
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -361,42 +360,97 @@ export async function provisionInstitute(
 
 
 
+// ─── Billing ──────────────────────────────────────────────────────────────────
+
+/** Annual rate charged per student when nothing else is set: ₹590. */
+export const DEFAULT_PRICE_PER_STUDENT_PAISE = 59_000;
+
+export interface SubscriptionTerms {
+  status: "trialing" | "active" | "past_due" | "cancelled";
+  billing_mode: "per_student" | "flat";
+  price_per_student_paise: number;
+  flat_annual_paise: number | null;
+  trial_ends_at: string | null;
+  current_period_end: string | null;
+}
+
+/**
+ * What an institute is worth per year, in paise.
+ *
+ * Kept as a pure function so the same arithmetic backs the CRM list, the KPI
+ * cards and the institute's own billing page — three places that previously
+ * disagreed, because two of them read a stored invoice total and one read a
+ * plan tier.
+ */
+export function annualValuePaise(terms: Pick<SubscriptionTerms, "billing_mode" | "price_per_student_paise" | "flat_annual_paise">, studentCount: number): number {
+  if (terms.billing_mode === "flat") return terms.flat_annual_paise ?? 0;
+  return (terms.price_per_student_paise ?? DEFAULT_PRICE_PER_STUDENT_PAISE) * studentCount;
+}
+
+/**
+ * Billable students per institute, keyed by institute id.
+ *
+ * "Billable" means enrolled in a batch that is active, started, and not past
+ * its expiry — see migration 36. Tying the count to batch lifecycle is what
+ * makes the end of a session a renewal boundary: an immortal batch would
+ * otherwise let an institute rotate new cohorts through one year's fee
+ * forever, and, in the other direction, expired cohorts would keep billing.
+ *
+ * Aggregated in Postgres rather than by pulling rows: the previous approach
+ * counted enrolments rather than students and truncated at 1000 rows, and both
+ * mistakes now reach an invoice.
+ */
+export async function getStudentCountsByInstitute(): Promise<Record<string, number>> {
+  const { data, error } = await supabaseDB.rpc("institute_student_counts");
+  if (error) {
+    console.error("[billing] student count rollup failed:", error.message);
+    return {};
+  }
+  return Object.fromEntries(
+    (data ?? []).map((row: any) => [row.institute_id, Number(row.student_count) || 0]),
+  );
+}
+
 // ─── Stats ────────────────────────────────────────────────────────────────────
 
 /**
- * Get aggregate stats for the CRM KPI cards.
- * Returns enterprise plan count and estimated MRR.
+ * Aggregate stats for the CRM KPI cards.
+ *
+ * Reports what the business actually runs on — how many institutes are paying,
+ * how many students they are billed for, and the annual value of that book.
+ * It used to report a count of institutes on an "enterprise" plan, a tier that
+ * was never sold, and an MRR summed from invoices that nothing writes.
  */
 export async function getInstituteCRMStats(): Promise<{
-  enterprisePlans: number;
-  estimatedMRR: number;
+  activeInstitutes: number;
+  trialInstitutes: number;
+  billedStudents: number;
+  estimatedARRPaise: number;
 }> {
-  // Enterprise plan count — uses actual 'plan' column
-  const { count: enterprisePlans } = await supabaseDB
-    .from("institutes")
-    .select("id", { count: "exact", head: true })
-    .eq("plan", "enterprise")
-    .eq("is_active", true);
+  const [{ data: subs }, studentCounts] = await Promise.all([
+    supabaseDB
+      .from("institute_subscriptions")
+      .select("institute_id, status, billing_mode, price_per_student_paise, flat_annual_paise"),
+    getStudentCountsByInstitute(),
+  ]);
 
-  // Calculate MRR from institute_invoices (this month)
-  // Fallback to 0 if table does not exist or has no rows
-  let estimatedMRR = 0;
-  const startOfMonth = new Date();
-  startOfMonth.setDate(1);
-  startOfMonth.setHours(0, 0, 0, 0);
+  let activeInstitutes = 0;
+  let trialInstitutes = 0;
+  let billedStudents = 0;
+  let estimatedARRPaise = 0;
 
-  const { data: invoices, error } = await supabaseDB
-    .from("institute_invoices")
-    .select("amount_paid")
-    .gte("created_at", startOfMonth.toISOString());
-  
-  if (!error && invoices) {
-    estimatedMRR = invoices.reduce((sum: number, inv: any) => sum + (Number(inv.amount_paid) || 0), 0);
+  for (const sub of subs ?? []) {
+    const students = studentCounts[sub.institute_id] ?? 0;
+    if (sub.status === "trialing") {
+      trialInstitutes += 1;
+      continue; // a trial bills nothing yet, so it must not inflate ARR
+    }
+    if (sub.status !== "active") continue;
+    activeInstitutes += 1;
+    billedStudents += students;
+    estimatedARRPaise += annualValuePaise(sub, students);
   }
 
-  return {
-    enterprisePlans: enterprisePlans ?? 0,
-    estimatedMRR,
-  };
+  return { activeInstitutes, trialInstitutes, billedStudents, estimatedARRPaise };
 }
 

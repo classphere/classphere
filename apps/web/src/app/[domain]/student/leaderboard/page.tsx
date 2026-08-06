@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { PageWrapper, SectionCard, DataTable, DataTableColumn, Card } from "@/components/ui";
 import { RiMedalFill, RiLoader4Line, RiTrophyLine } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 type Batch = { id: string; name: string };
 type Paper = { id: string; title: string };
@@ -15,64 +15,47 @@ type LeaderboardTab = "test" | "weekly";
 
 export default function LeaderboardPage() {
   const { user, session } = useAuth();
-  const [batch, setBatch] = useState<Batch | null>(null);
-  const [papers, setPapers] = useState<Paper[]>([]);
   const [paperId, setPaperId] = useState("");
   const [tab, setTab] = useState<LeaderboardTab>("test");
-  const [testEntries, setTestEntries] = useState<TestEntry[]>([]);
-  const [weeklyEntries, setWeeklyEntries] = useState<WeeklyEntry[]>([]);
-  const [median, setMedian] = useState<number | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get<{ success: boolean; data: { batches: Batch[] } }>("/api/v1/rankings/batches", session.access_token)
-      .then((response) => {
-        if (!response.success) return;
-        const currentBatch = response.data.batches[0] ?? null;
-        setBatch(currentBatch);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  // Four steps, each depending on the one above: which batch the student is in,
+  // which papers that batch has completed, then the ranking for the selected
+  // paper or the week. Passing a null path keeps a step from firing until its
+  // input exists, and each step caches on its own — switching between the two
+  // tabs no longer refetches the batch and paper lookups every time.
+  const { data: batchData, isLoading: batchLoading } = useApiQuery<{ batches: Batch[] }>(
+    "/api/v1/rankings/batches",
+  );
+  const batch = batchData?.batches?.[0] ?? null;
 
-  useEffect(() => {
-    if (!session?.access_token || !batch?.id) return;
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { papers: Paper[] } }>(`/api/v1/rankings/papers?batch_id=${batch.id}`, session.access_token)
-      .then((response) => {
-        if (!response.success) return;
-        const completedPapers = response.data.papers ?? [];
-        setPapers(completedPapers);
-        setPaperId(completedPapers[0]?.id ?? "");
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, session?.access_token]);
+  const { data: paperData, isLoading: papersLoading } = useApiQuery<{ papers: Paper[] }>(
+    batch?.id ? `/api/v1/rankings/papers?batch_id=${batch.id}` : null,
+  );
+  const papers = paperData?.papers ?? [];
 
+  // The picker defaults to the most recent completed paper, then the student
+  // owns the selection.
+  const firstPaperId = paperData?.papers?.[0]?.id;
   useEffect(() => {
-    if (!session?.access_token || !batch?.id || tab !== "test") return;
-    if (!paperId) { setTestEntries([]); return; }
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { entries: TestEntry[]; batch_median: number } }>(`/api/v1/rankings/paper?batch_id=${batch.id}&paper_id=${paperId}`, session.access_token)
-      .then((response) => {
-        if (response.success) {
-          setTestEntries(response.data.entries);
-          setMedian(response.data.batch_median);
-        }
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, paperId, session?.access_token, tab]);
+    if (firstPaperId && !paperId) setPaperId(firstPaperId);
+  }, [firstPaperId, paperId]);
 
-  useEffect(() => {
-    if (!session?.access_token || !batch?.id || tab !== "weekly") return;
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: { entries: WeeklyEntry[] } }>(`/api/v1/rankings/weekly?batch_id=${batch.id}`, session.access_token)
-      .then((response) => { if (response.success) setWeeklyEntries(response.data.entries); })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [batch?.id, session?.access_token, tab]);
+  const { data: testData, isLoading: testLoading } = useApiQuery<{ entries: TestEntry[]; batch_median: number }>(
+    tab === "test" && batch?.id && paperId
+      ? `/api/v1/rankings/paper?batch_id=${batch.id}&paper_id=${paperId}`
+      : null,
+  );
+  const testEntries = testData?.entries ?? [];
+  const median = testData?.batch_median ?? null;
+
+  const { data: weeklyData, isLoading: weeklyLoading } = useApiQuery<{ entries: WeeklyEntry[] }>(
+    tab === "weekly" && batch?.id ? `/api/v1/rankings/weekly?batch_id=${batch.id}` : null,
+  );
+  const weeklyEntries = weeklyData?.entries ?? [];
+
+  // isLoading rather than isPending: the steps that are disabled report
+  // `pending` forever, which would pin this page to a spinner.
+  const loading = batchLoading || papersLoading || testLoading || weeklyLoading;
 
   const mine = testEntries.find((entry) => entry.student_id === user?.id);
   const weeklyMine = weeklyEntries.find((entry) => entry.student_id === user?.id);
@@ -91,19 +74,19 @@ export default function LeaderboardPage() {
   return <>
     <Navbar title="Leaderboard" subtitle={batch ? `Your batch · ${batch.name}` : "Compare progress with your batchmates."} breadcrumbs="Student > Leaderboard" />
     <PageWrapper>
-      <div className="mb-6 flex w-fit rounded-[14px] bg-b-surface2 p-1 shadow-widget">
+      <div className="mb-3 flex w-fit rounded-[14px] bg-b-surface2 p-1 shadow-widget">
         <button onClick={() => setTab("test")} className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${tab === "test" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}>Test leaderboard</button>
         <button onClick={() => setTab("weekly")} className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${tab === "weekly" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}>Weekly leaderboard</button>
       </div>
 
-      {!batch && !loading ? <SectionCard padding="none"><div className="py-16 text-center"><p className="text-[15px] font-bold text-t-primary">You are not assigned to a batch yet.</p><p className="mt-2 text-[13px] text-t-secondary">Ask your institute to assign you to a batch to unlock fair comparisons.</p></div></SectionCard> : <>
+      {!batch && !loading ? <SectionCard padding="none"><div className="py-10 text-center"><p className="text-[15px] font-bold text-t-primary">You are not assigned to a batch yet.</p><p className="mt-2 text-[13px] text-t-secondary">Ask your institute to assign you to a batch to unlock fair comparisons.</p></div></SectionCard> : <>
         {tab === "test" ? <>
-          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"><div><h2 className="text-[16px] font-bold text-t-primary">Same-paper ranking</h2><p className="mt-1 text-[13px] text-t-secondary">Your newest completed batch test is selected automatically.</p></div><select value={paperId} onChange={(event) => setPaperId(event.target.value)} className="h-11 min-w-[260px] rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 text-sm font-semibold text-t-primary"><option value="">No completed batch tests</option>{papers.map((paper) => <option key={paper.id} value={paper.id}>{paper.title}</option>)}</select></div>
-          {mine ? <Card variant="default" padding="large" className="mb-6 flex items-center justify-between"><div><p className="text-sm font-semibold text-t-secondary">Your result for this paper</p><p className="mt-1 text-xl font-bold text-t-primary">Rank #{mine.rank} · {mine.percentile}%ile</p></div><div className="text-right"><p className="text-sm text-t-secondary">Batch median</p><p className="mt-1 text-xl font-bold text-primary-01">{median}%</p></div></Card> : null}
+          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"><div><h2 className="text-[16px] font-bold text-t-primary">Same-paper ranking</h2><p className="mt-1 text-[13px] text-t-secondary">Your newest completed batch test is selected automatically.</p></div><select value={paperId} onChange={(event) => setPaperId(event.target.value)} className="h-11 min-w-[260px] rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 text-sm font-semibold text-t-primary"><option value="">No completed batch tests</option>{papers.map((paper) => <option key={paper.id} value={paper.id}>{paper.title}</option>)}</select></div>
+          {mine ? <Card variant="default" padding="large" className="mb-3 flex items-center justify-between"><div><p className="text-sm font-semibold text-t-secondary">Your result for this paper</p><p className="mt-1 text-xl font-bold text-t-primary">Rank #{mine.rank} · {mine.percentile}%ile</p></div><div className="text-right"><p className="text-sm text-t-secondary">Batch median</p><p className="mt-1 text-xl font-bold text-primary-01">{median}%</p></div></Card> : null}
           <LeaderboardTable loading={loading} columns={testColumns} entries={testEntries} emptyState="Complete a batch-assigned test to see a fair comparison." />
         </> : <>
-          <div className="mb-5"><h2 className="flex items-center gap-2 text-[16px] font-bold text-t-primary"><RiTrophyLine size={18} className="text-primary-05" /> Weekly practice ranking</h2><p className="mt-1 text-[13px] text-t-secondary">Ranked by questions answered this week across tests and DPPs.</p></div>
-          {weeklyMine ? <Card variant="default" padding="large" className="mb-6"><p className="text-sm font-semibold text-t-secondary">Your progress this week</p><p className="mt-1 text-xl font-bold text-t-primary">Rank #{weeklyMine.rank} · {weeklyMine.questions_solved} questions solved</p></Card> : null}
+          <div className="mb-3"><h2 className="flex items-center gap-2 text-[16px] font-bold text-t-primary"><RiTrophyLine size={18} className="text-primary-05" /> Weekly practice ranking</h2><p className="mt-1 text-[13px] text-t-secondary">Ranked by questions answered this week across tests and DPPs.</p></div>
+          {weeklyMine ? <Card variant="default" padding="large" className="mb-3"><p className="text-sm font-semibold text-t-secondary">Your progress this week</p><p className="mt-1 text-xl font-bold text-t-primary">Rank #{weeklyMine.rank} · {weeklyMine.questions_solved} questions solved</p></Card> : null}
           <LeaderboardTable loading={loading} columns={weeklyColumns} entries={weeklyEntries} emptyState="No questions have been solved in your batch this week yet." />
         </>}
       </>}

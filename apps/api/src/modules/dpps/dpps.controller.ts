@@ -106,7 +106,9 @@ export const createDPP = async (req: Request, res: Response): Promise<void> => {
     const { data: batchStudents } = await supabaseDB
       .from("batch_students")
       .select("student_id")
-      .eq("batch_id", batch_id);
+      .eq("batch_id", batch_id)
+      // Students who have left the batch are not assigned new work.
+      .is("left_at", null);
 
     if (batchStudents && batchStudents.length > 0) {
       const studentDppRows = batchStudents.map((bs: any) => ({
@@ -359,7 +361,7 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
 
     const { data: questions } = await supabaseDB
       .from("questions")
-      .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty")
+      .select("id, question_text, question_images, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty")
       .in("id", questionIds)
       .eq("is_active", true);
 
@@ -374,7 +376,7 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
         const mapped: any = {
           id: q.id,
           question_text: q.question_text,
-          image_url: q.image_url,
+          question_images: Array.isArray(q.question_images) ? q.question_images : [],
           options: q.options,
           question_type: q.question_type,
           subject: q.subject,

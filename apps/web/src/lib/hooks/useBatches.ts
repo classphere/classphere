@@ -22,12 +22,18 @@ export interface Batch {
   is_active: boolean;
   starts_at: string | null;
   ends_at: string | null;
+  /** Exam year this cohort sits for — how the institute batch list is grouped. */
+  target_year: number | null;
+  /** The class the cohort JOINED in. The class they are in now is derived — see currentClassLevel. */
+  entry_class_level: "class_11" | "class_12" | "dropper" | null;
   created_at: string;
 }
 
 export interface CreateBatchPayload {
   name: string;
   exam: string;
+  target_year?: number;
+  entry_class_level?: string;
   starts_at?: string;
   ends_at?: string;
 }
@@ -118,6 +124,32 @@ export function useBatches() {
     [fetchBatches]
   );
 
+  /**
+   * Move students out of one batch and into another.
+   *
+   * Server-side this is a departure plus an enrolment, so the student keeps one
+   * continuous history rather than appearing to be a new joiner.
+   */
+  const moveStudents = useCallback(
+    async (
+      sourceBatchId: string,
+      studentIds: string[],
+      targetBatchId: string,
+    ): Promise<{ success: boolean; message: string }> => {
+      try {
+        const response = await apiFetch<{ success: boolean; message: string }>(
+          `/api/v1/batches/${sourceBatchId}/students/move`,
+          { method: "POST", body: JSON.stringify({ student_ids: studentIds, target_batch_id: targetBatchId }) },
+        );
+        await fetchBatches();
+        return { success: true, message: response.message ?? "Students moved" };
+      } catch (err: any) {
+        return { success: false, message: err.message ?? "Could not move students" };
+      }
+    },
+    [fetchBatches],
+  );
+
   const updateBatch = useCallback(async (id: string, payload: UpdateBatchPayload) => {
     try {
       await apiFetch(`/api/v1/batches/${id}`, { method: "PATCH", body: JSON.stringify(payload) });
@@ -134,5 +166,5 @@ export function useBatches() {
     } catch (err: any) { return { success: false, message: err.message }; }
   }, [fetchBatches]);
 
-  return { batches, loading, error, refetch: fetchBatches, createBatch, updateBatch, deactivateBatch };
+  return { batches, loading, error, refetch: fetchBatches, createBatch, updateBatch, deactivateBatch, moveStudents };
 }

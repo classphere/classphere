@@ -230,10 +230,10 @@ export default function ScheduleTestPage() {
   };
 
   return (
-    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
+    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-3 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
       
       {/* ── Top Navigation Row (Figma Style) ── */}
-      <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
+      <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-3">
         <div className="flex items-center gap-4">
           <Link href={returnPath} className="btn btn-outline w-12 h-12 !px-0 rounded-[10px] flex items-center justify-center shrink-0 cursor-pointer">
             <RiArrowLeftLine size={20} />
@@ -280,15 +280,15 @@ export default function ScheduleTestPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 w-full max-w-[900px] mt-4">
+      <div className="flex flex-col gap-3 w-full max-w-[900px] mt-4">
         
         {/* Basic Details */}
-        <PremiumCard padding="large" className="relative z-20 !overflow-visible w-full flex flex-col gap-6">
+        <PremiumCard padding="large" className="relative z-20 !overflow-visible w-full flex flex-col gap-3">
           <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary flex items-center gap-2 m-0">
             <RiFileList3Line size={20} className="text-primary-02" /> Basic Details
           </h2>
           
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-2">
               <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Test Name</label>
               <input 
@@ -300,7 +300,7 @@ export default function ScheduleTestPage() {
               />
             </div>
 
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-3">
               <div className="flex-1 flex flex-col gap-2" ref={dropdownRef}>
                 <div className="flex justify-between items-center">
                   <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Target Batches</label>
@@ -483,7 +483,7 @@ export default function ScheduleTestPage() {
         )}
 
         {/* Upload Assets */}
-        <PremiumCard padding="large" className="w-full flex flex-col gap-6">
+        <PremiumCard padding="large" className="w-full flex flex-col gap-3">
           <div className="flex flex-col gap-1">
             <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary flex items-center gap-2 m-0">
               <RiFileList3Line size={20} className="text-primary-02" /> Upload Test Assets
@@ -508,7 +508,7 @@ export default function ScheduleTestPage() {
             className="hidden" 
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
             {/* PDF Upload Card */}
             <div 
               onClick={() => pdfInputRef.current?.click()}
@@ -639,7 +639,7 @@ export default function ScheduleTestPage() {
       </div>
 
       {(status === "uploading" || status === "processing") && (
-        <div className="fixed inset-0 bg-b-surface1/90 dark:bg-b-surface1/95 backdrop-blur-md z-[9999] flex flex-col items-center justify-center gap-6 px-6 select-none">
+        <div className="fixed inset-0 bg-b-surface1/90 dark:bg-b-surface1/95 backdrop-blur-md z-[9999] flex flex-col items-center justify-center gap-3 px-6 select-none">
           <div className="relative flex items-center justify-center">
             {/* Spinning Loader Ring */}
             <div className="size-16 border-4 border-primary-01/10 border-t-primary-01 rounded-full animate-spin" />

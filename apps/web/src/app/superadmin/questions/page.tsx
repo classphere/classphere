@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiSearchLine, 
   RiFilter3Line, 
@@ -28,10 +30,7 @@ export default function QuestionBankPage() {
   const { session } = useAuth();
   const token = session?.access_token;
 
-  const [questions, setQuestions] = useState<any[]>([]);
-  const [total, setTotal] = useState(0);
-  const [allFilteredIds, setAllFilteredIds] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [page, setPage] = useState(1);
   const [subject, setSubject] = useState("");
   const [search, setSearch] = useState("");
@@ -51,43 +50,37 @@ export default function QuestionBankPage() {
   });
   const [saving, setSaving] = useState(false);
 
-  const fetchQuestions = useCallback(async () => {
-    if (!token) return;
-    setLoading(true);
-    try {
-      const qs = new URLSearchParams();
-      if (examCategory !== "all") qs.set("exam", examCategory);
-      if (testType !== "all") qs.set("type", testType);
+  // Only exam and type are server-side filters. Subject, search and paging are
+  // applied below over the response we already hold — previously all six were
+  // in the fetch dependencies, so every keystroke in the search box refetched
+  // the entire paper list.
+  const listPath = (() => {
+    const qs = new URLSearchParams();
+    if (examCategory !== "all") qs.set("exam", examCategory);
+    if (testType !== "all") qs.set("type", testType);
+    return `/api/v1/questions/tests?${qs.toString()}`;
+  })();
+  const { data: listData, isPending: loading } = useApiQuery<{ papers: any[] }>(listPath);
+  const fetchQuestions = () => queryClient.invalidateQueries({ queryKey: [listPath] });
 
-      const res = await apiClient.get(`/api/v1/questions/tests?${qs.toString()}`, token);
-      if (res.success) {
-        let qs2 = res.data.papers ?? [];
-        if (subject) {
-          qs2 = qs2.filter((item: any) => item.subject === subject);
-        }
-        if (search) {
-          const q = search.toLowerCase();
-          qs2 = qs2.filter((item: any) =>
-            (item.subject ?? "").toLowerCase().includes(q) ||
-            (item.chapter ?? "").toLowerCase().includes(q) ||
-            (item.topic ?? "").toLowerCase().includes(q) ||
-            (item.title ?? "").toLowerCase().includes(q) ||
-            (item.id ?? "").toLowerCase().includes(q)
-          );
-        }
-        setTotal(qs2.length);
-        setAllFilteredIds(qs2.map((item: any) => item.id));
-        const startIndex = (page - 1) * LIMIT;
-        setQuestions(qs2.slice(startIndex, startIndex + LIMIT));
-      }
-    } catch (e) {
-      console.error("[QuestionBank]", e);
-    } finally {
-      setLoading(false);
+  const filteredPapers = (() => {
+    let rows = listData?.papers ?? [];
+    if (subject) rows = rows.filter((item: any) => item.subject === subject);
+    if (search) {
+      const q = search.toLowerCase();
+      rows = rows.filter((item: any) =>
+        (item.subject ?? "").toLowerCase().includes(q) ||
+        (item.chapter ?? "").toLowerCase().includes(q) ||
+        (item.topic ?? "").toLowerCase().includes(q) ||
+        (item.title ?? "").toLowerCase().includes(q) ||
+        (item.id ?? "").toLowerCase().includes(q)
+      );
     }
-  }, [token, page, subject, search, examCategory, testType]);
-
-  useEffect(() => { fetchQuestions(); }, [fetchQuestions]);
+    return rows;
+  })();
+  const total = filteredPapers.length;
+  const allFilteredIds = filteredPapers.map((item: any) => item.id);
+  const questions = filteredPapers.slice((page - 1) * LIMIT, (page - 1) * LIMIT + LIMIT);
 
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to permanently delete this test?")) return;
@@ -125,7 +118,6 @@ export default function QuestionBankPage() {
   const handleBulkDelete = async () => {
     if (!confirm(`Are you sure you want to permanently delete ${selectedIds.size} selected tests?`)) return;
     if (!token) return;
-    setLoading(true);
     try {
       await apiClient.deleteWithBody<{ success: boolean }>(
         "/api/v1/tests/bulk/global",
@@ -136,8 +128,6 @@ export default function QuestionBankPage() {
       await fetchQuestions();
     } catch (err: any) {
       alert("Error deleting tests: " + (err.message ?? ""));
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -175,7 +165,7 @@ export default function QuestionBankPage() {
 
   return (
     <>
-      <Navbar title="Global Question Bank" subtitle="Manage JEE, NEET, and SSC question databases." />
+      <Navbar title="Global Question Bank" subtitle="Manage JEE and NEET question databases." />
       
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
         
@@ -229,13 +219,12 @@ export default function QuestionBankPage() {
           {/* Categories / Filters */}
           <div className="flex flex-col gap-4 mt-2">
             {/* Exam Tabs */}
-            <div className="flex flex-row gap-6 border-b border-s-stroke2/40 overflow-x-auto hide-scrollbar">
+            <div className="flex flex-row gap-3 border-b border-s-stroke2/40 overflow-x-auto hide-scrollbar">
               {[
                 { id: "all", label: "All Exams" },
                 { id: "jee-main", label: "JEE Main" },
                 { id: "jee-advanced", label: "JEE Advanced" },
                 { id: "neet-ug", label: "NEET UG" },
-                { id: "ssc-cgl", label: "SSC CGL" },
               ].map(exam => (
                 <button
                   key={exam.id}
@@ -257,7 +246,6 @@ export default function QuestionBankPage() {
                 { id: "ncert", label: "NCERT" },
                 { id: "assigned", label: "Assigned Test" },
               ]
-                .filter(type => !(examCategory === "ssc-cgl" && type.id === "ncert"))
                 .map(type => (
                 <button
                   key={type.id}
@@ -271,7 +259,7 @@ export default function QuestionBankPage() {
           </div>
 
           {/* Table */}
-          <div className="flex flex-col gap-3 mt-6">
+          <div className="flex flex-col gap-3 mt-3">
             <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
               <div className="w-[40px] flex items-center justify-center">
                 <input 
@@ -295,12 +283,12 @@ export default function QuestionBankPage() {
             </div>
 
             {loading ? (
-              <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+              <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
                 <RiLoader4Line size={22} className="animate-spin text-primary-01" />
                 <span className="font-sans font-semibold text-[14px]">Loading tests...</span>
               </div>
             ) : questions.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary">
                 <p className="font-sans font-semibold text-[14px]">No tests found.</p>
                 <p className="font-sans text-[13px] mt-1">Try adjusting your filters.</p>
               </div>
@@ -401,7 +389,7 @@ export default function QuestionBankPage() {
           title={editingQuestion.id === "bulk" ? `Edit details for ${selectedIds.size} selected tests` : `Edit Test details: #${editingQuestion.id.slice(0, 10)}`}
           maxWidth="max-w-[500px]"
         >
-          <form onSubmit={handleSaveEdit} className="flex flex-col gap-6">
+          <form onSubmit={handleSaveEdit} className="flex flex-col gap-3">
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Subject</label>
               <select

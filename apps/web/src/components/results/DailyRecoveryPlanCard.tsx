@@ -25,13 +25,13 @@ export function DailyRecoveryPlanCard({ studyPlan }: DailyRecoveryPlanCardProps)
           <button
             key={day.day}
             className={`w-full rounded-[10px] border p-4 text-left transition-colors ${
-              expandedDay === day.day ? "border-primary-01/40 bg-[rgba(55,101,246,0.05)] shadow-widget" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight shadow-sm"
+              expandedDay === day.day ? "border-primary-01/40 bg-[rgba(55,101,246,0.05)]" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight"
             }`}
             onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
           >
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-b-surface2 text-[14px] font-sans font-black text-primary-01 border border-s-stroke2">D{day.day}</div>
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-b-surface2 text-[14px] font-sans font-semibold text-primary-01 border border-s-stroke2">D{day.day}</div>
                 <div>
                   <div className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{day.topic}</div>
                   <div className="mt-0.5 text-[12px] font-sans text-t-secondary dark:text-t-secondary">{day.durationMinutes} min</div>

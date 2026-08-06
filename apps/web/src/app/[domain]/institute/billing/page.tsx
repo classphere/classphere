@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { 
   RiCheckFill, 
   RiDownload2Line, 
@@ -16,30 +16,26 @@ import {
 } from "@remixicon/react";
 import { PremiumSectionCard } from "@/components/premium-ui";
 
+/** Subscription lifecycle, phrased for the institute rather than the database. */
+const STATUS_LABEL: Record<string, string> = {
+  trialing: "Trial Active",
+  active: "Active",
+  past_due: "Payment Overdue",
+  cancelled: "Cancelled",
+};
+
 export default function BillingPage() {
   const { session } = useAuth();
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-  const [subscription, setSubscription] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetchSub = async () => {
-      try {
-        const res = await apiClient.get("/api/v1/institutes/me/subscription", session.access_token);
-        if (res.success) setSubscription(res.data);
-      } catch (e) { console.error(e); }
-      finally { setLoading(false); }
-    };
-    fetchSub();
-  }, [session?.access_token]);
+  const { data: subscription, isPending: loading } = useApiQuery<any>("/api/v1/institutes/me/subscription");
 
   return (
     <>
-      <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
+      <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-3 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
         
         {/* ── Top Navigation Row (Figma Style) ── */}
-        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-3">
           {/* Title */}
           <h1 className="font-sans font-semibold text-[24px] md:text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
             Billing & Subscription
@@ -84,18 +80,35 @@ export default function BillingPage() {
               
               <div className="flex flex-col gap-2 text-white">
                 <div className="w-max px-3 py-1 rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white/90 border border-white/20 mb-2 flex items-center gap-1">
-                  <RiTimeLine size={14} /> Trial Active
+                  <RiTimeLine size={14} /> {STATUS_LABEL[subscription.status] ?? "Subscription"}
                 </div>
-                <h2 className="font-sans font-semibold text-[28px] m-0 capitalize">{subscription.plan_tier} Plan</h2>
-                <p className="text-sm text-white/80 m-0">You are currently enjoying full access during your trial period.</p>
+                <h2 className="font-sans font-semibold text-[28px] m-0">
+                  {subscription.billing_mode === "flat"
+                    ? "Annual plan"
+                    : `₹${(subscription.price_per_student_paise ?? 0) / 100} per student`}
+                </h2>
+                <p className="text-sm text-white/80 m-0">
+                  {subscription.status === "trialing"
+                    ? "Full access while your trial runs. Nothing is charged yet."
+                    : `Billed annually for ${subscription.student_count ?? 0} enrolled student${subscription.student_count === 1 ? "" : "s"}.`}
+                </p>
               </div>
 
-              <div className="flex flex-col items-start md:items-end gap-3 mt-6 md:mt-0 w-full md:w-auto border-t md:border-none border-white/20 pt-4 md:pt-0">
+              <div className="flex flex-col items-start md:items-end gap-3 mt-3 md:mt-0 w-full md:w-auto border-t md:border-none border-white/20 pt-4 md:pt-0">
                 <div className="flex items-baseline gap-1">
-                  <span className="font-sans font-bold text-[36px] text-white leading-none">₹0</span>
-                  <span className="text-white/70 text-sm">/mo</span>
+                  {/* The real figure, not a placeholder: rate x enrolled students,
+                      recomputed server-side so it tracks the roll as it grows. */}
+                  <span className="font-sans font-bold text-[36px] text-white leading-none">
+                    ₹{((subscription.annual_value_paise ?? 0) / 100).toLocaleString("en-IN")}
+                  </span>
+                  <span className="text-white/70 text-sm">/yr</span>
                 </div>
-                <p className="text-xs text-white/80 m-0">Trial ends on {new Date(subscription.current_period_end).toLocaleDateString()}</p>
+                {(subscription.trial_ends_at || subscription.current_period_end) && (
+                  <p className="text-xs text-white/80 m-0">
+                    {subscription.status === "trialing" ? "Trial ends on " : "Renews on "}
+                    {new Date(subscription.trial_ends_at ?? subscription.current_period_end).toLocaleDateString()}
+                  </p>
+                )}
                 <button 
                   className="btn bg-white text-[#4F46E5] hover:bg-white/90 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer shadow-md"
                   onClick={() => setShowUpgradeModal(true)}
@@ -110,7 +123,7 @@ export default function BillingPage() {
           <div className="w-full h-[200px] animate-pulse bg-s-stroke2/50 rounded-[24px] mt-4"></div>
         ) : null}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 w-full items-stretch">
           
           {/* Usage This Month */}
           <PremiumSectionCard 
@@ -118,7 +131,7 @@ export default function BillingPage() {
             subtitle="Track your current billing cycle limits" 
             className="w-full"
           >
-            <div className="relative z-10 flex flex-col gap-6 mt-2">
+            <div className="relative z-10 flex flex-col gap-3 mt-2">
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-semibold text-t-primary dark:text-t-primary">Active Students</span>
@@ -183,10 +196,10 @@ export default function BillingPage() {
             {([] as any[]).map((invoice, index) => (
               <div 
                 key={invoice.id}
-                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
               >
                 {/* Left: ID & Date */}
-                <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                   <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-sm sm:text-lg">
                     #{index + 1}
                   </div>
@@ -201,7 +214,7 @@ export default function BillingPage() {
                 </div>
 
                 {/* Right: Metrics & Actions */}
-                <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+                <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                   <div className="flex flex-col items-end justify-center">
                     <span className="hidden sm:inline text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                       Amount
@@ -243,7 +256,7 @@ export default function BillingPage() {
               </button>
               
               <div className="flex flex-col items-center text-center mt-2">
-                <div className="w-16 h-16 bg-primary-05/10 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-primary-05/10 rounded-full flex items-center justify-center mb-3">
                   <RiNotification3Line size={32} className="text-primary-05" />
                 </div>
                 
@@ -251,7 +264,7 @@ export default function BillingPage() {
                   Payment Integration Coming Soon
                 </h3>
                 
-                <p className="text-t-secondary text-[15px] leading-relaxed mb-8 px-2">
+                <p className="text-t-secondary text-[15px] leading-relaxed mb-3 px-2">
                   We are currently setting up our GST and billing infrastructure. 
                   Enjoy your 2-month free trial in the meantime! We will notify you when you can upgrade to a paid tier.
                 </p>

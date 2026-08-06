@@ -560,9 +560,18 @@ interface TiptapMathFieldProps {
   disabled?: boolean;
   onChange: (value: string) => void;
   placeholder?: string;
+  /**
+   * Where a picked image should go, when it does not belong in the text.
+   *
+   * A question's figure is part of the question, not part of its prose, and it
+   * is stored in question_images. Given this, the toolbar button hands the file
+   * over as a data URL instead of embedding it in the document — so there is
+   * one place a figure lives rather than two, and the caller uploads it on save.
+   */
+  onImageAdd?: (dataUrl: string) => void;
 }
 
-export function TiptapMathField({ label, value, disabled, onChange, placeholder }: TiptapMathFieldProps) {
+export function TiptapMathField({ label, value, disabled, onChange, placeholder, onImageAdd }: TiptapMathFieldProps) {
   const { session } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
@@ -635,7 +644,33 @@ export function TiptapMathField({ label, value, disabled, onChange, placeholder 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const ed = editorRef.current;
     const file = e.target.files?.[0];
-    if (!file || !ed || !session?.access_token) return;
+    if (!file) return;
+
+    // A question's figure belongs to the question, so it goes to the field that
+    // holds figures rather than into the sentence the reviewer is typing. Read
+    // here and uploaded by the caller on save: nothing is stored until the edit
+    // is kept, and it works for every role, where the upload endpoint below is
+    // open to test-department accounts only.
+    if (onImageAdd) {
+      try {
+        setUploading(true);
+        const dataUrl = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result));
+          reader.onerror = () => reject(reader.error);
+          reader.readAsDataURL(file);
+        });
+        onImageAdd(dataUrl);
+      } catch (err: any) {
+        alert("Could not read that image: " + (err?.message ?? "unknown error"));
+      } finally {
+        setUploading(false);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+      }
+      return;
+    }
+
+    if (!ed || !session?.access_token) return;
     try {
       setUploading(true);
       const sessionToken = typeof window !== "undefined"

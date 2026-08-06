@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   PageWrapper,
   SectionCard,
@@ -48,31 +49,18 @@ type TabID = "unresolved" | "resolved";
 export default function MistakeDiary() {
   const { session } = useAuth();
   const [mistakes, setMistakes] = useState<Mistake[]>([]);
-  const [loading, setLoading] = useState(true);
   const [resolving, setResolving] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabID>("unresolved");
   const [filterSubject, setFilterSubject] = useState<string>("All");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  // Cached list; local state below still holds optimistic resolve toggles.
+  const { data: mistakesData, isPending: loading } = useApiQuery<{ mistakes: Mistake[] }>(
+    "/api/v1/dashboard/student/mistakes",
+  );
   useEffect(() => {
-    if (!session?.access_token) return;
-
-    const fetchMistakes = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dashboard/student/mistakes", session.access_token);
-        if (res.success) {
-          setMistakes(res.data.mistakes ?? []);
-        }
-      } catch (e) {
-        console.error("[MistakeDiary] fetch error", e);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMistakes();
-  }, [session?.access_token]);
+    if (mistakesData?.mistakes) setMistakes(mistakesData.mistakes);
+  }, [mistakesData]);
 
   const toggleResolved = async (topic: string) => {
     if (!session?.access_token) return;
@@ -113,7 +101,7 @@ export default function MistakeDiary() {
 
       <PageWrapper>
         {/* Filters Row */}
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 mb-8 select-none">
+        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-4 mb-4 select-none">
           <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
           {/* Subject Filter Dropdown */}
@@ -152,7 +140,7 @@ export default function MistakeDiary() {
         {/* Content */}
         {loading ? (
           <SectionCard padding="none">
-            <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+            <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
               <RiLoader4Line size={22} className="animate-spin text-primary-01" />
               <span className="font-sans font-semibold text-[14px]">Loading your mistake diary...</span>
             </div>

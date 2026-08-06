@@ -22,18 +22,16 @@ function HelpContent() {
   const faqs = {
     student: [
       { q: "How does the Deterministic Analysis Engine work?", a: "After every mock test, the 9-stage analysis engine evaluates your pacing, identifies panic cascades, and generates a personalized fatigue curve to show you exactly where you lost focus." },
-      { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations and your mistake classification." },
-      { q: "How do I ask a doubt in the Community Forum?", a: "Go to the Doubts page, click 'New Doubt', and tag the relevant subject. If your doubt is urgent, mark it as high-priority so it escalates to your teacher." }
+      { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations and your mistake classification." }
     ],
     teacher: [
-      { q: "How do I view the Daily Batch Summary?", a: "The summary is automatically generated and available on your Teacher Dashboard every morning, highlighting key performance shifts and pending doubts." },
-      { q: "How do I endorse a student's answer in the forum?", a: "In the Doubts section, you can click the 'Verify' badge on any student's reply. This awards them reputation points and marks the thread as resolved." },
+      { q: "How do I view the Daily Batch Summary?", a: "The summary is automatically generated and available on your Teacher Dashboard every morning, highlighting key performance shifts." },
       { q: "Can I override the deterministic analysis?", a: "No, the 9-stage analysis is fully rule-based to ensure pedagogical consistency across the institute. You can, however, add manual teacher notes to the final report." }
     ],
     institute_admin: [
       { q: "How do I set up my Custom Domain?", a: "Navigate to Settings > White-Labeling. Enter your desired domain (e.g., portal.academy.com). SSL provisioning happens automatically within 24 hours." },
       { q: "How do I upgrade my B2B Enterprise tier?", a: "Go to Settings > B2B Billing. Click 'Manage Payment Methods' or contact your dedicated Super Admin account manager for volume discounts." },
-      { q: "Are SSC pacing locks mandatory?", a: "Yes, for SSC exams, the 15-minute intra-section locks are enforced platform-wide to simulate real-world testing conditions. This cannot be disabled per-institute." }
+
     ],
     super_admin: [
       { q: "How do I pause OMR ingestion during a spike?", a: "Go to the Global Configuration page and toggle 'System Maintenance Mode'. This will halt async ingestion queues." },
@@ -51,7 +49,7 @@ function HelpContent() {
   return (
     <>
       <Navbar title="Help & Support" subtitle="Documentation, FAQs, and contact pathways." />
-      <main className="mx-auto flex w-full max-w-[1000px] flex-col gap-10 px-6 pb-16 pt-6">
+      <main className="mx-auto flex w-full max-w-[1000px] flex-col gap-3 px-6 pb-16 pt-6">
 
         {/* Search Bar */}
         <div className="relative w-full max-w-[600px] mx-auto mb-4">
@@ -66,7 +64,7 @@ function HelpContent() {
         </div>
 
         {/* Support Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           
           <div className="group relative card flex flex-col p-8 card overflow-hidden cursor-pointer hover:border-t-primary dark:hover:border-t-primary transition-colors">
             
@@ -114,7 +112,7 @@ function HelpContent() {
 
         {/* FAQs */}
         <div className="mt-4">
-          <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">Frequently Asked Questions</h2>
           
           <div className="flex flex-col gap-4">
             {filteredFaqs.length > 0 ? (

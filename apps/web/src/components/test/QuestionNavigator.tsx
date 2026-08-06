@@ -41,8 +41,8 @@ export function QuestionNavigator({
         ? "hidden lg:flex lg:flex-col lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto rounded-[18px] p-5 xl:p-6"
         : "flex h-full flex-col overflow-y-auto p-5 sm:p-6"
     }`}>
-      <div className="mb-5 border-b border-s-stroke2 pb-5"><p className="text-sm font-bold text-t-primary">Question palette</p><p className="mt-0.5 text-xs text-t-secondary">Use it to move between questions</p></div>
-      <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
+      <div className="mb-3 border-b border-s-stroke2 pb-5"><p className="text-sm font-bold text-t-primary">Question palette</p><p className="mt-0.5 text-xs text-t-secondary">Use it to move between questions</p></div>
+      <div className="relative z-10 mb-3 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
         {/* 1. Not Visited */}
           <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
           <div className={`${paletteCellSize} flex items-center justify-center rounded-[5px] border border-s-stroke2 bg-b-pop text-t-primary font-semibold text-xs shrink-0`}>
@@ -89,7 +89,7 @@ export function QuestionNavigator({
         {subjects.map((subj) => {
           const subjQs = questions.filter((item) => item.subject === subj);
           return (
-            <div key={subj} className="mb-6 last:mb-0">
+            <div key={subj} className="mb-3 last:mb-0">
               <div className="mb-3 text-overline font-bold uppercase tracking-[0.08em] text-t-tertiary">
                 {subj}
               </div>

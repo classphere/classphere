@@ -17,7 +17,10 @@ import {
 } from "@remixicon/react";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
+import { CreateBatchModal } from "@/components/institute/CreateBatchModal";
+import { cohortLabel } from "@/lib/batch-class";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { apiClient } from "@/lib/api.client";
 
 // Exam codes must match the `exams` table in Supabase
@@ -40,14 +43,9 @@ export default function BatchesPage() {
   const { session } = useAuth();
   const { batches, loading, error, createBatch, updateBatch, deactivateBatch, refetch } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
-  const [enabledExamCodes, setEnabledExamCodes] = useState<string[]>([]);
-  const [examCalendar, setExamCalendar] = useState<Record<string, { suggested_ends_at: string; notes: string | null }>>({});
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", exam: "", starts_at: "", ends_at: "" });
-  const [submitting, setSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
   const [editingBatch, setEditingBatch] = useState<any | null>(null);
   const [expiryValue, setExpiryValue] = useState("");
   const [savingExpiry, setSavingExpiry] = useState(false);
@@ -55,59 +53,44 @@ export default function BatchesPage() {
   const filtered = batches.filter((b) =>
     b.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Grouped by the exam year the cohort sits for, newest first. A flat list
+  // mixed live cohorts with ones that finished two sessions ago, and the only
+  // thing telling them apart was whatever the admin typed into the name.
+  const CURRENT_YEAR = new Date().getFullYear();
+  const groups = (() => {
+    const byYear = new Map<number | null, typeof filtered>();
+    for (const batch of filtered) {
+      const year = batch.target_year ?? null;
+      byYear.set(year, [...(byYear.get(year) ?? []), batch]);
+    }
+    return [...byYear.entries()].sort((a, b) => {
+      // Unclassified batches sit at the bottom rather than pretending to be
+      // year zero — they need attention, not burial.
+      if (a[0] === null) return 1;
+      if (b[0] === null) return -1;
+      return b[0] - a[0];
+    });
+  })();
+
+  // Past cycles collapse: they stay reachable without pushing this session's
+  // cohorts off the screen.
+  const [openYears, setOpenYears] = useState<Record<string, boolean>>({});
+  const isYearOpen = (year: number | null) => {
+    const key = String(year);
+    if (key in openYears) return openYears[key];
+    return year === null || year >= CURRENT_YEAR;
+  };
+  const toggleYear = (year: number | null) =>
+    setOpenYears((prev) => ({ ...prev, [String(year)]: !isYearOpen(year) }));
   const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    apiClient.get<{ success: boolean; data: { institute: { enabled_exam_codes?: string[] } } }>(
-      "/api/v1/institutes/me",
-      session.access_token,
-    ).then((response) => {
-      if (response.success) setEnabledExamCodes(response.data.institute.enabled_exam_codes ?? []);
-    }).catch(() => setEnabledExamCodes([]));
-    // Fetch exam calendar for auto-fill
-    apiClient.get<{ success: boolean; data: { calendar: { exam_code: string; suggested_ends_at: string; notes: string | null }[] } }>(
-      "/api/v1/batches/exam-calendar"
-    ).then((resp) => {
-      if (resp.success) {
-        const map: Record<string, { suggested_ends_at: string; notes: string | null }> = {};
-        resp.data.calendar.forEach((row) => { map[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes }; });
-        setExamCalendar(map);
-      }
-    }).catch(() => {});
-  }, [session?.access_token]);
+  const { data: instituteData } = useApiQuery<{ institute: { enabled_exam_codes?: string[] } }>("/api/v1/institutes/me");
+  const enabledExamCodes = instituteData?.institute?.enabled_exam_codes ?? [];
 
-  const openModal = () => {
-    setForm({ name: "", exam: "", starts_at: "", ends_at: "" });
-    setFeedback(null);
-    setIsModalOpen(true);
-  };
-
-  const handleExamChange = (examCode: string) => {
-    const cal = examCalendar[examCode];
-    const suggestedDate = cal?.suggested_ends_at
-      ? new Date(cal.suggested_ends_at).toISOString().slice(0, 10) + "T23:59"
-      : "";
-    setForm((f) => ({ ...f, exam: examCode, ends_at: suggestedDate }));
-  };
-
-  const handleCreate = async () => {
-    if (!form.name || !form.exam) return;
-    setSubmitting(true);
-    setFeedback(null);
-    const result = await createBatch({
-      name: form.name,
-      exam: form.exam,
-      starts_at: form.starts_at ? new Date(form.starts_at).toISOString() : undefined,
-      ends_at: form.ends_at ? new Date(form.ends_at).toISOString() : undefined,
-    });
-    setSubmitting(false);
-    if (result.success) {
-      router.push(`/institute/students?batch=${result.batch?.id}`);
-    } else {
-      setFeedback({ ok: false, msg: result.message });
-    }
-  };
+  // The exam calendar and the create form now live in CreateBatchModal, which
+  // both this page and the institute dashboard render.
+  const openModal = () => setIsModalOpen(true);
 
   const openExpiryEditor = (batch: any) => {
     setEditingBatch(batch);
@@ -129,10 +112,10 @@ export default function BatchesPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-3 select-none bg-transparent">
 
       {/* ── Top Navigation Row ── */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-6 mb-2">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-3 mb-2">
         <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
           Batches
         </h1>
@@ -196,7 +179,7 @@ export default function BatchesPage() {
 
         {/* Empty state */}
         {!loading && !error && filtered.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-20 gap-4 text-t-tertiary">
+          <div className="flex flex-col items-center justify-center py-10 gap-4 text-t-tertiary">
             <RiInboxLine size={48} className="opacity-40" />
             <p className="text-sm font-medium">
               {searchQuery ? "No batches match your search." : "No batches yet. Create your first batch!"}
@@ -212,8 +195,31 @@ export default function BatchesPage() {
           </div>
         )}
 
-        {/* Batch rows */}
-        {!loading && !error && filtered.map((batch, idx) => {
+        {/* Batch rows, grouped by target year */}
+        {!loading && !error && groups.map(([year, yearBatches]) => (
+          <div key={String(year)} className="flex flex-col gap-2">
+            <button
+              onClick={() => toggleYear(year)}
+              className="flex w-full items-center gap-2.5 rounded-[10px] px-1 py-1.5 text-left transition-colors hover:bg-b-surface2/60"
+            >
+              <RiArrowDownSLine
+                size={18}
+                className={`shrink-0 text-t-secondary transition-transform ${isYearOpen(year) ? "" : "-rotate-90"}`}
+              />
+              <span className="text-[13px] font-bold text-t-primary">
+                {year === null ? "No target year set" : `Target ${year}`}
+              </span>
+              {year !== null && year < CURRENT_YEAR && (
+                <span className="rounded-[6px] border border-s-stroke2/50 bg-b-surface2 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-t-secondary">
+                  Past
+                </span>
+              )}
+              <span className="text-[11px] text-t-secondary">
+                {yearBatches.length} batch{yearBatches.length === 1 ? "" : "es"}
+              </span>
+            </button>
+
+            {isYearOpen(year) && yearBatches.map((batch, idx) => {
           const colorClass = COLORS[idx % COLORS.length];
           const now = Date.now();
           const expired = Boolean(batch.ends_at && Date.parse(batch.ends_at) <= now);
@@ -223,11 +229,11 @@ export default function BatchesPage() {
           return (
             <div
               key={batch.id}
-              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+              className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
             >
 
               {/* Left */}
-              <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+              <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                 <div className={`flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] border shrink-0 font-bold ${colorClass}`}>
                   <RiTeamLine size={24} className="scale-75 sm:scale-100" />
                 </div>
@@ -236,13 +242,18 @@ export default function BatchesPage() {
                     {batch.name}
                   </span>
                   <span className="text-[11px] sm:text-xs text-t-secondary mt-0.5 uppercase tracking-wide truncate">
-                    {EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam}
+                    {[
+                      EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam,
+                      // Derived, not stored: a class 11 cohort reads as class
+                      // 12 in its second year without anyone editing it.
+                      cohortLabel(batch.entry_class_level, batch.target_year),
+                    ].filter(Boolean).join(" · ")}
                   </span>
                 </div>
               </div>
 
               {/* Right */}
-              <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+              <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                 <div className="hidden sm:flex flex-col gap-1 sm:gap-1.5 justify-center min-w-[50px] sm:min-w-[90px]">
                   {/* Students Row */}
                   <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
@@ -293,97 +304,24 @@ export default function BatchesPage() {
               </div>
             </div>
           );
-        })}
+            })}
+          </div>
+        ))}
       </div>
 
-      {/* ── Create Batch Modal ── */}
-      <Modal
+      <CreateBatchModal
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Create New Batch"
-        subtitle="Fill in the details to create a new batch"
-      >
-        <div className="flex flex-col gap-5">
-          {/* Name */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
-            <input
-              type="text"
-              className="input-field w-full"
-              placeholder="e.g., Target 2026 Morning"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Starts on</label><input type="datetime-local" className="input-field w-full" value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></div>
-            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} /></div>
-          </div>
-
-          {/* Exam */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
-            <div className="relative">
-              <select
-                className="input-field w-full appearance-none pr-10"
-                value={form.exam}
-                onChange={(e) => handleExamChange(e.target.value)}
-              >
-                <option value="" disabled>Select Exam...</option>
-                {availableExams.map((e) => (
-                  <option key={e.id} value={e.id}>{e.label}</option>
-                ))}
-              </select>
-              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
-            </div>
-            {form.exam && examCalendar[form.exam] && (
-              <p className="mt-1.5 text-xs text-t-secondary">
-                📅 Suggested expiry: <strong>{new Date(examCalendar[form.exam].suggested_ends_at).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</strong>
-                {examCalendar[form.exam].notes ? ` · ${examCalendar[form.exam].notes}` : ""}
-              </p>
-            )}
-          </div>
-
-          <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">
-            After creating the batch, you will add students from an Excel or CSV file. Expired batches cannot receive new learning activity, but their records remain available.
-          </p>
-
-          {/* Feedback */}
-          {feedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
-              feedback.ok
-                ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
-                : "bg-primary-03/5 border-primary-03/20 text-primary-03"
-            }`}>
-              {feedback.ok ? <RiCheckLine size={16} /> : <RiAlertLine size={16} />}
-              {feedback.msg}
-            </div>
-          )}
-
-          {/* Actions */}
-          <div className="mt-2 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="btn btn-ghost px-5"
-              disabled={submitting}
-            >
-              Cancel
-            </button>
-            <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
-              onClick={handleCreate}
-              disabled={!form.name || !form.exam || submitting}
-            >
-              {submitting && <RiLoaderLine size={16} className="animate-spin" />}
-              {submitting ? "Creating..." : "Create Batch"}
-            </button>
-          </div>
-        </div>
-      </Modal>
+        availableExams={availableExams}
+        onCreate={createBatch}
+        onCreated={(batchId) => {
+          setIsModalOpen(false);
+          router.push(`/institute/students?batch=${batchId}`);
+        }}
+      />
 
       <Modal open={Boolean(editingBatch)} onClose={() => setEditingBatch(null)} title="Manage batch" subtitle={editingBatch?.name ?? ""}>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={expiryValue} onChange={(event) => setExpiryValue(event.target.value)} /><p className="mt-2 text-xs text-t-secondary">Leave empty only for a batch that is intentionally ongoing. Expired batches cannot receive new tests, DPPs, or study material.</p></div>
           <div className="flex items-center justify-between gap-3 border-t border-s-stroke2/50 pt-4"><button onClick={() => retireBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-03" disabled={!editingBatch?.is_active || savingExpiry}>Deactivate batch</button><div className="flex gap-3"><button onClick={() => setEditingBatch(null)} className="btn btn-ghost px-4" disabled={savingExpiry}>Cancel</button><button onClick={saveExpiry} className="btn btn-primary px-5" disabled={savingExpiry}>{savingExpiry ? "Saving…" : "Save"}</button></div></div>
         </div>

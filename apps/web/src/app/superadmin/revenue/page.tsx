@@ -1,37 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiMoneyDollarCircleLine, RiArrowRightUpLine, RiBarChartBoxLine, RiFileList3Line, RiCheckLine, RiDownloadCloud2Line } from "@remixicon/react";
-import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 export default function RevenuePage() {
   const { session } = useAuth();
-  const [transactions, setTransactions] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [stats, setStats] = useState<any>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-      if (!session?.access_token) return;
-      try {
-        const [txnRes, statsRes] = await Promise.all([
-          apiClient.get("/api/v1/superadmin/transactions", session.access_token),
-          apiClient.get("/api/v1/superadmin/stats", session.access_token)
-        ]);
-        
-        if (txnRes.success) setTransactions(txnRes.data);
-        if (statsRes.success) setStats(statsRes.data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, [session?.access_token]);
+  const { data: transactions = [] as any[], isPending: txnLoading } = useApiQuery<any[]>("/api/v1/superadmin/transactions");
+  const { data: stats, isPending: statsLoading } = useApiQuery<any>("/api/v1/superadmin/stats");
+  const loading = txnLoading || statsLoading;
 
   // Format currency
   const fmtMoney = (val: number) => 
@@ -40,7 +21,7 @@ export default function RevenuePage() {
   return (
     <>
       <Navbar title="Trials & Future Billing" subtitle="Billing is intentionally disabled while the platform operates on free trials." />
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-3 px-6 bg-transparent">
         
         {/* ── KPI Cards (Full Width) ── */}
         <div className="flex flex-col gap-4 w-full">
@@ -99,7 +80,7 @@ export default function RevenuePage() {
               </div>
             )}
             {transactions.map((txn, i) => (
-              <div key={txn.id} className="group/item relative flex flex-row items-center w-full p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]">
+              <div key={txn.id} className="group/item relative flex flex-row items-center w-full p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[64px] sm:h-[68px]">
                 
                 {/* ID & Institute */}
                 <div className="flex flex-col justify-center flex-1 min-w-0 md:flex-row md:items-center md:gap-4 md:flex-none md:w-[370px]">

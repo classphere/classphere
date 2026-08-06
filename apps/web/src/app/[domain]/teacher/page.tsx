@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import {
@@ -14,34 +15,21 @@ import {
   RiArrowDownSLine
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 
 export default function TeacherDashboardPage() {
   const { user, session } = useAuth();
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
 
   // ── Real dashboard data ──────────────────────────────────────────────────
-  const [metrics, setMetrics] = useState<any>(null);
-  const [batches, setBatches] = useState<any[]>([]);
-  const [recentDPPs, setRecentDPPs] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetch = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dashboard/teacher", session.access_token);
-        if (res.success) {
-          setMetrics(res.data.metrics);
-          setBatches(res.data.batches ?? []);
-          setRecentDPPs(res.data.recentDPPs ?? []);
-        }
-      } catch (e) { console.error("[TeacherDashboard]", e); }
-      finally { setLoading(false); }
-    };
-    fetch();
-  }, [session?.access_token]);
+  const { data, isPending: loading } = useApiQuery<{
+    metrics: any;
+    batches: any[];
+    recentDPPs: any[];
+  }>("/api/v1/dashboard/teacher");
+  const metrics = data?.metrics ?? null;
+  const batches = data?.batches ?? [];
+  const recentDPPs = data?.recentDPPs ?? [];
 
   const pendingDPPs = recentDPPs.filter((d) => d.pendingCount > 0);
   const completedDPPs = recentDPPs.filter((d) => d.pendingCount === 0 && d.submittedCount > 0);
@@ -99,7 +87,7 @@ export default function TeacherDashboardPage() {
         </MetricGrid>
 
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
-        <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
+        <div className="mb-3 grid gap-3 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
           <SectionCard
@@ -115,7 +103,7 @@ export default function TeacherDashboardPage() {
             }
           >
 
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1 w-full">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1 w-full">
               {batches.length === 0 ? (
                 <div className="col-span-1 sm:col-span-2 flex flex-col items-center justify-center p-8 w-full text-center">
                   <p className="text-[14px] font-sans text-t-secondary">No batches assigned yet.</p>
@@ -211,9 +199,11 @@ export default function TeacherDashboardPage() {
                     >
                       {/* Left: Image + Title/Batch */}
                       <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0">
-                        <img 
-                          src={flag.avatar} 
+                        <Image
+                          src={flag.avatar}
                           alt={flag.name}
+                          width={48}
+                          height={48}
                           className="size-10 sm:size-12 rounded-[10px] shrink-0 object-cover border border-s-stroke2/20"
                         />
   
@@ -253,7 +243,7 @@ export default function TeacherDashboardPage() {
             </div>
 
             {/* Footer / All Products Button */}
-            <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-6">
+            <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-3">
               <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-t-secondary hover:text-t-primary dark:hover:text-t-primary active:scale-98 cursor-pointer">
                 View All Flags
               </button>
@@ -278,7 +268,7 @@ export default function TeacherDashboardPage() {
         >
 
           {/* DPPs Grid Wrapper */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
             {recentDPPs.length === 0 ? (
               <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center p-8 w-full text-center">
                 <p className="text-[14px] font-sans text-t-secondary">No DPP activity yet.</p>

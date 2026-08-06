@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import {
@@ -19,7 +19,7 @@ import {
 } from "@remixicon/react";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 type MockDPP = any;
 
 const SUBJECTS = ["Physics", "Chemistry", "Mathematics", "Biology"];
@@ -61,26 +61,12 @@ type FilterStatus = "all" | "pending" | "completed" | "upcoming";
 
 export default function TeacherDPPsPage() {
   const { session } = useAuth();
-  const [dpps, setDpps] = useState<MockDPP[]>([]);
-  const [loadingDPPs, setLoadingDPPs] = useState(true);
   const [filter, setFilter] = useState<FilterStatus>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // ── Fetch real DPPs and batches ──────────────────────────────────────────────
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const load = async () => {
-      setLoadingDPPs(true);
-      try {
-        const [dppsRes] = await Promise.all([
-          apiClient.get("/api/v1/dpps/teacher", session.access_token),
-        ]);
-        if (dppsRes.success) setDpps(dppsRes.data.dpps ?? []);
-      } catch (e) { console.error("[TeacherDPPs]", e); }
-      finally { setLoadingDPPs(false); }
-    };
-    load();
-  }, [session?.access_token]);
+  const { data: dppData, isPending: loadingDPPs } = useApiQuery<{ dpps: any[] }>("/api/v1/dpps/teacher");
+  const dpps = dppData?.dpps ?? [];
 
   const filtered = dpps.filter(d => {
     const matchesStatus = filter === "all" ? true : d.status === filter;
@@ -125,7 +111,7 @@ export default function TeacherDPPsPage() {
         </MetricGrid>
 
         {/* Toolbar */}
-        <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mb-3 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           {/* Filter tabs */}
           <div className="flex max-w-full gap-1 overflow-x-auto rounded-[10px] border border-s-stroke2 bg-b-surface2 p-1">
             {(["all", "pending", "completed", "upcoming"] as FilterStatus[]).map(f => (
@@ -167,9 +153,9 @@ export default function TeacherDPPsPage() {
         </div>
 
         {/* DPP List */}
-        <div className="relative z-10 flex flex-col gap-6 w-full mb-8">
+        <div className="relative z-10 flex flex-col gap-3 w-full mb-4">
           {filtered.length === 0 && (
-            <div className="bg-b-surface2 border border-s-stroke2/40 rounded-[16px] text-center py-20 text-t-secondary">
+            <div className="bg-b-surface2 border border-s-stroke2/40 rounded-[16px] text-center py-10 text-t-secondary">
               <RiFileListLine size={48} className="mx-auto mb-4 text-t-secondary/50" />
               <p className="font-semibold text-body-2">No DPPs in this category yet.</p>
             </div>
@@ -182,7 +168,7 @@ export default function TeacherDPPsPage() {
               <div 
                 key={dpp.id} 
                 onClick={() => window.location.href = `/teacher/dpps/${dpp.id}`}
-                className="group relative flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-white dark:bg-white/[0.02] border border-s-stroke2/40 p-[22px] rounded-[24px] transition-all hover:scale-[1.005] cursor-pointer"
+                className="group relative flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-3 overflow-hidden bg-white dark:bg-white/[0.02] border border-s-stroke2/40 p-[22px] rounded-[24px] transition-all hover:scale-[1.005] cursor-pointer"
               >
 
                 <div className="flex items-center gap-4 flex-1 min-w-0">
@@ -210,7 +196,7 @@ export default function TeacherDPPsPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
+                <div className="relative z-10 flex items-center justify-between md:justify-end gap-3 shrink-0 mt-4 md:mt-0">
                   <div className="text-left md:text-right sm:w-40">
                     <div className="text-caption font-bold text-t-primary dark:text-t-primary mb-2">
                       {dpp.submittedCount}/{dpp.totalAssigned} submitted

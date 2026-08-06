@@ -8,7 +8,12 @@ import "@sentry/profiling-node"; // Profiling
 import { env } from "./config/env";
 import { getRateLimitStore } from "./middleware/rate-limit-store";
 import { connection as redisConnection } from "./lib/queue/redis";
-import { startWorkers, stopWorkers } from "./worker";
+import { supabaseDB } from "./lib/supabase";
+// NOTE: "./worker" is deliberately NOT imported statically. Each worker module
+// creates its BullMQ `new Worker(...)` at module load, so a top-level import
+// would make this process a queue consumer even when START_WORKERS is false —
+// silently double-consuming jobs alongside a dedicated worker deployment.
+// It is required lazily below, only when workers are actually enabled.
 
 // ─── Process-level error safety net ──────────────────────────────────────────
 // Prevent ancillary services (Redis, BullMQ, etc.) from crashing the API
@@ -83,15 +88,39 @@ const corsOptions = {
       }
     }
 
-    // Production: direct Classphere institute subdomains.
+    // Production: direct Classphere and partner institute subdomains.
     const isProdSubdomain = new RegExp(`^https:\\/\\/[a-z0-9-]+\\.${escapedBaseDomain}$`).test(origin);
+    const isPartnerDomain = /^https?:\/\/([a-zA-Z0-9-_\.]+\.)?(graphiteclasses|graphitegkp)\.com(:\d+)?$/i.test(origin);
 
     // Local dev: *.localhost:PORT (e.g. test.localhost:3000, allen.localhost:3000)
     const isLocalSubdomain = /^http:\/\/[a-z0-9-_\.]+\.localhost(:\d+)?$/.test(origin);
 
-    if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || isProdSubdomain || isLocalSubdomain) {
-      callback(null, true);
-    } else {
+    if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || allowedCustomWebOrigins.has("*") || isProdSubdomain || isPartnerDomain || isLocalSubdomain) {
+      return callback(null, true);
+    }
+
+    // Dynamic fallback: check if origin is registered in Supabase (check both institute_settings and institutes)
+    try {
+      const hostname = new URL(origin).hostname.toLowerCase();
+      Promise.all([
+        supabaseDB.from("institute_settings").select("id").or(`custom_domain.ilike.%${hostname}%,subdomain.ilike.%${hostname}%`).limit(1).maybeSingle(),
+        supabaseDB.from("institutes").select("id").or(`subdomain_slug.ilike.%${hostname}%`).limit(1).maybeSingle()
+      ]).then(
+        ([res1, res2]) => {
+          if (res1.data || res2.data) {
+            allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
+            callback(null, true);
+          } else {
+            console.warn(`[CORS Blocked] Origin: ${origin}`);
+            callback(new Error(`Not allowed by CORS: ${origin}`));
+          }
+        },
+        () => {
+          console.warn(`[CORS Blocked] Origin: ${origin}`);
+          callback(new Error(`Not allowed by CORS: ${origin}`));
+        }
+      );
+    } catch (e) {
       console.warn(`[CORS Blocked] Origin: ${origin}`);
       callback(new Error(`Not allowed by CORS: ${origin}`));
     }
@@ -120,15 +149,14 @@ app.use(globalLimiter as any);
 app.use(express.json({ limit: "1mb" }));
 
 // ─── Background Workers ───────────────────────────────────────────────────────
-if (process.env.START_WORKERS === "true") {
-  console.log("[API] Initializing background workers (analysis & lifecycle & pdf-extraction) inside this process...");
-  require("./workers/analysis.worker");
-  require("./workers/pdf-extraction.worker");
-  const { setupLifecycleCron } = require("./workers/lifecycle.worker");
-  setupLifecycleCron().catch((err: any) => console.error("[API] Lifecycle cron setup failed:", err));
-} else {
-  console.log("[API] Background workers disabled in this process (scaling separately).");
-}
+// Started once, after the server is listening (see below). Registration used to
+// happen both here and again via startWorkers(), which registered the lifecycle
+// cron twice.
+// Accepts 1/true/yes/on, matching how PDF_EXTRACTOR_V4 is read elsewhere. A
+// strict === "true" check silently disabled the queue for a deployment set to
+// START_WORKERS=1: no error, API still healthy, jobs simply never processed.
+const workersEnabled = /^(1|true|yes|on)$/i.test((process.env.START_WORKERS || "").trim());
+let stopWorkers: (() => Promise<void>) | null = null;
 
 // ─── API Routes ───────────────────────────────────────────────────────────────
 import apiRouter from "./routes/index";
@@ -189,7 +217,14 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 const server = app.listen(port, () => {
   console.log(`[API] Classphere API Server running on port ${port}`);
   console.log(`[API] Routes mounted at /api/v1`);
-  startWorkers();
+  if (workersEnabled) {
+    console.log("[API] Initializing background workers (analysis & lifecycle & pdf-extraction) inside this process...");
+    const workers = require("./worker");
+    workers.startWorkers();
+    stopWorkers = workers.stopWorkers;
+  } else {
+    console.log("[API] Background workers disabled in this process (scaling separately).");
+  }
 });
 
 let shuttingDown = false;
@@ -197,8 +232,9 @@ const shutdown = (signal: string) => {
   if (shuttingDown) return;
   shuttingDown = true;
   console.log(`[API] ${signal} received — draining connections and stopping workers...`);
-  // Stop accepting new connections and finish in-flight requests.
-  stopWorkers().finally(() => {
+  // Stop accepting new connections and finish in-flight requests. Workers are
+  // only stopped if this process actually started them.
+  (stopWorkers ? stopWorkers() : Promise.resolve()).finally(() => {
     server.close((err) => {
       if (err) {
         console.error("[API] Error closing server:", err.message);

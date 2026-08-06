@@ -5,6 +5,7 @@ import "katex/dist/katex.min.css";
 import AppShell from "@/components/layout/AppShell";
 import { AuthProvider } from "@/lib/auth-context";
 import { TenantProvider } from "@/lib/tenant-context";
+import { QueryProvider } from "@/lib/query-provider";
 import NativePlatformSetup from "@/components/layout/NativePlatformSetup";
 
 const inter = Inter({
@@ -40,11 +41,13 @@ export default function RootLayout({
       <body className="min-h-screen bg-b-surface1 text-t-primary antialiased">
         {/* Detects Capacitor and adds .native-platform to <body> */}
         <NativePlatformSetup />
-        <TenantProvider>
-          <AuthProvider>
-            <AppShell>{children}</AppShell>
-          </AuthProvider>
-        </TenantProvider>
+        <QueryProvider>
+          <TenantProvider>
+            <AuthProvider>
+              <AppShell>{children}</AppShell>
+            </AuthProvider>
+          </TenantProvider>
+        </QueryProvider>
       </body>
     </html>
   );

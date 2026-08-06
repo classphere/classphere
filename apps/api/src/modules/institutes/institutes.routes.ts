@@ -12,6 +12,8 @@ import {
   getInstituteSettings,
   updateInstituteSettings,
   getInstituteSubscription,
+  updateInstituteSubscription,
+  updateInstituteBranding,
   getPublicConfigByDomain
 } from "./institutes.controller";
 
@@ -32,6 +34,10 @@ router.get("/me/subscription", authenticate, requireRole("institute_admin", "sup
 router.post("/", authenticate, requireRole("super_admin"), createInstitute);
 router.patch("/:id", authenticate, requireRole("institute_admin", "super_admin"), updateInstitute);
 router.delete("/:id", authenticate, requireRole("super_admin"), deleteInstitute);
+// Commercial terms are super_admin only — never the institute being billed.
+router.patch("/:id/subscription", authenticate, requireRole("super_admin"), updateInstituteSubscription);
+// Branding is applied on the institute's behalf, so it is ours to set.
+router.patch("/:id/branding", authenticate, requireRole("super_admin"), updateInstituteBranding);
 router.get("/:id/stats", authenticate, requireRole("institute_admin", "super_admin"), getInstituteStats);
 router.get("/:id/reports", authenticate, requireRole("institute_admin", "super_admin"), getInstituteReports);
 

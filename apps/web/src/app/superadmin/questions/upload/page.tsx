@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";
@@ -25,7 +26,6 @@ const EXAMS = [
   { code: "jee-main", label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug", label: "NEET-UG" },
-  { code: "ssc-cgl", label: "SSC CGL" },
 ];
 
 const TEST_TYPES = [
@@ -42,7 +42,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main": ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug": ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
-  "ssc-cgl": ["Quantitative Aptitude", "General Intelligence & Reasoning", "English Language", "General Awareness"],
 };
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -75,9 +74,9 @@ export default function UploadQuestionsPage() {
     chapter: "",
     year: "",
     shift: "",
-    duration: "180",
-    marks: "300",
-    difficulty: "medium",
+    duration: "",
+    marks: "",
+    difficulty: "",
   });
 
   const [parsedQuestions, setParsedQuestions] = useState<any[] | null>(null);
@@ -85,6 +84,10 @@ export default function UploadQuestionsPage() {
   const [fileName, setFileName] = useState<string | null>(null);
   const [status, setStatus] = useState<UploadStatus>("idle");
   const [resultMsg, setResultMsg] = useState<string>("");
+
+  // Only exams without a uniform scheme need this; NEET and JEE Main default.
+  const [markingScheme, setMarkingScheme] = useState<MarkingScheme>({});
+  const needsScheme = form.exam === "jee-advanced";
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const redirectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -103,9 +106,6 @@ export default function UploadQuestionsPage() {
       // Reset subject when exam changes
       if (key === "exam") {
         next.subject = "";
-        if (value === "ssc-cgl" && next.test_type === "ncert") {
-          next.test_type = "chapter-wise";
-        }
       }
       return next;
     });
@@ -176,9 +176,13 @@ export default function UploadQuestionsPage() {
         chapter: form.chapter || null,
         year: form.year ? parseInt(form.year) : null,
         shift: form.shift || null,
-        duration: parseInt(form.duration),
-        marks: parseInt(form.marks),
-        difficulty: form.difficulty,
+        // Omitted when blank so the server derives them from the exam and the
+        // question count — a NEET paper is out of 720, not the 300 this form
+        // used to send for everything.
+        duration: form.duration ? parseInt(form.duration) : undefined,
+        marks: form.marks ? parseInt(form.marks) : undefined,
+        difficulty: form.difficulty || undefined,
+        marking_scheme: needsScheme ? markingScheme : undefined,
         questions: parsedQuestions,
       };
 
@@ -203,9 +207,9 @@ export default function UploadQuestionsPage() {
           chapter: "",
           year: "",
           shift: "",
-          duration: "180",
-          marks: "300",
-          difficulty: "medium",
+          duration: "",
+          marks: "",
+          difficulty: "",
         });
         setParsedQuestions(null);
         setFileName(null);
@@ -238,7 +242,7 @@ export default function UploadQuestionsPage() {
         subtitle="Single file or bulk drop — tag with exam, type, and subject. Live in Tests Hub instantly."
       />
 
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-start pb-12 pt-6 gap-6 px-6 bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-start pb-12 pt-6 gap-3 px-6 bg-transparent">
 
         {/* Tab Switcher */}
         <div className="flex items-center gap-2 p-1.5 bg-b-surface2 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] dark:bg-[#161616] border border-transparent rounded-[14px] w-fit select-none">
@@ -271,19 +275,19 @@ export default function UploadQuestionsPage() {
         ) : activeTab === "ai" ? (
           <AIExtractor />
         ) : (
-          <div className="flex flex-col gap-6 w-full">
+          <div className="flex flex-col gap-3 w-full">
 
             {/* ── Section 1: Exam Metadata ─────────────────────────────────── */}
             <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
-              <div className="relative z-10 flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex items-center gap-3 mb-3">
                 <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
                 <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                   Paper Metadata
                 </h2>
               </div>
 
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
 
                 {/* Exam */}
                 <div className="flex flex-col gap-2">
@@ -308,7 +312,7 @@ export default function UploadQuestionsPage() {
                 <div className="flex flex-col gap-2">
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
                   <div className="flex flex-col gap-3">
-                    {TEST_TYPES.filter(t => !(form.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
+                    {TEST_TYPES.map(t => (
                       <button
                         key={t.code}
                         onClick={() => setField("test_type", t.code)}
@@ -400,25 +404,34 @@ export default function UploadQuestionsPage() {
 
                 {/* Duration */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (minutes) *</label>
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (minutes)</label>
                   <input
                     type="number"
                     value={form.duration}
                     onChange={e => setField("duration", e.target.value)}
+                    placeholder="Leave blank to use the exam's standard"
                     className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                   />
                 </div>
 
-                {/* Total Marks */}
+                {/* Duration and marks are derived from the exam and the
+                    question count when left blank, so neither is required. */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Total Marks *</label>
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Total Marks</label>
                   <input
                     type="number"
                     value={form.marks}
                     onChange={e => setField("marks", e.target.value)}
+                    placeholder="Leave blank to sum from the questions"
                     className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                   />
                 </div>
+
+                {needsScheme && (
+                  <div className="sm:col-span-2">
+                    <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
+                  </div>
+                )}
 
 
 
@@ -428,7 +441,7 @@ export default function UploadQuestionsPage() {
             {/* ── Section 2: JSON Upload ───────────────────────────────────── */}
             <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
-              <div className="relative z-10 flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex items-center gap-3 mb-3">
                 <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
                 <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                   Question JSON File
@@ -501,7 +514,7 @@ export default function UploadQuestionsPage() {
               </div>
 
               {/* JSON Schema hint */}
-              <div className="relative z-10 mt-6 p-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/20">
+              <div className="relative z-10 mt-3 p-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/20">
                 <p className="text-[12px] font-semibold text-t-secondary uppercase tracking-[0.02em] mb-3">Required JSON Schema</p>
                 <pre className="text-[13px] text-t-secondary font-mono leading-relaxed overflow-x-auto">{`[
   {
@@ -516,7 +529,9 @@ export default function UploadQuestionsPage() {
     "difficulty": "medium",       // optional
     "subject": "Physics",         // optional (overrides form)
     "chapter": "Kinematics",      // optional (overrides form)
-    "distractor_map": { ... },    // optional
+    "topic": "Projectile Motion", // optional, but drives revision
+    "question_images": [],        // figure URLs
+    "question_number": 1,         // paper numbering; keeps gaps as gaps
   }
 ]`}</pre>
               </div>

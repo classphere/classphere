@@ -74,7 +74,7 @@ export function Modal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className={`flex items-start justify-between mb-8 gap-4 ${scrollable ? "shrink-0" : ""}`}>
+        <div className={`flex items-start justify-between mb-3 gap-4 ${scrollable ? "shrink-0" : ""}`}>
           <div className="flex flex-col gap-1">
             <h2 className="t-heading-l text-t-primary">{title}</h2>
             {subtitle && (

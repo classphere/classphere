@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
-import { useInstitutes } from "@/lib/hooks/useInstitutes";
+import { useInstitutes, type Institute, type SubscriptionStatus } from "@/lib/hooks/useInstitutes";
+import { PricingModal } from "@/components/superadmin/PricingModal";
+import { BrandingModal } from "@/components/superadmin/BrandingModal";
 import { useSuperadminStats } from "@/lib/hooks/useSuperadminStats";
 import {
   RiBuilding4Line,
@@ -26,19 +28,33 @@ function formatStudentCount(n: number): string {
   return n.toString();
 }
 
-function formatMRR(n: number): string {
-  if (n >= 100000) return `₹${(n / 100000).toFixed(1)}L`;
-  if (n >= 1000) return `₹${(n / 1000).toFixed(1)}k`;
-  return `₹${n}`;
+/** Paise -> short rupees. Everything monetary is stored in paise, so divide once, here. */
+function formatPaise(paise: number): string {
+  const rupees = paise / 100;
+  if (rupees >= 10000000) return `₹${(rupees / 10000000).toFixed(2)}Cr`;
+  if (rupees >= 100000) return `₹${(rupees / 100000).toFixed(1)}L`;
+  if (rupees >= 1000) return `₹${(rupees / 1000).toFixed(1)}k`;
+  return `₹${Math.round(rupees)}`;
 }
 
-function planBadgeClass(plan: string): string {
-  switch (plan.toLowerCase()) {
-    case "enterprise": return "bg-[rgba(94,92,230,0.08)] text-[#5E5CE6] border border-[#5E5CE6]/20";
-    case "active":     return "bg-[rgba(10,132,255,0.08)] text-[#0A84FF] border border-[#0A84FF]/20";
-    default:           return "bg-b-surface1 dark:bg-b-surface1 text-t-secondary border border-s-stroke2/40";
+/** Exact rupees, for inputs and per-student rates where rounding would mislead. */
+function paiseToRupees(paise: number | null | undefined): string {
+  return paise == null ? "" : String(paise / 100);
+}
+
+function statusBadgeClass(status?: string): string {
+  switch (status) {
+    case "active":   return "bg-[rgba(0,166,86,0.08)] text-primary-02 border border-primary-02/20";
+    case "trialing": return "bg-[rgba(239,157,14,0.08)] text-primary-05 border border-primary-05/20";
+    case "past_due": return "bg-[rgba(255,56,28,0.08)] text-primary-03 border border-primary-03/20";
+    case "cancelled":return "bg-b-surface1 text-t-secondary border border-s-stroke2/40";
+    default:         return "bg-b-surface1 text-t-secondary border border-s-stroke2/40";
   }
 }
+
+const STATUS_LABEL: Record<string, string> = {
+  active: "Active", trialing: "Trial", past_due: "Past due", cancelled: "Cancelled",
+};
 
 // ─── Inline feedback banner ───────────────────────────────────────────────────
 
@@ -71,11 +87,31 @@ export default function InstitutesPage() {
     uploadImage, 
     refetch,
     updateInstitute,
+    updateSubscription,
+    updateBranding,
     deleteInstitute
   } = useInstitutes();
   const { stats, loading: statsLoading, refetch: refetchStats } = useSuperadminStats();
 
   const [activeDropdownId, setActiveDropdownId] = useState<string | null>(null);
+  // Which institute's commercial terms are open for editing, if any.
+  const [pricingFor, setPricingFor] = useState<Institute | null>(null);
+  const [brandingFor, setBrandingFor] = useState<Institute | null>(null);
+
+  // Dismiss the actions menu on an outside click or Escape. Without this it
+  // stays open until the same button is pressed again, so it lingers over the
+  // page while the user works elsewhere.
+  useEffect(() => {
+    if (!activeDropdownId) return;
+    const close = () => setActiveDropdownId(null);
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") close(); };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", close);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [activeDropdownId]);
 
   // Modal state
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -123,14 +159,11 @@ export default function InstitutesPage() {
     }
   };
 
-  const handleChangePlan = async (id: string, newPlan: string) => {
+  const handleChangeStatus = async (id: string, status: SubscriptionStatus) => {
     setActiveDropdownId(null);
-    const res = await updateInstitute(id, { plan: newPlan });
-    if (res.success) {
-      refetchStats();
-    } else {
-      alert(res.message);
-    }
+    const res = await updateSubscription(id, { status });
+    if (res.success) refetchStats();
+    else setFeedback({ type: "error", message: res.message });
   };
 
   const handleDeleteInstitute = async (id: string, name: string) => {
@@ -239,7 +272,7 @@ export default function InstitutesPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
 
         {/* KPI Cards */}
-        <MetricGrid cols={4} className="mb-8">
+        <MetricGrid cols={4} className="mb-3">
           <MetricCard
             label="Total Institutes"
             value={statsLoading ? "—" : (stats?.totalInstitutes ?? 0)}
@@ -253,16 +286,16 @@ export default function InstitutesPage() {
             badgeLabel="this week"
           />
           <MetricCard
-            label="Enterprise Plans"
-            value={statsLoading ? "—" : (stats?.enterprisePlans ?? 0)}
-            badge=""
-            badgeLabel="active clients"
+            label="Paying Institutes"
+            value={statsLoading ? "—" : (stats?.activeInstitutes ?? 0)}
+            badge={statsLoading ? "" : `${stats?.trialInstitutes ?? 0}`}
+            badgeLabel="on trial"
           />
           <MetricCard
-            label="Est. MRR"
-            value={statsLoading ? "—" : formatMRR(stats?.estimatedMRR ?? 0)}
-            badge=""
-            badgeLabel="price × institutes"
+            label="Est. ARR"
+            value={statsLoading ? "—" : formatPaise(stats?.estimatedARRPaise ?? 0)}
+            badge={statsLoading ? "" : formatStudentCount(stats?.billedStudents ?? 0)}
+            badgeLabel="students billed"
           />
         </MetricGrid>
 
@@ -308,7 +341,7 @@ export default function InstitutesPage() {
 
             {/* Loading state */}
             {listLoading && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiLoader4Line size={24} className="animate-spin text-t-secondary" />
                 <span className="text-sm">Loading institutes...</span>
               </div>
@@ -316,7 +349,7 @@ export default function InstitutesPage() {
 
             {/* Error state */}
             {!listLoading && listError && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiErrorWarningLine size={24} className="text-primary-03" />
                 <span className="text-sm">Failed to load institutes: {listError}</span>
                 <button onClick={refetch} className="text-sm font-semibold text-t-primary underline">Try again</button>
@@ -325,7 +358,7 @@ export default function InstitutesPage() {
 
             {/* Empty state */}
             {!listLoading && !listError && filteredInstitutes.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+              <div className="flex flex-col items-center justify-center py-10 text-t-secondary gap-3">
                 <RiBuilding4Line size={28} className="text-t-secondary opacity-40" />
                 <p className="text-sm font-semibold text-t-primary">
                   {search ? "No institutes match your search" : "No institutes yet"}
@@ -338,9 +371,15 @@ export default function InstitutesPage() {
 
             {/* Data rows */}
             {!listLoading && !listError && filteredInstitutes.map((institute) => (
+              /* No overflow-hidden: it clipped the actions dropdown to this row's
+                 80px height. The scale-on-hover transform also creates a stacking
+                 context, so the open row is lifted above its siblings — otherwise
+                 the menu renders behind the rows below it. */
               <div
                 key={institute.id}
-                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]"
+                className={`group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] transition-all cursor-pointer h-[64px] sm:h-[68px] ${
+                  activeDropdownId === institute.id ? "z-30" : "hover:scale-[1.005]"
+                }`}
               >
                 {/* Institute Name & Email */}
                 <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0">
@@ -364,8 +403,8 @@ export default function InstitutesPage() {
 
                 {/* Badges (Stacked on mobile, side-by-side on desktop) */}
                 <div className="flex flex-col md:flex-row items-end md:items-center justify-center gap-1 md:gap-4 shrink-0 md:w-[220px]">
-                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider ${planBadgeClass(institute.plan)}`}>
-                    {institute.plan}
+                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider ${statusBadgeClass(institute.subscription?.status)}`}>
+                    {STATUS_LABEL[institute.subscription?.status ?? ""] ?? "No plan"}
                   </span>
                   <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider border ${
                     institute.is_active
@@ -399,16 +438,32 @@ export default function InstitutesPage() {
                       
                       <div className="h-px bg-s-stroke2/30 my-1" />
                       
-                      <div className="px-4 py-1 text-[10px] uppercase font-bold text-t-secondary">Change Subscription Tier</div>
-                      {["free", "trial", "active", "enterprise"].map((plan) => (
+                      <button
+                        onClick={() => { setActiveDropdownId(null); setPricingFor(institute); }}
+                        className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
+                      >
+                        Edit pricing…
+                      </button>
+
+                      <button
+                        onClick={() => { setActiveDropdownId(null); setBrandingFor(institute); }}
+                        className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
+                      >
+                        Edit branding…
+                      </button>
+
+                      <div className="h-px bg-s-stroke2/30 my-1" />
+
+                      <div className="px-4 py-1 text-[10px] uppercase font-bold text-t-secondary">Subscription Status</div>
+                      {(["trialing", "active", "past_due", "cancelled"] as SubscriptionStatus[]).map((status) => (
                         <button
-                          key={plan}
-                          onClick={() => handleChangePlan(institute.id, plan)}
-                          className={`w-full px-4 py-1.5 text-xs text-t-primary hover:bg-s-stroke2/30 transition-colors capitalize text-left block ${
-                            institute.plan.toLowerCase() === plan ? 'font-bold text-[#0A84FF]' : ''
+                          key={status}
+                          onClick={() => handleChangeStatus(institute.id, status)}
+                          className={`w-full px-4 py-1.5 text-xs text-t-primary hover:bg-s-stroke2/30 transition-colors text-left block ${
+                            institute.subscription?.status === status ? "font-bold text-primary-01" : ""
                           }`}
                         >
-                          {plan}
+                          {STATUS_LABEL[status]}
                         </button>
                       ))}
 
@@ -443,7 +498,7 @@ export default function InstitutesPage() {
         maxWidth="max-w-[500px]"
         scrollable
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
 
           {/* Feedback banner inside modal */}
           {feedback && <FeedbackBanner type={feedback.type} message={feedback.message} />}
@@ -675,7 +730,7 @@ export default function InstitutesPage() {
         maxWidth="max-w-[480px]"
       >
         {credentials && (
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
 
             {/* Success header */}
             <div className="flex items-start gap-3 px-4 py-3 rounded-[10px] bg-[rgba(0,166,86,0.07)] border border-[rgba(0,166,86,0.18)]">
@@ -747,6 +802,26 @@ export default function InstitutesPage() {
           </div>
         )}
       </Modal>
+
+      {brandingFor && (
+        <BrandingModal
+          institute={brandingFor}
+          onClose={() => setBrandingFor(null)}
+          onSave={updateBranding}
+        />
+      )}
+
+      {pricingFor && (
+        <PricingModal
+          institute={pricingFor}
+          onClose={() => setPricingFor(null)}
+          onSave={async (id, payload) => {
+            const result = await updateSubscription(id, payload);
+            if (result.success) refetchStats();
+            return result;
+          }}
+        />
+      )}
     </>
   );
 }

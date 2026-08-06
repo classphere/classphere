@@ -17,6 +17,15 @@ const SCHEME_PATTERN = /^[a-z][a-z\d+.-]*:/i;
 export interface QuestionBodyProps extends ContentReviewMetadata {
   blocks?: QuestionContentBlock[] | null;
   legacyText?: string | null;
+  /**
+   * Every figure belonging to this question, in reading order.
+   *
+   * The extractor now moves figures out of the text into an array rather than
+   * leaving them inline as markdown, so this is what renders them. legacyImageUrl
+   * remains for rows uploaded before that change, which still carry one figure
+   * inline or in image_url.
+   */
+  images?: string[] | null;
   legacyImageUrl?: string | null;
   legacyImageAlt?: string;
   reviewerMode?: boolean;
@@ -391,6 +400,7 @@ function ContentBlock({
 export function QuestionBody({
   blocks,
   legacyText,
+  images,
   legacyImageUrl,
   legacyImageAlt = "Figure",
   reviewerMode = false,
@@ -404,13 +414,34 @@ export function QuestionBody({
   const useBlocks = orderedBlocks.some((block) => hasRenderableQuestionContent([block]));
 
   if (!useBlocks) {
+    // Figures come from the array when there is one. Anything still inline in
+    // the text is skipped here — MarkdownRenderer draws it — so a row from
+    // before the extractor change does not show the same picture twice.
+    const figures = (images ?? []).filter(
+      (src) => src && !legacyText?.includes(`](${src})`),
+    );
     const legacyImageIsInline = Boolean(
       legacyImageUrl && legacyText?.includes(`](${legacyImageUrl})`),
     );
+    const showLegacySingle =
+      Boolean(legacyImageUrl) && !legacyImageIsInline && !figures.includes(legacyImageUrl as string);
+
     return (
       <div className={`${compact ? "space-y-2" : "space-y-4"} min-w-0 ${className}`.trim()}>
         {legacyText ? <MarkdownRenderer>{legacyText}</MarkdownRenderer> : null}
-        {legacyImageUrl && !legacyImageIsInline ? (
+        {figures.map((src) => (
+          <QuestionImage
+            key={src}
+            src={src}
+            alt={legacyImageAlt}
+            compact={compact}
+            reviewerMode={reviewerMode}
+            confidence={confidence}
+            needs_review={needsReview}
+            review_reasons={reviewReasons}
+          />
+        ))}
+        {showLegacySingle ? (
           <QuestionImage
             src={legacyImageUrl}
             alt={legacyImageAlt}

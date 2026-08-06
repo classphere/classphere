@@ -13,8 +13,7 @@ import {
   RiShieldCheckLine,
   RiNotification3Line,
   RiBankCardLine,
-  RiPaletteLine,
-  RiTimeLine
+  RiPaletteLine
 } from "@remixicon/react";
 
 function SettingsContent() {
@@ -44,9 +43,6 @@ function SettingsContent() {
       baseTabs.push({ id: "billing", label: "B2B Billing", icon: <RiBankCardLine size={18} /> });
       baseTabs.push({ id: "white_label", label: "White-Labeling", icon: <RiPaletteLine size={18} /> });
     }
-    if (role === "teacher") {
-      baseTabs.push({ id: "availability", label: "Availability", icon: <RiTimeLine size={18} /> });
-    }
     return baseTabs;
   };
 
@@ -70,7 +66,7 @@ function SettingsContent() {
   return (
     <>
       <Navbar title={`${role.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase())} Settings`} subtitle="Manage your account preferences and configurations." />
-      <main className="mx-auto flex w-full max-w-[1400px] flex-col gap-8 px-6 pb-16 pt-6 xl:flex-row xl:items-start">
+      <main className="mx-auto flex w-full max-w-[1400px] flex-col gap-3 px-6 pb-16 pt-6 xl:flex-row xl:items-start">
 
         {/* Left Nav Menu */}
         <div className="xl:sticky xl:top-6 xl:w-[280px] xl:shrink-0 flex flex-col gap-2">
@@ -93,16 +89,16 @@ function SettingsContent() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 flex flex-col gap-8 min-w-0">
+        <div className="flex-1 flex flex-col gap-3 min-w-0">
           
           <div className="card flex flex-col p-8 card">
             
             {/* GENERAL INFO TAB */}
             {activeTab === "general" && (
               <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">General Information</h2>
+                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">General Information</h2>
                 
-                <div className="flex items-center gap-6 mb-10">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-24 h-24 rounded-full bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center text-t-primary dark:text-t-primary text-[32px] font-bold uppercase shadow-sm">
                     {role.charAt(0)}
                   </div>
@@ -111,7 +107,7 @@ function SettingsContent() {
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Full Name</label>
                     <input type="text" className="w-full h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" defaultValue={role === "teacher" ? "Aman Sir" : "Harsh Singh"} />
@@ -123,14 +119,13 @@ function SettingsContent() {
                 </div>
 
                 {role === "student" && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                     <div className="flex flex-col gap-2">
                       <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Target Exam</label>
                       <select className="w-full h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner appearance-none">
                         <option>JEE Main</option>
                         <option>JEE Advanced</option>
                         <option>NEET UG</option>
-                        <option>SSC CGL</option>
                       </select>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -141,7 +136,7 @@ function SettingsContent() {
                 )}
 
                 {role === "teacher" && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                     <div className="flex flex-col gap-2">
                       <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Primary Subject</label>
                       <select className="w-full h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner appearance-none">
@@ -159,7 +154,7 @@ function SettingsContent() {
                 )}
 
                 {role === "institute_admin" && (
-                  <div className="grid grid-cols-1 gap-6 mb-8">
+                  <div className="grid grid-cols-1 gap-3 mb-4">
                     <div className="flex flex-col gap-2">
                       <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Institute Name</label>
                       <input type="text" className="w-full h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" defaultValue="Vibrant Academy" />
@@ -172,9 +167,9 @@ function SettingsContent() {
             {/* SECURITY TAB */}
             {activeTab === "security" && (
               <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">Security & Access</h2>
+                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">Security & Access</h2>
                 
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
                   <div className="flex items-start justify-between border-b border-s-stroke2/30 pb-8">
                     <div className="pr-8">
                       <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Two-Factor Authentication (2FA)</h3>
@@ -201,9 +196,9 @@ function SettingsContent() {
             {/* NOTIFICATIONS TAB */}
             {activeTab === "notifications" && (
               <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">Notification Preferences</h2>
+                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">Notification Preferences</h2>
                 
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
                   {role === "student" && (
                     <>
                       <div className="flex items-start justify-between border-b border-s-stroke2/30 pb-8">
@@ -224,22 +219,13 @@ function SettingsContent() {
                   )}
 
                   {(role === "teacher" || role === "institute_admin") && (
-                    <>
-                      <div className="flex items-start justify-between border-b border-s-stroke2/30 pb-8">
-                        <div>
-                          <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Student Escalations</h3>
-                          <p className="text-[14px] text-t-secondary">Instant alerts when a student in your batch flags a doubt as 'urgent'.</p>
-                        </div>
-                        <Toggle defaultOn={true} />
+                    <div className="flex items-start justify-between pb-4">
+                      <div>
+                        <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Daily Batch Summary</h3>
+                        <p className="text-[14px] text-t-secondary">Receive a morning email detailing student performance shifts.</p>
                       </div>
-                      <div className="flex items-start justify-between pb-4">
-                        <div>
-                          <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Daily Batch Summary</h3>
-                          <p className="text-[14px] text-t-secondary">Receive a morning email detailing student performance shifts and unresolved doubts.</p>
-                        </div>
-                        <Toggle defaultOn={false} />
-                      </div>
-                    </>
+                      <Toggle defaultOn={false} />
+                    </div>
                   )}
                   
                   {role === "super_admin" && (
@@ -258,9 +244,9 @@ function SettingsContent() {
             {/* B2B BILLING TAB */}
             {activeTab === "billing" && role === "institute_admin" && (
               <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">B2B Subscription & Billing</h2>
+                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">B2B Subscription & Billing</h2>
                 
-                <div className="p-6 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] mb-8 flex justify-between items-center">
+                <div className="p-6 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] mb-3 flex justify-between items-center">
                   <div>
                     <h3 className="text-[18px] font-bold text-t-primary dark:text-t-primary mb-1">Enterprise Tier</h3>
                     <p className="text-[14px] text-t-secondary">Unlimited students. ₹50 / student / month.</p>
@@ -280,9 +266,9 @@ function SettingsContent() {
             {/* WHITE LABELING TAB */}
             {activeTab === "white_label" && role === "institute_admin" && (
               <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">White-Labeling & Branding</h2>
+                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">White-Labeling & Branding</h2>
                 
-                <div className="grid grid-cols-1 gap-6 mb-8">
+                <div className="grid grid-cols-1 gap-3 mb-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Custom Domain (Portal URL)</label>
                     <div className="flex items-center">
@@ -303,23 +289,8 @@ function SettingsContent() {
               </div>
             )}
 
-            {/* AVAILABILITY TAB */}
-            {activeTab === "availability" && role === "teacher" && (
-              <div className="flex flex-col animate-in fade-in duration-300">
-                <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-8">Doubt Resolution Availability</h2>
-                
-                <div className="flex items-start justify-between pb-8">
-                  <div className="pr-8">
-                    <h3 className="text-[16px] font-bold text-t-primary dark:text-t-primary mb-1">Accepting New Doubts</h3>
-                    <p className="text-[14px] text-t-secondary">When disabled, you will be hidden from the student doubt routing engine.</p>
-                  </div>
-                  <Toggle defaultOn={true} />
-                </div>
-              </div>
-            )}
-
             {/* Global Actions */}
-            <div className="mt-8 pt-8 border-t border-s-stroke2/30 flex items-center justify-end gap-4">
+            <div className="mt-3 pt-8 border-t border-s-stroke2/30 flex items-center justify-end gap-4">
               <button className="h-12 px-6 rounded-[10px] text-t-secondary hover:bg-b-surface1 dark:hover:bg-b-surface1 hover:text-t-primary dark:hover:text-t-primary transition-colors text-[14px] font-semibold cursor-pointer">
                 Discard Changes
               </button>

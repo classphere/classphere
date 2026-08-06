@@ -89,6 +89,9 @@ export interface Question {
   id: string;
   question_number: number;
   question_text: string;
+  /** All figures for the stem, in reading order. */
+  question_images?: string[] | null;
+  /** Legacy single figure, kept for rows uploaded before question_images existed. */
   image_url?: string | null;
   options: Option[] | null;
   correct_answer: string[];
@@ -129,7 +132,32 @@ export interface TestMeta {
   duration: number;
 }
 
-export type AnswerMap = Record<string, string>;
+/**
+ * What a student has selected, per question.
+ *
+ * An array for multiple-correct questions, where the answer genuinely is a set:
+ * a JEE Advanced MSQ scores +4 for all of them, partial credit for some, and
+ * -2 for any wrong one, none of which can be expressed by a single option id.
+ * A string everywhere else, which is most questions.
+ */
+export type AnswerValue = string | string[];
+export type AnswerMap = Record<string, AnswerValue>;
+
+/** True when the student has actually chosen something. */
+export function hasAnswer(value: AnswerValue | undefined | null): boolean {
+  return Array.isArray(value) ? value.length > 0 : Boolean(value);
+}
+
+/** Option ids as a list, whatever shape the answer is stored in. */
+export function answerToList(value: AnswerValue | undefined | null): string[] {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+/** Multiple-correct questions are the only ones where more than one may be picked. */
+export function isMultiSelect(questionType: string | undefined | null): boolean {
+  return String(questionType ?? "").toLowerCase() === "mcq_multi";
+}
 
 export type QuestionStatus =
   | "not_visited"

@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import { useAuth } from "@/lib/auth-context";
-import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import {
   SectionCard,
   MetricCard,
@@ -114,34 +112,10 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
 }
 
 export default function AssignmentsPage() {
-  const { session } = useAuth();
-  const [dpps, setDpps] = useState<StudentDPP[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [notificationVersion, setNotificationVersion] = useState(0);
-
-  useEffect(() => {
-    const refresh = () => setNotificationVersion((version) => version + 1);
-    window.addEventListener("classphere:notification", refresh);
-    return () => window.removeEventListener("classphere:notification", refresh);
-  }, []);
-
-  useEffect(() => {
-    if (!session?.access_token) return;
-
-    const fetchDPPs = async () => {
-      setLoading(true);
-      try {
-        const res = await apiClient.get("/api/v1/dpps/student", session.access_token) as any;
-        if (res.success) setDpps(res.data.dpps ?? []);
-      } catch (e) {
-        console.error("[Assignments] fetch error", e);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDPPs();
-  }, [session?.access_token, notificationVersion]);
+  // Refetch-on-notification is handled centrally by QueryProvider, so a newly
+  // assigned DPP still lands here without this page tracking it itself.
+  const { data, isPending: loading } = useApiQuery<{ dpps: StudentDPP[] }>("/api/v1/dpps/student");
+  const dpps = data?.dpps ?? [];
 
   const late = dpps.filter((d) => d.status === "late");
   const pending = dpps.filter((d) => d.status === "pending");
@@ -161,7 +135,7 @@ export default function AssignmentsPage() {
 
         {loading ? (
           <SectionCard padding="none">
-            <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+            <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
               <RiLoader4Line size={22} className="animate-spin text-primary-01" />
               <span className="font-sans font-semibold text-[14px]">Loading your DPPs...</span>
             </div>
@@ -177,7 +151,7 @@ export default function AssignmentsPage() {
         ) : (
           <>
             {late.length > 0 && (
-              <SectionCard title="Overdue DPPs" subtitle="These practice papers have passed their deadline" className="mb-6">
+              <SectionCard title="Overdue DPPs" subtitle="These practice papers have passed their deadline" className="mb-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {late.map((dpp) => <DPPCard key={dpp.dppId} dpp={dpp} />)}
                 </div>
@@ -185,7 +159,7 @@ export default function AssignmentsPage() {
             )}
 
             {pending.length > 0 && (
-              <SectionCard title="Pending DPPs" subtitle="Complete these before their due dates" className="mb-6">
+              <SectionCard title="Pending DPPs" subtitle="Complete these before their due dates" className="mb-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {pending.map((dpp) => <DPPCard key={dpp.dppId} dpp={dpp} />)}
                 </div>

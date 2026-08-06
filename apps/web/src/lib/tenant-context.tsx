@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { API_URL } from "@/lib/api.client";
+import { themeVarsFor } from "@/lib/theme";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -79,6 +80,23 @@ function detectDomain(): string | null {
   return hostname;
 }
 
+/**
+ * Client-side fallback for the routes that resolve their tenant in the
+ * browser. The [domain] layout emits the same variables server-side, so this
+ * only runs where that did not.
+ */
+function applyTheme(color: string | null | undefined) {
+  if (typeof document === "undefined") return;
+  const vars = themeVarsFor(color);
+  const root = document.documentElement.style;
+  root.setProperty("--primary-institute", vars.primary);
+  root.setProperty("--primary-institute-fg", vars.foreground);
+  root.setProperty("--primary-institute-hover", vars.hover);
+  root.setProperty("--primary-institute-active", vars.active);
+  root.setProperty("--primary-institute-from", vars.gradientFrom);
+  root.setProperty("--primary-institute-to", vars.gradientTo);
+}
+
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
 export function TenantProvider({ children, initialConfig }: { children: React.ReactNode, initialConfig?: TenantConfig }) {
@@ -87,9 +105,7 @@ export function TenantProvider({ children, initialConfig }: { children: React.Re
   useEffect(() => {
     // If initialConfig was provided by the server layout, we don't need to fetch on the client.
     if (initialConfig && initialConfig.domain) {
-      if (typeof document !== "undefined") {
-        document.documentElement.style.setProperty("--primary-institute", initialConfig.primaryColor ?? "#6366f1");
-      }
+      // The server layout already emitted these; nothing to do.
       return;
     }
     const domain = detectDomain();
@@ -112,13 +128,14 @@ export function TenantProvider({ children, initialConfig }: { children: React.Re
       .then((r) => r.json())
       .then(({ data }) => {
         if (data) {
-          // Inject CSS variable so all components using var(--primary) pick up institute color
-          document.documentElement.style.setProperty("--primary-institute", data.theme_primary_color ?? "#6366f1");
+          applyTheme(data.theme_primary_color);
           setConfig({
             domain,
             instituteId: data.institutes?.id || data.institute_id,
             instituteName: data.institutes?.name || "Institute",
-            logoUrl: data.theme_logo_url,
+            // Normalised for the same reason as the server layout: an empty
+            // string must fall through to the Classphere mark, not past it.
+            logoUrl: data.theme_logo_url || null,
             primaryColor: data.theme_primary_color ?? "#6366f1",
             isLoading: false,
           });

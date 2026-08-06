@@ -14,6 +14,7 @@ import { supabaseAdmin } from "../../../lib/supabase";
 import {
   AttemptAnswer,
   AnalysisResult,
+  BatchAverage,
   StudentErrorProfile,
   TopicErrorHistoryEntry,
   Question,
@@ -63,17 +64,29 @@ export const db = {
     let questionMap: Record<string, Question> = {};
 
     if (questionIds.length > 0) {
-      const { data: questions } = await supabaseAdmin
+      // This list previously named explanation_image_url, which no column has
+      // ever been called. PostgREST answered 42703, the error was discarded,
+      // `questions` came back undefined, and every answer was filtered out
+      // below — so the engine analysed zero answers and wrote a structurally
+      // valid but entirely empty result for every attempt ever submitted.
+      // The real column is explanation_images (migration 43), an array.
+      const { data: questions, error: qErr } = await supabaseAdmin
         .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, source, year, tags")
+        .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
+
+      // Throw rather than continue. An analysis with no questions is not a
+      // degraded analysis, it is a wrong one, and it looks fine on the way out.
+      if (qErr) {
+        throw new Error(`[db.service] Failed to fetch questions for attempt ${attemptId}: ${qErr.message}`);
+      }
 
       for (const q of questions ?? []) {
         questionMap[q.id] = {
           ...q,
           question_number: 0, // will be set below
-          image_url: q.image_url || null,
-          explanation_image_url: q.explanation_image_url || null,
+          explanation_images: Array.isArray(q.explanation_images) ? q.explanation_images : [],
+          question_images: Array.isArray(q.question_images) ? q.question_images : [],
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
         } as Question;
@@ -89,6 +102,13 @@ export const db = {
     const positionMap: Record<string, number> = {};
     for (const pq of paperQs ?? []) {
       positionMap[pq.question_id] = pq.position;
+    }
+
+    if ((rawAnswers ?? []).length > 0 && Object.keys(questionMap).length === 0) {
+      throw new Error(
+        `[db.service] Attempt ${attemptId} has ${(rawAnswers ?? []).length} answers but none of their questions could be loaded. ` +
+        `Refusing to analyse zero answers.`,
+      );
     }
 
     const answers: AttemptAnswer[] = (rawAnswers ?? [])
@@ -124,6 +144,40 @@ export const db = {
     };
   },
 
+  // ── Batch average score on the same paper ─────────────────────────────────
+  /**
+   * Mean submitted score for this paper within this batch.
+   *
+   * Returns null when there is no batch, no paper, or fewer than
+   * MIN_BATCH_SAMPLE submissions — a "batch average" drawn from one or two
+   * peers is noise, and the caller must show nothing rather than invent a
+   * comparison.
+   */
+  getBatchAverageScore: async (paperId: string, batchId: string): Promise<BatchAverage | null> => {
+    if (!paperId || !batchId) return null;
+    const MIN_BATCH_SAMPLE = 3;
+    try {
+      const { data, error } = await supabaseAdmin
+        .from("attempts")
+        .select("score")
+        .eq("paper_id", paperId)
+        .eq("batch_id", batchId)
+        .eq("status", "submitted")
+        .not("score", "is", null);
+      if (error) {
+        console.error("[db.service] getBatchAverageScore error:", error.message);
+        return null;
+      }
+      const scores = (data ?? []).map((row: any) => Number(row.score)).filter(Number.isFinite);
+      if (scores.length < MIN_BATCH_SAMPLE) return null;
+      const total = scores.reduce((sum, value) => sum + value, 0);
+      return { score: Math.round(total / scores.length), sampleSize: scores.length };
+    } catch (e: any) {
+      console.error("[db.service] getBatchAverageScore exception:", e.message);
+      return null;
+    }
+  },
+
   // ── Batch averages per topic (for comparison) ──────────────────────────────
   getBatchAvgsByTopic: async (batchId: string): Promise<Map<string, number>> => {
     // Guard: null/empty batchId causes a Postgres UUID parse error in the RPC.
@@ -154,12 +208,33 @@ export const db = {
   },
 
   // ── Seen question IDs (for booster config de-duplication) ─────────────────
+  /**
+   * Question ids the student has already been served.
+   *
+   * PostgREST caps a response at 1000 rows, so the previous unbounded select
+   * silently truncated once a student passed ~1000 answered questions — a few
+   * months of serious preparation. Boosters and revision then began repeating
+   * questions with no error anywhere. This pages until the source is exhausted.
+   */
   getSeenQuestionIds: async (studentId: string, _examCode: string): Promise<string[]> => {
-    const { data } = await supabaseAdmin
-      .from("attempt_answers")
-      .select("question_id, attempts!inner(student_id)")
-      .eq("attempts.student_id", studentId);
-    return (data ?? []).map((r: any) => r.question_id);
+    const PAGE_SIZE = 1000;
+    const ids: string[] = [];
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data, error } = await supabaseAdmin
+        .from("attempt_answers")
+        .select("question_id, attempts!inner(student_id)")
+        .eq("attempts.student_id", studentId)
+        .range(from, from + PAGE_SIZE - 1);
+      if (error) {
+        console.error("[db.service] getSeenQuestionIds page failed:", error.message);
+        break;
+      }
+      const page = data ?? [];
+      for (const row of page) ids.push((row as any).question_id);
+      // A short page means we've reached the end.
+      if (page.length < PAGE_SIZE) break;
+    }
+    return ids;
   },
 
   // ── Upsert analysis result ─────────────────────────────────────────────────

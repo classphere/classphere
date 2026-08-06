@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import {
   RiUploadCloud2Line, RiCheckLine, RiCloseLine,
@@ -18,7 +19,6 @@ const EXAMS = [
   { code: "jee-main",     label: "JEE Main" },
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug",      label: "NEET-UG" },
-  { code: "ssc-cgl",      label: "SSC CGL" },
 ];
 
 const TEST_TYPES = [
@@ -33,7 +33,6 @@ const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":     ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug":      ["Physics", "Chemistry", "Biology"],
-  "ssc-cgl":      ["Quantitative Aptitude", "General Intelligence & Reasoning", "English Language", "General Awareness"],
 };
 
 interface FormState {
@@ -62,10 +61,23 @@ export default function AIExtractor() {
     chapter: "",
     year: "",
     shift: "",
-    duration: "180",
-    marks: "300",
-    difficulty: "medium",
+    duration: "",
+    marks: "",
+    difficulty: "",
   });
+
+  // Only exams without a uniform scheme need this; NEET and JEE Main default.
+  const [markingScheme, setMarkingScheme] = useState<MarkingScheme>({});
+  const needsScheme = form.exam === "jee-advanced";
+
+  // Marks read off the paper's instructions page, with the sentence each
+  // reading came from. Shown so the scheme is checked against the paper rather
+  // than trusted because a parser produced it.
+  const [schemeHint, setSchemeHint] = useState<{
+    scheme: Record<string, any>;
+    evidence: Record<string, string>;
+    unread: string[];
+  } | null>(null);
 
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [pagesRange, setPagesRange] = useState<string>(""); // e.g. "1-2"
@@ -167,14 +179,34 @@ export default function AIExtractor() {
           
           if (jobState.status === "done") {
             setResultMsg("Extraction complete! Saving to global draft for review...");
-            
+
             // Auto-fill paper title from PDF name if blank
             let finalTitle = form.title;
             if (!finalTitle) {
               finalTitle = pdfFile.name.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
               setField("title", finalTitle);
             }
-            
+
+            // An Advanced paper prints its own marking scheme on the
+            // instructions page, and the profiler reads it — but only once the
+            // extraction has run, by which point the scheme entered blind on
+            // this form has already been used. So when the paper states marks,
+            // stop before saving and show them: confirming four numbers against
+            // the page they came from beats having typed them from memory.
+            const hint = jobState.result?.profile?.marking_scheme_hint;
+            if (needsScheme && hint?.scheme && Object.keys(hint.scheme).length > 0) {
+              setSchemeHint(hint);
+              setMarkingScheme((current) => ({ ...current, ...hint.scheme }));
+              setExtractedQuestions(jobState.result.questions);
+              setStatus("success");
+              setResultMsg(
+                `Extraction complete. This paper states its own marking scheme — it has been filled in below. ` +
+                `Check it against the paper, then save the draft.`
+              );
+              jobDone = true;
+              break;
+            }
+
             // Automatically push to DB as a draft
             const uploadBody = {
               exam: form.exam,
@@ -184,9 +216,10 @@ export default function AIExtractor() {
               chapter: form.chapter || null,
               year: form.year ? parseInt(form.year) : null,
               shift: form.shift || null,
-              duration: parseInt(form.duration),
-              marks: parseInt(form.marks),
-              difficulty: form.difficulty,
+              duration: form.duration ? parseInt(form.duration) : undefined,
+              marks: form.marks ? parseInt(form.marks) : undefined,
+              difficulty: form.difficulty || undefined,
+              marking_scheme: needsScheme ? markingScheme : undefined,
               questions: jobState.result.questions,
             };
 
@@ -273,9 +306,13 @@ export default function AIExtractor() {
         chapter: form.chapter || null,
         year: form.year ? parseInt(form.year) : null,
         shift: form.shift || null,
-        duration: parseInt(form.duration),
-        marks: parseInt(form.marks),
-        difficulty: form.difficulty,
+        // Omitted when blank so the server derives them from the exam and the
+        // question count — a NEET paper is out of 720, not the 300 this form
+        // used to send for everything.
+        duration: form.duration ? parseInt(form.duration) : undefined,
+        marks: form.marks ? parseInt(form.marks) : undefined,
+        difficulty: form.difficulty || undefined,
+        marking_scheme: needsScheme ? markingScheme : undefined,
         questions: extractedQuestions,
       };
 
@@ -300,9 +337,9 @@ export default function AIExtractor() {
           chapter: "",
           year: "",
           shift: "",
-          duration: "180",
-          marks: "300",
-          difficulty: "medium",
+          duration: "",
+          marks: "",
+          difficulty: "",
         });
 
         setTimeout(() => {
@@ -325,17 +362,17 @@ export default function AIExtractor() {
   const subjects = form.exam ? EXAM_SUBJECTS[form.exam] ?? [] : [];
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-3 w-full">
       {/* ── Section 1: Extraction Settings ────────────────────────────────────── */}
       <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-        <div className="relative z-10 flex items-center gap-3 mb-6">
+        <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
             Extraction Settings
           </h2>
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
           {/* Exam Selection */}
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Exam *</label>
@@ -458,30 +495,49 @@ export default function AIExtractor() {
             />
           </div>
 
-          {/* Difficulty */}
-          <div className="flex flex-col gap-2 sm:col-span-2">
-            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty *</label>
-            <div className="flex flex-row gap-3">
-              {DIFFICULTY.map(d => (
-                <button
-                  key={d}
-                  onClick={() => setField("difficulty", d)}
-                  className={`flex-1 h-11 rounded-[10px] border text-[14px] font-semibold capitalize transition-all cursor-pointer ${form.difficulty === d
-                      ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                      : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
-                    }`}
-                >
-                  {d}
-                </button>
-              ))}
+          {/* Difficulty is a property of a question, not of a paper — a real
+              paper mixes all three — so it is no longer asked for here. Each
+              question carries its own. */}
+
+          {needsScheme && (
+            <div className="sm:col-span-2">
+              <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
+
+              {schemeHint && (
+                <div className="mt-3 rounded-[12px] border border-s-stroke2/40 bg-b-surface1 p-4">
+                  <p className="mb-2 text-[13px] font-semibold text-t-primary">
+                    Read from this paper&apos;s instructions page
+                  </p>
+                  <p className="mb-3 text-[12px] text-t-secondary">
+                    Filled in above. Check each line against the paper before saving — these
+                    numbers decide how every student is scored.
+                  </p>
+                  <ul className="flex flex-col gap-2">
+                    {Object.entries(schemeHint.evidence).map(([type, sentence]) => (
+                      <li key={type} className="text-[12px] leading-relaxed text-t-secondary">
+                        <span className="font-semibold text-t-primary">{type}</span>
+                        {" — "}
+                        <span className="italic">&ldquo;{sentence}&rdquo;</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {schemeHint.unread.length > 0 && (
+                    <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-[12px] text-t-primary">
+                      {schemeHint.unread.length} section
+                      {schemeHint.unread.length === 1 ? "" : "s"} on the instructions page
+                      state marks but could not be matched to a question type. Enter those by hand.
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
+          )}
         </div>
       </div>
 
       {/* ── Section 2: PDF File Drag & Drop ────────────────────────────────────── */}
       <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-        <div className="relative z-10 flex items-center gap-3 mb-6">
+        <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
             Select Exam PDF File
@@ -544,7 +600,7 @@ export default function AIExtractor() {
 
         {/* Page Range Input */}
         {pdfFile && (
-          <div className="relative z-10 mt-6 flex flex-col gap-2">
+          <div className="relative z-10 mt-3 flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
               Page Selection (Optional)
             </label>
@@ -604,7 +660,7 @@ export default function AIExtractor() {
       {/* ── Section 3: Extracted Questions Preview ────────────────────────────── */}
       {extractedQuestions && extractedQuestions.length > 0 && (
         <div className="group relative flex flex-col p-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
-          <div className="relative z-10 flex items-center justify-between mb-6 px-2">
+          <div className="relative z-10 flex items-center justify-between mb-3 px-2">
             <div className="flex items-center gap-3">
               <RiEyeLine size={20} className="text-t-primary" />
               <h3 className="font-sans font-semibold text-[18px] text-t-primary m-0">
@@ -617,7 +673,7 @@ export default function AIExtractor() {
           </div>
 
           {/* Paper Title input for submission */}
-          <div className="relative z-10 flex flex-col gap-2 mb-6 px-2">
+          <div className="relative z-10 flex flex-col gap-2 mb-3 px-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
               Final Paper Title *
             </label>
@@ -630,7 +686,7 @@ export default function AIExtractor() {
             />
           </div>
 
-          <div className="relative z-10 flex flex-col gap-6 w-full">
+          <div className="relative z-10 flex flex-col gap-3 w-full">
             {extractedQuestions.map((q, idx) => {
               const isEditing = editingIndex === idx;
 
@@ -683,7 +739,7 @@ export default function AIExtractor() {
                         <QuestionBody
                           blocks={q.content_blocks}
                           legacyText={q.question_text || ""}
-                          legacyImageUrl={q.image_url}
+                          images={q.question_images}
                           legacyImageAlt={`Figure for question ${q.question_number}`}
                           reviewerMode
                           confidence={q.extraction_metadata?.confidence ?? q.extraction_confidence}
@@ -748,7 +804,7 @@ export default function AIExtractor() {
           </div>
 
           {/* Action Row */}
-          <div className="relative z-10 flex justify-end gap-4 w-full mt-8 border-t border-s-stroke2/20 pt-6 px-2">
+          <div className="relative z-10 flex justify-end gap-4 w-full mt-3 border-t border-s-stroke2/20 pt-6 px-2">
             <button
               onClick={handleFinalUpload}
               disabled={!canUpload}
@@ -804,7 +860,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
   };
 
   return (
-    <div className="flex flex-col gap-5 text-t-primary">
+    <div className="flex flex-col gap-3 text-t-primary">
       {/* Text Area for Question Text */}
       <div className="flex flex-col gap-2">
         <label className="text-[12px] font-bold text-t-secondary uppercase tracking-[0.02em]">Question Text (LaTeX supported)</label>

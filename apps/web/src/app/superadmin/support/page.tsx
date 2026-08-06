@@ -14,16 +14,19 @@ import {
   RiLoader4Line
 } from "@remixicon/react";
 
-import { useEffect, useState, useCallback } from "react";
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useAuth } from "@/lib/auth-context";
 
 export default function SupportPage() {
   const { session } = useAuth();
   const token = session?.access_token;
 
-  const [tickets, setTickets] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
+  const TICKETS_PATH = "/api/v1/superadmin/tickets";
+  const { data: tickets = [], isPending: loading } = useApiQuery<any[]>(TICKETS_PATH);
 
   // Filters
   const [search, setSearch] = useState("");
@@ -32,55 +35,26 @@ export default function SupportPage() {
 
   // Modal / Conversation details
   const [selectedTicket, setSelectedTicket] = useState<any | null>(null);
-  const [ticketReplies, setTicketReplies] = useState<any[]>([]);
-  const [loadingReplies, setLoadingReplies] = useState(false);
+  // Replies are per-ticket and disabled until one is open, so opening a ticket
+  // you have already looked at renders its thread straight from cache.
+  const repliesPath = selectedTicket ? `/api/v1/superadmin/tickets/${selectedTicket.id}/replies` : null;
+  const { data: ticketReplies = [], isLoading: loadingReplies } = useApiQuery<any[]>(repliesPath);
   const [replyMessage, setReplyMessage] = useState("");
   const [submittingReply, setSubmittingReply] = useState(false);
   const [ticketStatus, setTicketStatus] = useState("");
   const [ticketPriority, setTicketPriority] = useState("");
 
-  const fetchTickets = useCallback(async () => {
-    if (!token) return;
-    try {
-      const res = await apiClient.get("/api/v1/superadmin/tickets", token);
-      if (res.success) {
-        setTickets(res.data);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  }, [token]);
-
-  useEffect(() => {
-    fetchTickets();
-  }, [fetchTickets]);
-
-  const loadReplies = async (ticketId: string) => {
-    if (!token) return;
-    setLoadingReplies(true);
-    try {
-      const res = await apiClient.get<{ success: boolean; data: any[] }>(
-        `/api/v1/superadmin/tickets/${ticketId}/replies`,
-        token
-      );
-      if (res.success) {
-        setTicketReplies(res.data);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoadingReplies(false);
-    }
-  };
+  // Replying or changing status alters the ticket row, so the list is dropped
+  // rather than patched — status and priority are derived server-side.
+  const fetchTickets = () => queryClient.invalidateQueries({ queryKey: [TICKETS_PATH] });
+  const loadReplies = (ticketId: string) =>
+    queryClient.invalidateQueries({ queryKey: [`/api/v1/superadmin/tickets/${ticketId}/replies`] });
 
   const handleOpenTicketDetails = (ticket: any) => {
     setSelectedTicket(ticket);
     setTicketStatus(ticket.status);
     setTicketPriority(ticket.priority);
     setReplyMessage("");
-    loadReplies(ticket.id);
   };
 
   const handleUpdateTicket = async (status: string, priority: string) => {
@@ -149,7 +123,7 @@ export default function SupportPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
         
         {/* KPI Cards */}
-        <MetricGrid cols={3} className="mb-8">
+        <MetricGrid cols={3} className="mb-3">
           <MetricCard
             icon={<RiCustomerService2Fill size={20} />}
             label="Open Escalations"
@@ -233,12 +207,12 @@ export default function SupportPage() {
 
             {/* Data rows */}
             {loading ? (
-              <div className="flex items-center justify-center gap-3 py-16 text-t-secondary">
+              <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
                 <RiLoader4Line size={22} className="animate-spin text-primary-01" />
                 <span className="font-sans font-semibold text-[14px]">Loading tickets...</span>
               </div>
             ) : filteredTickets.length === 0 ? (
-              <div className="py-16 text-center text-t-secondary font-sans text-sm">
+              <div className="py-10 text-center text-t-secondary font-sans text-sm">
                 No support tickets found.
               </div>
             ) : (
@@ -246,7 +220,7 @@ export default function SupportPage() {
                 <div
                   key={ticket.id}
                   onClick={() => handleOpenTicketDetails(ticket)}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px]"
+                  className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px]"
                 >
                   {/* ID & Institute */}
                   <div className="flex flex-col justify-center shrink-0 w-[100px] sm:w-[150px]">
@@ -321,7 +295,7 @@ export default function SupportPage() {
           title={`Ticket Detail: #${selectedTicket.id.split('-')[0]}`}
           maxWidth="max-w-[700px]"
         >
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             
             {/* Meta status modifiers */}
             <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-b-surface2 dark:bg-b-surface2/30 rounded-[12px] border border-s-stroke2/40">

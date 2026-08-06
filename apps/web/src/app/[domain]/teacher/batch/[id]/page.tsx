@@ -99,7 +99,7 @@ export default function BatchAnalysisPage() {
       
       <main className="w-full max-w-[1200px] mx-auto px-8 pb-12">
         {/* Action bar */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-3">
           <Link href="/teacher" className="inline-flex items-center gap-1.5 text-caption font-bold text-t-secondary hover:text-t-primary no-underline transition-colors">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
@@ -112,17 +112,17 @@ export default function BatchAnalysisPage() {
         </div>
 
         {/* Score + Recs */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-2 gap-3 mb-4">
           {/* Score Distribution Card */}
           <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-3">
               <div className="p-2.5 bg-b-surface2 rounded-[10px] border border-s-stroke2 text-t-secondary">
                 <RiPieChart2Line size={20} />
               </div>
               <h2 className="text-sub-title-1 font-bold text-t-primary">Score Distribution</h2>
             </div>
             
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-4 mb-3">
               {[
                 { label: "Average Score", value: `${avgScore}%`, textColor: "text-t-primary" },
                 { label: "Highest Score", value: `${topScore}%`,  textColor: "text-primary-02" },
@@ -146,7 +146,7 @@ export default function BatchAnalysisPage() {
 
           {/* AI Teaching Recommendations */}
           <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-3">
               <div className="p-2.5 bg-b-surface2 rounded-[10px] border border-s-stroke2 text-t-secondary">
                 <RiFocus2Line size={20} />
               </div>
@@ -179,7 +179,7 @@ export default function BatchAnalysisPage() {
 
         {/* Chapter Heatmap */}
         <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Topic / Chapter Performance</h2>
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-3">Topic / Chapter Performance</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -245,11 +245,11 @@ export default function BatchAnalysisPage() {
 
         {/* Recent Tests & Trap Questions */}
         {recentTests && recentTests.length > 0 && (
-          <div className="mt-8 flex flex-col gap-6">
+          <div className="mt-3 flex flex-col gap-3">
             <h2 className="text-sub-title-1 font-bold text-t-primary">Recent Tests & Trap Questions</h2>
             {recentTests.map((test: any, idx: number) => (
               <div key={idx} className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-3">
                   <div>
                     <h3 className="text-body-1 font-bold text-t-primary">{test.testName}</h3>
                     <div className="text-caption text-t-secondary">Average Score: {test.avgScore}%</div>

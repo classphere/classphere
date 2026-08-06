@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { PageWrapper } from "@/components/ui";
-import { Modal } from "@/components/shared/Modal";
+import { CreateBatchModal } from "@/components/institute/CreateBatchModal";
 import {
   RiTeamLine,
   RiGroupLine,
@@ -24,7 +25,6 @@ import {
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
 import { useBatches } from "@/lib/hooks/useBatches";
-import { apiClient } from "@/lib/api.client";
 
 const EXAM_LABELS: Record<string, string> = {
   "jee-main":          "JEE Main",
@@ -36,43 +36,18 @@ const EXAM_LABELS: Record<string, string> = {
 export default function InstituteDashboardPage() {
   const router = useRouter();
   const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
-  const [newBatchData, setNewBatchData] = useState({
-    name: "",
-    exam: "",
-  });
-  const [batchSubmitting, setBatchSubmitting] = useState(false);
-  const [batchFeedback, setBatchFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
   const { user, session } = useAuth();
   const { batches, loading: batchesLoading, createBatch } = useBatches();
 
   // ── Real institute data ──────────────────────────────────────────────────
-  const [institute, setInstitute] = useState<any>(null);
-  const [topPerformers, setTopPerformers] = useState<any[]>([]);
-  const [subscription, setSubscription] = useState<{ status?: string; current_period_end?: string | null } | null>(null);
-  const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const [realStudentCount, setRealStudentCount] = useState(0);
 
-  useEffect(() => {
-    if (!session?.access_token) return;
-    const fetchInstitute = async () => {
-      try {
-        const [instituteResponse, subscriptionResponse] = await Promise.allSettled([
-          apiClient.get("/api/v1/institutes/me", session.access_token),
-          apiClient.get<{ success: boolean; data: { status?: string; current_period_end?: string | null } }>("/api/v1/institutes/me/subscription", session.access_token),
-        ]);
-        if (instituteResponse.status === "fulfilled" && instituteResponse.value.success) {
-           setInstitute(instituteResponse.value.data.institute);
-           setTopPerformers(instituteResponse.value.data.topPerformers || []);
-        }
-        if (subscriptionResponse.status === "fulfilled" && subscriptionResponse.value.success) {
-          setSubscription(subscriptionResponse.value.data);
-        }
-      } catch (e) { console.error("[Institute]", e); }
-      finally { setSubscriptionLoading(false); }
-    };
-    fetchInstitute();
-  }, [session?.access_token]);
+  const { data: instituteData } = useApiQuery<{ institute: any; topPerformers?: any[] }>("/api/v1/institutes/me");
+  const { data: subscription, isPending: subscriptionLoading } =
+    useApiQuery<{ status?: string; current_period_end?: string | null }>("/api/v1/institutes/me/subscription");
+  const institute = instituteData?.institute ?? null;
+  const topPerformers = instituteData?.topPerformers ?? [];
 
   // Derived stats from real batch data
   const activeBatchesCount = batches.length;
@@ -97,33 +72,8 @@ export default function InstituteDashboardPage() {
     .map((id: string) => ({ id, label: EXAM_LABELS[id] }))
     .filter((exam: { id: string; label?: string }): exam is { id: string; label: string } => Boolean(exam.label));
 
-  const handleOpenBatchModal = () => {
-    setNewBatchData({ name: "", exam: "" });
-    setBatchFeedback(null);
-    setIsBatchModalOpen(true);
-  };
-
-  const handleCreateBatch = async () => {
-    if (!newBatchData.name || !newBatchData.exam) return;
-    setBatchSubmitting(true);
-    setBatchFeedback(null);
-    const result = await createBatch({
-      name: newBatchData.name,
-      exam: newBatchData.exam,
-    });
-    setBatchSubmitting(false);
-    if (result.success) {
-      setBatchFeedback({ ok: true, msg: "Batch created!" });
-      setTimeout(() => {
-        setIsBatchModalOpen(false);
-        router.push(`/institute/students?batch=${result.batch?.id}`);
-      }, 800);
-    } else {
-      setBatchFeedback({ ok: false, msg: result.message });
-    }
-  };
-
-  const availableExamsForModal = availableExams;
+  // The shared modal owns its own form state and clears it on close.
+  const handleOpenBatchModal = () => setIsBatchModalOpen(true);
 
   return (
     <>
@@ -153,7 +103,7 @@ export default function InstituteDashboardPage() {
       
       <PageWrapper>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-3 mb-3 w-full">
           <MetricCard
             icon={<RiGroupLine size={20} />}
             label="Total Students"
@@ -178,7 +128,7 @@ export default function InstituteDashboardPage() {
         </div>
 
         {/* ── Main Content Grid (Recent Batches + Top Students) ── */}
-        <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
+        <div className="grid gap-3 lg:grid-cols-2 items-start w-full">
 
           {/* Recent Batches Section */}
           <SectionCard
@@ -212,10 +162,10 @@ export default function InstituteDashboardPage() {
                   return (
                     <div
                       key={batch.id}
-                      className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 rounded-[16px] border border-transparent transition-all w-full h-[76px] sm:h-[88px] overflow-hidden hover:border-s-stroke2/50 hover:bg-b-surface2/70"
+                      className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 rounded-[16px] border border-transparent transition-all w-full h-[76px] sm:h-[88px] overflow-hidden hover:border-s-stroke2/50 hover:bg-b-surface2/70"
                     >
                       {/* Left */}
-                      <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                      <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                         <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                           <RiTeamLine size={24} className="text-t-secondary scale-75 sm:scale-100" />
                         </div>
@@ -272,9 +222,9 @@ export default function InstituteDashboardPage() {
                   return (
                     <div
                       key={student.id}
-                      className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
+                      className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[76px] sm:h-[88px] overflow-hidden"
                     >
-                      <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                      <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                         <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
                           <RiTeamLine size={24} className="scale-75 sm:scale-100" />
                         </div>
@@ -310,81 +260,16 @@ export default function InstituteDashboardPage() {
 
       </PageWrapper>
 
-      {/* Create Batch Modal */}
-      <Modal
+      <CreateBatchModal
         open={isBatchModalOpen}
         onClose={() => setIsBatchModalOpen(false)}
-        title="Create New Batch"
-        subtitle="Create a batch, then add students and assign faculty when ready."
-      >
-        <div className="flex flex-col gap-5">
-          {/* Batch Name */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
-            <input
-              type="text"
-              className="input-field w-full"
-              placeholder="e.g., Target 2026 Morning"
-              value={newBatchData.name}
-              onChange={(e) => setNewBatchData({ ...newBatchData, name: e.target.value })}
-            />
-          </div>
-
-          {/* Target Exam */}
-          <div>
-            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
-            <div className="relative">
-              <select
-                className="input-field w-full appearance-none pr-10"
-                value={newBatchData.exam}
-                onChange={(e) => setNewBatchData({ ...newBatchData, exam: e.target.value })}
-              >
-                <option value="" disabled>Select Exam...</option>
-                {availableExamsForModal.map(exam => (
-                  <option key={exam.id} value={exam.id}>{exam.label}</option>
-                ))}
-              </select>
-              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
-            </div>
-            <p className="text-xs text-t-secondary mt-2">
-              Only examinations enabled by your superadmin are available.
-            </p>
-          </div>
-
-          {/* Feedback */}
-          {batchFeedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
-              batchFeedback.ok
-                ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
-                : "bg-primary-03/5 border-primary-03/20 text-primary-03"
-            }`}>
-              {batchFeedback.ok
-                ? <RiCheckLine size={16} />
-                : <RiAlertLine size={16} />}
-              {batchFeedback.msg}
-            </div>
-          )}
-
-          {/* Actions */}
-          <div className="mt-2 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
-            <button
-              onClick={() => setIsBatchModalOpen(false)}
-              className="btn btn-ghost px-5"
-              disabled={batchSubmitting}
-            >
-              Cancel
-            </button>
-            <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
-              onClick={handleCreateBatch}
-              disabled={!newBatchData.name || !newBatchData.exam || batchSubmitting}
-            >
-              {batchSubmitting && <RiLoaderLine size={16} className="animate-spin" />}
-              {batchSubmitting ? "Creating..." : "Create Batch"}
-            </button>
-          </div>
-        </div>
-      </Modal>
+        availableExams={availableExams}
+        onCreate={createBatch}
+        onCreated={(batchId) => {
+          setIsBatchModalOpen(false);
+          router.push(`/institute/students?batch=${batchId}`);
+        }}
+      />
     </>
   );
 }

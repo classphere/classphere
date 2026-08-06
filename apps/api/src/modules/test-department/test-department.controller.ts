@@ -1,4 +1,6 @@
 import { randomUUID } from "crypto";
+import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
+import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -11,7 +13,7 @@ const appBaseDomain = (process.env.APP_BASE_DOMAIN ?? "classphere.com").toLowerC
 const departmentRoles = new Set([TEST_ADMIN_ROLE, TEST_EDITOR_ROLE]);
 const allowedQuestionFields = new Set([
   "subject", "chapter", "topic", "difficulty", "year", "source", "question_type",
-  "question_text", "image_url", "options", "correct_answer", "explanation", "tags",
+  "question_text", "question_images", "explanation_images", "options", "correct_answer", "explanation", "tags",
   "source_reference", "content_blocks", "extraction_metadata", "extractor_version", "source_crop_url",
 ]);
 // Metadata-only fields: no correct_answer validation required when only these change
@@ -36,7 +38,11 @@ function validQuestion(question: any): string | null {
   const type = question.question_type ?? "mcq_single";
   const options = Array.isArray(question.options) ? question.options : [];
   const answers = Array.isArray(question.correct_answer) ? question.correct_answer : [question.correct_answer].filter(Boolean);
-  if (["mcq_single", "mcq_multiple", "assertion_reason", "matching"].includes(type) && options.length < 2) return "This question type requires at least two options.";
+  // Was an inline list containing "mcq_multiple", a value the table has never
+  // stored — it holds mcq_multi — so every multiple-correct question skipped
+  // this check and could be saved with no options at all. The same list was
+  // wrong in tests.controller; this is its twin.
+  if (isChoiceQuestion(type) && options.length < 2) return "This question type requires at least two options.";
   if (answers.length === 0) return "A correct answer is required.";
   if (type === "mcq_single" && answers.length !== 1) return "A single-correct question needs exactly one correct answer.";
   return null;
@@ -217,9 +223,15 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     const updates: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(req.body ?? {})) if (allowedQuestionFields.has(key)) updates[key] = value;
     // Never leave an extracted block projection stale after a legacy-only edit.
-    if ((req.body.question_text !== undefined || req.body.image_url !== undefined) && req.body.content_blocks === undefined) {
+    if ((req.body.question_text !== undefined || req.body.question_images !== undefined) && req.body.content_blocks === undefined) {
       updates.content_blocks = null;
     }
+    // A replaced figure arrives as a data URL from the reviewer's browser and
+    // belongs in object storage, not inside the row.
+    for (const field of ["question_images", "explanation_images"] as const) {
+      if (updates[field] !== undefined) updates[field] = await uploadDataUrlList(updates[field]);
+    }
+    if (updates.options !== undefined) updates.options = await uploadOptionFigures(updates.options);
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
     // No per-save content validation — "Validate paper" button handles structural checks.
     // validQuestion only runs at publish time (see transitionReviewPaper → publish).

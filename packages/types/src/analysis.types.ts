@@ -19,7 +19,21 @@ export interface MistakeClassification {
   detail: string;        // Human-readable explanation of WHY
   tip: string;           // Actionable advice
   confidence: "high" | "medium" | "low" | "very_low";
-  source: "distractor_map" | "heuristic";
+  /**
+   * Where the classification came from.
+   *
+   * "graded"    — read straight off the grading result; the answer simply was
+   *               or was not correct.
+   * "heuristic" — inferred from timing and behaviour.
+   *
+   * There was a third value, "distractor_map", naming a per-option table of
+   * what each wrong choice implies. No such column exists and nothing ever
+   * read one — the classifier returned that source on the branch where the
+   * answer was *correct*, so it claimed a data source that neither existed nor
+   * would have been consulted. Removed rather than left in the union, so the
+   * claim cannot be made again by accident.
+   */
+  source: "graded" | "heuristic";
 }
 
 // ── Question Schema Interfaces ──
@@ -38,8 +52,12 @@ export interface Question {
   options: QuestionOption[] | null;
   correct_answer: string[];
   explanation: string;
-  explanation_image_url: string | null;
-  question_type: "mcq_single" | "mcq_multi" | "integer";
+  /** Every figure in the question stem, in reading order. image_url mirrors the first. */
+  question_images: string[];
+  /** Images supporting the explanation, in reading order. Was explanation_image_url,
+   *  a singular name no column ever had — see migration 43. */
+  explanation_images: string[];
+  question_type: "mcq_single" | "mcq_multi" | "integer" | "matching" | "assertion_reason";
   subject: string;
   chapter: string;
   topic: string;
@@ -226,6 +244,23 @@ export interface AnalysisResult {
   attemptClassification: AttemptClassification[];
   panicCascade: PanicCascade;
   fatigueSummary: string;
+
+  /**
+   * Mean score of the student's batch on this same paper.
+   *
+   * Absent when there is no batch, or too few submissions to be meaningful —
+   * consumers must treat it as optional and hide any peer comparison rather
+   * than substituting a placeholder, since a fabricated average is worse than
+   * showing none.
+   */
+  batchAvg?: BatchAverage;
+}
+
+export interface BatchAverage {
+  /** Mean of submitted scores on this paper, rounded. */
+  score: number;
+  /** Number of submissions the mean was computed from. */
+  sampleSize: number;
 }
 
 // ── v3: Longitudinal Profiling ──

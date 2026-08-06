@@ -52,9 +52,9 @@ COPY --from=builder /app/packages ./packages
 COPY --from=builder /app/apps/api/package.json ./apps/api/
 COPY --from=builder /app/apps/api/dist ./apps/api/dist
 COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
-# tsup only emits TypeScript output; Python extractor scripts must be copied
-# explicitly so production containers can execute the extraction pipeline.
-COPY --from=builder /app/apps/api/src/services/extractor ./apps/api/dist/services/extractor
+# tsup bundles to a flat dist/ (index.js + worker.js), so __dirname at runtime
+# resolves to /app/apps/api/dist. Copy Python extractor scripts there directly.
+COPY --from=builder /app/apps/api/src/services/extractor ./apps/api/dist
 
 # Expose port
 EXPOSE 8080

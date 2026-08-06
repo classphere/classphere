@@ -12,7 +12,7 @@ export function DualDeviceModal({ show, onExit }: DualDeviceModalProps) {
   return (
     <div className="fixed inset-0 z-[250] flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-md animate-in fade-in duration-200 select-none">
       <div className="card w-full max-w-md p-6 text-center md:p-8 bg-b-surface1 border-red-500/50 shadow-2xl">
-        <div className="mb-5 flex justify-center">
+        <div className="mb-3 flex justify-center">
           <div className="flex size-20 items-center justify-center rounded-full bg-red-500/10 text-red-500 border border-red-500/30 animate-bounce">
             <RiSmartphoneLine size={44} />
           </div>

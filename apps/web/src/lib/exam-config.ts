@@ -39,16 +39,27 @@ export const DIFFICULTY_OPTIONS = [
 ];
 
 /**
- * Detect the exam code from the subjects actually present in a paper's questions,
- * falling back to a provided code only when subjects are ambiguous/missing.
+ * The exam a paper belongs to.
  *
- * Mirrors the backend's subject-based detection (see test-department.controller
- * validatePaper + attempts.controller loadPaperQuestions) so a mis-assigned
- * exam_id FK in the DB doesn't poison the editor's subject list or downstream
- * analysis routing. NEET papers (Biology) and JEE papers (Mathematics) are
- * distinguished correctly even when the DB exam row is wrong.
+ * The code stored on the paper wins whenever it is one we recognise. It was
+ * chosen by whoever uploaded the paper, and it is the only thing that can tell
+ * JEE Advanced from JEE Main: both are Physics, Chemistry and Mathematics, so
+ * no amount of looking at subjects will separate them.
+ *
+ * Subjects are consulted only when the stored code is missing or unrecognised.
+ * Then they still settle the one question they can answer — Biology means NEET,
+ * Mathematics means JEE — and "jee-main" is the safer guess of the two JEE
+ * papers, being the uniform +4/-1 scheme rather than Advanced's per-section one.
+ *
+ * This used to run the other way round, deriving from subjects first and using
+ * the stored code only as a fallback. Because Advanced papers contain
+ * Mathematics, every one of them was relabelled JEE Main -- which drove the
+ * editor's subject list and, through examCode, anything keyed on the exam.
  */
 export function detectExamCode(questions: { subject?: string }[], fallback: string): string {
+  const stored = String(fallback ?? "").trim().toLowerCase();
+  if (EXAM_LABELS[stored]) return stored;
+
   const subs = new Set(
     questions.map((q) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
   );

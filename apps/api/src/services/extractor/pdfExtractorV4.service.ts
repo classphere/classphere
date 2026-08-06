@@ -4,6 +4,7 @@ import * as path from "path";
 import { extractPDF } from "./pdfExtractor.service";
 import type { ExtractionResult, ExtractionOptions } from "./pdfExtractor.service";
 import { enrichQuestionContentV4 } from "../../lib/question-content";
+import { applyAnswerKey, parseAnswerKeyFromPdf, shouldParseAnswerKey } from "./answer-key.service";
 
 export interface DocumentProfile {
   profile_version: number;
@@ -12,6 +13,18 @@ export interface DocumentProfile {
   page_kind_counts: Record<string, number>;
   two_column_pages: number[];
   answer_key_pages: number[];
+  instruction_pages: number[];
+  /**
+   * Marks read off the paper's own instructions page, when it states them.
+   * A proposal, not a decision — the upload form shows it pre-filled beside
+   * the text it came from and a person confirms it. Empty for NEET and JEE
+   * Main, which have no per-section marking to read.
+   */
+  marking_scheme_hint: {
+    scheme: Record<string, { correct: number; incorrect: number; unattempted?: number; partial?: string }>;
+    evidence: Record<string, string>;
+    unread: string[];
+  };
   solution_pages: number[];
   numbering_reset_count: number;
   numbering_reset_pages: number[];
@@ -114,6 +127,38 @@ function enrichResult(result: ExtractionResult, profile?: DocumentProfile | null
   };
 }
 
+/**
+ * Read the answer key and worked solutions out of the paper itself.
+ *
+ * Most papers print their key after the questions rather than shipping it as a
+ * separate file, so this is the normal case and not a fallback. The upload
+ * controller only ever sees a key the user attached separately; this is the
+ * only place that can look inside the question PDF.
+ *
+ * Deliberately outside the V4 flag. Profiling and page-role exclusion are V4
+ * features and can be switched off; a paper carrying its own key is a property
+ * of the paper. Gating this on the flag would mean turning off profiling also
+ * silently stopped every answer key being read.
+ */
+async function applyOwnAnswerKey(
+  pdfPath: string,
+  result: ExtractionResult,
+  profile: DocumentProfile | null,
+  options: ExtractionOptions,
+): Promise<void> {
+  if (!result.success || !Array.isArray(result.questions) || result.questions.length === 0) return;
+  if (!shouldParseAnswerKey(result.questions, profile)) return;
+
+  const key = await parseAnswerKeyFromPdf(pdfPath, result.questions.length);
+  const applied = applyAnswerKey(result.questions, key, String(options.examCategory ?? ""));
+  if (applied.answersFilled || applied.solutionsFilled) {
+    console.log(
+      `[pdfExtractor] Read from the paper's own key: ${applied.answersFilled} answers, ` +
+      `${applied.solutionsFilled} solutions.`,
+    );
+  }
+}
+
 export interface ExtractionResultV4 extends ExtractionResult {
   profile?: DocumentProfile | null;
   effectivePages?: string;
@@ -133,6 +178,7 @@ export async function extractPDFV4(
 ): Promise<ExtractionResultV4> {
   if (!v4Enabled()) {
     const result = await extractPDF(pdfPath, pagesRange, options);
+    await applyOwnAnswerKey(pdfPath, result, null, options);
     return result;
   }
 
@@ -145,5 +191,7 @@ export async function extractPDFV4(
 
   const effectivePages = pagesRange || questionPageRange(profile);
   const result = await extractPDF(pdfPath, effectivePages, options);
+  await applyOwnAnswerKey(pdfPath, result, profile, options);
+
   return { ...enrichResult(result, profile), profile, effectivePages };
 }

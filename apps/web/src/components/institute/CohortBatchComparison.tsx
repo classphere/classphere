@@ -35,9 +35,9 @@ export function CohortBatchComparison({ batchLeaderboard }: CohortBatchCompariso
           return (
             <div
               key={batch.id}
-              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-3 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
             >
-              <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+              <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                 <div className={`flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] border shrink-0 font-bold ${colors.bg}`}>
                   <RiTeamLine size={24} className="scale-75 sm:scale-100" />
                 </div>
@@ -51,7 +51,7 @@ export function CohortBatchComparison({ batchLeaderboard }: CohortBatchCompariso
                 </div>
               </div>
 
-              <div className="flex flex-row items-center gap-2 sm:gap-8 shrink-0">
+              <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                 <div className="flex flex-col items-end justify-center">
                   <span className="hidden sm:inline text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                     Avg Accuracy

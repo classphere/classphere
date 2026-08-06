@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { 
   RiAddLine, 
   RiTicketLine, 
@@ -11,16 +11,19 @@ import {
   RiCloseLine,
   RiLoader4Line
 } from "@remixicon/react";
+import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { PremiumSectionCard, PremiumCard } from "@/components/premium-ui";
 
 export default function InstituteSupportPage() {
   const { session } = useAuth();
   const [showNewTicket, setShowNewTicket] = useState(false);
   
-  const [tickets, setTickets] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
+  const TICKETS_PATH = "/api/v1/support/tickets";
+  const { data: tickets = [], isPending: loading } = useApiQuery<any[]>(TICKETS_PATH);
   const [submitting, setSubmitting] = useState(false);
 
   // Form State
@@ -34,23 +37,9 @@ export default function InstituteSupportPage() {
     return "Medium";
   };
 
-  const fetchTickets = async () => {
-    if (!session?.access_token) return;
-    try {
-      const res = await apiClient.get("/api/v1/support/tickets", session.access_token);
-      if (res.success) {
-        setTickets(res.data);
-      }
-    } catch (err) {
-      console.error("Failed to fetch tickets:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchTickets();
-  }, [session?.access_token]);
+  // A new ticket has to show up in the list immediately, so the cached list is
+  // dropped once the POST succeeds.
+  const fetchTickets = () => queryClient.invalidateQueries({ queryKey: [TICKETS_PATH] });
 
   const handleSubmitTicket = async () => {
     if (!subject.trim() || !message.trim()) return;
@@ -83,10 +72,10 @@ export default function InstituteSupportPage() {
 
   return (
     <>
-      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-3 select-none bg-transparent">
         
         {/* ── Top Navigation Row (Figma Style) ── */}
-        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-3">
           {/* Title */}
           <h1 className="font-sans font-semibold text-[24px] md:text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
             Platform Support & Helpdesk
@@ -150,9 +139,9 @@ export default function InstituteSupportPage() {
           <PremiumCard className="w-full mt-4 animate-in slide-in-from-top-4 fade-in !p-0">
             
             <div className="relative z-10 flex flex-col p-8 bg-b-surface2 dark:bg-b-surface2 border-t-4 border-t-[#2A85FF] border-x border-b border-x-s-stroke2/40 border-b-s-stroke2/40">
-              <h2 className="font-sans font-bold text-[24px] text-t-primary dark:text-t-primary mb-6 mt-0">Submit a Request</h2>
+              <h2 className="font-sans font-bold text-[24px] text-t-primary dark:text-t-primary mb-3 mt-0">Submit a Request</h2>
               
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Issue Type</label>
                   <select 
@@ -233,10 +222,10 @@ export default function InstituteSupportPage() {
               return (
                 <div 
                   key={ticket.id}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                  className="group/item relative flex flex-row items-center p-2.5 sm:p-3 gap-3 sm:gap-4 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
                 >
                   {/* Left: Icon & Details */}
-                  <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                  <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                     <div className={`flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] shrink-0 ${iconBgClass}`}>
                       <RiTicketLine size={24} className="scale-75 sm:scale-100" />
                     </div>

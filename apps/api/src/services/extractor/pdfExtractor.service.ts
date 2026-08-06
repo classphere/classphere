@@ -1,12 +1,14 @@
 import { spawn } from "child_process";
+import { createHash } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
 
 /**
  * Absolute path to the Python extractor scripts directory.
- * Other modules MUST import this constant instead of computing their own path.
+ * In production, Dockerfile copies Python scripts to dist/services/extractor/ alongside
+ * the compiled JS — so __dirname is already correct in both dev and prod.
  */
-export const EXTRACTOR_SCRIPT_DIR: string = path.join(__dirname);
+export const EXTRACTOR_SCRIPT_DIR: string = __dirname;
 
 // ── OpenRouter model ID ──────────────────────────────────────────────────────
 // Override via environment variable if needed.
@@ -59,10 +61,30 @@ function runCommand(command: string, timeoutMs: number, stage = "command"): Prom
 
 // ── Shared types ──────────────────────────────────────────────────────────────
 
+/**
+ * Written by the reconciliation pass in gemini_page_extractor.py, which diffs
+ * the model's output against the question-number anchors PyMuPDF detected in
+ * the PDF text itself. This is what lets the pipeline distinguish "extracted
+ * every question" from "extracted some questions".
+ */
+export interface ExtractionCompleteness {
+  expected_total: number;
+  extracted_total: number;
+  anchors_matched: number;
+  missing_total: number;
+  missing_by_page: Record<string, number[]>;
+  truncated_pages: number[];
+  /** Pages that exhausted their retries — their questions are absent entirely. */
+  failed_pages: number[];
+  completeness: number;
+  normalized_total?: number;
+}
+
 export interface ExtractionResult {
   success: boolean;
   message: string;
   questions: any[];
+  completeness?: ExtractionCompleteness | null;
 }
 
 export interface ExtractionOptions {
@@ -96,31 +118,103 @@ function embedImagesInText(text: string, imagesDir: string): string {
   });
 }
 
+/**
+ * Turn a list of extracted filenames into data URLs.
+ *
+ * normalize_json.py has already catalogued every figure into question_images
+ * and explanation_images, so the array is the direct source — scanning the
+ * text for markdown was only ever a way of reaching the same filenames before
+ * those arrays existed.
+ *
+ * A filename with no file on disk is dropped rather than kept: it would reach
+ * the database as a bare name that resolves to nothing, and an absent figure
+ * is easier to spot than a broken one.
+ */
+function embedImageList(images: unknown, imagesDir: string): string[] {
+  if (!Array.isArray(images)) return [];
+  const embedded: string[] = [];
+
+  // The same picture can arrive under two filenames. A question whose figure
+  // sits past the page break is now read with both pages in view, and the same
+  // diagram is catalogued once per page it appears on, so the model can name
+  // both. Deduplicating on filename would not catch it — the names differ — and
+  // the reviewer sees one figure twice with no way to tell which to delete.
+  //
+  // Compared by content, so two names for identical bytes collapse to one and
+  // two genuinely different figures both survive.
+  const seen = new Set<string>();
+  const keep = (value: string, fingerprint: string) => {
+    if (seen.has(fingerprint)) return;
+    seen.add(fingerprint);
+    embedded.push(value);
+  };
+
+  for (const entry of images) {
+    const filename = String(entry ?? "").trim();
+    if (!filename) continue;
+    if (filename.startsWith("data:") || /^https?:/i.test(filename)) {
+      keep(filename, filename);
+      continue;
+    }
+    const filePath = path.join(imagesDir, filename);
+    if (!fs.existsSync(filePath)) {
+      console.warn(`[pdfExtractor] Figure "${filename}" not found in ${imagesDir}; dropping it.`);
+      continue;
+    }
+    const bytes = fs.readFileSync(filePath);
+    keep(fileToBase64(filePath), createHash("sha1").update(bytes).digest("hex"));
+  }
+
+  const dropped = images.length - embedded.length;
+  if (dropped > 0) console.log(`[pdfExtractor] Collapsed ${dropped} repeated figure(s) to their single original.`);
+  return embedded;
+}
+
 function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): ExtractionResult {
   if (!fs.existsSync(jsonPath)) {
     return { success: false, message: "Pipeline completed but no output JSON was found.", questions: [] };
   }
   const parsed    = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
   const questions = parsed.questions || [];
+  const completeness: ExtractionCompleteness | null = parsed.completeness ?? null;
   console.log(`[pdfExtractor] Embedding images into ${questions.length} questions…`);
   for (const q of questions) {
-    if (q.question_text) q.question_text = embedImagesInText(q.question_text, imagesDir);
+    // Figures come from the arrays normalize_json.py built. The text fields no
+    // longer carry image markdown at all, so there is nothing left to scan and
+    // nothing stored twice.
+    q.question_images = embedImageList(q.question_images, imagesDir);
+    q.explanation_images = embedImageList(q.explanation_images, imagesDir);
+
     if (Array.isArray(q.options)) {
       for (const opt of q.options) {
+        // An option carries at most one figure and keeps it in image_url, so
+        // the text scan still applies here.
         if (opt.text) opt.text = embedImagesInText(opt.text, imagesDir);
         if (opt.image_url)
           opt.image_url = embedImagesInText(`![image](${opt.image_url})`, imagesDir)
             .replace(/^!\[image\]\(|\)$/g, "");
       }
     }
-    if (q.explanation) q.explanation = embedImagesInText(q.explanation, imagesDir);
   }
+  if (!questions.length) {
+    return { success: false, message: "Extraction produced no questions.", questions, completeness };
+  }
+
+  // A partial extraction is still a failure of the user's actual intent, so say
+  // so in the message rather than reporting a clean success for 22 of 54 questions.
+  const missing = completeness?.missing_total ?? 0;
+  const shortfall = missing > 0
+    ? ` — ${missing} question(s) detected in the PDF could not be extracted` +
+      ` (${Object.entries(completeness?.missing_by_page ?? {})
+        .map(([page, numbers]) => `p${page}: ${numbers.join(", ")}`)
+        .join("; ")})`
+    : "";
+
   return {
-    success: questions.length > 0,
-    message: questions.length > 0
-      ? `Extracted ${questions.length} questions successfully${suffix}.`
-      : "Extraction produced no questions.",
+    success: true,
+    message: `Extracted ${questions.length} questions successfully${suffix}${shortfall}.`,
     questions,
+    completeness,
   };
 }
 

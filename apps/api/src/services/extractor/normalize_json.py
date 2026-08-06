@@ -234,6 +234,19 @@ def wrap_bare_latex(text: str) -> str:
     return "".join(out)
 
 
+def strip_inline_images(text: str) -> str:
+    """Drop ![...](...) markdown once the references are held in an array.
+
+    Runs only after question_images / explanation_images have been populated
+    from the same text, so nothing is lost — the figures move rather than
+    disappear. pdfExtractor.service.ts embeds base64 from those arrays.
+    """
+    if not text:
+        return text or ""
+    stripped = MD_IMG_RE.sub("", text)
+    return re.sub(r"\n{3,}", "\n\n", stripped).strip()
+
+
 def clean_dead_images(text: str, available: set) -> str:
     """Remove ![image](f) references whose file is not present on disk, so the
     frontend never renders an 'Image unavailable' placeholder. If `available`
@@ -264,13 +277,33 @@ def normalize_type(raw: str, options: list, question_text: str = "") -> str:
 
 
 def apply_answer_key(questions: list, key: dict, report: dict):
-    """Fill correct_answer / numerical_answer and cross-correct types."""
-    filled = type_fixes = mismatches = 0
+    """Fill correct_answer / numerical_answer / explanation and cross-correct types.
+
+    Accepts both key shapes. parse_pdf_answer_key.py returns
+    {"answers": {...}, "solutions": {...}}; older files were a flat
+    {qnum: answer} map. This indexed the outer dict directly, so a current
+    parser file matched nothing at all -- every lookup found the literal keys
+    "answers" and "solutions" instead of question numbers, and the whole key
+    was silently discarded.
+    """
+    answers = key.get("answers") if isinstance(key.get("answers"), dict) else key
+    solutions = key.get("solutions") if isinstance(key.get("solutions"), dict) else {}
+
+    filled = type_fixes = mismatches = solutions_filled = 0
     for q in questions:
         qnum = str(q.get("question_number"))
-        if qnum not in key:
+
+        # The paper's own worked solution, where it prints one. Kept separate
+        # from the answer branch below: a paper can carry solutions for
+        # questions whose answers were already read off the question page.
+        solution = solutions.get(qnum)
+        if isinstance(solution, str) and solution.strip() and not str(q.get("explanation") or "").strip():
+            q["explanation"] = solution.strip()
+            solutions_filled += 1
+
+        if qnum not in answers:
             continue
-        ans = key[qnum]
+        ans = answers[qnum]
         if isinstance(ans, str):
             ans = [ans]
         ans = [str(a).strip() for a in ans if str(a).strip()]
@@ -310,8 +343,10 @@ def apply_answer_key(questions: list, key: dict, report: dict):
                 type_fixes += 1
 
     report["answer_key"] = {"filled": filled, "type_fixes": type_fixes,
-                            "conflicts": mismatches}
-    print(f"  Answer key: filled {filled}, type fixes {type_fixes}, conflicts {mismatches}")
+                            "conflicts": mismatches,
+                            "solutions_filled": solutions_filled}
+    print(f"  Answer key: filled {filled}, solutions {solutions_filled}, "
+          f"type fixes {type_fixes}, conflicts {mismatches}")
 
 
 def detect_paper_kind(questions: list):
@@ -553,9 +588,17 @@ def apply_structural_lock(questions: list, kind: str, report: dict):
 
 
 def to_platform_schema(questions: list, legacy_types: bool, available: set = None):
-    """Emit doc §4 schema fields. Keeps ![image](f) markdown in text fields
-    (pdfExtractor.service.ts embeds base64 from it) while also populating
-    question_images / explanation_images / options[].image_url.
+    """Emit doc §4 schema fields.
+
+    Figures are moved out of question_text and explanation into
+    question_images / explanation_images rather than left inline as
+    ![image](f) markdown. pdfExtractor.service.ts used to read that markdown to
+    embed base64 from it; it now embeds straight from these arrays, so keeping
+    a copy in the text would only store every figure twice and leave the
+    renderer de-duplicating by string comparison.
+
+    Options are unchanged: one figure per option, held in options[].image_url,
+    which is the right shape there.
 
     When `available` (set of existing image filenames) is provided, image
     references whose file is missing are removed so the frontend never shows
@@ -570,12 +613,12 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
         q.setdefault("id", str(uuid.uuid4()))
 
         qt = clean_dead_images(q.get("question_text", "") or "", available)
-        q["question_text"] = qt
         q["question_images"] = [f for f in MD_IMG_RE.findall(qt) if resolvable(f)]
+        q["question_text"] = strip_inline_images(qt)
 
         exp = clean_dead_images(q.get("explanation", "") or "", available)
-        q["explanation"] = exp
         q["explanation_images"] = [f for f in MD_IMG_RE.findall(exp) if resolvable(f)]
+        q["explanation"] = strip_inline_images(exp)
 
         for opt in q.get("options", []) or []:
             text = clean_dead_images(opt.get("text", "") or "", available)
@@ -599,10 +642,51 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
 
 
 def validate(questions: list, report: dict, images_dir: Path = None):
+    # A choice question missing its options, or carrying options with neither
+    # text nor a figure, is the signature of a page break between the stem and
+    # what follows it. Flagged here so it reaches the reviewer as a named defect
+    # rather than as a question that merely looks finished until someone opens
+    # it. On one real paper this was 6 of 51 questions.
+    incomplete = 0
+    for q in questions:
+        qtype = str(q.get("question_type") or "").upper()
+        if qtype in ("MCQ", "MSQ", "MATCHING", "ASSERTION-REASON"):
+            options = q.get("options") or []
+            blank = [o for o in options
+                     if not str(o.get("text") or "").strip() and not str(o.get("image_url") or "").strip()]
+            problem = None
+            if len(options) < 2:
+                problem = f"only {len(options)} option(s) extracted for a choice question"
+            elif blank:
+                problem = f"{len(blank)} of {len(options)} options are empty"
+            if problem:
+                q["_needs_review"] = True
+                q["_defects"] = q.get("_defects", []) + [
+                    f"{problem} — check whether they continue on the next page"]
+                incomplete += 1
+    report["incomplete_option_sets"] = incomplete
+    if incomplete:
+        print(f"  Incomplete option sets: {incomplete} question(s) flagged for review")
+
     nums = [q.get("question_number", 0) for q in questions]
     max_num = max(nums) if nums else 0
-    present = set(nums)
-    gaps = [i for i in range(min(nums) if nums else 1, max_num + 1) if i not in present]
+
+    # Gaps are computed per numbering run. Across a per-section paper the
+    # combined number set looks contiguous even when a whole section is missing,
+    # so a single min..max sweep would report "no gaps" on a broken extraction.
+    by_run: dict = {}
+    for q in questions:
+        run = q.get("_run", q.get("_page_index", 0))
+        by_run.setdefault(run, set()).add(q.get("question_number", 0))
+    gaps = []
+    for run in sorted(by_run):
+        present_in_run = {n for n in by_run[run] if n}
+        if not present_in_run:
+            continue
+        gaps.extend(
+            n for n in range(min(present_in_run), max(present_in_run) + 1)
+            if n not in present_in_run
+        )
 
     empty_answers = [q["question_number"] for q in questions
                      if not q.get("correct_answer")]
@@ -668,6 +752,10 @@ def main():
         data = json.load(f)
 
     questions = data.get("questions", data) if isinstance(data, dict) else data
+    # Written by gemini_page_extractor's reconciliation pass. Carried through to
+    # the output so the orchestrator can tell a complete extraction from a
+    # partial one instead of treating any non-empty result as success.
+    completeness = data.get("completeness") if isinstance(data, dict) else None
     print(f"Loaded {len(questions)} questions. Normalizing...")
 
     report = {}
@@ -700,7 +788,49 @@ def main():
         order = {"A": 0, "B": 1, "C": 2, "D": 3}
         q["options"] = sorted(opts, key=lambda o: order.get(o.get("id", ""), 99))
 
-    questions.sort(key=lambda q: q.get("question_number", 0))
+    # ── Deduplicate ───────────────────────────────────────────────────────────
+    # Identity is (numbering run, question number), never the number alone.
+    # Papers whose numbering restarts per section — JEE Advanced sections, NEET
+    # Section A/B, most coaching papers — legitimately contain several question
+    # 1s, and keying on the bare number deletes every section after the first.
+    # `_run` is assigned by question_reconciler via gemini_page_extractor; when
+    # it is absent (older payloads) the page index keeps sections apart rather
+    # than collapsing them.
+    seen_keys: dict[tuple, int] = {}
+    deduped: list = []
+    for q in questions:
+        qnum = q.get("question_number", 0)
+        run = q.get("_run")
+        if run is None:
+            run = q.get("_page_index", 0)
+        # A question whose number could not be parsed is always kept: those all
+        # share the placeholder 0 and are not duplicates of one another.
+        key = (run, qnum) if qnum else ("unparsed", id(q))
+        if key in seen_keys:
+            # Prefer the copy whose page actually carries this question's numbered
+            # anchor in the PDF text. Without this, a false positive extracted from
+            # an earlier page (cover-page instruction text, a running header) would
+            # win purely by sorting first and shadow the real question.
+            existing_index = seen_keys[key]
+            if q.get("_anchored") and not deduped[existing_index].get("_anchored"):
+                print(f"  [dedup] Q{qnum} in run {run}: replacing unanchored copy with the anchored one")
+                deduped[existing_index] = q
+            else:
+                print(f"  [dedup] Dropping duplicate Q{qnum} in run {run} (already seen at index {existing_index})")
+        else:
+            seen_keys[key] = len(deduped)
+            deduped.append(q)
+    if len(deduped) < len(questions):
+        removed = len(questions) - len(deduped)
+        print(f"  [dedup] Removed {removed} duplicate question(s). {len(deduped)} unique questions remain.")
+    questions[:] = deduped
+
+    # Sort by run first so per-section papers stay in document order instead of
+    # interleaving every section's question 1, 2, 3 together.
+    questions.sort(key=lambda q: (
+        q.get("_run", q.get("_page_index", 0)),
+        q.get("question_number", 0),
+    ))
 
     # ── Subject + type enforcement ───────────────────────────────────────────
     kind, dominant = detect_paper_kind(questions)
@@ -757,6 +887,12 @@ def main():
         print("ESCALATION_RECOMMENDED=no")
 
     output_data = {"questions": questions}
+    if completeness is not None:
+        # Normalisation can drop questions (dedup); recount so the surfaced
+        # figure describes what actually survived to the platform schema.
+        completeness = {**completeness, "normalized_total": len(questions)}
+        output_data["completeness"] = completeness
+        report["completeness"] = completeness
     with open(input_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print(f"Normalized JSON saved to {input_path}")

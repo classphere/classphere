@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { RiEyeLine, RiEyeOffLine, RiAlertLine, RiCheckLine } from "@remixicon/react";
 import { supabase } from "@/lib/supabase";
 
@@ -76,13 +77,13 @@ export default function SignupPage() {
     return (
       <main className="min-h-screen flex items-center justify-center bg-b-surface1 px-4">
         <div className="w-full max-w-[420px] text-center">
-          <div className="flex size-16 items-center justify-center rounded-full bg-[rgba(0,166,86,0.1)] border border-s-stroke2/40 mx-auto mb-6">
+          <div className="flex size-16 items-center justify-center rounded-full bg-[rgba(0,166,86,0.1)] border border-s-stroke2/40 mx-auto mb-3">
             <RiCheckLine size={28} className="text-primary-02" />
           </div>
           <h1 className="font-sans text-[24px] font-semibold text-t-primary dark:text-t-primary mb-2">
             Account created!
           </h1>
-          <p className="font-sans text-[14px] text-t-secondary mb-8">
+          <p className="font-sans text-[14px] text-t-secondary mb-3">
             Check your inbox to verify your email, then log in to start your prep.
           </p>
           <Link
@@ -101,9 +102,9 @@ export default function SignupPage() {
       <div className="w-full max-w-[440px]">
 
         {/* Logo */}
-        <div className="text-center mb-10">
-          <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
-            <img src="/logoC.png" alt="Classphere" className="size-10 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50" />
+        <div className="text-center mb-3">
+          <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-3">
+            <Image src="/logoC.png" alt="Classphere" width={40} height={40} className="size-10 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50" />
             <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
               Classphere
             </span>
@@ -120,13 +121,13 @@ export default function SignupPage() {
         <div className="card p-8">
 
           {error && (
-            <div className="flex items-start gap-3 mb-6 p-4 rounded-[10px] bg-[rgba(255,106,85,0.05)] border border-s-stroke2/40">
+            <div className="flex items-start gap-3 mb-3 p-4 rounded-[10px] bg-[rgba(255,106,85,0.05)] border border-s-stroke2/40">
               <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
               <span className="font-sans text-[13px] text-primary-03 leading-[150%]">{error}</span>
             </div>
           )}
 
-          <form onSubmit={handleSignup} className="flex flex-col gap-5">
+          <form onSubmit={handleSignup} className="flex flex-col gap-3">
             {/* Name */}
             <div className="flex flex-col gap-2">
               <label htmlFor="signup-name" className="font-sans text-[13px] font-semibold text-t-primary dark:text-t-primary">
@@ -225,12 +226,12 @@ export default function SignupPage() {
             </button>
           </form>
 
-          <p className="font-sans text-[11px] text-center text-t-secondary mt-6 leading-[160%]">
+          <p className="font-sans text-[11px] text-center text-t-secondary mt-3 leading-[160%]">
             By signing up you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
 
-        <p className="font-sans text-[13px] text-center mt-6 text-t-secondary">
+        <p className="font-sans text-[13px] text-center mt-3 text-t-secondary">
           Already have an account?{" "}
           <Link href="/login" className="font-semibold text-t-primary dark:text-t-primary hover:underline">
             Log in

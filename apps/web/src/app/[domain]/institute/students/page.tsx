@@ -52,7 +52,7 @@ export default function StudentsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Add Student modal state
-  const { batches } = useBatches();
+  const { batches, moveStudents } = useBatches();
   const onboardingBatchId = searchParams.get("batch") ?? "";
   const onboardingBatch = batches.find((batch) => batch.id === onboardingBatchId);
   const [isAddOpen, setIsAddOpen] = useState(false);
@@ -68,8 +68,47 @@ export default function StudentsPage() {
 
     if (!matchesSearch) return false;
     if (selectedBatchFilter === "all") return true;
-    return s.batches.includes(selectedBatchFilter);
+    // The filter carries a batch id; students carry batch names, so the id is
+    // resolved rather than compared directly. Holding the id is what lets the
+    // move below know which batch students are leaving.
+    const name = batches.find((b) => b.id === selectedBatchFilter)?.name;
+    return name ? s.batches.includes(name) : true;
   });
+
+  // Moving requires a source batch, and a student can sit in more than one, so
+  // selection is only offered once the list is narrowed to a single batch.
+  const sourceBatch = batches.find((b) => b.id === selectedBatchFilter) ?? null;
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [moveTargetId, setMoveTargetId] = useState("");
+  const [moving, setMoving] = useState(false);
+  const [moveFeedback, setMoveFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
+
+  const toggleStudent = (id: string) =>
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+
+  const clearSelection = () => { setSelectedIds(new Set()); setMoveTargetId(""); setMoveFeedback(null); };
+
+  const allVisibleSelected = filteredStudents.length > 0 && filteredStudents.every((s) => selectedIds.has(s.id));
+  const toggleAllVisible = () =>
+    setSelectedIds(allVisibleSelected ? new Set() : new Set(filteredStudents.map((s) => s.id)));
+
+  const submitMove = async () => {
+    if (!sourceBatch || !moveTargetId || selectedIds.size === 0) return;
+    setMoving(true);
+    setMoveFeedback(null);
+    const result = await moveStudents(sourceBatch.id, [...selectedIds], moveTargetId);
+    setMoving(false);
+    setMoveFeedback({ ok: result.success, msg: result.message });
+    if (result.success) {
+      setSelectedIds(new Set());
+      setMoveTargetId("");
+      await refetch();
+    }
+  };
 
   const openImportModal = () => {
     setSelectedFile(null);
@@ -123,10 +162,10 @@ export default function StudentsPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-3 select-none bg-transparent">
 
       {/* ── Top Navigation Row ── */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-6 mb-2">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-3 mb-2">
         <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary">
           Students
         </h1>
@@ -191,12 +230,12 @@ export default function StudentsPage() {
           <div className="relative w-full sm:w-auto">
             <select
               value={selectedBatchFilter}
-              onChange={(e) => setSelectedBatchFilter(e.target.value)}
+              onChange={(e) => { setSelectedBatchFilter(e.target.value); clearSelection(); }}
               className="appearance-none w-full sm:w-48 bg-b-surface2 border border-s-stroke2/50 text-sm font-semibold text-t-primary px-4 py-2 pr-8 rounded-[10px] outline-none focus:border-primary-01 cursor-pointer transition-colors shadow-xs"
             >
               <option value="all">All Students</option>
               {batches.map((b) => (
-                <option key={b.id} value={b.name}>{b.name}</option>
+                <option key={b.id} value={b.id}>{b.name}</option>
               ))}
             </select>
             <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-t-secondary">
@@ -208,6 +247,13 @@ export default function StudentsPage() {
             <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-[10px] bg-b-surface2 border border-s-stroke2/50 text-sm text-t-secondary shadow-xs whitespace-nowrap shrink-0">
               <RiTeamLine size={16} className="text-t-tertiary" />
               <span><strong className="text-t-primary">{filteredStudents.length.toLocaleString()}</strong> students</span>
+              {/* Says why the checkboxes are absent, rather than leaving the
+                  admin to wonder where moving students went. */}
+              {!sourceBatch && batches.length > 0 && (
+                <span className="border-l border-s-stroke2/60 pl-2 text-[12px] text-t-tertiary">
+                  Pick a batch to move students
+                </span>
+              )}
             </div>
           )}
         </div>
@@ -245,7 +291,7 @@ export default function StudentsPage() {
 
         {/* Empty state */}
         {!loading && !error && filteredStudents.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-20 gap-4 text-t-tertiary">
+          <div className="flex flex-col items-center justify-center py-10 gap-4 text-t-tertiary">
             <RiInboxLine size={48} className="opacity-40" />
             <p className="text-sm font-medium">
               {searchQuery
@@ -279,6 +325,15 @@ export default function StudentsPage() {
             
             {/* Table Header Row (Hidden on mobile) */}
             <div className="hidden lg:flex flex-row items-center px-6 py-2 text-[11px] font-bold uppercase tracking-wider text-t-secondary w-full">
+              {sourceBatch && (
+                <input
+                  type="checkbox"
+                  aria-label="Select all students in view"
+                  checked={allVisibleSelected}
+                  onChange={toggleAllVisible}
+                  className="mr-4 size-4 shrink-0 accent-primary-01 cursor-pointer"
+                />
+              )}
               <div className="flex-1">Student Name</div>
               <div className="w-[120px]">DOB</div>
               <div className="w-[200px]">Batches</div>
@@ -294,10 +349,21 @@ export default function StudentsPage() {
               return (
                 <div
                   key={s.id}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 lg:px-6 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                  className="group/item relative flex flex-row items-center p-3 sm:p-4 lg:px-6 gap-3 sm:gap-3 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
                 >
+                  {sourceBatch && (
+                    <input
+                      type="checkbox"
+                      aria-label={`Select ${s.name}`}
+                      checked={selectedIds.has(s.id)}
+                      onChange={() => toggleStudent(s.id)}
+                      onClick={(e) => e.stopPropagation()}
+                      className="size-4 shrink-0 accent-primary-01 cursor-pointer"
+                    />
+                  )}
+
                   {/* Name */}
-                  <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                  <div className="flex flex-row items-center gap-3 sm:gap-3 flex-1 min-w-0">
                     <div className="flex size-10 sm:w-12 sm:h-12 items-center justify-center rounded-[12px] bg-primary-01/10 border border-primary-01/20 shrink-0 text-primary-01 font-bold text-sm sm:text-lg">
                       {initials || <RiUser3Line size={14} />}
                     </div>
@@ -358,7 +424,7 @@ export default function StudentsPage() {
         title="Import Students"
         subtitle="Choose the target batch, then upload the student list."
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Add students to</label>
             <div className="relative">
@@ -595,6 +661,64 @@ export default function StudentsPage() {
           </div>
         </form>
       </Modal>
+
+
+      {/* Bulk move bar. Appears only with a selection, and only when the list
+          is narrowed to one batch — a student can belong to several, so
+          without a single source "move them" has no unambiguous meaning. */}
+      {sourceBatch && selectedIds.size > 0 && (
+        <div className="sticky bottom-4 z-40 mx-auto flex w-full max-w-[900px] flex-col gap-3 rounded-[14px] border border-s-stroke2 bg-b-surface1 p-4 shadow-depth sm:flex-row sm:items-center">
+          <div className="flex min-w-0 flex-1 flex-col">
+            <span className="text-[13px] font-bold text-t-primary">
+              {selectedIds.size} student{selectedIds.size === 1 ? "" : "s"} selected
+            </span>
+            <span className="truncate text-[11px] text-t-secondary">
+              Moving out of {sourceBatch.name}
+            </span>
+          </div>
+
+          <div className="relative w-full sm:w-56">
+            <select
+              value={moveTargetId}
+              onChange={(e) => setMoveTargetId(e.target.value)}
+              className="w-full appearance-none rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 pr-8 text-sm font-semibold text-t-primary outline-none transition-colors focus:border-primary-01"
+            >
+              <option value="">Move to…</option>
+              {batches
+                .filter((b) => b.id !== sourceBatch.id && b.is_active)
+                .map((b) => (
+                  <option key={b.id} value={b.id}>{b.name}</option>
+                ))}
+            </select>
+            <RiArrowDownSLine size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary" />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button onClick={clearSelection} className="btn btn-ghost px-4" disabled={moving}>
+              Cancel
+            </button>
+            <button
+              onClick={submitMove}
+              disabled={!moveTargetId || moving}
+              className="btn btn-primary flex items-center gap-2 px-5"
+            >
+              {moving && <RiLoaderLine size={15} className="animate-spin" />}
+              {moving ? "Moving…" : "Move"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {moveFeedback && (
+        <div className={`mx-auto flex w-full max-w-[900px] items-center gap-2 rounded-[10px] border px-4 py-2.5 text-sm font-medium ${
+          moveFeedback.ok
+            ? "border-primary-02/20 bg-primary-02/5 text-primary-02"
+            : "border-primary-03/20 bg-primary-03/5 text-primary-03"
+        }`}>
+          {moveFeedback.ok ? <RiCheckLine size={16} /> : <RiAlertLine size={16} />}
+          {moveFeedback.msg}
+        </div>
+      )}
 
     </main>
   );
