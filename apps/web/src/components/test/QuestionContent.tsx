@@ -65,7 +65,12 @@ export function QuestionContent({
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
           </div>
-          <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary [&_.katex]:text-[1.1em] [&_.katex-display]:my-2">
+          {/* Stem and options are deliberately the same type. They were
+              text-sub-title-1 here and a hardcoded text-[16px] font-medium in the
+              option rows, so a question and its own answers were set in different
+              sizes and weights. The per-element katex overrides are gone too —
+              one rule in globals.css now sizes maths everywhere. */}
+          <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary [&_.katex-display]:my-2">
             <QuestionBody
               blocks={q.content_blocks}
               legacyText={q.question_text}
@@ -155,7 +160,7 @@ export function QuestionContent({
                   }`}>
                     {opt.id}
                   </div>
-                  <div className="min-w-0 flex-1 text-[16px] font-medium leading-snug text-t-primary [&_.katex]:text-[1.1em]">
+                  <div className="min-w-0 flex-1 text-sub-title-1 leading-relaxed text-t-primary">
                     {isEmpty ? (
                       <span className="text-caption text-t-tertiary italic">Option not available</span>
                     ) : (

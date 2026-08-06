@@ -286,7 +286,7 @@ export default function DailyRevisionPage() {
                     )}
                   </div>
 
-                  <div className="question-stem text-sub-title-1 leading-relaxed text-t-primary [&_.katex]:text-[1.1em] [&_.katex-display]:my-2">
+                  <div className="question-stem text-sub-title-1 leading-relaxed text-t-primary [&_.katex-display]:my-2">
                     <QuestionBody
                       blocks={q.content_blocks as never}
                       legacyText={q.question_text}
@@ -332,7 +332,7 @@ export default function DailyRevisionPage() {
                             >
                               {opt.id}
                             </div>
-                            <div className="min-w-0 flex-1 text-[16px] font-medium leading-snug text-t-primary [&_.katex]:text-[1.1em]">
+                            <div className="min-w-0 flex-1 text-sub-title-1 leading-relaxed text-t-primary">
                               {isEmpty ? (
                                 <span className="text-caption italic text-t-tertiary">Option not available</span>
                               ) : (

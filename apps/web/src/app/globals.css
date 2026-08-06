@@ -806,15 +806,19 @@
   line-height: inherit;
 }
 
-/* KaTeX inline keeps vertical rhythm */
-.markdown-content .katex {
-  font-size: 1em;
-}
+/* Maths must read at the same size as the sentence around it.
+   KaTeX uses smaller glyph metrics than UI text, so an unadjusted formula makes
+   variables like x and T look undersized next to the words beside them. 1.15em
+   compensates for that difference.
 
-/* KaTeX deliberately uses smaller glyph metrics than surrounding UI text.
-   In a question stem that makes variables such as x and T look undersized. */
+   One rule, applied everywhere. There were previously three: 1em here, 1.5em on
+   .question-stem with !important, and a 1.1em Tailwind utility on both the stem
+   and the option rows. The !important won inside the stem and lost inside the
+   options, so the same equation rendered noticeably larger in a question than in
+   its own answers. */
+.markdown-content .katex,
 .question-stem .katex {
-  font-size: 1.5em !important;
+  font-size: 1.15em;
 }
 
 /* Horizontal rule (Assertion-Reason separator) */
