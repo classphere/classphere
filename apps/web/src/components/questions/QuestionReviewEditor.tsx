@@ -108,6 +108,22 @@ interface QuestionReviewEditorProps {
   canEdit: boolean;
   onSave: (payload: Record<string, unknown>) => Promise<void>;
   examCode: string;
+  /**
+   * Remove this question from the paper.
+   *
+   * Lives here rather than in each page so every surface that reviews a
+   * PDF-extracted paper gets it — Test Department, Institute Admin and
+   * Superadmin all import this editor, and a capability added to one of their
+   * pages would exist only there.
+   *
+   * The case it exists for: the extractor creates an empty slot for every
+   * question-number anchor it finds in the PDF but cannot fill, so a stray "76."
+   * in a formula sheet becomes a blank question that nobody can complete,
+   * because there is nothing on the page to complete it with.
+   *
+   * Optional — a surface that cannot delete simply does not pass it.
+   */
+  onDelete?: (question: Question) => Promise<void>;
 }
 
 export function QuestionReviewEditor({
@@ -115,7 +131,9 @@ export function QuestionReviewEditor({
   canEdit,
   onSave,
   examCode,
+  onDelete,
 }: QuestionReviewEditorProps) {
+  const [deleting, setDeleting] = useState(false);
   const [draft, setDraft] = useState<Question>({ ...question });
   const [saving, setSaving] = useState(false);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
@@ -628,6 +646,37 @@ export function QuestionReviewEditor({
         )}
       </div>
 
+      {/* Removal. Shared with every surface that imports this editor. */}
+      {canEdit && onDelete && (
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-s-stroke2 px-5 py-2.5">
+          <p className="text-[11px] text-t-tertiary">
+            {!String(draft.question_text ?? "").trim()
+              ? "This slot is empty — the extractor found the number but no question."
+              : "Removing takes this question off the paper."}
+          </p>
+          <button
+            type="button"
+            disabled={deleting}
+            onClick={async () => {
+              const label = draft.question_number ? `question ${draft.question_number}` : "this question";
+              const blank = !String(draft.question_text ?? "").trim();
+              if (!window.confirm(
+                blank
+                  ? `Remove the blank slot for ${label}? The extractor detected this number in the PDF but found no question to go with it.`
+                  : `Remove ${label} from this paper? This cannot be undone from the review screen.`
+              )) return;
+              setDeleting(true);
+              try { await onDelete(draft); }
+              catch (e: any) { setError(e?.message ?? "Could not remove the question."); }
+              finally { setDeleting(false); }
+            }}
+            className="flex h-8 shrink-0 items-center gap-1.5 rounded-[8px] border border-s-stroke2 px-3 text-[12px] font-semibold text-t-secondary transition-colors hover:border-red-500/40 hover:text-red-500 disabled:opacity-50"
+          >
+            <RiDeleteBin7Line size={13} />
+            {deleting ? "Removing…" : "Remove from paper"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

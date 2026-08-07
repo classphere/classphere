@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/questions/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { MarkingSchemeEditor, type MarkingScheme } from "@/components/superadmin/MarkingSchemeEditor";
+import { MarkingSchemeEditor, type MarkingScheme } from "@/components/questions/MarkingSchemeEditor";
 import { useRouter } from "next/navigation";
 import {
   RiUploadCloud2Line, RiCheckLine, RiCloseLine,
