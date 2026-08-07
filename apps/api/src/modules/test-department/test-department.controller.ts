@@ -1,6 +1,8 @@
 import { randomUUID } from "crypto";
 import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
+import { validatePaperQuestions } from "../../lib/paper-validation";
+import { totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -247,6 +249,71 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
+/**
+ * Remove a question from a draft paper.
+ *
+ * Extraction can invent a question. `_gap_placeholders` in the page extractor
+ * creates an empty slot for every question-number anchor the PDF text advertises
+ * but the model did not return — which is right when the model genuinely missed
+ * one, and wrong when the anchor was never a question at all. A stray "76." in a
+ * formula sheet or an instruction list produces a blank question that a reviewer
+ * cannot fill in, because there is nothing on the page to fill it with.
+ *
+ * Until now the only editable surface was the question's fields, so a paper that
+ * came back with four phantom questions had no way back to the right count.
+ *
+ * The question row is deactivated rather than deleted, and its paper_questions
+ * link is removed. Positions of the remaining questions are deliberately left
+ * alone: they carry the number printed on the paper (migration 48), so closing
+ * the gap would renumber real questions to hide a removed one.
+ */
+export async function deleteReviewQuestion(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.paperId, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (!["draft", "changes_requested", "needs_review"].includes(paper.workflow_status)) {
+      res.status(409).json({ success: false, message: "Published or approved papers are immutable. Create a revision instead." }); return;
+    }
+
+    const { data: link } = await supabaseDB.from("paper_questions")
+      .select("question_id, position").eq("paper_id", paper.id).eq("question_id", req.params.questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+
+    // Only the institute's own draft questions. A question in the global bank is
+    // shared by other papers and must never be removed through a paper review.
+    const { data: current, error: currentError } = await supabaseDB.from("questions")
+      .select("*").eq("id", req.params.questionId).eq("institute_id", instituteId)
+      .eq("content_scope", "institute_private").maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(403).json({ success: false, message: "Only institute-owned draft questions can be removed here." }); return; }
+
+    const { error: unlinkError } = await supabaseDB.from("paper_questions")
+      .delete().eq("paper_id", paper.id).eq("question_id", current.id);
+    if (unlinkError) throw unlinkError;
+
+    const { error: deactivateError } = await supabaseDB.from("questions")
+      .update({ is_active: false, updated_at: new Date().toISOString() }).eq("id", current.id);
+    if (deactivateError) throw deactivateError;
+
+    // total_questions is shown on the review screen and on the paper list, so it
+    // has to follow the removal or the paper keeps claiming a count it no longer has.
+    const { count } = await supabaseDB.from("paper_questions")
+      .select("question_id", { count: "exact", head: true }).eq("paper_id", paper.id);
+    await supabaseDB.from("papers")
+      .update({ total_questions: count ?? 0, review_version: paper.review_version + 1, workflow_status: "draft" })
+      .eq("id", paper.id);
+
+    await audit({
+      instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id,
+      action: "question_removed", reason: typeof req.body?.reason === "string" ? req.body.reason : null,
+      before: current, after: null,
+    });
+
+    res.json({ success: true, data: { removed: current.id, total_questions: count ?? 0 } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
 export async function transitionReviewPaper(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
@@ -259,7 +326,12 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
       submit: ["draft", "changes_requested"], request_changes: ["needs_review", "approved"], approve: ["needs_review"], publish: ["approved", "scheduled"], archive: ["draft", "changes_requested", "approved", "scheduled", "published"],
     };
     if (!transitions[action]?.includes(paper.workflow_status)) { res.status(409).json({ success: false, message: "This workflow action is not available for the current paper status." }); return; }
-    if (["publish", "archive"].includes(action) && !isHead(req)) { res.status(403).json({ success: false, message: "Only the Test Department Head can publish or archive a paper." }); return; }
+    // Publishing and archiving belong to the Head — and to the Institute Admin
+    // above them, because a small coaching has no Test Department at all and the
+    // owner does the whole job themselves.
+    if (["publish", "archive"].includes(action) && !isHead(req) && role !== "institute_admin") {
+      res.status(403).json({ success: false, message: "Only the Test Department Head or the Institute Admin can publish or archive a paper." }); return;
+    }
     if (!isDepartmentUser(req) && role !== "institute_admin") { res.status(403).json({ success: false, message: "Access denied." }); return; }
     let workflow_status: string = paper.workflow_status;
     const updates: Record<string, unknown> = { review_version: paper.review_version + 1 };
@@ -309,25 +381,68 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
-// ── Exam pattern rules — deterministic, rule-based (not AI) ───────────────────
-const EXAM_PATTERNS: Record<string, { subjects: string[]; counts: Record<string, number>; total: number }> = {
-  "neet-ug": {
-    subjects: ["Physics", "Chemistry", "Biology"],
-    counts: { Physics: 45, Chemistry: 45, Biology: 90 },
-    total: 180,
-  },
-  "jee-main": {
-    subjects: ["Physics", "Chemistry", "Mathematics"],
-    counts: { Physics: 25, Chemistry: 25, Mathematics: 25 },
-    total: 75,
-  },
-  "jee-advanced": {
-    subjects: ["Physics", "Chemistry", "Mathematics"],
-    // JEE Advanced has variable counts per year; validate total only
-    counts: {},
-    total: 0, // 0 = skip total validation
-  },
-};
+/**
+ * PATCH /api/v1/test-department/papers/:id
+ *
+ * What the paper's questions are worth. A JEE Advanced paper carries no safe
+ * default — its marks differ by question type and change between years — so a
+ * paper whose instructions page was missing or unreadable arrives without them
+ * and cannot be published until someone says.
+ *
+ * The Superadmin equivalent is PATCH /tests/:id/global, which only touches
+ * papers in the global bank. An institute paper needs its own route, or the
+ * marking-scheme editor would be a screen only a superadmin could ever use —
+ * while the person actually holding the unpriced paper is usually the test
+ * editor who just uploaded it.
+ */
+export async function updateReviewPaper(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.id, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (paper.is_published) {
+      res.status(409).json({ success: false, message: "A published paper is immutable. Create a revision instead." }); return;
+    }
+
+    const updates: Record<string, unknown> = {};
+    if (req.body?.marking_scheme !== undefined) {
+      const schemeErrors = validateMarkingScheme(req.body.marking_scheme);
+      if (schemeErrors.length > 0) {
+        res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors }); return;
+      }
+      updates.marking_scheme = req.body.marking_scheme;
+
+      // total_marks was summed at upload against whatever scheme existed then —
+      // for a paper that had none, that means the +4 fallback. Left alone it
+      // would permanently claim a total its own questions do not add up to.
+      const { data: rows, error: rowsError } = await supabaseDB
+        .from("paper_questions").select("questions(question_type, marks)").eq("paper_id", paper.id);
+      if (rowsError) throw rowsError;
+      const paperQuestions = (rows ?? [])
+        .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
+        .filter(Boolean);
+      if (paperQuestions.length > 0) {
+        updates.total_marks = totalMarksForQuestions(paperQuestions, req.body.marking_scheme);
+      }
+    }
+    if (typeof req.body?.title === "string" && req.body.title.trim()) updates.title = req.body.title.trim();
+
+    if (Object.keys(updates).length === 0) {
+      res.status(400).json({ success: false, message: "No supported paper fields supplied." }); return;
+    }
+
+    const { data, error } = await supabaseDB
+      .from("papers").update(updates).eq("id", paper.id).eq("institute_id", instituteId)
+      .select("id, title, marking_scheme, total_marks").maybeSingle();
+    if (error) throw error;
+
+    await audit({
+      instituteId, paperId: paper.id, actorId: req.user!.id, action: "paper_updated",
+      before: { marking_scheme: paper.marking_scheme, total_marks: paper.total_marks }, after: updates,
+    });
+    res.json({ success: true, data: { paper: data } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
 
 export async function validatePaper(req: Request, res: Response): Promise<void> {
   try {
@@ -338,70 +453,23 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
     if (paperErr) throw paperErr;
     if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
 
+    // Everything a per-question check needs. This used to select only
+    // id, subject and question_text while the checks below read correct_answer —
+    // which was therefore always undefined, so "N questions have no correct
+    // answer" counted every question on every paper.
     const { data: rows, error } = await supabaseDB.from("paper_questions")
-      .select("position, questions(id, subject, question_text)").eq("paper_id", paper.id).order("position", { ascending: true });
+      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .eq("paper_id", paper.id).order("position", { ascending: true });
     if (error) throw error;
 
-    const questions = (rows ?? []).map((r: any) => ({ position: r.position, ...(Array.isArray(r.questions) ? r.questions[0] : r.questions) }));
+    const questions = (rows ?? []).map((row: any) => ({
+      position: row.position,
+      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
+    }));
 
-    // Detect exam code from question subjects (more reliable than the DB FK).
-    // If Biology is present → NEET UG. If Mathematics → JEE Main.
-    // Fall back to the paper's exam_code FK only if subjects are ambiguous.
-    const subjectSet = new Set(
-      questions.map((q: any) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
-    );
-    let examCode: string;
-    if (subjectSet.has("biology") || subjectSet.has("bio")) {
-      examCode = "neet-ug";
-    } else if (subjectSet.has("mathematics") || subjectSet.has("maths") || subjectSet.has("math")) {
-      examCode = "jee-main";
-    } else {
-      examCode = (paper as any).exam_code?.code ?? "";
-    }
-
-    const pattern = EXAM_PATTERNS[examCode];
-    const errors: string[] = [];
-    const warnings: string[] = [];
-
-    // Count subjects
-    const counts: Record<string, number> = {};
-    for (const q of questions) {
-      const sub = q.subject || "Unknown";
-      counts[sub] = (counts[sub] ?? 0) + 1;
-    }
-
-    if (pattern) {
-      // Total count
-      if (pattern.total > 0 && questions.length !== pattern.total) {
-        errors.push(`Expected ${pattern.total} questions total, found ${questions.length}.`);
-      }
-      // Per-subject counts
-      for (const [sub, expected] of Object.entries(pattern.counts)) {
-        const found = counts[sub] ?? 0;
-        if (found !== expected) {
-          errors.push(`Expected ${sub}: ${expected}, Found: ${found}.`);
-        }
-      }
-      // Unknown subjects
-      const unknownSubs = Object.keys(counts).filter((s) => !pattern.subjects.includes(s));
-      for (const sub of unknownSubs) {
-        warnings.push(`${counts[sub]} question(s) have subject "${sub}" which is not expected for ${examCode}.`);
-      }
-      // Missing answers
-      const noAnswer = questions.filter((q: any) => !q.correct_answer?.length);
-      if (noAnswer.length > 0) {
-        warnings.push(`${noAnswer.length} question(s) have no correct answer set.`);
-      }
-      // Missing question text
-      const noText = questions.filter((q: any) => !String(q.question_text ?? "").trim());
-      if (noText.length > 0) {
-        errors.push(`${noText.length} question(s) have empty question text.`);
-      }
-    } else {
-      warnings.push(`No validation pattern defined for exam "${examCode}" — manual review required.`);
-    }
-
-    res.json({ success: true, data: { valid: errors.length === 0, errors, warnings, counts, total: questions.length, examCode } });
+    // The same function backs the Superadmin validate endpoint and the publish
+    // guard, so a paper cannot pass here and fail there.
+    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "") });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 

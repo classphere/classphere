@@ -11,7 +11,7 @@ import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
-import { blockingShapeDefects } from "../../lib/question-shape";
+import { validatePaperQuestions } from "../../lib/paper-validation";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -397,39 +397,35 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
+    // The same function the validate endpoint uses, so a paper can never pass
+    // validation and then be refused at publish, or the reverse. Publication
+    // previously ran its own narrower checks and reported at most five
+    // deduplicated messages with no question numbers, which told a reviewer that
+    // something was wrong but not where.
     const { data: publishRows, error: publishRowsError } = await supabaseDB
       .from("paper_questions")
-      .select("questions(question_text, question_type, options, correct_answer)")
+      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
       .eq("paper_id", id);
     if (publishRowsError) throw publishRowsError;
-    // A question whose answer names an option it does not have is unanswerable
-    // by everyone who sits the paper, and nothing downstream would ever say so.
-    // JSONB accepts that shape, so publication is where it has to be caught.
-    const shapeBroken = (publishRows ?? [])
-      .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
-      .flatMap((question: any) => blockingShapeDefects(question ?? {}));
-    if (shapeBroken.length > 0) {
+
+    const publishQuestions = (publishRows ?? []).map((row: any) => ({
+      position: row.position,
+      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
+    }));
+    const report = validatePaperQuestions(publishQuestions, paperExamCode);
+
+    if (report.summary.withErrors > 0) {
       res.status(400).json({
         success: false,
-        message: `Cannot publish: ${shapeBroken.length} question(s) are structurally broken. Fix them in review first.`,
-        errors: [...new Set(shapeBroken.map((d) => d.message))].slice(0, 5),
+        message: `Cannot publish: ${report.summary.withErrors} question(s) must be fixed first. Validate the paper to see each one.`,
+        // Named, so the reviewer knows which questions to open rather than
+        // being told a count.
+        errors: report.questions
+          .filter((entry) => entry.severity === "error")
+          .slice(0, 8)
+          .map((entry) => `Q${entry.question_number}: ${entry.issues.find((i) => i.severity === "error")?.message ?? "invalid"}`),
+        questions: report.questions.filter((entry) => entry.severity === "error"),
       });
-      return;
-    }
-
-    const invalidQuestion = (publishRows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).find((question: any) => {
-      const answers = Array.isArray(question?.correct_answer) ? question.correct_answer : [];
-      const options = Array.isArray(question?.options) ? question.options : [];
-      // Was an inline list containing "mcq_multiple", which the table has never
-      // stored — it holds mcq_multi — and comparing raw values also missed the
-      // "Assertion-Reason" and "Matching" spellings. All three types therefore
-      // skipped the options check entirely, so a multi-correct question with no
-      // options passed validation.
-      const choiceQuestion = isChoiceQuestion(question?.question_type);
-      return !String(question?.question_text ?? "").trim() || answers.length === 0 || (choiceQuestion && options.length < 2);
-    });
-    if (invalidQuestion) {
-      res.status(400).json({ success: false, message: "Cannot publish: one or more questions are incomplete. Review the paper first." });
       return;
     }
 
@@ -458,6 +454,95 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     }
 
     res.status(200).json({ success: true, message: "Test published", data: { test: paper } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * GET /api/v1/tests/:id/validate
+ *
+ * The same report the Test Department gets, for the Superadmin question bank.
+ * That screen previously had no validation at all: the only checks ran at
+ * publish time and reported at most five deduplicated messages with no question
+ * numbers, so a superadmin reviewing a 75-question paper had nothing to work
+ * from but reading all of it.
+ */
+export const validateTest = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { data: paper, error: paperError } = await supabaseDB
+      .from("papers")
+      .select("id, institute_id, exam_code:exams(code)")
+      .eq("id", req.params.id)
+      .eq("is_active", true)
+      .maybeSingle();
+    if (paperError) throw paperError;
+    if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
+    if (paper.institute_id && req.user?.role !== "super_admin" && paper.institute_id !== req.user?.institute_id) {
+      res.status(403).json({ success: false, message: "This paper belongs to another institute." });
+      return;
+    }
+
+    const { data: rows, error } = await supabaseDB
+      .from("paper_questions")
+      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .eq("paper_id", paper.id)
+      .order("position", { ascending: true });
+    if (error) throw error;
+
+    const questions = (rows ?? []).map((row: any) => ({
+      position: row.position,
+      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
+    }));
+
+    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "") });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * DELETE /api/v1/tests/:id/questions/:questionId
+ *
+ * Remove a question from a global paper. The case this exists for is the empty
+ * slot the extractor creates when it detects a question-number anchor the model
+ * never returned — a stray "76." in a formula sheet produces a blank question
+ * that cannot be filled in, because there is nothing on the page to fill it with.
+ *
+ * Positions of the remaining questions are left alone: they carry the number
+ * printed on the paper, so closing the gap would renumber real questions in
+ * order to hide a removed one.
+ */
+export const deleteTestQuestion = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id, questionId } = req.params;
+    const { data: paper, error: paperError } = await supabaseDB
+      .from("papers").select("id, is_published").eq("id", id).eq("is_active", true).maybeSingle();
+    if (paperError) throw paperError;
+    if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
+    if (paper.is_published) {
+      res.status(409).json({ success: false, message: "A published paper is immutable. Unpublish it first." });
+      return;
+    }
+
+    const { data: link } = await supabaseDB
+      .from("paper_questions").select("question_id").eq("paper_id", id).eq("question_id", questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+
+    const { error: unlinkError } = await supabaseDB
+      .from("paper_questions").delete().eq("paper_id", id).eq("question_id", questionId);
+    if (unlinkError) throw unlinkError;
+
+    const { error: deactivateError } = await supabaseAdmin
+      .from("questions").update({ is_active: false, updated_at: new Date().toISOString() }).eq("id", questionId);
+    if (deactivateError) throw deactivateError;
+
+    const { count } = await supabaseDB
+      .from("paper_questions").select("question_id", { count: "exact", head: true }).eq("paper_id", id);
+    await supabaseDB.from("papers").update({ total_questions: count ?? 0 }).eq("id", id);
+
+    await logAdminAction(req.user?.id, "Question removed from paper", `Removed question ${questionId} from paper ${id}.`, "question_bank", "success");
+    res.status(200).json({ success: true, data: { removed: questionId, total_questions: count ?? 0 } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
