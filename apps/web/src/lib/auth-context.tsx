@@ -182,7 +182,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // A URL must never elevate the UI role. This guard runs for every route
     // change and prevents a signed-in student from rendering staff shells just
     // by typing /institute, /teacher, or /test-department in the address bar.
-    const isTestDepartment = appUser.role === "test_department_head" || appUser.role === "test_department_member";
+    // The institute admin belongs in the test-department workspace. Paper
+    // creation already funnels them there — the dashboard's "Schedule Batch
+    // Test" resolves to that route — and in a coaching with no separate
+    // department they are the only person who will ever review the result.
+    const isTestDepartment =
+      appUser.role === "test_department_head" ||
+      appUser.role === "test_department_member" ||
+      appUser.role === "institute_admin";
     const routeDenied =
       cleanPath.startsWith("/institute/resources") ||
       (cleanPath.startsWith("/institute") && appUser.role !== "institute_admin") ||
