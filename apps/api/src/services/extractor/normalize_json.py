@@ -656,6 +656,18 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
             q["question_type"] = PLATFORM_TYPE.get(q.get("question_type", "MCQ"),
                                                    "mcq_single")
 
+        # How much of this question's wording was found on its source page.
+        # Carried in source_reference because that field survives to the database
+        # and the paper validator reads it — the score is only useful if it
+        # reaches the person reviewing the paper.
+        match = q.get("_source_match")
+        if match is not None:
+            reference = q.get("source_reference")
+            q["source_reference"] = {
+                **(reference if isinstance(reference, dict) else {}),
+                "text_match": match,
+            }
+
         q.setdefault("topic", "")
         q.setdefault("source", "")
         q.setdefault("year", None)

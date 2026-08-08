@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any
 
 import question_reconciler as reconciler
+import question_verification as verification
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -794,6 +795,17 @@ def main() -> int:
         pages, page_indexes, work_dir, args.model, workers, batch_size)
     completeness = reconcile(pages, page_indexes, questions, truncated_pages, failed_pages,
                              work_dir, args.model, workers, batch_size)
+
+    # Reconciliation answers "did we get every question". This answers "is each
+    # question what the page actually says" — the only check that compares the
+    # output against the source rather than against a schema.
+    verified = verification.verify_questions(pages, questions, visible_text)
+    if verified["flagged"]:
+        print(f"[geminiPage] {len(verified['flagged'])} of {verified['judged']} question(s) diverge from the "
+              f"page text below {verified['threshold']:.0%} coverage: {verified['flagged']}", file=sys.stderr)
+    else:
+        print(f"[geminiPage] text verification: all {verified['judged']} judged question(s) match their source page")
+    completeness["verification"] = verified
 
     # Only a total wipeout is fatal. A partially-failed run still produces a
     # reviewable draft, and the completeness block records exactly what is
