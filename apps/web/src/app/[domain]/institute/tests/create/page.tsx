@@ -22,6 +22,9 @@ import {
   RiFileTextLine,
 } from "@remixicon/react";
 import { useBatches } from "@/lib/hooks/useBatches";
+import { useApiQuery } from "@/lib/hooks/useApiQuery";
+import { apiClient } from "@/lib/api.client";
+import { EXAM_SUBJECTS } from "@/lib/exam-config";
 import { useAuth } from "@/lib/auth-context";
 import { PremiumCard } from "@/components/premium-ui";
 import { useRouter } from "next/navigation";
@@ -32,6 +35,8 @@ export default function ScheduleTestPage() {
   const router = useRouter();
   const { user } = useAuth();
   const { batches, loading: batchesLoading } = useBatches();
+  // Exam ids + the subjects that actually have questions, for the bank mode.
+  const { data: examMeta } = useApiQuery<any>("/api/v1/questions/meta/exams");
   const AVAILABLE_BATCHES = batches.map(b => ({ id: b.id, name: b.name }));
   const returnPath = user?.role === "institute_admin" ? "/institute/tests" : "/test-department";
 
@@ -50,6 +55,21 @@ export default function ScheduleTestPage() {
   const [testStart, setTestStart] = useState("");
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [answerKeyFile, setAnswerKeyFile] = useState<File | null>(null);
+  /**
+   * Two ways to build the same paper.
+   *
+   * "pdf" extracts questions from an uploaded paper. "bank" assembles one from
+   * questions already in the bank — no extraction, no review, no API cost, which
+   * is the cheaper route once an institute has built up its own questions.
+   *
+   * The bank route has always existed on the server (POST /api/v1/tests, with
+   * subject, chapter, count and difficulty selection) but nothing in the app
+   * called it, so the only way to create a test was to upload a PDF.
+   */
+  const [mode, setMode] = useState<"pdf" | "bank">("pdf");
+  const [bankSubjects, setBankSubjects] = useState<string[]>([]);
+  const [bankCount, setBankCount] = useState(75);
+  const [bankDuration, setBankDuration] = useState(180);
   const [status, setStatus] = useState<"idle" | "uploading" | "processing" | "success" | "error">("idle");
   const [statusMsg, setStatusMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -111,7 +131,47 @@ export default function ScheduleTestPage() {
     setTestStart(toLocalDateTime(next));
   };
 
+  /** Assemble from the question bank. No extraction, so it returns immediately. */
+  const submitFromBank = async () => {
+    setErrorMsg("");
+    if (!testName.trim()) { setErrorMsg("Please enter a test name."); return; }
+    if (!testStart) { setErrorMsg("Please select when students can start the test."); return; }
+    if (selectedBatches.length === 0) { setErrorMsg("Please select at least one target batch."); return; }
+    if (bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
+
+    // createTest needs the exam's id, and the batch carries its code. Every
+    // selected batch must share an exam — the server enforces that too.
+    const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
+    const examId = examMeta?.exams?.find((e: any) => e.code === batchExam)?.exam_id;
+    if (!examId) {
+      setErrorMsg("Could not resolve the exam for the selected batch. Add questions for this exam first.");
+      return;
+    }
+
+    setStatus("processing");
+    setStatusMsg("Selecting questions from the bank…");
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const created: any = await apiClient.post("/api/v1/tests", {
+        exam_id: examId,
+        title: testName.trim(),
+        question_count: bankCount,
+        subjects: bankSubjects.length ? bankSubjects : undefined,
+        duration_minutes: bankDuration,
+        batch_ids: selectedBatches,
+        scheduled_start: new Date(testStart).toISOString(),
+      }, session?.access_token);
+      if (!created.success) throw new Error(created.message ?? "Could not create the test.");
+      setStatus("success");
+      setStatusMsg(`Draft created with ${created.data?.test?.question_count ?? bankCount} questions. Review and publish it.`);
+    } catch (error: any) {
+      setStatus("error");
+      setErrorMsg(error?.message ?? "Could not create the test.");
+    }
+  };
+
   const handleSubmit = async () => {
+    if (mode === "bank") { await submitFromBank(); return; }
     if (!pdfFile) {
       setErrorMsg("Please upload a Master PDF file.");
       return;
@@ -482,7 +542,92 @@ export default function ScheduleTestPage() {
           </div>
         )}
 
+        {/* How the paper gets built. Everything above this — name, batches,
+            schedule — is common to both routes. */}
+        <div className="flex w-fit rounded-[14px] bg-b-surface2 p-1 shadow-widget">
+          <button
+            type="button"
+            onClick={() => { setMode("pdf"); setErrorMsg(""); }}
+            className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${mode === "pdf" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}
+          >
+            Upload a PDF
+          </button>
+          <button
+            type="button"
+            onClick={() => { setMode("bank"); setErrorMsg(""); }}
+            className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${mode === "bank" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}
+          >
+            From question bank
+          </button>
+        </div>
+
+        {mode === "bank" && (
+          <PremiumCard padding="large" className="w-full flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <h2 className="font-sans font-bold text-[20px] text-t-primary flex items-center gap-2 m-0">
+                <RiFileTextLine size={20} className="text-primary-02" /> Build from the question bank
+              </h2>
+              <p className="text-xs text-t-secondary m-0 mt-1">
+                Questions are drawn from those already in your bank for the selected batch&rsquo;s exam.
+                Nothing is extracted, so there is no review queue — the paper is ready to check and publish.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-semibold text-t-primary">Number of questions</label>
+                <input
+                  type="number" min={1} max={500} value={bankCount}
+                  onChange={(event) => setBankCount(Number(event.target.value))}
+                  className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
+                <input
+                  type="number" min={1} max={600} value={bankDuration}
+                  onChange={(event) => setBankDuration(Number(event.target.value))}
+                  className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-semibold text-t-primary">
+                Subjects <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {(() => {
+                  const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
+                  const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
+                  return subjects.map((subject) => {
+                    const on = bankSubjects.includes(subject);
+                    return (
+                      <button
+                        key={subject}
+                        type="button"
+                        onClick={() => setBankSubjects((current) =>
+                          current.includes(subject) ? current.filter((s) => s !== subject) : [...current, subject])}
+                        className={`h-10 rounded-[10px] border px-4 text-sm font-semibold transition ${
+                          on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
+                        }`}
+                      >
+                        {on && <RiCheckLine size={14} className="mr-1 inline" />}
+                        {subject}
+                      </button>
+                    );
+                  });
+                })()}
+              </div>
+              {selectedBatches.length === 0 && (
+                <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+              )}
+            </div>
+          </PremiumCard>
+        )}
+
         {/* Upload Assets */}
+        {mode === "pdf" && (
         <PremiumCard padding="large" className="w-full flex flex-col gap-3">
           <div className="flex flex-col gap-1">
             <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary flex items-center gap-2 m-0">
@@ -607,6 +752,7 @@ export default function ScheduleTestPage() {
             </div>
           </div>
         </PremiumCard>
+        )}
 
         {/* Submit Buttons */}
         <div className="flex flex-col sm:flex-row justify-end gap-3 mt-2 w-full">
@@ -625,7 +771,7 @@ export default function ScheduleTestPage() {
             {status === "uploading" || status === "processing" ? (
               <>
                 <RiLoader4Line size={18} className="animate-spin" />
-                Processing PDF...
+                {mode === "bank" ? "Creating test..." : "Processing PDF..."}
               </>
             ) : (
               <>
