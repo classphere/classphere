@@ -229,26 +229,33 @@ export default function InstitutesPage() {
     setIsCreating(true);
     setFeedback(null);
 
-    const result = await createInstitute(newInstituteData);
+    try {
+      const result = await createInstitute(newInstituteData);
 
-    if (result.success) {
-      setIsCreateModalOpen(false);
-      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", preferredSubdomain: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
-      setFeedback(null);
-      refetchStats();
-      // Show the one-time credentials modal
-      if (result.tempPassword) {
-        setCredentials({
-          email: newInstituteData.adminEmail,
-          password: result.tempPassword,
-          instituteName: newInstituteData.name,
-        });
+      if (result.success) {
+        setIsCreateModalOpen(false);
+        setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", preferredSubdomain: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
+        setFeedback(null);
+        refetchStats();
+        // Show the one-time credentials modal
+        if (result.tempPassword) {
+          setCredentials({
+            email: newInstituteData.adminEmail,
+            password: result.tempPassword,
+            instituteName: newInstituteData.name,
+          });
+        }
+      } else {
+        setFeedback({ type: "error", message: result.message });
       }
-    } else {
-      setFeedback({ type: "error", message: result.message });
+    } catch (err: unknown) {
+      setFeedback({
+        type: "error",
+        message: err instanceof Error ? err.message : "Unable to provision the institute. Please try again.",
+      });
+    } finally {
+      setIsCreating(false);
     }
-
-    setIsCreating(false);
   };
 
   const openModal = () => {

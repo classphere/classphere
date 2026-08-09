@@ -23,14 +23,38 @@ try {
   RedisStoreCtor = undefined; // package not installed — in-memory fallback
 }
 
+const REDIS_COMMAND_TIMEOUT_MS = 1_500;
+
 export function getRateLimitStore(prefix: string): any | undefined {
   if (!env.REDIS_URL || !RedisStoreCtor) return undefined;
   try {
     const store = new RedisStoreCtor({
       prefix,
       sendCommand: async (command: string, ...args: string[]) => {
+        // ioredis queues commands indefinitely while it reconnects by default.
+        // A rate limiter must never make the API unavailable when Redis is down.
+        //
+        // The rejection is created eagerly by rate-limit-redis's *constructor*
+        // (loadIncrementScript/loadGetScript run before init(), so the wrapper
+        // below never sees them). Nothing awaits those two promises, so each
+        // one surfaced as an "Unhandled Promise rejection" at boot. Rejecting a
+        // pre-caught promise keeps the fail-fast behaviour without the noise.
+        if (redisConnection.status !== "ready") {
+          const unavailable = Promise.reject(new Error("Redis rate-limit store is unavailable"));
+          unavailable.catch(() => { /* marked handled; the caller still gets the rejection */ });
+          return unavailable;
+        }
+
         try {
-          return await (redisConnection.call(command, ...args) as Promise<number>);
+          return await Promise.race([
+            redisConnection.call(command, ...args) as Promise<number>,
+            new Promise<never>((_, reject) => {
+              setTimeout(
+                () => reject(new Error(`Redis rate-limit command timed out after ${REDIS_COMMAND_TIMEOUT_MS}ms`)),
+                REDIS_COMMAND_TIMEOUT_MS,
+              );
+            }),
+          ]);
         } catch (err: any) {
           console.warn("[rate-limit] Redis command failed:", err?.message ?? err);
           throw err;

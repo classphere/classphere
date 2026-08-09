@@ -136,6 +136,8 @@ const globalLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: "Too many requests from this IP, please try again after 15 minutes" },
+  // Redis is optional infrastructure: keep serving requests if it is unavailable.
+  passOnStoreError: true,
   // @ts-ignore — store is optional in the type but accepted at runtime
   store: rateLimitStore,
 });
@@ -187,7 +189,17 @@ app.get("/health", async (req, res) => {
   }
   try {
     if (env.REDIS_URL) {
-      await redisConnection.ping();
+      // ioredis is configured with `maxRetriesPerRequest: null` for BullMQ, which
+      // means a command issued while the connection is down queues forever rather
+      // than rejecting. An unbounded ping made /health hang indefinitely instead
+      // of reporting "down" — the one thing a readiness probe must never do, and
+      // the reason the container HEALTHCHECK (5s timeout) could never resolve.
+      await Promise.race([
+        redisConnection.ping(),
+        new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error("redis ping timed out")), 2500),
+        ),
+      ]);
       checks.redis = "ok";
     } else {
       checks.redis = "ok"; // not configured — not a readiness failure in dev

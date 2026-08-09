@@ -83,10 +83,14 @@ export default function BatchesPage() {
   };
   const toggleYear = (year: number | null) =>
     setOpenYears((prev) => ({ ...prev, [String(year)]: !isYearOpen(year) }));
-  const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
-
+  // Declared before `availableExams` reads it. The filter used to sit above
+  // this pair, so `enabledExamCodes` was referenced in its own temporal dead
+  // zone and the page threw "Cannot access before initialization" on every
+  // render — the whole route was unreachable, not just the exam list.
   const { data: instituteData } = useApiQuery<{ institute: { enabled_exam_codes?: string[] } }>("/api/v1/institutes/me");
   const enabledExamCodes = instituteData?.institute?.enabled_exam_codes ?? [];
+
+  const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
 
   // The exam calendar and the create form now live in CreateBatchModal, which
   // both this page and the institute dashboard render.
