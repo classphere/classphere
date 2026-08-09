@@ -6,9 +6,11 @@ V4 adds deterministic document profiling, ordered question content, source prove
 
 The safety contract is **no silent loss**. Structured text, math, diagrams, option images, and tables are used when verified. Uncertain regions retain a source crop and a review reason rather than shipping corrupted content as if it were correct.
 
-## Runtime switch
+## The pipeline
 
-`PDF_EXTRACTOR_V4=false` is the default. When false, the worker calls the established extractor with no output-shape change. When true:
+There is no switch. `PDF_EXTRACTOR_V4` existed while profiling was being rolled out and has been removed, because switching it off did not fall back to something simpler — it lost capability. Answer-key and solution pages stopped being excluded from extraction, so their numbering produced question anchors and the reconciler created a blank placeholder for each; nothing read the marks off the instructions page; and questions reached the database without `extraction_metadata`, which is where the paper validator reads review reasons from. Profiling *failing* is still handled — the extractor carries on without a profile — which was the only fallback the flag genuinely offered.
+
+Every extraction now runs:
 
 1. `document_profile.py` classifies digital/scanned/hybrid pages, likely columns, page roles, and OCR/escalation needs without writing files.
 2. When the user did not request a page range, confidently detected answer-key and worked-solution pages are excluded from question segmentation.
@@ -59,18 +61,27 @@ python -m unittest apps/api/src/services/extractor/tests/test_document_profile.p
 
 The tests use in-memory PDFs and do not create or clean tmp/temp directories.
 
-## Canary sequence
+## Verifying a change to extraction
 
-1. Deploy migration 31 with `PDF_EXTRACTOR_V4=false`.
-2. Run the existing extraction harness and the five-document golden profile gate.
-3. Enable v4 only on a worker canary.
-4. Extract one document from each corpus class and review rendered CBT, Test Editor, Test Head, and Superadmin views.
-5. Compare question count, numbering, types, options, assets, tables, and screenshots against the legacy run and source PDF.
-6. Expand the canary only when all hard gates pass.
+The canary sequence below described enabling v4 alongside the old path. There is
+no longer an old path to compare against, so the check is now against the source
+PDF itself:
+
+1. Apply migration 31 if it has not been applied.
+2. Run the golden profile gate: `python tests/validate_golden_corpus.py`.
+3. Extract one document from each corpus class.
+4. Read the completeness block — `anchors_matched / expected_total` — and the
+   verification block, which scores each question's wording against the page it
+   came from.
+5. Open the paper in review and compare question count, numbering, types,
+   options, assets and tables against the source PDF.
 
 ## Rollback
 
-Set `PDF_EXTRACTOR_V4=false` and restart workers. Existing legacy fields remain populated, so the renderer automatically falls back without a data migration. The new nullable columns can remain in place safely.
+There is no flag to unset. Extraction changes roll back by deploying the previous
+build. The `content_blocks`, `extraction_metadata`, `extractor_version` and
+`source_crop_url` columns are nullable and legacy fields stay populated, so an
+older build reads rows written by a newer one without a data migration.
 
 ## Temporary files
 

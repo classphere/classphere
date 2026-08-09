@@ -33,10 +33,6 @@ export interface DocumentProfile {
   pages: Array<Record<string, unknown>>;
 }
 
-function v4Enabled(): boolean {
-  return /^(1|true|yes|on|v4)$/i.test((process.env.PDF_EXTRACTOR_V4 || "").trim());
-}
-
 function profilerScriptPath(): string {
   const candidates = [
     path.join(__dirname, "document_profile.py"),
@@ -165,23 +161,34 @@ export interface ExtractionResultV4 extends ExtractionResult {
 }
 
 /**
- * V4 entry point used by the BullMQ worker.
+ * The extraction entry point used by the BullMQ worker.
  *
- * Adds document profiling (auto page-range exclusion of answer keys / solutions)
- * and enriches the question content envelope. With PDF_EXTRACTOR_V4 unset this
- * is a strict pass-through to the core extractPDF pipeline.
+ * Profiles the document, extracts, then reads any answer key the paper carries.
+ *
+ * Profiling used to sit behind PDF_EXTRACTOR_V4, and the flag is gone because
+ * there was never a reason to choose the other branch. Switched off it did not
+ * fall back to something simpler — it lost capability:
+ *
+ *   answer-key and solution pages were no longer excluded from extraction, so
+ *   their numbering produced question anchors and the reconciler created a blank
+ *   placeholder for each one, adding questions a paper does not have;
+ *
+ *   nothing read the marks off the instructions page, so a JEE Advanced paper
+ *   arrived unpriced with no suggestion to confirm;
+ *
+ *   questions reached the database without extraction_metadata, and the paper
+ *   validator reads review_reasons from exactly there — so validation quietly
+ *   lost one of its inputs.
+ *
+ * None of that is a configuration anyone would choose. Profiling failing is
+ * already handled below by carrying on without a profile, which is the only
+ * fallback the flag ever really provided.
  */
 export async function extractPDFV4(
   pdfPath: string,
   pagesRange?: string,
   options: ExtractionOptions = {},
 ): Promise<ExtractionResultV4> {
-  if (!v4Enabled()) {
-    const result = await extractPDF(pdfPath, pagesRange, options);
-    await applyOwnAnswerKey(pdfPath, result, null, options);
-    return result;
-  }
-
   let profile: DocumentProfile | null = null;
   try {
     profile = await profilePDF(pdfPath);

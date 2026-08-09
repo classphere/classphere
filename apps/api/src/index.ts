@@ -152,7 +152,7 @@ app.use(express.json({ limit: "1mb" }));
 // Started once, after the server is listening (see below). Registration used to
 // happen both here and again via startWorkers(), which registered the lifecycle
 // cron twice.
-// Accepts 1/true/yes/on, matching how PDF_EXTRACTOR_V4 is read elsewhere. A
+// Accepts 1/true/yes/on rather than a strict === "true". A
 // strict === "true" check silently disabled the queue for a deployment set to
 // START_WORKERS=1: no error, API still healthy, jobs simply never processed.
 const workersEnabled = /^(1|true|yes|on)$/i.test((process.env.START_WORKERS || "").trim());
