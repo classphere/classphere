@@ -52,6 +52,68 @@ async function syncExamTargetToBatch(studentIds: string[], batchId: string): Pro
   if (error) console.error("[syncExamTargetToBatch] failed:", error.message);
 }
 
+/**
+ * How many students and teachers each batch actually has.
+ *
+ * The batch row carries max_students and max_teachers, which are capacity
+ * limits — what the batch is allowed to hold, not what is in it. Every screen
+ * showing a student count was reading those: the batches list rendered
+ * `max_students ?? "—"` under a heading that said "Students", so a batch with
+ * two students and no capacity set displayed a dash, and one with a limit of 60
+ * and nobody in it would have displayed 60.
+ *
+ * Counted from batch_students with left_at null, which is the same definition of
+ * "in this batch" the roster and the billing rollup already use — a departed
+ * student keeps their row for history and must not be counted as present.
+ */
+async function withMemberCounts(batches: any[]): Promise<any[]> {
+  if (!batches.length) return batches;
+  const batchIds = batches.map((batch) => batch.id).filter(Boolean);
+  if (!batchIds.length) return batches;
+
+  const tally = async (table: string, excludeDeparted: boolean) => {
+    const counts = new Map<string, number>();
+    // Paged: an institute with a few thousand enrolments would otherwise be
+    // silently truncated at PostgREST's 1,000-row ceiling, and the batches at
+    // the far end would report zero members rather than an error.
+    const PAGE_SIZE = 1000;
+    for (let from = 0; ; from += PAGE_SIZE) {
+      let query = supabaseDB
+        .from(table)
+        .select("batch_id")
+        .in("batch_id", batchIds)
+        .order("batch_id", { ascending: true })
+        .range(from, from + PAGE_SIZE - 1);
+      if (excludeDeparted) query = query.is("left_at", null);
+
+      const { data, error } = await query;
+      if (error) {
+        console.error(`[listBatches] ${table} count failed:`, error.message);
+        break;
+      }
+      const page = data ?? [];
+      for (const row of page) {
+        const id = String((row as any).batch_id);
+        counts.set(id, (counts.get(id) ?? 0) + 1);
+      }
+      if (page.length < PAGE_SIZE) break;
+    }
+    return counts;
+  };
+
+  const [studentCounts, teacherCounts] = await Promise.all([
+    tally("batch_students", true),
+    // batch_teachers has no left_at — unassigning a teacher deletes the row.
+    tally("batch_teachers", false),
+  ]);
+
+  return batches.map((batch) => ({
+    ...batch,
+    student_count: studentCounts.get(String(batch.id)) ?? 0,
+    faculty_count: teacherCounts.get(String(batch.id)) ?? 0,
+  }));
+}
+
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
   const { data } = await supabaseDB
@@ -634,7 +696,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
         return;
       }
 
-      res.status(200).json({ success: true, data: { batches: batches ?? [] } });
+      res.status(200).json({ success: true, data: { batches: await withMemberCounts(batches ?? []) } });
       return;
     }
 
@@ -651,7 +713,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
       }
 
       const batches = (rows ?? []).map((r: any) => r.batches).filter(Boolean);
-      res.status(200).json({ success: true, data: { batches } });
+      res.status(200).json({ success: true, data: { batches: await withMemberCounts(batches) } });
       return;
     }
 

@@ -266,7 +266,7 @@ export default function BatchesPage() {
                       <span>Students</span>
                     </span>
                     <span className="text-[13px] font-bold text-t-primary">
-                      {batch.max_students ?? "—"}
+                      {batch.student_count ?? 0}
                     </span>
                   </div>
 
@@ -277,7 +277,7 @@ export default function BatchesPage() {
                       <span>Faculty</span>
                     </span>
                     <span className="text-[13px] font-bold text-t-primary">
-                      {batch.max_teachers ?? "—"}
+                      {batch.faculty_count ?? 0}
                     </span>
                   </div>
                 </div>
@@ -285,10 +285,10 @@ export default function BatchesPage() {
                 {/* Mobile Info */}
                 <div className="flex sm:hidden flex-col items-end justify-center">
                   <span className="text-[11px] font-sans font-bold text-t-primary">
-                    <RiGroupLine size={10} className="inline mr-1" />{batch.max_students ?? "—"}
+                    <RiGroupLine size={10} className="inline mr-1" />{batch.student_count ?? 0}
                   </span>
                   <span className="text-[11px] font-sans font-bold text-t-primary mt-0.5">
-                    <RiGraduationCapLine size={10} className="inline mr-1" />{batch.max_teachers ?? "—"}
+                    <RiGraduationCapLine size={10} className="inline mr-1" />{batch.faculty_count ?? 0}
                   </span>
                 </div>
 

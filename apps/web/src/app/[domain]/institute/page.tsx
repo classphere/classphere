@@ -41,7 +41,6 @@ export default function InstituteDashboardPage() {
   const { batches, loading: batchesLoading, createBatch } = useBatches();
 
   // ── Real institute data ──────────────────────────────────────────────────
-  const [realStudentCount, setRealStudentCount] = useState(0);
 
   const { data: instituteData } = useApiQuery<{ institute: any; topPerformers?: any[] }>("/api/v1/institutes/me");
   const { data: subscription, isPending: subscriptionLoading } =
@@ -49,9 +48,16 @@ export default function InstituteDashboardPage() {
   const institute = instituteData?.institute ?? null;
   const topPerformers = instituteData?.topPerformers ?? [];
 
-  // Derived stats from real batch data
+  // Derived stats from real batch data.
+  //
+  // This read a realStudentCount state that was declared and never set, so it
+  // was always 0 and always fell through to the second half — which sums
+  // max_students, a capacity limit rather than a headcount. The card therefore
+  // showed 0 for an institute with students, and would have shown the total
+  // capacity for one that had set limits. Summed from the counts the batches
+  // endpoint now returns.
   const activeBatchesCount = batches.length;
-  const totalStudentsCount = realStudentCount || batches.reduce((sum, b) => sum + (b.max_students ?? 0), 0);
+  const totalStudentsCount = batches.reduce((sum, b) => sum + (b.student_count ?? 0), 0);
 
   const instituteOverview = {
     instituteName: institute?.name ?? user?.name ?? "Institute",
@@ -174,7 +180,7 @@ export default function InstituteDashboardPage() {
                             {batch.name}
                           </span>
                           <span className="text-[11px] sm:text-xs text-t-secondary dark:text-t-tertiary mt-0.5 uppercase tracking-wide truncate">
-                            {batch.exam} · {batch.max_students ?? 0} Students
+                            {batch.exam} · {batch.student_count ?? 0} Students
                           </span>
                         </div>
                       </div>

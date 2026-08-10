@@ -18,6 +18,9 @@ export interface Batch {
   exam: string;           // e.g. "jee-main", "neet-ug"
   description: string | null;
   max_students: number | null;
+  /** How many students the batch actually holds — not max_students, which is a cap. */
+  student_count?: number;
+  faculty_count?: number;
   max_teachers: number | null;
   is_active: boolean;
   starts_at: string | null;
