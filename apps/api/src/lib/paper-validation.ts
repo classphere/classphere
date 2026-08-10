@@ -134,6 +134,33 @@ export function questionIssues(question: Record<string, any>): QuestionIssue[] {
     add("too_few_options", `Only ${options.length} option(s). Check whether the rest continue on the next page of the PDF.`);
   }
 
+  // Raw MathML that reached the database. Storage is Markdown with $...$ maths;
+  // nothing on the student side renders MathML, so this displays as a wall of
+  // tags. normalize_json converts it at extraction, but a paper ingested before
+  // that existed still carries it, and no other check would catch it — the
+  // question has text, options and an answer, and is wrong anyway.
+  const markupFields: string[] = [
+    text,
+    ...options.map((o: any) => String(o?.text ?? "")),
+    String(question.explanation ?? ""),
+  ];
+  if (markupFields.some((value) => /<\s*(?:\w+:)?math[\s>]/i.test(value))) {
+    add("raw_mathml", "Contains raw MathML instead of LaTeX. It will show as markup to students — re-extract this paper, or rewrite the formula in the editor.");
+  }
+
+  // A figure the question referred to that was never extracted. The reference
+  // is dropped rather than rendered — a broken image is worse than none — which
+  // leaves a question missing a diagram it needs while reading as complete.
+  // This is the only signal that it happened.
+  const missingFigures = (question.source_reference as any)?.missing_figures;
+  if (Array.isArray(missingFigures) && missingFigures.length > 0) {
+    add(
+      "missing_figure",
+      `${missingFigures.length} figure${missingFigures.length === 1 ? "" : "s"} could not be extracted from the PDF and ${missingFigures.length === 1 ? "was" : "were"} dropped. Check the source page — if the question needs the diagram, add it with the image button.`,
+      "warning",
+    );
+  }
+
   const blank = options.filter((o: any) => !String(o?.text ?? "").trim() && !String(o?.image_url ?? "").trim());
   if (options.length > 0 && blank.length > 0) {
     add("empty_option", `${blank.length} of ${options.length} options are empty — no text and no figure.`);

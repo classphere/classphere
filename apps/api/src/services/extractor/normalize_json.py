@@ -33,6 +33,8 @@ import uuid
 from collections import Counter
 from pathlib import Path
 
+from mathml_to_latex import convert_mathml
+
 # Force stdout/stderr to use UTF-8 encoding on Windows to prevent console print crashes
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -192,6 +194,10 @@ def sanitize_text(text: str) -> str:
       • whitespace collapsed; unbalanced $ repaired."""
     if not text:
         return text
+    # Before anything else. MathML that survives to _balance_dollars would have
+    # its angle brackets counted as prose and its content mangled; converting
+    # first means the rest of this function sees ordinary $...$ maths.
+    text, _ = convert_mathml(text)
     text = _fix_literal_newlines(text)
     text = text.replace('\r\n', '\n').replace('\r', '\n').replace('\t', ' ')
     text = _EMPTY_MATH_RE.sub(' ', text)
@@ -244,10 +250,15 @@ def strip_inline_images(text: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", stripped).strip()
 
 
-def clean_dead_images(text: str, available: set) -> str:
+def clean_dead_images(text: str, available: set, dropped: list = None) -> str:
     """Remove ![image](f) references whose file is not present on disk, so the
     frontend never renders an 'Image unavailable' placeholder. If `available`
-    is None (no images dir given) the text is returned unchanged."""
+    is None (no images dir given) the text is returned unchanged.
+
+    Every dropped filename is appended to `dropped` when one is given. Removing
+    the reference is right — a broken image is worse than none — but doing it
+    silently left a question that had lost its diagram looking complete, which
+    is the one state a reviewer cannot detect by reading it."""
     if available is None or not text:
         return text
 
@@ -255,6 +266,8 @@ def clean_dead_images(text: str, available: set) -> str:
         fname = m.group(1).replace("\\", "/").split("/")[-1]
         if fname.startswith("data:") or fname in available:
             return m.group(0)
+        if dropped is not None:
+            dropped.append(fname)
         return ""   # drop dead reference
     return re.sub(r'!\[[^\]]*\]\(([^)]+)\)', repl, text).strip()
 
@@ -609,19 +622,26 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
     for q in questions:
         q.setdefault("id", str(uuid.uuid4()))
 
-        qt = clean_dead_images(q.get("question_text", "") or "", available)
+        # Figures this question referred to that were never extracted. The model
+        # names a file it can see in the page image; if PyMuPDF produced no such
+        # asset the reference cannot resolve, and the question silently loses a
+        # diagram it needs. Collected here and carried to the reviewer below.
+        missing = []
+
+        qt = clean_dead_images(q.get("question_text", "") or "", available, missing)
         q["question_images"] = [f for f in MD_IMG_RE.findall(qt) if resolvable(f)]
         q["question_text"] = strip_inline_images(qt)
 
-        exp = clean_dead_images(q.get("explanation", "") or "", available)
+        exp = clean_dead_images(q.get("explanation", "") or "", available, missing)
         q["explanation_images"] = [f for f in MD_IMG_RE.findall(exp) if resolvable(f)]
         q["explanation"] = strip_inline_images(exp)
 
         for opt in q.get("options", []) or []:
-            text = clean_dead_images(opt.get("text", "") or "", available)
+            text = clean_dead_images(opt.get("text", "") or "", available, missing)
             inline = [f for f in MD_IMG_RE.findall(text) if resolvable(f)]
             existing = opt.get("image_url")
             if existing and not resolvable(existing):
+                missing.append(str(existing).replace("\\", "/").split("/")[-1])
                 existing = None
 
             # Every figure this option carries, in reading order, counted once.
@@ -661,12 +681,19 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
         # and the paper validator reads it — the score is only useful if it
         # reaches the person reviewing the paper.
         match = q.get("_source_match")
-        if match is not None:
+        if match is not None or missing:
             reference = q.get("source_reference")
-            q["source_reference"] = {
-                **(reference if isinstance(reference, dict) else {}),
-                "text_match": match,
-            }
+            merged = {**(reference if isinstance(reference, dict) else {})}
+            if match is not None:
+                merged["text_match"] = match
+            if missing:
+                # Deduplicated: the same figure can be referenced from the stem
+                # and from an option, and one absent file is one problem.
+                merged["missing_figures"] = sorted(set(missing))
+            q["source_reference"] = merged
+
+        if missing:
+            q["_needs_review"] = True
 
         q.setdefault("topic", "")
         q.setdefault("source", "")

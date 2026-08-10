@@ -88,6 +88,12 @@ For each question return:
   and set needs_review: true with a reason.
 • Two-column layouts: read left column top-to-bottom, then right column.
 • Never invent text, choices, answers, or diagrams.
+• ALL mathematics must be LaTeX between $...$ delimiters. The supplied PyMuPDF
+  HTML sometimes carries MathML (<math>, <mfrac>, <msup>, <mfenced> ...) copied
+  out of the PDF's text layer. NEVER pass that through. Rewrite it as LaTeX:
+  <mfrac><mn>1</mn><mn>2</mn></mfrac> becomes $\frac{1}{2}$. Nothing downstream
+  renders MathML, so a question containing it displays as raw markup to the
+  student. The same goes for any other HTML tag — question_text is Markdown.
 
 ════════════════════════════════════════════
   IMAGE RULES
