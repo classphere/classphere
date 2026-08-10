@@ -67,6 +67,40 @@ never existed in the product.*
 
 ---
 
+## 10 August 2026
+
+### Shipped
+
+- **Batch rosters showed 0 students / 0 faculty.** The batches page and the
+  dashboard were both reading `max_students`, which is the capacity cap and was
+  null, so it rendered `—`; a batch capped at 60 with nobody in it would have
+  shown 60. The dashboard also carried a `realStudentCount` state that nothing
+  ever set. `GET /batches` now returns real `student_count` / `faculty_count`,
+  paged past the 1,000-row ceiling and excluding departures.
+
+- **One student, one batch — enforced.** `batch_students` is keyed on
+  `(batch_id, student_id)`, which stops a duplicate within a batch and permits
+  one across batches. Every write path did exactly that; the import said so in
+  its own comment, and reported the second enrolment to the institute as an
+  updated assignment. Such a student drew exam codes and assigned tests from
+  both cohorts and counted twice in roster totals. Billing was never wrong —
+  `institute_student_counts()` counts `DISTINCT student_id`.
+  - Migration 51 retires existing duplicates (most recent enrolment survives)
+    and adds a partial unique index on `(student_id) WHERE left_at IS NULL`.
+  - `lib/batch-enrolment.ts` is the one place the rule lives; all three write
+    paths use it.
+  - Single-student add refuses with a 409 naming the current batch, and the UI
+    turns that into a "Move them" confirm. Nothing is written until confirmed.
+  - CSV import moves instead, and reports moves as their own count with a
+    per-student list — a corrected roster is re-uploaded precisely to reassign
+    people, so erroring every row would look broken.
+  - `moveStudentsBetweenBatches` now vacates every active enrolment except the
+    destination, not just the source, so anyone still holding two self-heals.
+  - Import no longer treats a departed student as "already in batch": the
+    existing-link check ignored `left_at`, so re-adding them left them departed.
+
+---
+
 ## Open
 
 ### Needs a person, not a change
@@ -111,6 +145,11 @@ never existed in the product.*
       service, never as source, and no resale rights.
 - [ ] Whether extraction-as-a-service becomes the main business or stays a wedge
       for the platform.
+- [ ] One-batch-per-student means a student preparing for both JEE and NEET
+      cannot be modelled as two batches. That case belongs to a batch whose exam
+      covers both. If an institute actually needs dual enrolment, dropping
+      `uq_batch_students_one_active` reverses it — but the roster counts and
+      `getStudentExamCodes` would need revisiting alongside.
 
 ---
 

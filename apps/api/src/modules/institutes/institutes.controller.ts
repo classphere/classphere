@@ -4,6 +4,7 @@ import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { logAdminAction } from "../../lib/admin-audit";
 import { getOrSetCache } from "../../lib/cache";
 import { rankLifetimePerformance } from "../rankings/lifetime-ranking.service";
+import { enrolExclusively, findConflictingEnrolment } from "../../lib/batch-enrolment";
 
 /** Lifecycle values institute_subscriptions.status accepts (see migration 10). */
 const SUBSCRIPTION_STATUSES = ["trialing", "active", "past_due", "cancelled"];
@@ -856,15 +857,32 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
       return;
     }
 
-    const { error } = await supabaseDB
-      // ignoreDuplicates would silently no-op for a student who previously
-      // left, leaving them marked as departed after being re-added. Clearing
-      // left_at is what "add to batch" has to mean for a returning student.
-      .from("batch_students")
-      .upsert({ batch_id: id, student_id, left_at: null }, { onConflict: "batch_id,student_id" });
+    // A student belongs to one batch at a time. Enrolling them here while they
+    // are live in another batch is refused rather than resolved, because the
+    // two things the admin could have meant — a move, or a misclick — are not
+    // distinguishable from the request. The caller confirms and retries with
+    // move=true. See lib/batch-enrolment.ts.
+    const conflict = await findConflictingEnrolment(student_id, id);
+    if (conflict && req.body.move !== true) {
+      res.status(409).json({
+        success: false,
+        code: "ALREADY_ENROLLED",
+        message: `This student is already in ${conflict.batch_name}. Move them instead?`,
+        data: { current_batch: conflict },
+      });
+      return;
+    }
+
+    // ignoreDuplicates would silently no-op for a student who previously left,
+    // leaving them marked as departed after being re-added. Clearing left_at is
+    // what "add to batch" has to mean for a returning student.
+    const { movedFrom, error } = await enrolExclusively(student_id, id);
+    if (error) { res.status(500).json({ success: false, message: error }); return; }
     await syncExamTargetToBatch([student_id], id);
-    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
-    res.status(201).json({ success: true, message: "Student added to batch" });
+    res.status(201).json({
+      success: true,
+      message: movedFrom ? `Student moved from ${movedFrom.batch_name}.` : "Student added to batch",
+    });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -1207,10 +1225,15 @@ export const moveStudentsBetweenBatches = async (req: Request, res: Response): P
 
     const now = new Date().toISOString();
 
+    // Every active enrolment except the destination ends, not just the source.
+    // Restricting this to the source batch was correct only while a student
+    // could hold one enrolment anyway; for anyone left holding two by the old
+    // write paths, moving them would otherwise leave the second one live and
+    // collide with the one-active-batch index.
     const { error: leaveErr } = await supabaseDB
       .from("batch_students")
       .update({ left_at: now })
-      .eq("batch_id", id)
+      .neq("batch_id", target_batch_id)
       .in("student_id", student_ids)
       .is("left_at", null);
     if (leaveErr) { res.status(500).json({ success: false, message: leaveErr.message }); return; }

@@ -21,7 +21,7 @@ import {
 import { useStudents } from "@/lib/hooks/useStudents";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
-import type { ImportResult } from "@/lib/hooks/useStudents";
+import type { EnrolmentConflict, ImportResult } from "@/lib/hooks/useStudents";
 
 // Mask phone: 98765*****
 function maskPhone(phone: string | null): string {
@@ -59,6 +59,9 @@ export default function StudentsPage() {
   const [adding, setAdding] = useState(false);
   const [addForm, setAddForm] = useState({ name: "", phone: "", dob: "", batch_id: "" });
   const [addError, setAddError] = useState<string | null>(null);
+  // Set when the server refuses because the student is live in another batch.
+  // Holding it here is what turns the refusal into a confirm rather than a dead end.
+  const [enrolmentConflict, setEnrolmentConflict] = useState<EnrolmentConflict | null>(null);
   const { createStudent } = useStudents();
 
   const filteredStudents = students.filter(s => {
@@ -75,8 +78,8 @@ export default function StudentsPage() {
     return name ? s.batches.includes(name) : true;
   });
 
-  // Moving requires a source batch, and a student can sit in more than one, so
-  // selection is only offered once the list is narrowed to a single batch.
+  // Moving needs a source batch to move out of, so selection is only offered
+  // once the list is narrowed to one batch.
   const sourceBatch = batches.find((b) => b.id === selectedBatchFilter) ?? null;
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [moveTargetId, setMoveTargetId] = useState("");
@@ -147,17 +150,40 @@ export default function StudentsPage() {
     }
   };
 
+  const finishAdd = () => {
+    setIsAddOpen(false);
+    setAddForm({ name: "", phone: "", dob: "", batch_id: "" });
+    setEnrolmentConflict(null);
+  };
+
   const handleAddSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setAdding(true);
     setAddError(null);
+    setEnrolmentConflict(null);
     const result = await createStudent(addForm);
     setAdding(false);
     if (result.success) {
-      setIsAddOpen(false);
-      setAddForm({ name: "", phone: "", dob: "", batch_id: "" });
+      finishAdd();
+    } else if (result.conflict) {
+      // Not an error — the student exists in another batch and the admin has to
+      // say whether they meant to move them. Nothing has been written yet.
+      setEnrolmentConflict(result.conflict);
     } else {
       setAddError(result.message);
+    }
+  };
+
+  /** The admin confirmed the move; same request, now allowed to vacate the old batch. */
+  const handleConfirmMove = async () => {
+    setAdding(true);
+    setAddError(null);
+    const result = await createStudent(addForm, { move: true });
+    setAdding(false);
+    if (result.success) finishAdd();
+    else {
+      setAddError(result.message);
+      setEnrolmentConflict(null);
     }
   };
 
@@ -530,19 +556,33 @@ export default function StudentsPage() {
                 {importResult.message}
               </div>
               {importResult.result && (
-                <div className="grid grid-cols-3 gap-2 mt-2">
+                <div className="grid grid-cols-4 gap-2 mt-2">
                   <div className="text-center">
                     <p className="text-xl font-bold text-primary-02">{importResult.result.imported}</p>
                     <p className="text-xs text-t-tertiary">Imported</p>
                   </div>
                   <div className="text-center">
                     <p className="text-xl font-bold text-amber-500">{importResult.result.updated}</p>
-                    <p className="text-xs text-t-tertiary">Batch Updated</p>
+                    <p className="text-xs text-t-tertiary">Re-enrolled</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-primary-05">{importResult.result.moved ?? 0}</p>
+                    <p className="text-xs text-t-tertiary">Moved</p>
                   </div>
                   <div className="text-center">
                     <p className="text-xl font-bold text-t-secondary">{importResult.result.skipped}</p>
                     <p className="text-xs text-t-tertiary">Skipped</p>
                   </div>
+                </div>
+              )}
+              {/* A move takes a student out of the batch they were in, so the
+                  sheet's effect is listed rather than left as a count. */}
+              {importResult.result?.moves && importResult.result.moves.length > 0 && (
+                <div className="mt-3 max-h-28 overflow-y-auto space-y-1 border-t border-s-stroke2/50 pt-2">
+                  <p className="text-xs font-semibold text-t-secondary">Moved between batches</p>
+                  {importResult.result.moves.map((m, i) => (
+                    <p key={i} className="text-xs text-t-secondary leading-5">{m}</p>
+                  ))}
                 </div>
               )}
               {importResult.result?.errors && importResult.result.errors.length > 0 && (
@@ -575,7 +615,7 @@ export default function StudentsPage() {
       {/* ── Add Single Student Modal ── */}
       <Modal
         open={isAddOpen}
-        onClose={() => setIsAddOpen(false)}
+        onClose={() => { setIsAddOpen(false); setEnrolmentConflict(null); }}
         title="Add New Student"
         subtitle="Create a student and assign them to a batch"
       >
@@ -584,6 +624,42 @@ export default function StudentsPage() {
             <div className="flex items-center gap-2 text-sm text-primary-03 bg-primary-03/10 p-3 rounded-[10px]">
               <RiAlertLine size={16} />
               {addError}
+            </div>
+          )}
+
+          {/* A student holds one batch at a time. Rather than fail, the refusal
+              offers the move — the form is still filled in, so changing the
+              batch above and submitting again is the other way out. */}
+          {enrolmentConflict && (
+            <div className="flex flex-col gap-3 text-sm bg-primary-05/10 border border-primary-05/30 p-3 rounded-[10px]">
+              <div className="flex items-start gap-2 text-t-primary">
+                <RiAlertLine size={16} className="mt-0.5 shrink-0 text-primary-05" />
+                <span>
+                  <strong>{addForm.name.trim() || "This student"}</strong> is already in{" "}
+                  <strong>{enrolmentConflict.batch_name}</strong>. Moving them to{" "}
+                  <strong>{batches.find((b) => b.id === addForm.batch_id)?.name ?? "the new batch"}</strong>{" "}
+                  will remove them from {enrolmentConflict.batch_name}.
+                </span>
+              </div>
+              <div className="flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEnrolmentConflict(null)}
+                  className="btn btn-ghost px-4 py-1.5 text-sm"
+                  disabled={adding}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={handleConfirmMove}
+                  className="btn btn-primary px-4 py-1.5 text-sm flex items-center gap-2"
+                  disabled={adding}
+                >
+                  {adding && <RiLoaderLine size={14} className="animate-spin" />}
+                  {adding ? "Moving..." : "Move them"}
+                </button>
+              </div>
             </div>
           )}
 
@@ -644,7 +720,7 @@ export default function StudentsPage() {
           <div className="mt-4 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
             <button
               type="button"
-              onClick={() => setIsAddOpen(false)}
+              onClick={() => { setIsAddOpen(false); setEnrolmentConflict(null); }}
               className="btn btn-ghost px-5"
               disabled={adding}
             >

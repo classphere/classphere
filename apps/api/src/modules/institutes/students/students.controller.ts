@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { supabaseDB, supabaseAdmin } from "../../../lib/supabase";
+import { enrolExclusively, findConflictingEnrolment } from "../../../lib/batch-enrolment";
 import * as XLSX from "xlsx";
 
 // ─── Helper: resolve institute_id ─────────────────────────────────────────────
@@ -23,8 +24,12 @@ interface StudentRow {
 interface ImportResult {
   imported: number;
   updated: number;
+  /** Existing students the sheet reassigned to a different batch. */
+  moved: number;
   skipped: number;
   errors: string[];
+  /** "Name — Old Batch → New Batch", so a reassignment is reviewable, not just counted. */
+  moves: string[];
 }
 
 // ─── Normalise DOB: accept DDMMYYYY, DD/MM/YYYY, DD-MM-YYYY → DDMMYYYY ───────
@@ -163,8 +168,10 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
       .eq("is_active", true);
 
     const batchByName: Record<string, string> = {};
+    const batchNameById: Record<string, string> = {};
     for (const b of batches ?? []) {
       batchByName[b.name.toLowerCase().trim()] = b.id;
+      batchNameById[b.id] = b.name;
     }
 
     const requestedBatchId = typeof req.body?.batch_id === "string" ? req.body.batch_id.trim() : "";
@@ -178,7 +185,7 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
     const slug = institute?.subdomain_slug || "unknown";
 
     // ── Process each row ─────────────────────────────────────────────────────
-    const result: ImportResult = { imported: 0, updated: 0, skipped: 0, errors: [] };
+    const result: ImportResult = { imported: 0, updated: 0, moved: 0, skipped: 0, errors: [], moves: [] };
 
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
@@ -199,6 +206,7 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
         result.errors.push(`${rowLabel}: Batch "${row.batch_name}" not found in your institute. Create it first.`);
         continue;
       }
+      const batchName = batchNameById[batchId] ?? "the selected batch";
 
       // Check if student already exists (by phone + institute)
       const { data: existing } = await supabaseDB
@@ -210,28 +218,36 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
         .maybeSingle();
 
       if (existing) {
-        // Check if already in this batch
-        const { data: existingLink } = await supabaseDB
+        // Already enrolled here, so the row says nothing new. left_at matters:
+        // a student who left this batch and appears in the sheet again is being
+        // re-enrolled, not skipped.
+        const { data: activeHere } = await supabaseDB
           .from("batch_students")
           .select("batch_id")
           .eq("student_id", existing.id)
           .eq("batch_id", batchId)
+          .is("left_at", null)
           .maybeSingle();
 
-        if (existingLink) {
-          // Same phone + same batch → skip
+        if (activeHere) {
           result.skipped++;
+          continue;
+        }
+
+        // Listed against a different batch than the one they are in. Unlike the
+        // single-student form, which stops and asks, a corrected roster is
+        // re-uploaded precisely to reassign people — erroring on every moved
+        // student would make the import look broken. So it moves them, and
+        // reports moves separately from new enrolments so the institute can see
+        // that it happened.
+        const { movedFrom, error: linkErr } = await enrolExclusively(existing.id, batchId);
+        if (linkErr) {
+          result.errors.push(`${rowLabel}: Failed to update batch for ${name}: ${linkErr}`);
+        } else if (movedFrom) {
+          result.moved++;
+          result.moves.push(`${name} — ${movedFrom.batch_name} → ${batchName}`);
         } else {
-          // Same phone + different batch → add to new batch
-          const { error: linkErr } = await supabaseDB.from("batch_students").insert({
-            student_id: existing.id,
-            batch_id: batchId,
-          });
-          if (linkErr) {
-            result.errors.push(`${rowLabel}: Failed to update batch for ${name}: ${linkErr.message}`);
-          } else {
-            result.updated++;
-          }
+          result.updated++;
         }
         continue;
       }
@@ -289,11 +305,18 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
       result.imported++;
     }
 
-    console.log(`[importStudents] Done: ${result.imported} imported, ${result.updated} updated, ${result.skipped} skipped, ${result.errors.length} errors`);
+    console.log(`[importStudents] Done: ${result.imported} imported, ${result.updated} updated, ${result.moved} moved, ${result.skipped} skipped, ${result.errors.length} errors`);
+
+    // A move is called out on its own. Folding it into "updated" is how the
+    // old import hid the fact that it was reassigning people between batches.
+    const parts = [`${result.imported} added`];
+    if (result.updated) parts.push(`${result.updated} re-enrolled`);
+    if (result.moved) parts.push(`${result.moved} moved to a different batch`);
+    if (result.skipped) parts.push(`${result.skipped} already in batch`);
 
     res.status(200).json({
       success: true,
-      message: `Import complete: ${result.imported} students added, ${result.updated} batch assignments updated, ${result.skipped} skipped (already in batch).`,
+      message: `Import complete: ${parts.join(", ")}.`,
       data: result,
     });
   } catch (err: any) {
@@ -399,31 +422,36 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
       studentId = newUser.id;
     }
 
-    // Link to batch
-    const { data: existingLink } = await supabaseDB
-      .from("batch_students")
-      .select("batch_id")
-      .eq("student_id", studentId)
-      .eq("batch_id", batch_id)
-      .maybeSingle();
-
-    if (!existingLink) {
-      const { error: linkErr } = await supabaseDB.from("batch_students").insert({
-        student_id: studentId,
-        batch_id,
+    // Link to batch. A student holds one active enrolment, so an existing
+    // student who is already in a different batch is a move, and the admin has
+    // to say so — retrying with move=true is what the confirm dialog sends.
+    // Only reachable for an existing student; a freshly created one has no
+    // enrolments to conflict with.
+    const conflict = await findConflictingEnrolment(studentId!, batch_id);
+    if (conflict && req.body.move !== true) {
+      res.status(409).json({
+        success: false,
+        code: "ALREADY_ENROLLED",
+        message: `${name.trim()} is already in ${conflict.batch_name}. Move them instead?`,
+        data: { current_batch: conflict },
       });
-
-      if (linkErr) {
-        if (!existing?.id) {
-          await supabaseDB.from("users").delete().eq("id", studentId);
-          await supabaseAdmin.auth.admin.deleteUser(studentId).catch(() => {});
-        }
-        res.status(500).json({ success: false, message: `Student created but failed to link batch: ${linkErr.message}` });
-        return;
-      }
+      return;
     }
 
-    res.status(200).json({ success: true, message: "Student added successfully!" });
+    const { movedFrom, error: linkErr } = await enrolExclusively(studentId!, batch_id);
+    if (linkErr) {
+      if (!existing?.id) {
+        await supabaseDB.from("users").delete().eq("id", studentId);
+        await supabaseAdmin.auth.admin.deleteUser(studentId).catch(() => {});
+      }
+      res.status(500).json({ success: false, message: `Student created but failed to link batch: ${linkErr}` });
+      return;
+    }
+
+    res.status(200).json({
+      success: true,
+      message: movedFrom ? `Student moved from ${movedFrom.batch_name}.` : "Student added successfully!",
+    });
   } catch (err: any) {
     console.error("[createStudent error]", err);
     res.status(500).json({ success: false, message: err.message });
