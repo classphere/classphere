@@ -5,7 +5,7 @@ import { QuestionReviewEditor } from "./QuestionReviewEditor";
 import { ValidationPanel, type ValidationResult } from "./ValidationPanel";
 import { PaperComposition } from "./PaperComposition";
 import { MarkingSchemeEditor, type MarkingScheme } from "./MarkingSchemeEditor";
-import { EXAM_SUBJECTS } from "@/lib/exam-config";
+import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR, requiresExplicitScheme, uniformScheme } from "@/lib/exam-config";
 import { RiShieldCheckLine, RiLoader4Line } from "@remixicon/react";
 
 /**
@@ -131,16 +131,34 @@ export function PaperReviewWorkspace({
   }, [questions, activeId]);
 
   // ── Marks ──────────────────────────────────────────────────────────────────
-  // A paper is unpriced when a question type it contains has no entry and there
-  // is no paper-wide default. That is where a JEE Advanced paper lands when its
-  // instructions page was absent or unreadable.
+  // Most papers never state a scheme and never need to: NEET and JEE Main mark
+  // every question +4/-1, so the exam already answers the question. Only an exam
+  // whose marks vary by question type — JEE Advanced — has to be asked, and only
+  // when the paper itself did not say.
+  //
+  // This used to be decided from the stored scheme alone, which meant every
+  // paper that had not stored one was treated as unpriced. A NEET paper would
+  // demand five rows of marks that are the same five numbers every time, when
+  // publishing it would have succeeded untouched — the API has always gated this
+  // on the exam.
   const scheme: MarkingScheme = (paper?.marking_scheme as MarkingScheme) ?? {};
   const editingScheme = draftScheme ?? scheme;
+  const needsOwnScheme = requiresExplicitScheme(examCode);
+
+  // What the paper is actually scored on: its own scheme when it has one, the
+  // exam's standard one otherwise. Without this the composition table prices a
+  // perfectly ordinary NEET paper as "not set" on every row.
+  const effectiveScheme = useMemo(
+    () => (Object.keys(scheme).length ? scheme : (uniformScheme(examCode) as MarkingScheme | null)),
+    [paper?.marking_scheme, examCode],
+  );
+
   const unpricedTypes = useMemo(() => {
+    if (!needsOwnScheme) return [];
     if (scheme.default) return [];
     const present = new Set(questions.map((q) => String(q?.question_type ?? "").trim()).filter(Boolean));
     return [...present].filter((type) => !scheme[type]);
-  }, [questions, paper?.marking_scheme]);
+  }, [questions, paper?.marking_scheme, needsOwnScheme]);
 
   const validate = async () => {
     setValidating(true);
@@ -206,26 +224,30 @@ export function PaperReviewWorkspace({
 
       <PaperComposition
         questions={questions}
-        markingScheme={paper?.marking_scheme}
+        markingScheme={effectiveScheme}
         statedTotal={paper?.total_marks}
       />
 
       {unpricedTypes.length > 0 && onSaveMarkingScheme && canEdit && (
         <div className="card mb-3 p-4">
-          <p className="mb-1 text-xs font-bold uppercase tracking-wider text-t-secondary">
-            This paper does not say what its questions are worth
+          <p className="text-xs font-bold uppercase tracking-wider text-t-secondary">
+            What is each question worth?
           </p>
-          <p className="mb-4 text-xs text-t-secondary">
-            Its instructions page either was not included or could not be read. Enter the marks
-            below — the paper cannot be published until it has them, because there is no safe
-            default to score it against.
+          <p className="mb-3 mt-1 text-xs text-t-secondary">
+            {EXAM_LABELS[examCode] ?? "This exam"} scores question types differently and this
+            paper&apos;s instructions page was missing or unreadable, so there is no safe default
+            to score it against. It cannot be published until these are set.
           </p>
-          <MarkingSchemeEditor value={editingScheme} onChange={setDraftScheme} />
+          <MarkingSchemeEditor
+            value={editingScheme}
+            onChange={setDraftScheme}
+            presentTypes={unpricedTypes}
+          />
           <button
             type="button"
             onClick={saveScheme}
             disabled={savingScheme || draftScheme === null}
-            className="mt-4 h-11 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white disabled:opacity-40 dark:bg-white dark:text-black"
+            className="mt-3 h-10 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white disabled:opacity-40 dark:bg-white dark:text-black"
           >
             {savingScheme ? "Saving…" : "Save marking scheme"}
           </button>
@@ -261,7 +283,7 @@ export function PaperReviewWorkspace({
                     type="button"
                     onClick={() => setActiveId(item.id)}
                     title={blank ? "Empty slot" : unanswered ? "No answer set" : undefined}
-                    className={`aspect-square rounded-[9px] border text-sm font-bold transition ${
+                    className={`relative aspect-square rounded-[9px] border text-sm font-bold transition ${
                       activeId === item.id
                         ? "border-primary-01 bg-primary-01 text-white"
                         : blank
@@ -271,7 +293,16 @@ export function PaperReviewWorkspace({
                             : "border-s-stroke2 bg-b-surface2 text-t-primary hover:border-primary-01/40"
                     }`}
                   >
-                    {item.question_number ?? "?"}
+                    {/* The tab bar only appears on a multi-subject paper, so
+                        without this a reviewer scrolling a long single-subject
+                        section has nothing telling them where they are. */}
+                    {item.subject && SUBJECT_COLOR[item.subject] && (
+                      <span
+                        aria-hidden
+                        className={`absolute left-1 top-1 size-1.5 rounded-full ${SUBJECT_COLOR[item.subject].dot}`}
+                      />
+                    )}
+                    {item.question_number ?? item.position ?? "?"}
                   </button>
                 );
               })}

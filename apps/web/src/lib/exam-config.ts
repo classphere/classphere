@@ -32,6 +32,45 @@ export const SUBJECT_COLOR: Record<string, { bg: string; text: string; border: s
   Biology:     { bg: "bg-emerald-500/10", text: "text-emerald-500", border: "border-emerald-500/30", dot: "bg-emerald-500" },
 };
 
+/**
+ * Exams that score every question the same, and what that score is.
+ *
+ * NEET and JEE Main are +4 correct, -1 wrong, for every question of every type.
+ * That is a property of the exam, not of the paper, so a reviewer should never
+ * be asked to type it in — four identical numbers is four chances to mistype
+ * one, and the paper would then score wrongly for every student who sat it.
+ *
+ * JEE Advanced is deliberately absent. Single-correct and multiple-correct
+ * questions in the same Advanced paper carry different marks, and the numbers
+ * change between years, so they belong to the paper and it has to say.
+ *
+ * Mirrors DEFAULTS in apps/api/src/lib/marking-scheme.ts, which is what
+ * actually scores attempts. Keep the two in step.
+ */
+export const UNIFORM_MARKS: Record<string, { correct: number; incorrect: number }> = {
+  "jee-main":          { correct: 4, incorrect: -1 },
+  "neet-ug":           { correct: 4, incorrect: -1 },
+  "jee-main-advanced": { correct: 4, incorrect: -1 },
+};
+
+/** True when the exam has no standard scheme and the paper must supply one. */
+export function requiresExplicitScheme(examCode: string | null | undefined): boolean {
+  return !UNIFORM_MARKS[String(examCode ?? "").trim().toLowerCase()];
+}
+
+/**
+ * The exam's standard scheme as a paper-wide default, or null if it has none.
+ *
+ * Shaped like a stored marking_scheme so the composition table can price a
+ * paper that never stated one, rather than showing every row as "not set".
+ */
+export function uniformScheme(
+  examCode: string | null | undefined,
+): { default: { correct: number; incorrect: number; unattempted: number } } | null {
+  const marks = UNIFORM_MARKS[String(examCode ?? "").trim().toLowerCase()];
+  return marks ? { default: { ...marks, unattempted: 0 } } : null;
+}
+
 export const DIFFICULTY_OPTIONS = [
   { value: "easy",   label: "Easy" },
   { value: "medium", label: "Medium" },

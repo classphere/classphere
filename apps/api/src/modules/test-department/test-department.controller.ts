@@ -202,7 +202,21 @@ export async function getReviewPaper(req: Request, res: Response): Promise<void>
     if (error) throw error;
     const { data: events } = await supabaseDB.from("test_review_events").select("id, question_id, action, reason, actor_id, created_at, users(name)")
       .eq("paper_id", paper.id).order("created_at", { ascending: false }).limit(100);
-    res.json({ success: true, data: { paper, questions: (rows ?? []).map((row: any) => ({ position: row.position, ...(Array.isArray(row.questions) ? row.questions[0] : row.questions) })), events: events ?? [] } });
+    // question_number falls back to the paper position. It is the number the
+    // paper printed, and extraction leaves it null whenever it could not read
+    // one — which showed the reviewer a grid of "?" with no way to tell which
+    // question was which. Position is the order the paper holds them in, so it
+    // is the right answer when the printed number is missing. The /tests path
+    // has always done this; the review screen was the one that did not.
+    const questions = (rows ?? []).map((row: any, index: number) => {
+      const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+      return {
+        position: row.position,
+        ...question,
+        question_number: question?.question_number ?? row.position ?? index + 1,
+      };
+    });
+    res.json({ success: true, data: { paper, questions, events: events ?? [] } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
