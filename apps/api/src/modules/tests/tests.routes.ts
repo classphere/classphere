@@ -5,6 +5,7 @@ import multer from "multer";
 import {
   createTest,
   getBankAvailability,
+  getBankQuestions,
   getMyTests,
   getAssignedTests,
   getTest,
@@ -93,6 +94,7 @@ router.post(
 // Assemble a paper from the question bank rather than a PDF. Same four roles as
 // upload-test: whoever can create a test one way can create it the other.
 // What the bank holds, so building from it is not a form filled in blind.
+router.get("/bank-questions", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), getBankQuestions);
 router.get("/bank-availability", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), getBankAvailability);
 router.post("/", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), createTest);
 router.patch("/bulk/global", authenticate, requireRole("super_admin"), bulkUpdateGlobalTests);

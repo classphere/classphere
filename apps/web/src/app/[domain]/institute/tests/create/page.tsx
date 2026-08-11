@@ -23,6 +23,7 @@ import {
 } from "@remixicon/react";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
+import { QuestionPicker, type BankQuestion } from "@/components/institute/QuestionPicker";
 import { apiClient } from "@/lib/api.client";
 import { EXAM_SUBJECTS } from "@/lib/exam-config";
 import { useAuth } from "@/lib/auth-context";
@@ -66,7 +67,10 @@ export default function ScheduleTestPage() {
    * subject, chapter, count and difficulty selection) but nothing in the app
    * called it, so the only way to create a test was to upload a PDF.
    */
-  const [mode, setMode] = useState<"pdf" | "bank">("pdf");
+  const [mode, setMode] = useState<"pdf" | "bank" | "pick">("pdf");
+  // Held as whole questions, not ids: the summary needs their text, and they
+  // can be chosen across pages the picker no longer has loaded.
+  const [pickedQuestions, setPickedQuestions] = useState<BankQuestion[]>([]);
   const [bankSubjects, setBankSubjects] = useState<string[]>([]);
   const [bankChapters, setBankChapters] = useState<string[]>([]);
   const [bankCount, setBankCount] = useState(75);
@@ -170,7 +174,8 @@ export default function ScheduleTestPage() {
     if (!testName.trim()) { setErrorMsg("Please enter a test name."); return; }
     if (!testStart) { setErrorMsg("Please select when students can start the test."); return; }
     if (selectedBatches.length === 0) { setErrorMsg("Please select at least one target batch."); return; }
-    if (bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
+    if (mode === "pick" && pickedQuestions.length === 0) { setErrorMsg("Pick at least one question."); return; }
+    if (mode === "bank" && bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
 
     // createTest needs the exam's id, and the batch carries its code. Every
     // selected batch must share an exam — the server enforces that too.
@@ -188,7 +193,8 @@ export default function ScheduleTestPage() {
       const created: any = await apiClient.post("/api/v1/tests", {
         exam_id: examId,
         title: testName.trim(),
-        question_count: bankCount,
+        question_count: mode === "pick" ? pickedQuestions.length : bankCount,
+        question_ids: mode === "pick" ? pickedQuestions.map((q) => q.id) : undefined,
         subjects: bankSubjects.length ? bankSubjects : undefined,
         // Keys are "Subject||Chapter" so two subjects can share a chapter name;
         // the server filters on chapter alone, so only the name is sent.
@@ -207,7 +213,7 @@ export default function ScheduleTestPage() {
   };
 
   const handleSubmit = async () => {
-    if (mode === "bank") { await submitFromBank(); return; }
+    if (mode === "bank" || mode === "pick") { await submitFromBank(); return; }
     if (!pdfFile) {
       setErrorMsg("Please upload a Master PDF file.");
       return;
@@ -593,7 +599,14 @@ export default function ScheduleTestPage() {
             onClick={() => { setMode("bank"); setErrorMsg(""); }}
             className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${mode === "bank" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}
           >
-            From question bank
+            Auto-fill from bank
+          </button>
+          <button
+            type="button"
+            onClick={() => { setMode("pick"); setErrorMsg(""); }}
+            className={`rounded-[10px] px-4 py-2 text-[13px] font-bold transition ${mode === "pick" ? "bg-shade-02 text-white" : "text-t-secondary hover:text-t-primary"}`}
+          >
+            Pick questions
           </button>
         </div>
 
@@ -711,6 +724,35 @@ export default function ScheduleTestPage() {
                 )}
               </div>
             )}
+          </PremiumCard>
+        )}
+
+        {mode === "pick" && (
+          <PremiumCard padding="large" className="w-full flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <h2 className="font-sans font-bold text-[20px] text-t-primary flex items-center gap-2 m-0">
+                <RiFileTextLine size={20} className="text-primary-02" /> Choose the questions yourself
+              </h2>
+              <p className="text-xs text-t-secondary m-0 mt-1">
+                Search your approved bank and tick what the paper should contain. Questions appear
+                in the order you pick them, and nothing is drawn at random.
+              </p>
+            </div>
+
+            <QuestionPicker
+              examId={bankExamId ?? null}
+              selected={pickedQuestions}
+              onChange={setPickedQuestions}
+            />
+
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
+              <input
+                type="number" min={1} max={600} value={bankDuration}
+                onChange={(event) => setBankDuration(Number(event.target.value))}
+                className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01 sm:w-[240px]"
+              />
+            </div>
           </PremiumCard>
         )}
 
@@ -859,12 +901,12 @@ export default function ScheduleTestPage() {
             {status === "uploading" || status === "processing" ? (
               <>
                 <RiLoader4Line size={18} className="animate-spin" />
-                {mode === "bank" ? "Creating test..." : "Processing PDF..."}
+                {mode === "pdf" ? "Processing PDF..." : "Creating test..."}
               </>
             ) : (
               <>
                 <RiCheckDoubleLine size={18} />
-                {mode === "bank" ? "Create test" : "Create test from PDF"}
+                {mode === "pdf" ? "Create test from PDF" : mode === "pick" ? `Create test with ${pickedQuestions.length} question${pickedQuestions.length === 1 ? "" : "s"}` : "Create test"}
               </>
             )}
           </button>
@@ -882,7 +924,7 @@ export default function ScheduleTestPage() {
           
           <div className="flex flex-col items-center gap-2 text-center">
             <h3 className="font-sans font-bold text-[22px] tracking-tight text-t-primary dark:text-t-primary">
-              {mode === "bank" ? "Building your test" : "Reading your paper"}
+              {mode === "pdf" ? "Reading your paper" : "Building your test"}
             </h3>
             <div className="px-4 py-2 rounded-full bg-primary-01/10 border border-primary-01/15 flex items-center gap-2 mt-1">
               <span className="relative flex h-2 w-2">

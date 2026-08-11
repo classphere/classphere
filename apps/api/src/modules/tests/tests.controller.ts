@@ -259,15 +259,91 @@ export const getBankAvailability = async (req: Request, res: Response): Promise<
   }
 };
 
+/**
+ * GET /api/v1/tests/bank-questions?exam_id=…&subject=&chapter=&search=&page=
+ * [institute_admin, test department] — Browse the bank to pick from it.
+ *
+ * Assembling from the bank could only ever be done blind: choose filters and a
+ * count, and the server drew at random. There was no way to see a question
+ * before it went into a paper, let alone choose it — so a teacher who knew
+ * exactly which twenty questions they wanted had to build the paper as a PDF.
+ *
+ * Same scope and status rules as createTest and bank-availability: an approved
+ * question that is either global or this institute's own.
+ */
+export const getBankQuestions = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const examId = String(req.query.exam_id ?? "").trim();
+    if (!examId) { res.status(400).json({ success: false, message: "exam_id is required" }); return; }
+
+    const page = Math.max(1, Number(req.query.page ?? 1) || 1);
+    const PAGE_SIZE = 25;
+    const from = (page - 1) * PAGE_SIZE;
+    const instituteId = req.user!.institute_id;
+
+    let query = supabaseDB
+      .from("questions")
+      .select("id, question_text, subject, chapter, topic, difficulty, question_type, options, correct_answer", { count: "exact" })
+      .eq("exam_id", examId)
+      .eq("is_active", true)
+      .eq("review_status", "approved")
+      .or(`content_scope.eq.global,institute_id.eq.${instituteId}`);
+
+    const subjects = String(req.query.subject ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    const chapters = String(req.query.chapter ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    if (subjects.length) query = query.in("subject", subjects);
+    if (chapters.length) query = query.in("chapter", chapters);
+
+    const search = String(req.query.search ?? "").trim();
+    // Commas and parentheses are PostgREST filter syntax, and a question about
+    // f(x) would otherwise produce a malformed request rather than a search.
+    if (search) query = query.ilike("question_text", `%${search.replace(/[,()]/g, " ")}%`);
+
+    const { data, error, count } = await query
+      .order("created_at", { ascending: false })
+      .range(from, from + PAGE_SIZE - 1);
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+
+    res.status(200).json({
+      success: true,
+      data: {
+        questions: (data ?? []).map((q: any) => ({
+          id: q.id,
+          question_text: q.question_text,
+          subject: q.subject,
+          chapter: q.chapter,
+          topic: q.topic,
+          difficulty: q.difficulty,
+          question_type: q.question_type,
+          option_count: Array.isArray(q.options) ? q.options.length : 0,
+          has_answer: Array.isArray(q.correct_answer) && q.correct_answer.length > 0,
+        })),
+        total: count ?? 0,
+        page,
+        page_size: PAGE_SIZE,
+      },
+    });
+  } catch (err: any) {
+    console.error("[getBankQuestions error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 export const createTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
     const {
       exam_id, title, type = "mock-test",
-      question_count = 90, subjects, chapters, difficulty_mix,
+      question_count = 90, subjects, chapters, difficulty_mix, question_ids,
       duration_minutes = 180, batch_ids,
       scheduled_start, scheduled_end,
     } = req.body;
+
+    // Deduplicated: the picker can select a question twice across pages, and a
+    // paper containing the same question twice is a bug the admin cannot see.
+    const picked: string[] = Array.isArray(question_ids)
+      ? [...new Set(question_ids.map((id: unknown) => String(id).trim()).filter(Boolean))]
+      : [];
 
     if (!exam_id || !batch_ids?.length) {
       res.status(400).json({ success: false, message: "exam_id and batch_ids[] are required" });
@@ -323,8 +399,11 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       .eq("review_status", "approved")
       .or(`content_scope.eq.global,institute_id.eq.${instituteId}`);
 
-    if (subjects?.length) questionQuery = questionQuery.in("subject", subjects);
-    if (chapters?.length) questionQuery = questionQuery.in("chapter", chapters);
+    if (picked.length) questionQuery = questionQuery.in("id", picked);
+    else {
+      if (subjects?.length) questionQuery = questionQuery.in("subject", subjects);
+      if (chapters?.length) questionQuery = questionQuery.in("chapter", chapters);
+    }
 
     const { data: allQs } = await questionQuery;
     if (!allQs || allQs.length === 0) {
@@ -338,12 +417,32 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       });
       return;
     }
-    if (allQs.length < question_count) {
+    if (!picked.length && allQs.length < question_count) {
       res.status(400).json({ success: false, message: `Only ${allQs.length} eligible questions are available; ${question_count} were requested.` });
       return;
     }
 
-    const shuffled = allQs.sort(() => Math.random() - 0.5).slice(0, question_count);
+    // An explicit selection is used exactly as given — same order, no sampling.
+    // Filters draw at random because nobody has said which questions they want;
+    // once someone has, choosing for them is just losing their work. The ids are
+    // intersected with the scoped set above rather than trusted, so a client
+    // cannot name another institute's question or an unapproved one.
+    const shuffled = picked.length
+      ? (() => {
+          const eligible = new Map(allQs.map((q: any) => [String(q.id), q]));
+          return picked.map((id: string) => eligible.get(id)).filter(Boolean) as typeof allQs;
+        })()
+      : allQs.sort(() => Math.random() - 0.5).slice(0, question_count);
+
+    // Some ids survived neither the scope filter nor the status filter. Saying
+    // so beats quietly building a shorter paper than the one that was chosen.
+    if (picked.length && shuffled.length !== picked.length) {
+      res.status(400).json({
+        success: false,
+        message: `${picked.length - shuffled.length} of the ${picked.length} chosen questions are no longer available — they may have been edited, unapproved, or removed. Reload the picker and try again.`,
+      });
+      return;
+    }
 
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
