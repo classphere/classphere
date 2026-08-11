@@ -23,7 +23,10 @@ export interface Institute {
   is_active: boolean;
   created_at: string;
   updated_at: string;
+  /** Students enrolled, whether or not their batch has started. */
   student_count: number;
+  /** Students currently chargeable — excludes batches outside their date window. Drives annual_value_paise. */
+  billable_student_count?: number;
   enabled_exam_codes?: string[] | null;
   /** Brand colour driving the tenant theme. Null means the Classphere default. */
   theme_primary_color: string | null;

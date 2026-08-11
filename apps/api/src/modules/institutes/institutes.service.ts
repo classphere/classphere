@@ -72,8 +72,15 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
     }
   }
 
-  // 3. Billable students per institute — those in an active, unexpired batch.
-  const studentCountMap = await getStudentCountsByInstitute();
+  // 3. Two different student counts, because the row shows one and prices the
+  // other. The roster is how many students the institute has; the billable
+  // count excludes batches outside their date window. Showing the billable
+  // figure as "Students" made an institute whose batches had not started yet
+  // read as having none.
+  const [studentCountMap, rosterCountMap] = await Promise.all([
+    getStudentCountsByInstitute(),
+    getRosterCountsByInstitute(),
+  ]);
 
   // 4. Commercial terms, so the CRM row can show what the institute is worth
   // rather than a plan tier that never mapped to a price.
@@ -98,7 +105,10 @@ export async function listAllInstitutes(): Promise<InstituteRow[]> {
       ...inst,
       owner_email: usersMap[inst.owner_id]?.email ?? null,
       owner_name:  usersMap[inst.owner_id]?.name ?? null,
-      student_count: students,
+      // What the institute has, and what it is charged for. Annual value below
+      // stays on the billable figure — that is the number an invoice is made of.
+      student_count: rosterCountMap[inst.id] ?? 0,
+      billable_student_count: students,
       theme_primary_color: settingsByInstitute[inst.id]?.theme_primary_color ?? null,
       logo_url: settingsByInstitute[inst.id]?.theme_logo_url ?? inst.logo_url ?? null,
       subscription: sub,
@@ -401,9 +411,27 @@ export function annualValuePaise(terms: Pick<SubscriptionTerms, "billing_mode" |
  * mistakes now reach an invoice.
  */
 export async function getStudentCountsByInstitute(): Promise<Record<string, number>> {
-  const { data, error } = await supabaseDB.rpc("institute_student_counts");
+  return rollup("institute_student_counts", "billing");
+}
+
+/**
+ * Enrolled students per institute, whether or not their batch has started.
+ *
+ * Not the same question as the one above, and the two are meant to disagree.
+ * Billing excludes a batch outside its date window because nobody is charged
+ * for a cohort that starts next month; a roster includes it because those
+ * students exist and the institute's own screens list them. Reusing the billing
+ * figure for the CRM showed 0 students against institutes that plainly had
+ * some — an institute onboarding for next session read as empty.
+ */
+export async function getRosterCountsByInstitute(): Promise<Record<string, number>> {
+  return rollup("institute_roster_counts", "roster");
+}
+
+async function rollup(fn: string, label: string): Promise<Record<string, number>> {
+  const { data, error } = await supabaseDB.rpc(fn);
   if (error) {
-    console.error("[billing] student count rollup failed:", error.message);
+    console.error(`[${label}] student count rollup failed:`, error.message);
     return {};
   }
   return Object.fromEntries(
