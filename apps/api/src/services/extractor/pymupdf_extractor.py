@@ -238,7 +238,25 @@ QCAND_PATTERNS = [
     re.compile(r'^\s*(?:\(\s*[A-Da-d]\s*\)\s*)+Q\s*[\.:]?\s*(\d{1,3})\s*[\.\):]?(.*)$'),
 ]
 
-OPT_LABEL_RE = re.compile(r'^\s*\(?([A-Da-d])[\.\)]\s*(.*)$')
+# Option labels. NEET and most Indian coaching papers print options as
+# "1. ... 2. ... 3. ... 4. ..." rather than "(A)...(D)", and this pattern used
+# to accept letters only. A numeric option therefore matched nothing here and
+# matched QCAND_PATTERNS' numbered-stem rule instead, so every option became a
+# question anchor: a 180-question NEET paper produced anchors [1,2,3,4] on every
+# page, question_reconciler demanded questions that never existed, re-asked the
+# model for them, and inserted a placeholder for each one it could not get back.
+#
+# Digits are mapped to A-D so everything downstream keeps one option vocabulary.
+# A digit label must be followed by whitespace or end of line, so "3.14 is pi"
+# is not read as option C. Letters need no such guard and keep the old
+# behaviour, including the glued "A.benzene" form.
+OPT_LABEL_RE = re.compile(r'^\s*\(?([A-Da-d]|[1-4](?=[\.\)](?:\s|$)))[\.\)]\s*(.*)$')
+
+
+def opt_label_of(match) -> str:
+    """Normalise a matched option label to A-D, whatever the paper printed."""
+    raw = match.group(1).upper()
+    return "ABCD"[int(raw) - 1] if raw.isdigit() else raw
 
 SECTION_SUBJECTS = ("PHYSICS", "CHEMISTRY", "MATHEMATICS", "MATHS", "BIOLOGY",
                     "BOTANY", "ZOOLOGY")
@@ -1253,6 +1271,25 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
             if (qn is not None and current_q is not None and qn <= current_q and
                     len(plain) <= 5 and not el.get("bold")):
                 qn, style_idx = None, None
+
+            # "1. Sodium chloride" is question 1 at the top of a paper and
+            # option A of question 47 in the middle of one, and the numbered-stem
+            # pattern above matches both. detect_qcand runs first and has no
+            # state, so it always chose "question" — which is how a NEET paper's
+            # options became anchors.
+            #
+            # The ordering test that already guards A-D settles it: option n
+            # follows options 1..n-1 of the question in hand, and only while that
+            # question has fewer than four. A genuine section restart at "1."
+            # arrives after the previous question already holds all four, so it
+            # is left alone and still reads as a question.
+            if qn is not None and 1 <= qn <= 4 and current_q is not None and qn <= current_q:
+                opt_match = OPT_LABEL_RE.match(plain)
+                state = q_state.get(current_q)
+                if opt_match and state is not None and len(state["opts_seen"]) < 4 \
+                        and opt_label_of(opt_match) == "ABCD"[len(state["opts_seen"])]:
+                    qn, style_idx = None, None
+
             section = detect_section(plain)
             if section and qn is None:
                 el["section"] = section
@@ -1267,7 +1304,7 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
                 continue
             m = OPT_LABEL_RE.match(plain)
             if m and current_q is not None:
-                label = m.group(1).upper()
+                label = opt_label_of(m)
                 rest = m.group(2).strip()
                 st = q_state[current_q]
                 if label in "ABCD" and label not in st["opts_seen"]:
