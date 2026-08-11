@@ -31,10 +31,21 @@ const GRADLEW = process.platform === "win32" ? "gradlew.bat" : "./gradlew";
 
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
-const slugFlag = args.indexOf("--slug");
-const targetSlug = slugFlag !== -1 ? args[slugFlag + 1] : null;
+let targetSlug = null;
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === "--slug" && i + 1 < args.length) {
+    if (!args[i + 1].startsWith("--")) {
+      targetSlug = args[i + 1];
+    }
+  } else if (!args[i].startsWith("--") && i > 0 && args[i - 1] === "--slug") {
+    targetSlug = args[i];
+  } else if (!args[i].startsWith("--") && !targetSlug) {
+    targetSlug = args[i];
+  }
+}
 const listOnly = args.includes("--list");
 const configOnly = args.includes("--config-only"); // just write files, skip Gradle
+
 
 // ─── Load config ──────────────────────────────────────────────────────────────
 const { institutes } = JSON.parse(fs.readFileSync(INSTITUTES_JSON, "utf8"));

@@ -13,9 +13,9 @@
     "cap:sync:production": "cross-env CAPACITOR_SERVER_URL=https://classphere.com cap sync android",
     "cap:open:android": "cap open android",
     "build:institutes": "node scripts/build-institute-apps.js",
-    "build:institute": "node scripts/build-institute-apps.js --slug",
+    "build:institute": "node scripts/build-institute-apps.js",
     "build:institute:list": "node scripts/build-institute-apps.js --list",
-    "prepare:institute": "node scripts/build-institute-apps.js --slug",
+    "prepare:institute": "node scripts/build-institute-apps.js --config-only",
     "prepare:institutes": "node scripts/build-institute-apps.js --config-only",
     "generate:icons": "node scripts/generate-android-icons.js"
   },
