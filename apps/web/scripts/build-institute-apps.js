@@ -136,6 +136,32 @@ function writeGoogleServices(institute) {
   console.log(`  ✅  google-services.json → ${institute.packageId}`);
 }
 
+function generateIconsForInstitute(institute) {
+  const possiblePaths = [
+    institute.logoPath ? path.resolve(ROOT, institute.logoPath) : null,
+    path.join(ROOT, "public", "logos", `${institute.slug}.png`),
+    path.join(ROOT, "public", "logos", `${institute.slug}.jpg`),
+    path.join(ROOT, "public", `${institute.slug}-logo.png`),
+    path.join(ROOT, "public", `${institute.slug}-logo.jpg`),
+    path.join(ROOT, "public", "logo.png"),
+    path.join(ROOT, "public", "logoC.png"),
+  ].filter(Boolean);
+
+  const chosenLogo = possiblePaths.find((p) => fs.existsSync(p));
+  if (chosenLogo) {
+    console.log(`  🎨  Generating launcher icons & splash from: ${path.relative(ROOT, chosenLogo)}`);
+    const scriptPath = path.join(ROOT, "scripts", "generate-android-icons.js");
+    const instResDir = path.join(INSTITUTE_SRC, "res");
+    try {
+      execSync(`node "${scriptPath}" --src "${chosenLogo}" --dest "${instResDir}"`, { cwd: ROOT, stdio: "inherit" });
+      console.log(`  ✅  Custom icons generated for ${institute.slug}`);
+    } catch (err) {
+      console.warn(`  ⚠️  Icon generation warning: ${err.message}`);
+    }
+  }
+}
+
+
 function runGradleBuild(institute, debug = false) {
   const task = debug ? "assembleInstituteDebug" : "assembleInstituteRelease";
   const cmd = [GRADLEW, task, `-PinstituteAppId=${institute.packageId}`].join(" ");
@@ -183,6 +209,8 @@ for (const institute of targets) {
     writeCapacitorConfig(institute);
     writeStringsXml(institute);
     writeGoogleServices(institute);
+    generateIconsForInstitute(institute);
+
 
     if (configOnly) {
       console.log(`\n  ✅  Config files written for ${institute.slug}.`);

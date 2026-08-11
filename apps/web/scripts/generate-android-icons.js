@@ -15,8 +15,17 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const SRC_ICON = path.join(ROOT, "public", "logoC.png");
-const RES = path.join(ROOT, "android", "app", "src", "main", "res");
+
+const args = process.argv.slice(2);
+const srcFlag = args.indexOf("--src");
+const destFlag = args.indexOf("--dest");
+
+const srcPath = srcFlag !== -1 && args[srcFlag + 1] ? args[srcFlag + 1] : "public/logoC.png";
+const destPath = destFlag !== -1 && args[destFlag + 1] ? args[destFlag + 1] : "android/app/src/main/res";
+
+const SRC_ICON = path.isAbsolute(srcPath) ? srcPath : path.join(ROOT, srcPath);
+const RES = path.isAbsolute(destPath) ? destPath : path.join(ROOT, destPath);
+
 
 // Android mipmap sizes (px) for each density bucket
 const MIPMAP_SIZES = [
