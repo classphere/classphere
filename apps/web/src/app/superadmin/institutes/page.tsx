@@ -7,6 +7,7 @@ import { Modal } from "@/components/shared/Modal";
 import { useInstitutes, type Institute, type SubscriptionStatus } from "@/lib/hooks/useInstitutes";
 import { PricingModal } from "@/components/superadmin/PricingModal";
 import { BrandingModal } from "@/components/superadmin/BrandingModal";
+import { EXAM_CATALOG, ExamAccessModal } from "@/components/superadmin/ExamAccessModal";
 import { useSuperadminStats } from "@/lib/hooks/useSuperadminStats";
 import {
   RiBuilding4Line,
@@ -56,6 +57,7 @@ const STATUS_LABEL: Record<string, string> = {
   active: "Active", trialing: "Trial", past_due: "Past due", cancelled: "Cancelled",
 };
 
+
 // ─── Inline feedback banner ───────────────────────────────────────────────────
 
 function FeedbackBanner({ type, message }: { type: "success" | "error"; message: string }) {
@@ -97,6 +99,7 @@ export default function InstitutesPage() {
   // Which institute's commercial terms are open for editing, if any.
   const [pricingFor, setPricingFor] = useState<Institute | null>(null);
   const [brandingFor, setBrandingFor] = useState<Institute | null>(null);
+  const [examsFor, setExamsFor] = useState<Institute | null>(null);
 
   // Dismiss the actions menu on an outside click or Escape. Without this it
   // stays open until the same button is pressed again, so it lingers over the
@@ -452,6 +455,13 @@ export default function InstitutesPage() {
                         Edit branding…
                       </button>
 
+                      <button
+                        onClick={() => { setActiveDropdownId(null); setExamsFor(institute); }}
+                        className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
+                      >
+                        Edit exams…
+                      </button>
+
                       <div className="h-px bg-s-stroke2/30 my-1" />
 
                       <div className="px-4 py-1 text-[10px] uppercase font-bold text-t-secondary">Subscription Status</div>
@@ -647,12 +657,7 @@ export default function InstitutesPage() {
             </label>
             <p className="text-[12px] text-t-secondary">The institute admin can create batches only for these examinations.</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {[
-                { id: "jee-main",          label: "JEE Main" },
-                { id: "jee-advanced",      label: "JEE Advanced" },
-                { id: "jee-main-advanced", label: "JEE Main + Advanced" },
-                { id: "neet-ug",           label: "NEET UG" },
-              ].map((exam) => {
+              {EXAM_CATALOG.map((exam) => {
                 const checked = newInstituteData.enabledExamCodes.includes(exam.id);
                 return (
                   <label key={exam.id} className="flex items-center gap-2 rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 cursor-pointer">
@@ -808,6 +813,22 @@ export default function InstitutesPage() {
           institute={brandingFor}
           onClose={() => setBrandingFor(null)}
           onSave={updateBranding}
+        />
+      )}
+
+      {examsFor && (
+        <ExamAccessModal
+          institute={examsFor}
+          onClose={() => setExamsFor(null)}
+          onSave={async (codes) => {
+            const res = await updateInstitute(examsFor.id, { enabled_exam_codes: codes });
+            if (res.success) {
+              setExamsFor(null);
+              setFeedback({ type: "success", message: `Updated exams for ${examsFor.name}.` });
+            } else {
+              setFeedback({ type: "error", message: res.message });
+            }
+          }}
         />
       )}
 
