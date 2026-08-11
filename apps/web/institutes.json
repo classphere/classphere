@@ -7,6 +7,15 @@
       "packageId": "com.classphere.test",
       "versionCode": 1,
       "versionName": "1.0.0"
+    },
+    {
+      "slug": "graphite",
+      "name": "Graphite Classes",
+      "domain": "test.graphiteclasses.com",
+      "packageId": "com.graphiteclasses.app",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }
+

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Classphere Test</string>
-    <string name="title_activity_main">Classphere Test</string>
-    <string name="package_name">com.classphere.test</string>
-    <string name="custom_url_scheme">com.classphere.test</string>
+    <string name="app_name">Graphite Classes</string>
+    <string name="title_activity_main">Graphite Classes</string>
+    <string name="package_name">com.graphiteclasses.app</string>
+    <string name="custom_url_scheme">com.graphiteclasses.app</string>
 </resources>
