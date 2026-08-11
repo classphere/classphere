@@ -82,7 +82,7 @@ export default function ScheduleTestPage() {
   const bankExamCode = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
   const bankExamId = examMeta?.exams?.find((e: any) => e.code === bankExamCode)?.exam_id;
   const { data: bankStock } = useApiQuery<any>(
-    mode === "bank" && bankExamId ? `/api/v1/tests/bank-availability?exam_id=${bankExamId}` : null,
+    (mode === "bank" || mode === "pick") && bankExamId ? `/api/v1/tests/bank-availability?exam_id=${bankExamId}` : null,
   );
   const stock = bankStock?.data ?? bankStock ?? null;
 
@@ -734,13 +734,14 @@ export default function ScheduleTestPage() {
                 <RiFileTextLine size={20} className="text-primary-02" /> Choose the questions yourself
               </h2>
               <p className="text-xs text-t-secondary m-0 mt-1">
-                Search your approved bank and tick what the paper should contain. Questions appear
-                in the order you pick them, and nothing is drawn at random.
+                Narrow by subject, chapter and topic, then tick what the paper should contain.
+                Questions appear in the order you pick them, and nothing is drawn at random.
               </p>
             </div>
 
             <QuestionPicker
               examId={bankExamId ?? null}
+              stock={stock}
               selected={pickedQuestions}
               onChange={setPickedQuestions}
             />

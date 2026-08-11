@@ -38,15 +38,32 @@ function preview(text: string): string {
  * Selection is held by id across pages and filters, so narrowing the search does
  * not silently drop what has already been chosen.
  */
+export interface BankStock {
+  total: number;
+  awaiting_review: number;
+  subjects: { subject: string; count: number }[];
+  chapters: { subject: string; chapter: string; count: number }[];
+  topics: { subject: string; chapter: string; topic: string; count: number }[];
+}
+
 export function QuestionPicker({
   examId,
+  stock,
   selected,
   onChange,
 }: {
   examId: string | null;
+  /** What the bank holds, so chapters and topics can be offered rather than typed. */
+  stock: BankStock | null;
   selected: BankQuestion[];
   onChange: (next: BankQuestion[]) => void;
 }) {
+  // Subject → chapter → topic, which is how a teacher looks for questions:
+  // "Thermodynamics, the Carnot cycle ones". Free-text search was the only
+  // filter here, and nobody searches a question bank by wording.
+  const [subject, setSubject] = useState<string | null>(null);
+  const [chapter, setChapter] = useState<string | null>(null);
+  const [topic, setTopic] = useState<string | null>(null);
   const [questions, setQuestions] = useState<BankQuestion[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -54,6 +71,11 @@ export function QuestionPicker({
   const [debounced, setDebounced] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const chapterOptions = (stock?.chapters ?? []).filter((row) => !subject || row.subject === subject);
+  const topicOptions = (stock?.topics ?? []).filter(
+    (row) => (!subject || row.subject === subject) && (!chapter || row.chapter === chapter),
+  );
 
   // Typing a search term should not fire a request per keystroke.
   useEffect(() => {
@@ -76,6 +98,9 @@ export function QuestionPicker({
           typeof window !== "undefined" ? localStorage.getItem("classphere_session_token") ?? "" : "";
 
         const params = new URLSearchParams({ exam_id: examId, page: String(page) });
+        if (subject) params.set("subject", subject);
+        if (chapter) params.set("chapter", chapter);
+        if (topic) params.set("topic", topic);
         if (debounced) params.set("search", debounced);
 
         const res = await fetch(`${API_URL}/api/v1/tests/bank-questions?${params}`, {
@@ -97,7 +122,11 @@ export function QuestionPicker({
     })();
 
     return () => { cancelled = true; };
-  }, [examId, page, debounced]);
+  }, [examId, page, debounced, subject, chapter, topic]);
+
+  // Narrowing the filters must start from page 1, or a page-3 view of the old
+  // result set silently shows nothing for the new one.
+  useEffect(() => { setPage(1); }, [subject, chapter, topic]);
 
   const selectedIds = new Set(selected.map((q) => q.id));
   const toggle = (question: BankQuestion) =>
@@ -117,15 +146,78 @@ export function QuestionPicker({
     );
   }
 
+  const chip = (on: boolean) =>
+    `h-9 shrink-0 rounded-[8px] border px-3 text-[13px] font-semibold transition ${
+      on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface2 text-t-secondary hover:border-primary-01/40"
+    }`;
+
   return (
     <div className="flex flex-col gap-3">
+      {/* Subject, then chapter, then topic — the order a teacher narrows in.
+          Picking a broader level clears the narrower ones, because a topic from
+          the previous chapter would silently return nothing. */}
+      <div className="flex flex-col gap-2 rounded-[12px] border border-s-stroke2/40 bg-b-surface2/40 p-2.5">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="w-[62px] shrink-0 text-[11px] font-bold uppercase tracking-wide text-t-tertiary">Subject</span>
+          <button type="button" onClick={() => { setSubject(null); setChapter(null); setTopic(null); }} className={chip(subject === null)}>All</button>
+          {(stock?.subjects ?? []).map((row) => (
+            <button
+              key={row.subject}
+              type="button"
+              onClick={() => { setSubject(row.subject); setChapter(null); setTopic(null); }}
+              className={chip(subject === row.subject)}
+            >
+              {row.subject}<span className="ml-1.5 text-[11px] font-normal opacity-70">{row.count}</span>
+            </button>
+          ))}
+        </div>
+
+        {chapterOptions.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 border-t border-s-stroke2/40 pt-2">
+            <span className="w-[62px] shrink-0 text-[11px] font-bold uppercase tracking-wide text-t-tertiary">Chapter</span>
+            <button type="button" onClick={() => { setChapter(null); setTopic(null); }} className={chip(chapter === null)}>All</button>
+            <div className="flex max-h-24 flex-1 flex-wrap gap-1.5 overflow-y-auto">
+              {chapterOptions.map((row) => (
+                <button
+                  key={`${row.subject}||${row.chapter}`}
+                  type="button"
+                  onClick={() => { setSubject(row.subject); setChapter(row.chapter); setTopic(null); }}
+                  className={chip(chapter === row.chapter)}
+                >
+                  {row.chapter}<span className="ml-1.5 text-[11px] font-normal opacity-70">{row.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {topicOptions.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 border-t border-s-stroke2/40 pt-2">
+            <span className="w-[62px] shrink-0 text-[11px] font-bold uppercase tracking-wide text-t-tertiary">Topic</span>
+            <button type="button" onClick={() => setTopic(null)} className={chip(topic === null)}>All</button>
+            <div className="flex max-h-24 flex-1 flex-wrap gap-1.5 overflow-y-auto">
+              {topicOptions.map((row) => (
+                <button
+                  key={`${row.subject}||${row.chapter}||${row.topic}`}
+                  type="button"
+                  onClick={() => { setSubject(row.subject); setChapter(row.chapter); setTopic(row.topic); }}
+                  className={chip(topic === row.topic)}
+                >
+                  {row.topic}<span className="ml-1.5 text-[11px] font-normal opacity-70">{row.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="flex flex-wrap items-center gap-2">
         <div className="flex h-11 flex-1 min-w-[200px] items-center gap-2 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3">
           <RiSearchLine size={18} className="text-t-secondary" />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search question text…"
+            placeholder="Narrow further by wording (optional)…"
             className="w-full border-none bg-transparent text-sm text-t-primary outline-none placeholder:text-t-tertiary"
           />
         </div>
@@ -154,8 +246,8 @@ export function QuestionPicker({
 
         {!loading && questions.length === 0 && !error && (
           <p className="px-2 py-6 text-sm text-t-secondary">
-            {debounced
-              ? "No approved questions match that search."
+            {debounced || subject || chapter || topic
+              ? "No approved questions match these filters."
               : "No approved questions in the bank for this exam yet. Extracted papers have to be reviewed and approved first."}
           </p>
         )}

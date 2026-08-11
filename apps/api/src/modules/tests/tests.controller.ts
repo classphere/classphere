@@ -198,6 +198,7 @@ export const getBankAvailability = async (req: Request, res: Response): Promise<
     const instituteId = req.user!.institute_id;
     const bySubject = new Map<string, number>();
     const byChapter = new Map<string, number>();
+    const byTopic = new Map<string, number>();
     let total = 0;
 
     // Paged: a mature bank passes PostgREST's 1,000-row ceiling, and a silently
@@ -207,7 +208,7 @@ export const getBankAvailability = async (req: Request, res: Response): Promise<
     for (let from = 0; ; from += PAGE_SIZE) {
       const { data, error } = await supabaseDB
         .from("questions")
-        .select("subject, chapter")
+        .select("subject, chapter, topic")
         .eq("exam_id", examId)
         .eq("is_active", true)
         .eq("review_status", "approved")
@@ -220,8 +221,12 @@ export const getBankAvailability = async (req: Request, res: Response): Promise<
       for (const row of page) {
         const subject = String((row as any).subject ?? "").trim() || "Unspecified";
         const chapter = String((row as any).chapter ?? "").trim();
+        const topic = String((row as any).topic ?? "").trim();
         bySubject.set(subject, (bySubject.get(subject) ?? 0) + 1);
         if (chapter) byChapter.set(`${subject}||${chapter}`, (byChapter.get(`${subject}||${chapter}`) ?? 0) + 1);
+        // Topics are keyed by their chapter as well: two chapters can each have
+        // a "Basics", and merging them would offer a filter that means nothing.
+        if (chapter && topic) byTopic.set(`${subject}||${chapter}||${topic}`, (byTopic.get(`${subject}||${chapter}||${topic}`) ?? 0) + 1);
         total += 1;
       }
       if (page.length < PAGE_SIZE) break;
@@ -249,6 +254,12 @@ export const getBankAvailability = async (req: Request, res: Response): Promise<
           .map(([key, count]) => {
             const [subject, chapter] = key.split("||");
             return { subject, chapter, count };
+          })
+          .sort((a, b) => b.count - a.count),
+        topics: [...byTopic.entries()]
+          .map(([key, count]) => {
+            const [subject, chapter, topic] = key.split("||");
+            return { subject, chapter, topic, count };
           })
           .sort((a, b) => b.count - a.count),
       },
@@ -291,8 +302,10 @@ export const getBankQuestions = async (req: Request, res: Response): Promise<voi
 
     const subjects = String(req.query.subject ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const chapters = String(req.query.chapter ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    const topics = String(req.query.topic ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     if (subjects.length) query = query.in("subject", subjects);
     if (chapters.length) query = query.in("chapter", chapters);
+    if (topics.length) query = query.in("topic", topics);
 
     const search = String(req.query.search ?? "").trim();
     // Commas and parentheses are PostgREST filter syntax, and a question about
