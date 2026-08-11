@@ -67,7 +67,7 @@ async function syncExamTargetToBatch(studentIds: string[], batchId: string): Pro
  * "in this batch" the roster and the billing rollup already use — a departed
  * student keeps their row for history and must not be counted as present.
  */
-async function withMemberCounts(batches: any[]): Promise<any[]> {
+async function withMemberCounts(batches: any[], archived = false): Promise<any[]> {
   if (!batches.length) return batches;
   const batchIds = batches.map((batch) => batch.id).filter(Boolean);
   if (!batchIds.length) return batches;
@@ -85,7 +85,11 @@ async function withMemberCounts(batches: any[]): Promise<any[]> {
         .in("batch_id", batchIds)
         .order("batch_id", { ascending: true })
         .range(from, from + PAGE_SIZE - 1);
-      if (excludeDeparted) query = query.is("left_at", null);
+      // An archived batch has no live enrolments by definition — archiving ends
+      // them all. Counting those would report every archived batch as empty, so
+      // the archive view counts the roster the archive released instead.
+      if (excludeDeparted && archived) query = query.eq("left_reason", "batch_archived");
+      else if (excludeDeparted) query = query.is("left_at", null);
 
       const { data, error } = await query;
       if (error) {
@@ -685,11 +689,15 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
         return;
       }
 
+      // ?archived=true lists what archiving used to hide outright. An archived
+      // batch had no view at all, so a roster that ended was simply gone.
+      const wantArchived = String(req.query.archived ?? "") === "true";
+
       const { data: batches, error: batchErr } = await supabaseDB
         .from("batches")
         .select("*")
         .eq("institute_id", institute.id)
-        .eq("is_active", true)
+        .eq("is_active", !wantArchived)
         .order("created_at", { ascending: false });
 
       if (batchErr) {
@@ -697,7 +705,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
         return;
       }
 
-      res.status(200).json({ success: true, data: { batches: await withMemberCounts(batches ?? []) } });
+      res.status(200).json({ success: true, data: { batches: await withMemberCounts(batches ?? [], wantArchived) } });
       return;
     }
 
@@ -821,10 +829,113 @@ export const deactivateBatch = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const { error } = await supabaseDB.from("batches").update({ is_active: false }).eq("id", id);
+    // Archiving ends the enrolments, which is what it always meant. Setting
+    // only is_active hid the batch while leaving every student marked as
+    // enrolled in it: rosters and billing stopped counting them, exam access
+    // disappeared, and under the one-active-batch index they could not be added
+    // anywhere else — while the batch holding them was no longer on any screen.
+    const archivedAt = new Date().toISOString();
+
+    const { error } = await supabaseDB
+      .from("batches")
+      .update({ is_active: false, archived_at: archivedAt })
+      .eq("id", id);
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
-    res.status(200).json({ success: true, message: "Batch deactivated" });
+
+    // Reason, not just a timestamp: restoring the batch has to put back the
+    // people the archive removed without also recalling anyone who had already
+    // left on their own.
+    const { error: leaveErr } = await supabaseDB
+      .from("batch_students")
+      .update({ left_at: archivedAt, left_reason: "batch_archived" })
+      .eq("batch_id", id)
+      .is("left_at", null);
+    if (leaveErr) {
+      console.error("[deactivateBatch] roster departure failed:", leaveErr.message);
+      res.status(500).json({ success: false, message: "Batch archived but its roster could not be released. Restore it and try again." });
+      return;
+    }
+
+    res.status(200).json({ success: true, message: "Batch archived. Its students are free to join another batch, and the batch can be restored." });
   } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/batches/:id/restore
+ * [institute_admin] — Bring an archived batch back, with the roster it had.
+ *
+ * Archiving was a one-way door: is_active is not an updatable field and no
+ * route ever set it back to true, so a misclick could only be undone in the
+ * database. This is the way back.
+ *
+ * Students are restored only if they are still free. A student who joined
+ * another batch after the archive stays where they are — reclaiming them would
+ * silently move them out of a batch someone deliberately put them in, and
+ * cannot happen anyway while one active enrolment per student is enforced.
+ * Those left behind are reported rather than passed over in silence.
+ */
+export const restoreBatch = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
+    const { error } = await supabaseDB
+      .from("batches")
+      .update({ is_active: true, archived_at: null })
+      .eq("id", id);
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+
+    // Only the enrolments this batch's archive ended — not anyone who had left
+    // before it, which is the distinction left_reason exists to make.
+    const { data: candidates } = await supabaseDB
+      .from("batch_students")
+      .select("student_id")
+      .eq("batch_id", id)
+      .eq("left_reason", "batch_archived");
+
+    const studentIds = [...new Set((candidates ?? []).map((row: any) => String(row.student_id)))];
+    let restored = 0;
+    const claimed: string[] = [];
+
+    if (studentIds.length) {
+      const { data: elsewhere } = await supabaseDB
+        .from("batch_students")
+        .select("student_id")
+        .in("student_id", studentIds)
+        .neq("batch_id", id)
+        .is("left_at", null);
+
+      const taken = new Set((elsewhere ?? []).map((row: any) => String(row.student_id)));
+      const free = studentIds.filter((studentId) => !taken.has(studentId));
+      claimed.push(...studentIds.filter((studentId) => taken.has(studentId)));
+
+      if (free.length) {
+        const { error: rejoinErr } = await supabaseDB
+          .from("batch_students")
+          .update({ left_at: null, left_reason: null })
+          .eq("batch_id", id)
+          .in("student_id", free);
+        if (rejoinErr) { res.status(500).json({ success: false, message: rejoinErr.message }); return; }
+        restored = free.length;
+        await syncExamTargetToBatch(free, id);
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      message: claimed.length
+        ? `Batch restored with ${restored} student${restored === 1 ? "" : "s"}. ${claimed.length} joined another batch after it was archived and stayed there.`
+        : `Batch restored with ${restored} student${restored === 1 ? "" : "s"}.`,
+      data: { restored, left_elsewhere: claimed.length },
+    });
+  } catch (err: any) {
+    console.error("[restoreBatch error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
 };

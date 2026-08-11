@@ -29,6 +29,8 @@ export interface Batch {
   target_year: number | null;
   /** The class the cohort JOINED in. The class they are in now is derived — see currentClassLevel. */
   entry_class_level: "class_11" | "class_12" | "dropper" | null;
+  /** When the batch was archived. Null while live. */
+  archived_at?: string | null;
   created_at: string;
 }
 
@@ -85,7 +87,11 @@ async function apiFetch<T>(
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
-export function useBatches() {
+/**
+ * @param archived list archived batches instead of live ones. Archiving used to
+ *   hide a batch outright, so a roster that ended was simply gone.
+ */
+export function useBatches(archived = false) {
   const [batches, setBatches] = useState<Batch[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -95,7 +101,7 @@ export function useBatches() {
     setError(null);
     try {
       const data = await apiFetch<{ success: boolean; data: { batches: Batch[] } }>(
-        "/api/v1/batches"
+        archived ? "/api/v1/batches?archived=true" : "/api/v1/batches"
       );
       setBatches(data.data.batches);
     } catch (err: any) {
@@ -103,7 +109,7 @@ export function useBatches() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [archived]);
 
   useEffect(() => {
     fetchBatches();
@@ -163,11 +169,20 @@ export function useBatches() {
 
   const deactivateBatch = useCallback(async (id: string) => {
     try {
-      await apiFetch(`/api/v1/batches/${id}`, { method: "DELETE" });
+      const response = await apiFetch<{ message: string }>(`/api/v1/batches/${id}`, { method: "DELETE" });
       await fetchBatches();
-      return { success: true, message: "Batch deactivated." };
+      return { success: true, message: response.message ?? "Batch archived." };
     } catch (err: any) { return { success: false, message: err.message }; }
   }, [fetchBatches]);
 
-  return { batches, loading, error, refetch: fetchBatches, createBatch, updateBatch, deactivateBatch, moveStudents };
+  /** Bring an archived batch back, with whichever students are still unassigned. */
+  const restoreBatch = useCallback(async (id: string) => {
+    try {
+      const response = await apiFetch<{ message: string }>(`/api/v1/batches/${id}/restore`, { method: "POST" });
+      await fetchBatches();
+      return { success: true, message: response.message ?? "Batch restored." };
+    } catch (err: any) { return { success: false, message: err.message }; }
+  }, [fetchBatches]);
+
+  return { batches, loading, error, refetch: fetchBatches, createBatch, updateBatch, deactivateBatch, restoreBatch, moveStudents };
 }

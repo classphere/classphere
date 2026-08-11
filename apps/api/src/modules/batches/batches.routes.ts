@@ -7,6 +7,7 @@ import {
   getBatch,
   updateBatch,
   deactivateBatch,
+  restoreBatch,
   addStudentToBatch,
   moveStudentsBetweenBatches,
   removeStudentFromBatch,
@@ -29,7 +30,10 @@ router.get("/", authenticate, requireRole("institute_admin", "teacher", "super_a
 // getBatch: access control is enforced inside the handler (membership check)
 router.get("/:id", authenticate, getBatch);
 router.patch("/:id", authenticate, requireRole("institute_admin", "super_admin"), updateBatch);
-router.delete("/:id", authenticate, requireRole("institute_admin", "super_admin"), deactivateBatch); // soft delete
+router.delete("/:id", authenticate, requireRole("institute_admin", "super_admin"), deactivateBatch); // archive
+// Archiving used to be a one-way door: is_active was not an updatable field
+// and nothing ever set it back, so a misclick could only be undone in the DB.
+router.post("/:id/restore", authenticate, requireRole("institute_admin", "super_admin"), restoreBatch);
 
 // Batch membership management
 router.post("/:id/students", authenticate, requireRole("institute_admin", "super_admin"), addStudentToBatch);

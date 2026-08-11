@@ -41,7 +41,10 @@ const COLORS = [
 export default function BatchesPage() {
   const router = useRouter();
   const { session } = useAuth();
-  const { batches, loading, error, createBatch, updateBatch, deactivateBatch, refetch } = useBatches();
+  // Archived batches had no view at all — archiving removed them from every
+  // screen, so a roster that ended was simply gone.
+  const [showArchived, setShowArchived] = useState(false);
+  const { batches, loading, error, createBatch, updateBatch, deactivateBatch, restoreBatch, refetch } = useBatches(showArchived);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Modal state
@@ -110,9 +113,20 @@ export default function BatchesPage() {
   };
 
   const retireBatch = async (batch: any) => {
-    if (!window.confirm(`Deactivate ${batch.name}? Students can keep their historical records, but it will no longer accept new work.`)) return;
+    const count = batch.student_count ?? 0;
+    const roster = count ? ` Its ${count} student${count === 1 ? "" : "s"} will be released to join another batch.` : "";
+    if (!window.confirm(`Archive ${batch.name}?${roster} You can restore it from the Archived tab.`)) return;
     const result = await deactivateBatch(batch.id);
     if (!result.success) window.alert(result.message);
+    else { setEditingBatch(null); window.alert(result.message); }
+  };
+
+  const unarchiveBatch = async (batch: any) => {
+    // Students who joined elsewhere in the meantime stay where they are; the
+    // server says how many, and that is worth surfacing rather than swallowing.
+    if (!window.confirm(`Restore ${batch.name}? Students who have since joined another batch will stay there.`)) return;
+    const result = await restoreBatch(batch.id);
+    window.alert(result.message);
   };
 
   return (
@@ -120,9 +134,33 @@ export default function BatchesPage() {
 
       {/* ── Top Navigation Row ── */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4 md:gap-3 mb-2">
-        <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
-          Batches
-        </h1>
+        <div className="flex items-center gap-4">
+          <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
+            Batches
+          </h1>
+
+          {/* Live and archived are the same list under a different filter, so
+              they read as two views of one thing rather than two screens. */}
+          <div className="flex items-center gap-1 rounded-[10px] border border-s-stroke2/50 bg-b-surface2 p-1">
+            {[
+              { value: false, label: "Active" },
+              { value: true, label: "Archived" },
+            ].map((tab) => (
+              <button
+                key={tab.label}
+                type="button"
+                onClick={() => setShowArchived(tab.value)}
+                className={`rounded-[8px] px-3 py-1.5 text-[13px] font-semibold transition ${
+                  showArchived === tab.value
+                    ? "bg-b-surface1 text-t-primary shadow-xs"
+                    : "text-t-secondary hover:text-t-primary"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full md:w-auto">
           {/* Search */}
@@ -327,7 +365,9 @@ export default function BatchesPage() {
       <Modal open={Boolean(editingBatch)} onClose={() => setEditingBatch(null)} title="Manage batch" subtitle={editingBatch?.name ?? ""}>
         <div className="flex flex-col gap-3">
           <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={expiryValue} onChange={(event) => setExpiryValue(event.target.value)} /><p className="mt-2 text-xs text-t-secondary">Leave empty only for a batch that is intentionally ongoing. Expired batches cannot receive new tests, DPPs, or study material.</p></div>
-          <div className="flex items-center justify-between gap-3 border-t border-s-stroke2/50 pt-4"><button onClick={() => retireBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-03" disabled={!editingBatch?.is_active || savingExpiry}>Deactivate batch</button><div className="flex gap-3"><button onClick={() => setEditingBatch(null)} className="btn btn-ghost px-4" disabled={savingExpiry}>Cancel</button><button onClick={saveExpiry} className="btn btn-primary px-5" disabled={savingExpiry}>{savingExpiry ? "Saving…" : "Save"}</button></div></div>
+          <div className="flex items-center justify-between gap-3 border-t border-s-stroke2/50 pt-4">{editingBatch?.is_active === false
+              ? <button onClick={() => unarchiveBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-02" disabled={savingExpiry}>Restore batch</button>
+              : <button onClick={() => retireBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-03" disabled={savingExpiry}>Archive batch</button>}<div className="flex gap-3"><button onClick={() => setEditingBatch(null)} className="btn btn-ghost px-4" disabled={savingExpiry}>Cancel</button><button onClick={saveExpiry} className="btn btn-primary px-5" disabled={savingExpiry}>{savingExpiry ? "Saving…" : "Save"}</button></div></div>
         </div>
       </Modal>
 
