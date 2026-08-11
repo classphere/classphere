@@ -26,6 +26,13 @@ process.on("uncaughtException", (err: Error) => {
   console.error("[Server] Uncaught exception — keeping process alive:", err);
 });
 
+// First line of output, before anything is configured. A failed deploy showed
+// the npm banner and then nothing at all for nine minutes: with no log between
+// "node dist/index.js" and app.listen(), there was no way to tell whether the
+// module graph had finished loading, whether config had thrown, or where it had
+// stopped. This marker makes that distinguishable next time.
+console.log("[API] Boot: modules loaded, configuring app…");
+
 const app = express();
 app.set("trust proxy", 1); // Trust first proxy (Railway load balancer)
 const port = env.PORT;
