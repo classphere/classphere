@@ -2,7 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import { authenticate } from "../../../middleware/auth.middleware";
 import { requireRole } from "../../../middleware/rbac.middleware";
-import { listStudents, importStudents, createStudent } from "./students.controller";
+import { listStudents, importStudents, createStudent, getStudentHistory } from "./students.controller";
 
 const router = Router();
 
@@ -29,5 +29,9 @@ router.get("/", authenticate, requireRole("institute_admin", "super_admin"), lis
 router.post("/", authenticate, requireRole("institute_admin", "super_admin"), createStudent);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 router.post("/import", authenticate, requireRole("institute_admin"), (upload.single("file") as any), importStudents);
+
+// Every batch a student has passed through. batch_students has always been
+// append-only; nothing read it back until now.
+router.get("/:id/history", authenticate, requireRole("institute_admin", "super_admin"), getStudentHistory);
 
 export default router;

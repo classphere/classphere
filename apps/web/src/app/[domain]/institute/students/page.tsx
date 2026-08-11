@@ -22,6 +22,7 @@ import { useStudents } from "@/lib/hooks/useStudents";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
 import type { EnrolmentConflict, ImportResult } from "@/lib/hooks/useStudents";
+import { StudentHistoryModal } from "@/components/institute/StudentHistoryModal";
 
 // Mask phone: 98765*****
 function maskPhone(phone: string | null): string {
@@ -62,6 +63,9 @@ export default function StudentsPage() {
   // Set when the server refuses because the student is live in another batch.
   // Holding it here is what turns the refusal into a confirm rather than a dead end.
   const [enrolmentConflict, setEnrolmentConflict] = useState<EnrolmentConflict | null>(null);
+  // The batch cell only ever showed the batch a student is in now. Their
+  // enrolment history has always been recorded and never shown.
+  const [historyFor, setHistoryFor] = useState<{ id: string; name: string } | null>(null);
   const { createStudent } = useStudents();
 
   const filteredStudents = students.filter(s => {
@@ -410,9 +414,17 @@ export default function StudentsPage() {
                     </span>
                   </div>
 
-                  {/* Batches */}
+                  {/* Batches — also the way into this student's enrolment history,
+                      which is recorded on every row and was never readable. */}
                   <div className="hidden lg:flex flex-row items-center w-[200px] shrink-0">
-                    <div className="flex flex-wrap gap-1.5">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      title="View batch history"
+                      onClick={(e) => { e.stopPropagation(); setHistoryFor({ id: s.id, name: s.name }); }}
+                      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setHistoryFor({ id: s.id, name: s.name }); } }}
+                      className="flex cursor-pointer flex-wrap gap-1.5 rounded-[8px] px-1 py-1 -mx-1 transition-colors hover:bg-s-stroke2/30"
+                    >
                       {s.batches.length === 0
                         ? <span className="text-xs font-semibold text-t-tertiary">—</span>
                         : s.batches.slice(0, 2).map(b => (
@@ -442,6 +454,14 @@ export default function StudentsPage() {
         )}
         </div>
       </div>
+
+      {historyFor && (
+        <StudentHistoryModal
+          studentId={historyFor.id}
+          studentName={historyFor.name}
+          onClose={() => setHistoryFor(null)}
+        />
+      )}
 
       {/* ── Import CSV Modal ── */}
       <Modal

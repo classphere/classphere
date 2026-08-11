@@ -330,6 +330,88 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
  * POST /api/v1/students
  * [institute_admin] — Add a single student.
  */
+/**
+ * GET /api/v1/students/:id/history
+ * [institute_admin] — Every batch this student has ever been in.
+ *
+ * batch_students has always been append-only — removals and moves write left_at
+ * rather than deleting, so billing can reconstruct any past period — but nothing
+ * ever read it back. An institute could see the batch a student is in now and
+ * had no way to answer "which batches have they been through", which is the
+ * question asked when a student turns up in the wrong cohort or disputes a fee.
+ *
+ * Ordered newest first, with the current enrolment (left_at NULL) at the top.
+ */
+export const getStudentHistory = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const role = req.user?.role;
+    if (role !== "institute_admin" && role !== "super_admin") {
+      res.status(403).json({ success: false, message: "Access denied" });
+      return;
+    }
+
+    const instituteId = await resolveInstituteId(req.user!.id, req.user?.institute_id ?? null);
+    if (!instituteId) {
+      res.status(404).json({ success: false, message: "No active institute found" });
+      return;
+    }
+
+    // Tenancy is checked on the student, not the enrolments: a student outside
+    // this institute must not be readable by asking for their history.
+    const { data: student } = await supabaseDB
+      .from("users")
+      .select("id, name, phone")
+      .eq("id", req.params.id)
+      .eq("institute_id", instituteId)
+      .eq("role", "student")
+      .maybeSingle();
+
+    if (!student) {
+      res.status(404).json({ success: false, message: "Student not found in your institute." });
+      return;
+    }
+
+    const { data: rows, error } = await supabaseDB
+      .from("batch_students")
+      .select("batch_id, joined_at, left_at, left_reason, batches(name, exam, target_year, is_active, archived_at)")
+      .eq("student_id", student.id)
+      .order("joined_at", { ascending: false });
+    if (error) throw error;
+
+    const history = (rows ?? []).map((row: any) => {
+      const batch = Array.isArray(row.batches) ? row.batches[0] : row.batches;
+      return {
+        batch_id: row.batch_id,
+        name: batch?.name ?? "(deleted batch)",
+        exam: batch?.exam ?? null,
+        target_year: batch?.target_year ?? null,
+        batch_archived: Boolean(batch?.archived_at) || batch?.is_active === false,
+        joined_at: row.joined_at,
+        left_at: row.left_at,
+        // Departures recorded before left_reason existed carry null. Reported as
+        // such rather than guessed at — an unknown reason is not "departed".
+        left_reason: row.left_reason ?? null,
+        current: row.left_at === null,
+      };
+    });
+
+    // Current enrolment first, then most recently left. joined_at alone put a
+    // long-running current batch below a short one joined after it.
+    history.sort((a, b) => {
+      if (a.current !== b.current) return a.current ? -1 : 1;
+      return String(b.left_at ?? b.joined_at ?? "").localeCompare(String(a.left_at ?? a.joined_at ?? ""));
+    });
+
+    res.status(200).json({
+      success: true,
+      data: { student: { id: student.id, name: student.name, phone: student.phone }, history },
+    });
+  } catch (err: any) {
+    console.error("[getStudentHistory error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 export const createStudent = async (req: Request, res: Response): Promise<void> => {
   try {
     const role = req.user?.role;
