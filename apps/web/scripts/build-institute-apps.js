@@ -136,6 +136,19 @@ function writeGoogleServices(institute) {
   console.log(`  ✅  google-services.json → ${institute.packageId}`);
 }
 
+function writeGradleProperties(institute) {
+  const gradlePropsPath = path.join(ANDROID, "gradle.properties");
+  let content = fs.existsSync(gradlePropsPath) ? fs.readFileSync(gradlePropsPath, "utf8") : "";
+  if (content.includes("instituteAppId=")) {
+    content = content.replace(/instituteAppId=.*/g, `instituteAppId=${institute.packageId}`);
+  } else {
+    content += `\ninstituteAppId=${institute.packageId}\n`;
+  }
+  fs.writeFileSync(gradlePropsPath, content, "utf8");
+  console.log(`  ✅  gradle.properties → instituteAppId=${institute.packageId}`);
+}
+
+
 function generateIconsForInstitute(institute) {
   const possiblePaths = [
     institute.logoPath ? path.resolve(ROOT, institute.logoPath) : null,
@@ -209,7 +222,9 @@ for (const institute of targets) {
     writeCapacitorConfig(institute);
     writeStringsXml(institute);
     writeGoogleServices(institute);
+    writeGradleProperties(institute);
     generateIconsForInstitute(institute);
+
 
 
     if (configOnly) {
