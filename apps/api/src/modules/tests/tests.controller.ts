@@ -178,6 +178,87 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * GET /api/v1/tests/bank-availability?exam_id=…
+ * [institute_admin, test department] — What the question bank actually holds.
+ *
+ * Building a test from the bank was a form you filled in blind: pick a count,
+ * pick subjects, submit, and find out from an error whether anything matched.
+ * There was no way to see that an exam had four approved questions, or that
+ * every extracted paper was still sitting unreviewed.
+ *
+ * Same scope and status rules as createTest, so the number shown here is the
+ * number that endpoint will draw from.
+ */
+export const getBankAvailability = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const examId = String(req.query.exam_id ?? "").trim();
+    if (!examId) { res.status(400).json({ success: false, message: "exam_id is required" }); return; }
+
+    const instituteId = req.user!.institute_id;
+    const bySubject = new Map<string, number>();
+    const byChapter = new Map<string, number>();
+    let total = 0;
+
+    // Paged: a mature bank passes PostgREST's 1,000-row ceiling, and a silently
+    // truncated count here would understate the bank and send an admin looking
+    // for questions they already have.
+    const PAGE_SIZE = 1000;
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data, error } = await supabaseDB
+        .from("questions")
+        .select("subject, chapter")
+        .eq("exam_id", examId)
+        .eq("is_active", true)
+        .eq("review_status", "approved")
+        .or(`content_scope.eq.global,institute_id.eq.${instituteId}`)
+        .order("id", { ascending: true })
+        .range(from, from + PAGE_SIZE - 1);
+      if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+
+      const page = data ?? [];
+      for (const row of page) {
+        const subject = String((row as any).subject ?? "").trim() || "Unspecified";
+        const chapter = String((row as any).chapter ?? "").trim();
+        bySubject.set(subject, (bySubject.get(subject) ?? 0) + 1);
+        if (chapter) byChapter.set(`${subject}||${chapter}`, (byChapter.get(`${subject}||${chapter}`) ?? 0) + 1);
+        total += 1;
+      }
+      if (page.length < PAGE_SIZE) break;
+    }
+
+    // How many are held back, so "your bank is empty" can distinguish nothing
+    // extracted from everything extracted but not yet reviewed.
+    const { count: pending } = await supabaseDB
+      .from("questions")
+      .select("id", { count: "exact", head: true })
+      .eq("exam_id", examId)
+      .eq("is_active", true)
+      .neq("review_status", "approved")
+      .or(`content_scope.eq.global,institute_id.eq.${instituteId}`);
+
+    res.status(200).json({
+      success: true,
+      data: {
+        total,
+        awaiting_review: pending ?? 0,
+        subjects: [...bySubject.entries()]
+          .map(([subject, count]) => ({ subject, count }))
+          .sort((a, b) => b.count - a.count),
+        chapters: [...byChapter.entries()]
+          .map(([key, count]) => {
+            const [subject, chapter] = key.split("||");
+            return { subject, chapter, count };
+          })
+          .sort((a, b) => b.count - a.count),
+      },
+    });
+  } catch (err: any) {
+    console.error("[getBankAvailability error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 export const createTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
@@ -221,18 +302,40 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
+    // Scope and review status, neither of which this query used to apply.
+    //
+    // questions holds two populations: `global` canonical content with a null
+    // institute_id, and `institute_private` content owned by whoever extracted
+    // or wrote it. Filtering on exam alone drew from both, so a test assembled
+    // here could contain another institute's private questions — their bank is
+    // the thing they are paying us to build.
+    //
+    // review_status matters just as much: PDF extraction lands questions as
+    // drafts for a reason, and an unreviewed question is exactly the one that
+    // still has a half-read formula or no correct answer. Only approved
+    // questions belong in a paper students will sit.
+    const instituteId = req.user!.institute_id;
     let questionQuery = supabaseDB
       .from("questions")
       .select("id, subject, difficulty")
       .eq("exam_id", exam_id)
-      .eq("is_active", true);
+      .eq("is_active", true)
+      .eq("review_status", "approved")
+      .or(`content_scope.eq.global,institute_id.eq.${instituteId}`);
 
     if (subjects?.length) questionQuery = questionQuery.in("subject", subjects);
     if (chapters?.length) questionQuery = questionQuery.in("chapter", chapters);
 
     const { data: allQs } = await questionQuery;
     if (!allQs || allQs.length === 0) {
-      res.status(400).json({ success: false, message: "No questions found matching the given config" });
+      // "No questions found" told an admin nothing about which of the four
+      // filters emptied the set, and the bank screen offers no way to look.
+      res.status(400).json({
+        success: false,
+        message: subjects?.length || chapters?.length
+          ? "No approved questions match those subjects and chapters. Widen the filters, or review and approve extracted papers first."
+          : "Your question bank has no approved questions for this exam yet. Extracted papers have to be reviewed and approved before they can be drawn from.",
+      });
       return;
     }
     if (allQs.length < question_count) {

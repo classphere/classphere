@@ -68,8 +68,41 @@ export default function ScheduleTestPage() {
    */
   const [mode, setMode] = useState<"pdf" | "bank">("pdf");
   const [bankSubjects, setBankSubjects] = useState<string[]>([]);
+  const [bankChapters, setBankChapters] = useState<string[]>([]);
   const [bankCount, setBankCount] = useState(75);
   const [bankDuration, setBankDuration] = useState(180);
+
+  // The exam the selected batches sit for, and what the bank actually holds for
+  // it. Without this the screen was a form filled in blind: pick a count, pick
+  // subjects, submit, and learn from an error whether anything matched.
+  const bankExamCode = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
+  const bankExamId = examMeta?.exams?.find((e: any) => e.code === bankExamCode)?.exam_id;
+  const { data: bankStock } = useApiQuery<any>(
+    mode === "bank" && bankExamId ? `/api/v1/tests/bank-availability?exam_id=${bankExamId}` : null,
+  );
+  const stock = bankStock?.data ?? bankStock ?? null;
+
+  // Chapters offered follow the subjects ticked, since a chapter list spanning
+  // every subject is unreadable on a full syllabus.
+  const chapterOptions = (stock?.chapters ?? []).filter(
+    (row: any) => !bankSubjects.length || bankSubjects.includes(row.subject),
+  );
+
+  // What createTest will actually draw from, under the same filters.
+  const matching = (() => {
+    if (!stock) return null;
+    if (bankChapters.length) {
+      return chapterOptions
+        .filter((row: any) => bankChapters.includes(`${row.subject}||${row.chapter}`))
+        .reduce((sum: number, row: any) => sum + row.count, 0);
+    }
+    if (bankSubjects.length) {
+      return (stock.subjects ?? [])
+        .filter((row: any) => bankSubjects.includes(row.subject))
+        .reduce((sum: number, row: any) => sum + row.count, 0);
+    }
+    return stock.total ?? 0;
+  })();
   const [status, setStatus] = useState<"idle" | "uploading" | "processing" | "success" | "error">("idle");
   const [statusMsg, setStatusMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -157,6 +190,9 @@ export default function ScheduleTestPage() {
         title: testName.trim(),
         question_count: bankCount,
         subjects: bankSubjects.length ? bankSubjects : undefined,
+        // Keys are "Subject||Chapter" so two subjects can share a chapter name;
+        // the server filters on chapter alone, so only the name is sent.
+        chapters: bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined,
         duration_minutes: bankDuration,
         batch_ids: selectedBatches,
         scheduled_start: new Date(testStart).toISOString(),
@@ -335,7 +371,7 @@ export default function ScheduleTestPage() {
       <div className="flex justify-between items-end mt-2">
         <div className="flex flex-col gap-2">
           <p className="text-sm text-t-secondary dark:text-t-tertiary max-w-[600px] leading-relaxed m-0">
-            Create a test via DTP PDF Upload. Our AI will automatically crop questions and process the answer key.
+            Create a test via DTP PDF Upload. Questions and the answer key are read from the file and prepared for review.
           </p>
         </div>
       </div>
@@ -614,6 +650,9 @@ export default function ScheduleTestPage() {
                       >
                         {on && <RiCheckLine size={14} className="mr-1 inline" />}
                         {subject}
+                        <span className="ml-1.5 text-[11px] font-normal opacity-70">
+                          {stock ? ((stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0) : "…"}
+                        </span>
                       </button>
                     );
                   });
@@ -623,6 +662,55 @@ export default function ScheduleTestPage() {
                 <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
               )}
             </div>
+
+            {/* Chapters. The bank was drawn from blind before this — there was
+                no way to aim a test at what a class had actually covered. */}
+            {chapterOptions.length > 0 && (
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-semibold text-t-primary">
+                  Chapters <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
+                </label>
+                <div className="flex max-h-44 flex-wrap gap-2 overflow-y-auto rounded-[10px] border border-s-stroke2/40 bg-b-surface1 p-2">
+                  {chapterOptions.map((row: any) => {
+                    const key = `${row.subject}||${row.chapter}`;
+                    const on = bankChapters.includes(key);
+                    return (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => setBankChapters((current) =>
+                          current.includes(key) ? current.filter((c) => c !== key) : [...current, key])}
+                        className={`h-9 rounded-[8px] border px-3 text-[13px] font-semibold transition ${
+                          on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface2 text-t-secondary hover:border-primary-01/40"
+                        }`}
+                      >
+                        {row.chapter}
+                        <span className="ml-1.5 text-[11px] font-normal opacity-70">{row.count}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* What the filters above actually leave to draw from. */}
+            {selectedBatches.length > 0 && stock && (
+              <div className={`rounded-[10px] px-3.5 py-2.5 text-[13px] ${
+                matching !== null && matching < bankCount
+                  ? "bg-primary-03/10 text-t-primary"
+                  : "bg-b-surface2 text-t-secondary"
+              }`}>
+                <strong className="text-t-primary">{matching ?? 0}</strong> approved question{matching === 1 ? "" : "s"} match these filters
+                {matching !== null && matching < bankCount && (
+                  <> — not enough for a {bankCount}-question paper. Widen the filters or lower the count.</>
+                )}
+                {stock.awaiting_review > 0 && (
+                  <div className="mt-1 text-[12px] text-t-tertiary">
+                    {stock.awaiting_review} more {stock.awaiting_review === 1 ? "is" : "are"} extracted but not yet approved. Approve them in the review workspace to draw from them here.
+                  </div>
+                )}
+              </div>
+            )}
           </PremiumCard>
         )}
 
@@ -634,7 +722,7 @@ export default function ScheduleTestPage() {
               <RiFileList3Line size={20} className="text-primary-02" /> Upload Test Assets
             </h2>
             <p className="text-xs text-t-secondary dark:text-t-tertiary m-0 mt-1">
-              Upload the master DTP file. Our AI will automatically crop questions and process the answer key.
+              Upload the master DTP file. Questions and the answer key are read from the file and prepared for review.
             </p>
           </div>
 
@@ -776,7 +864,7 @@ export default function ScheduleTestPage() {
             ) : (
               <>
                 <RiCheckDoubleLine size={18} />
-                Process Test via Smart Cropping
+                {mode === "bank" ? "Create test" : "Create test from PDF"}
               </>
             )}
           </button>
@@ -789,12 +877,12 @@ export default function ScheduleTestPage() {
           <div className="relative flex items-center justify-center">
             {/* Spinning Loader Ring */}
             <div className="size-16 border-4 border-primary-01/10 border-t-primary-01 rounded-full animate-spin" />
-            <div className="absolute font-sans font-bold text-xs text-primary-01 animate-pulse">AI</div>
+            <div className="absolute size-2 rounded-full bg-primary-01 animate-pulse" />
           </div>
           
           <div className="flex flex-col items-center gap-2 text-center">
             <h3 className="font-sans font-bold text-[22px] tracking-tight text-t-primary dark:text-t-primary">
-              AI Smart Cropping Test Generation
+              {mode === "bank" ? "Building your test" : "Reading your paper"}
             </h3>
             <div className="px-4 py-2 rounded-full bg-primary-01/10 border border-primary-01/15 flex items-center gap-2 mt-1">
               <span className="relative flex h-2 w-2">
