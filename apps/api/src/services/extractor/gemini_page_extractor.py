@@ -42,7 +42,14 @@ except ImportError:
     pass
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1"
-DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "google/gemini-2.5-flash")
+# Switched from gemini-2.5-flash after a side-by-side run on a real 180-question
+# NEET paper: completeness tied (180/180 both), and the one question checked
+# against the actual printed page — not against PyMuPDF's raw text, which this
+# paper barely has any of — went to 3.1-flash-lite. 2.5-flash had swapped two
+# answer options (B and D) relative to what was printed; 3.1-flash-lite matched
+# the source exactly. Materially cheaper too: $0.25/$1.50 per M tokens vs
+# $0.30/$2.50. GEMINI_MODEL still overrides this if a rollback is ever needed.
+DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "google/gemini-3.1-flash-lite")
 DEFAULT_WORKERS = max(1, min(8, int(os.environ.get("GEMINI_PAGE_WORKERS", "4"))))
 DEFAULT_BATCH_SIZE = max(1, int(os.environ.get("GEMINI_PAGE_BATCH_SIZE", str(DEFAULT_WORKERS))))
 MAX_PAGE_OUTPUT_TOKENS = int(os.environ.get("GEMINI_PAGE_MAX_OUTPUT_TOKENS", "16000"))
