@@ -13,6 +13,7 @@ import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme }
 import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
 import { validatePaperQuestions } from "../../lib/paper-validation";
 import { derivePaperSections } from "../../lib/paper-sections";
+import { findSessionBreaks, splitAtBreaks } from "../../lib/paper-sessions";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -1437,30 +1438,22 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       }
     })();
 
-    sendProgress("saving_db", "Saving extracted draft for Test Department review...");
-    const { data: paper, error: pErr } = await supabaseDB
-      .from("papers")
-      .insert({
-        exam_id: examId,
-        title,
-        test_type: "mock-test",
-        total_questions: questionRows.length,
-        total_marks: Number(total_marks) || (questionRows.length * 4),
-        duration_min: Number(duration_min) || 180,
-        created_by: userId,
-        is_active: true,
-        institute_id: req.user!.institute_id,
-        workflow_status: "draft",
-        is_published: false,
-        delivery_mode: "assigned_scheduled",
-        available_from: scheduledAt.toISOString(),
-      })
-      .select("id, workflow_status")
-      .single();
+    // A "PYQ compilation" — several exam sessions bound into one PDF, common
+    // from platforms that publish multi-shift previous-year papers — extracts
+    // perfectly well: every question is real and correctly read. Nothing about
+    // any single question looks wrong. What gives it away is question_number
+    // resetting back near 1 after already reaching a real exam's size — a real
+    // JEE Main paper numbers 1..75 straight through and never restarts.
+    // Without this check that reset was invisible: position is assigned by
+    // array order below regardless, so a two-session PDF silently became one
+    // paper carrying both sessions under one timer.
+    const sessionBreaks = findSessionBreaks(extractionResult.questions);
+    const sessionGroups = splitAtBreaks(questionRows, sessionBreaks);
+    const isSplit = sessionGroups.length > 1;
 
-    if (pErr || !paper) {
-      throw new Error(`Failed to create paper: ${pErr?.message}`);
-    }
+    sendProgress("saving_db", isSplit
+      ? `This document contains ${sessionGroups.length} separate exam sessions (question numbering restarts partway through) — creating ${sessionGroups.length} separate papers instead of one.`
+      : "Saving extracted draft for Test Department review...");
 
     const questionBatches = chunk(questionRows, 100);
     for (const qBatch of questionBatches) {
@@ -1470,24 +1463,60 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       }
     }
 
-    const pqRows = questionRows.map((q: any, idx: number) => ({
-      paper_id: paper.id,
-      question_id: q.id,
-      position: idx + 1,
-    }));
-    const { error: pqErr } = await supabaseDB.from("paper_questions").insert(pqRows);
-    if (pqErr) {
-      throw new Error(`Failed to link paper questions: ${pqErr.message}`);
-    }
+    const createdPapers: { id: string; title: string; total_questions: number; workflow_status: string }[] = [];
 
-    const tbRows = batchIds.map((b_id: string) => ({
-      test_id: paper.id,
-      batch_id: b_id,
-      scheduled_at: scheduledAt.toISOString(),
-    }));
-    const { error: tbErr } = await supabaseDB.from("test_batch_assignments").insert(tbRows);
-    if (tbErr) {
-      throw new Error(`Failed to assign test to batches: ${tbErr.message}`);
+    for (const [sessionIdx, group] of sessionGroups.entries()) {
+      const sessionTitle = isSplit ? `${title} — Session ${sessionIdx + 1}` : title;
+
+      const { data: paper, error: pErr } = await supabaseDB
+        .from("papers")
+        .insert({
+          exam_id: examId,
+          title: sessionTitle,
+          test_type: "mock-test",
+          total_questions: group.length,
+          // Every split paper is its own standalone exam of the same kind, so
+          // it gets the full marks/duration the upload specified, not a share
+          // of it — a 75-question JEE Main session is worth 360 marks whether
+          // it is the first one in the PDF or the second.
+          total_marks: Number(total_marks) || (group.length * 4),
+          duration_min: Number(duration_min) || 180,
+          created_by: userId,
+          is_active: true,
+          institute_id: req.user!.institute_id,
+          workflow_status: "draft",
+          is_published: false,
+          delivery_mode: "assigned_scheduled",
+          available_from: scheduledAt.toISOString(),
+        })
+        .select("id, workflow_status")
+        .single();
+
+      if (pErr || !paper) {
+        throw new Error(`Failed to create paper: ${pErr?.message}`);
+      }
+
+      const pqRows = group.map((q: any, idx: number) => ({
+        paper_id: paper.id,
+        question_id: q.id,
+        position: idx + 1,
+      }));
+      const { error: pqErr } = await supabaseDB.from("paper_questions").insert(pqRows);
+      if (pqErr) {
+        throw new Error(`Failed to link paper questions: ${pqErr.message}`);
+      }
+
+      const tbRows = batchIds.map((b_id: string) => ({
+        test_id: paper.id,
+        batch_id: b_id,
+        scheduled_at: scheduledAt.toISOString(),
+      }));
+      const { error: tbErr } = await supabaseDB.from("test_batch_assignments").insert(tbRows);
+      if (tbErr) {
+        throw new Error(`Failed to assign test to batches: ${tbErr.message}`);
+      }
+
+      createdPapers.push({ id: paper.id, title: sessionTitle, total_questions: group.length, workflow_status: paper.workflow_status });
     }
 
     try {
@@ -1496,13 +1525,19 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       console.warn(`[uploadTestController] Cleanup failed: ${cleanupErr.message}`);
     }
 
-    sendProgress("success", `Draft created. ${malformedMatching.length ? `${malformedMatching.length} matching question(s) require attention. ` : ""}Review and publish it from the Test Department workspace.`, {
-      paper_id: paper.id,
+    const matchingNote = malformedMatching.length ? `${malformedMatching.length} matching question(s) require attention. ` : "";
+    const successMessage = isSplit
+      ? `Split into ${createdPapers.length} papers (${createdPapers.map((p) => p.total_questions).join(", ")} questions). ${matchingNote}Review and publish each from the Test Department workspace.`
+      : `Draft created. ${matchingNote}Review and publish it from the Test Department workspace.`;
+
+    sendProgress("success", successMessage, {
+      paper_id: createdPapers[0].id,
+      papers: createdPapers,
       title,
       total_questions: questionRows.length,
-      workflow_status: paper.workflow_status,
+      workflow_status: createdPapers[0].workflow_status,
     });
-    logStage("success", `Completed PDF-to-test workflow with ${questionRows.length} questions.`);
+    logStage("success", `Completed PDF-to-test workflow with ${questionRows.length} questions` + (isSplit ? ` split into ${createdPapers.length} papers.` : "."));
     res.end();
 
   } catch (err: any) {
