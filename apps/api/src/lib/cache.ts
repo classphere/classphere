@@ -12,6 +12,9 @@ const getClient = (): Redis => {
     client.on("error", (err) => {
       console.error("[Cache Redis Error]", err);
     });
+    client.on("reconnecting", (delay: number) => {
+      console.warn(`[Redis:cache] reconnecting in ${delay}ms`);
+    });
   }
   return client;
 };

@@ -1,10 +1,10 @@
 import { Queue } from "bullmq";
-import { getRedisOptions } from "./redis";
+import { loggedConnection } from "./redis";
 
 export const ANALYSIS_QUEUE_NAME = "analysis_queue";
 
 export const analysisQueue = new Queue(ANALYSIS_QUEUE_NAME, {
-  connection: getRedisOptions() as any,
+  connection: loggedConnection("analysisQueue") as any,
   defaultJobOptions: {
     attempts: 3,
     backoff: {

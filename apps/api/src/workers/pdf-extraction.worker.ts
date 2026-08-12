@@ -2,7 +2,7 @@ import { Worker, Job } from "bullmq";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
-import { getRedisOptions } from "../lib/queue/redis";
+import { loggedConnection } from "../lib/queue/redis";
 import { PDF_EXTRACTION_QUEUE_NAME, PdfExtractionJobData } from "../lib/queue/pdf-extraction.queue";
 import { extractPDFV4 } from "../services/extractor/pdfExtractorV4.service";
 import { supabaseAdmin } from "../lib/supabase";
@@ -110,7 +110,7 @@ export const pdfExtractionWorker = new Worker<PdfExtractionJobData>(
   PDF_EXTRACTION_QUEUE_NAME,
   processPdfJob,
   {
-    connection: getRedisOptions() as any,
+    connection: loggedConnection("pdfExtractionWorker") as any,
     concurrency: 2,
     drainDelay: 60,
     lockDuration: 30 * 60 * 1000, // Gemini calls can be long — 30 min lock

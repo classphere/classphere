@@ -1,11 +1,11 @@
 import { Worker, Job, Queue } from "bullmq";
-import { getRedisOptions } from "../lib/queue/redis";
+import { loggedConnection } from "../lib/queue/redis";
 import { supabaseDB } from "../lib/supabase";
 
 export const LIFECYCLE_QUEUE_NAME = "lifecycle_queue";
 
 export const lifecycleQueue = new Queue(LIFECYCLE_QUEUE_NAME, {
-  connection: getRedisOptions() as any,
+  connection: loggedConnection("lifecycleQueue") as any,
   defaultJobOptions: {
     removeOnComplete: true,
     removeOnFail: { count: 50 },
@@ -120,7 +120,7 @@ export const lifecycleWorker = new Worker(
     return { success: true, deactivated: totalDeactivated };
   },
   {
-    connection: getRedisOptions() as any,
+    connection: loggedConnection("lifecycleWorker") as any,
     concurrency: 1,
   }
 );

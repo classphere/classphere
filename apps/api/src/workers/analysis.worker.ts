@@ -1,5 +1,5 @@
 import { Worker, Job } from "bullmq";
-import { getRedisOptions } from "../lib/queue/redis";
+import { loggedConnection } from "../lib/queue/redis";
 import { ANALYSIS_QUEUE_NAME } from "../lib/queue/analysis.queue";
 import { analyzeAttempt } from "../modules/analysis-engine/services/analysis.service";
 import { db } from "../modules/analysis-engine/services/db.service";
@@ -80,7 +80,7 @@ export const analysisWorker = new Worker(
     }
   },
   {
-    connection: getRedisOptions() as any,
+    connection: loggedConnection("analysisWorker") as any,
     concurrency: 20, // Concurrency for processing active jobs
     drainDelay: 30, // Wait 30s when queue is empty before polling again (reduces idle commands)
     stalledInterval: 300000, // Check for stalled jobs every 5 mins instead of 30s (reduces idle EVALSHA commands)

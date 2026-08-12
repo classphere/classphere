@@ -1,5 +1,5 @@
 import { Queue } from "bullmq";
-import { getRedisOptions } from "./redis";
+import { loggedConnection } from "./redis";
 import type { ExamCategory } from "../../services/extractor/pdfExtractor.service";
 
 export const PDF_EXTRACTION_QUEUE_NAME = "pdf_extraction_queue";
@@ -13,7 +13,7 @@ export interface PdfExtractionJobData {
 }
 
 export const pdfExtractionQueue = new Queue(PDF_EXTRACTION_QUEUE_NAME, {
-  connection: getRedisOptions() as any,
+  connection: loggedConnection("pdfExtractionQueue") as any,
   defaultJobOptions: {
     attempts: 2,
     backoff: {

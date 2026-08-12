@@ -71,4 +71,28 @@ connection.on("error", (err) => {
   console.error("[Redis Error]", err);
 });
 
+/**
+ * A labelled Redis client for one BullMQ Queue or Worker.
+ *
+ * Each of the six BullMQ connections in this codebase used to call
+ * `getRedisOptions()` directly, which hands BullMQ a plain options object —
+ * BullMQ then constructs its own ioredis client internally, one nobody outside
+ * BullMQ has a handle to. `error` and `reconnecting` are EventEmitter events;
+ * an emitter with no listener for them doesn't crash, it's just silent. A
+ * Redis that is slow or unreachable during boot — the exact failure mode of an
+ * app that never reaches its healthcheck — produced no log line anywhere,
+ * because the one client this file did attach listeners to (`connection`
+ * above) is not the one BullMQ was actually using.
+ *
+ * Constructing the client here instead and handing BullMQ the instance (which
+ * it accepts in place of options, and duplicates internally as it needs to)
+ * means every one of these six connections is now watched.
+ */
+export function loggedConnection(label: string): Redis {
+  const client = new Redis(getRedisOptions() as any);
+  client.on("error", (err) => console.error(`[Redis:${label}]`, err.message));
+  client.on("reconnecting", (delay: number) => console.warn(`[Redis:${label}] reconnecting in ${delay}ms`));
+  return client;
+}
+
 export default connection;
