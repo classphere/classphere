@@ -31,7 +31,8 @@ const EXAMS = [
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise Test" },
   { code: "mock-test", label: "Mock Test" },
-  { code: "pyq", label: "Previous Year Questions (PYQ)" },
+  { code: "pyq", label: "Past Year Questions (by chapter)" },
+  { code: "pyq-paper", label: "Past Year Paper (full, timed)" },
   { code: "ncert", label: "Ncert Questions" },
 ];
 
@@ -231,7 +232,9 @@ export default function UploadQuestionsPage() {
   };
 
   const isChapterWise = form.test_type === "chapter-wise" || form.test_type === "ncert";
-  const isPYQ = form.test_type === "pyq";
+  // Year and shift identify a past-year item whether it is one chapter's
+  // worth of questions or the whole paper they came from.
+  const isPYQ = form.test_type === "pyq" || form.test_type === "pyq-paper";
   const canUpload = parsedQuestions && form.exam && form.test_type && form.title && !parseError;
   const subjects = form.exam ? EXAM_SUBJECTS[form.exam] ?? [] : [];
 

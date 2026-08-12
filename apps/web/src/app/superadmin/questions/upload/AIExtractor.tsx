@@ -24,7 +24,8 @@ const EXAMS = [
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise Test" },
   { code: "mock-test",    label: "Mock Test" },
-  { code: "pyq",          label: "Previous Year Questions (PYQ)" },
+  { code: "pyq",          label: "Past Year Questions (by chapter)" },
+  { code: "pyq-paper",    label: "Past Year Paper (full, timed)" },
 ];
 
 const DIFFICULTY = ["easy", "medium", "hard"];
@@ -356,7 +357,9 @@ export default function AIExtractor() {
   };
 
   const isChapterWise = form.test_type === "chapter-wise";
-  const isPYQ = form.test_type === "pyq";
+  // Year and shift identify a past-year item whether it is one chapter's
+  // worth of questions or the whole paper they came from.
+  const isPYQ = form.test_type === "pyq" || form.test_type === "pyq-paper";
   const canExtract = pdfFile && form.exam && form.test_type && status !== "extracting";
   const canUpload = extractedQuestions && extractedQuestions.length > 0 && form.title && status !== "uploading";
   const subjects = form.exam ? EXAM_SUBJECTS[form.exam] ?? [] : [];
