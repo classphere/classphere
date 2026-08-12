@@ -25,7 +25,10 @@ export const getPYQList = async (req: Request, res: Response): Promise<void> => 
         difficulty,
         exams!inner(code, full_name)
       `)
-      .eq("test_type", "pyq")
+      // ?kind=paper lists whole past-year papers, sat end to end against a
+      // clock; the default lists past-year questions filed by chapter, which
+      // are practice. They were one type until now and behave nothing alike.
+      .eq("test_type", String(req.query.kind ?? "").trim() === "paper" ? "pyq-paper" : "pyq")
       .eq("is_active", true);
     query = query.eq("is_published", true).eq("delivery_mode", "public_practice");
 
@@ -62,7 +65,7 @@ export const getPYQQuestions = async (req: Request, res: Response): Promise<void
       .from("papers")
       .select("*, exams(code, full_name)")
       .eq("id", id)
-      .eq("test_type", "pyq")
+      .in("test_type", ["pyq", "pyq-paper"])
       .eq("is_active", true)
       .eq("is_published", true)
       .eq("delivery_mode", "public_practice")

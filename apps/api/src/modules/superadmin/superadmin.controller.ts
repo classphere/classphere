@@ -291,7 +291,10 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const validTypes = ["chapter-wise", "mock-test", "pyq", "ncert"];
+    // "pyq" is past-year *questions*, filed by chapter and worked through like
+    // any other practice set. "pyq-paper" is a whole past-year paper, sat end to
+    // end against a clock. They read alike and behave nothing alike.
+    const validTypes = ["chapter-wise", "mock-test", "pyq", "pyq-paper", "ncert"];
     if (!validTypes.includes(test_type)) {
       res.status(400).json({ success: false, message: `Invalid test_type. Must be one of: ${validTypes.join(", ")}` });
       return;

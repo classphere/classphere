@@ -73,12 +73,13 @@ const EXAMS = [
  * rejects — it validates a supplied duration as a positive integer, and an
  * absent one is computed. Every NCERT batch failed on that single line.
  */
-const TIMED_TYPES = ["mock-test", "pyq"];
+const TIMED_TYPES = ["mock-test", "pyq-paper"];
 
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise" },
   { code: "mock-test",    label: "Mock Test" },
-  { code: "pyq",          label: "PYQ" },
+  { code: "pyq",          label: "PYQ (by chapter)" },
+  { code: "pyq-paper",    label: "Past Year Paper" },
   { code: "ncert",        label: "Ncert Questions" },
 ];
 

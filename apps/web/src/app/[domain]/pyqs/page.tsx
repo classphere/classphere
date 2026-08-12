@@ -60,11 +60,14 @@ export default function PYQsPage() {
   const [activeDiff, setActiveDiff] = useState("All");
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
   const [showBookmarked, setShowBookmarked] = useState(false);
+  // Past-year *questions* are chapter practice; a past-year *paper* is sat end
+  // to end against a clock. One listing showed only the first.
+  const [kind, setKind] = useState<"questions" | "paper">("questions");
 
   // Fetch paper list from backend
   useEffect(() => {
     setLoading(true);
-    fetch(`${API_BASE}/pyqs`)
+    fetch(`${API_BASE}/pyqs${kind === "paper" ? "?kind=paper" : ""}`)
       .then((r) => {
         if (!r.ok) throw new Error("API error");
         const contentType = r.headers.get("content-type");
@@ -80,7 +83,7 @@ export default function PYQsPage() {
       })
       .catch(() => setError("Cannot connect to backend. Make sure the API is running on port 3001."))
       .finally(() => setLoading(false));
-  }, []);
+  }, [kind]);
 
   const toggleBookmark = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -121,6 +124,27 @@ export default function PYQsPage() {
       />
 
       <PageWrapper>
+
+        {/* Two different things under one name. Past-year questions are filed by
+            chapter and practised untimed; a past-year paper is the real thing,
+            sat end to end against the clock it was written for. */}
+        <div className="mb-4 flex items-center gap-1 rounded-[10px] border border-s-stroke2/50 bg-b-surface2 p-1 w-fit">
+          {[
+            { value: "questions" as const, label: "By chapter" },
+            { value: "paper" as const, label: "Full papers" },
+          ].map((tab) => (
+            <button
+              key={tab.value}
+              type="button"
+              onClick={() => setKind(tab.value)}
+              className={`rounded-[8px] px-4 py-2 text-[13px] font-semibold transition ${
+                kind === tab.value ? "bg-b-surface1 text-t-primary shadow-xs" : "text-t-secondary hover:text-t-primary"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
         {/* Stats Row Wrapper */}
         <MetricGrid cols={3}>

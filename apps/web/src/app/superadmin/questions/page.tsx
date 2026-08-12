@@ -242,7 +242,8 @@ export default function QuestionBankPage() {
                 { id: "all", label: "All Types" },
                 { id: "chapter-wise", label: "Chapter-wise" },
                 { id: "mock-test", label: "Mock Test" },
-                { id: "pyq", label: "PYQ" },
+                { id: "pyq", label: "PYQ (by chapter)" },
+                { id: "pyq-paper", label: "Past Year Paper" },
                 { id: "ncert", label: "NCERT" },
                 { id: "assigned", label: "Assigned Test" },
               ]
