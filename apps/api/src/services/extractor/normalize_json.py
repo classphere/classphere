@@ -680,8 +680,17 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
         # Carried in source_reference because that field survives to the database
         # and the paper validator reads it — the score is only useful if it
         # reaches the person reviewing the paper.
+        # The section heading the paper actually printed above this question.
+        # pymupdf_extractor detects it and annotates the HTML with data-section;
+        # the model copies it back. Carried in source_reference because that is
+        # what survives to the database, and because a section read off the page
+        # is evidence about a source document, not a value we computed — the
+        # reviewer needs to be able to tell those apart.
+        printed_section = str(q.get("section") or "").strip()
+        q.pop("section", None)
+
         match = q.get("_source_match")
-        if match is not None or missing:
+        if match is not None or missing or printed_section:
             reference = q.get("source_reference")
             merged = {**(reference if isinstance(reference, dict) else {})}
             if match is not None:
@@ -690,6 +699,8 @@ def to_platform_schema(questions: list, legacy_types: bool, available: set = Non
                 # Deduplicated: the same figure can be referenced from the stem
                 # and from an option, and one absent file is one problem.
                 merged["missing_figures"] = sorted(set(missing))
+            if printed_section:
+                merged["section"] = printed_section
             q["source_reference"] = merged
 
         if missing:

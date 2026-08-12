@@ -12,6 +12,7 @@ import { getStudentTestAccess } from "./test-access.service";
 import { requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
 import { MIN_KEY_COVERAGE, convertAnswers, parseAnswerKeyFromPdf } from "../../services/extractor/answer-key.service";
 import { validatePaperQuestions } from "../../lib/paper-validation";
+import { derivePaperSections } from "../../lib/paper-sections";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
@@ -167,6 +168,10 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       // screen cannot show what the paper actually adds up to, which is the
       // one thing worth checking before publishing a JEE Advanced paper.
       marking_scheme: (paper as any).marking_scheme ?? null,
+      // How the paper divides, and how confident we are about it — read off the
+      // page, assumed from the exam's pattern, or inferred from subject changes.
+      // A reviewer must be able to tell those apart before approving.
+      sections: derivePaperSections(questions, examCode),
       total_marks: paper.total_marks ?? null,
     };
 

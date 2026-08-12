@@ -70,6 +70,8 @@ the final question on this page.
 
 For each question return:
   question_number (integer), question_text (Markdown with $...$ LaTeX),
+  section (the section heading printed above this question, verbatim, e.g.
+    "SECTION A" or "SECTION B - Numerical Value"; "" if the page prints none),
   options (array of {id: A|B|C|D, text, image_url}), correct_answer ([]),
   question_type (MCQ|MSQ|Numerical|Matching|Assertion-Reason), subject,
   chapter, topic, difficulty (Easy|Medium|Hard), explanation (""),
@@ -86,6 +88,11 @@ For each question return:
   each question's question_text so the question is self-contained.
 • NEVER skip a question because it seems incomplete — extract what is visible
   and set needs_review: true with a reason.
+• Copy the section heading into every question that falls under it, including
+  questions on later pages where the heading was printed once and not repeated.
+  The supplied HTML annotates detected headings with data-section — trust that
+  over your own reading of the image. Return "" only when the paper genuinely
+  prints no sections; do not invent "SECTION A" for an unsectioned paper.
 • Two-column layouts: read left column top-to-bottom, then right column.
 • Never invent text, choices, answers, or diagrams.
 • ALL mathematics must be LaTeX between $...$ delimiters. The supplied PyMuPDF
