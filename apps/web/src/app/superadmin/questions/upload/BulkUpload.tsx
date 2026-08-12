@@ -64,6 +64,17 @@ const EXAMS = [
   { code: "jee-advanced", label: "JEE Advanced" },
   { code: "neet-ug",      label: "NEET-UG" },
 ];
+/**
+ * Types a student sits against a clock. Everything else is practice: the
+ * questions are worked through whenever, so a duration and a total are numbers
+ * nobody set and nobody reads.
+ *
+ * NCERT uploads used to send duration: 0 to mean "untimed", which the API
+ * rejects — it validates a supplied duration as a positive integer, and an
+ * absent one is computed. Every NCERT batch failed on that single line.
+ */
+const TIMED_TYPES = ["mock-test", "pyq"];
+
 const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise" },
   { code: "mock-test",    label: "Mock Test" },
@@ -208,8 +219,11 @@ export default function BulkUpload() {
             // shared subject for chapter-wise/ncert/pyq; per-file for mock-test
             subject:    (isChapterWise || isPyq) ? meta.subject : f.subject,
             chapter:    isChapterWise ? meta.chapter : f.chapter,
-            duration:   meta.test_type === "ncert" ? 0 : parseInt(meta.duration),
-            marks:      meta.test_type === "ncert" ? 0 : parseInt(meta.marks),
+            // Omitted, not zeroed: the API treats an absent duration as "work
+            // it out" and a zero as a mistake.
+            ...(TIMED_TYPES.includes(meta.test_type)
+              ? { duration: parseInt(meta.duration), marks: parseInt(meta.marks) }
+              : {}),
             difficulty: meta.difficulty,
             questions:  f.questions,
           }),
@@ -282,8 +296,10 @@ export default function BulkUpload() {
 
 
 
-          {/* Duration & Marks */}
-          {meta.test_type !== "ncert" && (
+          {/* Duration & Marks — only for the types sat against a clock. Asking
+              for them on chapter-wise or NCERT practice invited a number that
+              was then either ignored or, worse, shown to a student as a limit. */}
+          {TIMED_TYPES.includes(meta.test_type) && (
             <div className="flex gap-4">
               <div className="flex flex-col gap-2">
                 <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (min)</label>
