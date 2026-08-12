@@ -165,14 +165,21 @@ app.use(express.json({ limit: "1mb" }));
 const workersEnabled = /^(1|true|yes|on)$/i.test((process.env.START_WORKERS || "").trim());
 let stopWorkers: (() => Promise<void>) | null = null;
 
-// ─── API Routes ───────────────────────────────────────────────────────────────
-import apiRouter from "./routes/index";
-
-// All routes are prefixed with /api/v1
-app.use("/api/v1", apiRouter);
-
 // ─── Health Checks ────────────────────────────────────────────────────────────
 // Liveness: process is up (used by LB). Cheap, no dependencies checked.
+//
+// Registered BEFORE the API router is loaded, and the server binds before it
+// too — see the listen() call below. Three deploys hung with the container
+// printing the npm banner and then nothing at all until the healthcheck window
+// expired, on code that boots locally in about a second. Metrics ruled out
+// resources (CPU peaked at 2% of its limit, memory at 24%), so the process was
+// blocked on I/O somewhere in the import graph rather than doing work.
+//
+// Rather than keep guessing which import, the order is now arranged so it
+// cannot matter: the port is open and answering "/" before ./routes/index —
+// which transitively pulls in every controller, Supabase, R2 and the extractor
+// service — is required at all. A slow or stuck dependency degrades what the
+// API can serve instead of preventing it from serving anything.
 app.get("/", (req, res) => {
   res.json({ status: "ok", message: "Classphere API is running", version: "v1" });
 });
@@ -218,22 +225,39 @@ app.get("/health", async (req, res) => {
   res.status(allOk ? 200 : 503).json({ status: allOk ? "ok" : "degraded", checks });
 });
 
-// ─── 404 Handler ──────────────────────────────────────────────────────────────
-app.use((req, res) => {
-  res.status(404).json({ success: false, message: `Route not found: ${req.method} ${req.path}` });
-});
-
-// ─── Global Error Handler ─────────────────────────────────────────────────────
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  // Avoid logging full error objects which can include sensitive headers/PII.
-  console.error("[Unhandled Error]", err?.message ?? err, err?.stack ? { stack: err.stack } : "");
-  res.status(500).json({ success: false, message: "Internal server error" });
-});
-
-// ─── Start + Graceful Shutdown ────────────────────────────────────────────────
+// ─── Start, then finish wiring ────────────────────────────────────────────────
+// listen() comes before the API router, the 404 handler and the error handler
+// are attached. Express allows adding routes to a listening server, and doing
+// it in this order means the healthcheck is answerable within milliseconds of
+// the process starting rather than after every controller in the codebase has
+// finished loading.
 const server = app.listen(port, () => {
-  console.log(`[API] Classphere API Server running on port ${port}`);
-  console.log(`[API] Routes mounted at /api/v1`);
+  console.log(`[API] Classphere API Server listening on port ${port} — loading routes…`);
+
+  try {
+    // Required here, not imported at the top: this is the expensive part of
+    // startup, and nothing about it needs to happen before the port is open.
+    const apiRouter = require("./routes/index").default;
+    app.use("/api/v1", apiRouter);
+    console.log("[API] Routes mounted at /api/v1");
+  } catch (err: any) {
+    // A failure here leaves "/" answering and every API route 404ing, which is
+    // a bad state — but a diagnosable one that says so in the log, rather than
+    // a container that dies silently before it can report anything.
+    console.error("[API] FATAL: failed to mount API routes — the process is up but cannot serve /api/v1:", err?.stack ?? err);
+  }
+
+  // These must come after the router: a 404 handler registered first would
+  // swallow every API request.
+  app.use((req, res) => {
+    res.status(404).json({ success: false, message: `Route not found: ${req.method} ${req.path}` });
+  });
+  app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    // Avoid logging full error objects which can include sensitive headers/PII.
+    console.error("[Unhandled Error]", err?.message ?? err, err?.stack ? { stack: err.stack } : "");
+    res.status(500).json({ success: false, message: "Internal server error" });
+  });
+
   if (workersEnabled) {
     console.log("[API] Initializing background workers (analysis & lifecycle & pdf-extraction) inside this process...");
     const workers = require("./worker");
