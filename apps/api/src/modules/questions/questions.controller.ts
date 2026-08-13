@@ -30,6 +30,17 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
       .order("created_at", { ascending: false })
       .range(offset, offset + limitNum - 1);
 
+    // Scope and review status. This is the endpoint a teacher's DPP-creation
+    // screen calls to browse questions by exam/subject/chapter — its result
+    // becomes an actual assignment their students sit — and it had no
+    // institute or approval filter at all, so it could hand a teacher another
+    // institute's private bank or a draft nobody has reviewed yet. Superadmin
+    // is exempt: reviewing drafts and browsing every institute's content is
+    // the job here, not a leak.
+    if (!isSuperAdmin) {
+      query = query.eq("review_status", "approved").or(`content_scope.eq.global,institute_id.eq.${req.user!.institute_id}`);
+    }
+
     if (subject) query = query.eq("subject", subject);
     if (chapter) query = query.eq("chapter", chapter);
     if (difficulty) query = query.eq("difficulty", difficulty);
@@ -179,6 +190,18 @@ export const createTopicPractice = async (req: Request, res: Response): Promise<
       res.status(404).json({ success: false, message: "The selected exam is unavailable." });
       return;
     }
+    // Scope and review status, neither of which this query applied. questions
+    // holds two populations — `global` canonical content with a null
+    // institute_id, and `institute_private` content owned by whoever extracted
+    // or wrote it — and this had no scope filter at all, so a student here
+    // could be handed practice questions drawn from another institute's
+    // private bank, the thing that institute is paying to build. It also never
+    // checked review_status, so an unreviewed draft — the exact question still
+    // likely to have a half-read formula or no correct answer — could reach a
+    // student before anyone approved it. Same rule as the test-creation bank
+    // query (tests.controller.ts createTest): approved, and either global or
+    // this student's own institute.
+    const studentInstituteId = req.user!.institute_id;
     let questionQuery = supabaseDB
       .from("questions")
       .select("id")
@@ -187,6 +210,8 @@ export const createTopicPractice = async (req: Request, res: Response): Promise<
       .eq("chapter", chapter.trim())
       .eq("topic", topic.trim())
       .eq("is_active", true)
+      .eq("review_status", "approved")
+      .or(`content_scope.eq.global,institute_id.eq.${studentInstituteId}`)
       .limit(count);
     if (difficulty && ["easy", "medium", "hard"].includes(difficulty)) questionQuery = questionQuery.eq("difficulty", difficulty);
     const { data: matches, error: questionError } = await questionQuery;
