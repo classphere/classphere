@@ -98,11 +98,17 @@ router.get("/institutes", listInstitutes);
  * memory before auth/validation has run, and that reasoning still holds for
  * every route that isn't ingesting an extracted question bank.
  *
- * 25mb still wasn't enough: Electrostatics.json (1159 questions, image-heavy)
- * hit PayloadTooLargeError in production. 60mb comfortably clears that file
- * with headroom for the largest chapters seen so far.
+ * 25mb, then 60mb, both still weren't enough: Electrostatics.json (1159 Qs),
+ * then Aldehydes/Ketones/Carboxylic Acids.json (969 Qs) and Chemical Bonding
+ * and Molecular Structure.json (910 Qs) each in turn hit PayloadTooLargeError
+ * in production. Organic-chemistry chapters especially carry a structural
+ * diagram per question, so question count alone doesn't predict body size.
+ * 150mb is a wide enough margin that another chapter shouldn't hit this
+ * again; if one still does, the durable fix is uploading each question's
+ * images to R2 client-side before submit and sending URLs instead of base64,
+ * not another number bump here.
  */
-router.post("/upload-questions", express.json({ limit: "60mb" }), uploadQuestions);
+router.post("/upload-questions", express.json({ limit: "150mb" }), uploadQuestions);
 
 // Rate limiter: max 3 PDF extractions per IP per 10 minutes
 const pdfExtractionLimiter = rateLimit({
