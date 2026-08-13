@@ -20,6 +20,20 @@ declare global {
   }
 }
 
+// The one-device lock exists for students: it stops a test being open on two
+// devices at once mid-attempt (see the "Mid-test device protection" comment in
+// auth.controller.ts). A test department reviewer or institute admin doing
+// paper review isn't taking a test — locking them to one device just meant a
+// second login (or even a second tab session) silently invalidated the first,
+// and every Save after that failed with SESSION_CONFLICT for no reason tied to
+// the thing it was supposedly protecting.
+const ONE_DEVICE_EXEMPT_ROLES = new Set([
+  "super_admin",
+  "institute_admin",
+  "test_department_head",
+  "test_department_member",
+]);
+
 // ─── Auth context cache ───────────────────────────────────────────────────────
 // The role/institute/entitlement lookups for an authenticated user rarely change
 // between requests but used to cost 5 sequential DB round-trips every time.
@@ -292,8 +306,8 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
       }
     }
 
-    // ── One-device enforcement: skip for super_admin ───────────────────────────
-    if (role !== "super_admin") {
+    // ── One-device enforcement: skip for super_admin and other staff roles ─────
+    if (!ONE_DEVICE_EXEMPT_ROLES.has(role)) {
       const sessionToken = req.headers["x-session-token"] as string | undefined;
 
       if (!sessionToken) {
