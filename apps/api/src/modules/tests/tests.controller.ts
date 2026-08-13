@@ -629,7 +629,7 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     // made this the actual reason no paper could be published through here.
     const { data: publishRows, error: publishRowsError } = await supabaseDB
       .from("paper_questions")
-      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, source_reference, extraction_metadata)")
       .eq("paper_id", id);
     if (publishRowsError) throw publishRowsError;
 
@@ -718,7 +718,7 @@ export const validateTest = async (req: Request, res: Response): Promise<void> =
     // made Validate paper a 500 for every paper.
     const { data: rows, error } = await supabaseDB
       .from("paper_questions")
-      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, source_reference, extraction_metadata)")
       .eq("paper_id", paper.id)
       .order("position", { ascending: true });
     if (error) throw error;

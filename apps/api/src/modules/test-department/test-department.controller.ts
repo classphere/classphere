@@ -476,7 +476,7 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
     // "column questions_1.question_number does not exist" on every call, which
     // made Validate paper a 500 for every paper in every institute.
     const { data: rows, error } = await supabaseDB.from("paper_questions")
-      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, source_reference, extraction_metadata)")
       .eq("paper_id", paper.id).order("position", { ascending: true });
     if (error) throw error;
 
