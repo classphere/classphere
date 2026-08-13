@@ -35,7 +35,13 @@ interface ImportResult {
 // ─── Normalise DOB: accept DDMMYYYY, DD/MM/YYYY, DD-MM-YYYY → DDMMYYYY ───────
 function normaliseDob(raw: string): string | null {
   if (!raw) return null;
-  const s = String(raw).trim().replace(/[\/\-\.]/g, "");
+  let s = String(raw).trim().replace(/[\/\-\.]/g, "");
+  // A DOB column formatted as a plain number in Excel drops the leading zero
+  // whenever the day is 1–9 (e.g. 9 Jul 2010 saves as 9072010, not
+  // 09072010) — Excel stores it as an integer and integers don't carry
+  // leading zeros. 7 digits with no separators can only be DDMMYYYY missing
+  // that one digit, so restore it rather than rejecting a valid date.
+  if (/^\d{7}$/.test(s)) s = `0${s}`;
   if (/^\d{8}$/.test(s)) return s;
   return null;
 }
@@ -542,26 +548,36 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
 
 // ─── File Parser ──────────────────────────────────────────────────────────────
 
+// Strips everything but letters/digits before comparing headers, so
+// "D.O.B", "Contact No.", "Ph. No" etc. resolve the same as their plain-text
+// equivalents — institutes hand-write these templates and punctuation varies
+// far more than the header word itself does.
+function normaliseHeader(h: string): string {
+  return h.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 function parseFile(buffer: Buffer, filename: string): StudentRow[] {
   const workbook = XLSX.read(buffer, { type: "buffer" });
   const sheet = workbook.Sheets[workbook.SheetNames[0]];
   const raw: any[] = XLSX.utils.sheet_to_json(sheet, { defval: "" });
 
   return raw.map((r: any) => {
-    // Normalise column names: case-insensitive, strip spaces
+    // Normalise column names: case-insensitive, punctuation-insensitive.
     const keys = Object.keys(r);
     const get = (variants: string[]) => {
-      for (const v of variants) {
-        const k = keys.find(k => k.trim().toLowerCase() === v.toLowerCase());
-        if (k !== undefined) return String(r[k] ?? "").trim();
+      const normalisedVariants = variants.map(normaliseHeader);
+      for (const k of keys) {
+        if (normalisedVariants.includes(normaliseHeader(k))) {
+          return String(r[k] ?? "").trim();
+        }
       }
       return "";
     };
 
     return {
       name: get(["name", "student name", "full name"]),
-      phone: get(["phone", "phone number", "mobile", "mobile number", "contact"]),
-      dob: get(["dob", "date of birth", "dateofbirth", "birth date"]),
+      phone: get(["phone", "phone number", "mobile", "mobile number", "contact", "contact no", "contact number", "mobile no", "ph no", "phone no"]),
+      dob: get(["dob", "d o b", "date of birth", "dateofbirth", "birth date"]),
       batch_name: get(["batch", "batch name", "class", "section"]),
     };
   }).filter(r => r.name || r.phone); // filter empty rows

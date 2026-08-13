@@ -149,9 +149,6 @@ export default function StudentsPage() {
     const result = await importStudents(selectedFile, importBatchId);
     setImportResult(result);
     setImporting(false);
-    if (result.success) {
-      setTimeout(() => setIsImportOpen(false), 2500);
-    }
   };
 
   const finishAdd = () => {
