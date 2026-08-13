@@ -249,8 +249,16 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    if (!Array.isArray(questions) || questions.length === 0 || questions.length > 500) {
-      res.status(400).json({ success: false, message: "Body must include between 1 and 500 questions." });
+    // 500 rejected real chapters outright — a single chapter compiled across
+    // several years' papers routinely holds more than that. 2000 is generous
+    // headroom above anything seen in practice while still being a real
+    // ceiling: the whole array goes to Postgres as one JSONB RPC argument
+    // (create_global_review_draft_with_questions, below), and the request
+    // body itself now allows up to 25MB for exactly this — see the route's
+    // express.json override, needed because questions carry inline base64
+    // diagrams.
+    if (!Array.isArray(questions) || questions.length === 0 || questions.length > 2000) {
+      res.status(400).json({ success: false, message: "Body must include between 1 and 2000 questions." });
       return;
     }
 

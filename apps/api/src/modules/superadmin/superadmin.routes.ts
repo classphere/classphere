@@ -1,4 +1,5 @@
 import { Router } from "express";
+import express from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
 import rateLimit from "express-rate-limit";
@@ -88,8 +89,16 @@ router.get("/institutes", listInstitutes);
  * POST /api/v1/superadmin/upload-questions
  * Upload a JSON question bank with full metadata tagging.
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
+ *
+ * A body-size override, not the global 1MB limit: questions carry inline
+ * base64 diagrams (processBase64ImageList in the controller uploads them to
+ * R2 from here), and a chapter with 500+ questions — some with figures — was
+ * never going to fit in 1MB. Scoped to this route alone; the global limit
+ * elsewhere exists specifically to stop one request holding disproportionate
+ * memory before auth/validation has run, and that reasoning still holds for
+ * every route that isn't ingesting an extracted question bank.
  */
-router.post("/upload-questions", uploadQuestions);
+router.post("/upload-questions", express.json({ limit: "25mb" }), uploadQuestions);
 
 // Rate limiter: max 3 PDF extractions per IP per 10 minutes
 const pdfExtractionLimiter = rateLimit({
