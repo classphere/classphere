@@ -457,14 +457,19 @@ export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<
 export const listTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const { exam, type } = req.query;
+    const isSuperAdmin = req.user?.role === "super_admin";
 
+    // Students only ever see published papers. A super_admin uses this same
+    // endpoint to review what bulk upload just created — those land as
+    // is_published: false drafts by design, so filtering them out here left
+    // the "Global Question Bank" page with no way to see its own uploads.
     let query = supabaseDB
       .from("papers")
-      .select("id, title, test_type, subject, chapter, year, shift, total_questions, total_marks, duration_min, difficulty, exams(code, full_name)")
+      .select("id, title, test_type, subject, chapter, year, shift, total_questions, total_marks, duration_min, difficulty, workflow_status, is_published, exams(code, full_name)")
       .eq("is_active", true)
-      .eq("is_published", true)
       .eq("delivery_mode", "public_practice")
       .order("created_at", { ascending: false });
+    if (!isSuperAdmin) query = query.eq("is_published", true);
 
     if (type) query = query.eq("test_type", type as string);
 

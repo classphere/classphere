@@ -320,10 +320,15 @@ export default function QuestionBankPage() {
                 <div className="flex-1 font-sans text-[14px] font-medium text-t-primary truncate">
                   {question.chapter || "-"}{question.topic ? ` · ${question.topic}` : ""}
                 </div>
-                <div className="w-full md:w-[100px]">
+                <div className="w-full md:w-[100px] flex flex-col gap-1">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[10px] border bg-b-surface1 border-s-stroke2/40 text-t-secondary">
                     <span className="font-sans text-[11px] font-bold uppercase tracking-wider">{question.test_type || "N/A"}</span>
                   </span>
+                  {!question.is_published && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[10px] border bg-[rgba(255,159,10,0.08)] border-[rgba(255,159,10,0.2)] text-[#FF9F0A] w-fit">
+                      <span className="font-sans text-[11px] font-bold uppercase tracking-wider">Draft</span>
+                    </span>
+                  )}
                 </div>
                 <div className="w-full md:w-[120px] text-right flex md:justify-end items-center gap-1 opacity-100 transition-opacity">
                   <button 

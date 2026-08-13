@@ -97,8 +97,12 @@ router.get("/institutes", listInstitutes);
  * elsewhere exists specifically to stop one request holding disproportionate
  * memory before auth/validation has run, and that reasoning still holds for
  * every route that isn't ingesting an extracted question bank.
+ *
+ * 25mb still wasn't enough: Electrostatics.json (1159 questions, image-heavy)
+ * hit PayloadTooLargeError in production. 60mb comfortably clears that file
+ * with headroom for the largest chapters seen so far.
  */
-router.post("/upload-questions", express.json({ limit: "25mb" }), uploadQuestions);
+router.post("/upload-questions", express.json({ limit: "60mb" }), uploadQuestions);
 
 // Rate limiter: max 3 PDF extractions per IP per 10 minutes
 const pdfExtractionLimiter = rateLimit({
