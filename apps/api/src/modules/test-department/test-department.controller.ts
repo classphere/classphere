@@ -471,15 +471,23 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
     // id, subject and question_text while the checks below read correct_answer —
     // which was therefore always undefined, so "N questions have no correct
     // answer" counted every question on every paper.
+    // question_number is not a real column on questions — it is computed below
+    // from position, the same way getPaper does it. Selecting it directly threw
+    // "column questions_1.question_number does not exist" on every call, which
+    // made Validate paper a 500 for every paper in every institute.
     const { data: rows, error } = await supabaseDB.from("paper_questions")
-      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
       .eq("paper_id", paper.id).order("position", { ascending: true });
     if (error) throw error;
 
-    const questions = (rows ?? []).map((row: any) => ({
-      position: row.position,
-      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
-    }));
+    const questions = (rows ?? []).map((row: any, idx: number) => {
+      const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+      return {
+        position: row.position,
+        ...question,
+        question_number: question?.question_number ?? row.position ?? idx + 1,
+      };
+    });
 
     // The same function backs the Superadmin validate endpoint and the publish
     // guard, so a paper cannot pass here and fail there.

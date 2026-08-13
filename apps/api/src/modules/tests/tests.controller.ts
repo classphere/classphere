@@ -623,16 +623,24 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     // previously ran its own narrower checks and reported at most five
     // deduplicated messages with no question numbers, which told a reviewer that
     // something was wrong but not where.
+    // question_number is not a real column on questions — computed below from
+    // position, as getPaper and getTest already do. Selecting it directly threw
+    // "column questions_1.question_number does not exist" on every call, which
+    // made this the actual reason no paper could be published through here.
     const { data: publishRows, error: publishRowsError } = await supabaseDB
       .from("paper_questions")
-      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
       .eq("paper_id", id);
     if (publishRowsError) throw publishRowsError;
 
-    const publishQuestions = (publishRows ?? []).map((row: any) => ({
-      position: row.position,
-      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
-    }));
+    const publishQuestions = (publishRows ?? []).map((row: any, idx: number) => {
+      const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+      return {
+        position: row.position,
+        ...question,
+        question_number: question?.question_number ?? row.position ?? idx + 1,
+      };
+    });
     const report = validatePaperQuestions(publishQuestions, paperExamCode);
 
     if (report.summary.withErrors > 0) {
@@ -704,17 +712,25 @@ export const validateTest = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
+    // question_number is not a real column on questions — computed below from
+    // position, as getPaper and getTest already do. Selecting it directly threw
+    // "column questions_1.question_number does not exist" on every call, which
+    // made Validate paper a 500 for every paper.
     const { data: rows, error } = await supabaseDB
       .from("paper_questions")
-      .select("position, questions(id, question_number, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
+      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, is_gap, source_reference, extraction_metadata)")
       .eq("paper_id", paper.id)
       .order("position", { ascending: true });
     if (error) throw error;
 
-    const questions = (rows ?? []).map((row: any) => ({
-      position: row.position,
-      ...(Array.isArray(row.questions) ? row.questions[0] : row.questions),
-    }));
+    const questions = (rows ?? []).map((row: any, idx: number) => {
+      const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+      return {
+        position: row.position,
+        ...question,
+        question_number: question?.question_number ?? row.position ?? idx + 1,
+      };
+    });
 
     res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "") });
   } catch (err: any) {
