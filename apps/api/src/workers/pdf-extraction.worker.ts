@@ -44,7 +44,10 @@ async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
   logStage("start", `Processing queue job ${job.id}${pages ? ` for pages ${pages}` : ""}.`);
   await updateJobStatus(jobId, { status: "processing", started_at: new Date().toISOString() });
 
-  const workDir = path.join(TEMP_DIR, `job_${jobId}`);
+  // Attempt number in the folder name: a retry must never share a directory
+  // with a still-running (e.g. previously "timed out" but not yet reaped)
+  // process from an earlier attempt at the same job.
+  const workDir = path.join(TEMP_DIR, `job_${jobId}_attempt${job.attemptsMade ?? 0}`);
   fs.mkdirSync(workDir, { recursive: true });
   const pdfPath = path.join(workDir, "temp.pdf");
 

@@ -18,13 +18,24 @@ export type ExamCategory = "jee_main" | "jee_advanced" | "neet" | "other";
 
 // ── Child-process runner ──────────────────────────────────────────────────────
 
-/** Non-blocking runner — avoids blocking the BullMQ event loop. */
-function runCommand(command: string, timeoutMs: number, stage = "command"): Promise<string> {
+/**
+ * Non-blocking runner — avoids blocking the BullMQ event loop.
+ *
+ * Spawns the interpreter directly (no `shell: true`). On Windows, a shelled
+ * command runs as a child of cmd.exe, and cmd.exe does not forward
+ * `child.kill()` down to the process it launched — the shell dies, the
+ * Python process it started does not. That left a timed-out extraction
+ * running invisibly in the background, still writing into the job's temp
+ * folder while a BullMQ retry (or a dev-server restart) started a second
+ * process pointed at the same folder — the two would then race on the same
+ * files. Spawning the interpreter directly gives Node a handle on the real
+ * process, so kill() actually terminates it.
+ */
+function runCommand(command: string, args: string[], timeoutMs: number, stage = "command"): Promise<string> {
   return new Promise((resolve, reject) => {
     const startedAt = Date.now();
     console.info(`[pdfExtractor][${stage}] Started (timeout ${Math.round(timeoutMs / 1000)}s).`);
-    const child = spawn(command, {
-      shell: true,
+    const child = spawn(command, args, {
       env: process.env,
       windowsHide: true,
     });
@@ -33,7 +44,7 @@ function runCommand(command: string, timeoutMs: number, stage = "command"): Prom
     const timer = setTimeout(() => {
       child.kill("SIGTERM");
       console.error(`[pdfExtractor][${stage}] Timed out after ${Date.now() - startedAt}ms.`);
-      reject(new Error(`Command timed out after ${timeoutMs}ms: ${command.slice(0, 160)}`));
+      reject(new Error(`Command timed out after ${timeoutMs}ms: ${[command, ...args].join(" ").slice(0, 160)}`));
     }, timeoutMs);
     child.stdout?.on("data", (chunk) => {
       const text = chunk.toString();
@@ -244,8 +255,8 @@ export async function extractPDF(
 
   fs.mkdirSync(outputDir, { recursive: true });
 
-  // This value is interpolated into a shell command below; accept only the
-  // documented comma-separated 1-based range syntax before doing so.
+  // Reject anything but the documented comma-separated 1-based range syntax
+  // before it reaches the Python script's argv.
   if (effectivePages && !/^[0-9,\-\s]+$/.test(effectivePages)) {
     return { success: false, message: "Invalid page range. Use values such as 1-5,8.", questions: [] };
   }
@@ -253,10 +264,17 @@ export async function extractPDF(
   try {
     // ── 1. PyMuPDF ────────────────────────────────────────────────────────────
     console.log(`[pdfExtractor] PyMuPDF on: ${pdfPath}`);
-    const pyCmd = `python "${path.join(scriptDir, "pymupdf_extractor.py")}" "${pdfPath}" "${outputDir}"`;
     let pyMuPdfOutput = "";
     try {
-      pyMuPdfOutput = await runCommand(pyCmd, 180_000, "pymupdf");
+      // 8 minutes: rendering every page to a high-res image for the Gemini
+      // vision call is CPU-bound and scales with page count; 180s was tight
+      // enough that ordinary multi-page papers could hit it under normal load.
+      pyMuPdfOutput = await runCommand(
+        "python",
+        [path.join(scriptDir, "pymupdf_extractor.py"), pdfPath, outputDir],
+        480_000,
+        "pymupdf",
+      );
     } catch (err: any) {
       pyMuPdfOutput = err?.message || String(err);
       console.error("[pdfExtractor] PyMuPDF error:", pyMuPdfOutput.slice(0, 500));
@@ -282,8 +300,13 @@ export async function extractPDF(
     // ── 2. LLM extraction (thinking toggled by exam type) ─────────────────────
     console.log(`[pdfExtractor] Gemini page extraction via OpenRouter — model: ${MODEL}`);
     await runCommand(
-      `python "${path.join(scriptDir, "gemini_page_extractor.py")}" "${outputDir}"` +
-      ` --model "${MODEL}"${effectivePages ? ` --pages "${effectivePages}"` : ""}`,
+      "python",
+      [
+        path.join(scriptDir, "gemini_page_extractor.py"),
+        outputDir,
+        "--model", MODEL,
+        ...(effectivePages ? ["--pages", effectivePages] : []),
+      ],
       600_000,
       "gemini-page-workers",
     );
@@ -291,8 +314,8 @@ export async function extractPDF(
     // ── 3. Normalise ──────────────────────────────────────────────────────────
     console.log("[pdfExtractor] Normalising…");
     await runCommand(
-      `python "${path.join(scriptDir, "normalize_json.py")}" "${finalJson}" ` +
-      `--images-dir "${imagesDir}"`,
+      "python",
+      [path.join(scriptDir, "normalize_json.py"), finalJson, "--images-dir", imagesDir],
       300_000,
       "normalization",
     );
