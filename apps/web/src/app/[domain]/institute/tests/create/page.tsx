@@ -75,6 +75,11 @@ export default function ScheduleTestPage() {
   const [bankChapters, setBankChapters] = useState<string[]>([]);
   const [bankCount, setBankCount] = useState(75);
   const [bankDuration, setBankDuration] = useState(180);
+  // A NEET paper isn't "80 questions from wherever" — it's 20 Physics + 20
+  // Chemistry + 40 Biology. Off by default so the simple case (one flat
+  // count) stays simple; a coaching center that needs the split turns it on.
+  const [splitBySubject, setSplitBySubject] = useState(false);
+  const [subjectCounts, setSubjectCounts] = useState<Record<string, number>>({});
 
   // The exam the selected batches sit for, and what the bank actually holds for
   // it. Without this the screen was a form filled in blind: pick a count, pick
@@ -168,6 +173,13 @@ export default function ScheduleTestPage() {
     setTestStart(toLocalDateTime(next));
   };
 
+  // Only subjects with a count actually set — a row left at 0 means "not in
+  // this paper", not "0 questions from this subject" as a real request.
+  const activeSubjectCounts = Object.entries(subjectCounts)
+    .map(([subject, count]) => ({ subject, count: Number(count) || 0 }))
+    .filter((row) => row.count > 0);
+  const splitTotal = activeSubjectCounts.reduce((sum, row) => sum + row.count, 0);
+
   /** Assemble from the question bank. No extraction, so it returns immediately. */
   const submitFromBank = async () => {
     setErrorMsg("");
@@ -175,7 +187,8 @@ export default function ScheduleTestPage() {
     if (!testStart) { setErrorMsg("Please select when students can start the test."); return; }
     if (selectedBatches.length === 0) { setErrorMsg("Please select at least one target batch."); return; }
     if (mode === "pick" && pickedQuestions.length === 0) { setErrorMsg("Pick at least one question."); return; }
-    if (mode === "bank" && bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
+    if (mode === "bank" && splitBySubject && splitTotal < 1) { setErrorMsg("Enter how many questions to draw from at least one subject."); return; }
+    if (mode === "bank" && !splitBySubject && bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
 
     // createTest needs the exam's id, and the batch carries its code. Every
     // selected batch must share an exam — the server enforces that too.
@@ -193,12 +206,15 @@ export default function ScheduleTestPage() {
       const created: any = await apiClient.post("/api/v1/tests", {
         exam_id: examId,
         title: testName.trim(),
-        question_count: mode === "pick" ? pickedQuestions.length : bankCount,
+        question_count: mode === "pick" ? pickedQuestions.length : (splitBySubject ? splitTotal : bankCount),
         question_ids: mode === "pick" ? pickedQuestions.map((q) => q.id) : undefined,
-        subjects: bankSubjects.length ? bankSubjects : undefined,
+        subject_counts: mode === "bank" && splitBySubject ? activeSubjectCounts : undefined,
+        subjects: mode === "bank" && !splitBySubject && bankSubjects.length ? bankSubjects : undefined,
         // Keys are "Subject||Chapter" so two subjects can share a chapter name;
-        // the server filters on chapter alone, so only the name is sent.
-        chapters: bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined,
+        // the server filters on chapter alone, so only the name is sent. Not
+        // sent in split-by-subject mode — a chapter name only means something
+        // within one subject, and the picker is hidden there for that reason.
+        chapters: mode === "bank" && splitBySubject ? undefined : (bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined),
         duration_minutes: bankDuration,
         batch_ids: selectedBatches,
         scheduled_start: new Date(testStart).toISOString(),
@@ -622,63 +638,125 @@ export default function ScheduleTestPage() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-t-primary">Number of questions</label>
-                <input
-                  type="number" min={1} max={500} value={bankCount}
-                  onChange={(event) => setBankCount(Number(event.target.value))}
-                  className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
-                <input
-                  type="number" min={1} max={600} value={bankDuration}
-                  onChange={(event) => setBankDuration(Number(event.target.value))}
-                  className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
-                />
-              </div>
+            <div className="flex flex-col gap-2 sm:max-w-[280px]">
+              <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
+              <input
+                type="number" min={1} max={600} value={bankDuration}
+                onChange={(event) => setBankDuration(Number(event.target.value))}
+                className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+              />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-sm font-semibold text-t-primary">
-                Subjects <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
-              </label>
-              <div className="flex flex-wrap gap-2">
-                {(() => {
-                  const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
-                  const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
-                  return subjects.map((subject) => {
-                    const on = bankSubjects.includes(subject);
-                    return (
-                      <button
-                        key={subject}
-                        type="button"
-                        onClick={() => setBankSubjects((current) =>
-                          current.includes(subject) ? current.filter((s) => s !== subject) : [...current, subject])}
-                        className={`h-10 rounded-[10px] border px-4 text-sm font-semibold transition ${
-                          on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
-                        }`}
-                      >
-                        {on && <RiCheckLine size={14} className="mr-1 inline" />}
-                        {subject}
-                        <span className="ml-1.5 text-[11px] font-normal opacity-70">
-                          {stock ? ((stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0) : "…"}
-                        </span>
-                      </button>
-                    );
-                  });
-                })()}
+            <button
+              type="button"
+              onClick={() => setSplitBySubject((v) => !v)}
+              className={`inline-flex w-fit items-center gap-1.5 h-9 rounded-[10px] border px-3 text-[13px] font-semibold transition ${
+                splitBySubject ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
+              }`}
+            >
+              {splitBySubject && <RiCheckLine size={14} />}
+              Split by subject — e.g. 20 Physics + 20 Chemistry + 40 Biology
+            </button>
+
+            {!splitBySubject ? (
+              <>
+                <div className="flex flex-col gap-2 sm:max-w-[280px]">
+                  <label className="text-sm font-semibold text-t-primary">Number of questions</label>
+                  <input
+                    type="number" min={1} max={500} value={bankCount}
+                    onChange={(event) => setBankCount(Number(event.target.value))}
+                    className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-semibold text-t-primary">
+                    Subjects <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {(() => {
+                      const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
+                      const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
+                      return subjects.map((subject) => {
+                        const on = bankSubjects.includes(subject);
+                        return (
+                          <button
+                            key={subject}
+                            type="button"
+                            onClick={() => setBankSubjects((current) =>
+                              current.includes(subject) ? current.filter((s) => s !== subject) : [...current, subject])}
+                            className={`h-10 rounded-[10px] border px-4 text-sm font-semibold transition ${
+                              on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
+                            }`}
+                          >
+                            {on && <RiCheckLine size={14} className="mr-1 inline" />}
+                            {subject}
+                            <span className="ml-1.5 text-[11px] font-normal opacity-70">
+                              {stock ? ((stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0) : "…"}
+                            </span>
+                          </button>
+                        );
+                      });
+                    })()}
+                  </div>
+                  {selectedBatches.length === 0 && (
+                    <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+                  )}
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <label className="text-sm font-semibold text-t-primary">Questions per subject</label>
+                  <span className="text-xs font-bold text-t-secondary">{splitTotal} question{splitTotal === 1 ? "" : "s"} total</span>
+                </div>
+                {selectedBatches.length === 0 ? (
+                  <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    {(() => {
+                      const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
+                      const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
+                      return subjects.map((subject) => {
+                        const available = stock ? ((stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0) : null;
+                        const requested = subjectCounts[subject] ?? 0;
+                        const short = available !== null && requested > available;
+                        return (
+                          <div
+                            key={subject}
+                            className={`flex items-center gap-3 rounded-[10px] border px-3 py-2 ${
+                              short ? "border-primary-03/40 bg-primary-03/5" : "border-s-stroke2 bg-b-surface1"
+                            }`}
+                          >
+                            <span className="flex-1 text-sm font-semibold text-t-primary">{subject}</span>
+                            <span className={`text-[11px] font-normal ${short ? "text-primary-03" : "text-t-tertiary"}`}>
+                              {available === null ? "…" : `${available} available`}
+                            </span>
+                            <input
+                              type="number" min={0} max={available ?? undefined}
+                              value={subjectCounts[subject] || ""}
+                              onChange={(event) => {
+                                const value = event.target.value === "" ? 0 : Math.max(0, Number(event.target.value));
+                                setSubjectCounts((current) => ({ ...current, [subject]: value }));
+                              }}
+                              placeholder="0"
+                              className="h-10 w-20 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-sm font-medium text-t-primary text-center outline-none focus:border-primary-01"
+                            />
+                          </div>
+                        );
+                      });
+                    })()}
+                  </div>
+                )}
               </div>
-              {selectedBatches.length === 0 && (
-                <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
-              )}
-            </div>
+            )}
 
             {/* Chapters. The bank was drawn from blind before this — there was
-                no way to aim a test at what a class had actually covered. */}
-            {chapterOptions.length > 0 && (
+                no way to aim a test at what a class had actually covered.
+                Hidden in split-by-subject mode: a chapter name only means
+                something within one subject, and this filter would apply the
+                same chapter list to every subject's pool at once. */}
+            {!splitBySubject && chapterOptions.length > 0 && (
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-t-primary">
                   Chapters <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
@@ -706,8 +784,10 @@ export default function ScheduleTestPage() {
               </div>
             )}
 
-            {/* What the filters above actually leave to draw from. */}
-            {selectedBatches.length > 0 && stock && (
+            {/* What the filters above actually leave to draw from. Split mode
+                shows availability per subject inline instead — this flat
+                summary would just repeat the same total. */}
+            {!splitBySubject && selectedBatches.length > 0 && stock && (
               <div className={`rounded-[10px] px-3.5 py-2.5 text-[13px] ${
                 matching !== null && matching < bankCount
                   ? "bg-primary-03/10 text-t-primary"
@@ -907,7 +987,13 @@ export default function ScheduleTestPage() {
             ) : (
               <>
                 <RiCheckDoubleLine size={18} />
-                {mode === "pdf" ? "Create test from PDF" : mode === "pick" ? `Create test with ${pickedQuestions.length} question${pickedQuestions.length === 1 ? "" : "s"}` : "Create test"}
+                {mode === "pdf"
+                  ? "Create test from PDF"
+                  : mode === "pick"
+                    ? `Create test with ${pickedQuestions.length} question${pickedQuestions.length === 1 ? "" : "s"}`
+                    : mode === "bank" && splitBySubject
+                      ? `Create test with ${splitTotal} question${splitTotal === 1 ? "" : "s"}`
+                      : "Create test"}
               </>
             )}
           </button>

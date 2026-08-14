@@ -354,9 +354,24 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     const {
       exam_id, title, type = "mock-test",
       question_count = 90, subjects, chapters, difficulty_mix, question_ids,
+      subject_counts,
       duration_minutes = 180, batch_ids,
       scheduled_start, scheduled_end,
     } = req.body;
+
+    // A NEET paper is 20 Physics + 20 Chemistry + 40 Biology, not "80
+    // questions, ideally from those subjects" — the flat question_count path
+    // below has no way to express that a coaching center's actual request is
+    // per-subject, not a single pool it then hopes gets a reasonable split.
+    const subjectCounts: { subject: string; count: number }[] = Array.isArray(subject_counts)
+      ? subject_counts
+          .map((row: any) => ({ subject: String(row?.subject ?? "").trim(), count: Number(row?.count) }))
+          .filter((row: { subject: string; count: number }) => row.subject && Number.isInteger(row.count) && row.count > 0)
+      : [];
+    if (subject_counts !== undefined && subjectCounts.length === 0) {
+      res.status(400).json({ success: false, message: "subject_counts must be a non-empty list of { subject, count } with positive integer counts." });
+      return;
+    }
 
     // Deduplicated: the picker can select a question twice across pages, and a
     // paper containing the same question twice is a bug the admin cannot see.
@@ -410,7 +425,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     // still has a half-read formula or no correct answer. Only approved
     // questions belong in a paper students will sit.
     const instituteId = req.user!.institute_id;
-    let questionQuery = supabaseDB
+    const scopedQuery = () => supabaseDB
       .from("questions")
       .select("id, subject, difficulty")
       .eq("exam_id", exam_id)
@@ -418,49 +433,77 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       .eq("review_status", "approved")
       .or(`content_scope.eq.global,institute_id.eq.${instituteId}`);
 
-    if (picked.length) questionQuery = questionQuery.in("id", picked);
-    else {
-      if (subjects?.length) questionQuery = questionQuery.in("subject", subjects);
-      if (chapters?.length) questionQuery = questionQuery.in("chapter", chapters);
-    }
+    let shuffled: any[];
 
-    const { data: allQs } = await questionQuery;
-    if (!allQs || allQs.length === 0) {
-      // "No questions found" told an admin nothing about which of the four
-      // filters emptied the set, and the bank screen offers no way to look.
-      res.status(400).json({
-        success: false,
-        message: subjects?.length || chapters?.length
-          ? "No approved questions match those subjects and chapters. Widen the filters, or review and approve extracted papers first."
-          : "Your question bank has no approved questions for this exam yet. Extracted papers have to be reviewed and approved before they can be drawn from.",
-      });
-      return;
-    }
-    if (!picked.length && allQs.length < question_count) {
-      res.status(400).json({ success: false, message: `Only ${allQs.length} eligible questions are available; ${question_count} were requested.` });
-      return;
-    }
+    if (subjectCounts.length) {
+      // One scoped query per subject, sampled independently, then laid out in
+      // the order given — Physics block, then Chemistry, then Biology, the
+      // way the paper is actually meant to read rather than one shuffled pool
+      // that happens to contain the right totals.
+      const shortfalls: string[] = [];
+      const perSubject: any[][] = [];
+      for (const { subject, count } of subjectCounts) {
+        let subjectQuery = scopedQuery().eq("subject", subject);
+        if (chapters?.length) subjectQuery = subjectQuery.in("chapter", chapters);
+        const { data: subjectQs } = await subjectQuery;
+        const pool = subjectQs ?? [];
+        if (pool.length < count) shortfalls.push(`${subject}: ${pool.length} available, ${count} requested`);
+        perSubject.push(pool.sort(() => Math.random() - 0.5).slice(0, count));
+      }
+      if (shortfalls.length) {
+        res.status(400).json({
+          success: false,
+          message: `Not enough approved questions to fill this paper — ${shortfalls.join("; ")}. Widen the chapters, lower the counts, or review and approve more questions first.`,
+        });
+        return;
+      }
+      shuffled = perSubject.flat();
+    } else {
+      let questionQuery = scopedQuery();
+      if (picked.length) questionQuery = questionQuery.in("id", picked);
+      else {
+        if (subjects?.length) questionQuery = questionQuery.in("subject", subjects);
+        if (chapters?.length) questionQuery = questionQuery.in("chapter", chapters);
+      }
 
-    // An explicit selection is used exactly as given — same order, no sampling.
-    // Filters draw at random because nobody has said which questions they want;
-    // once someone has, choosing for them is just losing their work. The ids are
-    // intersected with the scoped set above rather than trusted, so a client
-    // cannot name another institute's question or an unapproved one.
-    const shuffled = picked.length
-      ? (() => {
-          const eligible = new Map(allQs.map((q: any) => [String(q.id), q]));
-          return picked.map((id: string) => eligible.get(id)).filter(Boolean) as typeof allQs;
-        })()
-      : allQs.sort(() => Math.random() - 0.5).slice(0, question_count);
+      const { data: allQs } = await questionQuery;
+      if (!allQs || allQs.length === 0) {
+        // "No questions found" told an admin nothing about which of the four
+        // filters emptied the set, and the bank screen offers no way to look.
+        res.status(400).json({
+          success: false,
+          message: subjects?.length || chapters?.length
+            ? "No approved questions match those subjects and chapters. Widen the filters, or review and approve extracted papers first."
+            : "Your question bank has no approved questions for this exam yet. Extracted papers have to be reviewed and approved before they can be drawn from.",
+        });
+        return;
+      }
+      if (!picked.length && allQs.length < question_count) {
+        res.status(400).json({ success: false, message: `Only ${allQs.length} eligible questions are available; ${question_count} were requested.` });
+        return;
+      }
 
-    // Some ids survived neither the scope filter nor the status filter. Saying
-    // so beats quietly building a shorter paper than the one that was chosen.
-    if (picked.length && shuffled.length !== picked.length) {
-      res.status(400).json({
-        success: false,
-        message: `${picked.length - shuffled.length} of the ${picked.length} chosen questions are no longer available — they may have been edited, unapproved, or removed. Reload the picker and try again.`,
-      });
-      return;
+      // An explicit selection is used exactly as given — same order, no sampling.
+      // Filters draw at random because nobody has said which questions they want;
+      // once someone has, choosing for them is just losing their work. The ids are
+      // intersected with the scoped set above rather than trusted, so a client
+      // cannot name another institute's question or an unapproved one.
+      shuffled = picked.length
+        ? (() => {
+            const eligible = new Map(allQs.map((q: any) => [String(q.id), q]));
+            return picked.map((id: string) => eligible.get(id)).filter(Boolean) as typeof allQs;
+          })()
+        : allQs.sort(() => Math.random() - 0.5).slice(0, question_count);
+
+      // Some ids survived neither the scope filter nor the status filter. Saying
+      // so beats quietly building a shorter paper than the one that was chosen.
+      if (picked.length && shuffled.length !== picked.length) {
+        res.status(400).json({
+          success: false,
+          message: `${picked.length - shuffled.length} of the ${picked.length} chosen questions are no longer available — they may have been edited, unapproved, or removed. Reload the picker and try again.`,
+        });
+        return;
+      }
     }
 
     const { data: paper, error: pErr } = await supabaseDB
