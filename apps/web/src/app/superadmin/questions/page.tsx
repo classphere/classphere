@@ -2,23 +2,19 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
-import { 
-  RiSearchLine, 
-  RiFilter3Line, 
-  RiAddLine, 
-  RiDeleteBinLine, 
-  RiEditLine, 
-  RiMore2Fill, 
+import {
+  RiSearchLine,
+  RiDeleteBinLine,
+  RiEditLine,
   RiLoader4Line,
-  RiArrowDownSLine
 } from "@remixicon/react";
+import { PaperCard, type PaperCardBadge } from "@/components/questions/PaperCard";
 
 const DIFFICULTY_CLASS: Record<string, string> = {
   Hard: "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03",
@@ -259,29 +255,20 @@ export default function QuestionBankPage() {
             </div>
           </div>
 
-          {/* Table */}
+          {/* Cards — the same PaperCard Test Department and Institute Admin use,
+              so a style change here reaches both instead of just this table. */}
           <div className="flex flex-col gap-3 mt-3">
-            <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
-              <div className="w-[40px] flex items-center justify-center">
-                <input 
+            {!loading && questions.length > 0 && (
+              <label className="flex w-fit cursor-pointer items-center gap-2 px-1 text-xs font-semibold uppercase tracking-wider text-t-secondary">
+                <input
                   type="checkbox"
                   className="w-4 h-4 cursor-pointer accent-primary-01"
                   checked={total > 0 && selectedIds.size === total}
-                  onChange={(e) => {
-                    if (e.target.checked) {
-                      setSelectedIds(new Set(allFilteredIds));
-                    } else {
-                      setSelectedIds(new Set());
-                    }
-                  }}
+                  onChange={(e) => setSelectedIds(e.target.checked ? new Set(allFilteredIds) : new Set())}
                 />
-              </div>
-              <div className="flex-1 pr-4">Test Title</div>
-              <div className="w-[130px]">Subject</div>
-              <div className="flex-1">Chapter / Topic</div>
-              <div className="w-[100px]">Type</div>
-              <div className="w-[120px] text-right">Actions</div>
-            </div>
+                Select all {total.toLocaleString()} results
+              </label>
+            )}
 
             {loading ? (
               <div className="flex items-center justify-center gap-3 py-10 text-t-secondary">
@@ -293,69 +280,69 @@ export default function QuestionBankPage() {
                 <p className="font-sans font-semibold text-[14px]">No tests found.</p>
                 <p className="font-sans text-[13px] mt-1">Try adjusting your filters.</p>
               </div>
-            ) : questions.map((question) => (
-              <div
-                key={question.id}
-                className={`group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer ${selectedIds.has(question.id) ? 'border-primary-01/50 bg-primary-01/5' : ''}`}
-              >
-                <div className="hidden md:flex w-[40px] items-center justify-center">
-                  <input 
-                    type="checkbox"
-                    className="w-4 h-4 cursor-pointer accent-primary-01"
-                    checked={selectedIds.has(question.id)}
-                    onChange={(e) => {
-                      const newSet = new Set(selectedIds);
-                      if (e.target.checked) newSet.add(question.id);
-                      else newSet.delete(question.id);
-                      setSelectedIds(newSet);
-                    }}
-                  />
-                </div>
-                <div className="flex-1 font-sans text-[14px] font-medium text-t-primary truncate pr-4" title={question.title}>
-                  {question.title || "Untitled Test"}
-                </div>
-                <div className="w-full md:w-[130px] font-sans text-[15px] font-semibold text-t-primary">
-                  {question.subject || "-"}
-                </div>
-                <div className="flex-1 font-sans text-[14px] font-medium text-t-primary truncate">
-                  {question.chapter || "-"}{question.topic ? ` · ${question.topic}` : ""}
-                </div>
-                <div className="w-full md:w-[100px] flex flex-col gap-1">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[10px] border bg-b-surface1 border-s-stroke2/40 text-t-secondary">
-                    <span className="font-sans text-[11px] font-bold uppercase tracking-wider">{question.test_type || "N/A"}</span>
-                  </span>
-                  {!question.is_published && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[10px] border bg-[rgba(255,159,10,0.08)] border-[rgba(255,159,10,0.2)] text-[#FF9F0A] w-fit">
-                      <span className="font-sans text-[11px] font-bold uppercase tracking-wider">Draft</span>
-                    </span>
-                  )}
-                </div>
-                <div className="w-full md:w-[120px] text-right flex md:justify-end items-center gap-1 opacity-100 transition-opacity">
-                  <button 
-                    onClick={() => handleEditClick(question)}
-                    className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors"
-                  >
-                    <RiEditLine size={18} />
-                  </button>
-                  <Link
-                    href={`/superadmin/questions/${question.id}`}
-                    onClick={(event) => event.stopPropagation()}
-                    className="rounded-[10px] px-3 py-2 text-xs font-semibold text-t-primary hover:bg-b-surface1"
-                  >
-                    Review
-                  </Link>
-                  <button 
-                    onClick={() => handleDelete(question.id)}
-                    className="p-2 rounded-[10px] hover:bg-[rgba(239,68,68,0.1)] text-t-secondary hover:text-primary-03 transition-colors"
-                  >
-                    <RiDeleteBinLine size={18} />
-                  </button>
-                  <button className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors">
-                    <RiMore2Fill size={18} />
-                  </button>
-                </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                {questions.map((question) => {
+                  const badges: PaperCardBadge[] = [
+                    { label: question.test_type || "N/A", className: "bg-b-surface1 border border-s-stroke2 text-t-secondary" },
+                  ];
+                  if (!question.is_published) {
+                    badges.push({ label: "Draft", className: "bg-[rgba(255,159,10,0.08)] border border-[rgba(255,159,10,0.2)] text-[#FF9F0A]" });
+                  }
+                  if (question.difficulty && DIFFICULTY_CLASS[question.difficulty]) {
+                    badges.push({ label: question.difficulty, className: `border ${DIFFICULTY_CLASS[question.difficulty]}` });
+                  }
+                  const subtitle = [question.subject, question.chapter, question.topic].filter(Boolean).join(" · ");
+                  return (
+                    <PaperCard
+                      key={question.id}
+                      href={`/superadmin/questions/${question.id}`}
+                      title={question.title || "Untitled Test"}
+                      badges={badges}
+                      subtitle={subtitle || undefined}
+                      totalQuestions={question.total_questions}
+                      durationMin={question.duration_min}
+                      totalMarks={question.total_marks}
+                      ctaLabel="Review"
+                      leadingAccessory={
+                        <input
+                          type="checkbox"
+                          className="h-4 w-4 cursor-pointer accent-primary-01"
+                          checked={selectedIds.has(question.id)}
+                          onClick={(e) => e.stopPropagation()}
+                          onChange={(e) => {
+                            const newSet = new Set(selectedIds);
+                            if (e.target.checked) newSet.add(question.id);
+                            else newSet.delete(question.id);
+                            setSelectedIds(newSet);
+                          }}
+                        />
+                      }
+                      cornerAction={
+                        <>
+                          <button
+                            type="button"
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleEditClick(question); }}
+                            title="Edit details"
+                            className="flex h-8 w-8 items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface1 text-t-secondary transition-colors hover:border-t-secondary/50 hover:text-t-primary"
+                          >
+                            <RiEditLine size={14} />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleDelete(question.id); }}
+                            title="Delete"
+                            className="flex h-8 w-8 items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface1 text-t-secondary transition-colors hover:border-[rgba(239,68,68,0.4)] hover:text-primary-03"
+                          >
+                            <RiDeleteBinLine size={14} />
+                          </button>
+                        </>
+                      }
+                    />
+                  );
+                })}
               </div>
-            ))}
+            )}
           </div>
 
           {/* Pagination */}

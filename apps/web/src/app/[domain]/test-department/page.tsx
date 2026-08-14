@@ -7,105 +7,26 @@ import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { useQueryClient } from "@tanstack/react-query";
+import { PaperCard, type PaperCardBadge } from "@/components/questions/PaperCard";
 import {
-  RiQuestionLine,
-  RiTimeLine,
   RiFileTextLine,
   RiLoader4Line,
   RiArchiveLine,
   RiInboxUnarchiveLine,
 } from "@remixicon/react";
 
-const STATUS_CONFIG: Record<string, { label: string; bg: string; text: string }> = {
-  draft:             { label: "Draft",              bg: "bg-b-surface2",           text: "text-t-secondary" },
-  needs_review:      { label: "Ready for review",   bg: "bg-amber-50 dark:bg-amber-900/30",   text: "text-amber-600 dark:text-amber-400" },
-  changes_requested: { label: "Changes requested",  bg: "bg-orange-50 dark:bg-orange-900/30", text: "text-orange-600 dark:text-orange-400" },
-  approved:          { label: "Ready to publish",   bg: "bg-emerald-50 dark:bg-emerald-900/30", text: "text-emerald-600 dark:text-emerald-400" },
-  scheduled:         { label: "Scheduled",          bg: "bg-blue-50 dark:bg-blue-900/30",     text: "text-blue-600 dark:text-blue-400" },
-  published:         { label: "Published",          bg: "bg-blue-50 dark:bg-blue-900/30",     text: "text-blue-600 dark:text-blue-400" },
-  archived:          { label: "Archived",           bg: "bg-b-surface2",           text: "text-t-tertiary" },
+const STATUS_CONFIG: Record<string, { label: string; className: string }> = {
+  draft:             { label: "Draft",              className: "bg-b-surface1 border border-s-stroke2 text-t-secondary" },
+  needs_review:      { label: "Ready for review",   className: "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400" },
+  changes_requested: { label: "Changes requested",  className: "bg-orange-50 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400" },
+  approved:          { label: "Ready to publish",   className: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400" },
+  scheduled:         { label: "Scheduled",          className: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" },
+  published:         { label: "Published",          className: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" },
+  archived:          { label: "Archived",           className: "bg-b-surface1 border border-s-stroke2 text-t-tertiary" },
 };
 
 const ACTIVE_PATH = "/api/v1/test-department/papers";
 const ARCHIVED_PATH = "/api/v1/test-department/papers?status=archived";
-
-function PaperCard({
-  paper, canManage, archived, busy, onArchive, onRestore,
-}: {
-  paper: any;
-  canManage: boolean;
-  archived: boolean;
-  busy: boolean;
-  onArchive: (id: string) => void;
-  onRestore: (id: string) => void;
-}) {
-  const status = STATUS_CONFIG[paper.workflow_status] ?? STATUS_CONFIG.draft;
-
-  return (
-    <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
-      {/* Full-card link, sitting under the content and the quick-action button
-          so the whole card stays clickable without nesting a button inside
-          an anchor. */}
-      <Link href={`/test-department/${paper.id}`} className="absolute inset-0 z-0" aria-label={paper.title} />
-
-      {/* Hover gradient */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-violet-500/[0.03] to-blue-500/[0.03] rounded-[20px]" />
-
-      {canManage && (
-        <button
-          type="button"
-          disabled={busy}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (archived) onRestore(paper.id);
-            else onArchive(paper.id);
-          }}
-          title={archived ? "Restore to draft" : "Archive"}
-          className="absolute top-4 right-4 z-20 flex h-8 w-8 items-center justify-center rounded-[8px] bg-b-surface1 border border-s-stroke2 text-t-secondary hover:text-t-primary hover:border-t-secondary/50 transition-colors disabled:opacity-40"
-        >
-          {archived ? <RiInboxUnarchiveLine size={14} /> : <RiArchiveLine size={14} />}
-        </button>
-      )}
-
-      <div className="relative z-10 pointer-events-none">
-        {/* Status badge */}
-        <div className="flex items-center gap-2 mb-3 flex-wrap pr-8">
-          <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${status.bg} ${status.text}`}>
-            {status.label}
-          </span>
-          <span className="inline-flex text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-b-surface2 border border-s-stroke2 text-t-tertiary">
-            v{paper.review_version}
-          </span>
-        </div>
-
-        {/* Title */}
-        <h3 className="font-bold text-[16px] leading-[1.35] text-t-primary mb-4 tracking-[-0.01em] line-clamp-2">
-          {paper.title}
-        </h3>
-
-        {/* Stats */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-medium text-t-secondary">
-          <span className="flex items-center gap-1.5">
-            <RiQuestionLine size={13} className="opacity-70" />
-            {paper.total_questions} Questions
-          </span>
-          <span className="flex items-center gap-1.5">
-            <RiTimeLine size={13} className="opacity-70" />
-            {paper.duration_min} Min
-          </span>
-        </div>
-      </div>
-
-      <div className="relative z-10 mt-3 pt-4 border-t border-s-stroke2 flex justify-end pointer-events-none">
-        <span className="flex items-center gap-1.5 h-9 px-4 rounded-[10px] text-[13px] font-semibold bg-b-surface1 border border-s-stroke2 text-t-secondary group-hover:border-t-secondary/50 group-hover:text-t-primary transition-all">
-          <RiFileTextLine size={14} />
-          Open
-        </span>
-      </div>
-    </div>
-  );
-}
 
 export default function TestDepartmentPage() {
   const { session, user } = useAuth();
@@ -202,17 +123,44 @@ export default function TestDepartmentPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-            {papers.map((paper) => (
-              <PaperCard
-                key={paper.id}
-                paper={paper}
-                canManage={canManage}
-                archived={tab === "archived"}
-                busy={busyId === paper.id}
-                onArchive={archivePaper}
-                onRestore={restorePaper}
-              />
-            ))}
+            {papers.map((paper) => {
+              const status = STATUS_CONFIG[paper.workflow_status] ?? STATUS_CONFIG.draft;
+              const exam = Array.isArray(paper.exams) ? paper.exams[0] : paper.exams;
+              const badges: PaperCardBadge[] = [
+                { label: status.label, className: status.className },
+                { label: `v${paper.review_version}`, className: "bg-b-surface1 border border-s-stroke2 text-t-tertiary" },
+              ];
+              const archived = tab === "archived";
+              return (
+                <PaperCard
+                  key={paper.id}
+                  href={`/test-department/${paper.id}`}
+                  title={paper.title}
+                  subtitle={exam?.full_name}
+                  badges={badges}
+                  totalQuestions={paper.total_questions}
+                  durationMin={paper.duration_min}
+                  totalMarks={paper.total_marks}
+                  ctaLabel="Review"
+                  cornerAction={canManage && (
+                    <button
+                      type="button"
+                      disabled={busyId === paper.id}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (archived) restorePaper(paper.id);
+                        else archivePaper(paper.id);
+                      }}
+                      title={archived ? "Restore to draft" : "Archive"}
+                      className="flex h-8 w-8 items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface1 text-t-secondary transition-colors hover:border-t-secondary/50 hover:text-t-primary disabled:opacity-40"
+                    >
+                      {archived ? <RiInboxUnarchiveLine size={14} /> : <RiArchiveLine size={14} />}
+                    </button>
+                  )}
+                />
+              );
+            })}
           </div>
         )}
       </main>

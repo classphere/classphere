@@ -180,7 +180,9 @@ export async function listReviewPapers(req: Request, res: Response): Promise<voi
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
     const status = typeof req.query.status === "string" ? req.query.status : null;
-    let query = supabaseDB.from("papers").select("id, title, test_type, total_questions, total_marks, duration_min, workflow_status, review_version, created_at, submitted_at, available_from, available_until, created_by, users!papers_created_by_fkey(name, email)")
+    // exams(code, full_name) added so the card list can show which exam a
+    // paper is for without a second round trip per card.
+    let query = supabaseDB.from("papers").select("id, title, test_type, total_questions, total_marks, duration_min, workflow_status, review_version, created_at, submitted_at, available_from, available_until, created_by, users!papers_created_by_fkey(name, email), exams(code, full_name)")
       .eq("institute_id", instituteId).order("created_at", { ascending: false });
     // Archiving sets is_active: false, so the default working list (no status,
     // or any status other than archived) excludes it via is_active alone.
