@@ -856,6 +856,14 @@ export const deleteTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
+    // Deactivating the paper alone left its questions exactly as eligible as
+    // before for every other consumer of the bank (createTest's auto-fill,
+    // getBankAvailability, topic-wise practice) — none of them care which
+    // paper a question came from, only that it's is_active and approved. A
+    // question still reachable through some other active paper is left alone.
+    const { error: cascadeError } = await supabaseDB.rpc("deactivate_orphaned_paper_questions", { p_paper_ids: [id] });
+    if (cascadeError) console.error("[deleteTest] Failed to deactivate orphaned questions:", cascadeError.message);
+
     if (isSuperAdmin) {
       await logAdminAction(req.user?.id, "Global paper deactivated", `Deactivated global paper ${id}.`, "question_bank", "success");
     }
@@ -990,6 +998,13 @@ export const bulkDeleteGlobalTests = async (req: Request, res: Response): Promis
       .eq("is_active", true)
       .select("id");
     if (error) throw error;
+
+    // Same cascade as the single-paper delete: a question only reachable
+    // through these papers stops being eligible for the bank too, instead of
+    // silently surviving every paper that ever held it.
+    const { error: cascadeError } = await supabaseDB.rpc("deactivate_orphaned_paper_questions", { p_paper_ids: ids });
+    if (cascadeError) console.error("[bulkDeleteGlobalTests] Failed to deactivate orphaned questions:", cascadeError.message);
+
     await logAdminAction(req.user?.id, "Global papers bulk deactivated", `Deactivated ${ids.length} global papers.`, "question_bank", "success");
     res.status(200).json({ success: true, data: { count: data?.length ?? 0 } });
   } catch (err: any) {
