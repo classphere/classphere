@@ -36,7 +36,6 @@ export default function TestDepartmentPage() {
   // (transitionReviewPaper) — a Test Editor can see the Archived tab but
   // shouldn't get a quick-action it would just 403 on.
   const canManage = user?.role === "test_department_head" || user?.role === "institute_admin";
-  const roleLabel = user?.role === "test_department_head" ? "Department Head" : "Test Editor";
 
   const [tab, setTab] = useState<"active" | "archived">("active");
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -74,10 +73,9 @@ export default function TestDepartmentPage() {
     <>
       <Navbar title="Test Department" subtitle="Prepare, verify, and release every assessment with confidence.">
         <div className="flex items-center gap-3">
-          <span className="rounded-full bg-b-surface2 border border-s-stroke2 px-3 py-1 text-xs font-semibold text-t-secondary">{roleLabel}</span>
           {canOperate && (
             <Link href="/test-department/create" className="flex h-9 items-center justify-center rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white dark:bg-white dark:text-black">
-              Upload test PDF
+              Create Test
             </Link>
           )}
         </div>
