@@ -49,14 +49,19 @@ function validQuestion(question: any): string | null {
   if (type === "mcq_single" && answers.length !== 1) return "A single-correct question needs exactly one correct answer.";
   return null;
 }
-async function getOwnedPaper(paperId: string, instituteId: string) {
-  const { data, error } = await supabaseDB
+async function getOwnedPaper(paperId: string, instituteId: string, opts: { includeInactive?: boolean } = {}) {
+  let query = supabaseDB
     .from("papers")
     .select("*")
     .eq("id", paperId)
-    .eq("institute_id", instituteId)
-    .eq("is_active", true)
-    .maybeSingle();
+    .eq("institute_id", instituteId);
+  // An archived paper is is_active: false — restoring one has to find it
+  // first, so the transition endpoint always looks with includeInactive.
+  // Every other caller (editing, question mutation) keeps the filter: those
+  // actions have no business touching an archived paper regardless of what
+  // workflow_status claims.
+  if (!opts.includeInactive) query = query.eq("is_active", true);
+  const { data, error } = await query.maybeSingle();
   if (error) throw error;
   return data;
 }
@@ -176,8 +181,17 @@ export async function listReviewPapers(req: Request, res: Response): Promise<voi
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
     const status = typeof req.query.status === "string" ? req.query.status : null;
     let query = supabaseDB.from("papers").select("id, title, test_type, total_questions, total_marks, duration_min, workflow_status, review_version, created_at, submitted_at, available_from, available_until, created_by, users!papers_created_by_fkey(name, email)")
-      .eq("institute_id", instituteId).eq("is_active", true).order("created_at", { ascending: false });
-    if (status) query = query.eq("workflow_status", status);
+      .eq("institute_id", instituteId).order("created_at", { ascending: false });
+    // Archiving sets is_active: false, so the default working list (no status,
+    // or any status other than archived) excludes it via is_active alone.
+    // Asking for status=archived specifically has to drop that filter, or
+    // every archived paper would just be an empty result forever.
+    if (status === "archived") {
+      query = query.eq("workflow_status", "archived");
+    } else {
+      query = query.eq("is_active", true);
+      if (status) query = query.eq("workflow_status", status);
+    }
     const { data, error } = await query;
     if (error) throw error;
     res.json({ success: true, data: { papers: data ?? [] } });
@@ -188,12 +202,14 @@ export async function getReviewPaper(req: Request, res: Response): Promise<void>
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
     // Join the exams table to get the resolved exam code (e.g. "jee-main", "neet-ug")
+    // No is_active filter: an archived paper (is_active: false) still has to
+    // be viewable here, both to confirm what's being restored and because
+    // it's the only screen that carries the Restore action.
     const { data: paper, error: paperErr } = await supabaseDB
       .from("papers")
       .select("*, exam_code:exams(code)")
       .eq("id", req.params.id)
       .eq("institute_id", instituteId)
-      .eq("is_active", true)
       .maybeSingle();
     if (paperErr) throw paperErr;
     if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
@@ -331,20 +347,27 @@ export async function deleteReviewQuestion(req: Request, res: Response): Promise
 export async function transitionReviewPaper(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
-    const paper = await getOwnedPaper(req.params.id, instituteId);
+    // includeInactive: restore's only valid source state is "archived", which
+    // is always is_active: false — the default filter would never find it.
+    const paper = await getOwnedPaper(req.params.id, instituteId, { includeInactive: true });
     if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
     const action = req.body?.action;
     const reason = typeof req.body?.reason === "string" ? req.body.reason.trim() : null;
     const role = req.user!.role;
     const transitions: Record<string, string[]> = {
-      submit: ["draft", "changes_requested"], request_changes: ["needs_review", "approved"], approve: ["needs_review"], publish: ["approved", "scheduled"], archive: ["draft", "changes_requested", "approved", "scheduled", "published"],
+      submit: ["draft", "changes_requested"], request_changes: ["needs_review", "approved"], approve: ["needs_review"], publish: ["approved", "scheduled"],
+      archive: ["draft", "changes_requested", "approved", "scheduled", "published"],
+      // Always back to draft, never straight to whatever it was before: a
+      // restored paper should go through a conscious re-publish rather than
+      // silently going live again the instant it's un-archived.
+      restore: ["archived"],
     };
     if (!transitions[action]?.includes(paper.workflow_status)) { res.status(409).json({ success: false, message: "This workflow action is not available for the current paper status." }); return; }
-    // Publishing and archiving belong to the Head — and to the Institute Admin
-    // above them, because a small coaching has no Test Department at all and the
-    // owner does the whole job themselves.
-    if (["publish", "archive"].includes(action) && !isHead(req) && role !== "institute_admin") {
-      res.status(403).json({ success: false, message: "Only the Test Department Head or the Institute Admin can publish or archive a paper." }); return;
+    // Publishing, archiving and restoring belong to the Head — and to the
+    // Institute Admin above them, because a small coaching has no Test
+    // Department at all and the owner does the whole job themselves.
+    if (["publish", "archive", "restore"].includes(action) && !isHead(req) && role !== "institute_admin") {
+      res.status(403).json({ success: false, message: "Only the Test Department Head or the Institute Admin can publish, archive or restore a paper." }); return;
     }
     if (!isDepartmentUser(req) && role !== "institute_admin") { res.status(403).json({ success: false, message: "Access denied." }); return; }
     let workflow_status: string = paper.workflow_status;
@@ -353,6 +376,7 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
     if (action === "request_changes") workflow_status = "changes_requested";
     if (action === "approve") { workflow_status = "approved"; updates.approved_at = new Date().toISOString(); updates.approved_by = req.user!.id; }
     if (action === "archive") { workflow_status = "archived"; updates.is_active = false; updates.is_published = false; }
+    if (action === "restore") { workflow_status = "draft"; updates.is_active = true; }
     if (action === "publish") {
       const { data: rows, error } = await supabaseDB.from("paper_questions").select("questions(id, question_text, question_type, options, correct_answer)").eq("paper_id", paper.id);
       if (error) throw error;

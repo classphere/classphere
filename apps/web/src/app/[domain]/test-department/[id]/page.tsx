@@ -28,6 +28,11 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
+// Matches the backend's own transitions["archive"] source list exactly —
+// kept here rather than derived so the button and the 409 it would otherwise
+// hit stay in sync without a round trip.
+const ARCHIVABLE_STATUSES = ["draft", "changes_requested", "approved", "scheduled", "published"];
+
 /**
  * Reviewing an institute's own extracted paper.
  *
@@ -86,7 +91,9 @@ export default function ReviewPaperPage() {
       setMessage(
         action === "publish"         ? "Test published." :
         action === "approve"         ? "Paper approved." :
-        action === "request_changes" ? "Changes requested." : "Updated.",
+        action === "request_changes" ? "Changes requested." :
+        action === "archive"         ? "Test archived. Find it under the Archived tab to restore it later." :
+        action === "restore"         ? "Test restored as a draft. Review and re-publish when ready." : "Updated.",
       );
       setTimeout(() => setMessage(""), 4000);
     } catch (error: any) { setMessage(error.message); }
@@ -193,6 +200,27 @@ export default function ReviewPaperPage() {
                   className="h-11 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
                 >
                   Publish test
+                </button>
+              )}
+              {isHead && status === "archived" && (
+                <button
+                  type="button" disabled={transacting} onClick={() => transition("restore")}
+                  className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
+                >
+                  Restore
+                </button>
+              )}
+              {isHead && ARCHIVABLE_STATUSES.includes(status) && (
+                <button
+                  type="button" disabled={transacting}
+                  onClick={() => {
+                    if (confirm("Archive this test? It will be hidden from the active list and unpublished if it's live. You can restore it later from the Archived tab.")) {
+                      transition("archive");
+                    }
+                  }}
+                  className="h-11 rounded-[10px] border border-[rgba(239,68,68,0.2)] bg-[rgba(239,68,68,0.05)] px-4 text-sm font-semibold text-[#EF4444] disabled:opacity-60"
+                >
+                  Archive
                 </button>
               )}
             </div>
