@@ -90,25 +90,20 @@ router.get("/institutes", listInstitutes);
  * Upload a JSON question bank with full metadata tagging.
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
  *
- * A body-size override, not the global 1MB limit: questions carry inline
- * base64 diagrams (processBase64ImageList in the controller uploads them to
- * R2 from here), and a chapter with 500+ questions — some with figures — was
- * never going to fit in 1MB. Scoped to this route alone; the global limit
- * elsewhere exists specifically to stop one request holding disproportionate
- * memory before auth/validation has run, and that reasoning still holds for
- * every route that isn't ingesting an extracted question bank.
- *
- * 25mb, then 60mb, both still weren't enough: Electrostatics.json (1159 Qs),
- * then Aldehydes/Ketones/Carboxylic Acids.json (969 Qs) and Chemical Bonding
- * and Molecular Structure.json (910 Qs) each in turn hit PayloadTooLargeError
- * in production. Organic-chemistry chapters especially carry a structural
- * diagram per question, so question count alone doesn't predict body size.
- * 150mb is a wide enough margin that another chapter shouldn't hit this
- * again; if one still does, the durable fix is uploading each question's
- * images to R2 client-side before submit and sending URLs instead of base64,
- * not another number bump here.
+ * A body-size override, not the global 1MB limit — but not because questions
+ * carry inline base64 diagrams anymore. They used to, and three limit bumps
+ * in a row (1mb -> 25mb -> 60mb -> 150mb) kept losing that race: chapter
+ * count doesn't predict body size, image density per question does, and
+ * there's no ceiling to raise the number against. Every caller (BulkUpload.tsx
+ * and both upload paths in AIExtractor.tsx) now runs its questions through
+ * convertQuestionsForUpload (apps/web/src/lib/question-image-upload.ts) first,
+ * which uploads each diagram to R2 client-side and sends its URL instead — so
+ * the body is text-only metadata and question content, and 20mb is generous
+ * headroom for even a 2000-question chapter of that. If this route starts
+ * rejecting bodies again, the bug is almost certainly a new caller sending raw
+ * base64 without going through that helper, not that 20mb needs to grow.
  */
-router.post("/upload-questions", express.json({ limit: "150mb" }), uploadQuestions);
+router.post("/upload-questions", express.json({ limit: "20mb" }), uploadQuestions);
 
 // Rate limiter: max 3 PDF extractions per IP per 10 minutes
 const pdfExtractionLimiter = rateLimit({

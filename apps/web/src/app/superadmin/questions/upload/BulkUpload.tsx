@@ -7,6 +7,7 @@ import {
 } from "@remixicon/react";
 import { API_V1_URL } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { convertQuestionsForUpload } from "@/lib/question-image-upload";
 
 const API_BASE = API_V1_URL;
 
@@ -200,8 +201,18 @@ export default function BulkUpload() {
     setUploading(true);
 
     for (const f of ready) {
-      updateFile(f.name, { status: "uploading" });
+      updateFile(f.name, { status: "uploading", message: `Uploading images 0/${f.questions!.length}…` });
       try {
+        // Convert every base64 diagram to an R2 URL first. Progress is
+        // committed into f.questions as it goes, so if this throws partway
+        // through, a retry resumes instead of re-uploading images that
+        // already succeeded.
+        const converted = await convertQuestionsForUpload(f.questions!, session.access_token, (partial, done, total) => {
+          updateFile(f.name, { questions: partial, message: `Uploading images ${done}/${total}…` });
+        });
+
+        updateFile(f.name, { questions: converted, message: "Creating draft…" });
+
         const headers: Record<string, string> = {
           "Content-Type": "application/json",
           Authorization: `Bearer ${session.access_token}`,
@@ -226,7 +237,7 @@ export default function BulkUpload() {
               ? { duration: parseInt(meta.duration), marks: parseInt(meta.marks) }
               : {}),
             difficulty: meta.difficulty,
-            questions:  f.questions,
+            questions:  converted,
           }),
         });
         const data = await res.json();
@@ -235,7 +246,7 @@ export default function BulkUpload() {
           message: data.message ?? "",
         });
       } catch (err: any) {
-        updateFile(f.name, { status: "error", message: err.message });
+        updateFile(f.name, { status: "error", message: err.message ?? "Image upload failed." });
       }
     }
     setUploading(false);
@@ -481,6 +492,8 @@ export default function BulkUpload() {
                     <p className="font-sans text-[12px] font-medium text-primary-03 break-words">
                       {f.message || "Upload failed — check API logs for details"}
                     </p>
+                  ) : f.status === "uploading" ? (
+                    <p className="font-sans text-[12px] font-medium text-[#FF9F0A]">{f.message || "Uploading…"}</p>
                   ) : (
                     <>
                       {/* ── Test Name input (prominent) ── */}

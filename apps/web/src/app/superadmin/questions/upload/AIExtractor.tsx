@@ -11,6 +11,7 @@ import {
 import { API_V1_URL } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
 import { QuestionBody } from "@/components/QuestionBody";
+import { convertQuestionsForUpload } from "@/lib/question-image-upload";
 
 const API_BASE = API_V1_URL;
 
@@ -208,6 +209,26 @@ export default function AIExtractor() {
               break;
             }
 
+            // Every diagram the extractor found is still base64 at this point
+            // (see question-image-upload.ts) — upload each to R2 and swap in
+            // its URL before this goes to the API, same as the bulk-upload
+            // flow does, so the request body stays text-only.
+            setResultMsg("Uploading extracted images…");
+            let convertedQuestions = jobState.result.questions;
+            try {
+              convertedQuestions = await convertQuestionsForUpload(
+                jobState.result.questions,
+                session.access_token,
+                (_partial, done, total) => setResultMsg(`Uploading extracted images ${done}/${total}…`),
+              );
+            } catch (err: any) {
+              setStatus("error");
+              setResultMsg("Failed to upload extracted images: " + err.message);
+              setExtractedQuestions(jobState.result.questions);
+              jobDone = true;
+              break;
+            }
+
             // Automatically push to DB as a draft
             const uploadBody = {
               exam: form.exam,
@@ -221,7 +242,7 @@ export default function AIExtractor() {
               marks: form.marks ? parseInt(form.marks) : undefined,
               difficulty: form.difficulty || undefined,
               marking_scheme: needsScheme ? markingScheme : undefined,
-              questions: jobState.result.questions,
+              questions: convertedQuestions,
             };
 
             try {
@@ -234,7 +255,7 @@ export default function AIExtractor() {
                 body: JSON.stringify(uploadBody),
               });
               const uploadData = await uploadRes.json();
-              
+
               if (uploadData.success) {
                  setStatus("success");
                  setResultMsg("Successfully created draft. Redirecting to advanced review...");
@@ -244,12 +265,12 @@ export default function AIExtractor() {
               } else {
                  setStatus("error");
                  setResultMsg("Failed to save draft: " + uploadData.message);
-                 setExtractedQuestions(jobState.result.questions); // fallback inline preview
+                 setExtractedQuestions(convertedQuestions); // fallback inline preview
               }
             } catch (err: any) {
               setStatus("error");
               setResultMsg("Network error saving draft: " + err.message);
-              setExtractedQuestions(jobState.result.questions);
+              setExtractedQuestions(convertedQuestions);
             }
             jobDone = true;
           } else if (jobState.status === "failed") {
@@ -291,9 +312,20 @@ export default function AIExtractor() {
     }
 
     setStatus("uploading");
-    setResultMsg("");
+    setResultMsg("Uploading extracted images…");
 
     try {
+      // Same conversion as the auto-push path — a question edited on this
+      // screen can still carry base64 diagrams the extractor wrote, and this
+      // is the only place those questions reach the API from. Already-
+      // converted images (e.g. after a failed auto-push retried here) no-op.
+      const convertedQuestions = await convertQuestionsForUpload(
+        extractedQuestions,
+        session.access_token,
+        (_partial, done, total) => setResultMsg(`Uploading extracted images ${done}/${total}…`),
+      );
+      setResultMsg("");
+
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${session.access_token}`,
@@ -314,7 +346,7 @@ export default function AIExtractor() {
         marks: form.marks ? parseInt(form.marks) : undefined,
         difficulty: form.difficulty || undefined,
         marking_scheme: needsScheme ? markingScheme : undefined,
-        questions: extractedQuestions,
+        questions: convertedQuestions,
       };
 
       const res = await fetch(`${API_BASE}/superadmin/upload-questions`, {
