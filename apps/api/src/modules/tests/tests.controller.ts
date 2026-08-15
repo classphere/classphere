@@ -445,19 +445,31 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     let shuffled: any[];
 
     if (subjectCounts.length) {
-      // One scoped query per subject, sampled independently, then laid out in
+      // One scoped query per section, sampled independently, then laid out in
       // the order given — Physics block, then Chemistry, then Biology, the
       // way the paper is actually meant to read rather than one shuffled pool
       // that happens to contain the right totals.
+      //
+      // Sections are not unique per subject: "20 from Kinematics" and "20 from
+      // Laws of Motion" are two Physics rows, which is the whole point of a
+      // part test. Two rows can therefore overlap (same subject, chapter lists
+      // that intersect, or either left unrestricted), so ids already taken by
+      // an earlier section are excluded from later ones — otherwise the same
+      // question could appear twice in one paper, which a reviewer reading a
+      // 60-question draft would have little chance of noticing.
       const shortfalls: string[] = [];
-      const perSubject: any[][] = [];
-      for (const { subject, count, chapters: subjectChapters } of subjectCounts) {
-        let subjectQuery = scopedQuery().eq("subject", subject);
-        if (subjectChapters.length) subjectQuery = subjectQuery.in("chapter", subjectChapters);
-        const { data: subjectQs } = await subjectQuery;
-        const pool = subjectQs ?? [];
-        if (pool.length < count) shortfalls.push(`${subject}: ${pool.length} available, ${count} requested`);
-        perSubject.push(pool.sort(() => Math.random() - 0.5).slice(0, count));
+      const perSection: any[][] = [];
+      const usedIds = new Set<string>();
+      for (const { subject, count, chapters: sectionChapters } of subjectCounts) {
+        let sectionQuery = scopedQuery().eq("subject", subject);
+        if (sectionChapters.length) sectionQuery = sectionQuery.in("chapter", sectionChapters);
+        const { data: sectionQs } = await sectionQuery;
+        const pool = (sectionQs ?? []).filter((q: any) => !usedIds.has(String(q.id)));
+        const label = sectionChapters.length ? `${subject} (${sectionChapters.join(", ")})` : subject;
+        if (pool.length < count) shortfalls.push(`${label}: ${pool.length} available, ${count} requested`);
+        const drawn = pool.sort(() => Math.random() - 0.5).slice(0, count);
+        for (const q of drawn) usedIds.add(String(q.id));
+        perSection.push(drawn);
       }
       if (shortfalls.length) {
         res.status(400).json({
@@ -466,7 +478,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
         });
         return;
       }
-      shuffled = perSubject.flat();
+      shuffled = perSection.flat();
     } else {
       let questionQuery = scopedQuery();
       if (picked.length) questionQuery = questionQuery.in("id", picked);

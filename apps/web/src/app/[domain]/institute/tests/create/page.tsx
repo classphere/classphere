@@ -13,6 +13,7 @@ import {
   RiArrowDownSLine,
   RiCheckLine,
   RiCloseLine,
+  RiAddLine,
   RiLoader4Line,
   RiSearchLine,
   RiNotification3Line,
@@ -25,12 +26,15 @@ import { useBatches } from "@/lib/hooks/useBatches";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
 import { QuestionPicker, type BankQuestion } from "@/components/institute/QuestionPicker";
 import { apiClient } from "@/lib/api.client";
-import { EXAM_SUBJECTS } from "@/lib/exam-config";
+import { EXAM_LABELS } from "@/lib/exam-config";
 import { useAuth } from "@/lib/auth-context";
 import { PremiumCard } from "@/components/premium-ui";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { API_URL } from "@/lib/api.client";
+
+/** One "N questions from this subject, optionally only these chapters" row. */
+type BlueprintSection = { subject: string; count: number; chapters: string[] };
 
 export default function ScheduleTestPage() {
   const router = useRouter();
@@ -78,15 +82,15 @@ export default function ScheduleTestPage() {
   // pattern, which is exactly the wrong impression for a NEET coaching.
   const [bankCount, setBankCount] = useState(0);
   const [bankDuration, setBankDuration] = useState(180);
-  // A NEET paper isn't "80 questions from wherever" — it's 20 Physics + 20
-  // Chemistry + 40 Biology. Off by default so the simple case (one flat
-  // count) stays simple; a coaching center that needs the split turns it on.
-  const [splitBySubject, setSplitBySubject] = useState(false);
-  const [subjectCounts, setSubjectCounts] = useState<Record<string, number>>({});
-  // Per-subject chapter picks — a chapter name only means something within
-  // one subject, so this can't be the one flat bankChapters list every
-  // subject would otherwise share.
-  const [subjectChapters, setSubjectChapters] = useState<Record<string, string[]>>({});
+  // A paper's real shape is a list of "N questions from <somewhere>" rows —
+  // 45 Physics + 45 Chemistry + 90 Biology for NEET, 20 Maths + 20 Science
+  // for a class-9 foundation batch, or 20 Kinematics + 20 Periodic Table +
+  // 20 Quadratic Equations for a part test. Keying counts by subject (the
+  // previous Record<string, number>) allowed only one row per subject, so
+  // two chapters of the same subject could never each get a guaranteed
+  // count — the exact case a part test is made of.
+  const [useBlueprint, setUseBlueprint] = useState(false);
+  const [sections, setSections] = useState<BlueprintSection[]>([]);
 
   // The exam the selected batches sit for, and what the bank actually holds for
   // it. Without this the screen was a form filled in blind: pick a count, pick
@@ -180,12 +184,30 @@ export default function ScheduleTestPage() {
     setTestStart(toLocalDateTime(next));
   };
 
-  // Only subjects with a count actually set — a row left at 0 means "not in
-  // this paper", not "0 questions from this subject" as a real request.
-  const activeSubjectCounts = Object.entries(subjectCounts)
-    .map(([subject, count]) => ({ subject, count: Number(count) || 0, chapters: subjectChapters[subject] ?? [] }))
-    .filter((row) => row.count > 0);
-  const splitTotal = activeSubjectCounts.reduce((sum, row) => sum + row.count, 0);
+  // What the bank actually holds for this exam, rather than a hardcoded
+  // subject list per exam code. EXAM_SUBJECTS only knows JEE and NEET, so a
+  // foundation batch (class 9/10 — Maths, Science, SST) or any exam added
+  // later would have shown an empty or wrong subject list forever. The bank
+  // knows its own contents, and that answer is right for every exam without
+  // anyone maintaining a map.
+  const bankSubjectOptions: string[] = (stock?.subjects ?? []).map((row: any) => row.subject);
+
+  const activeSections = sections.filter((row) => row.subject && row.count > 0);
+  const blueprintTotal = activeSections.reduce((sum, row) => sum + row.count, 0);
+
+  /** How many approved questions this row could actually draw from. */
+  const sectionAvailable = (row: BlueprintSection): number | null => {
+    if (!stock) return null;
+    if (row.chapters.length) {
+      return (stock.chapters ?? [])
+        .filter((c: any) => c.subject === row.subject && row.chapters.includes(c.chapter))
+        .reduce((sum: number, c: any) => sum + c.count, 0);
+    }
+    return (stock.subjects ?? []).find((s: any) => s.subject === row.subject)?.count ?? 0;
+  };
+
+  const updateSection = (index: number, patch: Partial<BlueprintSection>) =>
+    setSections((current) => current.map((row, i) => (i === index ? { ...row, ...patch } : row)));
 
   /** Assemble from the question bank. No extraction, so it returns immediately. */
   const submitFromBank = async () => {
@@ -194,8 +216,8 @@ export default function ScheduleTestPage() {
     if (!testStart) { setErrorMsg("Please select when students can start the test."); return; }
     if (selectedBatches.length === 0) { setErrorMsg("Please select at least one target batch."); return; }
     if (mode === "pick" && pickedQuestions.length === 0) { setErrorMsg("Pick at least one question."); return; }
-    if (mode === "bank" && splitBySubject && splitTotal < 1) { setErrorMsg("Enter how many questions to draw from at least one subject."); return; }
-    if (mode === "bank" && !splitBySubject && bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
+    if (mode === "bank" && useBlueprint && blueprintTotal < 1) { setErrorMsg("Add at least one section with a subject and a question count."); return; }
+    if (mode === "bank" && !useBlueprint && bankCount < 1) { setErrorMsg("Choose how many questions the paper should have."); return; }
 
     // createTest needs the exam's id, and the batch carries its code. Every
     // selected batch must share an exam — the server enforces that too.
@@ -213,15 +235,15 @@ export default function ScheduleTestPage() {
       const created: any = await apiClient.post("/api/v1/tests", {
         exam_id: examId,
         title: testName.trim(),
-        question_count: mode === "pick" ? pickedQuestions.length : (splitBySubject ? splitTotal : bankCount),
+        question_count: mode === "pick" ? pickedQuestions.length : (useBlueprint ? blueprintTotal : bankCount),
         question_ids: mode === "pick" ? pickedQuestions.map((q) => q.id) : undefined,
-        subject_counts: mode === "bank" && splitBySubject ? activeSubjectCounts : undefined,
-        subjects: mode === "bank" && !splitBySubject && bankSubjects.length ? bankSubjects : undefined,
+        subject_counts: mode === "bank" && useBlueprint ? activeSections : undefined,
+        subjects: mode === "bank" && !useBlueprint && bankSubjects.length ? bankSubjects : undefined,
         // Keys are "Subject||Chapter" so two subjects can share a chapter name;
         // the server filters on chapter alone, so only the name is sent. Not
         // sent in split-by-subject mode — a chapter name only means something
         // within one subject, and the picker is hidden there for that reason.
-        chapters: mode === "bank" && splitBySubject ? undefined : (bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined),
+        chapters: mode === "bank" && useBlueprint ? undefined : (bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined),
         duration_minutes: bankDuration,
         batch_ids: selectedBatches,
         scheduled_start: new Date(testStart).toISOString(),
@@ -649,6 +671,23 @@ export default function ScheduleTestPage() {
               </p>
             </div>
 
+            {/* Which bank this is actually pulling from. The exam has always
+                been derived from the selected batch, but nothing on screen
+                ever said so — leaving no way to tell a JEE build from a NEET
+                one except by remembering which batch was ticked. */}
+            {bankExamCode ? (
+              <div className="flex flex-wrap items-center gap-2 rounded-[10px] border border-primary-01/20 bg-primary-01/5 px-3.5 py-2.5">
+                <span className="text-[13px] text-t-secondary">Drawing from the</span>
+                <span className="text-[13px] font-bold text-t-primary">{EXAM_LABELS[bankExamCode] ?? bankExamCode}</span>
+                <span className="text-[13px] text-t-secondary">question bank</span>
+                {stock && <span className="text-[12px] text-t-tertiary">· {stock.total ?? 0} approved questions</span>}
+              </div>
+            ) : (
+              <div className="rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3.5 py-2.5 text-[13px] text-t-secondary">
+                Select a target batch above — its exam decides which question bank this paper is built from.
+              </div>
+            )}
+
             <div className="flex flex-col gap-2 sm:max-w-[280px]">
               <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
               <input
@@ -660,16 +699,16 @@ export default function ScheduleTestPage() {
 
             <button
               type="button"
-              onClick={() => setSplitBySubject((v) => !v)}
+              onClick={() => setUseBlueprint((v) => !v)}
               className={`inline-flex w-fit items-center gap-1.5 h-9 rounded-[10px] border px-3 text-[13px] font-semibold transition ${
-                splitBySubject ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
+                useBlueprint ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface1 text-t-secondary hover:border-primary-01/40"
               }`}
             >
-              {splitBySubject && <RiCheckLine size={14} />}
-              Split by subject — e.g. 20 Physics + 20 Chemistry + 40 Biology
+              {useBlueprint && <RiCheckLine size={14} />}
+              Set the paper&rsquo;s structure — how many from each subject or chapter
             </button>
 
-            {!splitBySubject ? (
+            {!useBlueprint ? (
               <>
                 <div className="flex flex-col gap-2 sm:max-w-[280px]">
                   <label className="text-sm font-semibold text-t-primary">Number of questions</label>
@@ -685,15 +724,15 @@ export default function ScheduleTestPage() {
                   <label className="text-sm font-semibold text-t-primary">
                     Subjects <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
                   </label>
-                  {/* No fallback to a generic subject list here — until a batch
-                      is picked there is no exam to draw subjects from, and
-                      showing Physics/Chemistry/Mathematics regardless looked
-                      like JEE was already assumed for every coaching. */}
+                  {/* From the bank's own contents, not a hardcoded per-exam
+                      list — so a foundation batch's Maths/Science/SST shows up
+                      the same way JEE's Physics/Chemistry/Maths does, with
+                      nobody maintaining a map of every exam we support. */}
                   {!bankExamCode ? (
                     <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
                   ) : (
                     <div className="flex flex-wrap gap-2">
-                      {(EXAM_SUBJECTS[bankExamCode] ?? []).map((subject) => {
+                      {bankSubjectOptions.map((subject) => {
                         const on = bankSubjects.includes(subject);
                         return (
                           <button
@@ -720,82 +759,102 @@ export default function ScheduleTestPage() {
             ) : (
               <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <label className="text-sm font-semibold text-t-primary">Questions per subject</label>
-                  <span className="text-xs font-bold text-t-secondary">{splitTotal} question{splitTotal === 1 ? "" : "s"} total</span>
+                  <label className="text-sm font-semibold text-t-primary">Paper structure</label>
+                  <span className="text-xs font-bold text-t-secondary">{blueprintTotal} question{blueprintTotal === 1 ? "" : "s"} total</span>
                 </div>
-                {selectedBatches.length === 0 ? (
-                  <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+
+                {!bankExamCode ? (
+                  <p className="text-xs text-t-tertiary">Select a batch above to start building.</p>
+                ) : bankSubjectOptions.length === 0 ? (
+                  <p className="text-xs text-t-tertiary">
+                    This exam&rsquo;s question bank is empty — upload and approve questions before building from it.
+                  </p>
                 ) : (
-                  <div className="flex flex-col gap-2">
-                    {(() => {
-                      const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
-                      const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
-                      return subjects.map((subject) => {
-                        const subjectChapterOptions = (stock?.chapters ?? []).filter((row: any) => row.subject === subject);
-                        const pickedChapters = subjectChapters[subject] ?? [];
-                        // Selecting chapters narrows what's actually available for
-                        // this subject — the flat subject total would overstate it
-                        // once a coaching has picked, say, just two chapters out of ten.
-                        const available = !stock
-                          ? null
-                          : pickedChapters.length
-                            ? subjectChapterOptions
-                                .filter((row: any) => pickedChapters.includes(row.chapter))
-                                .reduce((sum: number, row: any) => sum + row.count, 0)
-                            : (stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0;
-                        const requested = subjectCounts[subject] ?? 0;
-                        const short = available !== null && requested > available;
+                  <>
+                    <div className="flex flex-col gap-2">
+                      {sections.map((row, index) => {
+                        const chapterRows = (stock?.chapters ?? []).filter((c: any) => c.subject === row.subject);
+                        const available = sectionAvailable(row);
+                        const short = available !== null && row.count > available;
                         return (
                           <div
-                            key={subject}
-                            className={`flex flex-col gap-2 rounded-[10px] border px-3 py-2 ${
+                            key={index}
+                            className={`flex flex-col gap-2 rounded-[10px] border px-3 py-2.5 ${
                               short ? "border-primary-03/40 bg-primary-03/5" : "border-s-stroke2 bg-b-surface1"
                             }`}
                           >
-                            <div className="flex items-center gap-3">
-                              <span className="flex-1 text-sm font-semibold text-t-primary">{subject}</span>
-                              <span className={`text-[11px] font-normal ${short ? "text-primary-03" : "text-t-tertiary"}`}>
-                                {available === null ? "…" : `${available} available`}
-                              </span>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <select
+                                value={row.subject}
+                                onChange={(event) => updateSection(index, { subject: event.target.value, chapters: [] })}
+                                className="h-10 flex-1 min-w-[140px] rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-sm font-semibold text-t-primary outline-none focus:border-primary-01"
+                              >
+                                <option value="">Choose subject…</option>
+                                {bankSubjectOptions.map((subject) => (
+                                  <option key={subject} value={subject}>{subject}</option>
+                                ))}
+                              </select>
                               <input
                                 type="number" min={0} max={available ?? undefined}
-                                value={subjectCounts[subject] || ""}
-                                onChange={(event) => {
-                                  const value = event.target.value === "" ? 0 : Math.max(0, Number(event.target.value));
-                                  setSubjectCounts((current) => ({ ...current, [subject]: value }));
-                                }}
-                                placeholder="0"
-                                className="h-10 w-20 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-sm font-medium text-t-primary text-center outline-none focus:border-primary-01"
+                                value={row.count || ""}
+                                onChange={(event) => updateSection(index, { count: Math.max(0, Number(event.target.value) || 0) })}
+                                placeholder="Qs"
+                                className="h-10 w-20 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-center text-sm font-medium text-t-primary outline-none focus:border-primary-01"
                               />
+                              <span className={`text-[11px] ${short ? "text-primary-03" : "text-t-tertiary"}`}>
+                                {!row.subject ? "" : available === null ? "…" : `${available} available`}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => setSections((current) => current.filter((_, i) => i !== index))}
+                                title="Remove this section"
+                                className="flex h-8 w-8 items-center justify-center rounded-[8px] border border-s-stroke2 text-t-secondary transition-colors hover:border-primary-03/40 hover:text-primary-03"
+                              >
+                                <RiCloseLine size={15} />
+                              </button>
                             </div>
-                            {subjectChapterOptions.length > 0 && (
-                              <div className="flex flex-wrap gap-1.5 pl-1">
-                                {subjectChapterOptions.map((row: any) => {
-                                  const on = pickedChapters.includes(row.chapter);
+
+                            {row.subject && chapterRows.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5">
+                                {chapterRows.map((c: any) => {
+                                  const on = row.chapters.includes(c.chapter);
                                   return (
                                     <button
-                                      key={row.chapter}
+                                      key={c.chapter}
                                       type="button"
-                                      onClick={() => setSubjectChapters((current) => {
-                                        const cur = current[subject] ?? [];
-                                        const next = cur.includes(row.chapter) ? cur.filter((c) => c !== row.chapter) : [...cur, row.chapter];
-                                        return { ...current, [subject]: next };
+                                      onClick={() => updateSection(index, {
+                                        chapters: on ? row.chapters.filter((x) => x !== c.chapter) : [...row.chapters, c.chapter],
                                       })}
                                       className={`h-7 rounded-[7px] border px-2.5 text-[11px] font-semibold transition ${
                                         on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface2 text-t-secondary hover:border-primary-01/40"
                                       }`}
                                     >
-                                      {row.chapter} <span className="opacity-70">{row.count}</span>
+                                      {c.chapter} <span className="opacity-70">{c.count}</span>
                                     </button>
                                   );
                                 })}
+                                {row.chapters.length === 0 && (
+                                  <span className="self-center text-[11px] text-t-tertiary">All chapters</span>
+                                )}
                               </div>
                             )}
                           </div>
                         );
-                      });
-                    })()}
-                  </div>
+                      })}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setSections((current) => [...current, { subject: "", count: 0, chapters: [] }])}
+                      className="inline-flex w-fit items-center gap-1.5 h-9 rounded-[10px] border border-dashed border-s-stroke2 px-3 text-[13px] font-semibold text-t-secondary transition hover:border-primary-01/40 hover:text-t-primary"
+                    >
+                      <RiAddLine size={15} /> Add section
+                    </button>
+                    <p className="text-xs text-t-tertiary">
+                      One row per block of the paper. Add the same subject twice to give two chapters their own
+                      guaranteed counts — 20 from Kinematics and 20 from Laws of Motion, say.
+                    </p>
+                  </>
                 )}
               </div>
             )}
@@ -805,7 +864,7 @@ export default function ScheduleTestPage() {
                 Hidden in split-by-subject mode: a chapter name only means
                 something within one subject, and this filter would apply the
                 same chapter list to every subject's pool at once. */}
-            {!splitBySubject && chapterOptions.length > 0 && (
+            {!useBlueprint && chapterOptions.length > 0 && (
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-t-primary">
                   Chapters <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
@@ -836,7 +895,7 @@ export default function ScheduleTestPage() {
             {/* What the filters above actually leave to draw from. Split mode
                 shows availability per subject inline instead — this flat
                 summary would just repeat the same total. */}
-            {!splitBySubject && selectedBatches.length > 0 && stock && (
+            {!useBlueprint && selectedBatches.length > 0 && stock && (
               <div className={`rounded-[10px] px-3.5 py-2.5 text-[13px] ${
                 matching !== null && matching < bankCount
                   ? "bg-primary-03/10 text-t-primary"
@@ -1049,8 +1108,8 @@ export default function ScheduleTestPage() {
                   ? "Create test from PDF"
                   : mode === "pick"
                     ? `Create test with ${pickedQuestions.length} question${pickedQuestions.length === 1 ? "" : "s"}`
-                    : mode === "bank" && splitBySubject
-                      ? `Create test with ${splitTotal} question${splitTotal === 1 ? "" : "s"}`
+                    : mode === "bank" && useBlueprint
+                      ? `Create test with ${blueprintTotal} question${blueprintTotal === 1 ? "" : "s"}`
                       : "Create test"}
               </>
             )}
