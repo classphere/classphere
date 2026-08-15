@@ -604,6 +604,76 @@ export const getMyTests = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
+/**
+ * GET /api/v1/tests/:id/batches
+ * [teacher, institute_admin, test department] — Which of the institute's
+ * batches this test was assigned to, and how many of each have submitted.
+ *
+ * Batch analysis is per (test, batch), and nothing until now could answer
+ * "which batches does this test even have results for" — so there was no way
+ * to build a picker for it without listing every batch in the institute and
+ * letting most of them 403.
+ */
+export const listTestBatches = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const instituteId = req.user!.institute_id;
+    const isSuperAdmin = req.user?.role === "super_admin";
+
+    const { data: paper } = await supabaseDB
+      .from("papers")
+      .select("id, title, institute_id")
+      .eq("id", req.params.id)
+      .maybeSingle();
+    if (!paper) { res.status(404).json({ success: false, message: "Test not found." }); return; }
+    if (!isSuperAdmin && paper.institute_id && paper.institute_id !== instituteId) {
+      res.status(403).json({ success: false, message: "This test belongs to another institute." });
+      return;
+    }
+
+    const { data: assignments, error } = await supabaseDB
+      .from("test_batch_assignments")
+      .select("batch_id, scheduled_at, batches(id, name, exam, institute_id)")
+      .eq("test_id", paper.id);
+    if (error) throw error;
+
+    const owned = (assignments ?? []).filter((row: any) => {
+      const batch = Array.isArray(row.batches) ? row.batches[0] : row.batches;
+      return batch && (isSuperAdmin || batch.institute_id === instituteId);
+    });
+
+    // Submission counts per batch, so the picker can say which batches have
+    // anything to analyse yet rather than opening an empty report.
+    const batchIds = owned.map((row: any) => row.batch_id);
+    const submittedByBatch = new Map<string, number>();
+    if (batchIds.length) {
+      const { data: attempts } = await supabaseDB
+        .from("attempts")
+        .select("batch_id")
+        .eq("paper_id", paper.id)
+        .eq("status", "submitted")
+        .in("batch_id", batchIds);
+      for (const row of attempts ?? []) {
+        submittedByBatch.set(row.batch_id, (submittedByBatch.get(row.batch_id) ?? 0) + 1);
+      }
+    }
+
+    const batches = owned.map((row: any) => {
+      const batch = Array.isArray(row.batches) ? row.batches[0] : row.batches;
+      return {
+        batch_id: batch.id,
+        name: batch.name,
+        exam: batch.exam,
+        scheduled_at: row.scheduled_at ?? null,
+        submitted_count: submittedByBatch.get(batch.id) ?? 0,
+      };
+    });
+
+    res.status(200).json({ success: true, data: { paper: { id: paper.id, title: paper.title }, batches } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 export const getAssignedTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;

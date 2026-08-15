@@ -8,6 +8,7 @@ import {
   getBankQuestions,
   getMyTests,
   getAssignedTests,
+  listTestBatches,
   getTest,
   publishTest,
   deleteTest,
@@ -104,6 +105,9 @@ router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlob
 // every role that can review a paper, since one function produces it.
 router.get("/:id/validate", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), validateTest);
 router.delete("/:id/questions/:questionId", authenticate, requireRole("super_admin"), deleteTestQuestion);
+// Which batches this test went to, for the batch-analysis picker. Must be
+// declared before "/:id" so it is not swallowed by it.
+router.get("/:id/batches", authenticate, requireRole("super_admin", "institute_admin", "teacher", "test_department_head", "test_department_member"), listTestBatches);
 router.get("/:id", authenticate, getTest);
 router.delete("/:id", authenticate, requireRole("super_admin"), deleteTest);
 

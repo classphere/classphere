@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PaperReviewWorkspace } from "@/components/questions/PaperReviewWorkspace";
 import type { MarkingScheme } from "@/components/questions/MarkingSchemeEditor";
@@ -323,6 +324,16 @@ export default function ReviewPaperPage() {
                 >
                   Assign to batches
                 </button>
+              )}
+              {/* Only meaningful once it is live — a draft has no submissions
+                  to aggregate. */}
+              {isDepartmentUser && status === "published" && (
+                <Link
+                  href={`/institute/tests/${params.id}/results`}
+                  className="flex h-11 items-center rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary"
+                >
+                  Batch results
+                </Link>
               )}
               {isHead && status === "archived" && (
                 <button
