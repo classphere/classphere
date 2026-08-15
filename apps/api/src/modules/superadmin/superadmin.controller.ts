@@ -44,10 +44,21 @@ function validateQuestion(q: any, index: number): string | null {
   // and a reviewer can open that slot and type the question in. Publication
   // already refuses a paper containing empty question_text, so a gap cannot
   // reach a student.
+  // Named the way the uploaded file names it. question_number is the paper's
+  // own numbering and is what the upload uses as the question's position
+  // (see create_global_review_draft_with_questions); array order is only the
+  // fallback for banks that do not number themselves. Reporting the array
+  // index alone sent whoever had to fix the file looking for the wrong
+  // question whenever the two disagreed.
+  const stated = Number(q?.question_number);
+  const label = Number.isFinite(stated) && stated > 0
+    ? `Question #${stated} (item ${index + 1})`
+    : `Question #${index + 1}`;
+
   const isGap = q.is_gap === true;
-  if (!isGap && !q.question_text) return `Question #${index + 1}: missing 'question_text'`;
+  if (!isGap && !q.question_text) return `${label}: missing 'question_text'`;
   const markErrors = validateQuestionMarks(q.marks);
-  if (markErrors.length > 0) return `Question #${index + 1}: ${markErrors.join("; ")}`;
+  if (markErrors.length > 0) return `${label}: ${markErrors.join("; ")}`;
 
   // options and correct_answer are JSONB, which accepts any JSON at all, so a
   // question keyed to an option it does not have reaches the database without
