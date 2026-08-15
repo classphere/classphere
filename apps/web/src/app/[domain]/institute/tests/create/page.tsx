@@ -73,7 +73,10 @@ export default function ScheduleTestPage() {
   const [pickedQuestions, setPickedQuestions] = useState<BankQuestion[]>([]);
   const [bankSubjects, setBankSubjects] = useState<string[]>([]);
   const [bankChapters, setBankChapters] = useState<string[]>([]);
-  const [bankCount, setBankCount] = useState(75);
+  // No default: a number pre-filled before a batch (and therefore an exam)
+  // is even chosen looks like it's assuming JEE Main's own 75-question
+  // pattern, which is exactly the wrong impression for a NEET coaching.
+  const [bankCount, setBankCount] = useState(0);
   const [bankDuration, setBankDuration] = useState(180);
   // A NEET paper isn't "80 questions from wherever" — it's 20 Physics + 20
   // Chemistry + 40 Biology. Off by default so the simple case (one flat
@@ -671,9 +674,10 @@ export default function ScheduleTestPage() {
                 <div className="flex flex-col gap-2 sm:max-w-[280px]">
                   <label className="text-sm font-semibold text-t-primary">Number of questions</label>
                   <input
-                    type="number" min={1} max={500} value={bankCount}
+                    type="number" min={1} max={500} value={bankCount || ""}
                     onChange={(event) => setBankCount(Number(event.target.value))}
-                    className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+                    placeholder="e.g. 75 for JEE Main, 180 for NEET"
+                    className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01 placeholder:text-[13px]"
                   />
                 </div>
 
@@ -681,11 +685,15 @@ export default function ScheduleTestPage() {
                   <label className="text-sm font-semibold text-t-primary">
                     Subjects <span className="text-xs font-normal text-t-tertiary">(leave empty for all)</span>
                   </label>
-                  <div className="flex flex-wrap gap-2">
-                    {(() => {
-                      const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
-                      const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
-                      return subjects.map((subject) => {
+                  {/* No fallback to a generic subject list here — until a batch
+                      is picked there is no exam to draw subjects from, and
+                      showing Physics/Chemistry/Mathematics regardless looked
+                      like JEE was already assumed for every coaching. */}
+                  {!bankExamCode ? (
+                    <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      {(EXAM_SUBJECTS[bankExamCode] ?? []).map((subject) => {
                         const on = bankSubjects.includes(subject);
                         return (
                           <button
@@ -704,11 +712,8 @@ export default function ScheduleTestPage() {
                             </span>
                           </button>
                         );
-                      });
-                    })()}
-                  </div>
-                  {selectedBatches.length === 0 && (
-                    <p className="text-xs text-t-tertiary">Select a batch above to see its subjects.</p>
+                      })}
+                    </div>
                   )}
                 </div>
               </>
