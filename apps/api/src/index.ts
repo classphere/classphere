@@ -145,6 +145,14 @@ const globalLimiter = rateLimit({
   message: { success: false, message: "Too many requests from this IP, please try again after 15 minutes" },
   // Redis is optional infrastructure: keep serving requests if it is unavailable.
   passOnStoreError: true,
+  // Bulk question upload sends one request per diagram (BulkUpload.tsx uploads
+  // each to R2 before submitting the questions JSON). A single image-heavy
+  // chapter is well over a thousand images, so 300-per-15-minutes would stop
+  // it a fifth of the way through and look like a random failure. The route is
+  // super_admin-only behind authenticate + requireRole, so it is not an
+  // anonymous abuse surface; the limiter is protecting against unauthenticated
+  // floods, which this is not.
+  skip: (req) => req.path === "/api/v1/superadmin/upload",
   // @ts-ignore — store is optional in the type but accepted at runtime
   store: rateLimitStore,
 });

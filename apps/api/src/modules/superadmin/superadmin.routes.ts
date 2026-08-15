@@ -90,20 +90,24 @@ router.get("/institutes", listInstitutes);
  * Upload a JSON question bank with full metadata tagging.
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
  *
- * A body-size override, not the global 1MB limit — but not because questions
- * carry inline base64 diagrams anymore. They used to, and three limit bumps
- * in a row (1mb -> 25mb -> 60mb -> 150mb) kept losing that race: chapter
- * count doesn't predict body size, image density per question does, and
- * there's no ceiling to raise the number against. Every caller (BulkUpload.tsx
- * and both upload paths in AIExtractor.tsx) now runs its questions through
- * convertQuestionsForUpload (apps/web/src/lib/question-image-upload.ts) first,
- * which uploads each diagram to R2 client-side and sends its URL instead — so
- * the body is text-only metadata and question content, and 20mb is generous
- * headroom for even a 2000-question chapter of that. If this route starts
- * rejecting bodies again, the bug is almost certainly a new caller sending raw
- * base64 without going through that helper, not that 20mb needs to grow.
+ * A body-size override, not the global 1MB limit: questions can carry inline
+ * base64 diagrams, and processBase64ImageList/processBase64ImageUrl in the
+ * controller upload them to R2 from here.
+ *
+ * BulkUpload.tsx and both AIExtractor.tsx paths now convert those to R2 URLs
+ * client-side first (convertQuestionsForUpload), which makes the body small —
+ * but this limit must NOT be tuned on the assumption that they did. It was
+ * briefly dropped to 20mb for exactly that reason and broke uploads
+ * immediately: the API and the web app deploy through different systems, so
+ * an older cached bundle, a lagging Vercel build, or any other caller still
+ * sends full base64, and the server has always been able to handle that. The
+ * client-side conversion is an optimisation, not a precondition.
+ *
+ * 150mb is sized for the raw-base64 worst case seen in practice
+ * (Electrostatics.json, 1159 image-heavy questions), not for the converted
+ * one.
  */
-router.post("/upload-questions", express.json({ limit: "20mb" }), uploadQuestions);
+router.post("/upload-questions", express.json({ limit: "150mb" }), uploadQuestions);
 
 // Rate limiter: max 3 PDF extractions per IP per 10 minutes
 const pdfExtractionLimiter = rateLimit({
