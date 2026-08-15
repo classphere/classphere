@@ -158,10 +158,28 @@ const globalLimiter = rateLimit({
 });
 app.use(globalLimiter as any);
 
-// 1MB default body limit. The few routes that need more (file-upload metadata)
-// can override per-route. A 10MB global limit let a single request consume
-// disproportionate memory before any auth/validation ran.
-app.use(express.json({ limit: "1mb" }));
+// 1MB default body limit. A 10MB global limit let a single request consume
+// disproportionate memory before any auth/validation ran, so the default
+// stays deliberately small.
+//
+// Routes that legitimately need more cannot simply declare their own
+// express.json() — this parser is registered at module load, while the API
+// router is mounted inside the listen() callback below, so the global one
+// always runs first and a route-level limit never gets the chance to apply.
+// That silently capped bulk question upload at 1MB no matter what its own
+// override said: raising it 25mb -> 60mb -> 150mb changed nothing, because
+// the body was already being rejected here. Files under 1MB went through and
+// looked like proof the override worked; image-heavy ones never could.
+//
+// So the exemption has to live here, next to the limit it is exempting from.
+// Anything listed skips this parser entirely and is parsed by its own
+// route-level express.json() instead.
+const OWN_BODY_PARSER_PATHS = ["/api/v1/superadmin/upload-questions"];
+const defaultJsonParser = express.json({ limit: "1mb" });
+app.use((req, res, next) => {
+  if (OWN_BODY_PARSER_PATHS.some((path) => req.path.startsWith(path))) return next();
+  return defaultJsonParser(req, res, next);
+});
 
 // ─── Background Workers ───────────────────────────────────────────────────────
 // Started once, after the server is listening (see below). Registration used to
