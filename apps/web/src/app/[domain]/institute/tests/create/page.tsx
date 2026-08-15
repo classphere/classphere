@@ -80,6 +80,10 @@ export default function ScheduleTestPage() {
   // count) stays simple; a coaching center that needs the split turns it on.
   const [splitBySubject, setSplitBySubject] = useState(false);
   const [subjectCounts, setSubjectCounts] = useState<Record<string, number>>({});
+  // Per-subject chapter picks — a chapter name only means something within
+  // one subject, so this can't be the one flat bankChapters list every
+  // subject would otherwise share.
+  const [subjectChapters, setSubjectChapters] = useState<Record<string, string[]>>({});
 
   // The exam the selected batches sit for, and what the bank actually holds for
   // it. Without this the screen was a form filled in blind: pick a count, pick
@@ -176,7 +180,7 @@ export default function ScheduleTestPage() {
   // Only subjects with a count actually set — a row left at 0 means "not in
   // this paper", not "0 questions from this subject" as a real request.
   const activeSubjectCounts = Object.entries(subjectCounts)
-    .map(([subject, count]) => ({ subject, count: Number(count) || 0 }))
+    .map(([subject, count]) => ({ subject, count: Number(count) || 0, chapters: subjectChapters[subject] ?? [] }))
     .filter((row) => row.count > 0);
   const splitTotal = activeSubjectCounts.reduce((sum, row) => sum + row.count, 0);
 
@@ -268,6 +272,10 @@ export default function ScheduleTestPage() {
       formData.append("title", testName.trim());
       formData.append("date", new Date(testStart).toISOString());
       formData.append("batch_ids", JSON.stringify(selectedBatches));
+      // uploadTestController already reads this (defaults to 180 when absent) —
+      // the field just never existed on this form, so every PDF upload was
+      // silently stuck at 180 minutes with no way to change it.
+      formData.append("duration_min", String(bankDuration));
 
       // XMLHttpRequest provides upload progress while retaining incremental
       // reads of the NDJSON response. fetch() supports the latter but leaves a
@@ -718,30 +726,66 @@ export default function ScheduleTestPage() {
                       const batchExam = batches.find((b: any) => b.id === selectedBatches[0])?.exam;
                       const subjects = EXAM_SUBJECTS[batchExam ?? ""] ?? EXAM_SUBJECTS["default"];
                       return subjects.map((subject) => {
-                        const available = stock ? ((stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0) : null;
+                        const subjectChapterOptions = (stock?.chapters ?? []).filter((row: any) => row.subject === subject);
+                        const pickedChapters = subjectChapters[subject] ?? [];
+                        // Selecting chapters narrows what's actually available for
+                        // this subject — the flat subject total would overstate it
+                        // once a coaching has picked, say, just two chapters out of ten.
+                        const available = !stock
+                          ? null
+                          : pickedChapters.length
+                            ? subjectChapterOptions
+                                .filter((row: any) => pickedChapters.includes(row.chapter))
+                                .reduce((sum: number, row: any) => sum + row.count, 0)
+                            : (stock.subjects ?? []).find((r: any) => r.subject === subject)?.count ?? 0;
                         const requested = subjectCounts[subject] ?? 0;
                         const short = available !== null && requested > available;
                         return (
                           <div
                             key={subject}
-                            className={`flex items-center gap-3 rounded-[10px] border px-3 py-2 ${
+                            className={`flex flex-col gap-2 rounded-[10px] border px-3 py-2 ${
                               short ? "border-primary-03/40 bg-primary-03/5" : "border-s-stroke2 bg-b-surface1"
                             }`}
                           >
-                            <span className="flex-1 text-sm font-semibold text-t-primary">{subject}</span>
-                            <span className={`text-[11px] font-normal ${short ? "text-primary-03" : "text-t-tertiary"}`}>
-                              {available === null ? "…" : `${available} available`}
-                            </span>
-                            <input
-                              type="number" min={0} max={available ?? undefined}
-                              value={subjectCounts[subject] || ""}
-                              onChange={(event) => {
-                                const value = event.target.value === "" ? 0 : Math.max(0, Number(event.target.value));
-                                setSubjectCounts((current) => ({ ...current, [subject]: value }));
-                              }}
-                              placeholder="0"
-                              className="h-10 w-20 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-sm font-medium text-t-primary text-center outline-none focus:border-primary-01"
-                            />
+                            <div className="flex items-center gap-3">
+                              <span className="flex-1 text-sm font-semibold text-t-primary">{subject}</span>
+                              <span className={`text-[11px] font-normal ${short ? "text-primary-03" : "text-t-tertiary"}`}>
+                                {available === null ? "…" : `${available} available`}
+                              </span>
+                              <input
+                                type="number" min={0} max={available ?? undefined}
+                                value={subjectCounts[subject] || ""}
+                                onChange={(event) => {
+                                  const value = event.target.value === "" ? 0 : Math.max(0, Number(event.target.value));
+                                  setSubjectCounts((current) => ({ ...current, [subject]: value }));
+                                }}
+                                placeholder="0"
+                                className="h-10 w-20 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-2 text-sm font-medium text-t-primary text-center outline-none focus:border-primary-01"
+                              />
+                            </div>
+                            {subjectChapterOptions.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 pl-1">
+                                {subjectChapterOptions.map((row: any) => {
+                                  const on = pickedChapters.includes(row.chapter);
+                                  return (
+                                    <button
+                                      key={row.chapter}
+                                      type="button"
+                                      onClick={() => setSubjectChapters((current) => {
+                                        const cur = current[subject] ?? [];
+                                        const next = cur.includes(row.chapter) ? cur.filter((c) => c !== row.chapter) : [...cur, row.chapter];
+                                        return { ...current, [subject]: next };
+                                      })}
+                                      className={`h-7 rounded-[7px] border px-2.5 text-[11px] font-semibold transition ${
+                                        on ? "border-primary-01 bg-primary-01/10 text-primary-01" : "border-s-stroke2 bg-b-surface2 text-t-secondary hover:border-primary-01/40"
+                                      }`}
+                                    >
+                                      {row.chapter} <span className="opacity-70">{row.count}</span>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
                         );
                       });
@@ -849,9 +893,18 @@ export default function ScheduleTestPage() {
             </p>
           </div>
 
-          <input 
-            type="file" 
-            ref={pdfInputRef} 
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
+            <input
+              type="number" min={1} max={600} value={bankDuration}
+              onChange={(event) => setBankDuration(Number(event.target.value))}
+              className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01 sm:w-[240px]"
+            />
+          </div>
+
+          <input
+            type="file"
+            ref={pdfInputRef}
             onChange={(e) => setPdfFile(e.target.files?.[0] || null)} 
             accept=".pdf" 
             className="hidden" 

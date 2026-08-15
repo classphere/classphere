@@ -363,9 +363,18 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     // questions, ideally from those subjects" — the flat question_count path
     // below has no way to express that a coaching center's actual request is
     // per-subject, not a single pool it then hopes gets a reasonable split.
-    const subjectCounts: { subject: string; count: number }[] = Array.isArray(subject_counts)
+    // Each entry's own chapters (optional) scope that subject alone — the
+    // top-level `chapters` list is never safe to reuse here, since a chapter
+    // name only means something within the one subject it belongs to.
+    const subjectCounts: { subject: string; count: number; chapters: string[] }[] = Array.isArray(subject_counts)
       ? subject_counts
-          .map((row: any) => ({ subject: String(row?.subject ?? "").trim(), count: Number(row?.count) }))
+          .map((row: any) => ({
+            subject: String(row?.subject ?? "").trim(),
+            count: Number(row?.count),
+            chapters: Array.isArray(row?.chapters)
+              ? row.chapters.map((c: unknown) => String(c).trim()).filter(Boolean)
+              : [],
+          }))
           .filter((row: { subject: string; count: number }) => row.subject && Number.isInteger(row.count) && row.count > 0)
       : [];
     if (subject_counts !== undefined && subjectCounts.length === 0) {
@@ -442,9 +451,9 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       // that happens to contain the right totals.
       const shortfalls: string[] = [];
       const perSubject: any[][] = [];
-      for (const { subject, count } of subjectCounts) {
+      for (const { subject, count, chapters: subjectChapters } of subjectCounts) {
         let subjectQuery = scopedQuery().eq("subject", subject);
-        if (chapters?.length) subjectQuery = subjectQuery.in("chapter", chapters);
+        if (subjectChapters.length) subjectQuery = subjectQuery.in("chapter", subjectChapters);
         const { data: subjectQs } = await subjectQuery;
         const pool = subjectQs ?? [];
         if (pool.length < count) shortfalls.push(`${subject}: ${pool.length} available, ${count} requested`);

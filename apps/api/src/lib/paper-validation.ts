@@ -243,12 +243,20 @@ export function validatePaperQuestions(
   const warnings: string[] = [];
 
   if (pattern) {
+    // Warnings, not errors: neither publish path (publishTest, transitionReviewPaper)
+    // actually gates on these — only per-question defects below block publication.
+    // A pattern mismatch is real signal on a PDF-extracted paper (it usually means
+    // extraction missed questions), but a deliberately custom-built paper — a
+    // coaching's own 80-question NEET set, say — is expected to miss the official
+    // pattern on purpose. Reporting it as an "error" here made the panel read as
+    // "Validation failed" and every message render in the same red as a genuine
+    // blocking defect, for a paper that would publish just fine.
     if (pattern.total > 0 && questions.length !== pattern.total) {
-      errors.push(`Expected ${pattern.total} questions total, found ${questions.length}.`);
+      warnings.push(`Expected ${pattern.total} questions total, found ${questions.length} — fine if this is a deliberately custom-built paper.`);
     }
     for (const [subject, expected] of Object.entries(pattern.counts)) {
       const found = counts[subject] ?? 0;
-      if (found !== expected) errors.push(`Expected ${subject}: ${expected}, found ${found}.`);
+      if (found !== expected) warnings.push(`Expected ${subject}: ${expected}, found ${found} — fine if this is a deliberately custom-built paper.`);
     }
     for (const subject of Object.keys(counts).filter((s) => !pattern.subjects.includes(s))) {
       warnings.push(`${counts[subject]} question(s) have subject "${subject}", which is not expected for ${examCode}.`);

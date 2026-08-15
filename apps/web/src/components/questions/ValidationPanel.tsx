@@ -152,7 +152,7 @@ export function ValidationPanel({
 
       {result.valid && (
         <p className="px-4 pb-3 text-xs text-t-secondary">
-          Every question has text, options and an answer, and the counts match {result.examCode}.
+          Every question has text, options and an answer — ready to publish.
         </p>
       )}
     </div>
