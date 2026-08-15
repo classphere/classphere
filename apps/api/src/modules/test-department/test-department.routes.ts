@@ -2,7 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { createDepartmentMember, deactivateDepartmentMember, deleteReviewQuestion, getReviewPaper, updateReviewPaper, listDepartmentMembers, listReviewPapers, transitionReviewPaper, updateReviewQuestion, validatePaper, uploadImage } from "./test-department.controller";
+import { assignPaperToBatches, createDepartmentMember, deactivateDepartmentMember, deleteReviewQuestion, getReviewPaper, updateReviewPaper, listDepartmentMembers, listReviewPapers, transitionReviewPaper, updateReviewQuestion, validatePaper, uploadImage } from "./test-department.controller";
 
 const router = Router();
 
@@ -29,6 +29,7 @@ router.get("/papers/:id/validate", authenticate, requireRole("institute_admin", 
 router.patch("/papers/:paperId/questions/:questionId", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), updateReviewQuestion);
 router.delete("/papers/:paperId/questions/:questionId", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), deleteReviewQuestion);
 router.post("/papers/:id/workflow", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), transitionReviewPaper);
+router.post("/papers/:id/assign", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), assignPaperToBatches);
 router.post("/upload", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), upload.single("image") as any, uploadImage);
 
 export default router;

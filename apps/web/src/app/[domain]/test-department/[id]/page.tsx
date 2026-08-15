@@ -10,6 +10,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
 import { apiQueryKey, useApiQuery } from "@/lib/hooks/useApiQuery";
 import { EXAM_LABELS, detectExamCode } from "@/lib/exam-config";
+import { useBatches } from "@/lib/hooks/useBatches";
+import { Modal } from "@/components/shared/Modal";
 
 // ── Status badge ──────────────────────────────────────────────────────────────
 const STATUS_STYLES: Record<string, string> = {
@@ -34,6 +36,107 @@ function StatusBadge({ status }: { status: string }) {
 const ARCHIVABLE_STATUSES = ["draft", "changes_requested", "approved", "scheduled", "published"];
 
 /**
+ * Assigning a paper to batches used to happen exactly once, folded into
+ * upload/creation. This is the standalone version — pick any of the
+ * institute's batches for this paper's exam and a start time, submit, done.
+ * Reusable any time: assign to Batch A today, come back next term and assign
+ * the same paper to Batch B, or reassign A again for a resit.
+ */
+function AssignModal({
+  open, onClose, examCode, onSubmit,
+}: {
+  open: boolean;
+  onClose: () => void;
+  examCode: string;
+  onSubmit: (batchIds: string[], scheduledAt: string) => Promise<void>;
+}) {
+  const { batches, loading: batchesLoading } = useBatches();
+  const [selected, setSelected] = useState<string[]>([]);
+  const [scheduledAt, setScheduledAt] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  // Wrong-exam assignment is exactly the mix-up flagged as a serious concern
+  // earlier — a JEE paper has no business being offered to a NEET batch, so
+  // this list only ever shows batches sitting the same exam as the paper.
+  const eligibleBatches = batches.filter((b) => b.exam === examCode);
+
+  useEffect(() => {
+    if (!open) { setSelected([]); setScheduledAt(""); setError(""); }
+  }, [open]);
+
+  const toggle = (id: string) =>
+    setSelected((current) => current.includes(id) ? current.filter((b) => b !== id) : [...current, id]);
+
+  const submit = async () => {
+    if (!selected.length) { setError("Select at least one batch."); return; }
+    if (!scheduledAt) { setError("Choose when the test should open."); return; }
+    setSubmitting(true);
+    setError("");
+    try {
+      await onSubmit(selected, new Date(scheduledAt).toISOString());
+      onClose();
+    } catch (err: any) {
+      setError(err.message ?? "Could not assign this test.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <Modal open={open} onClose={onClose} title="Assign to batches" subtitle="Reusable — assign this same paper to more batches any time.">
+      <div className="flex flex-col gap-4">
+        <div>
+          <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-t-secondary">Batches</label>
+          {batchesLoading ? (
+            <p className="text-sm text-t-secondary">Loading batches…</p>
+          ) : eligibleBatches.length === 0 ? (
+            <p className="text-sm text-t-secondary">
+              No {EXAM_LABELS[examCode] ?? examCode} batches yet. Create one first.
+            </p>
+          ) : (
+            <div className="flex max-h-48 flex-col gap-2 overflow-y-auto">
+              {eligibleBatches.map((batch) => (
+                <label
+                  key={batch.id}
+                  className={`flex cursor-pointer items-center gap-2.5 rounded-[10px] border px-3 py-2.5 text-sm font-medium transition-colors ${
+                    selected.includes(batch.id) ? "border-primary-01 bg-primary-01/5 text-t-primary" : "border-s-stroke2 text-t-secondary hover:border-t-secondary/40"
+                  }`}
+                >
+                  <input type="checkbox" checked={selected.includes(batch.id)} onChange={() => toggle(batch.id)} className="h-4 w-4 accent-primary-01" />
+                  {batch.name}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div>
+          <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-t-secondary">Test opens at</label>
+          <input
+            type="datetime-local"
+            value={scheduledAt}
+            onChange={(e) => setScheduledAt(e.target.value)}
+            className="h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+          />
+        </div>
+
+        {error && <p className="text-sm text-primary-03">{error}</p>}
+
+        <button
+          type="button"
+          disabled={submitting}
+          onClick={submit}
+          className="h-11 rounded-[10px] bg-[#151515] text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
+        >
+          {submitting ? "Assigning…" : "Assign"}
+        </button>
+      </div>
+    </Modal>
+  );
+}
+
+/**
  * Reviewing an institute's own extracted paper.
  *
  * The screen is PaperReviewWorkspace, shared with the Superadmin question bank.
@@ -50,6 +153,7 @@ export default function ReviewPaperPage() {
   const queryClient = useQueryClient();
   const [message, setMessage] = useState("");
   const [transacting, setTransacting] = useState(false);
+  const [assignOpen, setAssignOpen] = useState(false);
 
   // The Institute Admin sits above the Head, so they can do everything the Head
   // can — including publish, which in a coaching with no department is otherwise
@@ -136,6 +240,16 @@ export default function ReviewPaperPage() {
     return response.data;
   };
 
+  const assignToBatches = async (batchIds: string[], scheduledAt: string) => {
+    await apiClient.post(
+      `/api/v1/test-department/papers/${params.id}/assign`,
+      { batch_ids: batchIds, scheduled_at: scheduledAt },
+      session!.access_token,
+    );
+    setMessage(`Assigned to ${batchIds.length} batch${batchIds.length === 1 ? "" : "es"}.`);
+    setTimeout(() => setMessage(""), 4000);
+  };
+
   if (!data) {
     return <main className="flex min-h-screen items-center justify-center text-sm text-t-secondary">Loading…</main>;
   }
@@ -202,6 +316,14 @@ export default function ReviewPaperPage() {
                   Publish test
                 </button>
               )}
+              {isDepartmentUser && status !== "archived" && (
+                <button
+                  type="button" onClick={() => setAssignOpen(true)}
+                  className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
+                >
+                  Assign to batches
+                </button>
+              )}
               {isHead && status === "archived" && (
                 <button
                   type="button" disabled={transacting} onClick={() => transition("restore")}
@@ -227,6 +349,13 @@ export default function ReviewPaperPage() {
           }
         />
       </main>
+
+      <AssignModal
+        open={assignOpen}
+        onClose={() => setAssignOpen(false)}
+        examCode={examCode}
+        onSubmit={assignToBatches}
+      />
     </>
   );
 }

@@ -422,6 +422,93 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
 }
 
 /**
+ * POST /api/v1/test-department/papers/:id/assign
+ *
+ * Batch assignment used to only ever happen once, baked into paper creation
+ * (uploadTestController, createTest) -- there was no way to take an
+ * existing paper and hand it to a different batch, or reuse it for the same
+ * batch again next term, without re-uploading or rebuilding it from
+ * scratch. This is that missing action: assign (or reschedule) any of the
+ * institute's own papers to one or more batches, independent of when or how
+ * the paper was originally created.
+ *
+ * Upserts rather than inserts: test_batch_assignments is keyed on
+ * (test_id, batch_id), so assigning a paper to a batch it already reaches
+ * just moves the scheduled time rather than erroring or duplicating.
+ */
+export async function assignPaperToBatches(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.id, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (!isDepartmentUser(req) && req.user!.role !== "institute_admin") {
+      res.status(403).json({ success: false, message: "Access denied." }); return;
+    }
+
+    const rawBatchIds: unknown[] = Array.isArray(req.body?.batch_ids) ? req.body.batch_ids : [];
+    const batchIds: string[] = [
+      ...new Set(rawBatchIds.map((id) => String(id).trim()).filter((id): id is string => id.length > 0)),
+    ];
+    const scheduledAtRaw = req.body?.scheduled_at;
+
+    if (!batchIds.length) { res.status(400).json({ success: false, message: "Select at least one batch." }); return; }
+    if (!scheduledAtRaw || Number.isNaN(new Date(scheduledAtRaw).getTime())) {
+      res.status(400).json({ success: false, message: "scheduled_at must be a valid date-time." }); return;
+    }
+    const scheduledAt = new Date(scheduledAtRaw).toISOString();
+
+    const { count: matchingBatchesCount, error: countErr } = await supabaseDB
+      .from("batches")
+      .select("id", { count: "exact", head: true })
+      .in("id", batchIds)
+      .eq("institute_id", instituteId);
+    if (countErr) throw countErr;
+    if (matchingBatchesCount !== batchIds.length) {
+      res.status(403).json({ success: false, message: "One or more batches do not belong to your institute." }); return;
+    }
+
+    const rows = batchIds.map((batch_id) => ({ test_id: paper.id, batch_id, scheduled_at: scheduledAt }));
+    const { error: upsertError } = await supabaseDB
+      .from("test_batch_assignments")
+      .upsert(rows, { onConflict: "test_id,batch_id" });
+    if (upsertError) throw upsertError;
+
+    // A still-draft paper's newly-assigned batches get notified when it is
+    // eventually published (transitionReviewPaper's publish action already
+    // reads every assignment row at that point). An already-published paper
+    // is live right now, so a batch added to it needs telling immediately —
+    // otherwise those students would never hear the test exists.
+    if (paper.is_published) {
+      const { data: students, error: studentError } = await supabaseDB.from("batch_students")
+        .select("student_id").in("batch_id", batchIds);
+      if (studentError) throw studentError;
+      const opensAt = new Date(scheduledAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
+      try {
+        await notifyStudents({
+          instituteId,
+          userIds: (students ?? []).map((student: any) => student.student_id),
+          type: "test_published",
+          title: "New test assigned",
+          body: `${paper.title} · Opens ${opensAt}`,
+          href: `/student/tests`,
+          eventKey: `test_assigned:${paper.id}:${scheduledAt}`,
+          metadata: { paper_id: paper.id, available_from: scheduledAt },
+        });
+      } catch (notificationError: any) {
+        console.error("[assignPaperToBatches] notification delivery failed:", notificationError.message);
+      }
+    }
+
+    await audit({
+      instituteId, paperId: paper.id, actorId: req.user!.id, action: "paper_assigned",
+      reason: null, before: null, after: { batch_ids: batchIds, scheduled_at: scheduledAt },
+    });
+
+    res.json({ success: true, data: { paper_id: paper.id, batch_ids: batchIds, scheduled_at: scheduledAt } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
+/**
  * PATCH /api/v1/test-department/papers/:id
  *
  * What the paper's questions are worth. A JEE Advanced paper carries no safe
