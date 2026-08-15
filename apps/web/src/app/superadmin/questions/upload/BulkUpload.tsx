@@ -241,9 +241,16 @@ export default function BulkUpload() {
           }),
         });
         const data = await res.json();
+        // The API already names the offending questions in `errors` (e.g.
+        // "Question #412: missing 'question_text'"), but only `message` was
+        // ever shown — leaving "Question validation failed." with no way to
+        // tell which of 567 questions to fix, or what was wrong with it.
+        const detail = Array.isArray(data.errors) && data.errors.length
+          ? ` ${data.errors.join(" · ")}`
+          : "";
         updateFile(f.name, {
           status: data.success ? "done" : "error",
-          message: data.message ?? "",
+          message: `${data.message ?? ""}${detail}`.trim(),
         });
       } catch (err: any) {
         updateFile(f.name, { status: "error", message: err.message ?? "Image upload failed." });
