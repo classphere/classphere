@@ -175,21 +175,42 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    // Check for an existing in-progress attempt (prevent duplicates)
-    const { data: existing } = await supabaseDB
+    // Every prior attempt at this paper, not just the unfinished one. Only
+    // in_progress used to be checked, which stopped a student holding two open
+    // attempts but did nothing about starting a fresh one after submitting —
+    // so an institute-assigned test could be sat over and over while its
+    // window stayed open, each run overwriting nothing and producing its own
+    // score and analysis.
+    const { data: priorAttempts } = await supabaseDB
       .from("attempts")
       .select("id, status")
       .eq("student_id", studentId)
       .eq("paper_id", paper_id)
-      .eq("status", "in_progress")
-      .maybeSingle();
+      .in("status", ["in_progress", "submitting", "submitted"]);
 
-    if (existing) {
+    const resumable = (priorAttempts ?? []).find((row: any) => row.status === "in_progress");
+    if (resumable) {
       // Return the existing in-progress attempt so the UI can resume
       res.status(200).json({
         success: true,
         message: "Resuming existing in-progress attempt",
-        data: { attempt: existing, resumed: true },
+        data: { attempt: resumable, resumed: true },
+      });
+      return;
+    }
+
+    // An assigned test is graded coursework: one attempt each, and the result
+    // already carries the analysis. Public practice papers, boosters and
+    // topic-practice sets are deliberately unrestricted — those exist to be
+    // repeated. "submitting" counts as spent too, so a second tab cannot slip
+    // a new attempt in while the first is still finalising.
+    const spent = (priorAttempts ?? []).find((row: any) => row.status === "submitted" || row.status === "submitting");
+    if (spent && access.deliveryMode === "assigned_scheduled") {
+      res.status(409).json({
+        success: false,
+        code: "ALREADY_ATTEMPTED",
+        message: "You have already taken this test. Assigned tests can be attempted once — open your result to see the full analysis.",
+        data: { attempt_id: spent.id },
       });
       return;
     }

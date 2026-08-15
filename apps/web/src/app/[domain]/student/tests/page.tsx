@@ -18,6 +18,7 @@ import {
   RiCalendarEventLine,
   RiPlayCircleLine,
   RiLockLine,
+  RiCheckboxCircleLine,
 } from "@remixicon/react";
 
 interface Paper {
@@ -46,6 +47,10 @@ interface AssignedTest {
   created_at: string;
   scheduled_at: string | null;
   assigned_at: string;
+  /** This student's own attempt, when they have one. Assigned tests allow a
+   *  single attempt, so a finished one turns the card into "View result". */
+  my_attempt_id?: string | null;
+  my_attempt_status?: "in_progress" | "submitting" | "submitted" | null;
 }
 
 interface Resource {
@@ -385,6 +390,11 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
   const now = new Date();
   const isUpcoming = scheduledDate ? scheduledDate > now : false;
   const isLive = scheduledDate ? scheduledDate <= now : true;
+  // An assigned test is one attempt only (enforced in startAttempt), so a
+  // finished one offers its result rather than a Start button that would just
+  // fail. An unfinished one offers to resume.
+  const isDone = test.my_attempt_status === "submitted" || test.my_attempt_status === "submitting";
+  const isResumable = test.my_attempt_status === "in_progress";
 
   return (
     <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
@@ -394,12 +404,14 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
         {/* Status badge */}
         <div className="flex items-center gap-2 mb-3">
           <span className={`inline-flex items-center gap-1.5 text-[10px] font-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${
-            isUpcoming
-              ? "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400"
-              : "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
+            isDone
+              ? "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
+              : isUpcoming
+                ? "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400"
+                : "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
           }`}>
-            {isUpcoming ? <RiLockLine size={10} /> : <RiPlayCircleLine size={10} />}
-            {isUpcoming ? "Upcoming" : "Take Now"}
+            {isDone ? <RiCheckboxCircleLine size={10} /> : isUpcoming ? <RiLockLine size={10} /> : <RiPlayCircleLine size={10} />}
+            {isDone ? "Completed" : isResumable ? "In progress" : isUpcoming ? "Upcoming" : "Take Now"}
           </span>
           <span className="inline-flex text-[10px] font-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-b-surface2 text-t-secondary">
             Mock Test
@@ -437,16 +449,27 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
 
       <div className="relative z-10 mt-3 pt-4 border-t border-s-stroke2 flex justify-end">
         <button
-          onClick={onStart}
-          disabled={isUpcoming}
+          onClick={isDone
+            ? () => { window.location.href = `/student/results/${test.my_attempt_id}`; }
+            : onStart}
+          disabled={isUpcoming && !isDone}
           className={`flex items-center gap-1.5 h-9 px-4 rounded-[10px] text-[13px] font-sans font-semibold transition-all active:scale-95 ${
-            isUpcoming
+            isUpcoming && !isDone
               ? "bg-b-surface2 text-t-secondary cursor-not-allowed"
               : "bg-shade-02 text-white hover:opacity-90 cursor-pointer"
           }`}
-          title={isUpcoming ? `Available on ${formatDate(test.scheduled_at)}` : "Start test"}
+          title={
+            isDone ? "View your result and analysis"
+              : isResumable ? "Resume where you left off"
+              : isUpcoming ? `Available on ${formatDate(test.scheduled_at)}`
+              : "Start test"
+          }
         >
-          {isUpcoming ? (
+          {isDone ? (
+            <><RiBarChartBoxLine size={14} /> View Result</>
+          ) : isResumable ? (
+            <><RiPlayCircleLine size={14} /> Resume Test</>
+          ) : isUpcoming ? (
             <><RiLockLine size={14} /> Locked</>
           ) : (
             <><RiPlayCircleLine size={14} /> Start Test</>

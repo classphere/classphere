@@ -641,6 +641,35 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
     }
 
     const assignedTests = Array.from(testsMap.values());
+
+    // What this student has already done with each of these papers. Without it
+    // the list offers "Start Test" on a test they have already sat, and the
+    // one-attempt rule in startAttempt turns that into a dead-end error at the
+    // moment they click it rather than something the card could have shown.
+    if (assignedTests.length > 0) {
+      const { data: attempts } = await supabaseDB
+        .from("attempts")
+        .select("id, paper_id, status")
+        .eq("student_id", userId)
+        .in("paper_id", assignedTests.map((test: any) => test.id))
+        .in("status", ["in_progress", "submitting", "submitted"]);
+
+      const byPaper = new Map<string, { attempt_id: string; status: string }>();
+      for (const row of attempts ?? []) {
+        // in_progress wins: a resumable attempt is the more useful thing to
+        // surface than an older finished one, and only one can exist at a time.
+        const existing = byPaper.get(row.paper_id);
+        if (!existing || row.status === "in_progress") {
+          byPaper.set(row.paper_id, { attempt_id: row.id, status: row.status });
+        }
+      }
+      for (const test of assignedTests) {
+        const mine = byPaper.get(test.id);
+        test.my_attempt_id = mine?.attempt_id ?? null;
+        test.my_attempt_status = mine?.status ?? null;
+      }
+    }
+
     res.status(200).json({ success: true, data: { tests: assignedTests } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
