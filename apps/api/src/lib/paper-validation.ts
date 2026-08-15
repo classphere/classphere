@@ -225,10 +225,23 @@ export function blockingQuestionIssues(question: Record<string, any>): QuestionI
  *
  * `questions` must carry `position` alongside the question's own columns — the
  * caller joins paper_questions, which is where the paper's own numbering lives.
+ *
+ * `fromExtraction` — whether this paper's questions came from automated PDF
+ * extraction (uploadTestController, AI extraction), as opposed to being
+ * bank-built (createTest — an explicit count someone typed in, correct by
+ * construction). It decides how seriously a pattern mismatch is taken:
+ * most coachings upload a PDF that's already meant to match the exam's
+ * official structure, so a mismatch there is real signal — almost always
+ * extraction missing questions — and is reported as a blocking-looking
+ * error. A bank-built paper can never have "the wrong" count; whatever was
+ * asked for is what it has, so the same mismatch is only a warning there.
+ * Defaults true (strict) so a caller that hasn't been updated to pass this
+ * explicitly doesn't silently go lenient.
  */
 export function validatePaperQuestions(
   questions: Array<Record<string, any>>,
   storedExamCode: string,
+  fromExtraction: boolean = true,
 ): PaperValidation {
   const examCode = detectExamCode(questions, storedExamCode);
   const pattern = EXAM_PATTERNS[examCode];
@@ -241,22 +254,17 @@ export function validatePaperQuestions(
 
   const errors: string[] = [];
   const warnings: string[] = [];
+  const patternIssue = (message: string) => (fromExtraction ? errors : warnings).push(
+    fromExtraction ? message : `${message} — fine if this is a deliberately custom-built paper.`,
+  );
 
   if (pattern) {
-    // Warnings, not errors: neither publish path (publishTest, transitionReviewPaper)
-    // actually gates on these — only per-question defects below block publication.
-    // A pattern mismatch is real signal on a PDF-extracted paper (it usually means
-    // extraction missed questions), but a deliberately custom-built paper — a
-    // coaching's own 80-question NEET set, say — is expected to miss the official
-    // pattern on purpose. Reporting it as an "error" here made the panel read as
-    // "Validation failed" and every message render in the same red as a genuine
-    // blocking defect, for a paper that would publish just fine.
     if (pattern.total > 0 && questions.length !== pattern.total) {
-      warnings.push(`Expected ${pattern.total} questions total, found ${questions.length} — fine if this is a deliberately custom-built paper.`);
+      patternIssue(`Expected ${pattern.total} questions total, found ${questions.length}.`);
     }
     for (const [subject, expected] of Object.entries(pattern.counts)) {
       const found = counts[subject] ?? 0;
-      if (found !== expected) warnings.push(`Expected ${subject}: ${expected}, found ${found} — fine if this is a deliberately custom-built paper.`);
+      if (found !== expected) patternIssue(`Expected ${subject}: ${expected}, found ${found}.`);
     }
     for (const subject of Object.keys(counts).filter((s) => !pattern.subjects.includes(s))) {
       warnings.push(`${counts[subject]} question(s) have subject "${subject}", which is not expected for ${examCode}.`);

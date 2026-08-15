@@ -604,7 +604,7 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
 
     // The same function backs the Superadmin validate endpoint and the publish
     // guard, so a paper cannot pass here and fail there.
-    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "") });
+    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "", Boolean(paper.extracted_from_pdf)) });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 

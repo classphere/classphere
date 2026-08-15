@@ -655,7 +655,7 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     // cannot go out until someone says what it is worth.
     const { data: paperRow, error: paperRowError } = await supabaseDB
       .from("papers")
-      .select("marking_scheme, exams(code)")
+      .select("marking_scheme, extracted_from_pdf, exams(code)")
       .eq("id", id)
       .maybeSingle();
     if (paperRowError) throw paperRowError;
@@ -693,7 +693,7 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
         question_number: question?.question_number ?? row.position ?? idx + 1,
       };
     });
-    const report = validatePaperQuestions(publishQuestions, paperExamCode);
+    const report = validatePaperQuestions(publishQuestions, paperExamCode, Boolean((paperRow as any)?.extracted_from_pdf));
 
     if (report.summary.withErrors > 0) {
       res.status(400).json({
@@ -753,7 +753,7 @@ export const validateTest = async (req: Request, res: Response): Promise<void> =
   try {
     const { data: paper, error: paperError } = await supabaseDB
       .from("papers")
-      .select("id, institute_id, exam_code:exams(code)")
+      .select("id, institute_id, extracted_from_pdf, exam_code:exams(code)")
       .eq("id", req.params.id)
       .eq("is_active", true)
       .maybeSingle();
@@ -784,7 +784,7 @@ export const validateTest = async (req: Request, res: Response): Promise<void> =
       };
     });
 
-    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "") });
+    res.json({ success: true, data: validatePaperQuestions(questions, (paper as any).exam_code?.code ?? "", Boolean((paper as any).extracted_from_pdf)) });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -1571,6 +1571,12 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           is_published: false,
           delivery_mode: "assigned_scheduled",
           available_from: scheduledAt.toISOString(),
+          // The one signal validatePaperQuestions has for treating a question-
+          // count mismatch as a real problem rather than a deliberate choice —
+          // this paper's questions came from automated PDF extraction, so a
+          // mismatch against the exam's official pattern is almost always
+          // extraction missing some, not intentional.
+          extracted_from_pdf: true,
         })
         .select("id, workflow_status")
         .single();
