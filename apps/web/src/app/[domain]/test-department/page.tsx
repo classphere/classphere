@@ -31,11 +31,14 @@ const ARCHIVED_PATH = "/api/v1/test-department/papers?status=archived";
 export default function TestDepartmentPage() {
   const { session, user } = useAuth();
   const queryClient = useQueryClient();
-  const canOperate = user?.role === "test_department_head" || user?.role === "test_department_member";
-  // Archiving and restoring are Head/Institute Admin actions server-side too
-  // (transitionReviewPaper) — a Test Editor can see the Archived tab but
-  // shouldn't get a quick-action it would just 403 on.
-  const canManage = user?.role === "test_department_head" || user?.role === "institute_admin";
+  // One capability set, matching canOperatePapers on the server. A Test Head
+  // does the whole job; an Institute Admin can do all of it too, because a
+  // coaching with no Test Department is the common case and its owner is then
+  // the only person who will ever build a paper here.
+  const canOperate =
+    user?.role === "test_department_head" ||
+    user?.role === "test_department_member" ||
+    user?.role === "institute_admin";
 
   const [tab, setTab] = useState<"active" | "archived">("active");
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -140,7 +143,7 @@ export default function TestDepartmentPage() {
                   durationMin={paper.duration_min}
                   totalMarks={paper.total_marks}
                   ctaLabel="Review"
-                  cornerAction={canManage && (
+                  cornerAction={canOperate && (
                     <button
                       type="button"
                       disabled={busyId === paper.id}

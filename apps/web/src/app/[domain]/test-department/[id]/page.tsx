@@ -31,10 +31,14 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-// Matches the backend's own transitions["archive"] source list exactly —
-// kept here rather than derived so the button and the 409 it would otherwise
-// hit stay in sync without a round trip.
-const ARCHIVABLE_STATUSES = ["draft", "changes_requested", "approved", "scheduled", "published"];
+// Matches the backend's own transitions map exactly — kept here rather than
+// derived so a button and the 409 it would otherwise hit stay in sync without a
+// round trip.
+const ARCHIVABLE_STATUSES = ["draft", "needs_review", "changes_requested", "approved", "scheduled", "published"];
+// A paper's life is draft → published → archived. needs_review, changes_requested
+// and approved are states the retired two-person review could leave behind; a
+// paper sitting in one of them still publishes from here in a single action.
+const PUBLISHABLE_STATUSES = ["draft", "needs_review", "changes_requested", "approved", "scheduled"];
 
 /**
  * Assigning a paper to batches used to happen exactly once, folded into
@@ -156,13 +160,13 @@ export default function ReviewPaperPage() {
   const [transacting, setTransacting] = useState(false);
   const [assignOpen, setAssignOpen] = useState(false);
 
-  // The Institute Admin sits above the Head, so they can do everything the Head
-  // can — including publish, which in a coaching with no department is otherwise
-  // a step nobody is allowed to take.
-  const isInstituteAdmin = user?.role === "institute_admin";
-  const isHead = user?.role === "test_department_head" || isInstituteAdmin;
-  const isMember = user?.role === "test_department_member";
-  const isDepartmentUser = isHead || isMember;
+  // One capability set, matching canOperatePapers on the server. There is no
+  // second tier: whoever can open this screen can correct the paper, price it,
+  // assign it and publish it.
+  const canOperate =
+    user?.role === "test_department_head" ||
+    user?.role === "test_department_member" ||
+    user?.role === "institute_admin";
 
   const PAPER_PATH = params.id ? `/api/v1/test-department/papers/${params.id}` : null;
   const { data, error: loadError } = useApiQuery<any>(PAPER_PATH);
@@ -178,7 +182,7 @@ export default function ReviewPaperPage() {
     () => detectExamCode(questions, paper?.exam_code?.code ?? ""),
     [questions, paper?.exam_code?.code],
   );
-  const canEdit = ["draft", "changes_requested", "needs_review"].includes(status) && isDepartmentUser;
+  const canEdit = ["draft", "changes_requested", "needs_review"].includes(status) && canOperate;
 
   const patchCache = (updater: (previous: any) => any) =>
     queryClient.setQueryData<any>(apiQueryKey(PAPER_PATH as string), (previous: any) =>
@@ -194,11 +198,9 @@ export default function ReviewPaperPage() {
       // the cached copy is patched rather than the whole paper refetched.
       patchCache((previous) => ({ ...previous, paper: response.data.paper }));
       setMessage(
-        action === "publish"         ? "Test published." :
-        action === "approve"         ? "Paper approved." :
-        action === "request_changes" ? "Changes requested." :
-        action === "archive"         ? "Test archived. Find it under the Archived tab to restore it later." :
-        action === "restore"         ? "Test restored as a draft. Review and re-publish when ready." : "Updated.",
+        action === "publish" ? "Test published. Assigned students can see it now." :
+        action === "archive" ? "Test archived. Find it under the Archived tab to restore it later." :
+        action === "restore" ? "Test restored as a draft. Review and re-publish when ready." : "Updated.",
       );
       setTimeout(() => setMessage(""), 4000);
     } catch (error: any) { setMessage(error.message); }
@@ -285,39 +287,7 @@ export default function ReviewPaperPage() {
           onValidate={validate}
           actions={
             <div className="flex flex-wrap items-center gap-2">
-              {["draft", "changes_requested"].includes(status) && isDepartmentUser && (
-                <button
-                  type="button" disabled={transacting} onClick={() => transition("submit")}
-                  className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
-                >
-                  Submit for review
-                </button>
-              )}
-              {isHead && status === "needs_review" && (
-                <>
-                  <button
-                    type="button" disabled={transacting} onClick={() => transition("request_changes")}
-                    className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
-                  >
-                    Request changes
-                  </button>
-                  <button
-                    type="button" disabled={transacting} onClick={() => transition("approve")}
-                    className="h-11 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
-                  >
-                    Mark ready
-                  </button>
-                </>
-              )}
-              {isHead && status === "approved" && (
-                <button
-                  type="button" disabled={transacting} onClick={() => transition("publish")}
-                  className="h-11 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
-                >
-                  Publish test
-                </button>
-              )}
-              {isDepartmentUser && status !== "archived" && (
+              {canOperate && status !== "archived" && (
                 <button
                   type="button" onClick={() => setAssignOpen(true)}
                   className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
@@ -325,9 +295,17 @@ export default function ReviewPaperPage() {
                   Assign to batches
                 </button>
               )}
+              {canOperate && PUBLISHABLE_STATUSES.includes(status) && (
+                <button
+                  type="button" disabled={transacting} onClick={() => transition("publish")}
+                  className="h-11 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
+                >
+                  Publish test
+                </button>
+              )}
               {/* Only meaningful once it is live — a draft has no submissions
                   to aggregate. */}
-              {isDepartmentUser && status === "published" && (
+              {canOperate && status === "published" && (
                 <Link
                   href={`/institute/tests/${params.id}/results`}
                   className="flex h-11 items-center rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary"
@@ -335,7 +313,7 @@ export default function ReviewPaperPage() {
                   Batch results
                 </Link>
               )}
-              {isHead && status === "archived" && (
+              {canOperate && status === "archived" && (
                 <button
                   type="button" disabled={transacting} onClick={() => transition("restore")}
                   className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
@@ -343,7 +321,7 @@ export default function ReviewPaperPage() {
                   Restore
                 </button>
               )}
-              {isHead && ARCHIVABLE_STATUSES.includes(status) && (
+              {canOperate && ARCHIVABLE_STATUSES.includes(status) && (
                 <button
                   type="button" disabled={transacting}
                   onClick={() => {
