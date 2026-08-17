@@ -372,7 +372,7 @@ from creating a test to publishing it.*
 
 ---
 
-### WP-2 — The Test Head enters duration and marks by hand
+### WP-2 — The Test Head enters duration and marks by hand — ✅ **implemented**
 
 *No defaults, no derivation, no guessing. Whatever the paper is worth is whatever the person
 holding the paper says it is worth.*
@@ -435,6 +435,14 @@ let the Head decide. Never rewrite their number.
 types duration = 80, total marks = 320, +4 correct, −1 wrong — or any other numbers they
 like — and publishes. Nothing in the system substitutes a number they did not type. The
 player's timer starts at 80:00 and the Tests Hub card reads "80 Min · 320 Marks".
+
+**Note on what WP-2 pulled forward from WP-3.** The "required before publish" rule in the
+field table above had to ship with this work rather than after it. Removing the defaults
+without it would have left a window where a paper could go live with a null duration and no
+marking scheme — strictly worse than the guesses it replaced. So `transitionReviewPaper`'s
+publish branch now refuses a paper missing duration, total marks or marking scheme, naming
+which. The rest of WP-3 (one shared publish path, the batch-assignment guard, the custom
+pattern flag) is untouched.
 
 ---
 
