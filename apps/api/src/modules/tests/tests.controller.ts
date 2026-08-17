@@ -21,6 +21,27 @@ import { deriveLegacyContentBlocks } from "../../lib/question-content";
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
+ * A paper's duration or total marks as supplied at creation — or null.
+ *
+ * Both used to carry defaults: 180 minutes and 360 marks, applied to every
+ * upload regardless of what came out of the PDF, so an 80-question paper
+ * claimed 360 marks while scoring at most 320. Nothing is invented here now;
+ * the Test Head sets both on the review screen once the extraction is in front
+ * of them, and publish refuses a paper that still has neither.
+ *
+ * Absent, blank and unparseable all mean the same thing: not yet stated. Blank
+ * is checked explicitly because Number("") is 0, which would record a
+ * zero-minute test rather than an unset one.
+ */
+function statedNumberOrNull(raw: unknown, { integer = false }: { integer?: boolean } = {}): number | null {
+  if (raw === null || raw === undefined || String(raw).trim() === "") return null;
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed) || parsed < 0) return null;
+  if (integer && !Number.isInteger(parsed)) return null;
+  return parsed;
+}
+
+/**
  * GET /api/v1/tests/:id
  * Authenticated — Get a paper's metadata + full question list.
  * Used by /test/[id] page for PYQ papers uploaded via superadmin.
@@ -355,9 +376,16 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       exam_id, title, type = "mock-test",
       question_count = 90, subjects, chapters, difficulty_mix, question_ids,
       subject_counts,
-      duration_minutes = 180, batch_ids,
+      duration_minutes, total_marks, batch_ids,
       scheduled_start, scheduled_end,
     } = req.body;
+
+    // Same rule as the PDF path: nothing about what this paper is worth or how
+    // long it runs is invented here. total_marks used to be questions × 4, which
+    // is right for JEE Main and NEET and wrong the moment an institute prices a
+    // paper its own way — and it was never a number anyone had agreed to.
+    const paperDurationMin = statedNumberOrNull(duration_minutes, { integer: true });
+    const paperTotalMarks = statedNumberOrNull(total_marks);
 
     // A NEET paper is 20 Physics + 20 Chemistry + 40 Biology, not "80
     // questions, ideally from those subjects" — the flat question_count path
@@ -534,8 +562,8 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
         title: title ?? `Custom Test — ${new Date().toLocaleDateString("en-IN")}`,
         test_type: type,
         total_questions: shuffled.length,
-        total_marks: shuffled.length * 4,
-        duration_min: duration_minutes,
+        total_marks: paperTotalMarks,
+        duration_min: paperDurationMin,
         created_by: userId,
         institute_id: req.user!.institute_id,
         is_active: true,
@@ -1233,10 +1261,16 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       title,
       date,
       batch_ids,
-      duration_min = 180,
-      total_marks = 360,
+      duration_min,
+      total_marks,
       difficulty = "medium",
     } = req.body;
+
+    // Neither is defaulted any more — see statedNumberOrNull. Both are the Test
+    // Head's to type on the review screen once the extraction is in front of
+    // them, and publish refuses a paper while either is still unset.
+    const paperDurationMin = statedNumberOrNull(duration_min, { integer: true });
+    const paperTotalMarks = statedNumberOrNull(total_marks);
 
     const scheduledAt = new Date(date);
 
@@ -1670,11 +1704,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           test_type: "mock-test",
           total_questions: group.length,
           // Every split paper is its own standalone exam of the same kind, so
-          // it gets the full marks/duration the upload specified, not a share
-          // of it — a 75-question JEE Main session is worth 360 marks whether
-          // it is the first one in the PDF or the second.
-          total_marks: Number(total_marks) || (group.length * 4),
-          duration_min: Number(duration_min) || 180,
+          // each gets whatever the upload specified rather than a share of it.
+          // Usually that is null on both counts, and the Test Head prices and
+          // times each session separately on its own review screen — which is
+          // the honest answer, since a split PDF's two sessions need not be
+          // worth the same or run for the same length.
+          total_marks: paperTotalMarks,
+          duration_min: paperDurationMin,
           created_by: userId,
           is_active: true,
           institute_id: req.user!.institute_id,

@@ -2,7 +2,7 @@ import { randomUUID } from "crypto";
 import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figures";
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { validatePaperQuestions } from "../../lib/paper-validation";
-import { totalMarksForQuestions, validateMarkingScheme } from "../../lib/marking-scheme";
+import { validateMarkingScheme } from "../../lib/marking-scheme";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -415,6 +415,30 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
     if (action === "archive") { workflow_status = "archived"; updates.is_active = false; updates.is_published = false; }
     if (action === "restore") { workflow_status = "draft"; updates.is_active = true; }
     if (action === "publish") {
+      // Nothing about what a paper is worth is guessed any more, which means
+      // nothing fills these in if the Test Head has not. A paper published
+      // without them would run on a fallback duration and score against a
+      // marking scheme nobody chose — the exact silent wrongness this whole
+      // change exists to remove — so publication is where it has to be caught.
+      const missingDetails: string[] = [];
+      if (!Number.isFinite(Number(paper.duration_min)) || Number(paper.duration_min) <= 0) {
+        missingDetails.push("how long it runs");
+      }
+      if (paper.total_marks === null || paper.total_marks === undefined) {
+        missingDetails.push("what it is worth in total");
+      }
+      if (!paper.marking_scheme || Object.keys(paper.marking_scheme).length === 0) {
+        missingDetails.push("the marks for a correct answer and the penalty for a wrong one");
+      }
+      if (missingDetails.length) {
+        res.status(400).json({
+          success: false,
+          message: `Cannot publish: this test does not yet say ${missingDetails.join(", ")}. Open Test details on this screen and set them.`,
+          missing: missingDetails,
+        });
+        return;
+      }
+
       const { data: rows, error } = await supabaseDB.from("paper_questions").select("questions(id, question_text, question_type, options, correct_answer)").eq("paper_id", paper.id);
       if (error) throw error;
       const invalid = (rows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).map(validQuestion).find(Boolean);
@@ -543,19 +567,42 @@ export async function assignPaperToBatches(req: Request, res: Response): Promise
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
+/** Longest a sitting can reasonably be. JEE Advanced runs two 3-hour papers. */
+const MAX_DURATION_MIN = 600;
+
+/**
+ * An optional timestamp field: a date-time, or null to clear it.
+ *
+ * Returned rather than thrown so the caller can name the field in the message —
+ * "available_until must be a valid date-time" is actionable, "invalid input" is
+ * not.
+ */
+function readTimestamp(value: unknown): { ok: true; value: string | null } | { ok: false } {
+  if (value === null || value === "") return { ok: true, value: null };
+  const parsed = new Date(String(value));
+  if (Number.isNaN(parsed.getTime())) return { ok: false };
+  return { ok: true, value: parsed.toISOString() };
+}
+
 /**
  * PATCH /api/v1/test-department/papers/:id
  *
- * What the paper's questions are worth. A JEE Advanced paper carries no safe
- * default — its marks differ by question type and change between years — so a
- * paper whose instructions page was missing or unreadable arrives without them
- * and cannot be published until someone says.
+ * Everything about the paper that is not a question: what it is worth, how long
+ * it runs, when it opens and closes, and when its results appear.
+ *
+ * All of it typed by the Test Head, and none of it derived. That is the point.
+ * Upload used to record 360 marks for every PDF regardless of how many questions
+ * came out of it, and saving a marking scheme here used to recompute total_marks
+ * from that scheme — so a paper's stated total was always some arithmetic nobody
+ * had asked for. An 80-question paper is worth whatever the institute says it is
+ * worth; if that disagrees with marks-per-question × question-count, the review
+ * screen shows both numbers and lets the person holding the paper decide.
+ *
+ * Duration was not editable here at all: it could only be set at upload, before
+ * anyone had seen how many questions the extractor actually found.
  *
  * The Superadmin equivalent is PATCH /tests/:id/global, which only touches
- * papers in the global bank. An institute paper needs its own route, or the
- * marking-scheme editor would be a screen only a superadmin could ever use —
- * while the person actually holding the unpriced paper is usually the test
- * editor who just uploaded it.
+ * papers in the global bank.
  */
 export async function updateReviewPaper(req: Request, res: Response): Promise<void> {
   try {
@@ -566,41 +613,93 @@ export async function updateReviewPaper(req: Request, res: Response): Promise<vo
       res.status(409).json({ success: false, message: "A published paper is immutable. Create a revision instead." }); return;
     }
 
+    const body = req.body ?? {};
     const updates: Record<string, unknown> = {};
-    if (req.body?.marking_scheme !== undefined) {
-      const schemeErrors = validateMarkingScheme(req.body.marking_scheme);
+
+    if (body.title !== undefined) {
+      const title = String(body.title).trim();
+      if (!title) { res.status(400).json({ success: false, message: "A test needs a title." }); return; }
+      updates.title = title;
+    }
+
+    // null and "" clear the field rather than being coerced. Number(null) is 0,
+    // so without this branch emptying the box would silently record a zero-minute
+    // test rather than an unset one.
+    if (body.duration_min !== undefined) {
+      if (body.duration_min === null || body.duration_min === "") {
+        updates.duration_min = null;
+      } else {
+        const duration = Number(body.duration_min);
+        if (!Number.isInteger(duration) || duration < 1 || duration > MAX_DURATION_MIN) {
+          res.status(400).json({ success: false, message: `Duration must be a whole number of minutes between 1 and ${MAX_DURATION_MIN}.` }); return;
+        }
+        updates.duration_min = duration;
+      }
+    }
+
+    // Never recomputed from the marking scheme, and never overwritten by one.
+    if (body.total_marks !== undefined) {
+      if (body.total_marks === null || body.total_marks === "") {
+        updates.total_marks = null;
+      } else {
+        const totalMarks = Number(body.total_marks);
+        if (!Number.isFinite(totalMarks) || totalMarks < 0) {
+          res.status(400).json({ success: false, message: "Total marks must be a number of 0 or more." }); return;
+        }
+        updates.total_marks = totalMarks;
+      }
+    }
+
+    if (body.marking_scheme !== undefined) {
+      const schemeErrors = validateMarkingScheme(body.marking_scheme);
       if (schemeErrors.length > 0) {
         res.status(400).json({ success: false, message: "Invalid marking_scheme.", errors: schemeErrors }); return;
       }
-      updates.marking_scheme = req.body.marking_scheme;
-
-      // total_marks was summed at upload against whatever scheme existed then —
-      // for a paper that had none, that means the +4 fallback. Left alone it
-      // would permanently claim a total its own questions do not add up to.
-      const { data: rows, error: rowsError } = await supabaseDB
-        .from("paper_questions").select("questions(question_type, marks)").eq("paper_id", paper.id);
-      if (rowsError) throw rowsError;
-      const paperQuestions = (rows ?? [])
-        .map((row: any) => (Array.isArray(row.questions) ? row.questions[0] : row.questions))
-        .filter(Boolean);
-      if (paperQuestions.length > 0) {
-        updates.total_marks = totalMarksForQuestions(paperQuestions, req.body.marking_scheme);
-      }
+      updates.marking_scheme = body.marking_scheme;
     }
-    if (typeof req.body?.title === "string" && req.body.title.trim()) updates.title = req.body.title.trim();
+
+    for (const field of ["available_from", "available_until", "result_release_at"] as const) {
+      if (body[field] === undefined) continue;
+      const parsed = readTimestamp(body[field]);
+      if (!parsed.ok) {
+        res.status(400).json({ success: false, message: `${field} must be a valid date-time, or empty to clear it.` }); return;
+      }
+      updates[field] = parsed.value;
+    }
+
+    // Checked against the merged result, not the request alone: moving only the
+    // opening time still has to land before whatever closing time is already
+    // stored. papers_release_window_check enforces this in the database too, but
+    // reaching it would surface as a 500 rather than a sentence.
+    //
+    // `in` rather than ??, because a field being cleared is present in `updates`
+    // with the value null — which ?? would read as "not supplied" and replace
+    // with the stored value, checking the window that was just removed.
+    const mergedFrom = ("available_from" in updates ? updates.available_from : paper.available_from) as string | null;
+    const mergedUntil = ("available_until" in updates ? updates.available_until : paper.available_until) as string | null;
+    if (mergedFrom && mergedUntil && new Date(mergedUntil) <= new Date(mergedFrom)) {
+      res.status(400).json({ success: false, message: "The test must close after it opens." }); return;
+    }
 
     if (Object.keys(updates).length === 0) {
       res.status(400).json({ success: false, message: "No supported paper fields supplied." }); return;
     }
+    updates.review_version = (paper.review_version ?? 1) + 1;
 
     const { data, error } = await supabaseDB
       .from("papers").update(updates).eq("id", paper.id).eq("institute_id", instituteId)
-      .select("id, title, marking_scheme, total_marks").maybeSingle();
+      .select("id, title, marking_scheme, total_marks, duration_min, available_from, available_until, result_release_at, review_version")
+      .maybeSingle();
     if (error) throw error;
 
     await audit({
       instituteId, paperId: paper.id, actorId: req.user!.id, action: "paper_updated",
-      before: { marking_scheme: paper.marking_scheme, total_marks: paper.total_marks }, after: updates,
+      before: {
+        title: paper.title, marking_scheme: paper.marking_scheme, total_marks: paper.total_marks,
+        duration_min: paper.duration_min, available_from: paper.available_from,
+        available_until: paper.available_until, result_release_at: paper.result_release_at,
+      },
+      after: updates,
     });
     res.json({ success: true, data: { paper: data } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
