@@ -10,44 +10,25 @@ interface ComingSoonProps {
   backLabel?: string;
 }
 
-export default function ComingSoon({ 
-  title, 
-  description = "We're currently building this feature. Check back soon!", 
-  backUrl = "/", 
-  backLabel = "Back to Dashboard" 
+export default function ComingSoon({
+  title,
+  description = "We're currently building this feature. Check back soon!",
+  backUrl = "/",
+  backLabel = "Back to Dashboard",
 }: ComingSoonProps) {
   return (
-    <div style={{ 
-      display: "flex", 
-      flexDirection: "column", 
-      alignItems: "center", 
-      justifyContent: "center", 
-      minHeight: "calc(100vh - 80px)",
-      padding: "24px",
-      textAlign: "center"
-    }}>
-      <div style={{ 
-        width: 80, 
-        height: 80, 
-        borderRadius: "50%", 
-        background: "var(--primary-10)", 
-        display: "flex", 
-        alignItems: "center", 
-        justifyContent: "center",
-        marginBottom: 24
-      }}>
-        <RiToolsFill size={40} color="var(--primary-50)" />
+    <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center px-6 text-center">
+      <div className="mb-6 flex size-20 items-center justify-center rounded-full bg-primary-02/10">
+        <RiToolsFill size={40} className="text-primary-02" />
       </div>
-      
-      <h1 style={{ fontSize: 32, fontWeight: 800, color: "var(--fg-default)", marginBottom: 12 }}>
-        {title}
-      </h1>
-      
-      <p style={{ fontSize: 16, color: "var(--fg-muted)", maxWidth: 400, marginBottom: 32, lineHeight: 1.5 }}>
+
+      <h1 className="mb-3 text-[32px] font-extrabold text-t-primary">{title}</h1>
+
+      <p className="mb-8 max-w-[400px] text-[16px] leading-relaxed text-t-secondary">
         {description}
       </p>
 
-      <Link href={backUrl} className="btn btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
+      <Link href={backUrl} className="btn btn-primary inline-flex items-center gap-2 no-underline">
         <RiArrowLeftLine size={18} /> {backLabel}
       </Link>
     </div>

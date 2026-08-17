@@ -120,39 +120,11 @@ export default function GlobalAnalyticsPage() {
 
         {/* ── Bottom Row: AI Token Consumption ── */}
         <SectionCard title="AI Usage" className="w-full">
-          <div className="flex flex-col items-start gap-4 w-full mt-4">
-            
-            <div className="flex flex-row justify-between items-center w-full mb-2 -mt-3">
-              <span className="font-sans text-sm text-t-secondary">Usage metering is not enabled. No estimated token total is displayed.</span>
-              <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] rounded-[10px]">
-                <span className="text-sm font-semibold text-primary-03 leading-none">Awaiting metering</span>
-              </div>
+          <div className="flex flex-row justify-between items-center w-full gap-4 mt-4">
+            <span className="font-sans text-sm text-t-secondary">Usage metering is not enabled. No estimated token total is displayed.</span>
+            <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] rounded-md shrink-0">
+              <span className="text-sm font-semibold text-primary-03 leading-none">Awaiting metering</span>
             </div>
-
-            <div className="flex flex-col items-start w-full gap-4 mt-2">
-              {[].map((item: any, i) => {
-                const pct = Math.round((item.value / item.total) * 100);
-                return (
-                  <div key={i} className="group/item relative flex flex-col w-full p-4 sm:p-5 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px] justify-center">
-                    <div className="flex flex-row justify-between items-center w-full min-w-0">
-                      <span className="font-sans text-[13px] sm:text-base font-semibold text-t-primary truncate pr-2">{item.label}</span>
-                      <div className="flex flex-row items-center gap-2 sm:gap-4 shrink-0">
-                        <span className="font-sans text-[12px] sm:text-base font-semibold text-t-primary">{item.value}M <span className="hidden sm:inline">tokens</span></span>
-                        <span className="font-sans text-[12px] sm:text-sm font-bold text-t-secondary w-8 sm:w-12 text-right">{pct}%</span>
-                      </div>
-                    </div>
-                    
-                    <div className="w-full h-2 sm:h-3 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-full relative overflow-hidden">
-                      <div 
-                        className={`h-full rounded-full transition-all duration-1000 ease-out bg-gradient-to-r ${item.color} ${item.shadow}`}
-                        style={{ width: `${pct}%` }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
           </div>
         </SectionCard>
 

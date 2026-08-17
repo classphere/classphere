@@ -224,7 +224,7 @@ export default function MobileNav() {
   return (
     <>
       {/* ── Mobile Top Bar ── */}
-      <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
+      <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-b-surface1/90 shrink-0">
         <Link href={isSuperAdmin ? "/superadmin" : (isTestDepartment ? "/test-department" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard")))} className="flex items-center gap-3">
           <Image
             src={tenant.logoUrl ?? "/logoC.png"}
@@ -266,7 +266,7 @@ export default function MobileNav() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
-        className="lg:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[320px] bg-[#edecec] dark:bg-[#0f0f0f] border-l border-s-stroke2/20 flex flex-col shadow-2xl animate-in slide-in-from-right duration-200"
+        className="lg:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[320px] bg-b-surface1 border-l border-s-stroke2/20 flex flex-col shadow-dropdown animate-in slide-in-from-right duration-200"
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-s-stroke2/20 shrink-0">
@@ -336,7 +336,7 @@ export default function MobileNav() {
         </div>
 
         {/* Drawer Footer */}
-        <div className="mt-auto flex flex-col gap-4 w-full px-4 pt-4 pb-6 border-t border-s-stroke2/20 bg-b-surface1 dark:bg-[#0f0f0f] shrink-0">
+        <div className="mt-auto flex flex-col gap-4 w-full px-4 pt-4 pb-6 border-t border-s-stroke2/20 bg-b-surface1 shrink-0">
           <div className="flex flex-row items-center gap-3 w-full">
             <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[12px] p-1 h-12 flex-1 relative shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]">
               <button
