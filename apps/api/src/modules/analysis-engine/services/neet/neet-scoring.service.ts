@@ -1,18 +1,22 @@
 import { AttemptAnswer, ScoringResult } from "../../../../../../../packages/types/src/analysis.types";
+import { marksFor, type MarkingScheme } from "../../../../lib/marking-scheme";
 
 /**
  * NEET UG Scoring Engine
  *
  * NEET-specific rules (differs from JEE):
  * - Pure MCQ only — NO integer-type questions
- * - Total marks: 720 (Physics: 180, Chemistry: 180, Biology: 360)
- * - Marking: +4 correct, -1 wrong, 0 unattempted
  * - Biology is treated as ONE subject with internal Botany/Zoology breakdown
  * - No Section B, no "5 integer question" cap
+ *
+ * The marks come from the paper, not from this file. NEET convention is +4/-1
+ * over 720, and that is still what almost every NEET paper here says — but an
+ * institute running a 40-question practice paper at +2/-0 is entitled to have
+ * it scored that way, and the flat scheme this used to take could not carry it.
  */
 export function scoreAttempt(
   rawAnswers: AttemptAnswer[],
-  scheme: { correct: number; incorrect: number; unattempted: number }
+  scheme: MarkingScheme | null | undefined
 ): ScoringResult {
   // Deep copy answer objects so we don't mutate input data (ENGINE-2)
   const answers = rawAnswers.map(a => ({
@@ -20,8 +24,8 @@ export function scoreAttempt(
     question: { ...a.question }
   }));
 
-  // Enforce negative sign for incorrect penalty (H13)
-  const incorrectPenalty = -Math.abs(scheme.incorrect);
+  /** This question's marks: its type's entry, or its own override. */
+  const marksOf = (ans: AttemptAnswer) => marksFor(scheme, ans.question.question_type, ans.question.marks);
 
   let score = 0;
   let correct = 0;
@@ -40,15 +44,19 @@ export function scoreAttempt(
     }
     const s = subjectBreakdown[subj];
 
+    const marking = marksOf(ans);
+    // Enforce negative sign for incorrect penalty (H13)
+    const incorrectPenalty = -Math.abs(marking.incorrect);
+
     // NEET has NO integer questions — all MCQ, all or nothing
     if (!ans.selected_answer) {
-      score += scheme.unattempted;
-      s.score += scheme.unattempted;
+      score += marking.unattempted;
+      s.score += marking.unattempted;
       skipped++;
       s.skipped++;
     } else if (ans.is_correct) {
-      score += scheme.correct;
-      s.score += scheme.correct;
+      score += marking.correct;
+      s.score += marking.correct;
       correct++;
       s.correct++;
     } else {
@@ -57,12 +65,11 @@ export function scoreAttempt(
       incorrect++;
       s.incorrect++;
     }
-  }
 
-  // NEET maxScore: every question counts — pure MCQ, no integer cap needed
-  for (const subj of Object.keys(subjectBreakdown)) {
-    const totalQs = answers.filter(a => a.question.subject === subj).length;
-    subjectBreakdown[subj].maxScore = totalQs * scheme.correct;
+    // Every question counts — pure MCQ, no integer cap needed. Summed per
+    // question rather than count × one figure, so a paper mixing marks totals
+    // correctly.
+    s.maxScore += marking.correct;
   }
 
   const maxScore = Object.values(subjectBreakdown).reduce((sum, s) => sum + s.maxScore, 0);

@@ -1,5 +1,6 @@
 import { AnalysisResult, ClassifiedAnswer } from "../../../../../../../packages/types/src/analysis.types";
 import { getQuestionStats } from "../../../../lib/question-stats";
+import { normaliseMarkingScheme } from "../../../../lib/marking-scheme";
 import { scoreAttempt } from "./neet-scoring.service";
 import { classifyMistake } from "./neet-mistake-classifier";
 import { computeTopicAccuracy } from "./neet-topic-accuracy";
@@ -18,8 +19,12 @@ import { computeTimeIntervals, computeSubjectMovement, computeDifficultyBreakdow
 export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true): Promise<AnalysisResult> {
   const start = Date.now();
   const { attempt, answers } = await db.getAttemptWithAnswers(attemptId);
-  const scheme = attempt.marking_scheme || { correct: 4, incorrect: -1, unattempted: 0 };
-  const scoring = scoreAttempt(answers, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
+  // The scheme frozen onto the attempt when it started, in whichever shape it
+  // was stored — normalise translates the old flat form. No +4/-1 literal here
+  // any more: substituting one is how a paper could be priced on screen and
+  // scored on something else.
+  const scheme = normaliseMarkingScheme(attempt.marking_scheme);
+  const scoring = scoreAttempt(answers, scheme);
   // How the rest of the cohort answered these same questions. Empty until a
   // question has been answered enough times to mean anything, at which point
   // the classifier can tell a common trap from an unusual slip.
@@ -40,7 +45,7 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
 
   const topicStats    = computeTopicAccuracy(classified, batchAvgs);
   const errorPatterns = detectAllPatterns(classified);
-  const freeMarks     = calculateFreeMarks(classified, scoring, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
+  const freeMarks     = calculateFreeMarks(classified, scoring, scheme);
   const skipAnalysis  = analyzeSkips(classified);
   const attemptStrategy = analyzeAttemptStrategy(classified, attempt.exam_code ?? "neet", attempt.total_duration_sec ?? 10800, hasTimingData);
   const longitudinalFlags = detectLongitudinalPatterns(topicStats, historicalProfile);

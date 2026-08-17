@@ -65,6 +65,15 @@ export interface Question {
   source: string;
   year: number | null;
   tags: string[];
+  /**
+   * This question's own marks, overriding the paper's scheme for its type.
+   *
+   * The escape hatch for a paper whose two sections share a question type but
+   * not what it is worth. Null on almost every question; scoring reads it, so
+   * the analysis engine has to carry it or it would re-score the paper against
+   * the type's marks and disagree with the result the student was given.
+   */
+  marks?: { correct?: number; incorrect?: number; unattempted?: number; partial?: "per_correct_option" | null } | null;
 }
 
 export interface AttemptAnswer {

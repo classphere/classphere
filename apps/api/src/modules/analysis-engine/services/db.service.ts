@@ -72,7 +72,7 @@ export const db = {
       // The real column is explanation_images (migration 43), an array.
       const { data: questions, error: qErr } = await supabaseAdmin
         .from("questions")
-        .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
+        .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags, marks")
         .in("id", questionIds);
 
       // Throw rather than continue. An analysis with no questions is not a
@@ -137,7 +137,11 @@ export const db = {
       attempt: {
         ...attempt,
         exam_code: attempt.exam_code ?? "jee-main",
-        marking_scheme: attempt.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0, partial: false },
+        // Passed through exactly as stored. This used to substitute +4/-1 for a
+        // null scheme, which meant the analysis could report a score the paper's
+        // own marks would never have produced. A null reaches marksFor, which
+        // has one documented fallback rather than three scattered ones.
+        marking_scheme: attempt.marking_scheme ?? null,
         total_duration_sec: attempt.total_duration_sec ?? 10800,
       } as AttemptRecord,
       answers,

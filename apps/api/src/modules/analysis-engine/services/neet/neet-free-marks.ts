@@ -3,21 +3,25 @@ import {
   ScoringResult,
   FreeMarksResult,
 } from "../../../../../../../packages/types/src/analysis.types";
+import { marksFor, type MarkingScheme } from "../../../../lib/marking-scheme";
 
 export function calculateFreeMarks(
   classified: ClassifiedAnswer[],
   scoring: ScoringResult,
-  scheme: { correct: number; incorrect: number; unattempted: number }
+  scheme: MarkingScheme | null | undefined
 ): FreeMarksResult {
   const silly = classified.filter((a) => a.classification?.type === "silly");
   const calc = classified.filter((a) => a.classification?.type === "calculation");
   const fixable = silly.length + calc.length;
 
-  // Each fixable error recovers:
-  //   +scheme.correct   (gained)
-  //   -scheme.incorrect (penalty avoided, which was negative, so we add its absolute)
-  const marksPerFix = scheme.correct + Math.abs(scheme.incorrect); // +4 + 1 = +5 for JEE
-  const totalFree = fixable * marksPerFix;
+  // Each fixable error recovers what that question is worth plus the penalty it
+  // cost — +4 and +1 on a standard NEET question, so +5. Summed per question
+  // rather than multiplied by one figure, so a paper the institute priced its
+  // own way projects correctly.
+  const totalFree = [...silly, ...calc].reduce((sum, answer) => {
+    const marking = marksFor(scheme, answer.question.question_type, answer.question.marks);
+    return sum + marking.correct + Math.abs(marking.incorrect);
+  }, 0);
   const projected = scoring.score + totalFree;
 
   return {
