@@ -9,10 +9,22 @@ import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { notifyStudents } from "../notifications/notifications.service";
 import { uploadToR2 } from "../../lib/r2";
 
-const TEST_ADMIN_ROLE = "test_department_head";
-const TEST_EDITOR_ROLE = "test_department_member";
+const TEST_HEAD_ROLE = "test_department_head";
+/**
+ * Retired by migration 54. No account is created with it any more, but a row
+ * the migration could not reach — or one restored from a backup — must not lock
+ * its owner out, so it is still recognised and carries a Head's permissions.
+ */
+const LEGACY_TEST_EDITOR_ROLE = "test_department_member";
+/**
+ * Peers, not a hierarchy. Three is a guard against an institute turning its
+ * whole staff into publishers, not an org chart — see migration 54. The
+ * database enforces the same number in `enforce_max_test_heads`; this is the
+ * copy that produces a sentence instead of a Postgres exception.
+ */
+const MAX_TEST_HEADS = 3;
 const appBaseDomain = (process.env.APP_BASE_DOMAIN ?? "classphere.com").toLowerCase();
-const departmentRoles = new Set([TEST_ADMIN_ROLE, TEST_EDITOR_ROLE]);
+const departmentRoles = new Set([TEST_HEAD_ROLE, LEGACY_TEST_EDITOR_ROLE]);
 const allowedQuestionFields = new Set([
   "subject", "chapter", "topic", "difficulty", "year", "source", "question_type",
   "question_text", "question_images", "explanation_images", "options", "correct_answer", "explanation", "tags",
@@ -24,8 +36,16 @@ const metadataOnlyFields = new Set(["subject", "chapter", "topic", "difficulty",
 function isDepartmentUser(req: Request) {
   return departmentRoles.has(req.user?.role ?? "");
 }
-function isHead(req: Request) {
-  return req.user?.role === TEST_ADMIN_ROLE;
+/**
+ * Everyone who may operate this institute's papers.
+ *
+ * There is no second tier. A Test Head does the whole job — upload, correct,
+ * price, assign, publish, archive — and an Institute Admin can do all of it too,
+ * because a coaching with no Test Department is the common case and its owner
+ * is the only person who will ever review a paper there.
+ */
+function canOperatePapers(req: Request) {
+  return isDepartmentUser(req) || req.user?.role === "institute_admin";
 }
 function hasInstitute(req: Request, res: Response): string | null {
   const instituteId = req.user?.institute_id;
@@ -91,13 +111,12 @@ export async function listDepartmentMembers(req: Request, res: Response): Promis
 export async function createDepartmentMember(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
-    const { name, email, title, access_level, password: customPassword } = req.body ?? {};
-    const requestedLevel = access_level === "head" ? "head" : "editor";
-    if (req.user?.role === "institute_admin" && requestedLevel !== "head") {
-      res.status(403).json({ success: false, message: "The Institute Admin appoints the Test Department Head. The Head manages Test Editors." }); return;
-    }
-    if (req.user?.role === TEST_ADMIN_ROLE && requestedLevel !== "editor") {
-      res.status(403).json({ success: false, message: "A Test Department Head can add Test Editors only." }); return;
+    const { name, email, title, password: customPassword } = req.body ?? {};
+    // Appointing assessment staff is the Institute Admin's decision. A Test
+    // Head runs the papers; they do not staff the department, which is what
+    // stops the retired two-tier structure growing back from the inside.
+    if (req.user?.role !== "institute_admin") {
+      res.status(403).json({ success: false, message: "Only the Institute Admin can appoint a Test Head." }); return;
     }
     if (!name || !email) {
       res.status(400).json({ success: false, message: "Name and email are required." }); return;
@@ -105,15 +124,21 @@ export async function createDepartmentMember(req: Request, res: Response): Promi
     if (!process.env.RESEND_API_KEY?.trim()) {
       res.status(503).json({ success: false, message: "Staff email delivery is not configured. Configure RESEND_API_KEY before creating the account." }); return;
     }
-    const { data: currentAdmin, error: currentAdminError } = await supabaseDB
+    // The database enforces this too (migration 54's enforce_max_test_heads).
+    // Checking here as well is what turns a raised exception into a sentence
+    // that says which limit was hit and what to do about it.
+    const { count: activeHeads, error: headCountError } = await supabaseDB
       .from("test_department_members")
-      .select("user_id, users!test_department_members_user_id_fkey!inner(role)")
-      .eq("institute_id", instituteId).eq("is_active", true).eq("access_level", "head").limit(1);
-    if (currentAdminError) throw currentAdminError;
-    if (requestedLevel === "head" && currentAdmin?.length) {
-      res.status(409).json({ success: false, message: "This institute already has an active Test Department Head." }); return;
+      .select("user_id", { count: "exact", head: true })
+      .eq("institute_id", instituteId).eq("is_active", true).eq("access_level", "head");
+    if (headCountError) throw headCountError;
+    if ((activeHeads ?? 0) >= MAX_TEST_HEADS) {
+      res.status(409).json({
+        success: false,
+        message: `This institute already has ${MAX_TEST_HEADS} Test Heads, which is the maximum. Remove one before adding another.`,
+      }); return;
     }
-    const role = requestedLevel === "head" ? TEST_ADMIN_ROLE : TEST_EDITOR_ROLE;
+    const role = TEST_HEAD_ROLE;
     const normalizedEmail = String(email).trim().toLowerCase();
     const { data: existing } = await supabaseDB.from("users").select("id").eq("email", normalizedEmail).maybeSingle();
     if (existing) { res.status(409).json({ success: false, message: "An account with this email already exists." }); return; }
@@ -128,14 +153,14 @@ export async function createDepartmentMember(req: Request, res: Response): Promi
     const userId = authData.user.id;
     const { error: userError } = await supabaseDB.from("users").insert({ id: userId, name: String(name).trim(), email: normalizedEmail, role, institute_id: instituteId });
     if (userError) { await supabaseAdmin.auth.admin.deleteUser(userId); throw userError; }
-    const { error: memberError } = await supabaseDB.from("test_department_members").insert({ user_id: userId, institute_id: instituteId, title: title?.trim() || null, access_level: requestedLevel, created_by: req.user!.id });
+    const { error: memberError } = await supabaseDB.from("test_department_members").insert({ user_id: userId, institute_id: instituteId, title: title?.trim() || null, access_level: "head", created_by: req.user!.id });
     if (memberError) { await supabaseDB.from("users").delete().eq("id", userId); await supabaseAdmin.auth.admin.deleteUser(userId); throw memberError; }
     const { data: institute } = await supabaseDB.from("institutes").select("name, subdomain_slug").eq("id", instituteId).maybeSingle();
     try {
       const loginUrl = institute?.subdomain_slug
         ? `https://${institute.subdomain_slug}.${appBaseDomain}/login`
         : undefined;
-      await sendStaffInviteEmail({ to: normalizedEmail, name: String(name).trim(), instituteName: institute?.name ?? "Your Institute", tempPassword, roleLabel: requestedLevel === "head" ? "Test Department Head" : "Test Editor", loginUrl });
+      await sendStaffInviteEmail({ to: normalizedEmail, name: String(name).trim(), instituteName: institute?.name ?? "Your Institute", tempPassword, roleLabel: "Test Head", loginUrl });
     } catch (mailError: any) {
       // Never leave a sign-in account behind when the sole credential delivery
       // mechanism failed. The password is intentionally never returned or logged.
@@ -159,13 +184,13 @@ export async function deactivateDepartmentMember(req: Request, res: Response): P
       .eq("user_id", memberId).eq("institute_id", instituteId).maybeSingle();
     if (error) throw error;
     if (!member) { res.status(404).json({ success: false, message: "Test Department member not found." }); return; }
-    const level = (member as any).access_level ?? ((member as any).users?.role === TEST_ADMIN_ROLE ? "head" : "editor");
-    if (req.user?.role === TEST_ADMIN_ROLE && level !== "editor") {
-      res.status(403).json({ success: false, message: "The Test Department Head cannot deactivate the Head account." }); return;
+    // Removing assessment staff is the mirror of appointing them, so it belongs
+    // to the same person. Test Heads are peers: letting one remove another would
+    // be a hierarchy between them, and there isn't one.
+    if (req.user?.role !== "institute_admin") {
+      res.status(403).json({ success: false, message: "Only the Institute Admin can remove a Test Head." }); return;
     }
-    if (req.user?.role !== "institute_admin" && req.user?.role !== TEST_ADMIN_ROLE) {
-      res.status(403).json({ success: false, message: "Access denied." }); return;
-    }
+    const level = (member as any).access_level ?? "head";
     const { error: deactivateError } = await supabaseDB.from("test_department_members")
       .update({ is_active: false, updated_at: new Date().toISOString() }).eq("user_id", memberId);
     if (deactivateError) throw deactivateError;
@@ -355,23 +380,33 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
     if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
     const action = req.body?.action;
     const reason = typeof req.body?.reason === "string" ? req.body.reason.trim() : null;
-    const role = req.user!.role;
+    /**
+     * A paper's life is draft → published → archived.
+     *
+     * `submit`, `request_changes` and `approve` are the retired two-person
+     * review: an Editor handed a paper to a Head, who approved it before it
+     * could be published. With one role that sequence is the same person
+     * clicking three buttons to do one thing, so no screen offers them any
+     * more — but the actions stay accepted, and `publish` stays reachable from
+     * the states they produced, so a paper already sitting in needs_review or
+     * approved when migration 54 ran is not stranded there.
+     */
     const transitions: Record<string, string[]> = {
-      submit: ["draft", "changes_requested"], request_changes: ["needs_review", "approved"], approve: ["needs_review"], publish: ["approved", "scheduled"],
-      archive: ["draft", "changes_requested", "approved", "scheduled", "published"],
+      publish: ["draft", "needs_review", "changes_requested", "approved", "scheduled"],
+      archive: ["draft", "needs_review", "changes_requested", "approved", "scheduled", "published"],
       // Always back to draft, never straight to whatever it was before: a
       // restored paper should go through a conscious re-publish rather than
       // silently going live again the instant it's un-archived.
       restore: ["archived"],
+      submit: ["draft", "changes_requested"],
+      request_changes: ["needs_review", "approved"],
+      approve: ["needs_review"],
     };
     if (!transitions[action]?.includes(paper.workflow_status)) { res.status(409).json({ success: false, message: "This workflow action is not available for the current paper status." }); return; }
-    // Publishing, archiving and restoring belong to the Head — and to the
-    // Institute Admin above them, because a small coaching has no Test
-    // Department at all and the owner does the whole job themselves.
-    if (["publish", "archive", "restore"].includes(action) && !isHead(req) && role !== "institute_admin") {
-      res.status(403).json({ success: false, message: "Only the Test Department Head or the Institute Admin can publish, archive or restore a paper." }); return;
-    }
-    if (!isDepartmentUser(req) && role !== "institute_admin") { res.status(403).json({ success: false, message: "Access denied." }); return; }
+    // One capability set. A Test Head does the whole job and an Institute Admin
+    // can do all of it too, because a coaching with no Test Department is the
+    // common case and its owner is the only person who will ever review a paper.
+    if (!canOperatePapers(req)) { res.status(403).json({ success: false, message: "Access denied." }); return; }
     let workflow_status: string = paper.workflow_status;
     const updates: Record<string, unknown> = { review_version: paper.review_version + 1 };
     if (action === "submit") { workflow_status = "needs_review"; updates.submitted_at = new Date().toISOString(); updates.submitted_by = req.user!.id; }
@@ -441,7 +476,7 @@ export async function assignPaperToBatches(req: Request, res: Response): Promise
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
     const paper = await getOwnedPaper(req.params.id, instituteId);
     if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
-    if (!isDepartmentUser(req) && req.user!.role !== "institute_admin") {
+    if (!canOperatePapers(req)) {
       res.status(403).json({ success: false, message: "Access denied." }); return;
     }
 

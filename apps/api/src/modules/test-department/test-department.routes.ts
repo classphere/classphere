@@ -20,8 +20,10 @@ const upload = multer({
 });
 
 router.get("/members", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), listDepartmentMembers);
-router.post("/members", authenticate, requireRole("institute_admin", "test_department_head"), createDepartmentMember);
-router.delete("/members/:userId", authenticate, requireRole("institute_admin", "test_department_head"), deactivateDepartmentMember);
+// Appointing and removing assessment staff is the Institute Admin's decision.
+// Test Heads are peers and do not staff their own department — see migration 54.
+router.post("/members", authenticate, requireRole("institute_admin"), createDepartmentMember);
+router.delete("/members/:userId", authenticate, requireRole("institute_admin"), deactivateDepartmentMember);
 router.get("/papers", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), listReviewPapers);
 router.get("/papers/:id", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), getReviewPaper);
 router.patch("/papers/:id", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), updateReviewPaper);
