@@ -505,7 +505,7 @@ scheduled time still sees it as startable, because the trial paper has no closin
 
 ---
 
-### WP-5 — Scoring and analysis honour the Head's marks
+### WP-5 — Scoring and analysis honour the Head's marks — ✅ **implemented**
 
 *Without this, every number WP-2 collects is decorative.*
 
@@ -528,6 +528,18 @@ Also: exclude `booster` and `topic-practice` papers from the `student_stats` upd
 
 **Acceptance:** `paper.total_marks`, `attempt.max_score` and the figure on the result screen
 are the same number, and that number is the one the Test Head typed.
+
+**What shipping it actually took.** The plan's table said "drop the fallback literal" for the
+two analysis services. That alone would have broken them: both took a flat
+`{ correct, incorrect, unattempted }`, and reading `.correct` off a keyed scheme yields
+`undefined` — a NaN score on the result screen rather than a wrong one. Both scoring services
+now take the whole scheme and resolve each answer through `marksFor`, which also fixed two
+things that were wrong before per-type marks existed: JEE's `maxScore` multiplied a question
+count by one figure, and `calculateFreeMarks` did the same for recoverable marks.
+
+`attempts.paper_id` still has no foreign key to `papers` (`00_base_schema.sql:79`), so
+deleting a paper orphans its attempts rather than removing them. Unrelated to scoring, but
+worth knowing before anyone hard-deletes a paper students have sat.
 
 ---
 
