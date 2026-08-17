@@ -52,7 +52,7 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
       className="group hover:-translate-y-1 hover:shadow-depth transition-all duration-200 select-none"
     >
       <div className="flex flex-col gap-3">
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex min-h-[21px] flex-wrap items-center gap-2">
           <span className={`text-[10px] font-sans font-bold px-2 py-0.5 border rounded-[6px] uppercase tracking-wider ${cfg.className}`}>
             {cfg.label}
           </span>
@@ -67,12 +67,13 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
           <h3 className="font-sans font-semibold text-[16px] tracking-[-0.01em] text-t-primary leading-snug">
             {dpp.title}
           </h3>
-          {dpp.chapter && (
-            <p className="text-[13px] font-sans text-t-secondary mt-0.5">{dpp.chapter}</p>
-          )}
+          <p className="min-h-[17px] text-[13px] font-sans text-t-secondary mt-0.5">{dpp.chapter ?? ""}</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-[12px] font-sans text-t-secondary">
+        {/* min-h floors the row: due-date and score are mutually exclusive
+            with "neither" a real third state, so a card in that state used
+            to sit shorter than ones showing either. */}
+        <div className="flex min-h-[17px] flex-wrap items-center gap-3 text-[12px] font-sans text-t-secondary">
           <span className="flex items-center gap-1">
             <RiFileListLine size={13} />
             {dpp.totalQuestions} questions

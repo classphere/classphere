@@ -35,19 +35,23 @@ export function PremiumMetricCard({ icon, label, value, badge, badgeLabel, class
           {value}
         </div>
 
-        {/* Delta badge */}
-        {(badge || badgeLabel) && (
-          <div className="flex min-w-0 items-center gap-1.5">
-            {badge && (
-              <span className="inline-flex shrink-0 items-center rounded-[6px] bg-b-surface1 px-1.5 py-0.5 text-[11px] font-sans font-semibold text-t-secondary">
-                {badge}
-              </span>
-            )}
-            {badgeLabel && (
-              <span className="truncate text-[11px] font-sans font-medium text-t-secondary">{badgeLabel}</span>
-            )}
-          </div>
-        )}
+        {/* Delta badge — always rendered, empty when there's nothing to show.
+            A row of these cards used to grow whichever one happened to get a
+            badge (e.g. "Pending DPPs" only when count > 0) while its siblings
+            stayed short, since nothing reserved the row's height when the
+            content wasn't there. min-h-[22px] matches the badge pill's own
+            rendered height, so every card in a row is the same height
+            regardless of which ones have something to say here. */}
+        <div className="flex min-h-[22px] min-w-0 items-center gap-1.5">
+          {badge && (
+            <span className="inline-flex shrink-0 items-center rounded-[6px] bg-b-surface1 px-1.5 py-0.5 text-[11px] font-sans font-semibold text-t-secondary">
+              {badge}
+            </span>
+          )}
+          {badgeLabel && (
+            <span className="truncate text-[11px] font-sans font-medium text-t-secondary">{badgeLabel}</span>
+          )}
+        </div>
       </div>
     </PremiumCard>
   );

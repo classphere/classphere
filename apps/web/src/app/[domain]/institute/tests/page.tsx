@@ -248,11 +248,9 @@ function TestCard({
         <h3 className="font-sans font-bold text-[16px] leading-[1.35] text-t-primary mb-1 tracking-[-0.01em] line-clamp-2">
           {test.title}
         </h3>
-        {test.exams && (
-          <p className="text-[12px] font-sans text-t-secondary mb-4">
-            {EXAM_LABELS[test.exams.code] ?? test.exams.code}
-          </p>
-        )}
+        <p className="min-h-[16px] text-[12px] font-sans text-t-secondary mb-4">
+          {test.exams ? (EXAM_LABELS[test.exams.code] ?? test.exams.code) : ""}
+        </p>
 
         {/* Stats row */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-sans font-medium text-t-secondary">

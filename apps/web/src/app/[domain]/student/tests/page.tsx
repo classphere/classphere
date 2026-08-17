@@ -422,8 +422,10 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
           {test.title}
         </h3>
 
-        {/* Stats */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-sans font-medium text-t-secondary">
+        {/* Stats — min-h floors the row so a card missing Marks (the one
+            conditional field here) doesn't sit shorter than its neighbors
+            when the row would otherwise wrap to two lines on some. */}
+        <div className="flex min-h-[18px] flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5">
             <RiQuestionLine size={13} className="opacity-70" />
             {test.total_questions} Questions
@@ -503,8 +505,8 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
     <div className="group relative flex w-full flex-col justify-between overflow-hidden rounded-[24px] border border-s-stroke2/40 bg-b-surface2 p-5 transition-all duration-300 select-none sm:p-[22px]">
       <div className="relative z-10">
         <h3 className="font-sans font-bold text-[17px] leading-[1.3] text-t-primary mb-1.5 tracking-[-0.01em]">{paper.title}</h3>
-        {subtitle && subtitle !== "null" && <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>}
-        <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-3 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
+        <p className="min-h-[18px] text-[13px] font-sans font-medium text-t-secondary">{subtitle && subtitle !== "null" ? subtitle : ""}</p>
+        <div className="flex min-h-[19px] flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-3 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5"><RiQuestionLine size={14} className="opacity-70" />{paper.total_questions} Qs</span>
           {paper.duration_min > 0 && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>}
           <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>

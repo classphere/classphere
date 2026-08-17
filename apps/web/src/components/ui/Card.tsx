@@ -1,6 +1,7 @@
 import React from "react";
+import { PremiumCard } from "../premium-ui/PremiumCard";
 
-type CardVariant = "default" | "light" | "transparent";
+type CardVariant = "default" | "transparent";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant;
@@ -8,48 +9,17 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Premium VADL V2 Card Component
- * Uses the exact landing page design tokens:
- * - 24px border radius
- * - No flat borders
- * - Subtle embossed dual-shadow for depth
+ * Thin alias over PremiumCard.
+ *
+ * This used to be a second, independently-tuned card implementation —
+ * matching padding by hand whenever PremiumCard's changed, and drifting the
+ * moment someone forgot. "default" here has always meant the same background
+ * PremiumCard calls "light" (bg-b-surface2); no caller in this codebase ever
+ * used the "light" variant this file used to also offer (bg-b-pop), so it's
+ * not carried forward — there is now exactly one card implementation.
  */
-export function Card({
-  variant = "default",
-  padding = "default",
-  className = "",
-  children,
-  ...props
-}: CardProps) {
-  // Matches PremiumCard, the card the dashboard uses: flat, borderless-feeling,
-  // blending into the surface. The previous shadow-widget + drop shadow made
-  // these sit visibly "above" the page and read as a different design system.
-  const base = "rounded-[24px] overflow-hidden border border-s-stroke2/40 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04)]";
-  
-  const variants = {
-    default: "bg-b-surface2", // Main theme background
-    light: "bg-b-pop", 
-    transparent: "bg-transparent shadow-none border-transparent",
-  };
-
-  const paddings = {
-    none: "",
-    default: "p-4 sm:p-6",
-    // Ramps up from a phone-friendly base. "large" previously started at p-8,
-    // which spent 64px of a 375px screen on padding alone and left tables and
-    // stat tiles badly cramped. Mirrors PremiumCard so results cards match the
-    // dashboard's spacing.
-    large: "p-4 md:p-5",
-  };
-
-  return (
-    <div 
-      className={`${base} ${variants[variant]} ${paddings[padding]} ${className}`} 
-      {...props}
-    >
-      {children}
-    </div>
-  );
+export function Card({ variant = "default", padding = "default", ...props }: CardProps) {
+  return <PremiumCard variant={variant === "default" ? "light" : "transparent"} padding={padding} {...props} />;
 }
 
 export default Card;

@@ -58,26 +58,30 @@ export function PaperCard({
           <div className="absolute right-4 top-4 z-20 flex items-center gap-1.5">{cornerAction}</div>
         )}
 
+        {/* Every conditional row below reserves its own height whether or not
+            it has content — badges, subtitle, and stats each vary per caller
+            (Test Department's 2 badges vs Superadmin's 3, a subtitle that's
+            sometimes absent), and a grid of these cards used to render at
+            visibly different heights depending which of those a given card
+            happened to have. */}
         <div className="relative z-10 pointer-events-none">
-          {badges.length > 0 && (
-            <div className="mb-3 flex flex-wrap items-center gap-2 pr-8">
-              {badges.map((badge, index) => (
-                <span
-                  key={index}
-                  className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${badge.className}`}
-                >
-                  {badge.label}
-                </span>
-              ))}
-            </div>
-          )}
+          <div className="mb-3 flex min-h-[26px] flex-wrap items-center gap-2 pr-8">
+            {badges.map((badge, index) => (
+              <span
+                key={index}
+                className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${badge.className}`}
+              >
+                {badge.label}
+              </span>
+            ))}
+          </div>
 
           <h3 className="mb-1 line-clamp-2 text-[16px] font-bold leading-[1.35] tracking-[-0.01em] text-t-primary">
             {title}
           </h3>
-          {subtitle && <p className="text-[13px] font-medium text-t-secondary">{subtitle}</p>}
+          <p className="min-h-[18px] text-[13px] font-medium text-t-secondary">{subtitle}</p>
 
-          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-medium text-t-secondary">
+          <div className="mt-3 flex min-h-[18px] flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] font-medium text-t-secondary">
             {totalQuestions !== undefined && (
               <span className="flex items-center gap-1.5">
                 <RiQuestionLine size={13} className="opacity-70" />
