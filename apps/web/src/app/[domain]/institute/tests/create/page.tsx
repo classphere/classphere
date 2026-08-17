@@ -81,7 +81,12 @@ export default function ScheduleTestPage() {
   // is even chosen looks like it's assuming JEE Main's own 75-question
   // pattern, which is exactly the wrong impression for a NEET coaching.
   const [bankCount, setBankCount] = useState(0);
-  const [bankDuration, setBankDuration] = useState(180);
+  // Blank by default, and blank is allowed. It used to start at 180, which
+  // meant every paper that nobody thought about was three hours long — a number
+  // chosen before anyone had seen how many questions the PDF actually held. The
+  // review screen collects it once the extraction is in front of the Test Head,
+  // and publishing is blocked until it is set either way.
+  const [bankDuration, setBankDuration] = useState("");
   // A paper's real shape is a list of "N questions from <somewhere>" rows —
   // 45 Physics + 45 Chemistry + 90 Biology for NEET, 20 Maths + 20 Science
   // for a class-9 foundation batch, or 20 Kinematics + 20 Periodic Table +
@@ -244,7 +249,9 @@ export default function ScheduleTestPage() {
         // sent in split-by-subject mode — a chapter name only means something
         // within one subject, and the picker is hidden there for that reason.
         chapters: mode === "bank" && useBlueprint ? undefined : (bankChapters.length ? bankChapters.map((key) => key.split("||")[1]) : undefined),
-        duration_minutes: bankDuration,
+        // Omitted when blank rather than sent as 0 — the server stores null and
+        // the review screen collects it.
+        duration_minutes: bankDuration.trim() ? Number(bankDuration) : undefined,
         batch_ids: selectedBatches,
         scheduled_start: new Date(testStart).toISOString(),
       }, session?.access_token);
@@ -300,7 +307,7 @@ export default function ScheduleTestPage() {
       // uploadTestController already reads this (defaults to 180 when absent) —
       // the field just never existed on this form, so every PDF upload was
       // silently stuck at 180 minutes with no way to change it.
-      formData.append("duration_min", String(bankDuration));
+      if (bankDuration.trim()) formData.append("duration_min", bankDuration.trim());
 
       // XMLHttpRequest provides upload progress while retaining incremental
       // reads of the NDJSON response. fetch() supports the latter but leaves a
@@ -691,8 +698,8 @@ export default function ScheduleTestPage() {
             <div className="flex flex-col gap-2 sm:max-w-[280px]">
               <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
               <input
-                type="number" min={1} max={600} value={bankDuration}
-                onChange={(event) => setBankDuration(Number(event.target.value))}
+                type="number" min={1} max={600} value={bankDuration} placeholder="Set now or during review"
+                onChange={(event) => setBankDuration(event.target.value)}
                 className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
               />
             </div>
@@ -937,8 +944,8 @@ export default function ScheduleTestPage() {
             <div className="flex flex-col gap-2">
               <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
               <input
-                type="number" min={1} max={600} value={bankDuration}
-                onChange={(event) => setBankDuration(Number(event.target.value))}
+                type="number" min={1} max={600} value={bankDuration} placeholder="Set now or during review"
+                onChange={(event) => setBankDuration(event.target.value)}
                 className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01 sm:w-[240px]"
               />
             </div>
@@ -960,8 +967,8 @@ export default function ScheduleTestPage() {
           <div className="flex flex-col gap-2">
             <label className="text-sm font-semibold text-t-primary">Duration (minutes)</label>
             <input
-              type="number" min={1} max={600} value={bankDuration}
-              onChange={(event) => setBankDuration(Number(event.target.value))}
+              type="number" min={1} max={600} value={bankDuration} placeholder="Set now or during review"
+              onChange={(event) => setBankDuration(event.target.value)}
               className="h-12 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-medium text-t-primary outline-none focus:border-primary-01 sm:w-[240px]"
             />
           </div>
