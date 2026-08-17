@@ -5,6 +5,7 @@ import { QuestionReviewEditor } from "./QuestionReviewEditor";
 import { ValidationPanel, type ValidationResult } from "./ValidationPanel";
 import { PaperComposition } from "./PaperComposition";
 import { MarkingSchemeEditor, type MarkingScheme } from "./MarkingSchemeEditor";
+import { PaperDetailsEditor, type PaperDetails } from "./PaperDetailsEditor";
 import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR, requiresExplicitScheme, uniformScheme } from "@/lib/exam-config";
 import { RiShieldCheckLine, RiLoader4Line } from "@remixicon/react";
 
@@ -37,6 +38,15 @@ export interface PaperReviewWorkspaceProps {
   onDeleteQuestion?: (question: any) => Promise<void>;
   /** Omitted where the surface cannot set the paper's marks. */
   onSaveMarkingScheme?: (scheme: MarkingScheme) => Promise<void>;
+  /**
+   * Duration, total marks, marking scheme and delivery windows in one save.
+   *
+   * Where this is supplied it replaces the marking-scheme-only panel below: an
+   * institute paper is scheduled and sat, so its duration and windows matter and
+   * are edited alongside its marks. A global bank paper has none of that and
+   * keeps the narrower panel.
+   */
+  onSavePaperDetails?: (details: Partial<PaperDetails>) => Promise<void>;
   onValidate: () => Promise<ValidationResult>;
   /** Rendered beside the Validate button — the page's own workflow actions. */
   actions?: React.ReactNode;
@@ -52,6 +62,7 @@ export function PaperReviewWorkspace({
   onSaveQuestion,
   onDeleteQuestion,
   onSaveMarkingScheme,
+  onSavePaperDetails,
   onValidate,
   actions,
 }: PaperReviewWorkspaceProps) {
@@ -145,12 +156,21 @@ export function PaperReviewWorkspace({
   const editingScheme = draftScheme ?? scheme;
   const needsOwnScheme = requiresExplicitScheme(examCode);
 
-  // What the paper is actually scored on: its own scheme when it has one, the
-  // exam's standard one otherwise. Without this the composition table prices a
-  // perfectly ordinary NEET paper as "not set" on every row.
+  // What the paper is actually scored on.
+  //
+  // A surface that sets its own details is scored on its own scheme and nothing
+  // else, so an unpriced paper must read as unpriced — falling back to the
+  // exam's conventional marks here would draw a fully-priced table for a paper
+  // that has agreed to no marks at all, which is the one thing the reviewer
+  // needs to see. Elsewhere the fallback stays: a global bank paper is scored on
+  // the exam's standard scheme, so showing every row as "not set" would be the
+  // misleading answer there.
   const effectiveScheme = useMemo(
-    () => (Object.keys(scheme).length ? scheme : (uniformScheme(examCode) as MarkingScheme | null)),
-    [paper?.marking_scheme, examCode],
+    () => {
+      if (Object.keys(scheme).length) return scheme;
+      return onSavePaperDetails ? null : (uniformScheme(examCode) as MarkingScheme | null);
+    },
+    [paper?.marking_scheme, examCode, onSavePaperDetails],
   );
 
   const unpricedTypes = useMemo(() => {
@@ -222,13 +242,29 @@ export function PaperReviewWorkspace({
         </div>
       )}
 
+      {onSavePaperDetails && (
+        <PaperDetailsEditor
+          // Keyed on the paper alone. Keying on review_version too would remount
+          // the panel on every save, collapsing it the instant the reviewer used
+          // it — and the fields already hold what was just sent.
+          key={paper?.id}
+          paper={paper}
+          questions={questions}
+          examCode={examCode}
+          canEdit={canEdit}
+          onSave={onSavePaperDetails}
+        />
+      )}
+
       <PaperComposition
         questions={questions}
         markingScheme={effectiveScheme}
         statedTotal={paper?.total_marks}
       />
 
-      {unpricedTypes.length > 0 && onSaveMarkingScheme && canEdit && (
+      {/* The narrower panel, for surfaces with no PaperDetailsEditor: a global
+          bank paper has no duration to set and no window to open in. */}
+      {!onSavePaperDetails && unpricedTypes.length > 0 && onSaveMarkingScheme && canEdit && (
         <div className="card mb-3 p-4">
           <p className="text-xs font-bold uppercase tracking-wider text-t-secondary">
             What is each question worth?

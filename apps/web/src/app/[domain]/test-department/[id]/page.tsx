@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PaperReviewWorkspace } from "@/components/questions/PaperReviewWorkspace";
 import type { MarkingScheme } from "@/components/questions/MarkingSchemeEditor";
+import type { PaperDetails } from "@/components/questions/PaperDetailsEditor";
 import { useAuth } from "@/lib/auth-context";
 import { useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api.client";
@@ -237,6 +238,13 @@ export default function ReviewPaperPage() {
     patchCache((previous) => ({ ...previous, paper: { ...previous.paper, ...response.data?.paper } }));
   };
 
+  /** Duration, total marks, marking scheme and delivery windows, in one save. */
+  const savePaperDetails = async (details: Partial<PaperDetails>) => {
+    const response: any = await apiClient.patch(
+      `/api/v1/test-department/papers/${params.id}`, details, session!.access_token);
+    patchCache((previous) => ({ ...previous, paper: { ...previous.paper, ...response.data?.paper } }));
+  };
+
   const validate = async () => {
     const response: any = await apiClient.get(
       `/api/v1/test-department/papers/${params.id}/validate`, session!.access_token);
@@ -258,13 +266,22 @@ export default function ReviewPaperPage() {
   }
 
   const complete = questions.filter((q) => (q.correct_answer?.length ?? 0) > 0).length;
+  // Duration and marks are read far more often than they are changed, so they
+  // belong in the header rather than only inside the panel that sets them.
+  const subtitle = [
+    `${questions.length} questions`,
+    `${complete} answered`,
+    paper.duration_min != null ? `${paper.duration_min} min` : "duration not set",
+    paper.total_marks != null ? `${paper.total_marks} marks` : "marks not set",
+    EXAM_LABELS[examCode] ?? examCode,
+  ].join(" · ");
 
   return (
     <>
       <Navbar
         title={paper.title}
         breadcrumbs="TEST DEPARTMENT › PAPER REVIEW"
-        subtitle={`${questions.length} questions · ${complete} answered · ${EXAM_LABELS[examCode] ?? examCode}`}
+        subtitle={subtitle}
       >
         <StatusBadge status={status} />
       </Navbar>
@@ -284,6 +301,7 @@ export default function ReviewPaperPage() {
           onSaveQuestion={saveQuestion}
           onDeleteQuestion={deleteQuestion}
           onSaveMarkingScheme={saveMarkingScheme}
+          onSavePaperDetails={savePaperDetails}
           onValidate={validate}
           actions={
             <div className="flex flex-wrap items-center gap-2">
