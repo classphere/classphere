@@ -179,15 +179,17 @@ export default function MobileNav() {
     { label: "Batches", href: "/institute/batches", icon: <RiTeamLine size={18} />, active: cleanPath.startsWith("/institute/batches") },
     { label: "Faculty", href: "/institute/faculty", icon: <RiUserStarLine size={18} />, active: cleanPath.startsWith("/institute/faculty") },
     { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: cleanPath.startsWith("/institute/students") },
+    { label: "Tests", href: "/institute/tests", icon: <RiFileList3Line size={18} />, active: cleanPath.startsWith("/institute/tests") },
     { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: cleanPath.startsWith("/institute/reports") },
     { label: "Test Department", href: "/institute/test-department", icon: <RiShieldCheckLine size={18} />, active: cleanPath.startsWith("/institute/test-department") },
     { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: cleanPath.startsWith("/institute/billing") },
     { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: cleanPath.startsWith("/institute/support") },
   ];
+  // One role, so no per-entry conditionals — and no "Review Queue", which held
+  // the needs_review state the retired two-person workflow produced.
   const testDepartmentNav = [
     { label: "Test Workspace", href: "/test-department", icon: <RiDashboardLine size={18} />, active: cleanPath === "/test-department" },
-    ...(inferredRole === "test_department_head" ? [{ label: "Review Queue", href: "/test-department?status=needs_review", icon: <RiShieldCheckLine size={18} />, active: cleanPath === "/test-department" }] : []),
-    ...(inferredRole === "test_department_head" ? [{ label: "Team", href: "/test-department/team", icon: <RiTeamLine size={18} />, active: cleanPath.startsWith("/test-department/team") }] : []),
+    { label: "Team", href: "/test-department/team", icon: <RiTeamLine size={18} />, active: cleanPath.startsWith("/test-department/team") },
     { label: "Study Material", href: "/test-department/resources", icon: <RiBookOpenLine size={18} />, active: cleanPath.startsWith("/test-department/resources") },
   ];
 

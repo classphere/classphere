@@ -14,9 +14,9 @@ import {
   RiFileList3Line,
   RiTimeLine,
   RiQuestionLine,
-  RiDeleteBin6Line,
+  RiArchiveLine,
+  RiEyeLine,
   RiCalendarEventLine,
-  RiTeamLine,
   RiCheckLine,
   RiDraftLine,
   RiSearchLine,
@@ -31,7 +31,7 @@ interface Test {
   total_questions: number;
   total_marks: number;
   duration_min: number;
-  is_published: boolean;
+  workflow_status: string;
   created_at: string;
   exams?: { code: string; full_name: string };
 }
@@ -63,27 +63,37 @@ export default function InstituteTestsPage() {
   const { session } = useAuth();
 
   const queryClient = useQueryClient();
-  const TESTS_PATH = "/api/v1/tests/my";
-  const { data, isPending: loading, error: queryError } = useApiQuery<{ tests: Test[] }>(TESTS_PATH);
-  const tests = data?.tests ?? [];
+  // The institute's papers, not "papers this admin personally created".
+  // /tests/my filters on created_by, so anything a Test Head built was invisible
+  // here — which is most of them in a coaching that has a Test Department.
+  const TESTS_PATH = "/api/v1/test-department/papers";
+  const { data, isPending: loading, error: queryError } = useApiQuery<{ papers: Test[] }>(TESTS_PATH);
+  const tests = data?.papers ?? [];
   const error = queryError?.message ?? null;
   const [search, setSearch] = useState("");
-  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [archivingId, setArchivingId] = useState<string | null>(null);
   const [selectedPaperIdForMatrix, setSelectedPaperIdForMatrix] = useState<string | null>(null);
 
-  const handleDelete = async (test: Test) => {
-    if (!window.confirm(`Delete "${test.title}"? This cannot be undone.`)) return;
-    setDeletingId(test.id);
+  // Archive, not delete. The old button called DELETE /tests/:id, which is
+  // super_admin-only and 403'd for every institute that pressed it — and
+  // deleting a paper students have sat would take their attempts with it.
+  // Archiving unpublishes and hides it, and the Test Workspace can restore it.
+  const handleArchive = async (test: Test) => {
+    if (!window.confirm(`Archive "${test.title}"? It will be unpublished and hidden from this list. You can restore it from the Test Workspace.`)) return;
+    setArchivingId(test.id);
     try {
-      const res = await apiClient.delete(`/api/v1/tests/${test.id}`, session?.access_token || "");
-      if (!res.success) throw new Error(res.message || "Delete failed");
+      await apiClient.post(
+        `/api/v1/test-department/papers/${test.id}/workflow`,
+        { action: "archive" },
+        session?.access_token || "",
+      );
       // Refetch instead of splicing local state — the list is cached, so a
       // local filter would be undone on the next read from the cache.
       await queryClient.invalidateQueries({ queryKey: [TESTS_PATH] });
     } catch (err: any) {
-      alert(err.message || "Failed to delete test.");
+      alert(err.message || "Failed to archive test.");
     } finally {
-      setDeletingId(null);
+      setArchivingId(null);
     }
   };
 
@@ -171,9 +181,10 @@ export default function InstituteTestsPage() {
                 <TestCard
                   key={test.id}
                   test={test}
-                  deleting={deletingId === test.id}
-                  onDelete={() => handleDelete(test)}
-                  onView={() => router.push(`/institute/tests/view/${test.id}`)}
+                  archiving={archivingId === test.id}
+                  onArchive={() => handleArchive(test)}
+                  onReview={() => router.push(`/test-department/${test.id}`)}
+                  onPreview={() => router.push(`/institute/tests/view/${test.id}`)}
                   onCompare={() => setSelectedPaperIdForMatrix(test.id)}
                 />
               ))}
@@ -192,19 +203,30 @@ export default function InstituteTestsPage() {
   );
 }
 
+const STATUS_BADGE: Record<string, { label: string; className: string }> = {
+  published: { label: "Published", className: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400" },
+  scheduled: { label: "Scheduled", className: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" },
+  archived:  { label: "Archived",  className: "bg-b-surface2 text-t-tertiary" },
+};
+const draftBadge = { label: "Draft", className: "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400" };
+
 function TestCard({
   test,
-  deleting,
-  onDelete,
-  onView,
+  archiving,
+  onArchive,
+  onReview,
+  onPreview,
   onCompare,
 }: {
   test: Test;
-  deleting: boolean;
-  onDelete: () => void;
-  onView: () => void;
+  archiving: boolean;
+  onArchive: () => void;
+  onReview: () => void;
+  onPreview: () => void;
   onCompare: () => void;
 }) {
+  const published = test.workflow_status === "published";
+  const status = STATUS_BADGE[test.workflow_status] ?? draftBadge;
   return (
     <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
       {/* Subtle glow on hover */}
@@ -213,15 +235,9 @@ function TestCard({
       <div className="relative z-10">
         {/* Status + Type badges */}
         <div className="flex items-center gap-2 mb-3">
-          <span
-            className={`inline-flex items-center gap-1 text-[10px] font-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${
-              test.is_published
-                ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
-                : "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400"
-            }`}
-          >
-            {test.is_published ? <RiCheckLine size={10} /> : <RiDraftLine size={10} />}
-            {test.is_published ? "Published" : "Draft"}
+          <span className={`inline-flex items-center gap-1 text-[10px] font-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${status.className}`}>
+            {published ? <RiCheckLine size={10} /> : <RiDraftLine size={10} />}
+            {status.label}
           </span>
           <span className="inline-flex text-[10px] font-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-b-surface2 text-t-secondary">
             {TYPE_LABELS[test.test_type] ?? test.test_type}
@@ -257,13 +273,24 @@ function TestCard({
 
       {/* Actions */}
       <div className="relative z-10 flex items-center gap-2 mt-3">
+        {/* The way into the review workspace. A coaching with no Test Department
+            builds its own papers here and previously had no link to the screen
+            that corrects, prices and publishes them. */}
         <button
-          onClick={onView}
+          onClick={onReview}
           className="flex-1 flex items-center justify-center gap-1.5 h-11 px-4 rounded-[10px] bg-shade-02 text-white text-[13px] font-sans font-semibold hover:opacity-90 transition-all active:scale-[0.98]"
         >
-          View Test
+          {published ? "Review" : "Review & Publish"}
         </button>
-        {test.is_published && (
+        <button
+          onClick={onPreview}
+          className="flex shrink-0 items-center justify-center h-11 w-11 rounded-[10px] border border-s-stroke2 hover:bg-b-surface2 text-t-secondary hover:text-t-primary transition-all active:scale-95"
+          title="Preview the paper the way a student sees it"
+          aria-label={`Preview ${test.title}`}
+        >
+          <RiEyeLine size={16} />
+        </button>
+        {published && (
           <button
             onClick={onCompare}
             className="flex shrink-0 items-center justify-center h-11 w-11 rounded-[10px] border border-s-stroke2 hover:bg-b-surface2 text-t-secondary hover:text-t-primary transition-all active:scale-95"
@@ -274,16 +301,16 @@ function TestCard({
           </button>
         )}
         <button
-          onClick={onDelete}
-          disabled={deleting}
+          onClick={onArchive}
+          disabled={archiving}
           className="flex shrink-0 items-center justify-center h-11 w-11 rounded-[10px] border border-red-200 text-red-500 hover:bg-red-50 dark:border-red-800 dark:hover:bg-red-900/30 transition-all active:scale-95 disabled:opacity-50"
-          title="Delete test"
-          aria-label={`Delete ${test.title}`}
+          title="Archive test"
+          aria-label={`Archive ${test.title}`}
         >
-          {deleting ? (
+          {archiving ? (
             <RiLoader4Line size={16} className="animate-spin" />
           ) : (
-            <RiDeleteBin6Line size={16} />
+            <RiArchiveLine size={16} />
           )}
         </button>
       </div>
