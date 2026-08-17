@@ -260,7 +260,7 @@ export default function TeacherDashboardPage() {
           headerRight={
             <Link 
               href="/teacher/dpps" 
-              className="h-9 px-4 rounded-[10px] text-xs font-semibold relative overflow-hidden border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white hover:scale-[1.02] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform active:scale-[0.98] shrink-0 flex items-center gap-1.5 cursor-pointer"
+              className="btn btn-primary h-9 gap-1.5 px-4 text-xs shrink-0"
             >
               <RiFileListLine size={16} /> Manage DPPs
             </Link>

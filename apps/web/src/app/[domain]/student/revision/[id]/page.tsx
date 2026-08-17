@@ -59,7 +59,7 @@ export default function RevisionPracticePage() {
             {item && !item.is_correct && <div className="mt-4 rounded-[10px] border border-primary-03/20 bg-primary-03/5 p-3 text-sm text-t-secondary"><p><strong className="text-t-primary">Correct answer:</strong> {item.correct_answer.join(", ")}</p>{item.explanation && <div className="mt-2"><MarkdownRenderer>{item.explanation}</MarkdownRenderer></div>}</div>}
           </section>;
         })}
-        {result ? <button onClick={() => router.push("/student/dashboard")} className="flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-[#161616] text-sm font-bold text-white"><RiCheckLine size={17} /> Finish revision</button> : <button onClick={submit} disabled={submitting} className="flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-[#161616] text-sm font-bold text-white disabled:opacity-60">{submitting ? <RiLoader4Line className="animate-spin" size={17} /> : null} Submit practice</button>}
+        {result ? <button onClick={() => router.push("/student/dashboard")} className="btn btn-primary h-11 w-full gap-2 text-sm"><RiCheckLine size={17} /> Finish revision</button> : <button onClick={submit} disabled={submitting} className="btn btn-primary h-11 w-full gap-2 text-sm disabled:opacity-60">{submitting ? <RiLoader4Line className="animate-spin" size={17} /> : null} Submit practice</button>}
       </main>
     </>
   );

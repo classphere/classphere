@@ -145,7 +145,7 @@ export default function TeacherDPPsPage() {
             {/* Create DPP Button (Figma Spec: gradient background, rounded 32px pill, inset shadow) */}
             <Link 
               href="/teacher/dpps/create"
-              className="flex flex-row justify-center items-center h-12 px-6 border border-[#161616] bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-white dark:border-[#3e3e3b] dark:from-[#343432] dark:to-[#252523] dark:hover:brightness-110 text-[14px] font-sans font-semibold rounded-[10px] transition-all active:scale-95 shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] cursor-pointer no-underline"
+              className="btn btn-primary h-12 px-6 text-[14px] no-underline"
             >
               <RiAddLine size={18} className="mr-1" /> Create DPP
             </Link>

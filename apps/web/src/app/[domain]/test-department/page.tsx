@@ -77,7 +77,7 @@ export default function TestDepartmentPage() {
       <Navbar title="Test Department" subtitle="Prepare, verify, and release every assessment with confidence.">
         <div className="flex items-center gap-3">
           {canOperate && (
-            <Link href="/test-department/create" className="flex h-9 items-center justify-center rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white dark:bg-white dark:text-black">
+            <Link href="/test-department/create" className="btn btn-primary h-9 px-4 text-sm">
               Create Test
             </Link>
           )}

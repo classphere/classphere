@@ -182,7 +182,7 @@ export default function ConfigurationPage() {
                   <button
                     onClick={handleSave}
                     disabled={saving}
-                    className="flex items-center justify-center gap-2 h-12 px-6 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[14px] font-bold shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer disabled:opacity-50"
+                    className="btn btn-primary h-12 gap-2 text-[14px] disabled:opacity-50"
                   >
                     {saving ? (
                       <RiLoader4Line size={18} className="animate-spin" />

@@ -98,7 +98,7 @@ export default function InstituteDashboardPage() {
           {/* Schedule Batch Test (Gradient) */}
           <Link
             href="/institute/tests/create"
-            className="flex-1 md:flex-none flex flex-row justify-center items-center px-4 md:px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-[13px] sm:text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline whitespace-nowrap overflow-hidden text-ellipsis"
+            className="btn btn-primary flex-1 md:flex-none px-4 md:px-6 h-12 text-[13px] sm:text-sm no-underline whitespace-nowrap overflow-hidden text-ellipsis"
           >
             <RiAddLine size={18} className="mr-1 md:mr-1.5 shrink-0" />
             <span className="hidden sm:inline">Schedule Batch Test</span>

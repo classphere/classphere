@@ -227,8 +227,8 @@ export default function ResultsPage() {
                 <h2 className="text-[16px] font-sans font-bold text-primary-01">Stop repeating these mistakes</h2>
                 <p className="mt-1 text-[12px] font-sans text-t-secondary dark:text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
               </div>
-              <Link href="/student/mistakes" className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-[10px] text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] gap-2 self-start md:self-auto">
-                <span className="relative z-10 flex items-center gap-2"><RiBookmarkFill size={16} /> Open Mistake Diary</span>
+              <Link href="/student/mistakes" className="btn btn-primary h-12 gap-2 px-7 text-sm self-start md:self-auto">
+                <RiBookmarkFill size={16} /> Open Mistake Diary
               </Link>
             </section>
 
@@ -248,9 +248,9 @@ export default function ResultsPage() {
                   <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
                 </button>
-                <button onClick={() => router.push("/pyqs")} className="flex flex-row justify-between items-center py-3 px-6 h-12 w-full rounded-[10px] text-[14px] font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]">
-                  <span className="relative z-10 flex items-center gap-2"><RiArrowRightLine size={18} /> Back to PYQs</span>
-                  <span className="relative z-10 text-[12px] font-sans font-normal opacity-80">pick another paper</span>
+                <button onClick={() => router.push("/pyqs")} className="btn btn-primary h-12 w-full justify-between px-6 text-[14px]">
+                  <span className="flex items-center gap-2"><RiArrowRightLine size={18} /> Back to PYQs</span>
+                  <span className="text-[12px] font-normal opacity-80">pick another paper</span>
                 </button>
               </div>
 

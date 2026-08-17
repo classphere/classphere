@@ -515,13 +515,13 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
       <div className="relative z-10 mt-3 flex w-full items-center">
         <div className="flex w-full flex-col gap-2">
           {isAdmin && onDelete && (
-            <button onClick={onDelete} className="flex h-10 w-full items-center justify-center rounded-[10px] border border-red-200 text-primary-03 transition-all active:scale-95 hover:bg-red-50 sm:w-10" title="Delete">
+            <button onClick={onDelete} className="flex h-10 w-full items-center justify-center rounded-md border border-red-200 text-primary-03 transition-all active:scale-95 hover:bg-red-50 sm:w-10" title="Delete">
               <RiDeleteBinLine size={15} />
             </button>
           )}
           <div className="flex w-full flex-col gap-2 sm:flex-row">
-            <button onClick={() => onStart("practice")} className="flex h-11 w-full items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface2 px-3 text-[13px] font-semibold text-t-primary transition-colors active:scale-[0.98] hover:bg-white dark:hover:bg-[#202020] sm:flex-1">Practice Questions</button>
-            <button onClick={() => onStart("attempt")} className="flex h-11 w-full items-center justify-center rounded-[8px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-3 text-[13px] font-semibold text-white transition-transform active:scale-[0.98] sm:flex-1">Attempt Test</button>
+            <button onClick={() => onStart("practice")} className="flex h-11 w-full items-center justify-center rounded-md border border-s-stroke2 bg-b-surface2 px-3 text-[13px] font-semibold text-t-primary transition-colors active:scale-[0.98] hover:bg-white dark:hover:bg-[#202020] sm:flex-1">Practice Questions</button>
+            <button onClick={() => onStart("attempt")} className="btn btn-primary h-11 w-full px-3 text-[13px] sm:flex-1">Attempt Test</button>
           </div>
         </div>
       </div>

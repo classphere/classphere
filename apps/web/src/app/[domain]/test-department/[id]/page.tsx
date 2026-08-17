@@ -133,7 +133,7 @@ function AssignModal({
           type="button"
           disabled={submitting}
           onClick={submit}
-          className="h-11 rounded-[10px] bg-[#151515] text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
+          className="btn btn-primary h-11 text-sm disabled:opacity-60"
         >
           {submitting ? "Assigning…" : "Assign"}
         </button>
@@ -316,7 +316,7 @@ export default function ReviewPaperPage() {
               {canOperate && PUBLISHABLE_STATUSES.includes(status) && (
                 <button
                   type="button" disabled={transacting} onClick={() => transition("publish")}
-                  className="h-11 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-black"
+                  className="btn btn-primary h-11 px-4 text-sm disabled:opacity-60"
                 >
                   Publish test
                 </button>

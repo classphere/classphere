@@ -257,7 +257,7 @@ function SettingsContent() {
                   </div>
                 </div>
 
-                <button className="h-12 px-6 rounded-[10px] relative overflow-hidden border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[14px] font-bold shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.01] active:scale-[0.99] self-start">
+                <button className="btn btn-primary h-12 self-start text-[14px]">
                   Manage Payment Methods
                 </button>
               </div>

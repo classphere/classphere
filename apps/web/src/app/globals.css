@@ -277,6 +277,20 @@
   --color-s-highlight: var(--stroke-highlight);
   --color-s-stroke2: var(--stroke-stroke2);
   --color-accent: var(--accent);
+
+  /* Wires Tailwind's own rounded-sm/md/lg/xl/2xl utilities to this app's
+     actual radius scale (--r-sm..2xl below). Without this, "rounded-lg" and
+     "rounded-2xl" silently fell back to Tailwind's unrelated built-in
+     defaults (8px/16px) — close enough to r-lg(16)/r-2xl(24) by coincidence
+     to go unnoticed, but r-sm/r-md/r-xl had no Tailwind utility that actually
+     produced them, which is why every button/input/card in the app reaches
+     for a hand-typed rounded-[10px]/[12px]/[24px] instead of a class name.
+     Now rounded-md really is 12px, not "whatever Tailwind shipped with." */
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+  --radius-2xl: var(--r-2xl);
   
   --default-transition-duration: 0.2s;
   --default-border-width: 1.5px;
@@ -425,7 +439,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 border border-s-stroke2/40 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)] last:mb-0;
+    @apply mb-3 p-5 rounded-xl bg-b-surface2 border border-s-stroke2/40 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)] last:mb-0;
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -458,16 +472,16 @@
   }
   
   .btn {
-    @apply inline-flex items-center justify-center h-11 px-6 rounded-[10px] text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center h-11 px-6 rounded-md text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
   }
   .btn:active {
     transform: scale(0.96);
   }
   .btn-sm {
-    @apply h-8 px-4 text-caption rounded-[10px];
+    @apply h-8 px-4 text-caption rounded-md;
   }
   .btn-md {
-    @apply h-10 px-5 text-button rounded-[10px];
+    @apply h-10 px-5 text-button rounded-md;
   }
   
   /* .btn-dark keeps the original near-black gradient. .btn-primary follows the
@@ -479,7 +493,7 @@
      white: white on a navy is fine and white on a yellow is unreadable. See
      lib/theme.ts. */
   .btn-primary, .btn-dark {
-    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
+    @apply relative flex items-center justify-center overflow-hidden rounded-md border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
 
   .btn-primary {
@@ -510,7 +524,7 @@
     @apply border-s-stroke2 bg-b-surface2 text-t-secondary fill-t-secondary hover:border-s-highlight hover:text-t-primary hover:fill-t-primary disabled:border-transparent;
   }
   .btn-secondary {
-    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] bg-[#f9f9f9] border border-transparent font-medium text-[#525252] shadow-[0_2px_4px_rgba(0,0,0,.04),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec] transition-transform hover:scale-[1.02] active:scale-[0.98] before:absolute before:left-6 before:top-0 before:h-3 before:w-28 before:-rotate-[125deg] before:rounded-full before:bg-[#eaeaea]/60 before:blur-[3px] dark:border dark:border-s-stroke2/60 dark:bg-b-surface2 dark:text-t-primary dark:shadow-[inset_0_1px_0_rgba(255,255,255,.1),0_2px_8px_rgba(0,0,0,.12)] dark:before:bg-[#ffffff]/10;
+    @apply relative flex items-center justify-center overflow-hidden rounded-md bg-[#f9f9f9] border border-transparent font-medium text-[#525252] shadow-[0_2px_4px_rgba(0,0,0,.04),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec] transition-transform hover:scale-[1.02] active:scale-[0.98] before:absolute before:left-6 before:top-0 before:h-3 before:w-28 before:-rotate-[125deg] before:rounded-full before:bg-[#eaeaea]/60 before:blur-[3px] dark:border dark:border-s-stroke2/60 dark:bg-b-surface2 dark:text-t-primary dark:shadow-[inset_0_1px_0_rgba(255,255,255,.1),0_2px_8px_rgba(0,0,0,.12)] dark:before:bg-[#ffffff]/10;
   }
   .btn-ghost {
     @apply relative bg-b-surface1 border-transparent text-t-secondary fill-t-secondary hover:text-t-primary hover:fill-t-primary hover:shadow-depth dark:bg-b-surface2;
@@ -520,7 +534,7 @@
   }
 
   .input, .input-field {
-    @apply w-full h-11 px-4 border border-s-stroke2 rounded-[10px] text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
+    @apply w-full h-11 px-4 border border-s-stroke2 rounded-md text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
   }
   .textarea {
     @apply w-full h-24 px-4.5 py-3 border border-s-stroke2 rounded-lg text-body-2 text-t-primary outline-none transition-colors resize-none hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
@@ -554,7 +568,7 @@
     @apply flex items-center justify-between px-5 py-3.5 rounded-full text-t-secondary fill-t-secondary transition-all text-button hover:bg-b-surface3 hover:text-t-primary hover:fill-t-primary;
   }
   .sidebar-link.active {
-    @apply relative flex items-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-bold text-white shadow-velora-dark fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
+    @apply relative flex items-center overflow-hidden rounded-md border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-bold text-white shadow-velora-dark fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
 }
 

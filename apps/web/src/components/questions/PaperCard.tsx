@@ -104,7 +104,7 @@ export function PaperCard({
         </div>
 
         <div className="relative z-10 mt-4 border-t border-s-stroke2 pt-4 pointer-events-none">
-          <span className="flex h-10 w-full items-center justify-center gap-1.5 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-3 text-[13px] font-semibold text-white transition-transform group-hover:scale-[1.01]">
+          <span className="btn btn-primary flex h-10 w-full gap-1.5 px-3 text-[13px] group-hover:scale-[1.01]">
             <RiFileTextLine size={14} />
             {ctaLabel}
           </span>

@@ -396,7 +396,7 @@ export default function SupportPage() {
               <button
                 type="submit"
                 disabled={submittingReply || !replyMessage.trim()}
-                className="flex items-center justify-center gap-2 h-11 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[13px] font-bold shadow-[0px_4px_4px_-1px_rgba(0,0,0,0.16)] cursor-pointer disabled:opacity-50 transition-transform active:scale-[0.99] self-end px-6"
+                className="btn btn-primary h-11 gap-2 self-end text-[13px]"
               >
                 {submittingReply ? (
                   <RiLoader4Line size={16} className="animate-spin" />

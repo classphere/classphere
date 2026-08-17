@@ -387,7 +387,7 @@ export default function DailyRevisionPage() {
               <button
                 type="button"
                 onClick={goNext}
-                className="inline-flex h-12 items-center gap-2 rounded-[10px] bg-linear-to-b from-[#2C2C2C] to-[#282828] px-7 text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-transform active:scale-98"
+                className="btn btn-primary h-12 gap-2 px-7 text-sm"
               >
                 {index + 1 < topics.length ? "Next topic" : "Finish"} <RiArrowRightLine size={16} />
               </button>
@@ -396,7 +396,7 @@ export default function DailyRevisionPage() {
                 type="button"
                 onClick={submitTopic}
                 disabled={answeredCount === 0 || submitting}
-                className="inline-flex h-12 items-center gap-2 rounded-[10px] bg-linear-to-b from-[#2C2C2C] to-[#282828] px-7 text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-transform active:scale-98 disabled:cursor-not-allowed disabled:opacity-50"
+                className="btn btn-primary h-12 gap-2 px-7 text-sm disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {submitting ? <><RiLoader4Line className="animate-spin" size={16} /> Checking…</> : "Submit topic"}
               </button>

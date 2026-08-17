@@ -104,7 +104,7 @@ export default function GlobalPaperReviewPage() {
             <button
               type="button"
               onClick={publish}
-              className="h-11 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white dark:bg-white dark:text-black"
+              className="btn btn-primary h-11 px-5 text-sm"
             >
               Publish global paper
             </button>

@@ -422,7 +422,7 @@ export default function QuestionBankPage() {
             <button
               type="submit"
               disabled={saving}
-              className="flex items-center justify-center gap-2 w-full h-12 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[14px] font-bold shadow-[0px_4px_4px_-1px_rgba(0,0,0,0.16)] cursor-pointer disabled:opacity-50 transition-transform active:scale-[0.99] mt-2"
+              className="btn btn-primary mt-2 w-full h-12 gap-2 text-[14px]"
             >
               {saving ? (
                 <RiLoader4Line size={18} className="animate-spin" />

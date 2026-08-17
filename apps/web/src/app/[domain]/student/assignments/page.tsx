@@ -95,7 +95,7 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
           {dpp.status !== "submitted" ? (
             <Link
               href={`/student/dpps/take/${dpp.dppId}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-[10px] text-[13px] font-sans font-semibold bg-[#161616] text-white hover:bg-[#333] transition-colors border border-[#333]"
+              className="btn btn-primary gap-2 px-4 py-2 text-[13px]"
             >
               Attempt DPP
               <RiArrowRightLine size={14} />

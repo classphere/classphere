@@ -154,7 +154,7 @@ export default function InstituteFacultyPage() {
           {/* Add Faculty Button */}
           <button
             onClick={openModal}
-            className="flex flex-row justify-center items-center px-6 h-12 w-full sm:w-auto bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0"
+            className="btn btn-primary px-6 h-12 w-full sm:w-auto text-sm whitespace-nowrap shrink-0"
           >
             + Add Faculty
           </button>
