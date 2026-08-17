@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { RiCloseLine, RiLoader4Line } from "@remixicon/react";
+import { RiLoader4Line } from "@remixicon/react";
+import { Modal } from "@/components/shared/Modal";
 import type { Institute, SubscriptionUpdate } from "@/lib/hooks/useInstitutes";
 
 /**
@@ -61,21 +62,14 @@ export function PricingModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-[440px] rounded-[16px] border border-s-stroke2 bg-b-surface1 shadow-depth">
-        <div className="flex items-center justify-between border-b border-s-stroke2 px-5 py-4">
-          <div className="min-w-0">
-            <h2 className="truncate text-[15px] font-bold text-t-primary">{institute.name}</h2>
-            <p className="mt-0.5 text-[12px] text-t-secondary">
-              {students} student{students === 1 ? "" : "s"} enrolled
-            </p>
-          </div>
-          <button onClick={onClose} aria-label="Close" className="rounded-[8px] p-1 text-t-secondary transition-colors hover:text-t-primary">
-            <RiCloseLine size={20} />
-          </button>
-        </div>
-
-        <div className="flex flex-col gap-4 px-5 py-5">
+    <Modal
+      open
+      onClose={onClose}
+      title={institute.name}
+      subtitle={`${students} student${students === 1 ? "" : "s"} enrolled`}
+      maxWidth="max-w-[440px]"
+    >
+        <div className="flex flex-col gap-4">
           <div className="flex gap-2">
             {(["per_student", "flat"] as const).map((option) => (
               <button
@@ -147,22 +141,21 @@ export function PricingModal({
           </div>
 
           {error && <p className="text-[12px] font-medium text-primary-03">{error}</p>}
-        </div>
 
-        <div className="flex justify-end gap-2 border-t border-s-stroke2 px-5 py-4">
-          <button onClick={onClose} className="h-10 rounded-[10px] border border-s-stroke2 px-4 text-[12px] font-semibold text-t-secondary transition-colors hover:text-t-primary">
-            Cancel
-          </button>
-          <button
-            onClick={submit}
-            disabled={saving}
-            className="flex h-10 items-center gap-2 rounded-[10px] bg-primary-01 px-5 text-[12px] font-bold text-white disabled:opacity-60"
-          >
-            {saving && <RiLoader4Line size={14} className="animate-spin" />}
-            Save pricing
-          </button>
+          <div className="flex justify-end gap-2 border-t border-s-stroke2 pt-4 -mx-8 px-8 -mb-8 pb-8 mt-1">
+            <button onClick={onClose} className="h-10 rounded-[10px] border border-s-stroke2 px-4 text-[12px] font-semibold text-t-secondary transition-colors hover:text-t-primary">
+              Cancel
+            </button>
+            <button
+              onClick={submit}
+              disabled={saving}
+              className="flex h-10 items-center gap-2 rounded-[10px] bg-primary-01 px-5 text-[12px] font-bold text-white disabled:opacity-60"
+            >
+              {saving && <RiLoader4Line size={14} className="animate-spin" />}
+              Save pricing
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+    </Modal>
   );
 }

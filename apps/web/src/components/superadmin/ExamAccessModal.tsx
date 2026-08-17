@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { RiCloseLine, RiLoader4Line } from "@remixicon/react";
+import { RiLoader4Line } from "@remixicon/react";
+import { Modal } from "@/components/shared/Modal";
 import type { Institute } from "@/lib/hooks/useInstitutes";
 
 /**
@@ -54,19 +55,14 @@ export function ExamAccessModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-[460px] rounded-[16px] border border-s-stroke2 bg-b-surface1 shadow-depth">
-        <div className="flex items-center justify-between border-b border-s-stroke2 px-5 py-4">
-          <div className="min-w-0">
-            <h2 className="truncate text-[15px] font-bold text-t-primary">{institute.name}</h2>
-            <p className="mt-0.5 text-[12px] text-t-secondary">Examinations this institute can create batches for</p>
-          </div>
-          <button onClick={onClose} aria-label="Close" className="rounded-[8px] p-1 text-t-secondary transition-colors hover:text-t-primary">
-            <RiCloseLine size={20} />
-          </button>
-        </div>
-
-        <div className="flex flex-col gap-2 px-5 py-5">
+    <Modal
+      open
+      onClose={onClose}
+      title={institute.name}
+      subtitle="Examinations this institute can create batches for"
+      maxWidth="max-w-[460px]"
+    >
+        <div className="flex flex-col gap-2">
           {EXAM_CATALOG.map((exam) => (
             <label
               key={exam.id}
@@ -97,20 +93,19 @@ export function ExamAccessModal({
               Pick at least one — an institute with no exams cannot create any batch.
             </p>
           )}
-        </div>
 
-        <div className="flex items-center justify-end gap-2 border-t border-s-stroke2 px-5 py-4">
-          <button onClick={onClose} disabled={saving} className="btn btn-ghost px-4">Cancel</button>
-          <button
-            onClick={submit}
-            disabled={saving || codes.length === 0}
-            className="btn btn-primary flex items-center gap-2 px-5 disabled:opacity-40"
-          >
-            {saving && <RiLoader4Line size={16} className="animate-spin" />}
-            {saving ? "Saving…" : "Save exams"}
-          </button>
+          <div className="flex items-center justify-end gap-2 border-t border-s-stroke2 pt-4 -mx-8 px-8 -mb-8 pb-8 mt-3">
+            <button onClick={onClose} disabled={saving} className="btn btn-ghost px-4">Cancel</button>
+            <button
+              onClick={submit}
+              disabled={saving || codes.length === 0}
+              className="btn btn-primary flex items-center gap-2 px-5 disabled:opacity-40"
+            >
+              {saving && <RiLoader4Line size={16} className="animate-spin" />}
+              {saving ? "Saving…" : "Save exams"}
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+    </Modal>
   );
 }
