@@ -11,27 +11,45 @@ import { enqueueAnalysis } from "../../lib/queue/analysis.queue";
 import { connection as redis } from "../../lib/queue/redis";
 import { getStudentTestAccess } from "../tests/test-access.service";
 import { isMaintenanceMode, MAINTENANCE_RESPONSE } from "../../lib/maintenance";
+import {
+  defaultMarkingScheme,
+  normaliseMarkingScheme,
+  scoreQuestion,
+  totalMarksForQuestions,
+  type MarkingScheme,
+} from "../../lib/marking-scheme";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
+type LoadedPaper = {
+  questions: any[];
+  examCode: string;
+  /** The paper's own marks, or null when it states none. Never a substitute. */
+  markingScheme: MarkingScheme | null;
+  testType: string | null;
+};
+
 /** Fetch paper metadata + ordered questions from either PYQ files or Supabase */
-async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; examCode: string }> {
+async function loadPaperQuestions(paperId: string): Promise<LoadedPaper> {
   // 1. Try local PYQ file registry
   const pyqPaperId = paperId.startsWith("pyq-") ? paperId.replace("pyq-", "") : paperId;
   const paper = PYQ_REGISTRY.find((p) => p.id === pyqPaperId);
   if (paper) {
     const filePath = path.join(ROOT, paper.fileName);
     const questions = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    return { questions, examCode: (paper as any).exam ?? "jee-main" };
+    return { questions, examCode: (paper as any).exam ?? "jee-main", markingScheme: null, testType: "pyq" };
   }
 
   // 2. Fallback: fetch from Supabase
   const { data: paperRow } = await supabaseDB
     .from("papers")
-    .select("id, exam_code:exams(code)")
+    .select("id, test_type, marking_scheme, exam_code:exams(code)")
     .eq("id", pyqPaperId)
     .eq("is_active", true)
     .maybeSingle();
+
+  const paperScheme = normaliseMarkingScheme((paperRow as any)?.marking_scheme);
+  const paperTestType = (paperRow as any)?.test_type ?? null;
 
   // Fetch ordered question IDs
   const { data: pqs } = await supabaseDB
@@ -41,11 +59,21 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
     .order("position", { ascending: true });
 
   const questionIds = (pqs ?? []).map((r: any) => r.question_id);
-  if (questionIds.length === 0) return { questions: [], examCode: (paperRow as any)?.exam_code?.code ?? "jee-main" };
+  if (questionIds.length === 0) {
+    return {
+      questions: [],
+      examCode: (paperRow as any)?.exam_code?.code ?? "jee-main",
+      markingScheme: paperScheme,
+      testType: paperTestType,
+    };
+  }
 
+  // `marks` is the per-question override — the escape hatch for a paper whose
+  // two sections share a question type but not its marks. Scoring reads it, so
+  // leaving it out of this select silently discarded it.
   const { data: rawQs } = await supabaseDB
     .from("questions")
-    .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags")
+    .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, source, year, tags, marks")
     .in("id", questionIds)
     .eq("is_active", true);
 
@@ -68,7 +96,44 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
     examCode = (paperRow as any)?.exam_code?.code ?? "jee-main";
   }
 
-  return { questions, examCode };
+  return { questions, examCode, markingScheme: paperScheme, testType: paperTestType };
+}
+
+/**
+ * The marks an attempt is scored against, decided once when it starts.
+ *
+ * The paper's own scheme, and nothing else, whenever it has one. Every caller
+ * used to hardcode `{ correct: 4, incorrect: -1 }` instead — startAttempt wrote
+ * it onto the attempt, submitAttempt scored against it, and the analysis engine
+ * substituted it again — so a Test Head could set a paper's marks, watch
+ * total_marks change on screen, and have students scored on +4/-1 regardless.
+ * The editor priced the paper; nothing priced the answers.
+ *
+ * Copied onto the attempt rather than read from the paper at submit time, so
+ * that re-pricing a paper can never re-score a sitting already in progress.
+ *
+ * The fallbacks below only reach papers that are not institute assessments:
+ * publish refuses an institute paper with no scheme (see
+ * transitionReviewPaper), so what is left is practice sets, boosters and PYQ
+ * files. Each is logged rather than applied silently.
+ */
+function resolveAttemptScheme(
+  paperScheme: MarkingScheme | null,
+  examCode: string,
+  paperId: string,
+): MarkingScheme | null {
+  if (paperScheme && Object.keys(paperScheme).length > 0) return paperScheme;
+
+  const standard = defaultMarkingScheme(examCode);
+  if (standard) {
+    console.warn(`[attempts] Paper ${paperId} states no marking scheme; scoring on the ${examCode} standard.`);
+    return standard;
+  }
+  console.error(
+    `[attempts] Paper ${paperId} states no marking scheme and ${examCode} has no standard one. ` +
+    `Scoring falls back to +4/-1, which is a guess — this paper should state its marks.`,
+  );
+  return null;
 }
 
 /** Score a single question answer */
@@ -105,26 +170,35 @@ function canonicalCorrectAnswers(question: any): string[] {
   );
 }
 
-function scoreAnswer(question: any, selectedAnswer: unknown, scheme: { correct?: number; incorrect?: number }): { isCorrect: boolean; marks: number } {
+/**
+ * Score one answer against the paper's marks.
+ *
+ * The arithmetic lives in scoreQuestion, which reads the marks for this
+ * question's own type and honours the per-question override and partial credit.
+ * This wrapper is the part that is specific to a stored question: resolving an
+ * index-shaped answer key to option ids, and refusing to penalise a question
+ * that carries no key at all.
+ *
+ * It used to take a flat `{ correct, incorrect }` and default it to +4/-1,
+ * which meant a paper whose single-correct and multiple-correct questions were
+ * worth different marks scored both the same.
+ */
+function scoreAnswer(
+  question: any,
+  selectedAnswer: unknown,
+  scheme: MarkingScheme | null,
+): { isCorrect: boolean; marks: number } {
   const selectedAnswers = normalizeAnswerSet(selectedAnswer);
-  if (selectedAnswers.length === 0) return { isCorrect: false, marks: 0 };
-
   const correctAnswersList = canonicalCorrectAnswers(question);
 
   // ~3,795 questions carry no answer key at all. Scoring them as incorrect
   // penalises a student for a gap in our data, so they are neutral instead:
   // no marks either way, as though the question were not on the paper.
-  if (correctAnswersList.length === 0) {
+  if (selectedAnswers.length > 0 && correctAnswersList.length === 0) {
     console.warn(`[scoreAnswer] Question ${question.id} has no correct_answer; scoring it neutral.`);
-    return { isCorrect: false, marks: 0 };
   }
-  // Multiple-correct questions require the complete correct set. Awarding full
-  // marks for selecting just one correct option is an exam-scoring defect.
-  const isCorrect = selectedAnswers.length === correctAnswersList.length &&
-    selectedAnswers.every((answer, index) => answer === correctAnswersList[index]);
-  const marks = isCorrect ? (scheme.correct ?? 4) : (scheme.incorrect ?? -1);
 
-  return { isCorrect, marks };
+  return scoreQuestion(question.question_type, selectedAnswers, correctAnswersList, scheme, question.marks);
 }
 
 // ─── Handlers ─────────────────────────────────────────────────────────────────
@@ -146,8 +220,8 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
     // Normalize pyq- prefix
     if (paper_id.startsWith("pyq-")) paper_id = paper_id.replace("pyq-", "");
 
-    // Load paper to get exam_code
-    const { examCode } = await loadPaperQuestions(paper_id);
+    // Load paper to get exam_code and the marks it is scored on
+    const { examCode, markingScheme } = await loadPaperQuestions(paper_id);
 
     const { data: paper } = await supabaseDB
       .from("papers")
@@ -235,7 +309,9 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
         exam_code: examCode,
         status: "in_progress",
         batch_id: resolvedBatchId,
-        marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
+        // The paper's own marks, frozen onto the attempt so that re-pricing the
+        // paper cannot re-score a sitting already under way.
+        marking_scheme: resolveAttemptScheme(markingScheme, examCode, paper_id),
         // Public papers can be started as untimed practice. Assigned tests are
         // always timed and are enforced above rather than trusted to the client.
         total_duration_sec: requestedMode === "practice"
@@ -494,35 +570,17 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       return;
     }
     const targetPaperId = existingAttempt.paper_id;
-    const { questions, examCode } = await loadPaperQuestions(targetPaperId);
+    const { questions, examCode, markingScheme: paperScheme, testType } = await loadPaperQuestions(targetPaperId);
 
     if (!questions || questions.length === 0) {
       res.status(404).json({ success: false, message: "Test has no questions or was not found." });
       return;
     }
 
-    // ── Create attempt row if it doesn't exist (legacy flow or first call) ────
-    if (!existingAttempt) {
-      const { data: newAttempt, error: insertErr } = await supabaseDB
-        .from("attempts")
-        .insert({
-          student_id: studentId,
-          paper_id: targetPaperId,
-          exam_code: examCode,
-          status: "in_progress",
-          marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
-          total_duration_sec: 10800,
-        })
-        .select("id, marking_scheme")
-        .single();
-
-      if (insertErr || !newAttempt) {
-        res.status(500).json({ success: false, message: insertErr?.message ?? "Failed to create attempt record" });
-        return;
-      }
-      attemptId = newAttempt.id;
-      existingAttempt = newAttempt;
-    }
+    // The "create the attempt row if it doesn't exist" branch that stood here
+    // was unreachable — the 404 above returns whenever existingAttempt is null,
+    // so nothing could ever fall through to it. It was also the last place still
+    // writing a hardcoded +4/-1 scheme onto an attempt.
 
     // Claim the attempt before persisting answers. Only one concurrent submit
     // request can move in_progress -> submitting; all others fail harmlessly.
@@ -560,22 +618,30 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     }
 
     // ── Score all answers ─────────────────────────────────────────────────────
-    const markingScheme = existingAttempt.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
+    // The scheme frozen onto the attempt when it started. Falling back to the
+    // paper's current scheme only covers attempts created before this became
+    // the rule; there is no literal to fall back to beyond that, because a
+    // number nobody chose is exactly what this replaced.
+    const markingScheme = normaliseMarkingScheme(existingAttempt.marking_scheme)
+      ?? resolveAttemptScheme(paperScheme, examCode, targetPaperId);
     let totalScore = 0;
-    let maxScore = 0;
 
     const answerUpsertRows: any[] = [];
     const attemptAnswers: AttemptAnswer[] = [];
+
+    // What the paper is worth: the sum of what each question is worth under this
+    // scheme, per question type and honouring any per-question override. It used
+    // to be question-count × the scheme's single `correct` value, which is right
+    // only when every question on the paper carries the same marks.
+    const maxScore = totalMarksForQuestions(questions, markingScheme);
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
       const studentAns = finalAnswers[q.id] ?? {};
       const selected = studentAns.selected_answer ?? null;
-      const { isCorrect, marks } = scoreAnswer(q, selected, markingScheme);
-      const marksAwarded = normalizeAnswerSet(selected).length > 0 ? marks : (markingScheme.unattempted ?? 0);
+      // scoreQuestion already returns the unattempted marks for an empty answer.
+      const { isCorrect, marks: marksAwarded } = scoreAnswer(q, selected, markingScheme);
 
-      const qCorrect = markingScheme.correct ?? 4;
-      maxScore += qCorrect;
       totalScore += marksAwarded;
 
       answerUpsertRows.push({
@@ -649,8 +715,17 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     claimedStudentId = null;
 
     // ── Update student_stats ──────────────────────────────────────────────────
+    // Boosters and topic-practice sets are private drills a student generates
+    // from their own weak areas, on demand and as often as they like. Folding
+    // them in here made "Tests Taken" count practice attempts, and dragged the
+    // accuracy figure the institute reports read towards whatever the student
+    // had been drilling. Stats mean tests the institute set.
+    const isPersonalPractice = testType === "booster" || testType === "topic-practice";
+    if (isPersonalPractice) {
+      console.info(`[submitAttempt] ${testType} attempt ${attemptId} excluded from student_stats.`);
+    }
     try {
-      let statsUpdated = false;
+      let statsUpdated = isPersonalPractice;
       let retries = 0;
       const MAX_RETRIES = 5;
 
