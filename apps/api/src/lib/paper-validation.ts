@@ -124,13 +124,24 @@ export function questionIssues(question: Record<string, any>): QuestionIssue[] {
   const options = Array.isArray(question.options) ? question.options : [];
   const answers = Array.isArray(question.correct_answer) ? question.correct_answer : [];
 
+  // Gap placeholders: known-missing slots the extraction couldn't fill.
+  // is_gap comes from the extraction JSON; in the DB it's tracked via
+  // source_reference.extraction_flags. Check both so this works whether
+  // called during extraction (JSON) or publish validation (DB row).
+  const flags: string[] = Array.isArray(question.source_reference?.extraction_flags)
+    ? question.source_reference.extraction_flags : [];
+  const isGap = Boolean(question.is_gap) || flags.includes("gap_placeholder");
+
   if (!text) {
-    add("empty_question", question.is_gap
+    // Gap placeholders warn but don't block publishing — the paper is
+    // otherwise complete and the gap can be filled later.
+    add("empty_question", isGap
       ? "Empty slot. The extractor found this question number in the PDF but returned no question for it — check the source page, then either type it in or remove it."
-      : "Question text is empty.");
+      : "Question text is empty.",
+      isGap ? "warning" : "error");
   }
-  if (answers.length === 0) add("no_answer", "No correct answer set.");
-  if (isChoiceQuestion(question.question_type) && options.length < 2) {
+  if (answers.length === 0) add("no_answer", "No correct answer set.", isGap ? "warning" : "error");
+  if (isChoiceQuestion(question.question_type) && options.length < 2 && text) {
     add("too_few_options", `Only ${options.length} option(s). Check whether the rest continue on the next page of the PDF.`);
   }
 
