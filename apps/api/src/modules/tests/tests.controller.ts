@@ -1517,6 +1517,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     sendProgress("queued", "PDF queued. Waiting for the extraction worker to start...", { job_id: jobId });
 
     let extractionResult: any = null;
+    // Set once the worker finishes, from extractionResult.completeness — the
+    // one sentence that actually says whether every question in the PDF made
+    // it in, surfaced to both the live progress stream and the final success
+    // message. Before this it was only ever console.logged on the server,
+    // so a partial extraction read identically to a complete one to whoever
+    // was actually watching the upload.
+    let completenessNote = "";
     let pollCount = 0;
     const extractionWaitStartedAt = Date.now();
     const maxWaitMs = Number(process.env.PDF_EXTRACTION_WAIT_TIMEOUT_MS ?? 15 * 60 * 1000);
@@ -1549,6 +1556,17 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         // partial extraction must not look identical to a complete one.
         const completeness = extractionResult?.completeness;
         if (completeness) {
+          const pageList = (numbers: number[], page: string) => `p${page}: Q${numbers.join(", Q")}`;
+          const missingDetail = Object.entries(completeness.missing_by_page ?? {})
+            .map(([page, numbers]) => pageList(numbers as number[], page))
+            .join("; ");
+          if (completeness.missing_total) {
+            completenessNote = ` ${completeness.missing_total} question(s) could not be read from the PDF and were ` +
+              `left as blank placeholders for you to fill in — ${missingDetail}.`;
+          } else if (completeness.failed_pages?.length) {
+            completenessNote = ` Page(s) ${completeness.failed_pages.join(", ")} failed after every retry; ` +
+              `their questions are missing — re-upload the PDF to try again, or fill them in by hand.`;
+          }
           logStage("extracting_questions",
             `Completeness: ${completeness.anchors_matched}/${completeness.expected_total} anchored questions ` +
             `(${(completeness.completeness * 100).toFixed(1)}%)` +
@@ -1556,9 +1574,16 @@ export const uploadTestController = async (req: Request, res: Response): Promise
               ? ` — MISSING ${completeness.missing_total}: ${JSON.stringify(completeness.missing_by_page)}`
               : "") +
             (completeness.failed_pages?.length ? ` — FAILED PAGES: ${completeness.failed_pages.join(", ")}` : ""));
+          sendProgress("extracting_questions",
+            completenessNote
+              ? `Extracted ${completeness.extracted_total} question(s).${completenessNote}`
+              : `Extracted ${completeness.extracted_total} question(s) — all ${completeness.expected_total} detected in the PDF were found.`,
+            { completeness });
         } else {
           logStage("extracting_questions",
             "Completeness: not reported by the extractor (reconciliation did not run — extractor may be stale).");
+          completenessNote = " This extractor build did not report a completeness check — verify the question count against the PDF yourself before publishing.";
+          sendProgress("extracting_questions", "Extraction finished, but no completeness check was reported.");
         }
         break;
       } else if (jobData.status === "failed") {
@@ -1906,9 +1931,10 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     }
 
     const matchingNote = malformedMatching.length ? `${malformedMatching.length} matching question(s) require attention. ` : "";
-    const successMessage = isSplit
+    const successMessage = (isSplit
       ? `Split into ${createdPapers.length} papers (${createdPapers.map((p) => p.total_questions).join(", ")} questions). ${matchingNote}Review and publish each from the Test Department workspace.`
-      : `Draft created. ${matchingNote}Review and publish it from the Test Department workspace.`;
+      : `Draft created. ${matchingNote}Review and publish it from the Test Department workspace.`
+    ) + completenessNote;
 
     sendProgress("success", successMessage, {
       paper_id: createdPapers[0].id,
@@ -1916,6 +1942,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       title,
       total_questions: questionRows.length,
       workflow_status: createdPapers[0].workflow_status,
+      completeness: extractionResult?.completeness ?? null,
     });
     logStage("success", `Completed PDF-to-test workflow with ${questionRows.length} questions` + (isSplit ? ` split into ${createdPapers.length} papers.` : "."));
     res.end();

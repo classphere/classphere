@@ -180,7 +180,21 @@ export default function AIExtractor() {
           const jobState = statusData.data;
           
           if (jobState.status === "done") {
-            setResultMsg("Extraction complete! Saving to global draft for review...");
+            // The extractor cross-checks its own output against question
+            // numbers it reads straight off the PDF and fills any gap with a
+            // blank placeholder rather than dropping it — but until now that
+            // verdict was never shown here, so a partial extraction looked
+            // identical to a complete one.
+            const completeness = jobState.result?.completeness;
+            const missingByPage = completeness?.missing_by_page ?? {};
+            const completenessNote = completeness?.missing_total
+              ? ` ${completeness.missing_total} question(s) could not be read and were left blank for you to fill in: ` +
+                Object.entries(missingByPage).map(([page, numbers]) => `p${page} Q${(numbers as number[]).join(", Q")}`).join("; ") + "."
+              : completeness
+              ? ` All ${completeness.expected_total} questions detected in the PDF were extracted.`
+              : "";
+
+            setResultMsg(`Extraction complete!${completenessNote} Saving to global draft for review...`);
 
             // Auto-fill paper title from PDF name if blank
             let finalTitle = form.title;
@@ -202,7 +216,7 @@ export default function AIExtractor() {
               setExtractedQuestions(jobState.result.questions);
               setStatus("success");
               setResultMsg(
-                `Extraction complete. This paper states its own marking scheme — it has been filled in below. ` +
+                `Extraction complete.${completenessNote} This paper states its own marking scheme — it has been filled in below. ` +
                 `Check it against the paper, then save the draft.`
               );
               jobDone = true;
@@ -263,7 +277,7 @@ export default function AIExtractor() {
 
               if (uploadData.success) {
                  setStatus("success");
-                 setResultMsg("Successfully created draft. Redirecting to advanced review...");
+                 setResultMsg(`Successfully created draft.${completenessNote} Redirecting to advanced review...`);
                  setTimeout(() => {
                    router.push(`/superadmin/questions/${uploadData.data.paper_id}`);
                  }, 1500);
