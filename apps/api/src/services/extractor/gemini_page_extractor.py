@@ -739,6 +739,16 @@ def reconcile(pages: list[dict[str, Any]], page_indexes: list[int], questions: l
     # question in.
     placeholders = _gap_placeholders(anchor_map, questions, truncated_pages, failed_pages)
     if placeholders:
+        # Assign _run to gap placeholders so they share the same dedup key as
+        # a real question with the same number. Without this, normalize_json's
+        # dedup key (run, qnum) sees the gap placeholder (no _run → falls back
+        # to _page_index=10) and the real question (_run=0) as different keys,
+        # and both survive into the final output.
+        for ph in placeholders:
+            idx = ph.get("_page_index")
+            num = ph.get("question_number")
+            if isinstance(idx, int) and isinstance(num, int):
+                ph["_run"] = reconciler.run_for(runs, idx, num, page_runs)
         questions.extend(placeholders)
         questions.sort(key=lambda q: (q.get("_page_index", 0), q.get("question_number", 0)))
         print(f"[geminiPage] inserted {len(placeholders)} placeholder(s) for questions "
@@ -804,8 +814,12 @@ def verify_question_numbers(
 
     Returns any newly recovered questions.
     """
+    # Exclude gap placeholders — they occupy the number but carry no content.
+    # If reconciliation only produced a placeholder for Q35, we still want to
+    # try recovering the real question.
     extracted_numbers = {q.get("question_number") for q in questions
-                         if isinstance(q.get("question_number"), int)}
+                         if isinstance(q.get("question_number"), int)
+                         and not q.get("is_gap")}
     if not extracted_numbers:
         return []
 
@@ -851,6 +865,18 @@ def verify_question_numbers(
 
     added = merge_recovered(questions, recovered)
     if added:
+        # Remove gap placeholders for question numbers we just recovered as real
+        # questions. A gap placeholder (empty text, is_gap=True) must not survive
+        # alongside the real question with full content.
+        recovered_numbers = {q.get("question_number") for q in recovered
+                             if isinstance(q.get("question_number"), int)
+                             and not q.get("is_gap")}
+        before_len = len(questions)
+        questions[:] = [q for q in questions
+                        if not (q.get("is_gap") and q.get("question_number") in recovered_numbers)]
+        removed_gaps = before_len - len(questions)
+        if removed_gaps:
+            print(f"[geminiPage] verify: removed {removed_gaps} gap placeholder(s) replaced by real questions")
         print(f"[geminiPage] verify: recovered {added} question(s) from full-document scan")
     else:
         print(f"[geminiPage] verify: no new questions recovered — gaps are genuine misses or non-questions")
