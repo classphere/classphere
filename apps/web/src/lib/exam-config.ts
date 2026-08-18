@@ -1,17 +1,19 @@
 /**
  * Canonical list of subjects for each supported exam code.
  *
- * NEET-UG has no "Biology" subject on a real paper — every question is tagged
- * Botany or Zoology, matching lib/exam.ts's EXAM_SUBJECTS. This used to list
- * the generic "Biology" instead, so a Botany/Zoology question's subject never
- * matched an option here and the review editor's Subject dropdown silently
- * showed "—" for every NEET question.
+ * NEET-UG lists both — "Botany"/"Zoology" (the real exam's own split) and
+ * "Biology" (one combined subject). Different coachings upload it differently
+ * and there's no way to tell which a given paper should be from the exam code
+ * alone, so the review editor needs to let either be picked. This used to
+ * list only the generic "Biology", so a Botany/Zoology question's subject
+ * never matched an option here and the Subject dropdown silently showed "—"
+ * for every question from a paper that split it.
  */
 export const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":          ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced":      ["Physics", "Chemistry", "Mathematics"],
   "jee-main-advanced": ["Physics", "Chemistry", "Mathematics"],
-  "neet-ug":           ["Physics", "Chemistry", "Botany", "Zoology"],
+  "neet-ug":           ["Physics", "Chemistry", "Botany", "Zoology", "Biology"],
   // Fallback for unknown exams
   "default":           ["Physics", "Chemistry", "Mathematics"],
 };

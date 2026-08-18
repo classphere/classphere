@@ -5,18 +5,29 @@ import {
 
 /**
  * Optimal time split (percentage of total test time) per subject for NEET.
- * NEET: 3 hours for 200 questions (Physics 45Q, Chemistry 45Q, Biology 90Q)
- * Biology gets most time due to 90 questions. Physics is hardest per question.
+ * NEET: 3 hours for 180 questions — Physics 45Q, Chemistry 45Q, then the
+ * biology stream's 90Q, either as one combined "Biology" subject or split
+ * 45/45 into "Botany"/"Zoology". Different coachings tag their papers
+ * differently and there's no way to tell which from the exam code alone, so
+ * the split below is derived per attempt from whichever of the three actually
+ * appears in the student's own answers — not hardcoded to one, which is what
+ * silently dropped the other from every calculation in this file.
  */
-const OPTIMAL_TIME_SPLIT_PCT: Record<string, Record<string, number>> = {
-  "neet":     { Physics: 30, Chemistry: 23, Biology: 47 },
-  "neet-omr": { Physics: 30, Chemistry: 23, Biology: 47 },
-};
+const BASE_SPLIT_PCT: Record<string, number> = { Physics: 30, Chemistry: 23 };
+const BIOLOGY_STREAM_PCT = 47;
+const BIOLOGY_STREAM_SUBJECTS = ["Biology", "Botany", "Zoology"];
 
-// Default when exam type variant is unknown
-const DEFAULT_SPLIT: Record<string, number> = {
-  Physics: 30, Chemistry: 23, Biology: 47,
-};
+function buildOptimalSplit(subjectsPresent: Set<string>): Record<string, number> {
+  const split: Record<string, number> = { ...BASE_SPLIT_PCT };
+  const present = BIOLOGY_STREAM_SUBJECTS.filter((s) => subjectsPresent.has(s));
+  // No biology-stream subject recorded (e.g. a partial or non-biology
+  // attempt) — assume the Botany/Zoology split rather than leaving 47% of
+  // the budget unassigned.
+  const active = present.length > 0 ? present : ["Botany", "Zoology"];
+  const share = BIOLOGY_STREAM_PCT / active.length;
+  for (const subject of active) split[subject] = share;
+  return split;
+}
 
 /**
  * Reconstructs the student's attempt strategy from their answer data.
@@ -28,8 +39,6 @@ export function analyzeAttemptStrategy(
   totalTestDurationSec: number = 10800, // 3 hours for NEET
   hasTimingData: boolean = true
 ): AttemptStrategy {
-  const optimalSplitPct = OPTIMAL_TIME_SPLIT_PCT[examType] ?? DEFAULT_SPLIT;
-
   // ── Offline Mode (OMR) Fallback ──
   if (!hasTimingData) {
     return {
@@ -79,6 +88,7 @@ export function analyzeAttemptStrategy(
   }
 
   const effectiveTotalSec = totalRecordedSec;
+  const optimalSplitPct = buildOptimalSplit(new Set(Object.keys(timeBySubject)));
 
   // ── Step 2: Optimal time (seconds) per subject ─────────────────────────
   const optimalTimeSec: Record<string, number> = {};
@@ -258,9 +268,7 @@ function buildInsight(
     recommendation = `In your next mock, set a hard cap of ${suggestedCap} minutes for ${worstOvertime}. ` +
       `When time is up, mark your best guess and move on — do not exceed the budget.`;
   } else if (pattern === "linear") {
-    const examAdvice = examType.startsWith("neet")
-      ? "Start with Biology (fastest marks per minute), then Chemistry, save Physics for last."
-      : "Start with Biology (fastest marks per minute), then Chemistry, save Physics for last.";
+    const examAdvice = "Start with Botany and Zoology (fastest marks per minute), then Chemistry, save Physics for last.";
     recommendation = `Try the multi-round strategy next test: first pass — solve only sure-shot questions in every section. ` +
       `Second pass — tackle medium ones. Third pass — attempt hard questions if time allows. ${examAdvice}`;
   } else {

@@ -60,11 +60,32 @@ export interface PaperValidation {
  * varies by year and by paper, so there is no count to check against and only
  * the per-question checks apply.
  */
-export const EXAM_PATTERNS: Record<string, { subjects: string[]; counts: Record<string, number>; total: number }> = {
+export const EXAM_PATTERNS: Record<string, {
+  subjects: string[];
+  counts: Record<string, number>;
+  total: number;
+  /**
+   * Alternative valid count-sets, checked in place of `counts` for the
+   * subjects they cover — the paper needs to satisfy ONE of the listed
+   * groups, not all of them.
+   *
+   * NEET biology is the reason this exists: some coachings upload it as one
+   * combined "Biology" subject (90 questions), others split it into "Botany"
+   * and "Zoology" (45 each) the way the real exam sections it. Both are
+   * legitimate paper structures — there is no single correct count to check.
+   */
+  altCounts?: Record<string, number>[];
+}> = {
   "neet-ug": {
+    // "Biology" stays a recognised subject even though a real NEET *question*
+    // is never tagged with it on its own — a whole *paper* legitimately can
+    // be, when a coaching uploads Biology as one combined subject rather than
+    // splitting it into Botany/Zoology. See normaliseSubject in
+    // question-taxonomy.ts for the equivalent per-question holding value.
     subjects: ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
     counts: { Physics: 45, Chemistry: 45 },
     total: 180,
+    altCounts: [{ Biology: 90 }, { Botany: 45, Zoology: 45 }],
   },
   "jee-main": {
     subjects: ["Physics", "Chemistry", "Mathematics"],
@@ -278,6 +299,20 @@ export function validatePaperQuestions(
     for (const [subject, expected] of Object.entries(pattern.counts)) {
       const found = counts[subject] ?? 0;
       if (found !== expected) patternIssue(`Expected ${subject}: ${expected}, found ${found}.`);
+    }
+    if (pattern.altCounts?.length) {
+      const satisfied = pattern.altCounts.some((group) =>
+        Object.entries(group).every(([subject, expected]) => (counts[subject] ?? 0) === expected),
+      );
+      if (!satisfied) {
+        const describe = (group: Record<string, number>) =>
+          Object.entries(group).map(([subject, expected]) => `${subject}: ${expected}`).join(" and ");
+        const coveredSubjects = [...new Set(pattern.altCounts.flatMap((group) => Object.keys(group)))];
+        const foundText = coveredSubjects.map((subject) => `${subject}: ${counts[subject] ?? 0}`).join(", ");
+        patternIssue(
+          `Expected either ${pattern.altCounts.map(describe).join(", or ")} — found ${foundText}.`,
+        );
+      }
     }
     for (const subject of Object.keys(counts).filter((s) => !pattern.subjects.includes(s))) {
       warnings.push(`${counts[subject]} question(s) have subject "${subject}", which is not expected for ${examCode}.`);

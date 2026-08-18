@@ -20,15 +20,6 @@ import {
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { useAuth } from "@/lib/auth-context";
 import { useApiQuery } from "@/lib/hooks/useApiQuery";
-type MockDPP = any;
-
-const SUBJECTS = ["Physics", "Chemistry", "Mathematics", "Biology"];
-const CHAPTERS: Record<string, string[]> = {
-  Physics: ["Laws of Motion", "Thermodynamics", "Electrostatics", "Optics", "Modern Physics", "Waves"],
-  Chemistry: ["Some Basic Concepts", "Atomic Structure", "Chemical Bonding", "Equilibrium", "Organic Chemistry"],
-  Mathematics: ["Calculus", "Algebra", "Coordinate Geometry", "Trigonometry", "Probability"],
-  Biology: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Physiology"],
-};
 
 const statusMeta: Record<string, { label: string; badgeClass: string; icon: React.ReactNode; iconContainerClass: string }> = {
   completed: { 

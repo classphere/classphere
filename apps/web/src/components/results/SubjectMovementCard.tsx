@@ -27,6 +27,11 @@ export function SubjectMovementCard({ subjectMovement }: SubjectMovementCardProp
             Chemistry: "border-primary-02/30 bg-primary-02/5 text-primary-02",
             Mathematics: "border-primary-05/30 bg-primary-05/5 text-primary-05",
             Biology: "border-primary-04/30 bg-primary-04/5 text-primary-04",
+            // NEET has no "Biology" subject on a real paper — every question is
+            // Botany or Zoology. Reusing Mathematics's colour for Zoology is
+            // safe: the two never appear in the same exam.
+            Botany: "border-primary-04/30 bg-primary-04/5 text-primary-04",
+            Zoology: "border-primary-05/30 bg-primary-05/5 text-primary-05",
           };
           const colorClass = subjectColors[block.subject] ?? "border-s-stroke2 bg-b-surface2 text-t-secondary";
           const durationMin = Math.round(block.durationSec / 60);

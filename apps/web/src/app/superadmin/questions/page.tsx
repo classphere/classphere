@@ -269,6 +269,8 @@ export default function QuestionBankPage() {
                 <option value="Physics">Physics</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Mathematics">Mathematics</option>
+                <option value="Botany">Botany</option>
+                <option value="Zoology">Zoology</option>
                 <option value="Biology">Biology</option>
               </select>
 
@@ -489,6 +491,8 @@ export default function QuestionBankPage() {
                 <option value="Physics">Physics</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Mathematics">Mathematics</option>
+                <option value="Botany">Botany</option>
+                <option value="Zoology">Zoology</option>
                 <option value="Biology">Biology</option>
               </select>
             </div>

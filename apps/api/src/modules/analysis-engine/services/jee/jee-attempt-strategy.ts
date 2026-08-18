@@ -10,7 +10,12 @@ import {
 const OPTIMAL_TIME_SPLIT_PCT: Record<string, Record<string, number>> = {
   "jee-main":     { Physics: 35, Chemistry: 30, Mathematics: 35 },
   "jee-advanced": { Physics: 33, Chemistry: 30, Mathematics: 37 },
-  "neet":         { Physics: 28, Chemistry: 25, Biology: 47 },
+  // Unreachable in practice — jee-analysis.service.ts only ever calls this
+  // with a JEE exam code, and neet-analysis.service.ts uses the dedicated
+  // neet-attempt-strategy.ts instead. Kept correct rather than deleted so a
+  // future caller doesn't inherit a split keyed on "Biology", which no real
+  // NEET question is ever tagged (it's Botany or Zoology).
+  "neet":         { Physics: 28, Chemistry: 25, Botany: 23.5, Zoology: 23.5 },
 };
 
 // Default when exam type is unknown
@@ -260,7 +265,7 @@ function buildInsight(
       `When time is up, mark your best guess and move on — do not exceed the budget.`;
   } else if (pattern === "linear") {
     const examAdvice = examType === "neet"
-      ? "Start with Biology (fastest marks), then Chemistry, save Physics for last."
+      ? "Start with Botany and Zoology (fastest marks), then Chemistry, save Physics for last."
       : "Start with Chemistry (fastest), then Physics, save Mathematics for last.";
     recommendation = `Try the multi-round strategy next test: first pass — solve only sure-shot questions in every section. ` +
       `Second pass — tackle medium ones. Third pass — attempt hard questions if time allows. ${examAdvice}`;

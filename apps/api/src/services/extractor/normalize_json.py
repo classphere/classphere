@@ -53,8 +53,14 @@ SUBJECT_MAP = {
     "maths": "Mathematics",
     "math": "Mathematics",
     "biology": "Biology",
-    "botany": "Biology",
-    "zoology": "Biology",
+    # Botany and Zoology are kept distinct, not folded into "Biology" — some
+    # coachings upload NEET biology as one combined section, others split it
+    # the way the real exam does, and the extraction prompt already asks the
+    # model to classify Botany vs Zoology by topic whenever it can tell,
+    # falling back to "Biology" only when genuinely undecidable. Collapsing
+    # both here threw that classification away.
+    "botany": "Botany",
+    "zoology": "Zoology",
     "electronics": "Physics",
     "unknown": "",
     "": "",
@@ -367,7 +373,10 @@ def detect_paper_kind(questions: list):
                         (q.get("subject") or "").strip())
         for q in questions)
     subj_counts.pop("", None)
-    bio = subj_counts.get("Biology", 0)
+    # Botany/Zoology no longer collapse into "Biology" in subj_counts (see
+    # SUBJECT_MAP), so this NEET-detection heuristic has to sum all three
+    # biology-stream labels itself rather than reading one bucket.
+    bio = subj_counts.get("Biology", 0) + subj_counts.get("Botany", 0) + subj_counts.get("Zoology", 0)
 
     if num_qs >= 160 or bio >= 10:
         return "neet", None
@@ -443,14 +452,15 @@ def enforce_subjects(questions: list, kind: str, dominant, report: dict):
     reliable, subj_by_qnum = _extracted_subjects_are_reliable(questions)
 
     if reliable:
-        # Normalize Botany/Zoology → Biology (NEET-style sub-sections)
+        # Trust the extracted labels as-is — Botany and Zoology are kept
+        # distinct here too, matching SUBJECT_MAP above.
         applied = 0
         for q in questions:
             qnum = q.get("question_number", 0)
             extracted = subj_by_qnum.get(qnum)
             if extracted:
                 normalized = SUBJECT_MAP.get(extracted.lower(), extracted)
-                if normalized in ("Physics", "Chemistry", "Mathematics", "Biology"):
+                if normalized in ("Physics", "Chemistry", "Mathematics", "Biology", "Botany", "Zoology"):
                     q["subject"] = normalized
                     applied += 1
         # Report the detected subject order for transparency
