@@ -1981,6 +1981,24 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       const gapQuestionRows: any[] = [];
       const gapPqRows: any[] = [];
 
+      // Build a position → subject map from the real questions so gap
+      // placeholders inherit the subject of their nearest neighbor. A gap at
+      // position 35 in a NEET paper where Q34 is Physics should be Physics,
+      // not "Unclassified".
+      const posToSubject = new Map<number, string>();
+      for (const row of pqRows) {
+        const q = group.find((g: any) => g.id === row.question_id);
+        if (q?.subject) posToSubject.set(row.position, q.subject);
+      }
+      const inferSubjectForGap = (gapPos: number): string => {
+        // Walk outward from the gap position to find the nearest real question's subject.
+        for (let offset = 1; offset <= maxPos; offset++) {
+          if (posToSubject.has(gapPos - offset)) return posToSubject.get(gapPos - offset)!;
+          if (posToSubject.has(gapPos + offset)) return posToSubject.get(gapPos + offset)!;
+        }
+        return "Unclassified";
+      };
+
       for (let pos = 1; pos <= maxPos; pos++) {
         if (occupiedPositions.has(pos)) continue;
         const gapId = randomUUID();
@@ -1988,7 +2006,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           id:             gapId,
           exam_id:        examId,
           test_type:      "mock-test",
-          subject:        "Unclassified",
+          subject:        inferSubjectForGap(pos),
           chapter:        "General",
           topic:          null,
           difficulty:     "medium",
