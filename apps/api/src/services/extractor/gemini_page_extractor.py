@@ -57,7 +57,7 @@ PAGE_TIMEOUT_SECONDS = int(os.environ.get("GEMINI_PAGE_TIMEOUT_SECONDS", "120"))
 CONTEXT_CHARS = int(os.environ.get("GEMINI_PAGE_CONTINUITY_CHARS", "2500"))
 # A page whose first pass missed anchored questions is re-asked with those
 # numbers named explicitly. Bounded so a pathological page cannot loop forever.
-MAX_RECONCILE_ROUNDS = int(os.environ.get("GEMINI_RECONCILE_ROUNDS", "2"))
+MAX_RECONCILE_ROUNDS = int(os.environ.get("GEMINI_RECONCILE_ROUNDS", "3"))
 
 SYSTEM_PROMPT = r"""You extract questions from one page of a digital Indian competitive-exam paper (JEE Main, JEE Advanced, or NEET-UG).
 The attached image is the rendered source page. The supplied PyMuPDF HTML is
@@ -786,6 +786,77 @@ def _gap_placeholders(
     return out
 
 
+def verify_question_numbers(
+    pages: list[dict[str, Any]],
+    page_indexes: list[int],
+    questions: list[dict[str, Any]],
+    work_dir: Path,
+    model: str,
+    workers: int,
+    batch_size: int,
+) -> list[dict[str, Any]]:
+    """Full-document scan: ask Gemini to list every question number it sees.
+
+    After page-by-page extraction + reconciliation, a question can still be
+    missing if BOTH PyMuPDF's anchor regex and the per-page Gemini call missed
+    it. A full-document view often makes numbering gaps obvious because the
+    model sees the whole sequence rather than one page at a time.
+
+    Returns any newly recovered questions.
+    """
+    extracted_numbers = {q.get("question_number") for q in questions
+                         if isinstance(q.get("question_number"), int)}
+    if not extracted_numbers:
+        return []
+
+    max_extracted = max(extracted_numbers)
+    # Build the expected set: 1..max, or use anchor numbers if available
+    expected_all = set(range(1, max_extracted + 1))
+    missing_from_sequence = sorted(expected_all - extracted_numbers)
+
+    if not missing_from_sequence:
+        print(f"[geminiPage] verify: sequence 1..{max_extracted} is complete — no gaps")
+        return []
+
+    print(f"[geminiPage] verify: {len(missing_from_sequence)} gap(s) in 1..{max_extracted}: "
+          f"{missing_from_sequence}")
+
+    # Ask Gemini to scan pages and confirm which missing numbers are real questions.
+    # Render pages that likely contain the missing questions — estimate page from
+    # the position in the sequence.
+    questions_per_page = max_extracted / max(1, len(page_indexes))
+    candidate_pages: set[int] = set()
+    for num in missing_from_sequence:
+        estimated_page_index = min(int(num / questions_per_page), len(page_indexes) - 1)
+        # Check the estimated page and its neighbors
+        for offset in range(-1, 2):
+            idx = estimated_page_index + offset
+            if 0 <= idx < len(page_indexes):
+                candidate_pages.add(page_indexes[idx])
+
+    if not candidate_pages:
+        return []
+
+    # Re-ask those pages with the missing numbers as focus
+    focus: dict[int, list[int]] = {}
+    for page_idx in sorted(candidate_pages):
+        focus[page_idx] = missing_from_sequence  # ask for all missing on each candidate page
+
+    print(f"[geminiPage] verify: re-asking {len(candidate_pages)} page(s) for missing questions "
+          f"{missing_from_sequence}")
+
+    recovered, _, _ = run_parallel(
+        pages, sorted(candidate_pages), work_dir, model, workers, batch_size, focus=focus
+    )
+
+    added = merge_recovered(questions, recovered)
+    if added:
+        print(f"[geminiPage] verify: recovered {added} question(s) from full-document scan")
+    else:
+        print(f"[geminiPage] verify: no new questions recovered — gaps are genuine misses or non-questions")
+    return recovered
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Parallel Gemini page extractor via OpenRouter")
     parser.add_argument("dir", help="extracted_data directory from pymupdf_extractor.py")
@@ -815,6 +886,13 @@ def main() -> int:
         pages, page_indexes, work_dir, args.model, workers, batch_size)
     completeness = reconcile(pages, page_indexes, questions, truncated_pages, failed_pages,
                              work_dir, args.model, workers, batch_size)
+
+    # Sequence-gap recovery: if the extracted numbers have holes (e.g. 1-34, 38-75
+    # with 35-37 missing), re-ask the likely pages one more time. This catches
+    # questions that both PyMuPDF anchors and per-page Gemini missed.
+    verify_question_numbers(pages, page_indexes, questions, work_dir, args.model, workers, batch_size)
+    # Re-sort after potential recoveries
+    questions.sort(key=lambda q: (q.get("_page_index", 0), q.get("question_number", 0)))
 
     # Reconciliation answers "did we get every question". This answers "is each
     # question what the page actually says" — the only check that compares the

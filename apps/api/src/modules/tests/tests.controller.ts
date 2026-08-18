@@ -1748,6 +1748,28 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
     }
 
+    // ── Trim hallucinated continuation questions ────────────────────────────
+    // When Gemini retries a page, it sometimes continues the numbering past
+    // the real paper end (e.g. Q76-84 on a 75-question paper). If we know
+    // the expected question count from the answer key, drop these extras —
+    // they add noise and confuse reviewers.
+    const answerKeyMax = Math.max(0, ...Object.keys(csvAnswers).map(Number).filter(n => !isNaN(n)));
+    if (answerKeyMax > 0) {
+      const before = extractionResult.questions.length;
+      extractionResult.questions = extractionResult.questions.filter((q: any) => {
+        const num = q.question_number;
+        // Keep questions without a number (shouldn't happen, but safe)
+        if (typeof num !== "number" || num <= 0) return true;
+        // Keep questions within the answer key range
+        return num <= answerKeyMax;
+      });
+      const trimmed = before - extractionResult.questions.length;
+      if (trimmed > 0) {
+        logStage("trimming", `Dropped ${trimmed} question(s) beyond the answer key's max Q${answerKeyMax} (hallucinated continuations).`);
+        sendProgress("extracting_answers", `Trimmed ${trimmed} extra question(s) beyond Q${answerKeyMax}.`);
+      }
+    }
+
     sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud...");
     const imgKeepAlive = setInterval(() => {
       sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud... please wait");
