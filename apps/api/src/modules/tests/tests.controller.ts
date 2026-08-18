@@ -1991,10 +1991,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         if (q?.subject) posToSubject.set(row.position, q.subject);
       }
       const inferSubjectForGap = (gapPos: number): string => {
-        // Walk outward from the gap position to find the nearest real question's subject.
+        // Prefer the FORWARD neighbor: a missed question at a section boundary
+        // (e.g. Q35 is the first Chemistry question) belongs to the section
+        // that follows, not the one that just ended. Check ahead first, then
+        // fall back to the question before.
         for (let offset = 1; offset <= maxPos; offset++) {
-          if (posToSubject.has(gapPos - offset)) return posToSubject.get(gapPos - offset)!;
           if (posToSubject.has(gapPos + offset)) return posToSubject.get(gapPos + offset)!;
+          if (posToSubject.has(gapPos - offset)) return posToSubject.get(gapPos - offset)!;
         }
         return "Unclassified";
       };
