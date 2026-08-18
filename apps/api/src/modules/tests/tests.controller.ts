@@ -877,11 +877,19 @@ async function publishGlobalPaper(
   // reporting a failure for work that succeeded would send a superadmin
   // publishing it again.
   const publishedQuestionIds = publishQuestions.map((q: any) => q.id).filter(Boolean);
-  if (publishedQuestionIds.length > 0) {
+  // PostgREST puts .in() filters in the URL, not the body, even for an update.
+  // A paper north of ~250 questions turned that into a query string long enough
+  // to be rejected outright — "questions not approved: Bad Request" on every
+  // paper big enough to trip it, silently, since this step was never surfaced
+  // as a publish failure. Chunked so no single request's filter can grow
+  // unbounded with the paper.
+  const QUESTION_UPDATE_CHUNK = 150;
+  for (let i = 0; i < publishedQuestionIds.length; i += QUESTION_UPDATE_CHUNK) {
+    const chunk = publishedQuestionIds.slice(i, i + QUESTION_UPDATE_CHUNK);
     const { error: approveError } = await supabaseDB
       .from("questions")
       .update({ review_status: "approved", reviewed_at: new Date().toISOString(), reviewed_by: userId })
-      .in("id", publishedQuestionIds)
+      .in("id", chunk)
       .neq("review_status", "approved");
     if (approveError) console.error("[publishGlobalPaper] questions not approved:", approveError.message);
   }
