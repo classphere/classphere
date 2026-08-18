@@ -225,7 +225,7 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
 
     const { data: paper } = await supabaseDB
       .from("papers")
-      .select("id, test_type, created_by, duration_min, is_active, is_published, delivery_mode, available_from, available_until")
+      .select("id, test_type, created_by, duration_min, is_active, is_published, delivery_mode, available_from, available_until, exam_id")
       .eq("id", paper_id)
       .maybeSingle();
 

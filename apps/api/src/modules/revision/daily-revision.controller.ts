@@ -47,6 +47,15 @@ export const getDailyRevision = async (req: Request, res: Response): Promise<voi
     const studentId = req.user!.id;
     const limit = Math.min(10, Math.max(1, Number(req.query.limit ?? DEFAULT_TOPIC_LIMIT)));
     const examCode = await resolveExamCode(studentId);
+    // The topic schedule (student_topic_reviews) is already scoped per
+    // exam_code, but fetchQuestions below filtered questions by chapter/topic
+    // name alone — chapter names overlap across exams (e.g. "Thermodynamics"
+    // in both JEE and NEET Physics), so a NEET student's revision set could
+    // pull in JEE-tagged questions for an identically-named chapter. Resolved
+    // once here rather than per topic, since it's the same exam for every
+    // topic in this request.
+    const { data: examRow } = await supabaseAdmin.from("exams").select("id").eq("code", examCode).maybeSingle();
+    const examId = examRow?.id ?? null;
 
     const due = await getDueTopics(studentId, examCode, limit);
     if (!due.length) {
@@ -70,9 +79,9 @@ export const getDailyRevision = async (req: Request, res: Response): Promise<voi
       due.map(async (review: TopicReviewRow) => {
         // Prefer an exact topic match, widening to the chapter when the topic
         // is exhausted — a student should never get an empty revision card.
-        let questions = await fetchQuestions(review, true);
+        let questions = await fetchQuestions(review, true, examId);
         if (questions.length < QUESTIONS_PER_TOPIC * 2) {
-          const extra = await fetchQuestions(review, false);
+          const extra = await fetchQuestions(review, false, examId);
           const have = new Set(questions.map((q: any) => q.id));
           questions = [...questions, ...extra.filter((q: any) => !have.has(q.id))];
         }
@@ -132,7 +141,7 @@ async function excludeSeen<T extends { id: string }>(studentId: string, candidat
   return candidates.filter((q) => !seen.has(q.id));
 }
 
-async function fetchQuestions(review: TopicReviewRow, exactTopic: boolean) {
+async function fetchQuestions(review: TopicReviewRow, exactTopic: boolean, examId: string | null) {
   let query = supabaseAdmin
     .from("questions")
     .select(QUESTION_FIELDS)
@@ -140,6 +149,14 @@ async function fetchQuestions(review: TopicReviewRow, exactTopic: boolean) {
     .eq("chapter", review.chapter)
     .limit(QUESTIONS_PER_TOPIC * 6);
   if (exactTopic && review.topic) query = query.eq("topic", review.topic);
+  // Chapter names are not unique across exams ("Thermodynamics" exists in
+  // both JEE and NEET Physics), so without this a NEET student's revision
+  // set could be filled with JEE-tagged questions for the same-named
+  // chapter. examId is only null if the resolved exam code itself isn't in
+  // the exams table, which should not happen for a real student — in that
+  // edge case this intentionally returns nothing rather than everything.
+  if (examId) query = query.eq("exam_id", examId);
+  else return [];
 
   const { data } = await query;
   return (data ?? []) as Array<{ id: string } & Record<string, unknown>>;

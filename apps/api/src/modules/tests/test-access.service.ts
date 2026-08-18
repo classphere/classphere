@@ -1,4 +1,5 @@
 import { supabaseDB } from "../../lib/supabase";
+import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 
 type PaperWindow = {
   id: string;
@@ -9,6 +10,7 @@ type PaperWindow = {
   delivery_mode?: "public_practice" | "assigned_scheduled";
   available_from?: string | null;
   available_until?: string | null;
+  exam_id?: string | null;
 };
 
 export type StudentTestAccess = {
@@ -46,6 +48,20 @@ export async function getStudentTestAccess(studentId: string, paper: PaperWindow
     }
     batchId = assignment.batch_id;
     assignmentStart = assignment.scheduled_at ?? null;
+  } else if (paper.exam_id) {
+    // assigned_scheduled papers are already exam-safe via the batch check
+    // above — a batch has one exam, so membership implies entitlement.
+    // public_practice papers (PYQs, chapter-wise practice) have no such
+    // guard: this was the actual hole behind "a NEET student could see JEE
+    // and SSC" — getPYQList/getPYQQuestions stopped a student from browsing
+    // to a wrong-exam paper, but this function is what actually gates
+    // starting an attempt (and is shared with the paper-read path in
+    // tests.controller.ts's getTest), so a directly-posted paper_id for any
+    // public_practice paper sailed through with no exam check at all.
+    const entitled = await getStudentExamCodes(studentId);
+    const { data: examRow } = await supabaseDB.from("exams").select("code").eq("id", paper.exam_id).maybeSingle();
+    const { denied } = resolveExamFilter(examRow?.code, entitled);
+    if (denied) return { allowed: false, status: 404, message: "Test is unavailable." };
   }
 
   const now = Date.now();
