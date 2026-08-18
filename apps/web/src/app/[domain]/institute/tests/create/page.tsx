@@ -509,7 +509,7 @@ export default function ScheduleTestPage() {
                   
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
-                    <div role="listbox" className="absolute top-[calc(100%+8px)] left-0 w-full bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.14)] z-[60] max-h-[240px] overflow-y-auto p-2">
+                    <div role="listbox" className="absolute top-[calc(100%+8px)] left-0 w-full bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[14px] shadow-dropdown z-[60] max-h-[240px] overflow-y-auto p-2">
                       <div
                         className="mb-1 rounded-[8px] px-3 py-2.5 text-xs font-semibold text-primary-02 cursor-pointer border-b border-s-stroke2/40 hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
                         onClick={(e) => {
@@ -575,7 +575,7 @@ export default function ScheduleTestPage() {
                   </button>
 
                   {isDateTimeOpen && (
-                    <div role="dialog" aria-label="Select test opening date and time" className="absolute top-[calc(100%+8px)] right-0 z-[60] w-full min-w-[320px] rounded-[16px] border border-s-stroke2/50 bg-b-surface2 p-3 shadow-[0_20px_48px_rgba(0,0,0,0.18)] dark:bg-b-surface2">
+                    <div role="dialog" aria-label="Select test opening date and time" className="absolute top-[calc(100%+8px)] right-0 z-[60] w-full min-w-[320px] rounded-[16px] border border-s-stroke2/50 bg-b-surface2 p-3 shadow-dropdown dark:bg-b-surface2">
                       <div className="flex items-center justify-between px-1 pb-3">
                         <button type="button" aria-label="Previous month" onClick={() => setCalendarMonth((month) => new Date(month.getFullYear(), month.getMonth() - 1, 1))} className="flex size-8 items-center justify-center rounded-[8px] text-t-secondary hover:bg-b-surface1 hover:text-t-primary">
                           <RiArrowLeftSLine size={18} />
@@ -1148,7 +1148,7 @@ export default function ScheduleTestPage() {
             </div>
           </div>
 
-          <div className="w-full max-w-[380px] p-4 rounded-xl bg-b-surface2/60 dark:bg-b-surface2/30 border border-s-stroke2/40 flex flex-col gap-2 items-center text-center shadow-lg animate-fade-in">
+          <div className="w-full max-w-[380px] p-4 rounded-xl bg-b-surface2/60 dark:bg-b-surface2/30 border border-s-stroke2/40 flex flex-col gap-2 items-center text-center shadow-depth animate-fade-in">
             <div className="text-sm font-semibold text-t-primary dark:text-t-primary">
               {statusMsg}
             </div>

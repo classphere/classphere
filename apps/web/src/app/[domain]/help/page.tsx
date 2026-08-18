@@ -117,7 +117,7 @@ function HelpContent() {
           <div className="flex flex-col gap-4">
             {filteredFaqs.length > 0 ? (
               filteredFaqs.map((faq, i) => (
-                <div key={i} className="card flex flex-col p-6 shadow-sm transition-all hover:shadow-md">
+                <div key={i} className="card flex flex-col p-6 shadow-widget transition-all hover:shadow-depth">
                   <div className="flex gap-4 items-start">
                     <div className="mt-0.5 text-t-primary dark:text-t-primary">
                       <RiQuestionLine size={20} />

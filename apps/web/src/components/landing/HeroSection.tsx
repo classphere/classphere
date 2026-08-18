@@ -50,7 +50,7 @@ export function HeroSection() {
           <div className="absolute -inset-6 rounded-[34px] bg-[#ff5936]/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-[28px] border border-white/80 bg-[#ddd8d4] p-3 shadow-[0_24px_70px_rgba(53,38,27,0.16)]">
             <Image src="/landing-student-test.png" alt="Student preparing for an online practice test" width={1024} height={1536} className="aspect-[4/5] w-full rounded-[20px] object-cover" priority />
-            <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur">
+            <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/70 bg-white/90 p-4 shadow-depth backdrop-blur">
               <p className="text-sm font-bold text-[#202020]">Practice with intent</p>
               <p className="mt-1 text-sm leading-5 text-[#666]">Timed tests, targeted revision, and a clearer next step after every paper.</p>
             </div>

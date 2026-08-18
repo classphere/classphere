@@ -58,7 +58,7 @@ function SettingsContent() {
           on ? 'bg-shade-02 dark:bg-t-primary' : 'bg-s-stroke2 dark:bg-s-stroke2/50'
         }`}
       >
-        <div className={`w-[18px] h-[18px] rounded-full bg-white shadow-sm transition-transform duration-200 ease-out ${on ? 'translate-x-[22px]' : 'translate-x-0'}`} />
+        <div className={`w-[18px] h-[18px] rounded-full bg-white shadow-widget transition-transform duration-200 ease-out ${on ? 'translate-x-[22px]' : 'translate-x-0'}`} />
       </button>
     );
   };
@@ -77,7 +77,7 @@ function SettingsContent() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-3 px-4 py-3.5 rounded-[10px] text-[14px] font-semibold transition-all duration-200 whitespace-nowrap ${
                   activeTab === tab.id 
-                    ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 shadow-md" 
+                    ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 shadow-widget"
                     : "text-t-secondary hover:bg-b-surface1 dark:hover:bg-b-surface1/60 hover:text-t-primary dark:hover:text-t-primary"
                 }`}
               >
@@ -99,10 +99,10 @@ function SettingsContent() {
                 <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-3">General Information</h2>
                 
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-24 h-24 rounded-full bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center text-t-primary dark:text-t-primary text-[32px] font-bold uppercase shadow-sm">
+                  <div className="w-24 h-24 rounded-full bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center text-t-primary dark:text-t-primary text-[32px] font-bold uppercase shadow-widget">
                     {role.charAt(0)}
                   </div>
-                  <button className="flex items-center gap-2 h-10 px-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-[13px] font-bold text-t-primary dark:text-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
+                  <button className="flex items-center gap-2 h-10 px-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-[13px] font-bold text-t-primary dark:text-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 transition-colors shadow-widget">
                     <RiCheckFill size={16} /> Update Avatar
                   </button>
                 </div>
@@ -185,7 +185,7 @@ function SettingsContent() {
                         <RiComputerLine size={16} /> MacBook Pro (Current) • IP: 192.168.1.1
                       </p>
                     </div>
-                    <button className="h-10 px-5 rounded-[10px] bg-red-50 dark:bg-[rgba(239,68,68,0.1)] border border-s-stroke2/40 text-[13px] font-bold text-primary-03 hover:bg-red-100 transition-colors shadow-sm shrink-0">
+                    <button className="h-10 px-5 rounded-[10px] bg-red-50 dark:bg-[rgba(239,68,68,0.1)] border border-s-stroke2/40 text-[13px] font-bold text-primary-03 hover:bg-red-100 transition-colors shadow-widget shrink-0">
                       Revoke All
                     </button>
                   </div>
@@ -281,7 +281,7 @@ function SettingsContent() {
                   <div className="flex flex-col gap-2">
                     <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Brand Primary Color (Hex)</label>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-[10px] bg-primary-01 shadow-sm border border-s-stroke2/20"></div>
+                      <div className="w-12 h-12 rounded-[10px] bg-primary-01 shadow-widget border border-s-stroke2/20"></div>
                       <input type="text" className="w-40 h-12 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[15px] font-bold text-t-primary dark:text-t-primary outline-none uppercase tracking-widest" defaultValue="#0A84FF" />
                     </div>
                   </div>
@@ -295,7 +295,7 @@ function SettingsContent() {
                 Discard Changes
               </button>
               <button 
-                className={`h-12 px-8 rounded-[10px] text-t-light dark:text-b-surface1 text-[14px] font-bold transition-all shadow-sm active:scale-[0.98] cursor-pointer flex items-center justify-center min-w-[160px] ${
+                className={`h-12 px-8 rounded-[10px] text-t-light dark:text-b-surface1 text-[14px] font-bold transition-all shadow-widget active:scale-[0.98] cursor-pointer flex items-center justify-center min-w-[160px] ${
                   saved ? 'bg-primary-02' : 'bg-shade-02 dark:bg-t-primary hover:bg-shade-04'
                 }`}
                 onClick={handleSave} 

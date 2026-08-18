@@ -149,11 +149,11 @@ export function QuestionContent({
                         ? "border-primary-01 bg-primary-01/5 shadow-widget"
                         : disabled
                           ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
-                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
+                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-widget"
                   }`}
                   onClick={() => !isEmpty && selectAnswer(q.id, opt.id)}
                 >
-                  <div className={`flex size-9 shrink-0 items-center justify-center ${multi ? "rounded-[8px]" : "rounded-full"} text-sm font-bold shadow-sm transition-colors ${
+                  <div className={`flex size-9 shrink-0 items-center justify-center ${multi ? "rounded-[8px]" : "rounded-full"} text-sm font-bold shadow-widget transition-colors ${
                     selected
                       ? "bg-primary-01 text-t-light"
                       : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"

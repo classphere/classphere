@@ -110,7 +110,7 @@ export default function BillingPage() {
                   </p>
                 )}
                 <button 
-                  className="btn bg-white text-[#4F46E5] hover:bg-white/90 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer shadow-md"
+                  className="btn bg-white text-[#4F46E5] hover:bg-white/90 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer shadow-widget"
                   onClick={() => setShowUpgradeModal(true)}
                 >
                   Upgrade Plan
@@ -247,7 +247,7 @@ export default function BillingPage() {
         {/* Upgrade Modal */}
         {showUpgradeModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-            <div className="bg-b-surface1 dark:bg-[#1a1a1a] rounded-[24px] max-w-md w-full p-8 relative border border-s-stroke2/50 shadow-2xl">
+            <div className="bg-b-surface1 dark:bg-[#1a1a1a] rounded-[24px] max-w-md w-full p-8 relative border border-s-stroke2/50 shadow-dropdown">
               <button 
                 className="absolute top-4 right-4 p-2 text-t-secondary hover:text-t-primary rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer"
                 onClick={() => setShowUpgradeModal(false)}

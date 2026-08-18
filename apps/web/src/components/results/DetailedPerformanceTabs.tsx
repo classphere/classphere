@@ -28,7 +28,7 @@ export function DetailedPerformanceTabs({ analysis: a, totalQuestions, strategyS
           heading left it ~150px of width, wrapping "Detailed Performance
           Report" onto three lines even on a desktop. */}
       <div className="relative z-10 -mt-2 mb-4">
-        <div className="flex items-center gap-1 p-1 rounded-full border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 w-full lg:w-fit max-w-full overflow-x-auto scrollbar-hide shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+        <div className="flex items-center gap-1 p-1 rounded-full border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 w-full lg:w-fit max-w-full overflow-x-auto scrollbar-hide shadow-depth-toggle">
           {[
             { id: "overview", label: "Overview" },
             { id: "analysis", label: "Analysis" },

@@ -193,7 +193,7 @@ export default function TeacherDashboardPage() {
                       key={idx} 
                       className={`group/item relative flex flex-row items-center p-2 sm:p-3 gap-2 sm:gap-4 w-full h-[64px] sm:h-[76px] rounded-[16px] transition-all overflow-hidden ${
                         flag.highlighted 
-                          ? "bg-b-surface1 dark:bg-b-surface1 shadow-[inset_0_0_0_3px_#FFFFFF] dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
+                          ? "bg-b-surface1 dark:bg-b-surface1 shadow-hover-light dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20"
                           : "bg-transparent border border-transparent hover:bg-b-surface1/30"
                       }`}
                     >

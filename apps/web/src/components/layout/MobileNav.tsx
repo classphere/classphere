@@ -231,7 +231,7 @@ export default function MobileNav() {
             alt={displayName}
             width={36}
             height={36}
-            className="size-9 rounded-[8px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-sm"
+            className="size-9 rounded-[8px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-widget"
           />
           <span className="font-sans text-[18px] font-bold text-t-primary tracking-tight">
             {displayName}
@@ -244,7 +244,7 @@ export default function MobileNav() {
           aria-expanded={isOpen}
           aria-controls="mobile-navigation-drawer"
           onClick={() => setIsOpen(true)}
-          className="flex items-center justify-center size-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 text-t-primary shadow-[0_2px_4px_-1px_rgba(0,0,0,0.05)] active:scale-95 transition-all"
+          className="flex items-center justify-center size-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 text-t-primary shadow-widget active:scale-95 transition-all"
         >
           <RiMenu3Line size={20} />
         </button>
@@ -294,7 +294,7 @@ export default function MobileNav() {
                   href={item.href}
                   className={`group relative flex h-12 items-center gap-3.5 rounded-[12px] px-4 text-[14px] font-sans font-semibold transition-all overflow-hidden ${
                     item.active
-                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-md border border-[#161616]"
+                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-depth border border-[#161616]"
                       : "text-t-secondary active:bg-[rgba(0,0,0,0.04)] dark:active:bg-white/5"
                   }`}
                 >
@@ -320,7 +320,7 @@ export default function MobileNav() {
                     href={item.href}
                     className={`group relative flex h-12 items-center gap-3.5 rounded-[12px] px-4 text-[14px] font-sans font-semibold transition-all overflow-hidden ${
                       isActive
-                        ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-md border border-[#161616]"
+                        ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-depth border border-[#161616]"
                         : "text-t-secondary active:bg-[rgba(0,0,0,0.04)] dark:active:bg-white/5"
                     }`}
                   >
@@ -338,11 +338,11 @@ export default function MobileNav() {
         {/* Drawer Footer */}
         <div className="mt-auto flex flex-col gap-4 w-full px-4 pt-4 pb-6 border-t border-s-stroke2/20 bg-b-surface1 shrink-0">
           <div className="flex flex-row items-center gap-3 w-full">
-            <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[12px] p-1 h-12 flex-1 relative shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]">
+            <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[12px] p-1 h-12 flex-1 relative shadow-depth-toggle">
               <button
                 onClick={() => toggleTheme("light")}
                 className={`flex-1 flex items-center justify-center h-10 rounded-[10px] transition-all text-t-secondary ${
-                  theme === "light" ? "bg-b-surface1 text-t-primary font-bold shadow-[0_1px_3px_rgba(0,0,0,0.1)] border border-s-stroke2/40" : ""
+                  theme === "light" ? "bg-b-surface1 text-t-primary font-bold shadow-widget border border-s-stroke2/40" : ""
                 }`}
               >
                 <RiSunLine size={18} />
@@ -350,7 +350,7 @@ export default function MobileNav() {
               <button
                 onClick={() => toggleTheme("dark")}
                 className={`flex-1 flex items-center justify-center h-10 rounded-[10px] transition-all text-t-secondary ${
-                  theme === "dark" ? "bg-b-surface1 text-t-primary font-bold shadow-[0_1px_3px_rgba(0,0,0,0.1)] border border-s-stroke2/40" : ""
+                  theme === "dark" ? "bg-b-surface1 text-t-primary font-bold shadow-widget border border-s-stroke2/40" : ""
                 }`}
               >
                 <RiMoonLine size={18} />
@@ -365,7 +365,7 @@ export default function MobileNav() {
               href="/profile" 
               className="flex items-center gap-3 p-2 rounded-[12px] bg-transparent active:bg-b-surface2 transition-all flex-1 min-w-0 mr-2"
             >
-              <div className="size-10 rounded-full overflow-hidden shrink-0 bg-b-surface2 border border-s-stroke2 shadow-sm">
+              <div className="size-10 rounded-full overflow-hidden shrink-0 bg-b-surface2 border border-s-stroke2 shadow-widget">
                 {mounted && (
                   <Image
                     src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}

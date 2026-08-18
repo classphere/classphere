@@ -116,7 +116,7 @@ export default function ConfigurationPage() {
       }`}
     >
       <div 
-        className={`w-[18px] h-[18px] rounded-full bg-white shadow-sm transition-transform duration-200 ease-out ${
+        className={`w-[18px] h-[18px] rounded-full bg-white shadow-widget transition-transform duration-200 ease-out ${
           enabled ? 'translate-x-[22px]' : 'translate-x-0'
         }`} 
       />

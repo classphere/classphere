@@ -11,7 +11,7 @@ export function DualDeviceModal({ show, onExit }: DualDeviceModalProps) {
 
   return (
     <div className="fixed inset-0 z-[250] flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-md animate-in fade-in duration-200 select-none">
-      <div className="card w-full max-w-md p-6 text-center md:p-8 bg-b-surface1 border-red-500/50 shadow-2xl">
+      <div className="card w-full max-w-md p-6 text-center md:p-8 bg-b-surface1 border-red-500/50 shadow-dropdown">
         <div className="mb-3 flex justify-center">
           <div className="flex size-20 items-center justify-center rounded-full bg-red-500/10 text-red-500 border border-red-500/30 animate-bounce">
             <RiSmartphoneLine size={44} />
@@ -33,7 +33,7 @@ export function DualDeviceModal({ show, onExit }: DualDeviceModalProps) {
 
         <button
           onClick={onExit}
-          className="w-full py-3.5 px-6 rounded-[10px] bg-shade-02 text-white font-bold text-sm shadow-md hover:bg-black transition-all active:scale-98 cursor-pointer"
+          className="w-full py-3.5 px-6 rounded-[10px] bg-shade-02 text-white font-bold text-sm shadow-depth hover:bg-black transition-all active:scale-98 cursor-pointer"
         >
           Return to Dashboard
         </button>

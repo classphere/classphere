@@ -433,7 +433,7 @@ export default function InstituteFacultyPage() {
               Cancel
             </button>
             <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
+              className="btn btn-primary px-6 shadow-depth flex items-center gap-2"
               onClick={handleCreate}
               disabled={!form.name || !form.email || !form.position || !form.subject || !form.batch_id || submitting}
             >

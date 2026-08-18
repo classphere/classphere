@@ -618,7 +618,7 @@ export default function StudentsPage() {
               Cancel
             </button>
             <button
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
+              className="btn btn-primary px-6 shadow-depth flex items-center gap-2"
               onClick={handleImport}
               disabled={!selectedFile || !importBatchId || importing}
             >
@@ -745,7 +745,7 @@ export default function StudentsPage() {
             </button>
             <button
               type="submit"
-              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
+              className="btn btn-primary px-6 shadow-depth flex items-center gap-2"
               disabled={adding}
             >
               {adding && <RiLoaderLine size={16} className="animate-spin" />}

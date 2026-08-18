@@ -78,7 +78,7 @@ function LockedSelect({
         {open && !disabled && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setOpen(false)} />
-            <div className="absolute left-0 top-full z-20 mt-1 w-full overflow-hidden rounded-[10px] border border-s-stroke2 bg-b-surface1 shadow-lg">
+            <div className="absolute left-0 top-full z-20 mt-1 w-full overflow-hidden rounded-[10px] border border-s-stroke2 bg-b-surface1 shadow-dropdown">
               {options.map((opt) => (
                 <button
                   key={opt.value}

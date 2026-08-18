@@ -16,7 +16,7 @@ export default function ErrorBoundary({
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
-      <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-10 max-w-md w-full shadow-lg">
+      <div className="bg-b-surface2 border border-s-stroke2 rounded-[24px] p-10 max-w-md w-full shadow-depth">
         <div className="mx-auto w-16 h-16 bg-primary-03/10 text-primary-03 rounded-full flex items-center justify-center mb-3">
           <RiAlertFill size={32} />
         </div>

@@ -50,7 +50,7 @@ export function BatchMatrixModal({ show, paperId, token, onClose }: BatchMatrixM
 
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-md animate-in fade-in duration-200 select-none">
-      <div className="card w-full max-w-4xl p-6 md:p-8 bg-b-surface1 border-s-stroke2 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div className="card w-full max-w-4xl p-6 md:p-8 bg-b-surface1 border-s-stroke2 relative max-h-[90vh] overflow-y-auto shadow-dropdown">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 flex size-9 items-center justify-center rounded-[10px] border border-s-stroke2 text-t-secondary hover:text-t-primary bg-b-surface2"

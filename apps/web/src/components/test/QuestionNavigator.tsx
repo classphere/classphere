@@ -52,14 +52,14 @@ export function QuestionNavigator({
         </div>
         {/* 2. Not Answered */}
         <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-          <div className={`${paletteCellSize} flex items-center justify-center bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0`}>
+          <div className={`${paletteCellSize} flex items-center justify-center bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-widget shrink-0`}>
             {notAnsweredCount}
           </div>
           <span className="leading-tight">Not Answered</span>
         </div>
         {/* 3. Answered */}
         <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-          <div className={`${paletteCellSize} flex items-center justify-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0`}>
+          <div className={`${paletteCellSize} flex items-center justify-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-widget shrink-0`}>
             {answeredCount}
           </div>
           <span className="leading-tight">Answered</span>
@@ -105,7 +105,7 @@ export function QuestionNavigator({
                   let content: React.ReactNode = sq.question_number;
 
                   if (s === "answered") {
-                    btnClass += "bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
+                    btnClass += "bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-widget";
                   } else if (s === "answered_and_marked_for_review" || (s === "review" && hasAns)) {
                     btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative";
                     content = (
@@ -121,7 +121,7 @@ export function QuestionNavigator({
                   } else if (s === "marked_for_review" || (s === "review" && !hasAns)) {
                     btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)]";
                   } else if (s === "not_answered" || (visited && s !== "not_visited")) {
-                    btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
+                    btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-widget";
                   } else {
                     btnClass += "rounded-[5px] border border-s-stroke2 bg-b-pop text-t-primary";
                   }

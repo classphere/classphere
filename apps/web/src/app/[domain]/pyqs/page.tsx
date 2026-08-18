@@ -273,7 +273,7 @@ function FilterGroup({
             onClick={() => onChange(opt)}
             className={`px-3.5 h-[34px] rounded-[10px] text-[11px] font-sans font-bold transition-all cursor-pointer uppercase tracking-wider ${
               active === opt
-                ? "bg-[#161616] text-white shadow-[0px_2px_4px_rgba(0,0,0,0.12)]"
+                ? "bg-[#161616] text-white shadow-widget"
                 : "bg-transparent text-t-secondary border border-transparent hover:border-[#ebebeb] dark:hover:border-[#282828] hover:text-t-primary"
             }`}
           >

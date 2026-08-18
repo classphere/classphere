@@ -216,7 +216,7 @@ export function CreateBatchModal({
             Cancel
           </button>
           <button
-            className="btn btn-primary px-6 shadow-md flex items-center gap-2"
+            className="btn btn-primary px-6 shadow-depth flex items-center gap-2"
             onClick={submit}
             disabled={!form.name || !form.exam || submitting}
           >

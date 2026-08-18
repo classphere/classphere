@@ -103,7 +103,7 @@ export default function GlobalAnalyticsPage() {
               {topInstitutes.map((inst, i) => (
                 <div key={i} className="group/item relative flex flex-row items-center w-full p-3 sm:p-4 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[80px]">
                   <div className="flex-1 flex flex-row items-center gap-3 sm:gap-4 min-w-0">
-                    <div className="size-8 sm:w-10 sm:h-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-sans font-bold text-xs sm:text-sm text-t-primary shrink-0 shadow-sm">
+                    <div className="size-8 sm:w-10 sm:h-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-sans font-bold text-xs sm:text-sm text-t-primary shrink-0 shadow-widget">
                       {i + 1}
                     </div>
                     <span className="font-sans font-semibold text-[13px] sm:text-[15px] text-t-primary truncate">{inst.name}</span>

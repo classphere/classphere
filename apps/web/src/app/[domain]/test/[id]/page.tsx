@@ -585,7 +585,7 @@ export default function TestPage() {
             aria-expanded={isNavigatorOpen}
             aria-controls="test-question-palette"
             onClick={() => setIsNavigatorOpen(true)}
-            className="flex h-12 w-full items-center justify-between rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-sm active:scale-[0.99]"
+            className="flex h-12 w-full items-center justify-between rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-widget active:scale-[0.99]"
           >
             <span className="flex items-center gap-2"><RiLayoutGridLine size={18} /> Question palette</span>
             <span className="text-xs text-t-secondary">{answered}/{questions.length} answered</span>
@@ -636,7 +636,7 @@ export default function TestPage() {
             role="dialog"
             aria-modal="true"
             aria-label="Question palette"
-            className="absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col bg-b-surface1 shadow-2xl"
+            className="absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col bg-b-surface1 shadow-dropdown"
           >
             <div className="flex h-16 shrink-0 items-center justify-between border-b border-s-stroke2 px-4">
               <div>

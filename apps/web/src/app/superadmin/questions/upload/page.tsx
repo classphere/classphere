@@ -258,7 +258,7 @@ export default function UploadQuestionsPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-2.5 rounded-[10px] text-[14px] font-sans font-semibold transition-all cursor-pointer capitalize flex items-center gap-2 ${activeTab === tab.id
-                  ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/30"
+                  ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-widget border border-s-stroke2/30"
                   : "bg-transparent text-t-secondary hover:text-t-primary dark:hover:text-t-primary"
                 }`}
             >
@@ -301,7 +301,7 @@ export default function UploadQuestionsPage() {
                         key={e.code}
                         onClick={() => setField("exam", e.code)}
                         className={`h-11 rounded-[10px] border text-[14px] font-semibold transition-all cursor-pointer ${form.exam === e.code
-                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-widget"
                             : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                           }`}
                       >
@@ -320,7 +320,7 @@ export default function UploadQuestionsPage() {
                         key={t.code}
                         onClick={() => setField("test_type", t.code)}
                         className={`h-11 rounded-[10px] border text-[14px] font-semibold transition-all cursor-pointer ${form.test_type === t.code
-                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-widget"
                             : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                           }`}
                       >
@@ -354,7 +354,7 @@ export default function UploadQuestionsPage() {
                           key={s}
                           onClick={() => setField("subject", s)}
                           className={`px-5 h-10 rounded-[10px] border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${form.subject === s
-                              ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                              ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-widget"
                               : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                             }`}
                         >
@@ -484,7 +484,7 @@ export default function UploadQuestionsPage() {
                     </div>
                     <button
                       onClick={e => { e.stopPropagation(); setParsedQuestions(null); setFileName(null); }}
-                      className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 text-[13px] font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-sm"
+                      className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 text-[13px] font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-widget"
                     >
                       <RiCloseLine size={16} /> Remove file
                     </button>
@@ -501,7 +501,7 @@ export default function UploadQuestionsPage() {
                   </>
                 ) : (
                   <>
-                    <div className="w-16 h-16 rounded-[10px] bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-sm">
+                    <div className="w-16 h-16 rounded-[10px] bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-widget">
                       <RiUploadCloud2Line size={32} className="text-t-secondary" />
                     </div>
                     <div className="text-center">
@@ -542,7 +542,7 @@ export default function UploadQuestionsPage() {
 
             {/* ── Section 3: Result / Upload Button ───────────────────────── */}
             {resultMsg && (
-              <div className={`p-4 rounded-[10px] border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${status === "success"
+              <div className={`p-4 rounded-[10px] border text-[14px] font-semibold flex items-center gap-2 shadow-widget ${status === "success"
                   ? "bg-[rgba(34,197,94,0.05)] border-s-stroke2/40 text-[#22C55E]"
                   : "bg-[rgba(239,68,68,0.05)] border-s-stroke2/40 text-primary-03"
                 }`}>
@@ -561,7 +561,7 @@ export default function UploadQuestionsPage() {
               <button
                 onClick={handleUpload}
                 disabled={!canUpload || status === "loading"}
-                className={`flex items-center gap-2 h-12 px-8 rounded-[10px] text-[14px] font-semibold transition-all shadow-sm ${canUpload && status !== "loading"
+                className={`flex items-center gap-2 h-12 px-8 rounded-[10px] text-[14px] font-semibold transition-all shadow-widget ${canUpload && status !== "loading"
                     ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer active:scale-[0.98]"
                     : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
                   }`}

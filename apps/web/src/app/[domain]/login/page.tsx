@@ -132,7 +132,7 @@ function LoginForm() {
 
           {/* Institute mark, over the gradient so it stays legible on any cover */}
           <div className="absolute left-6 top-6 z-10 flex items-center gap-2.5">
-            <span className="flex size-11 items-center justify-center rounded-[10px] border border-white/15 bg-white/95 p-1.5 shadow-lg backdrop-blur-sm">
+            <span className="flex size-11 items-center justify-center rounded-[10px] border border-white/15 bg-white/95 p-1.5 shadow-widget backdrop-blur-sm">
               {instituteLogo(44, "max-h-full w-auto object-contain")}
             </span>
             <span className="max-w-[180px] truncate font-urbanist text-[15px] font-bold text-white/95 drop-shadow">

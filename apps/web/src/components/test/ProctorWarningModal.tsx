@@ -22,7 +22,7 @@ export function ProctorWarningModal({
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md animate-in fade-in duration-150 select-none">
-      <div className="card w-full max-w-md p-6 text-center md:p-8 animate-in zoom-in-95 duration-150 bg-b-surface1 border-red-500/40 shadow-2xl">
+      <div className="card w-full max-w-md p-6 text-center md:p-8 animate-in zoom-in-95 duration-150 bg-b-surface1 border-red-500/40 shadow-dropdown">
         <div className="mb-3 flex justify-center">
           <div className="flex size-20 items-center justify-center rounded-full bg-red-500/10 text-red-500 border border-red-500/20 animate-pulse">
             {isFinalWarning ? (
@@ -68,7 +68,7 @@ export function ProctorWarningModal({
         {!isFinalWarning && (
           <button
             onClick={onResume}
-            className="w-full py-3.5 px-6 rounded-[10px] bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-md transition-all active:scale-98 cursor-pointer"
+            className="w-full py-3.5 px-6 rounded-[10px] bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-depth transition-all active:scale-98 cursor-pointer"
           >
             I Understand — Resume Test
           </button>
