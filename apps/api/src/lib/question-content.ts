@@ -250,12 +250,30 @@ function tableMarkdown(block: Extract<QuestionContentBlock, { type: "table" }>):
 
 export function projectBlocksToLegacyMarkdown(blocks: QuestionContentBlock[]): string {
   return normalizeContentBlocks(blocks).map((block) => {
-    if (block.type === "markdown" || block.type === "text") return block.content;
-    if (block.type === "math") return block.display === false ? `$${block.latex}$` : `$$${block.latex}$$`;
-    if (block.type === "image" || block.type === "diagram" || block.type === "source_crop") {
-      return block.url ? `![${block.alt || "image"}](${block.url})` : "";
+    // A switch on the shared discriminant narrows each case reliably; the
+    // equivalent chain of early-return `if`s left TypeScript unable to prove
+    // only "table" remained by the last branch — a known rough edge when a
+    // union's members are intersection types (ContentBlockBase & {...}, as
+    // these are) rather than plain interfaces.
+    switch (block.type) {
+      case "markdown":
+      case "text":
+        return block.content;
+      case "math":
+        return block.display === false ? `$${block.latex}$` : `$$${block.latex}$$`;
+      case "image":
+      case "diagram":
+      case "source_crop":
+        return block.url ? `![${block.alt || "image"}](${block.url})` : "";
+      case "table":
+        return tableMarkdown(block);
+      default: {
+        // Exhaustiveness guard: a QuestionContentBlock variant added above
+        // without a case here fails to compile instead of silently dropping.
+        const exhaustive: never = block;
+        throw new Error(`Unhandled content block type: ${JSON.stringify(exhaustive)}`);
+      }
     }
-    return tableMarkdown(block);
   }).filter(Boolean).join("\n\n");
 }
 
