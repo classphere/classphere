@@ -1669,10 +1669,17 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       const targetPdfPath = path.join(tempWorkingDir, "answer_key_document.pdf");
       fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
 
-      // Pass the extracted question count as an upper bound. The answer/solution
-      // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
-      // bound the regex can misread that as a fictitious Q300→4 entry.
-      const maxQuestionNumber = extractionResult.questions.length;
+      // The highest question number from the extraction, not the array length.
+      // When the extractor misses questions, the array is shorter than the
+      // paper's real numbering, and using .length wrongly inflates the coverage
+      // denominator — a valid key covering 75/75 real questions would show as
+      // 75/73 = 103% if 2 were missed, or worse, the filter comparison against
+      // maxQuestionNumber would discard answers for question numbers above the
+      // array length.
+      const maxQuestionNumber = Math.max(
+        extractionResult.questions.length,
+        ...extractionResult.questions.map((q: any) => Number(q.question_number) || 0),
+      );
       try {
         const keyKeepAlive = setInterval(() => {
           sendProgress("extracting_answers", "AI is reading correct answers and extracting worked solutions...");
@@ -1780,7 +1787,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const isNumerical = !isMcq && (!finalOptions || finalOptions.length < 2);
         const type = isNumerical ? "integer" : (q.question_type || "mcq_single");
 
-        const csvAns = csvAnswers[idx + 1];
+        // Look up by the real question number from the paper, not the array
+        // index. The answer key PDF is keyed by printed question number ("Q1",
+        // "Q2", ...), so when the extractor misses questions and the array is
+        // shorter than the paper, idx+1 and question_number diverge and answers
+        // silently apply to the wrong questions.
+        const realQNum: number = q.question_number ?? (idx + 1);
+        const csvAns = csvAnswers[realQNum];
         const extractedAnswers = Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [];
         const rawAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
 
@@ -1811,7 +1824,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         // Use the solution from the answer-key PDF if available; otherwise keep
         // the LLM-extracted explanation. The answer-key PDF's solution is
         // authoritative (it's the institute's own worked solution).
-        const solutionFromKey = pdfSolutions[idx + 1];
+        const solutionFromKey = pdfSolutions[realQNum];
         const finalExplanation = solutionFromKey || processedExplanation || "";
 
         const normalizedMedia = normalizeQuestionMedia({
