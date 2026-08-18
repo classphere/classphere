@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { supabaseDB } from "../../lib/supabase";
+import { getStudentExamCodes, resolveExamFilter } from "../../lib/student-exam";
 
 // ─── Controllers ──────────────────────────────────────────────────────────────
 
@@ -29,12 +30,30 @@ export const getPYQList = async (req: Request, res: Response): Promise<void> => 
       // clock; the default lists past-year questions filed by chapter, which
       // are practice. They were one type until now and behave nothing alike.
       .eq("test_type", String(req.query.kind ?? "").trim() === "paper" ? "pyq-paper" : "pyq")
-      .eq("is_active", true);
+      .eq("is_active", true)
+      // A retired exam (SSC, deactivated rather than deleted since old
+      // papers may still reference it) must not resurface here for anyone,
+      // student or staff — not just be excluded from a student's own
+      // entitlement filter above.
+      .eq("exams.is_active", true);
     query = query.eq("is_published", true).eq("delivery_mode", "public_practice");
 
-    if (exam) {
-      query = query.eq("exams.code", String(exam).trim());
+    // Exam filter, constrained to what this student's batches entitle them
+    // to. The frontend never sent `exam` at all — it fetched every exam's
+    // papers in one call and filtered client-side with an "All" option — so
+    // a NEET student browsing without picking a filter saw JEE and SSC
+    // papers mixed into their own. Same pattern questions.controller.ts
+    // already applies to /api/v1/questions; this endpoint just never got it.
+    const entitled = req.user?.role === "student" ? await getStudentExamCodes(req.user.id) : [];
+    const { codes: examCodes, denied } = resolveExamFilter(exam ? String(exam).trim() : undefined, entitled);
+    if (denied) {
+      res.json({ success: true, data: { papers: [], total: 0 } });
+      return;
     }
+    if (examCodes && examCodes.length > 0) {
+      query = query.in("exams.code", examCodes);
+    }
+
     if (year) {
       const yearNum = parseInt(String(year), 10);
       if (!isNaN(yearNum)) {
@@ -74,6 +93,20 @@ export const getPYQQuestions = async (req: Request, res: Response): Promise<void
     if (paperError || !paperData) {
       res.status(404).json({ success: false, message: `PYQ paper '${id}' not found.` });
       return;
+    }
+
+    // The list endpoint already hides a paper outside the student's
+    // entitled exams, but that's client-side navigation, not access
+    // control — a bookmarked or guessed id must be refused here too, or
+    // the list-level fix is cosmetic. 404 rather than 403: this endpoint
+    // otherwise never reveals whether an id exists at all.
+    if (req.user?.role === "student") {
+      const entitled = await getStudentExamCodes(req.user.id);
+      const { denied } = resolveExamFilter((paperData as any).exams?.code, entitled);
+      if (denied) {
+        res.status(404).json({ success: false, message: `PYQ paper '${id}' not found.` });
+        return;
+      }
     }
 
     // 2. Fetch questions via join table
