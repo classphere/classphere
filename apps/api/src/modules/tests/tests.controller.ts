@@ -1988,7 +1988,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           id:             gapId,
           exam_id:        examId,
           test_type:      "mock-test",
-          subject:        null,
+          subject:        "Unclassified",
           chapter:        "General",
           topic:          null,
           difficulty:     "medium",
