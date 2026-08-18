@@ -133,14 +133,16 @@ export function questionIssues(question: Record<string, any>): QuestionIssue[] {
   const isGap = Boolean(question.is_gap) || flags.includes("gap_placeholder");
 
   if (!text) {
-    // Gap placeholders warn but don't block publishing — the paper is
-    // otherwise complete and the gap can be filled later.
+    // Still a blocking error, gap placeholder or not — a blank question_text
+    // must never reach a student. isGap only changes the message so a
+    // reviewer knows this slot came from a detected-but-unextracted PDF
+    // question (open the source page and type it in) rather than an
+    // ordinary empty question.
     add("empty_question", isGap
       ? "Empty slot. The extractor found this question number in the PDF but returned no question for it — check the source page, then either type it in or remove it."
-      : "Question text is empty.",
-      isGap ? "warning" : "error");
+      : "Question text is empty.");
   }
-  if (answers.length === 0) add("no_answer", "No correct answer set.", isGap ? "warning" : "error");
+  if (answers.length === 0) add("no_answer", "No correct answer set.");
   if (isChoiceQuestion(question.question_type) && options.length < 2 && text) {
     add("too_few_options", `Only ${options.length} option(s). Check whether the rest continue on the next page of the PDF.`);
   }
