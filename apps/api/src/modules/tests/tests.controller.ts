@@ -1711,16 +1711,11 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) had no readable answers — ` +
             `it may be the wrong document, a scanned image with no text layer, or a layout the parser doesn't recognize.`;
           sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
-        } else if (coverage < MIN_KEY_COVERAGE) {
-          const percent = Math.round(coverage * 100);
-          answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) only matched ${numbers.length}/${maxQuestionNumber} ` +
-            `questions (${percent}%) — discarded as too sparse to trust rather than applied to part of the paper.`;
-          console.warn(
-            `[uploadTestController] Answer key discarded: covered ${numbers.length}/${maxQuestionNumber} ` +
-            `(${percent}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key reaches.`,
-          );
-          sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
         } else {
+          // The user deliberately uploaded this file — apply whatever it
+          // matched rather than discarding it entirely. A partial key is
+          // better than no key: the questions it does cover get their
+          // correct answer, and the rest stay blank for manual review.
           for (const qNumStr of numbers) {
             const ans = parsed.answers[qNumStr];
             if (Array.isArray(ans)) csvAnswers[parseInt(qNumStr, 10)] = ans;
@@ -1730,6 +1725,15 @@ export const uploadTestController = async (req: Request, res: Response): Promise
             if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && typeof sol === "string" && sol.trim()) {
               pdfSolutions[qNum] = sol;
             }
+          }
+          const percent = Math.round(coverage * 100);
+          if (coverage < MIN_KEY_COVERAGE) {
+            answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) matched ${numbers.length}/${maxQuestionNumber} ` +
+              `questions (${percent}%) — applied what it found, but ${maxQuestionNumber - numbers.length} question(s) still need answers filled in manually.`;
+            console.warn(
+              `[uploadTestController] Answer key partially applied: covered ${numbers.length}/${maxQuestionNumber} ` +
+              `(${percent}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key usually covers.`,
+            );
           }
           console.log(`[uploadTestController] Answer key: ${Object.keys(csvAnswers).length} answers, ${Object.keys(pdfSolutions).length} solutions`);
           sendProgress("extracting_answers", `Answer key applied: ${Object.keys(csvAnswers).length} answer(s), ${Object.keys(pdfSolutions).length} solution(s).`);

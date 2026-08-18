@@ -177,8 +177,14 @@ def extract_answers_regex(text: str) -> dict:
 answers = extract_answers_regex(combined_text)
 print(f"[parse_pdf_answer_key] Regex extracted {len(answers)} answers")
 
-# ── LLM fallback (only if regex found < 10) ───────────────────────────────────
-if len(answers) < 10 and total_pages >= 1:
+# ── LLM fallback ──────────────────────────────────────────────────────────────
+# Trigger when regex found too few answers — either in absolute terms (< 10)
+# or relative to the paper's expected size (< 50% coverage). An 80-question
+# paper where regex matched 10 answers (12.5%) should not skip the LLM just
+# because 10 >= 10.
+regex_coverage = len(answers) / MAX_QNUM if MAX_QNUM > 0 else 1.0
+needs_llm = len(answers) < 10 or (MAX_QNUM >= 20 and regex_coverage < 0.5)
+if needs_llm and total_pages >= 1:
     print(f"[parse_pdf_answer_key] Regex found only {len(answers)} — trying LLM fallback")
     api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
@@ -255,8 +261,8 @@ Return ONLY valid JSON. No markdown, no code fences."""
         except ImportError:
             print("[parse_pdf_answer_key] openai package not installed — skipping LLM fallback")
 else:
-    if len(answers) >= 10:
-        print(f"[parse_pdf_answer_key] Regex found {len(answers)} answers — no LLM fallback needed")
+    if not needs_llm:
+        print(f"[parse_pdf_answer_key] Regex found {len(answers)} answers ({regex_coverage:.0%} coverage) — no LLM fallback needed")
 
 # ── Solution extraction (LLM, only if solutions exist) ────────────────────────
 solution_markers = len(re.findall(r'(?i)\bAnswer\s*[:\-]|Solution\s*[:\-]|Sol\.\s', combined_text))
