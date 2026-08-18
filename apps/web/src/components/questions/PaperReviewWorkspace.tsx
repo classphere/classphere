@@ -295,6 +295,10 @@ export function PaperReviewWorkspace({
 
       <main className="grid w-full gap-3 lg:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="card flex flex-col p-3" style={{ height: PANEL_H }}>
+          <div className="mb-2 flex items-baseline justify-between gap-2 border-b border-s-stroke2 pb-2.5">
+            <p className="text-sm font-bold text-t-primary">Questions</p>
+            <p className="text-xs text-t-secondary">{questions.length} total</p>
+          </div>
           {sections.length > 1 && (
             <div className="mb-2 flex flex-wrap gap-1">
               {sections.map((section) => (
@@ -302,7 +306,7 @@ export function PaperReviewWorkspace({
                   key={section.subject}
                   type="button"
                   onClick={() => setActiveTab(section.subject)}
-                  className={`rounded-[8px] px-2.5 py-1 text-[11px] font-bold transition ${
+                  className={`rounded-md px-2.5 py-1 text-[11px] font-bold transition ${
                     activeTab === section.subject ? "bg-shade-02 text-white" : "bg-b-surface2 text-t-secondary hover:text-t-primary"
                   }`}
                 >
@@ -322,7 +326,7 @@ export function PaperReviewWorkspace({
                     type="button"
                     onClick={() => setActiveId(item.id)}
                     title={blank ? "Empty slot" : unanswered ? "No answer set" : undefined}
-                    className={`relative aspect-square rounded-[9px] border text-sm font-bold transition ${
+                    className={`relative aspect-square rounded-md border text-sm font-bold transition ${
                       activeId === item.id
                         ? "border-primary-01 bg-primary-01 text-white"
                         : blank

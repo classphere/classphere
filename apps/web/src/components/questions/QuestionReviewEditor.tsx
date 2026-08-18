@@ -317,90 +317,90 @@ export function QuestionReviewEditor({
         </div>
       )}
       {/* ── Header: Classification + Save ─────────────────────────────── */}
-      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3 rounded-t-xl">
-        <div className="flex items-end gap-3">
-          {/* Dropdowns */}
-          <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
-            <LockedSelect
-              id="q-subject"
-              label="Subject"
-              value={draft.subject ?? ""}
-              options={subjectOptions}
+      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3.5 rounded-t-xl">
+        {/* Dropdowns get the full row to themselves — Chapter and Topic hold
+            free text that runs long, and squeezing them beside the Save/Preview
+            buttons in one row was what clipped them mid-word. */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-[1fr_1.3fr_1.3fr_1fr]">
+          <LockedSelect
+            id="q-subject"
+            label="Subject"
+            value={draft.subject ?? ""}
+            options={subjectOptions}
+            disabled={!canEdit}
+            onChange={(v) => set({ subject: v })}
+          />
+          <div>
+            <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Chapter</label>
+            <input
+              value={draft.chapter ?? ""}
               disabled={!canEdit}
-              onChange={(v) => set({ subject: v })}
-            />
-            <div>
-              <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Chapter</label>
-              <input
-                value={draft.chapter ?? ""}
-                disabled={!canEdit}
-                onChange={(e) => set({ chapter: e.target.value })}
-                placeholder="Chapter name"
-                className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Topic</label>
-              <input
-                value={draft.topic ?? ""}
-                disabled={!canEdit}
-                onChange={(e) => set({ topic: e.target.value })}
-                placeholder="Topic name"
-                className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
-              />
-            </div>
-            <LockedSelect
-              id="q-difficulty"
-              label="Difficulty"
-              value={draft.difficulty ?? "medium"}
-              options={DIFFICULTY_OPTIONS}
-              disabled={!canEdit}
-              onChange={(v) => set({ difficulty: v })}
+              onChange={(e) => set({ chapter: e.target.value })}
+              placeholder="Chapter name"
+              className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
             />
           </div>
-
-          {/* Save + preview — aligned with inputs, same height */}
-          {canEdit && (
-            <div className="shrink-0 flex flex-col justify-end gap-1">
-              <div className="flex items-center justify-end gap-2 text-[10px] h-[14px]">
-                {error && <span className="text-primary-03 truncate max-w-[160px]">{error}</span>}
-                {!draft.correct_answer?.length && !error && (
-                  <span className="text-amber-500">No answer set</span>
-                )}
-                {savedAt && !error && (
-                  <span className="text-t-tertiary">
-                    Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
-                  </span>
-                )}
-                <span className="text-t-tertiary">v{draft.content_version ?? 0}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setPreview((p) => !p)}
-                  title={preview ? "Back to editor" : "Preview as student"}
-                  className={[
-                    "flex h-9 items-center gap-1 rounded-md border px-3 text-sm font-semibold transition-colors",
-                    preview
-                      ? "border-primary-01/40 bg-primary-01/10 text-primary-01"
-                      : "border-s-stroke2 bg-b-surface1 text-t-primary hover:border-primary-01/40",
-                  ].join(" ")}
-                >
-                  {preview ? <RiEditLine size={15} /> : <RiEyeLine size={15} />}
-                  {preview ? "Edit" : "Preview"}
-                </button>
-                <button
-                  type="button"
-                  disabled={saving}
-                  onClick={saveAll}
-                  className="btn btn-flat h-9 px-5 text-sm"
-                >
-                  {saving ? "Saving…" : "Save"}
-                </button>
-              </div>
-            </div>
-          )}
+          <div>
+            <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Topic</label>
+            <input
+              value={draft.topic ?? ""}
+              disabled={!canEdit}
+              onChange={(e) => set({ topic: e.target.value })}
+              placeholder="Topic name"
+              className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+            />
+          </div>
+          <LockedSelect
+            id="q-difficulty"
+            label="Difficulty"
+            value={draft.difficulty ?? "medium"}
+            options={DIFFICULTY_OPTIONS}
+            disabled={!canEdit}
+            onChange={(v) => set({ difficulty: v })}
+          />
         </div>
+
+        {/* Status + actions, on their own row beneath the fields. */}
+        {canEdit && (
+          <div className="mt-3 flex items-center justify-between gap-3 border-t border-s-stroke2/60 pt-3">
+            <div className="flex items-center gap-2.5 text-[11px]">
+              {error && <span className="text-primary-03 font-semibold">{error}</span>}
+              {!draft.correct_answer?.length && !error && (
+                <span className="font-semibold text-amber-500">No answer set</span>
+              )}
+              {savedAt && !error && (
+                <span className="text-t-tertiary">
+                  Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
+                </span>
+              )}
+              <span className="text-t-tertiary">v{draft.content_version ?? 0}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setPreview((p) => !p)}
+                title={preview ? "Back to editor" : "Preview as student"}
+                className={[
+                  "flex h-9 items-center gap-1 rounded-md border px-3 text-sm font-semibold transition-colors",
+                  preview
+                    ? "border-primary-01/40 bg-primary-01/10 text-primary-01"
+                    : "border-s-stroke2 bg-b-surface1 text-t-primary hover:border-primary-01/40",
+                ].join(" ")}
+              >
+                {preview ? <RiEditLine size={15} /> : <RiEyeLine size={15} />}
+                {preview ? "Edit" : "Preview"}
+              </button>
+              <button
+                type="button"
+                disabled={saving}
+                onClick={saveAll}
+                className="btn btn-flat h-9 px-5 text-sm"
+              >
+                {saving ? "Saving…" : "Save"}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* ── Body ────────────────────────────────────────────────────────── */}
