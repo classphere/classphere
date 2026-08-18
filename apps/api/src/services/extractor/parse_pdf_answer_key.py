@@ -184,82 +184,104 @@ print(f"[parse_pdf_answer_key] Regex extracted {len(answers)} answers")
 # because 10 >= 10.
 regex_coverage = len(answers) / MAX_QNUM if MAX_QNUM > 0 else 1.0
 needs_llm = len(answers) < 10 or (MAX_QNUM >= 20 and regex_coverage < 0.5)
+page_images: list[str] = []  # rendered PNG data URLs, shared between answer + solution extraction
 if needs_llm and total_pages >= 1:
-    print(f"[parse_pdf_answer_key] Regex found only {len(answers)} — trying LLM fallback")
+    print(f"[parse_pdf_answer_key] Regex found only {len(answers)} ({regex_coverage:.0%} coverage) — trying Gemini vision fallback")
     api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
     if api_key:
         try:
+            import base64
             from openai import OpenAI
             client = OpenAI(
                 base_url="https://openrouter.ai/api/v1",
                 api_key=api_key,
+                timeout=120,
+                max_retries=0,
                 default_headers={
                     "HTTP-Referer": "https://classphere.com",
-                    "X-Title": "Classphere PDF Extractor",
+                    "X-Title": "Classphere Answer Key Extractor",
                 },
             )
 
-            LLM_ANSWER_PROMPT = """You are a careful answer-key extractor for Indian competitive exams (JEE/NEET).
-Below is text extracted from an answer-key PDF. Extract ONLY the answer
-mappings that are EXPLICITLY written in the text. Do NOT guess, infer, or
-fill in answers that aren't there.
+            GEMINI_ANSWER_PROMPT = """You are a careful answer-key extractor for Indian competitive exams (JEE Main, JEE Advanced, NEET-UG).
 
-The format varies by coaching:
-- Some use option numbers: "1. (4)" -> answer is "4"
-- Some use letters: "1. A" -> answer is "A"
-- Some use lowercase: "1. (b)" -> answer is "B"
-- Some use mixed: MCQs as letters, numericals as raw numbers
-- MSQ: "1. (1,4)" -> answers are "1" and "4"
+The attached image(s) are pages from an answer-key or solutions PDF. Extract ONLY the answer mappings that are EXPLICITLY written — do NOT guess, infer, or solve any question.
 
-Output a JSON object: keys = question numbers as strings, values = list of
-raw answer tokens as strings (NO conversion — keep "4" as "4", "A" as "A").
-The downstream system will convert numbers to letters where appropriate.
+The format varies by coaching institute:
+- Option numbers in parentheses: "1. (4)" → answer is "4"
+- Letters: "1. A" or "1. (B)" → answer is "A" or "B"
+- Lowercase: "1. (b)" → answer is "B" (uppercase it)
+- Arrow notation: "1→4" or "Q1→C"
+- Tabular grids with Q.No and Answer columns
+- MSQ (multiple correct): "1. (1,4)" → answers are ["1", "4"]
+- Numerical: "1. 42" or "1. -3.5" → answer is "42" or "-3.5"
 
-Example output:
-{"1": ["4"], "2": ["3"], "3": ["A"], "4": ["B", "D"], "5": ["42"], "6": ["-3.5"]}
+Output a JSON object: keys = question numbers as strings, values = list of raw answer tokens as strings.
+Keep numbers as numbers ("4" stays "4"), keep letters as uppercase letters ("a" → "A").
+The downstream system handles the 1→A conversion — do NOT convert here.
 
-If you cannot find any answer key in the text, return: {}
-Return ONLY valid JSON. No markdown, no code fences."""
+Example: {"1": ["4"], "2": ["3"], "3": ["A"], "4": ["B", "D"], "5": ["42"]}
 
-            def clean_json(raw):
-                if not raw:
-                    return "{}"
-                raw = str(raw).strip()
-                if raw.startswith("```"):
-                    lines = raw.splitlines()
-                    if lines and lines[0].startswith("```"):
-                        lines = lines[1:]
-                    if lines and lines[-1].strip() == "```":
-                        lines = lines[:-1]
-                    raw = "\n".join(lines).strip()
-                return raw
+If you cannot find any answer key in these pages, return: {}
+Return ONLY valid JSON. No markdown, no code fences, no explanation."""
+
+            # Render PDF pages to PNG for Gemini vision
+            DPI = 150  # Good balance of quality vs size
+            page_images = []
+            for page_idx in range(total_pages):
+                pix = doc[page_idx].get_pixmap(dpi=DPI)
+                png_bytes = pix.tobytes("png")
+                b64 = base64.b64encode(png_bytes).decode("ascii")
+                page_images.append(f"data:image/png;base64,{b64}")
+            print(f"[parse_pdf_answer_key] Rendered {len(page_images)} page(s) as PNG for Gemini")
+
+            # Send all pages in one call (answer key PDFs are typically 1-5 pages)
+            gemini_model = os.environ.get("GEMINI_MODEL", "google/gemini-3.1-flash-lite")
+            content_parts: list[dict] = [{"type": "text", "text": f"This answer key PDF has {total_pages} page(s). Extract all answer mappings from every page."}]
+            for img_url in page_images:
+                content_parts.append({"type": "image_url", "image_url": {"url": img_url}})
 
             for attempt in range(3):
                 try:
                     resp = client.chat.completions.create(
-                        model=os.environ.get("LLM_MODEL", "deepseek/deepseek-v4-flash"),
+                        model=gemini_model,
                         messages=[
-                            {"role": "system", "content": LLM_ANSWER_PROMPT},
-                            {"role": "user", "content": combined_text[:50000]},
+                            {"role": "system", "content": GEMINI_ANSWER_PROMPT},
+                            {"role": "user", "content": content_parts},
                         ],
                         response_format={"type": "json_object"},
                         temperature=0.0,
-                        max_tokens=4000,
-                        extra_body={"reasoning": {"enabled": False, "effort": "none", "max_tokens": 0}},
+                        max_tokens=8000,
                     )
-                    raw_output = resp.choices[0].message.content
-                    cleaned = clean_json(raw_output)
-                    llm_answers = json.loads(cleaned)
+                    raw_output = resp.choices[0].message.content or "{}"
+                    # Strip markdown fences if present
+                    raw_output = raw_output.strip()
+                    if raw_output.startswith("```"):
+                        lines = raw_output.splitlines()
+                        if lines[0].startswith("```"):
+                            lines = lines[1:]
+                        if lines and lines[-1].strip() == "```":
+                            lines = lines[:-1]
+                        raw_output = "\n".join(lines).strip()
+
+                    llm_answers = json.loads(raw_output)
+                    llm_count = 0
                     for qnum, ans_list in llm_answers.items():
+                        qnum_int = int(qnum) if qnum.isdigit() else -1
+                        if qnum_int < 1 or qnum_int > MAX_QNUM:
+                            continue
                         if qnum not in answers and isinstance(ans_list, list):
-                            answers[qnum] = [str(a) for a in ans_list]
-                    print(f"[parse_pdf_answer_key] LLM fallback: {len(answers)} total answers")
+                            answers[qnum] = [str(a).upper() if len(str(a)) == 1 and str(a).isalpha() else str(a) for a in ans_list]
+                            llm_count += 1
+                    print(f"[parse_pdf_answer_key] Gemini vision added {llm_count} new answers (total: {len(answers)})")
                     break
                 except Exception as e:
-                    print(f"[parse_pdf_answer_key] LLM fallback attempt {attempt + 1} failed: {e}")
+                    print(f"[parse_pdf_answer_key] Gemini vision attempt {attempt + 1} failed: {e}")
         except ImportError:
-            print("[parse_pdf_answer_key] openai package not installed — skipping LLM fallback")
+            print("[parse_pdf_answer_key] openai package not installed — skipping Gemini fallback")
+    else:
+        print("[parse_pdf_answer_key] No OPENROUTER_API_KEY — skipping Gemini fallback")
 else:
     if not needs_llm:
         print(f"[parse_pdf_answer_key] Regex found {len(answers)} answers ({regex_coverage:.0%} coverage) — no LLM fallback needed")
@@ -271,7 +293,7 @@ has_solutions = solution_markers >= 5
 solutions: dict[str, str] = {}
 
 if has_solutions:
-    print(f"[parse_pdf_answer_key] Detected {solution_markers} solution markers — extracting solutions via LLM")
+    print(f"[parse_pdf_answer_key] Detected {solution_markers} solution markers — extracting solutions via Gemini vision")
 
     api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
@@ -279,58 +301,70 @@ if has_solutions:
         print("[parse_pdf_answer_key] No OPENROUTER_API_KEY — skipping solution extraction")
     else:
         try:
+            import base64
             from openai import OpenAI
             client = OpenAI(
                 base_url="https://openrouter.ai/api/v1",
                 api_key=api_key,
+                timeout=120,
+                max_retries=0,
                 default_headers={
                     "HTTP-Referer": "https://classphere.com",
-                    "X-Title": "Classphere PDF Extractor",
+                    "X-Title": "Classphere Solution Extractor",
                 },
             )
 
-            SOLUTION_PROMPT = """You are a solution extractor for competitive exam papers (JEE/NEET).
-Below is text from an answer key + solutions PDF. For each question number,
-extract the WORKED SOLUTION text (the steps/explanation after the answer).
-Skip the answer letter itself — only extract the solution steps.
+            SOLUTION_PROMPT = """You are a solution extractor for Indian competitive exam papers (JEE/NEET).
+The attached image(s) are pages from an answer key + solutions PDF. For each
+question number, extract the WORKED SOLUTION — the steps, derivation, or
+explanation shown after the answer. Skip the answer letter/number itself.
 
-Return JSON: keys = question numbers (strings), values = solution text (string,
-math as LaTeX in $...$).
+Return JSON: keys = question numbers (strings), values = solution text (string).
+Write all math as LaTeX between $...$ delimiters. Preserve the logical steps.
 
-Example: {"1": "Using $t = \\\\frac{A}{a}\\\\sqrt{\\\\frac{2H}{g}}$...", "2": "From lens formula..."}
+Example: {"1": "Using $v = u + at$, we get $v = 0 + 10(2) = 20$ m/s", "2": "From lens formula $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$..."}
 
-If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
+If a question has no worked solution (just an answer letter), omit it.
+Return ONLY valid JSON. No markdown, no code fences."""
 
-            def clean_json_sol(raw):
-                if not raw:
-                    return "{}"
-                raw = str(raw).strip()
-                if raw.startswith("```"):
-                    lines = raw.splitlines()
-                    if lines and lines[0].startswith("```"):
-                        lines = lines[1:]
-                    if lines and lines[-1].strip() == "```":
-                        lines = lines[:-1]
-                    raw = "\n".join(lines).strip()
-                return raw
+            # Render pages if not already done
+            if not page_images:
+                DPI = 150
+                page_images = []
+                for page_idx in range(total_pages):
+                    pix = doc[page_idx].get_pixmap(dpi=DPI)
+                    png_bytes = pix.tobytes("png")
+                    b64 = base64.b64encode(png_bytes).decode("ascii")
+                    page_images.append(f"data:image/png;base64,{b64}")
+
+            gemini_model = os.environ.get("GEMINI_MODEL", "google/gemini-3.1-flash-lite")
+            content_parts: list[dict] = [{"type": "text", "text": f"This solutions PDF has {total_pages} page(s). Extract worked solutions for every question."}]
+            for img_url in page_images:
+                content_parts.append({"type": "image_url", "image_url": {"url": img_url}})
 
             for attempt in range(3):
                 try:
                     resp = client.chat.completions.create(
-                        model=os.environ.get("LLM_MODEL", "deepseek/deepseek-v4-flash"),
+                        model=gemini_model,
                         messages=[
                             {"role": "system", "content": SOLUTION_PROMPT},
-                            {"role": "user", "content": combined_text[:50000]},
+                            {"role": "user", "content": content_parts},
                         ],
                         response_format={"type": "json_object"},
                         temperature=0.1,
-                        max_tokens=8000,
-                        extra_body={"reasoning": {"enabled": False, "effort": "none", "max_tokens": 0}},
+                        max_tokens=16000,
                     )
-                    raw_output = resp.choices[0].message.content
-                    cleaned = clean_json_sol(raw_output)
-                    solutions = json.loads(cleaned)
-                    print(f"[parse_pdf_answer_key] LLM extracted {len(solutions)} solutions")
+                    raw_output = resp.choices[0].message.content or "{}"
+                    raw_output = raw_output.strip()
+                    if raw_output.startswith("```"):
+                        lines = raw_output.splitlines()
+                        if lines[0].startswith("```"):
+                            lines = lines[1:]
+                        if lines and lines[-1].strip() == "```":
+                            lines = lines[:-1]
+                        raw_output = "\n".join(lines).strip()
+                    solutions = json.loads(raw_output)
+                    print(f"[parse_pdf_answer_key] Gemini vision extracted {len(solutions)} solutions")
                     break
                 except Exception as e:
                     print(f"[parse_pdf_answer_key] Solution extraction attempt {attempt + 1} failed: {e}")
