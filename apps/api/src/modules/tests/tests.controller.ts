@@ -1859,7 +1859,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           content_scope:  "institute_private",
           review_status:  malformedMatching.some(({ index }: any) => index === idx) || correctAnswers.length === 0 ? "changes_requested" : "draft",
           created_by:     userId,
-          source_reference: { ...(q.source_reference ?? {}), extracted_question_number: idx + 1, extraction_flags: [
+          source_reference: { ...(q.source_reference ?? {}), extracted_question_number: q.question_number ?? (idx + 1), extraction_flags: [
             ...(Array.isArray(q.source_reference?.extraction_flags) ? q.source_reference.extraction_flags : []),
             ...(malformedMatching.some(({ index }: any) => index === idx) ? ["matching_options_missing"] : []),
             ...(correctAnswers.length === 0 ? ["answer_key_missing"] : []),
@@ -1939,11 +1939,25 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         throw new Error(`Failed to create paper: ${pErr?.message}`);
       }
 
-      const pqRows = group.map((q: any, idx: number) => ({
-        paper_id: paper.id,
-        question_id: q.id,
-        position: idx + 1,
-      }));
+      // Use the paper's own numbering (extracted_question_number) for position
+      // so a genuinely-missed question stays a hole in the numbering instead of
+      // silently shifting every later question forward into its slot.
+      // Falls back to a running counter when question_number is absent, same as
+      // the superadmin RPC (create_global_review_draft_with_questions).
+      let runningPos = 0;
+      const pqRows = group.map((q: any, idx: number) => {
+        const stated = q.source_reference?.extracted_question_number;
+        if (typeof stated === "number" && stated > 0) {
+          runningPos = stated;
+        } else {
+          runningPos = runningPos + 1;
+        }
+        return {
+          paper_id: paper.id,
+          question_id: q.id,
+          position: runningPos,
+        };
+      });
       const { error: pqErr } = await supabaseDB.from("paper_questions").insert(pqRows);
       if (pqErr) {
         throw new Error(`Failed to link paper questions: ${pqErr.message}`);
