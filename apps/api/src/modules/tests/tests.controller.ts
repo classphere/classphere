@@ -1958,9 +1958,73 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           position: runningPos,
         };
       });
-      const { error: pqErr } = await supabaseDB.from("paper_questions").insert(pqRows);
+
+      // Detect holes in the position sequence and fill them with is_gap
+      // placeholder rows so an editor can type the missed questions in from the
+      // review workspace. Publication already refuses papers with empty
+      // question_text, so a gap cannot reach a student by accident.
+      const occupiedPositions = new Set(pqRows.map((r) => r.position));
+      const maxPos = Math.max(...occupiedPositions);
+      const gapQuestionRows: any[] = [];
+      const gapPqRows: any[] = [];
+
+      for (let pos = 1; pos <= maxPos; pos++) {
+        if (occupiedPositions.has(pos)) continue;
+        const gapId = randomUUID();
+        gapQuestionRows.push({
+          id:             gapId,
+          exam_id:        examId,
+          test_type:      "mock-test",
+          subject:        null,
+          chapter:        "General",
+          topic:          null,
+          difficulty:     "medium",
+          year:           null,
+          source:         isSplit ? `${title} — Session ${sessionIdx + 1}` : title,
+          question_type:  "mcq_single",
+          question_text:  "",
+          question_images: [],
+          options:        [],
+          correct_answer: [],
+          explanation:    "",
+          explanation_images: [],
+          tags:           [],
+          institute_id:   req.user!.institute_id,
+          content_scope:  "institute_private",
+          review_status:  "changes_requested",
+          created_by:     userId,
+          is_active:      true,
+          is_gap:         true,
+          source_reference: {
+            extracted_question_number: pos,
+            extraction_flags: ["gap_placeholder"],
+          },
+        });
+        gapPqRows.push({
+          paper_id: paper.id,
+          question_id: gapId,
+          position: pos,
+        });
+      }
+
+      // Insert gap question rows first (they must exist before paper_questions references them)
+      if (gapQuestionRows.length > 0) {
+        const { error: gapQErr } = await supabaseDB.from("questions").insert(gapQuestionRows);
+        if (gapQErr) {
+          throw new Error(`Failed to insert gap placeholders: ${gapQErr.message}`);
+        }
+      }
+
+      const allPqRows = [...pqRows, ...gapPqRows].sort((a, b) => a.position - b.position);
+      const { error: pqErr } = await supabaseDB.from("paper_questions").insert(allPqRows);
       if (pqErr) {
         throw new Error(`Failed to link paper questions: ${pqErr.message}`);
+      }
+
+      // If gaps were added, update the paper's total_questions to include them.
+      const totalWithGaps = group.length + gapQuestionRows.length;
+      if (gapQuestionRows.length > 0) {
+        await supabaseDB.from("papers").update({ total_questions: totalWithGaps }).eq("id", paper.id);
       }
 
       const tbRows = batchIds.map((b_id: string) => ({
@@ -1973,7 +2037,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         throw new Error(`Failed to assign test to batches: ${tbErr.message}`);
       }
 
-      createdPapers.push({ id: paper.id, title: sessionTitle, total_questions: group.length, workflow_status: paper.workflow_status });
+      createdPapers.push({ id: paper.id, title: sessionTitle, total_questions: totalWithGaps, workflow_status: paper.workflow_status });
     }
 
     try {
