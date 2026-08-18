@@ -464,7 +464,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     const instituteId = req.user!.institute_id;
     const scopedQuery = () => supabaseDB
       .from("questions")
-      .select("id, subject, difficulty")
+      .select("id, subject, difficulty, question_type, marks")
       .eq("exam_id", exam_id)
       .eq("is_active", true)
       .eq("review_status", "approved")
@@ -555,6 +555,15 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       }
     }
 
+    // The bank-built paper has no review screen of its own — this call both
+    // builds and assigns it in one step — so unlike the PDF/global upload
+    // paths there is nowhere later to type a total. When the caller hasn't
+    // stated one, it is summed from what the chosen questions actually carry
+    // (falling back to the +4/-1 NEET/JEE Main convention per question, same
+    // as totalMarksForQuestions does everywhere else) rather than left null,
+    // which the papers table's NOT NULL constraint rejects outright.
+    const computedTotalMarks = paperTotalMarks ?? totalMarksForQuestions(shuffled, null);
+
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
       .insert({
@@ -562,7 +571,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
         title: title ?? `Custom Test — ${new Date().toLocaleDateString("en-IN")}`,
         test_type: type,
         total_questions: shuffled.length,
-        total_marks: paperTotalMarks,
+        total_marks: computedTotalMarks,
         duration_min: paperDurationMin,
         created_by: userId,
         institute_id: req.user!.institute_id,
