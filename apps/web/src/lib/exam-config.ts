@@ -1,9 +1,17 @@
-/** Canonical list of subjects for each supported exam code. */
+/**
+ * Canonical list of subjects for each supported exam code.
+ *
+ * NEET-UG has no "Biology" subject on a real paper — every question is tagged
+ * Botany or Zoology, matching lib/exam.ts's EXAM_SUBJECTS. This used to list
+ * the generic "Biology" instead, so a Botany/Zoology question's subject never
+ * matched an option here and the review editor's Subject dropdown silently
+ * showed "—" for every NEET question.
+ */
 export const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":          ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced":      ["Physics", "Chemistry", "Mathematics"],
   "jee-main-advanced": ["Physics", "Chemistry", "Mathematics"],
-  "neet-ug":           ["Physics", "Chemistry", "Biology"],
+  "neet-ug":           ["Physics", "Chemistry", "Botany", "Zoology"],
   // Fallback for unknown exams
   "default":           ["Physics", "Chemistry", "Mathematics"],
 };
@@ -22,6 +30,8 @@ export const SUBJECT_ABBR: Record<string, string> = {
   Chemistry:   "CHE",
   Mathematics: "MAT",
   Biology:     "BIO",
+  Botany:      "BOT",
+  Zoology:     "ZOO",
 };
 
 /** Subject accent colours — Tailwind-compatible CSS variable names. */
@@ -30,6 +40,8 @@ export const SUBJECT_COLOR: Record<string, { bg: string; text: string; border: s
   Chemistry:   { bg: "bg-green-500/10",   text: "text-green-500",   border: "border-green-500/30",   dot: "bg-green-500" },
   Mathematics: { bg: "bg-violet-500/10",  text: "text-violet-500",  border: "border-violet-500/30",  dot: "bg-violet-500" },
   Biology:     { bg: "bg-emerald-500/10", text: "text-emerald-500", border: "border-emerald-500/30", dot: "bg-emerald-500" },
+  Botany:      { bg: "bg-emerald-500/10", text: "text-emerald-500", border: "border-emerald-500/30", dot: "bg-emerald-500" },
+  Zoology:     { bg: "bg-amber-500/10",   text: "text-amber-600",   border: "border-amber-500/30",   dot: "bg-amber-500" },
 };
 
 /**
@@ -102,7 +114,7 @@ export function detectExamCode(questions: { subject?: string }[], fallback: stri
   const subs = new Set(
     questions.map((q) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
   );
-  if (subs.has("biology") || subs.has("bio")) return "neet-ug";
+  if (subs.has("biology") || subs.has("bio") || subs.has("botany") || subs.has("zoology")) return "neet-ug";
   if (subs.has("mathematics") || subs.has("maths") || subs.has("math")) return "jee-main";
   return fallback;
 }
