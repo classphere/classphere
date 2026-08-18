@@ -2007,7 +2007,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           review_status:  "changes_requested",
           created_by:     userId,
           is_active:      true,
-          is_gap:         true,
           source_reference: {
             extracted_question_number: pos,
             extraction_flags: ["gap_placeholder"],
