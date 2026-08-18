@@ -1,6 +1,6 @@
 import React from "react";
 import { QuestionBody, hasRenderableQuestionContent } from "@/components/QuestionBody";
-import { RiFlag2Line } from "@remixicon/react";
+import { RiFlag2Line, RiLayoutGridLine } from "@remixicon/react";
 import { Question, AnswerMap, StatusMap, answerToList, hasAnswer, isMultiSelect } from "./TestTypes";
 
 interface QuestionContentProps {
@@ -18,6 +18,7 @@ interface QuestionContentProps {
   markedCount: number;
   isSectionBLimitReached: (q: Question) => boolean;
   onReportQuestion?: () => void;
+  onOpenPalette?: () => void;
 }
 
 export function QuestionContent({
@@ -35,29 +36,48 @@ export function QuestionContent({
   markedCount,
   isSectionBLimitReached,
   onReportQuestion,
+  onOpenPalette,
 }: QuestionContentProps) {
+  const diffClass = q.difficulty === "easy"
+    ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02"
+    : q.difficulty === "hard"
+      ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03"
+      : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05";
   return (
     <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
-      <div className="relative z-10 mb-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.subject}</span>
-          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.chapter}</span>
-          {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.topic}</span>}
-          <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-md tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
+      <div className="relative z-10 mb-3 flex items-center justify-between gap-2">
+        <div
+          className="flex min-w-0 items-center gap-2 text-[12px] font-sans font-semibold text-t-secondary"
+          title={[q.subject, q.chapter, q.topic].filter(Boolean).join(" · ")}
+        >
+          <span className="truncate">{[q.subject, q.chapter, q.topic].filter(Boolean).join(" · ")}</span>
+          <span className={`shrink-0 rounded-md border px-2 py-0.5 text-[12px] font-semibold tracking-[0.004em] ${diffClass}`}>
             {q.difficulty}
           </span>
         </div>
 
-        {onReportQuestion && (
-          <button
-            onClick={onReportQuestion}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] border border-s-stroke2/60 bg-b-surface1 text-[11px] font-semibold text-t-secondary hover:text-red-500 hover:border-red-500/30 transition-colors"
-            title="Report an issue or error with this question"
-          >
-            <RiFlag2Line size={13} />
-            <span>Report Error</span>
-          </button>
-        )}
+        <div className="flex shrink-0 items-center gap-2">
+          {onOpenPalette && (
+            <button
+              onClick={onOpenPalette}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-s-stroke2/60 bg-b-surface1 text-[11px] font-semibold text-t-secondary hover:text-t-primary hover:border-s-highlight transition-colors lg:hidden"
+              aria-label="Open question palette"
+            >
+              <RiLayoutGridLine size={13} />
+              <span>{answered}/{questionsLength}</span>
+            </button>
+          )}
+          {onReportQuestion && (
+            <button
+              onClick={onReportQuestion}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-s-stroke2/60 bg-b-surface1 text-[11px] font-semibold text-t-secondary hover:text-red-500 hover:border-red-500/30 transition-colors"
+              title="Report an issue or error with this question"
+            >
+              <RiFlag2Line size={13} />
+              <span className="hidden sm:inline">Report Error</span>
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="relative z-10 mb-3 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">

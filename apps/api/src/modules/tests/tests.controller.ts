@@ -181,7 +181,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       exam: examLabel || examCode,
       exam_code: examCode,
       year: paper.year ?? null,
-      shift: paper.shift ?? paper.title,
+      shift: paper.shift ?? null,
       questions: questions.length,
       duration: paper.duration_min,
       title: paper.title,

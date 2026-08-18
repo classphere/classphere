@@ -9,7 +9,6 @@ import {
   RiArrowRightLine,
   RiFlag2Fill,
   RiLoader4Line,
-  RiLayoutGridLine,
   RiCloseLine,
 } from "@remixicon/react";
 import { Question, Option, TestMeta, AnswerMap, StatusMap } from "@/components/test/TestTypes";
@@ -578,19 +577,6 @@ export default function TestPage() {
       />
 
       <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-3 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
-        <div className="lg:hidden">
-          <button
-            type="button"
-            aria-label="Open question palette"
-            aria-expanded={isNavigatorOpen}
-            aria-controls="test-question-palette"
-            onClick={() => setIsNavigatorOpen(true)}
-            className="flex h-12 w-full items-center justify-between rounded-md border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-widget active:scale-[0.99]"
-          >
-            <span className="flex items-center gap-2"><RiLayoutGridLine size={18} /> Question palette</span>
-            <span className="text-xs text-t-secondary">{answered}/{questions.length} answered</span>
-          </button>
-        </div>
         <QuestionContent
           question={q}
           current={current}
@@ -606,6 +592,7 @@ export default function TestPage() {
           markedCount={markedCount}
           isSectionBLimitReached={isSectionBLimitReached}
           onReportQuestion={() => setShowReportModal(true)}
+          onOpenPalette={() => setIsNavigatorOpen(true)}
         />
 
         <QuestionNavigator

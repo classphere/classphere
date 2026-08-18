@@ -36,7 +36,8 @@ export function SubmitModal({ show, answered, questionsLength, unanswered, onClo
           </button>
           <button
             id="confirm-submit-btn"
-            className="btn btn-primary h-12 flex-1 active:scale-98"
+            className="flex h-12 flex-1 items-center justify-center rounded-md text-sm font-semibold transition-transform active:scale-98"
+            style={{ backgroundColor: "var(--primary-institute, #161616)", color: "var(--primary-institute-fg, #ffffff)" }}
             onClick={onSubmit}
           >
             Submit Test
