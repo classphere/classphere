@@ -221,7 +221,7 @@ export function PaperReviewWorkspace({
           type="button"
           onClick={validate}
           disabled={validating}
-          className="flex h-11 items-center gap-2 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary transition-colors hover:border-primary-01/40 disabled:opacity-50"
+          className="flex h-11 items-center gap-2 rounded-md border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary transition-colors hover:border-primary-01/40 disabled:opacity-50"
         >
           {validating ? <RiLoader4Line size={16} className="animate-spin" /> : <RiShieldCheckLine size={16} />}
           {validating ? "Validating…" : "Validate paper"}
@@ -240,7 +240,7 @@ export function PaperReviewWorkspace({
       )}
 
       {message && (
-        <div className="mb-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">
+        <div className="mb-3 rounded-md border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">
           {message}
         </div>
       )}
@@ -286,7 +286,7 @@ export function PaperReviewWorkspace({
             type="button"
             onClick={saveScheme}
             disabled={savingScheme || draftScheme === null}
-            className="mt-3 h-10 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white disabled:opacity-40 dark:bg-white dark:text-black"
+            className="btn btn-flat mt-3 h-10 px-5 text-sm"
           >
             {savingScheme ? "Saving…" : "Save marking scheme"}
           </button>

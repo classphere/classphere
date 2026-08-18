@@ -105,7 +105,7 @@ function AssignModal({
               {eligibleBatches.map((batch) => (
                 <label
                   key={batch.id}
-                  className={`flex cursor-pointer items-center gap-2.5 rounded-[10px] border px-3 py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex cursor-pointer items-center gap-2.5 rounded-md border px-3 py-2.5 text-sm font-medium transition-colors ${
                     selected.includes(batch.id) ? "border-primary-01 bg-primary-01/5 text-t-primary" : "border-s-stroke2 text-t-secondary hover:border-t-secondary/40"
                   }`}
                 >
@@ -123,7 +123,7 @@ function AssignModal({
             type="datetime-local"
             value={scheduledAt}
             onChange={(e) => setScheduledAt(e.target.value)}
-            className="h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
+            className="h-11 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium text-t-primary outline-none focus:border-primary-01"
           />
         </div>
 
@@ -133,7 +133,7 @@ function AssignModal({
           type="button"
           disabled={submitting}
           onClick={submit}
-          className="btn btn-primary h-11 text-sm disabled:opacity-60"
+          className="btn btn-flat h-11 text-sm disabled:opacity-60"
         >
           {submitting ? "Assigning…" : "Assign"}
         </button>
@@ -298,7 +298,7 @@ export default function ReviewPaperPage() {
 
       <main className="mx-auto w-full max-w-[1600px] px-4 pb-12 pt-5 md:px-6">
         {message && (
-          <p className="mb-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-3 text-sm text-t-secondary">
+          <p className="mb-3 rounded-md border border-s-stroke2 bg-b-surface2 px-4 py-3 text-sm text-t-secondary">
             {message}
           </p>
         )}
@@ -319,7 +319,7 @@ export default function ReviewPaperPage() {
               {canOperate && status !== "archived" && (
                 <button
                   type="button" onClick={() => setAssignOpen(true)}
-                  className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
+                  className="h-11 rounded-md border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
                 >
                   Assign to batches
                 </button>
@@ -327,7 +327,7 @@ export default function ReviewPaperPage() {
               {canOperate && PUBLISHABLE_STATUSES.includes(status) && (
                 <button
                   type="button" disabled={transacting} onClick={() => transition("publish")}
-                  className="btn btn-primary h-11 px-4 text-sm disabled:opacity-60"
+                  className="btn btn-flat h-11 px-4 text-sm disabled:opacity-60"
                 >
                   Publish test
                 </button>
@@ -337,7 +337,7 @@ export default function ReviewPaperPage() {
               {canOperate && status === "published" && (
                 <Link
                   href={`/institute/tests/${params.id}/results`}
-                  className="flex h-11 items-center rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary"
+                  className="flex h-11 items-center rounded-md border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary"
                 >
                   Batch results
                 </Link>
@@ -345,7 +345,7 @@ export default function ReviewPaperPage() {
               {canOperate && status === "archived" && (
                 <button
                   type="button" disabled={transacting} onClick={() => transition("restore")}
-                  className="h-11 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
+                  className="h-11 rounded-md border border-s-stroke2 bg-b-surface1 px-4 text-sm font-semibold text-t-primary disabled:opacity-60"
                 >
                   Restore
                 </button>
@@ -358,7 +358,7 @@ export default function ReviewPaperPage() {
                       transition("archive");
                     }
                   }}
-                  className="h-11 rounded-[10px] border border-[rgba(239,68,68,0.2)] bg-[rgba(239,68,68,0.05)] px-4 text-sm font-semibold text-[#EF4444] disabled:opacity-60"
+                  className="h-11 rounded-md border border-[rgba(239,68,68,0.2)] bg-[rgba(239,68,68,0.05)] px-4 text-sm font-semibold text-[#EF4444] disabled:opacity-60"
                 >
                   Archive
                 </button>

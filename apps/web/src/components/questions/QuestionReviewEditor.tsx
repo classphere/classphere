@@ -61,7 +61,7 @@ function LockedSelect({
           disabled={disabled}
           onClick={() => !disabled && setOpen((v) => !v)}
           className={[
-            "flex h-9 w-full items-center justify-between gap-2 rounded-[10px] border px-3 text-sm transition-colors",
+            "flex h-9 w-full items-center justify-between gap-2 rounded-md border px-3 text-sm transition-colors",
             disabled
               ? "border-s-stroke2 bg-b-surface2/50 text-t-secondary cursor-not-allowed"
               : "border-s-stroke2 bg-b-surface1 text-t-primary hover:border-primary-01/50 cursor-pointer",
@@ -78,7 +78,7 @@ function LockedSelect({
         {open && !disabled && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setOpen(false)} />
-            <div className="absolute left-0 top-full z-20 mt-1 w-full overflow-hidden rounded-[10px] border border-s-stroke2 bg-b-surface1 shadow-dropdown">
+            <div className="absolute left-0 top-full z-20 mt-1 w-full overflow-hidden rounded-md border border-s-stroke2 bg-b-surface1 shadow-dropdown">
               {options.map((opt) => (
                 <button
                   key={opt.value}
@@ -309,7 +309,7 @@ export function QuestionReviewEditor({
             type="button"
             disabled={aiFilling}
             onClick={runAiFillGap}
-            className="flex h-9 shrink-0 items-center gap-1.5 rounded-[10px] border border-primary-03/30 bg-b-surface1 px-3 text-sm font-semibold text-primary-03 transition-colors hover:border-primary-03/60 disabled:opacity-50"
+            className="flex h-9 shrink-0 items-center gap-1.5 rounded-md border border-primary-03/30 bg-b-surface1 px-3 text-sm font-semibold text-primary-03 transition-colors hover:border-primary-03/60 disabled:opacity-50"
           >
             <RiRobot2Line size={15} />
             {aiFilling ? "Drafting…" : "Try AI fill"}
@@ -317,7 +317,7 @@ export function QuestionReviewEditor({
         </div>
       )}
       {/* ── Header: Classification + Save ─────────────────────────────── */}
-      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3 rounded-t-[24px]">
+      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3 rounded-t-xl">
         <div className="flex items-end gap-3">
           {/* Dropdowns */}
           <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
@@ -336,7 +336,7 @@ export function QuestionReviewEditor({
                 disabled={!canEdit}
                 onChange={(e) => set({ chapter: e.target.value })}
                 placeholder="Chapter name"
-                className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
               />
             </div>
             <div>
@@ -346,7 +346,7 @@ export function QuestionReviewEditor({
                 disabled={!canEdit}
                 onChange={(e) => set({ topic: e.target.value })}
                 placeholder="Topic name"
-                className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
               />
             </div>
             <LockedSelect
@@ -380,7 +380,7 @@ export function QuestionReviewEditor({
                   onClick={() => setPreview((p) => !p)}
                   title={preview ? "Back to editor" : "Preview as student"}
                   className={[
-                    "flex h-9 items-center gap-1 rounded-[10px] border px-3 text-sm font-semibold transition-colors",
+                    "flex h-9 items-center gap-1 rounded-md border px-3 text-sm font-semibold transition-colors",
                     preview
                       ? "border-primary-01/40 bg-primary-01/10 text-primary-01"
                       : "border-s-stroke2 bg-b-surface1 text-t-primary hover:border-primary-01/40",
@@ -393,7 +393,7 @@ export function QuestionReviewEditor({
                   type="button"
                   disabled={saving}
                   onClick={saveAll}
-                  className="h-9 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
+                  className="btn btn-flat h-9 px-5 text-sm"
                 >
                   {saving ? "Saving…" : "Save"}
                 </button>
@@ -409,7 +409,7 @@ export function QuestionReviewEditor({
         {preview ? (
           /* ── Student preview: render exactly as a student sees it ─────── */
           <div className="space-y-3">
-            <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 p-4">
+            <div className="rounded-md border border-s-stroke2 bg-b-surface1 p-4">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Question (student view)</p>
               <div className="text-[15px] leading-relaxed text-t-primary">
                 <QuestionBody
@@ -429,7 +429,7 @@ export function QuestionReviewEditor({
                 <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
                   Answer — a typed value, no options
                 </p>
-                <p className="rounded-[12px] border border-green-500/40 bg-green-500/5 p-3 font-mono text-[14px] text-t-primary">
+                <p className="rounded-md border border-green-500/40 bg-green-500/5 p-3 font-mono text-[14px] text-t-primary">
                   {(draft.correct_answer ?? []).join(", ") || (
                     <span className="font-sans text-t-secondary">No answer recorded</span>
                   )}
@@ -448,7 +448,7 @@ export function QuestionReviewEditor({
                     <div
                       key={opt.id}
                       className={[
-                        "flex items-start gap-3 rounded-[12px] border p-3",
+                        "flex items-start gap-3 rounded-md border p-3",
                         isCorrect ? "border-green-500/40 bg-green-500/5" : "border-s-stroke2 bg-b-surface2/40",
                       ].join(" ")}
                     >
@@ -475,7 +475,7 @@ export function QuestionReviewEditor({
             </div>
             )}
             {draft.explanation?.trim() && (
-              <div className="rounded-[12px] border border-s-stroke2 bg-b-surface2/40 p-4">
+              <div className="rounded-md border border-s-stroke2 bg-b-surface2/40 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Explanation</p>
                 <div className="text-sm leading-relaxed text-t-secondary">
                   <QuestionBody legacyText={draft.explanation ?? ""} reviewerMode />
@@ -516,7 +516,7 @@ export function QuestionReviewEditor({
               </p>
 
               {figures.length === 0 ? (
-                <p className="rounded-[10px] border border-dashed border-s-stroke2 px-3 py-4 text-center text-[12px] text-t-secondary">
+                <p className="rounded-md border border-dashed border-s-stroke2 px-3 py-4 text-center text-[12px] text-t-secondary">
                   No figures. Use the image button on the toolbar above to add one.
                 </p>
               ) : (
@@ -524,7 +524,7 @@ export function QuestionReviewEditor({
                   {figures.map((src, i) => (
                     <div key={`${src.slice(0, 40)}-${i}`} className="group relative">
                       <img src={src} alt={`Figure ${i + 1}`}
-                        className="max-h-44 max-w-full rounded-[10px] border border-s-stroke2 bg-white object-contain p-1" />
+                        className="max-h-44 max-w-full rounded-md border border-s-stroke2 bg-white object-contain p-1" />
                       {canEdit && (
                         <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
                           <label title="Replace this figure"
@@ -569,7 +569,7 @@ export function QuestionReviewEditor({
                     })
                   }
                   placeholder="e.g. 42, -3.5 or 0.25"
-                  className="h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 font-mono text-[14px] text-t-primary outline-none focus:border-primary-01 disabled:opacity-60"
+                  className="h-11 w-full rounded-md border border-s-stroke2 bg-b-surface2 px-3 font-mono text-[14px] text-t-primary outline-none focus:border-primary-01 disabled:opacity-60"
                 />
                 <p className="mt-1.5 text-[11px] text-t-secondary">
                   Separate with commas only if the paper accepts more than one value.
@@ -604,7 +604,7 @@ export function QuestionReviewEditor({
                     <div
                       key={opt.id}
                       className={[
-                        "group flex items-start gap-2 rounded-[12px] border p-3 transition-colors",
+                        "group flex items-start gap-2 rounded-md border p-3 transition-colors",
                         isCorrect
                           ? "border-green-500/40 bg-green-500/5"
                           : "border-s-stroke2 bg-b-surface2/40",

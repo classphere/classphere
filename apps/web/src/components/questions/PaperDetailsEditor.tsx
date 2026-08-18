@@ -53,7 +53,7 @@ const numberOrNull = (raw: string): number | null => {
 };
 
 const field =
-  "h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium " +
+  "h-11 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium " +
   "text-t-primary outline-none focus:border-primary-01";
 const label = "mb-1.5 block text-xs font-bold uppercase tracking-wider text-t-secondary";
 
@@ -162,7 +162,7 @@ export function PaperDetailsEditor({
       </button>
 
       {missing.length > 0 && (
-        <p className="mt-3 flex items-start gap-2 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
+        <p className="mt-3 flex items-start gap-2 rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
           <RiErrorWarningLine size={14} className="mt-0.5 shrink-0 text-[#b45309] dark:text-[#fbbf24]" />
           <span>
             This test has no {missing.join(", no ")} set. Nothing is assumed on your behalf, so it
@@ -227,7 +227,7 @@ export function PaperDetailsEditor({
           </div>
 
           {totalDisagrees && (
-            <p className="rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
+            <p className="rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
               This test is set to {typedTotal} marks, but its questions add up to {suggestedTotal}.
               That is allowed — just confirm it is what you meant.
             </p>
@@ -296,7 +296,7 @@ export function PaperDetailsEditor({
                 type="button"
                 onClick={save}
                 disabled={saving}
-                className="h-11 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white disabled:opacity-50 dark:bg-white dark:text-black"
+                className="btn btn-flat h-11 px-5 text-sm"
               >
                 {saving ? "Saving…" : "Save test details"}
               </button>

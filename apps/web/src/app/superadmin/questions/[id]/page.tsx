@@ -86,7 +86,7 @@ export default function GlobalPaperReviewPage() {
 
       <main className="mx-auto w-full max-w-[1560px] px-4 pb-12 pt-5 md:px-6">
         {message && (
-          <p className="mb-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-3 text-sm text-t-secondary">
+          <p className="mb-3 rounded-md border border-s-stroke2 bg-b-surface2 px-4 py-3 text-sm text-t-secondary">
             {message}
           </p>
         )}
@@ -104,7 +104,7 @@ export default function GlobalPaperReviewPage() {
             <button
               type="button"
               onClick={publish}
-              className="btn btn-primary h-11 px-5 text-sm"
+              className="btn btn-flat h-11 px-5 text-sm"
             >
               Publish global paper
             </button>

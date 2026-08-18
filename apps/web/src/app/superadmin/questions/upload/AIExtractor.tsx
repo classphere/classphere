@@ -429,7 +429,7 @@ export default function AIExtractor() {
   return (
     <div className="flex flex-col gap-3 w-full">
       {/* ── Section 1: Extraction Settings ────────────────────────────────────── */}
-      <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
+      <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-lg w-full">
         <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
@@ -446,7 +446,7 @@ export default function AIExtractor() {
                 <button
                   key={e.code}
                   onClick={() => setField("exam", e.code)}
-                  className={`h-11 rounded-[10px] border text-[14px] font-semibold transition-all cursor-pointer ${form.exam === e.code
+                  className={`h-11 rounded-md border text-[14px] font-semibold transition-all cursor-pointer ${form.exam === e.code
                       ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
                       : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                     }`}
@@ -465,7 +465,7 @@ export default function AIExtractor() {
                 <button
                   key={t.code}
                   onClick={() => setField("test_type", t.code)}
-                  className={`h-11 rounded-[10px] border text-[14px] font-semibold transition-all cursor-pointer ${form.test_type === t.code
+                  className={`h-11 rounded-md border text-[14px] font-semibold transition-all cursor-pointer ${form.test_type === t.code
                       ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
                       : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                     }`}
@@ -487,7 +487,7 @@ export default function AIExtractor() {
                   <button
                     key={s}
                     onClick={() => setField("subject", s)}
-                    className={`px-5 h-10 rounded-[10px] border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${form.subject === s
+                    className={`px-5 h-10 rounded-md border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${form.subject === s
                         ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
                         : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                       }`}
@@ -508,7 +508,7 @@ export default function AIExtractor() {
                 value={form.chapter}
                 onChange={e => setField("chapter", e.target.value)}
                 placeholder="e.g., Electrostatics"
-                className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
               />
             </div>
           )}
@@ -523,7 +523,7 @@ export default function AIExtractor() {
                   value={form.year}
                   onChange={e => setField("year", e.target.value)}
                   placeholder="e.g., 2024"
-                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -533,7 +533,7 @@ export default function AIExtractor() {
                   value={form.shift}
                   onChange={e => setField("shift", e.target.value)}
                   placeholder="e.g., 27 Jan – Shift 1"
-                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
             </>
@@ -546,7 +546,7 @@ export default function AIExtractor() {
               type="number"
               value={form.duration}
               onChange={e => setField("duration", e.target.value)}
-              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
             />
           </div>
 
@@ -556,7 +556,7 @@ export default function AIExtractor() {
               type="number"
               value={form.marks}
               onChange={e => setField("marks", e.target.value)}
-              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
             />
           </div>
 
@@ -569,7 +569,7 @@ export default function AIExtractor() {
               <MarkingSchemeEditor value={markingScheme} onChange={setMarkingScheme} />
 
               {schemeHint && (
-                <div className="mt-3 rounded-[12px] border border-s-stroke2/40 bg-b-surface1 p-4">
+                <div className="mt-3 rounded-md border border-s-stroke2/40 bg-b-surface1 p-4">
                   <p className="mb-2 text-[13px] font-semibold text-t-primary">
                     Read from this paper&apos;s instructions page
                   </p>
@@ -587,7 +587,7 @@ export default function AIExtractor() {
                     ))}
                   </ul>
                   {schemeHint.unread.length > 0 && (
-                    <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-[12px] text-t-primary">
+                    <p className="mt-3 rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-[12px] text-t-primary">
                       {schemeHint.unread.length} section
                       {schemeHint.unread.length === 1 ? "" : "s"} on the instructions page
                       state marks but could not be matched to a question type. Enter those by hand.
@@ -601,7 +601,7 @@ export default function AIExtractor() {
       </div>
 
       {/* ── Section 2: PDF File Drag & Drop ────────────────────────────────────── */}
-      <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
+      <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-lg w-full">
         <div className="relative z-10 flex items-center gap-3 mb-3">
           <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
           <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
@@ -614,7 +614,7 @@ export default function AIExtractor() {
           onDrop={onDrop}
           onDragOver={e => e.preventDefault()}
           onClick={() => fileInputRef.current?.click()}
-          className={`relative z-10 flex flex-col items-center justify-center gap-3 p-10 border-2 border-dashed rounded-[10px] cursor-pointer transition-all ${
+          className={`relative z-10 flex flex-col items-center justify-center gap-3 p-10 border-2 border-dashed rounded-md cursor-pointer transition-all ${
             pdfFile
               ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]"
               : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 hover:border-t-primary dark:hover:border-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/20"
@@ -630,7 +630,7 @@ export default function AIExtractor() {
 
           {pdfFile ? (
             <>
-              <div className="w-16 h-16 rounded-[10px] bg-[rgba(0,166,86,0.1)] flex items-center justify-center mb-2">
+              <div className="w-16 h-16 rounded-md bg-[rgba(0,166,86,0.1)] flex items-center justify-center mb-2">
                 <RiCheckLine size={32} className="text-primary-02" />
               </div>
               <div className="text-center">
@@ -641,14 +641,14 @@ export default function AIExtractor() {
               </div>
               <button
                 onClick={e => { e.stopPropagation(); setPdfFile(null); setExtractedQuestions(null); }}
-                className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 text-[13px] font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-sm"
+                className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-md bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 text-[13px] font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-sm"
               >
                 <RiCloseLine size={16} /> Remove PDF
               </button>
             </>
           ) : (
             <>
-              <div className="w-16 h-16 rounded-[10px] bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-sm">
+              <div className="w-16 h-16 rounded-md bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-sm">
                 <RiUploadCloud2Line size={32} className="text-t-secondary" />
               </div>
               <div className="text-center">
@@ -675,12 +675,12 @@ export default function AIExtractor() {
                 value={pagesRange}
                 onChange={e => setPagesRange(e.target.value)}
                 placeholder="e.g., 1-2, 5, 8-10 (leave blank to extract all pages)"
-                className="flex-1 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary outline-none transition-all shadow-inner"
+                className="flex-1 h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary outline-none transition-all shadow-inner"
               />
               <button
                 onClick={startExtraction}
                 disabled={!canExtract}
-                className={`h-12 px-8 rounded-[10px] text-[14px] font-semibold transition-all shadow-sm ${
+                className={`h-12 px-8 rounded-md text-[14px] font-semibold transition-all shadow-sm ${
                   canExtract
                     ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer"
                     : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
@@ -704,7 +704,7 @@ export default function AIExtractor() {
 
       {/* ── Status Messages ───────────────────────────────────────────────────── */}
       {resultMsg && (
-        <div className={`p-4 rounded-[10px] border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${
+        <div className={`p-4 rounded-md border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${
           status === "success"
             ? "bg-[rgba(34,197,94,0.05)] border-s-stroke2/40 text-[#22C55E]"
             : status === "extracting"
@@ -724,7 +724,7 @@ export default function AIExtractor() {
 
       {/* ── Section 3: Extracted Questions Preview ────────────────────────────── */}
       {extractedQuestions && extractedQuestions.length > 0 && (
-        <div className="group relative flex flex-col p-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
+        <div className="group relative flex flex-col p-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-lg w-full">
           <div className="relative z-10 flex items-center justify-between mb-3 px-2">
             <div className="flex items-center gap-3">
               <RiEyeLine size={20} className="text-t-primary" />
@@ -747,7 +747,7 @@ export default function AIExtractor() {
               value={form.title}
               onChange={e => setField("title", e.target.value)}
               placeholder="e.g., JEE Main 2024 Practice Set 1"
-              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary focus:border-t-primary outline-none transition-all shadow-inner font-semibold"
+              className="w-full h-12 px-4 border border-s-stroke2/40 rounded-md bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary focus:border-t-primary outline-none transition-all shadow-inner font-semibold"
             />
           </div>
 
@@ -758,7 +758,7 @@ export default function AIExtractor() {
               return (
                 <div
                   key={idx}
-                  className="flex flex-col border border-s-stroke2/40 rounded-[12px] bg-b-surface1 p-6 transition-all hover:shadow-md"
+                  className="flex flex-col border border-s-stroke2/40 rounded-md bg-b-surface1 p-6 transition-all hover:shadow-md"
                 >
                   {/* Header */}
                   <div className="flex justify-between items-center pb-4 border-b border-s-stroke2/20 mb-4">
@@ -819,7 +819,7 @@ export default function AIExtractor() {
                           {q.options.map((opt: any) => (
                             <div
                               key={opt.id}
-                              className="flex items-start gap-3 p-3.5 rounded-[10px] border border-s-stroke2/40 bg-b-surface2/30"
+                              className="flex items-start gap-3 p-3.5 rounded-md border border-s-stroke2/40 bg-b-surface2/30"
                             >
                               <span className="shrink-0 font-sans font-bold text-[14px] text-t-secondary mt-0.5">
                                 ({opt.id})
@@ -843,7 +843,7 @@ export default function AIExtractor() {
                       )}
 
                       {/* Answers & Solution Details */}
-                      <div className="mt-4 p-4 rounded-[10px] bg-b-surface2/50 border border-s-stroke2/10 flex flex-col gap-2">
+                      <div className="mt-4 p-4 rounded-md bg-b-surface2/50 border border-s-stroke2/10 flex flex-col gap-2">
                         <p className="text-[13px] font-sans font-bold text-t-secondary">
                           Correct Answer:{" "}
                           <span className="text-primary-02 uppercase font-black tracking-wide ml-1">
@@ -873,7 +873,7 @@ export default function AIExtractor() {
             <button
               onClick={handleFinalUpload}
               disabled={!canUpload}
-              className={`flex items-center gap-2 h-12 px-8 rounded-[10px] text-[14px] font-semibold transition-all shadow-sm ${
+              className={`flex items-center gap-2 h-12 px-8 rounded-md text-[14px] font-semibold transition-all shadow-sm ${
                 canUpload
                   ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer"
                   : "bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
@@ -933,7 +933,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
           value={text}
           onChange={e => setText(e.target.value)}
           rows={5}
-          className="w-full p-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface2/30 text-[14px] font-mono focus:border-t-primary outline-none transition-all shadow-inner"
+          className="w-full p-4 border border-s-stroke2/40 rounded-md bg-b-surface2/30 text-[14px] font-mono focus:border-t-primary outline-none transition-all shadow-inner"
         />
       </div>
 
@@ -975,7 +975,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
           value={explanation}
           onChange={e => setExplanation(e.target.value)}
           rows={3}
-          className="w-full p-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface2/30 text-[14px] font-mono focus:border-t-primary outline-none transition-all shadow-inner"
+          className="w-full p-4 border border-s-stroke2/40 rounded-md bg-b-surface2/30 text-[14px] font-mono focus:border-t-primary outline-none transition-all shadow-inner"
         />
       </div>
 

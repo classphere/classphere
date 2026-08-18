@@ -64,7 +64,7 @@ export function ValidationPanel({
   const reports = result.questions ?? [];
 
   return (
-    <div className={`mb-3 shrink-0 overflow-hidden rounded-[12px] border text-sm ${result.valid ? "border-green-500/30 bg-green-500/5" : "border-primary-03/30 bg-primary-03/5"}`}>
+    <div className={`mb-3 shrink-0 overflow-hidden rounded-md border text-sm ${result.valid ? "border-green-500/30 bg-green-500/5" : "border-primary-03/30 bg-primary-03/5"}`}>
       <div className="flex items-center justify-between px-4 pt-3">
         <div className="flex items-center gap-2">
           {result.valid
@@ -129,7 +129,7 @@ export function ValidationPanel({
               onClick={() => onJump(report.question_id)}
               className="flex w-full items-start gap-3 border-b border-s-stroke2/40 px-4 py-2.5 text-left transition-colors last:border-b-0 hover:bg-b-surface2"
             >
-              <span className={`mt-0.5 flex h-6 w-9 shrink-0 items-center justify-center rounded-[6px] text-[11px] font-bold ${
+              <span className={`mt-0.5 flex h-6 w-9 shrink-0 items-center justify-center rounded-sm text-[11px] font-bold ${
                 report.severity === "error" ? "bg-primary-03/15 text-primary-03" : "bg-amber-500/15 text-amber-600"
               }`}>
                 Q{report.question_number}

@@ -135,20 +135,20 @@ export function PaperComposition({ questions, markingScheme, statedTotal }: Prop
       </div>
 
       {unpriced.length > 0 && (
-        <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
+        <p className="mt-3 rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
           No marks set for {unpriced.map((r) => r.label.toLowerCase()).join(", ")}. These questions
           will score on the fallback rule, not this paper&apos;s. Set the marking scheme before publishing.
         </p>
       )}
 
       {totalMismatch && (
-        <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
+        <p className="mt-3 rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
           The paper records {statedTotal} marks, but these questions add up to {computedTotal}.
         </p>
       )}
 
       {gaps > 0 && (
-        <p className="mt-3 rounded-[10px] border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
+        <p className="mt-3 rounded-md border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-t-primary">
           The paper numbers questions up to {highest}, but only {questions.length} were extracted —
           {" "}{gaps} {gaps === 1 ? "is" : "are"} missing. Their numbers are preserved, so the ones
           that were found keep the numbering the paper gives them.

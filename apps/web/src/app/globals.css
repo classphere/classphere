@@ -532,6 +532,12 @@
   .btn-danger {
     @apply border border-[#FF6A55]/15 bg-[#FF6A55]/5 text-[#FF6A55] hover:bg-[#FF6A55]/10;
   }
+  /* Flat solid fill, no gradient or shine — for admin/review surfaces (the
+     paper-review workspace and friends) where a glossy CTA doesn't belong.
+     Colours invert with the theme the way .btn-dark's do, without the gradient. */
+  .btn-flat {
+    @apply bg-t-primary text-b-surface1 hover:opacity-90 disabled:opacity-50;
+  }
 
   .input, .input-field {
     @apply w-full h-11 px-4 border border-s-stroke2 rounded-md text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
