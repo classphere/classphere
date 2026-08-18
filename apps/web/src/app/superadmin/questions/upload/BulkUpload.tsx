@@ -211,7 +211,9 @@ export default function BulkUpload() {
           updateFile(f.name, { questions: partial, message: `Uploading images ${done}/${total}…` });
         });
 
-        updateFile(f.name, { questions: converted, message: "Creating draft…" });
+        // Not a draft: a JSON bank uploaded here goes straight into the
+        // question bank as approved content. Review is the AI extractor's step.
+        updateFile(f.name, { questions: converted, message: "Adding to question bank…" });
 
         const headers: Record<string, string> = {
           "Content-Type": "application/json",

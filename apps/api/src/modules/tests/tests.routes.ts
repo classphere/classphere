@@ -15,6 +15,7 @@ import {
   updateGlobalTest,
   bulkUpdateGlobalTests,
   bulkDeleteGlobalTests,
+  bulkPublishGlobalTests,
   uploadTestController,
   validateTest,
   deleteTestQuestion,
@@ -100,6 +101,8 @@ router.get("/bank-availability", authenticate, requireRole("super_admin", "insti
 router.post("/", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), createTest);
 router.patch("/bulk/global", authenticate, requireRole("super_admin"), bulkUpdateGlobalTests);
 router.delete("/bulk/global", authenticate, requireRole("super_admin"), bulkDeleteGlobalTests);
+// Three segments, so it is not caught by "/:id/publish" below.
+router.post("/bulk/global/publish", authenticate, requireRole("super_admin"), bulkPublishGlobalTests);
 router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlobalTest);
 // The same per-question report the Test Department workspace gets. Reachable by
 // every role that can review a paper, since one function produces it.

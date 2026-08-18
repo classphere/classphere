@@ -774,6 +774,121 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
   }
 };
 
+/**
+ * Publish one global paper: the marking-scheme guard, the per-question
+ * validation, the paper row, and the approval of its questions.
+ *
+ * Extracted from publishTest so bulkPublishGlobalTests runs exactly the same
+ * checks. A bulk path with its own looser rules is how a paper that the single
+ * publish button refuses gets published anyway.
+ */
+async function publishGlobalPaper(
+  paperId: string,
+  userId: string,
+): Promise<
+  | { ok: true; paper: { id: string; title: string; is_published: boolean } }
+  | { ok: false; status: number; message: string; errors?: string[]; questions?: any[] }
+> {
+  // Publishing is the moment a paper can be sat, so it is the moment its marks
+  // have to be right. An Advanced paper carries no default — its marks differ by
+  // question type and change between years — and scoring one on the fallback
+  // +4/-1 would quietly mis-score every attempt.
+  //
+  // Upload deliberately does not check this. A paper whose instructions page was
+  // missing or unreadable is still worth keeping as a draft; it just cannot go
+  // out until someone says what it is worth.
+  const { data: paperRow, error: paperRowError } = await supabaseDB
+    .from("papers")
+    .select("marking_scheme, extracted_from_pdf, exams(code)")
+    .eq("id", paperId)
+    .maybeSingle();
+  if (paperRowError) throw paperRowError;
+
+  const paperExamCode = (paperRow as any)?.exams?.code ?? "";
+  const hasScheme = paperRow?.marking_scheme && Object.keys(paperRow.marking_scheme).length > 0;
+  if (!hasScheme && requiresExplicitScheme(paperExamCode)) {
+    return {
+      ok: false,
+      status: 400,
+      message: `Cannot publish: ${paperExamCode} has no standard marking scheme, so this paper must state its own. ` +
+        `Set the marks per question type on the review screen, then publish.`,
+    };
+  }
+
+  // The same function the validate endpoint uses, so a paper can never pass
+  // validation and then be refused at publish, or the reverse. Publication once
+  // ran its own narrower checks and reported at most five deduplicated messages
+  // with no question numbers, which told a reviewer that something was wrong but
+  // not where.
+  //
+  // question_number is not a real column on questions — computed below from
+  // position, as getPaper and getTest already do. Selecting it directly threw
+  // "column questions_1.question_number does not exist" on every call, which was
+  // once the actual reason no paper could be published through here.
+  const { data: publishRows, error: publishRowsError } = await supabaseDB
+    .from("paper_questions")
+    .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, source_reference, extraction_metadata)")
+    .eq("paper_id", paperId);
+  if (publishRowsError) throw publishRowsError;
+
+  const publishQuestions = (publishRows ?? []).map((row: any, idx: number) => {
+    const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+    return {
+      position: row.position,
+      ...question,
+      question_number: question?.question_number ?? row.position ?? idx + 1,
+    };
+  });
+  const report = validatePaperQuestions(publishQuestions, paperExamCode, Boolean((paperRow as any)?.extracted_from_pdf));
+
+  if (report.summary.withErrors > 0) {
+    return {
+      ok: false,
+      status: 400,
+      message: `Cannot publish: ${report.summary.withErrors} question(s) must be fixed first. Validate the paper to see each one.`,
+      // Named, so the reviewer knows which questions to open rather than being
+      // told a count.
+      errors: report.questions
+        .filter((entry) => entry.severity === "error")
+        .slice(0, 8)
+        .map((entry) => `Q${entry.question_number}: ${entry.issues.find((i) => i.severity === "error")?.message ?? "invalid"}`),
+      questions: report.questions.filter((entry) => entry.severity === "error"),
+    };
+  }
+
+  const { data: paper, error } = await supabaseDB
+    .from("papers")
+    .update({ is_published: true, workflow_status: "published", published_at: new Date().toISOString(), published_by: userId })
+    .eq("id", paperId)
+    .eq("is_active", true)
+    .select("id, title, is_published")
+    .maybeSingle();
+  if (error) throw error;
+  if (!paper) return { ok: false, status: 404, message: "Test not found or access denied." };
+
+  // Publishing is the review being signed off, so it is also the moment the
+  // paper's questions become bank content. Nothing else in the product could do
+  // this for a global paper: the only other writer of approved is the Test
+  // Department's, scoped to an institute_id, and a global question's is NULL.
+  // Publishing therefore marked the paper sittable and left every question in it
+  // invisible to the picker, auto-fill, DPP browse and topic practice.
+  //
+  // Not an error if it fails — the paper is already published by this point, and
+  // reporting a failure for work that succeeded would send a superadmin
+  // publishing it again.
+  const publishedQuestionIds = publishQuestions.map((q: any) => q.id).filter(Boolean);
+  if (publishedQuestionIds.length > 0) {
+    const { error: approveError } = await supabaseDB
+      .from("questions")
+      .update({ review_status: "approved", reviewed_at: new Date().toISOString(), reviewed_by: userId })
+      .in("id", publishedQuestionIds)
+      .neq("review_status", "approved");
+    if (approveError) console.error("[publishGlobalPaper] questions not approved:", approveError.message);
+  }
+
+  return { ok: true, paper: paper as any };
+}
+
 export const publishTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -784,96 +899,88 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    // Publishing is the moment a paper can be sat, so it is the moment its
-    // marks have to be right. An Advanced paper carries no default — its marks
-    // differ by question type and change between years — and scoring one on the
-    // fallback +4/-1 would quietly mis-score every attempt.
-    //
-    // Upload deliberately does not check this. A paper whose instructions page
-    // was missing or unreadable is still worth keeping as a draft; it just
-    // cannot go out until someone says what it is worth.
-    const { data: paperRow, error: paperRowError } = await supabaseDB
-      .from("papers")
-      .select("marking_scheme, extracted_from_pdf, exams(code)")
-      .eq("id", id)
-      .maybeSingle();
-    if (paperRowError) throw paperRowError;
-    const paperExamCode = (paperRow as any)?.exams?.code ?? "";
-    const hasScheme = paperRow?.marking_scheme && Object.keys(paperRow.marking_scheme).length > 0;
-    if (!hasScheme && requiresExplicitScheme(paperExamCode)) {
-      res.status(400).json({
+    const result = await publishGlobalPaper(id, req.user!.id);
+    if (!result.ok) {
+      res.status(result.status).json({
         success: false,
-        message: `Cannot publish: ${paperExamCode} has no standard marking scheme, so this paper must state its own. ` +
-          `Set the marks per question type on the review screen, then publish.`,
+        message: result.message,
+        ...(result.errors ? { errors: result.errors } : {}),
+        ...(result.questions ? { questions: result.questions } : {}),
       });
       return;
     }
 
-    // The same function the validate endpoint uses, so a paper can never pass
-    // validation and then be refused at publish, or the reverse. Publication
-    // previously ran its own narrower checks and reported at most five
-    // deduplicated messages with no question numbers, which told a reviewer that
-    // something was wrong but not where.
-    // question_number is not a real column on questions — computed below from
-    // position, as getPaper and getTest already do. Selecting it directly threw
-    // "column questions_1.question_number does not exist" on every call, which
-    // made this the actual reason no paper could be published through here.
-    const { data: publishRows, error: publishRowsError } = await supabaseDB
-      .from("paper_questions")
-      .select("position, questions(id, subject, chapter, question_text, question_type, options, correct_answer, source_reference, extraction_metadata)")
-      .eq("paper_id", id);
-    if (publishRowsError) throw publishRowsError;
+    res.status(200).json({ success: true, message: "Test published", data: { test: result.paper } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
 
-    const publishQuestions = (publishRows ?? []).map((row: any, idx: number) => {
-      const question = Array.isArray(row.questions) ? row.questions[0] : row.questions;
-      return {
-        position: row.position,
-        ...question,
-        question_number: question?.question_number ?? row.position ?? idx + 1,
-      };
-    });
-    const report = validatePaperQuestions(publishQuestions, paperExamCode, Boolean((paperRow as any)?.extracted_from_pdf));
-
-    if (report.summary.withErrors > 0) {
-      res.status(400).json({
-        success: false,
-        message: `Cannot publish: ${report.summary.withErrors} question(s) must be fixed first. Validate the paper to see each one.`,
-        // Named, so the reviewer knows which questions to open rather than
-        // being told a count.
-        errors: report.questions
-          .filter((entry) => entry.severity === "error")
-          .slice(0, 8)
-          .map((entry) => `Q${entry.question_number}: ${entry.issues.find((i) => i.severity === "error")?.message ?? "invalid"}`),
-        questions: report.questions.filter((entry) => entry.severity === "error"),
-      });
+/**
+ * POST /api/v1/tests/bulk/global/publish
+ * [super_admin] — Publish the selected global papers in one go.
+ *
+ * The bank screen already selects papers in bulk to edit and to delete them;
+ * publishing was the one action left that had to be done by opening each paper
+ * in turn, which for a backlog of uploads means hundreds of round trips.
+ *
+ * Every paper goes through publishGlobalPaper, so a paper that the single
+ * publish button refuses is refused here too, and is reported by name rather
+ * than silently skipped: a partial success that reads as a total one is how a
+ * paper nobody can sit sits in a batch waiting to be noticed.
+ */
+export const bulkPublishGlobalTests = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { ids } = req.body as { ids?: string[] };
+    if (!Array.isArray(ids) || ids.length === 0 || ids.length > 100) {
+      res.status(400).json({ success: false, message: "Supply 1-100 paper ids." });
       return;
     }
 
-    let query = supabaseDB
+    // Same eligibility gate as bulkDeleteGlobalTests: global papers only, so a
+    // selection that has picked up an institute's paper is refused outright
+    // rather than half-applied.
+    const { data: eligible, error: eligibilityError } = await supabaseDB
       .from("papers")
-      .update({ is_published: true, workflow_status: "published", published_at: new Date().toISOString(), published_by: req.user!.id })
-      .eq("id", id)
+      .select("id, title")
+      .in("id", ids)
+      .is("institute_id", null)
       .eq("is_active", true);
-
-    if (!isSuperAdmin) {
-      query = query.eq("created_by", req.user!.id);
-    }
-
-    const { data: paper, error } = await query
-      .select("id, title, is_published")
-      .maybeSingle();
-
-    if (error) {
-      res.status(500).json({ success: false, message: error.message });
+    if (eligibilityError) throw eligibilityError;
+    if ((eligible?.length ?? 0) !== ids.length) {
+      res.status(409).json({ success: false, message: "One or more selected papers are not active global papers; no change was made." });
       return;
     }
 
-    if (!paper) {
-      res.status(404).json({ success: false, message: "Test not found or access denied." });
-      return;
+    const titles = new Map((eligible ?? []).map((row: any) => [row.id, row.title]));
+    const published: string[] = [];
+    const failed: { id: string; title: string; message: string }[] = [];
+
+    // Sequential on purpose. Each paper reads its questions and writes them
+    // back, and a hundred of those at once against one Postgres connection pool
+    // is how a bulk action takes the API down with it.
+    for (const id of ids) {
+      try {
+        const result = await publishGlobalPaper(id, req.user!.id);
+        if (result.ok) published.push(id);
+        else failed.push({ id, title: titles.get(id) ?? id, message: result.message });
+      } catch (err: any) {
+        failed.push({ id, title: titles.get(id) ?? id, message: err.message ?? "Publish failed." });
+      }
     }
 
-    res.status(200).json({ success: true, message: "Test published", data: { test: paper } });
+    await logAdminAction(
+      req.user?.id,
+      "Global papers bulk published",
+      `Published ${published.length} of ${ids.length} global papers.` +
+        (failed.length ? ` ${failed.length} refused: ${failed.map((f) => f.title).join(", ")}.` : ""),
+      "question_bank",
+      // "info" rather than "error" for a partial run: the papers that did
+      // publish are a real success, and the refusals are named in the detail.
+      failed.length ? "info" : "success",
+    );
+
+    res.status(200).json({ success: true, data: { published: published.length, failed } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

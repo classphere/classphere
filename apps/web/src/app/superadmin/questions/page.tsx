@@ -13,6 +13,8 @@ import {
   RiDeleteBinLine,
   RiEditLine,
   RiLoader4Line,
+  RiCheckLine,
+  RiCloseLine,
 } from "@remixicon/react";
 import { PaperCard, type PaperCardBadge } from "@/components/questions/PaperCard";
 
@@ -36,6 +38,12 @@ export default function QuestionBankPage() {
 
   // Selection state
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+
+  // Bulk publish
+  const [publishing, setPublishing] = useState(false);
+  const [publishResult, setPublishResult] = useState<
+    { published: number; failed: { id: string; title: string; message: string }[] } | null
+  >(null);
 
   // Edit states
   const [editingQuestion, setEditingQuestion] = useState<any | null>(null);
@@ -127,6 +135,52 @@ export default function QuestionBankPage() {
     }
   };
 
+  // Publishing was a per-paper trip into the review screen and back, which for a
+  // backlog of uploaded papers means opening every one of them. The API runs the
+  // same guards it runs for a single publish, so a paper that needs a marking
+  // scheme or has a broken question is refused here too — and named, rather than
+  // counted as a success.
+  const handleBulkPublish = async () => {
+    if (!token) return;
+    const selected = filteredPapers.filter((item: any) => selectedIds.has(item.id));
+    const unpublished = selected.filter((item: any) => !item.is_published);
+    if (unpublished.length === 0) {
+      alert("Every selected test is already published.");
+      return;
+    }
+    if (!confirm(
+      `Publish ${unpublished.length} test${unpublished.length === 1 ? "" : "s"}? ` +
+      `Their questions become available in the question bank, and students can sit the papers.`
+    )) return;
+
+    setPublishing(true);
+    setPublishResult(null);
+    try {
+      // The endpoint takes 100 ids at a time; a "select all" over a few hundred
+      // papers is exactly the case this exists for, so it is chunked rather than
+      // refused.
+      const ids = unpublished.map((item: any) => item.id);
+      let published = 0;
+      const failed: { id: string; title: string; message: string }[] = [];
+      for (let i = 0; i < ids.length; i += 100) {
+        const res = await apiClient.post<{ success: boolean; data: { published: number; failed: typeof failed } }>(
+          "/api/v1/tests/bulk/global/publish",
+          { ids: ids.slice(i, i + 100) },
+          token
+        );
+        published += res.data?.published ?? 0;
+        failed.push(...(res.data?.failed ?? []));
+      }
+      setPublishResult({ published, failed });
+      setSelectedIds(new Set());
+      await fetchQuestions();
+    } catch (err: any) {
+      alert("Error publishing tests: " + (err.message ?? ""));
+    } finally {
+      setPublishing(false);
+    }
+  };
+
   const handleSaveEdit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingQuestion || !token) return;
@@ -172,11 +226,20 @@ export default function QuestionBankPage() {
               {selectedIds.size > 0 && (
                 <div className="flex items-center gap-2 mr-2">
                   <span className="text-[13px] font-semibold text-t-secondary">{selectedIds.size} selected</span>
-                  <button 
+                  <button
                     onClick={handleBulkEditClick}
                     className="flex items-center gap-1.5 px-3 py-1.5 bg-b-surface1 border border-s-stroke2/40 rounded-[8px] text-[12px] font-medium text-t-primary hover:bg-s-stroke2/30 transition-colors"
                   >
                     <RiEditLine size={14} /> Edit
+                  </button>
+                  <button
+                    onClick={handleBulkPublish}
+                    disabled={publishing}
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[rgba(0,166,86,0.1)] border border-[rgba(0,166,86,0.2)] rounded-[8px] text-[12px] font-medium text-primary-02 hover:bg-[rgba(0,166,86,0.2)] transition-colors disabled:opacity-50"
+                  >
+                    {publishing
+                      ? <><RiLoader4Line size={14} className="animate-spin" /> Publishing…</>
+                      : <><RiCheckLine size={14} /> Publish</>}
                   </button>
                   <button 
                     onClick={handleBulkDelete}
@@ -254,6 +317,39 @@ export default function QuestionBankPage() {
               ))}
             </div>
           </div>
+
+          {/* What the last bulk publish actually did. A count alone would hide
+              the papers that were refused, which are the only ones that still
+              need someone to act. */}
+          {publishResult && (
+            <div className="mt-4 rounded-[12px] border border-s-stroke2/40 bg-b-surface1 p-4">
+              <div className="flex items-start justify-between gap-3">
+                <p className="font-sans text-[14px] font-semibold text-t-primary">
+                  {publishResult.published} test{publishResult.published === 1 ? "" : "s"} published
+                  {publishResult.failed.length > 0 && ` · ${publishResult.failed.length} refused`}
+                </p>
+                <button
+                  onClick={() => setPublishResult(null)}
+                  className="shrink-0 text-t-secondary hover:text-t-primary transition-colors"
+                  aria-label="Dismiss"
+                >
+                  <RiCloseLine size={18} />
+                </button>
+              </div>
+              {publishResult.failed.length > 0 && (
+                <ul className="mt-3 flex flex-col gap-2 max-h-[220px] overflow-y-auto">
+                  {publishResult.failed.map((row) => (
+                    <li key={row.id} className="text-[13px] leading-snug">
+                      <a href={`/superadmin/questions/${row.id}`} className="font-semibold text-t-primary underline underline-offset-2">
+                        {row.title}
+                      </a>
+                      <span className="text-t-secondary"> — {row.message}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
 
           {/* Cards — the same PaperCard Test Department and Institute Admin use,
               so a style change here reaches both instead of just this table. */}

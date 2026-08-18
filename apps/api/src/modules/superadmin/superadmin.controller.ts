@@ -218,6 +218,22 @@ async function processBase64ImageList(images: unknown): Promise<string[]> {
  *
  * Accepts a JSON body with metadata + a questions array.
  * Creates a Paper record and bulk-upserts all questions linked to it.
+ *
+ * `extracted_from_pdf` says which of the three upload tabs this came from, and
+ * decides whether the questions land reviewed. A JSON bank a superadmin has
+ * assembled and is uploading deliberately IS the reviewed artefact — there is
+ * nobody upstream of them to review it, and every bank consumer
+ * (bank-questions, bank-availability, createTest's auto-fill, the teacher's DPP
+ * browse, topic-wise practice) reads `review_status = 'approved'` only. Landing
+ * those as drafts is what made a whole global upload invisible everywhere
+ * outside the superadmin bank screen, with no action anywhere in the product
+ * that could approve them: the one approval writer is the Test Department's,
+ * scoped `institute_id = …`, and a global question's institute_id is NULL.
+ *
+ * The AI extractor is the exception, and the reason the flag is not simply
+ * dropped: those questions were read off a PDF by a model and genuinely have
+ * not been read by a person yet. They stay drafts until the paper is published
+ * from the review screen (publishTest, tests.controller.ts).
  */
 export const uploadQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -234,7 +250,13 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       difficulty,
       marking_scheme,
       questions,
+      extracted_from_pdf,
     } = req.body;
+
+    // Only the AI extractor sends this. Absent means a hand-assembled JSON
+    // upload, which is pre-reviewed by definition.
+    const fromExtractor = extracted_from_pdf === true;
+    const reviewStatus = fromExtractor ? "draft" : "approved";
 
     // ── 1. Validate required metadata ───────────────────────────────────────
     //
@@ -454,7 +476,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
             source_reference: q.source_reference ?? {},
           } : {}),
           content_scope:  "global",
-          review_status:  "draft",
+          review_status:  reviewStatus,
           created_by:     req.user?.id ?? null,
         };
       })
@@ -495,6 +517,14 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
         p_marking_scheme: paperScheme ?? null,
         p_created_by: req.user?.id ?? null,
         p_questions: questionRows,
+        // Migration 55. The RPC hardcoded 'draft' for every global upload, so
+        // this could not be decided in Node alone.
+        p_review_status: reviewStatus,
+        // Recorded on the paper too: validatePaperQuestions treats an
+        // exam-pattern mismatch as real signal for an extracted paper and as a
+        // deliberate choice for a hand-built one (migration 52), and the global
+        // extractor never set it.
+        p_extracted_from_pdf: fromExtractor,
       }
     );
     if (uploadError || !paperId) throw uploadError ?? new Error("Global paper upload did not return an id.");
@@ -502,14 +532,18 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     await writeAdminAudit(
       req.user?.id,
       "Global question bank upload",
-      `Created global paper "${title.trim()}" with ${questionRows.length} questions.`,
+      `Created global paper "${title.trim()}" with ${questionRows.length} questions ` +
+        `(${fromExtractor ? "awaiting review" : "approved on upload"}).`,
       "question_bank",
       "success"
     );
 
     res.status(201).json({
       success: true,
-      message: `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`,
+      message: fromExtractor
+        ? `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`
+        : `${questionRows.length} questions added to the question bank. ` +
+          `They are available now; publish the paper if students should also be able to sit it.`,
       data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length },
     });
     return;

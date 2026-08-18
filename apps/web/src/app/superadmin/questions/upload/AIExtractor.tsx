@@ -243,6 +243,11 @@ export default function AIExtractor() {
               difficulty: form.difficulty || undefined,
               marking_scheme: needsScheme ? markingScheme : undefined,
               questions: convertedQuestions,
+              // A model read these off a PDF and nobody has checked them yet,
+              // so they land as drafts and stay out of the question bank until
+              // this paper is published from the review screen. The JSON upload
+              // tabs send nothing here and their questions arrive approved.
+              extracted_from_pdf: true,
             };
 
             try {
@@ -347,6 +352,9 @@ export default function AIExtractor() {
         difficulty: form.difficulty || undefined,
         marking_scheme: needsScheme ? markingScheme : undefined,
         questions: convertedQuestions,
+        // Same PDF, same reason as the auto-save path above: held as drafts
+        // until someone publishes the paper.
+        extracted_from_pdf: true,
       };
 
       const res = await fetch(`${API_BASE}/superadmin/upload-questions`, {
