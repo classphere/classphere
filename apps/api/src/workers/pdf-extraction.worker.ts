@@ -85,6 +85,7 @@ async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
         message: result.message,
         ...(completeness ? { completeness, needs_review: missing > 0 } : {}),
         ...(result.profile ? { profile: result.profile, extractor_version: "v4" } : {}),
+        ...(result.ownAnswerKeyResult ? { ownAnswerKeyResult: result.ownAnswerKeyResult } : {}),
       },
       completed_at: new Date().toISOString(),
     }, true);

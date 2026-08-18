@@ -5,6 +5,7 @@ import { extractPDF } from "./pdfExtractor.service";
 import type { ExtractionResult, ExtractionOptions } from "./pdfExtractor.service";
 import { enrichQuestionContentV4 } from "../../lib/question-content";
 import { applyAnswerKey, parseAnswerKeyFromPdf, shouldParseAnswerKey } from "./answer-key.service";
+import type { ApplyResult } from "./answer-key.service";
 
 export interface DocumentProfile {
   profile_version: number;
@@ -136,14 +137,22 @@ function enrichResult(result: ExtractionResult, profile?: DocumentProfile | null
  * of the paper. Gating this on the flag would mean turning off profiling also
  * silently stopped every answer key being read.
  */
+/**
+ * Returns null when no attempt was made (paper already had enough answers, or
+ * had none of the shape a key page has). Otherwise the raw ApplyResult,
+ * including `rejected` when a key was found but discarded as too sparse to
+ * trust — previously computed and then thrown away here, so a paper whose own
+ * printed key failed to apply gave no sign of it beyond a console.log that
+ * only fires on the success path.
+ */
 async function applyOwnAnswerKey(
   pdfPath: string,
   result: ExtractionResult,
   profile: DocumentProfile | null,
   options: ExtractionOptions,
-): Promise<void> {
-  if (!result.success || !Array.isArray(result.questions) || result.questions.length === 0) return;
-  if (!shouldParseAnswerKey(result.questions, profile)) return;
+): Promise<ApplyResult | null> {
+  if (!result.success || !Array.isArray(result.questions) || result.questions.length === 0) return null;
+  if (!shouldParseAnswerKey(result.questions, profile)) return null;
 
   const key = await parseAnswerKeyFromPdf(pdfPath, result.questions.length);
   const applied = applyAnswerKey(result.questions, key, String(options.examCategory ?? ""));
@@ -152,12 +161,17 @@ async function applyOwnAnswerKey(
       `[pdfExtractor] Read from the paper's own key: ${applied.answersFilled} answers, ` +
       `${applied.solutionsFilled} solutions.`,
     );
+  } else if (applied.rejected) {
+    console.warn(`[pdfExtractor] The paper's own answer key was found but discarded: ${applied.rejected}.`);
   }
+  return applied;
 }
 
 export interface ExtractionResultV4 extends ExtractionResult {
   profile?: DocumentProfile | null;
   effectivePages?: string;
+  /** Null when no key page was found to even attempt. */
+  ownAnswerKeyResult?: ApplyResult | null;
 }
 
 /**
@@ -198,7 +212,7 @@ export async function extractPDFV4(
 
   const effectivePages = pagesRange || questionPageRange(profile);
   const result = await extractPDF(pdfPath, effectivePages, options);
-  await applyOwnAnswerKey(pdfPath, result, profile, options);
+  const ownAnswerKeyResult = await applyOwnAnswerKey(pdfPath, result, profile, options);
 
-  return { ...enrichResult(result, profile), profile, effectivePages };
+  return { ...enrichResult(result, profile), profile, effectivePages, ownAnswerKeyResult };
 }

@@ -1524,6 +1524,12 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     // so a partial extraction read identically to a complete one to whoever
     // was actually watching the upload.
     let completenessNote = "";
+    // Same idea, for the separately-uploaded answer key: set below once it's
+    // been parsed, so the person who attached it finds out here if it was
+    // discarded (unreadable, wrong document, or too sparse to trust) instead
+    // of only in a server-side console.warn they never see, and every
+    // question quietly landing with an empty correct_answer.
+    let answerKeyNote = "";
     let pollCount = 0;
     const extractionWaitStartedAt = Date.now();
     const maxWaitMs = Number(process.env.PDF_EXTRACTION_WAIT_TIMEOUT_MS ?? 15 * 60 * 1000);
@@ -1585,6 +1591,14 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           completenessNote = " This extractor build did not report a completeness check — verify the question count against the PDF yourself before publishing.";
           sendProgress("extracting_questions", "Extraction finished, but no completeness check was reported.");
         }
+        // A key printed inside the question PDF itself, distinct from the
+        // answer_key file handled below — same discard-and-say-nothing bug,
+        // fixed the same way. Appended rather than assigned, since both this
+        // and a separately-uploaded key can each have their own outcome.
+        const ownKey = extractionResult?.ownAnswerKeyResult;
+        if (ownKey?.rejected) {
+          answerKeyNote += ` The answer key printed in the question PDF itself was found but discarded (${ownKey.rejected}) — too sparse to trust.`;
+        }
         break;
       } else if (jobData.status === "failed") {
         sendError(`AI extraction failed: ${jobData.error}`);
@@ -1640,6 +1654,11 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           }
         }
       }
+      if (Object.keys(csvAnswers).length === 0) {
+        answerKeyNote += ` The attached answer key CSV (${answerKeyFile.originalname}) had no readable ` +
+          `"question number, answer" rows — check it's comma-separated with the question number first.`;
+        sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
+      }
     } else if (answerKeyFile && isPdf) {
       // Only a separate key file is read here. The question PDF has already
       // been searched for its own key by the extractor, which runs before this
@@ -1676,11 +1695,24 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         });
         const coverage = maxQuestionNumber > 0 ? numbers.length / maxQuestionNumber : 0;
 
-        if (numbers.length > 0 && coverage < MIN_KEY_COVERAGE) {
+        if (numbers.length === 0) {
+          // Not even the "scattered false matches below threshold" case —
+          // the parser found nothing in this document shaped like an answer
+          // key at all. Previously this fell through to the else branch
+          // silently: the loop over an empty `numbers` array applied zero
+          // answers with no warning anywhere, server-side included.
+          answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) had no readable answers — ` +
+            `it may be the wrong document, a scanned image with no text layer, or a layout the parser doesn't recognize.`;
+          sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
+        } else if (coverage < MIN_KEY_COVERAGE) {
+          const percent = Math.round(coverage * 100);
+          answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) only matched ${numbers.length}/${maxQuestionNumber} ` +
+            `questions (${percent}%) — discarded as too sparse to trust rather than applied to part of the paper.`;
           console.warn(
             `[uploadTestController] Answer key discarded: covered ${numbers.length}/${maxQuestionNumber} ` +
-            `(${Math.round(coverage * 100)}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key reaches.`,
+            `(${percent}%), below the ${Math.round(MIN_KEY_COVERAGE * 100)}% a real key reaches.`,
           );
+          sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
         } else {
           for (const qNumStr of numbers) {
             const ans = parsed.answers[qNumStr];
@@ -1693,10 +1725,16 @@ export const uploadTestController = async (req: Request, res: Response): Promise
             }
           }
           console.log(`[uploadTestController] Answer key: ${Object.keys(csvAnswers).length} answers, ${Object.keys(pdfSolutions).length} solutions`);
+          sendProgress("extracting_answers", `Answer key applied: ${Object.keys(csvAnswers).length} answer(s), ${Object.keys(pdfSolutions).length} solution(s).`);
         }
       } catch (err: any) {
+        answerKeyNote += ` The attached answer key PDF (${answerKeyFile.originalname}) could not be read: ${err.message}.`;
         console.error("[uploadTestController] PDF Answer Key extraction failed:", err.message);
+        sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
       }
+    } else if (answerKeyFile) {
+      answerKeyNote += ` The attached file (${answerKeyFile.originalname}) wasn't recognized as a CSV or PDF answer key, so it was ignored.`;
+      sendProgress("extracting_answers", `Answer key not applied.${answerKeyNote}`);
     }
 
     sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud...");
@@ -1934,7 +1972,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     const successMessage = (isSplit
       ? `Split into ${createdPapers.length} papers (${createdPapers.map((p) => p.total_questions).join(", ")} questions). ${matchingNote}Review and publish each from the Test Department workspace.`
       : `Draft created. ${matchingNote}Review and publish it from the Test Department workspace.`
-    ) + completenessNote;
+    ) + completenessNote + answerKeyNote;
 
     sendProgress("success", successMessage, {
       paper_id: createdPapers[0].id,

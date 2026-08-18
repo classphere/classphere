@@ -194,7 +194,15 @@ export default function AIExtractor() {
               ? ` All ${completeness.expected_total} questions detected in the PDF were extracted.`
               : "";
 
-            setResultMsg(`Extraction complete!${completenessNote} Saving to global draft for review...`);
+            // Same discard-and-say-nothing bug as completeness had: a key
+            // printed in the PDF that scored too low on coverage was silently
+            // thrown away with zero answers applied and no sign of it here.
+            const ownKey = jobState.result?.ownAnswerKeyResult;
+            const answerKeyNote = ownKey?.rejected
+              ? ` This PDF's own answer key was found but discarded (${ownKey.rejected}) — too sparse to trust; answers were left blank.`
+              : "";
+
+            setResultMsg(`Extraction complete!${completenessNote}${answerKeyNote} Saving to global draft for review...`);
 
             // Auto-fill paper title from PDF name if blank
             let finalTitle = form.title;
@@ -216,7 +224,7 @@ export default function AIExtractor() {
               setExtractedQuestions(jobState.result.questions);
               setStatus("success");
               setResultMsg(
-                `Extraction complete.${completenessNote} This paper states its own marking scheme — it has been filled in below. ` +
+                `Extraction complete.${completenessNote}${answerKeyNote} This paper states its own marking scheme — it has been filled in below. ` +
                 `Check it against the paper, then save the draft.`
               );
               jobDone = true;
@@ -277,7 +285,7 @@ export default function AIExtractor() {
 
               if (uploadData.success) {
                  setStatus("success");
-                 setResultMsg(`Successfully created draft.${completenessNote} Redirecting to advanced review...`);
+                 setResultMsg(`Successfully created draft.${completenessNote}${answerKeyNote} Redirecting to advanced review...`);
                  setTimeout(() => {
                    router.push(`/superadmin/questions/${uploadData.data.paper_id}`);
                  }, 1500);
