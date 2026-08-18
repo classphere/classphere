@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { QuestionBody } from "@/components/QuestionBody";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine, RiImageAddLine,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine, RiImageAddLine, RiRobot2Line,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -124,6 +124,17 @@ interface QuestionReviewEditorProps {
    * Optional — a surface that cannot delete simply does not pass it.
    */
   onDelete?: (question: Question) => Promise<void>;
+  /**
+   * Generate a stand-in draft for a detected gap placeholder — a question
+   * number the extractor found in the PDF but returned no content for. The
+   * model never saw the source page, so this is a plausible substitute for
+   * the reviewer to check or replace, not a recovery of the real question —
+   * see the confirm prompt this button shows before calling it.
+   *
+   * Optional and only rendered when the active question actually is a gap
+   * (source_reference.extraction_flags includes "gap_placeholder").
+   */
+  onAiFillGap?: (question: Question) => Promise<void>;
 }
 
 export function QuestionReviewEditor({
@@ -132,13 +143,18 @@ export function QuestionReviewEditor({
   onSave,
   examCode,
   onDelete,
+  onAiFillGap,
 }: QuestionReviewEditorProps) {
   const [deleting, setDeleting] = useState(false);
+  const [aiFilling, setAiFilling] = useState(false);
   const [draft, setDraft] = useState<Question>({ ...question });
   const [saving, setSaving] = useState(false);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [preview, setPreview] = useState(false); // student-preview mode
+
+  const isGapPlaceholder = Array.isArray(question?.source_reference?.extraction_flags)
+    && question.source_reference.extraction_flags.includes("gap_placeholder");
 
   // Sync when the parent switches to a different question
   useEffect(() => {
@@ -262,9 +278,44 @@ export function QuestionReviewEditor({
     }
   };
 
+  const runAiFillGap = async () => {
+    if (!onAiFillGap) return;
+    if (!confirm(
+      "This asks an AI model to draft a stand-in question for this slot. It was never shown the source PDF page, so this is NOT the real exam question — only a plausible substitute in the same subject and style. " +
+      "You'll still need to check it against the source PDF (or replace it) before publishing. Continue?"
+    )) return;
+    setError(null);
+    setAiFilling(true);
+    try {
+      await onAiFillGap(draft);
+    } catch (e: any) {
+      setError(e?.message ?? "AI gap-fill failed.");
+    } finally {
+      setAiFilling(false);
+    }
+  };
+
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col h-full">
+      {isGapPlaceholder && canEdit && onAiFillGap && (
+        <div className="shrink-0 flex items-center justify-between gap-3 border-b border-s-stroke2 bg-primary-03/5 px-5 py-2.5">
+          <p className="text-sm text-t-secondary">
+            <span className="font-semibold text-primary-03">Gap slot.</span> The extractor found this question
+            number in the PDF but returned no content — open the source PDF and type it in, or try an AI-drafted
+            stand-in below.
+          </p>
+          <button
+            type="button"
+            disabled={aiFilling}
+            onClick={runAiFillGap}
+            className="flex h-9 shrink-0 items-center gap-1.5 rounded-[10px] border border-primary-03/30 bg-b-surface1 px-3 text-sm font-semibold text-primary-03 transition-colors hover:border-primary-03/60 disabled:opacity-50"
+          >
+            <RiRobot2Line size={15} />
+            {aiFilling ? "Drafting…" : "Try AI fill"}
+          </button>
+        </div>
+      )}
       {/* ── Header: Classification + Save ─────────────────────────────── */}
       <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3 rounded-t-[24px]">
         <div className="flex items-end gap-3">

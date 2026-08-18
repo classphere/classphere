@@ -88,3 +88,117 @@ export async function fixQuestionWithAI(
     return null;
   }
 }
+
+/**
+ * Gap placeholders — a question number the extractor's own anchor check found
+ * printed in the PDF but could not read any content for. There is no broken
+ * text to repair here, only an empty slot, so this is a different job from
+ * fixQuestionWithAI: generate a stand-in question from context (subject,
+ * chapter, neighboring questions on the same paper) rather than correct one
+ * that already exists.
+ *
+ * The model is text-only (DeepSeek) and was never shown the source PDF page —
+ * it cannot know what the real question said. What it returns is a plausible
+ * draft in the same subject/style/difficulty, explicitly NOT a reproduction
+ * of the actual exam question. The caller must keep it flagged unverified and
+ * force review; this function does not decide that, it only generates.
+ */
+const GAP_FILL_SYSTEM_PROMPT = `A page of a JEE/NEET exam paper printed a question number that could not be read — the text, options, and answer are genuinely lost, not just malformed. You were NOT shown the source page and have no way to know what it actually said.
+
+Generate a plausible, original stand-in question — same subject, chapter, difficulty, and style as the example questions you're given from the same paper — appropriate for the stated exam. This is explicitly a draft substitute for a human reviewer to either replace with the real question (by checking the source PDF themselves) or keep as a placeholder practice question. It must never be presented as a transcription of the real exam content, because it is not one.
+
+Return ONLY a JSON object:
+{
+  "question_text": string (Markdown, LaTeX as $...$),
+  "question_type": "mcq_single" | "mcq_multi" | "integer" | "matching" | "assertion_reason",
+  "options": [{"id":"A","text":string}, ...] (exactly 4 for mcq_single/mcq_multi, [] for integer),
+  "correct_answer": string[] (option id(s), or the numeric value as a string for integer type)
+}
+No prose, no markdown fences, no explanation outside the JSON.`;
+
+export interface GapFillContext {
+  examCode: string;
+  subject?: string | null;
+  chapter?: string | null;
+  topic?: string | null;
+  difficulty?: string | null;
+  questionNumber?: number | null;
+  /** 2-4 real questions from the same paper, for style/level/subject grounding. */
+  neighbors: Array<{ question_number: number; question_text: string; question_type?: string | null }>;
+}
+
+export interface GapFillResult {
+  question_text: string;
+  question_type: string;
+  options: Array<{ id: string; text: string }>;
+  correct_answer: string[];
+  note: string;
+}
+
+export async function generateGapFillWithAI(context: GapFillContext): Promise<GapFillResult | null> {
+  const apiKey = env.OPENROUTER_API_KEY;
+  if (!apiKey) return null;
+
+  const model = env.LLM_MODEL || DEFAULT_MODEL;
+  const userContent = JSON.stringify({
+    exam: context.examCode,
+    subject: context.subject ?? null,
+    chapter: context.chapter ?? null,
+    topic: context.topic ?? null,
+    difficulty: context.difficulty ?? null,
+    missing_question_number: context.questionNumber ?? null,
+    example_questions_from_same_paper: context.neighbors,
+  });
+
+  try {
+    const response = await fetch(OPENROUTER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+        "HTTP-Referer": "https://classphere.com",
+        "X-Title": "Classphere gap-fill draft",
+      },
+      body: JSON.stringify({
+        model,
+        messages: [
+          { role: "system", content: GAP_FILL_SYSTEM_PROMPT },
+          { role: "user", content: userContent },
+        ],
+        response_format: { type: "json_object" },
+        temperature: 0.4,
+      }),
+      signal: AbortSignal.timeout(30_000),
+    });
+
+    if (!response.ok) {
+      console.error(`[question-ai-fix] gap-fill OpenRouter ${response.status}: ${await response.text().catch(() => "")}`);
+      return null;
+    }
+
+    const payload: any = await response.json();
+    const content = payload?.choices?.[0]?.message?.content;
+    if (typeof content !== "string") return null;
+
+    const parsed = JSON.parse(content);
+    const text = String(parsed?.question_text ?? "").trim();
+    const options = Array.isArray(parsed?.options) ? parsed.options : [];
+    const answers = Array.isArray(parsed?.correct_answer)
+      ? parsed.correct_answer.map((a: unknown) => String(a))
+      : parsed?.correct_answer ? [String(parsed.correct_answer)] : [];
+    if (!text) return null;
+
+    return {
+      question_text: text,
+      question_type: String(parsed?.question_type ?? "mcq_single"),
+      options: options
+        .filter((o: any) => o && typeof o === "object")
+        .map((o: any) => ({ id: String(o.id ?? ""), text: String(o.text ?? "") })),
+      correct_answer: answers,
+      note: `AI-generated draft (${model}) — not read from the source PDF; the real question could not be extracted. Verify or replace before publishing.`,
+    };
+  } catch (err: any) {
+    console.error("[question-ai-fix] gap-fill attempt failed:", err?.message ?? err);
+    return null;
+  }
+}

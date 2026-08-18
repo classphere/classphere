@@ -232,6 +232,16 @@ export default function ReviewPaperPage() {
     }));
   };
 
+  const aiFillGap = async (question: any) => {
+    const response: any = await apiClient.post(
+      `/api/v1/test-department/papers/${params.id}/questions/${question.id}/ai-fill-gap`, {}, session!.access_token);
+    const saved = response.data?.question ?? question;
+    patchCache((previous) => ({
+      ...previous,
+      questions: previous.questions.map((q: any) => q.id === question.id ? { ...q, ...saved } : q),
+    }));
+  };
+
   const saveMarkingScheme = async (scheme: MarkingScheme) => {
     const response: any = await apiClient.patch(
       `/api/v1/test-department/papers/${params.id}`, { marking_scheme: scheme }, session!.access_token);
@@ -300,6 +310,7 @@ export default function ReviewPaperPage() {
           examCode={examCode}
           onSaveQuestion={saveQuestion}
           onDeleteQuestion={deleteQuestion}
+          onAiFillGap={aiFillGap}
           onSaveMarkingScheme={saveMarkingScheme}
           onSavePaperDetails={savePaperDetails}
           onValidate={validate}

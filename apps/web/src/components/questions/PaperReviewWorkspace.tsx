@@ -48,6 +48,8 @@ export interface PaperReviewWorkspaceProps {
    */
   onSavePaperDetails?: (details: Partial<PaperDetails>) => Promise<void>;
   onValidate: () => Promise<ValidationResult>;
+  /** Omitted where the surface has no AI gap-fill (only the institute PDF-upload review flow does). */
+  onAiFillGap?: (question: any) => Promise<void>;
   /** Rendered beside the Validate button — the page's own workflow actions. */
   actions?: React.ReactNode;
 }
@@ -64,6 +66,7 @@ export function PaperReviewWorkspace({
   onSaveMarkingScheme,
   onSavePaperDetails,
   onValidate,
+  onAiFillGap,
   actions,
 }: PaperReviewWorkspaceProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -350,12 +353,18 @@ export function PaperReviewWorkspace({
           {question ? (
             <div className="card h-full overflow-hidden rounded-[12px] p-0">
               <QuestionReviewEditor
-                key={question.id}
+                // Remounts (and re-syncs its local draft) on content_version
+                // too, not just id — otherwise an AI gap-fill updates the
+                // question in the cache but the open editor keeps showing
+                // the stale blank content until the reviewer navigates away
+                // and back.
+                key={`${question.id}-${question.content_version ?? 0}`}
                 question={question}
                 canEdit={canEdit}
                 examCode={examCode}
                 onSave={(payload) => onSaveQuestion(payload, question)}
                 onDelete={canEdit ? removeQuestion : undefined}
+                onAiFillGap={onAiFillGap}
               />
             </div>
           ) : (

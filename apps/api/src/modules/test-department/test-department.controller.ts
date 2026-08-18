@@ -3,6 +3,7 @@ import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figur
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { validatePaperQuestions } from "../../lib/paper-validation";
 import { validateMarkingScheme } from "../../lib/marking-scheme";
+import { generateGapFillWithAI } from "../../lib/question-ai-fix";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -260,6 +261,112 @@ export async function getReviewPaper(req: Request, res: Response): Promise<void>
       };
     });
     res.json({ success: true, data: { paper, questions, events: events ?? [] } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
+/**
+ * Generate a stand-in draft for a gap placeholder — a question number the
+ * extractor found anchored in the PDF but returned no content for. Text-only
+ * (DeepSeek): it never saw the source page, so what comes back is a plausible
+ * question in the same subject/chapter/style as its neighbors on this paper,
+ * not a recovery of the real one. Kept flagged unverified rather than clearing
+ * review status, and refused outright on PYQ papers, where a fabricated
+ * question would misrepresent what was actually asked in a real past exam.
+ */
+export async function aiFillGapQuestion(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.paperId, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (!["draft", "changes_requested", "needs_review"].includes(paper.workflow_status)) {
+      res.status(409).json({ success: false, message: "Published or approved papers are immutable. Create a revision instead." }); return;
+    }
+    if (["pyq", "pyq-paper"].includes(String(paper.test_type ?? "").toLowerCase())) {
+      res.status(400).json({
+        success: false,
+        message: "AI gap-fill is disabled for previous-year-question papers — a generated question would misrepresent what was actually asked in the real exam. Open the source PDF and type it in.",
+      });
+      return;
+    }
+
+    const { data: link } = await supabaseDB.from("paper_questions").select("position").eq("paper_id", paper.id).eq("question_id", req.params.questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+    const { data: current, error: currentError } = await supabaseDB.from("questions").select("*").eq("id", req.params.questionId).eq("institute_id", instituteId).eq("content_scope", "institute_private").maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(403).json({ success: false, message: "Only institute-owned draft questions can be edited here." }); return; }
+
+    const existingFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    if (!existingFlags.includes("gap_placeholder")) {
+      res.status(400).json({ success: false, message: "AI gap-fill only works on detected gap placeholders, not ordinary questions." });
+      return;
+    }
+
+    const { data: examRow } = await supabaseDB.from("exams").select("code").eq("id", paper.exam_id).maybeSingle();
+
+    // A few real questions from the same paper, close to this position, so
+    // the model has a subject/chapter/style/difficulty to match rather than
+    // generating in a vacuum.
+    const { data: nearby } = await supabaseDB
+      .from("paper_questions")
+      .select("position, questions(question_text, question_type, is_active)")
+      .eq("paper_id", paper.id)
+      .gte("position", Math.max(1, (link.position ?? 1) - 3))
+      .lte("position", (link.position ?? 1) + 3)
+      .order("position", { ascending: true });
+
+    const neighbors = (nearby ?? [])
+      .map((row: any) => {
+        const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+        return q && q.is_active !== false && String(q.question_text ?? "").trim()
+          ? { question_number: row.position as number, question_text: String(q.question_text), question_type: q.question_type ?? null }
+          : null;
+      })
+      .filter((entry): entry is { question_number: number; question_text: string; question_type: string | null } => entry !== null)
+      .slice(0, 4);
+
+    const result = await generateGapFillWithAI({
+      examCode: examRow?.code ?? "",
+      subject: current.subject,
+      chapter: current.chapter,
+      topic: current.topic,
+      difficulty: current.difficulty,
+      questionNumber: link.position ?? null,
+      neighbors,
+    });
+    if (!result) {
+      res.status(502).json({ success: false, message: "AI gap-fill did not return a usable draft. Try again, or type the question in manually." });
+      return;
+    }
+
+    const updates: Record<string, unknown> = {
+      question_text: result.question_text,
+      question_type: result.question_type,
+      options: result.options,
+      correct_answer: result.correct_answer,
+      content_version: current.content_version + 1,
+      review_status: "draft",
+      updated_at: new Date().toISOString(),
+      source_reference: {
+        ...(current.source_reference ?? {}),
+        extraction_flags: [...new Set([...existingFlags, "ai_generated_unverified"])],
+      },
+      extraction_metadata: {
+        ...(current.extraction_metadata ?? {}),
+        needs_review: true,
+        review_reasons: [
+          ...(Array.isArray(current.extraction_metadata?.review_reasons) ? current.extraction_metadata.review_reasons : []),
+          result.note,
+        ],
+      },
+    };
+    const { data: updated, error } = await supabaseDB.from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    if (error) throw error;
+    if (!updated) { res.status(409).json({ success: false, message: "Question was updated by another reviewer." }); return; }
+
+    await supabaseDB.from("papers").update({ workflow_status: "draft", review_version: paper.review_version + 1 }).eq("id", paper.id);
+    await audit({ instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id, action: "question_ai_gap_filled", before: current, after: updated });
+
+    res.json({ success: true, data: { question: updated, note: result.note } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
