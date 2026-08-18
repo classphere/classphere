@@ -22,6 +22,16 @@ COPY apps/api ./apps/api
 # a local `npm install` and this can switch back to `npm ci`.
 RUN npm install --no-audit --no-fund
 
+# The runner stage below copies apps/api/node_modules as its own layer,
+# separate from the root node_modules copy. npm workspaces only actually
+# materializes that nested directory when at least one dependency can't be
+# deduped to the root — true before the @types/express override collapsed
+# every apps/api dependency into a single shared copy, false after. The
+# COPY --from=builder in the runner stage fails outright ("not found") if
+# the source path doesn't exist at all, so this guarantees it always does,
+# regardless of what npm's hoisting decides for any given dependency tree.
+RUN mkdir -p apps/api/node_modules
+
 # Build the API (assumes there is a build script in apps/api/package.json)
 WORKDIR /app/apps/api
 RUN npm run build
