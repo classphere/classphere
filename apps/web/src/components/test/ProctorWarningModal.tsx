@@ -50,7 +50,7 @@ export function ProctorWarningModal({
         </p>
 
         {!isFinalWarning && (
-          <div className="my-6 rounded-[14px] border border-red-500/30 bg-red-500/5 p-4">
+          <div className="my-6 rounded-md border border-red-500/30 bg-red-500/5 p-4">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-red-500">
                 Warning {warningCount} of {maxWarnings}
@@ -68,7 +68,7 @@ export function ProctorWarningModal({
         {!isFinalWarning && (
           <button
             onClick={onResume}
-            className="w-full py-3.5 px-6 rounded-[10px] bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-depth transition-all active:scale-98 cursor-pointer"
+            className="w-full py-3.5 px-6 rounded-md bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-depth transition-all active:scale-98 cursor-pointer"
           >
             I Understand — Resume Test
           </button>

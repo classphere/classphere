@@ -26,14 +26,14 @@ export function DualDeviceModal({ show, onExit }: DualDeviceModalProps) {
           Another device or tab initiated an active test session for your account. Simultaneous test-taking on multiple devices is strictly prohibited by your institute.
         </p>
 
-        <div className="my-6 rounded-[12px] border border-red-500/20 bg-red-500/5 p-3.5 text-xs text-red-400 font-semibold flex items-center justify-center gap-2">
+        <div className="my-6 rounded-md border border-red-500/20 bg-red-500/5 p-3.5 text-xs text-red-400 font-semibold flex items-center justify-center gap-2">
           <RiShieldUserLine size={16} />
           <span>Session token terminated on this device.</span>
         </div>
 
         <button
           onClick={onExit}
-          className="w-full py-3.5 px-6 rounded-[10px] bg-shade-02 text-white font-bold text-sm shadow-depth hover:bg-black transition-all active:scale-98 cursor-pointer"
+          className="w-full py-3.5 px-6 rounded-md bg-shade-02 text-white font-bold text-sm shadow-depth hover:bg-black transition-all active:scale-98 cursor-pointer"
         >
           Return to Dashboard
         </button>

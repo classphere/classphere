@@ -25,7 +25,7 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTim
     <header className="sticky top-0 z-50 border-b border-s-stroke2 bg-b-surface1/95 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-3.5 md:px-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 items-center gap-3.5">
-          <Image src={tenant.logoUrl ?? "/logoC.png"} alt={displayName} width={44} height={44} className="size-11 shrink-0 rounded-[10px] border border-s-stroke2 bg-b-pop object-contain p-1.5" />
+          <Image src={tenant.logoUrl ?? "/logoC.png"} alt={displayName} width={44} height={44} className="size-11 shrink-0 rounded-md border border-s-stroke2 bg-b-pop object-contain p-1.5" />
           <div className="min-w-0">
             <div className="flex min-w-0 items-center gap-2.5">
               <span className="truncate text-body-1 font-bold tracking-tight text-t-primary">{displayName}</span>
@@ -43,7 +43,7 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTim
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           {isTimed ? (
-            <div className={`flex min-w-[126px] items-center gap-2.5 rounded-[10px] border px-3.5 py-2 ${timeWarning ? "border-primary-03/35 bg-primary-03/5" : "border-s-stroke2 bg-b-surface2"}`}>
+            <div className={`flex min-w-[126px] items-center gap-2.5 rounded-md border px-3.5 py-2 ${timeWarning ? "border-primary-03/35 bg-primary-03/5" : "border-s-stroke2 bg-b-surface2"}`}>
               <span className={`${timeWarning ? "text-primary-03" : "text-primary-01"}`}>
                 <RiTimerLine size={18} />
               </span>
@@ -53,10 +53,10 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTim
 
           <button
             id="submit-test-btn"
-            className="flex h-11 items-center justify-center rounded-[10px] border border-[#171717] bg-[#1d1d1d] px-6 text-sm font-semibold tracking-[0.0125em] text-white transition-colors hover:bg-[#303030] active:scale-[0.98]"
+            className="btn btn-primary h-11 px-6 text-sm active:scale-[0.98]"
             onClick={() => setShowSubmitModal(true)}
           >
-            <span className="relative z-10">Submit Test</span>
+            Submit Test
           </button>
         </div>
       </div>

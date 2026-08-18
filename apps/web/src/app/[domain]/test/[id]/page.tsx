@@ -443,43 +443,43 @@ export default function TestPage() {
           <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
               <div className="h-5 w-28 rounded-full bg-b-surface2" />
-              <div className="h-8 w-72 max-w-full rounded-[10px] bg-b-surface2" />
+              <div className="h-8 w-72 max-w-full rounded-md bg-b-surface2" />
             </div>
             <div className="flex items-center gap-3">
-              <div className="h-11 w-28 rounded-[10px] bg-b-surface2" />
-              <div className="h-11 w-36 rounded-[10px] bg-b-surface2" />
+              <div className="h-11 w-28 rounded-md bg-b-surface2" />
+              <div className="h-11 w-36 rounded-md bg-b-surface2" />
             </div>
           </div>
         </header>
         <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-3 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card h-full min-h-[420px] min-w-0 p-5 md:p-7">
             <div className="mb-3 flex flex-wrap gap-2">
-              <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
-              <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-7 w-20 rounded-md bg-b-surface2" />
+              <div className="h-7 w-28 rounded-md bg-b-surface2" />
+              <div className="h-7 w-20 rounded-md bg-b-surface2" />
             </div>
             <div className="mb-3 h-6 w-40 rounded-full bg-b-surface2" />
             <div className="space-y-3">
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
             </div>
             <div className="mt-3 flex gap-3 border-t border-s-stroke2 pt-6">
-              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-md bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-md bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-md bg-b-surface2" />
             </div>
           </section>
           <aside className="card h-full min-h-[420px] min-w-0 p-5 md:p-6">
             <div className="mb-3 grid grid-cols-3 gap-3">
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
-              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
+              <div className="h-20 rounded-md bg-b-surface2" />
             </div>
             <div className="space-y-3">
-              <div className="h-28 rounded-[10px] bg-b-surface2" />
-              <div className="h-28 rounded-[10px] bg-b-surface2" />
+              <div className="h-28 rounded-md bg-b-surface2" />
+              <div className="h-28 rounded-md bg-b-surface2" />
             </div>
           </aside>
           <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6">
@@ -585,7 +585,7 @@ export default function TestPage() {
             aria-expanded={isNavigatorOpen}
             aria-controls="test-question-palette"
             onClick={() => setIsNavigatorOpen(true)}
-            className="flex h-12 w-full items-center justify-between rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-widget active:scale-[0.99]"
+            className="flex h-12 w-full items-center justify-between rounded-md border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-widget active:scale-[0.99]"
           >
             <span className="flex items-center gap-2"><RiLayoutGridLine size={18} /> Question palette</span>
             <span className="text-xs text-t-secondary">{answered}/{questions.length} answered</span>
@@ -647,7 +647,7 @@ export default function TestPage() {
                 type="button"
                 aria-label="Close question palette"
                 onClick={() => setIsNavigatorOpen(false)}
-                className="flex size-11 items-center justify-center rounded-[10px] border border-s-stroke2 bg-b-surface2 text-t-primary"
+                className="flex size-11 items-center justify-center rounded-md border border-s-stroke2 bg-b-surface2 text-t-primary"
               >
                 <RiCloseLine size={20} />
               </button>

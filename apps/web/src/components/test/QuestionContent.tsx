@@ -40,10 +40,10 @@ export function QuestionContent({
     <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
       <div className="relative z-10 mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
-          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
-          {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.topic}</span>}
-          <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
+          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.subject}</span>
+          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.chapter}</span>
+          {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-md tracking-[0.004em]">{q.topic}</span>}
+          <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-md tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
             {q.difficulty}
           </span>
         </div>
@@ -82,7 +82,7 @@ export function QuestionContent({
             />
           </div>
         </div>
-        <div className="hidden shrink-0 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
+        <div className="hidden shrink-0 rounded-md border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
           <div className="text-caption text-t-secondary">Progress</div>
           <div className="text-body-2 font-bold text-t-primary">{answered + markedCount}/{questionsLength}</div>
         </div>
@@ -91,7 +91,7 @@ export function QuestionContent({
       {/* Options or Text Input */}
       <div className="relative z-10 space-y-3">
         {isSectionBLimitReached(q) && (
-          <div className="rounded-[10px] border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
+          <div className="rounded-md border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
             <p className="text-caption font-bold uppercase tracking-wider text-amber-800">⚠️ Section B limit reached</p>
             <p className="mt-1 text-caption font-semibold">
               You have already answered 5 numerical questions in {q.subject}. To attempt this question, please clear your answer on another numerical question in this subject first.
@@ -106,7 +106,7 @@ export function QuestionContent({
             </label>
             <input
               type="text"
-              className="input h-12 rounded-[10px] px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
+              className="input h-12 rounded-md px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
               placeholder={isSectionBLimitReached(q) ? "Section B limit of 5 reached" : "Type your answer..."}
               disabled={isSectionBLimitReached(q)}
               value={answers[q.id] || ""}
@@ -142,7 +142,7 @@ export function QuestionContent({
                   key={opt.id}
                   id={`option-${opt.id}`}
                   disabled={disabled || isEmpty}
-                  className={`group/opt flex min-h-[72px] items-center gap-3 rounded-[10px] border p-3 text-left transition-all relative overflow-hidden ${
+                  className={`group/opt flex min-h-[72px] items-center gap-3 rounded-md border p-3 text-left transition-all relative overflow-hidden ${
                     isEmpty
                       ? "border-dashed border-s-stroke2 bg-b-surface2/30 opacity-50 cursor-not-allowed"
                       : selected
@@ -187,7 +187,7 @@ export function QuestionContent({
       {/* Nav buttons */}
       <div className="relative z-10 mt-3 grid grid-cols-2 gap-3 border-t border-s-stroke2 pt-5 lg:grid-cols-4">
         <button
-          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#008b49] bg-primary-02 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#008e49] active:scale-[0.98] sm:text-[11px] xl:text-xs"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#008b49] bg-primary-02 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#008e49] active:scale-[0.98] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             if (hasAnswer(answers[q.id])) setStatus((s) => ({ ...s, [q.id]: "answered" }));
@@ -200,7 +200,7 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-s-stroke2 bg-b-surface1 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-t-secondary transition-colors hover:bg-b-pop hover:text-t-primary active:scale-[0.98] sm:text-[11px] xl:text-xs"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-s-stroke2 bg-b-surface1 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.04em] text-t-secondary transition-colors hover:bg-b-pop hover:text-t-primary active:scale-[0.98] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             setAnswers((a) => {
@@ -215,7 +215,7 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#d98700] bg-primary-05 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#e58d00] active:scale-[0.98] sm:text-[11px] xl:text-xs"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#d98700] bg-primary-05 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#e58d00] active:scale-[0.98] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             const newStatus = hasAnswer(answers[q.id]) ? "answered_and_marked_for_review" : "marked_for_review";
@@ -228,7 +228,7 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#245bd2] bg-primary-01 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#1478e9] active:scale-[0.98] sm:text-[11px] xl:text-xs"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#245bd2] bg-primary-01 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#1478e9] active:scale-[0.98] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             const newStatus = hasAnswer(answers[q.id]) ? "answered_and_marked_for_review" : "marked_for_review";

@@ -29,17 +29,17 @@ export function SubmitModal({ show, answered, questionsLength, unanswered, onClo
         </p>
         <div className="mt-3 flex flex-col gap-3 sm:flex-row">
           <button
-            className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12"
+            className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-md bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12"
             onClick={onClose}
           >
             Keep Working
           </button>
           <button
             id="confirm-submit-btn"
-            className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-[10px] text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1"
+            className="btn btn-primary h-12 flex-1 active:scale-98"
             onClick={onSubmit}
           >
-            <span className="relative z-10">Submit Test</span>
+            Submit Test
           </button>
         </div>
       </div>

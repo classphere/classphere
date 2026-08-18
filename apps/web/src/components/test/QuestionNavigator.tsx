@@ -33,7 +33,11 @@ export function QuestionNavigator({
   onNavigate,
 }: QuestionNavigatorProps) {
   const subjects = [...new Set(questions.map((q) => q.subject))];
-  const paletteCellSize = "size-8";
+  // The drawer is what a phone actually shows — plenty of width there for a
+  // real touch target. The desktop sidebar is a fixed 22rem column fitting up
+  // to 6 columns, so it stays compact for a mouse pointer, which doesn't need
+  // the same margin for error a thumb does.
+  const paletteCellSize = variant === "drawer" ? "size-10" : "size-8";
 
   return (
     <aside className={`relative min-w-0 select-none border border-s-stroke2 bg-b-surface2/80 shadow-widget ${
@@ -66,14 +70,14 @@ export function QuestionNavigator({
         </div>
         {/* 4. Marked for Review */}
         <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-          <div className={`${paletteCellSize} flex items-center justify-center rounded-[10px] bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0`}>
+          <div className={`${paletteCellSize} flex items-center justify-center rounded-md bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0`}>
             {markedCount}
           </div>
           <span className="leading-tight">Marked for Review</span>
         </div>
         {/* 5. Answered & Marked */}
         <div className="flex items-center gap-2 col-span-2">
-          <div className={`${paletteCellSize} relative flex items-center justify-center rounded-[10px] bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0`}>
+          <div className={`${paletteCellSize} relative flex items-center justify-center rounded-md bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0`}>
             {answeredMarkedCount}
             <div className="absolute -bottom-0.5 -right-0.5 size-[12px] bg-[#4CAF50] rounded-full border border-white flex items-center justify-center">
               <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
