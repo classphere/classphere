@@ -808,10 +808,30 @@ async function publishGlobalPaper(
   // out until someone says what it is worth.
   const { data: paperRow, error: paperRowError } = await supabaseDB
     .from("papers")
-    .select("marking_scheme, extracted_from_pdf, exams(code)")
+    .select("marking_scheme, extracted_from_pdf, total_marks, duration_min, exams(code)")
     .eq("id", paperId)
     .maybeSingle();
   if (paperRowError) throw paperRowError;
+
+  // Same rule the institute Test Department's publish action enforces
+  // (test-department.controller.ts): nothing about what a paper is worth or
+  // how long it runs is guessed any more, so a global paper published without
+  // either would run on a fallback duration and an unstated total — exactly
+  // the silent wrongness the null-by-default upload was meant to defer, not skip.
+  const missingDetails: string[] = [];
+  if (!Number.isFinite(Number((paperRow as any)?.duration_min)) || Number((paperRow as any)?.duration_min) <= 0) {
+    missingDetails.push("how long it runs");
+  }
+  if ((paperRow as any)?.total_marks === null || (paperRow as any)?.total_marks === undefined) {
+    missingDetails.push("what it is worth in total");
+  }
+  if (missingDetails.length) {
+    return {
+      ok: false,
+      status: 400,
+      message: `Cannot publish: this paper does not yet say ${missingDetails.join(" or ")}. Set them on the review screen, then publish.`,
+    };
+  }
 
   const paperExamCode = (paperRow as any)?.exams?.code ?? "";
   const hasScheme = paperRow?.marking_scheme && Object.keys(paperRow.marking_scheme).length > 0;

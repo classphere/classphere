@@ -15,6 +15,7 @@ import { deriveLegacyContentBlocks } from "../../lib/question-content";
 import { deriveDurationMin } from "../../lib/exam-profile";
 import { questionShapeDefects } from "../../lib/question-shape";
 import { defaultMarkingScheme, normaliseMarkingScheme, requiresExplicitScheme, totalMarksForQuestions, validateMarkingScheme, validateQuestionMarks } from "../../lib/marking-scheme";
+import { fixQuestionWithAI } from "../../lib/question-ai-fix";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -254,9 +255,12 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     } = req.body;
 
     // Only the AI extractor sends this. Absent means a hand-assembled JSON
-    // upload, which is pre-reviewed by definition.
+    // upload, which is pre-reviewed by definition — unless the AI fix pass
+    // below has to touch a question, in which case it is no longer purely
+    // the superadmin's own reviewed content and reviewStatus is forced back
+    // to "draft" further down.
     const fromExtractor = extracted_from_pdf === true;
-    const reviewStatus = fromExtractor ? "draft" : "approved";
+    let reviewStatus = fromExtractor ? "draft" : "approved";
 
     // ── 1. Validate required metadata ───────────────────────────────────────
     //
@@ -341,17 +345,72 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    // ── 2. Validate questions array ─────────────────────────────────────────
-    const errors: string[] = [];
+    // ── 2. Validate questions array, attempting an AI fix for failures ──────
+    //
+    // This used to hard-reject the whole upload the instant one question
+    // failed — a 500-question file re-uploaded from scratch over one typo.
+    // Every failing question now gets one repair attempt from the configured
+    // text model first (see fixQuestionWithAI — deliberately limited to
+    // question_text and marks, the only two fields validateQuestion can fail
+    // a question for). Whatever the model can't fix, or if no model is
+    // configured, becomes a gap slot for a human to fill in on the review
+    // screen instead of blocking the batch — and because something other
+    // than the superadmin touched the content, the whole paper lands as a
+    // draft (reviewStatus, below) rather than pre-approved.
+    const failing: { index: number; error: string }[] = [];
     for (let i = 0; i < questions.length; i++) {
       const err = validateQuestion(questions[i], i);
-      if (err) errors.push(err);
-      if (errors.length >= 5) break;
+      if (err) failing.push({ index: i, error: err });
     }
-    if (errors.length > 0) {
-      res.status(400).json({ success: false, message: "Question validation failed.", errors });
+
+    const MAX_AI_FIX_ATTEMPTS = 50;
+    if (failing.length > MAX_AI_FIX_ATTEMPTS) {
+      res.status(400).json({
+        success: false,
+        message: `${failing.length} questions failed validation — too many to auto-fix in one request (limit ${MAX_AI_FIX_ATTEMPTS}). Fix the file at the source and re-upload.`,
+        errors: failing.slice(0, 5).map((f) => f.error),
+      });
       return;
     }
+
+    let aiFixApplied = false;
+    const AI_FIX_CONCURRENCY = 5;
+    for (let i = 0; i < failing.length; i += AI_FIX_CONCURRENCY) {
+      const batch = failing.slice(i, i + AI_FIX_CONCURRENCY);
+      await Promise.all(batch.map(async ({ index, error }) => {
+        const original = questions[index];
+        const result = await fixQuestionWithAI(original, error);
+
+        // Only ever question_text, marks, or is_gap are accepted from the
+        // model's response — options and correct_answer are never touched by
+        // this path, no matter what the model returns, since a confident-
+        // looking mistake there would silently mis-score a real attempt.
+        const candidate = result ? {
+          ...original,
+          ...(typeof result.fixed.question_text === "string" ? { question_text: result.fixed.question_text } : {}),
+          ...(result.fixed.marks !== undefined ? { marks: result.fixed.marks } : {}),
+          ...(result.fixed.is_gap === true ? { is_gap: true, question_text: "" } : {}),
+        } : null;
+
+        if (candidate && !validateQuestion(candidate, index)) {
+          questions[index] = { ...candidate, _ai_fix_note: result!.note };
+        } else {
+          // Unresolved: patch just enough to satisfy the RPC's own check
+          // (question_text present, or is_gap) without inventing content —
+          // if only marks was the problem, question_text is left untouched.
+          const base = candidate ?? original;
+          const stillMissingText = !base.is_gap && !base.question_text;
+          questions[index] = {
+            ...base,
+            ...(stillMissingText ? { is_gap: true, question_text: "" } : { marks: null }),
+            _needs_review: true,
+            _defects: [...(Array.isArray(base._defects) ? base._defects : []), `Needs manual fix: ${error}`],
+          };
+        }
+        aiFixApplied = true;
+      }));
+    }
+    if (aiFixApplied) reviewStatus = "draft";
 
     // ── 3. Resolve exam_id from DB ──────────────────────────────────────────
     // (Replaced the raw-fetch sbSelect helper with supabaseDB — no service key
@@ -474,6 +533,16 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
             extractor_version: "v4",
             source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
             source_reference: q.source_reference ?? {},
+          } : (q._ai_fix_note || q._needs_review) ? {
+            // Not from the AI extractor, so it never gets the v4 content_blocks
+            // treatment above — but it was still touched by the AI fix pass in
+            // step 2, or flagged unfixable, and that has to be visible to
+            // whoever reviews this draft rather than silently dropped.
+            extraction_metadata: {
+              ai_fixed: Boolean(q._ai_fix_note),
+              needs_review: Boolean(q._needs_review),
+              notes: [q._ai_fix_note, ...(Array.isArray(q._defects) ? q._defects : [])].filter(Boolean),
+            },
           } : {}),
           content_scope:  "global",
           review_status:  reviewStatus,
@@ -533,18 +602,22 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       req.user?.id,
       "Global question bank upload",
       `Created global paper "${title.trim()}" with ${questionRows.length} questions ` +
-        `(${fromExtractor ? "awaiting review" : "approved on upload"}).`,
+        `(${reviewStatus === "draft" ? "awaiting review" : "approved on upload"}` +
+        `${aiFixApplied ? `, AI-fixed ${failing.length} question(s)` : ""}).`,
       "question_bank",
       "success"
     );
 
     res.status(201).json({
       success: true,
-      message: fromExtractor
+      message: aiFixApplied
+        ? `${failing.length} question(s) failed validation and were run through an AI fix. ` +
+          `Draft created with ${questionRows.length} questions — review it from the question bank before it's used elsewhere.`
+        : fromExtractor
         ? `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`
         : `${questionRows.length} questions added to the question bank. ` +
           `They are available now; publish the paper if students should also be able to sit it.`,
-      data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length },
+      data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length, ai_fixed_count: aiFixApplied ? failing.length : 0 },
     });
     return;
   } catch (err: any) {
