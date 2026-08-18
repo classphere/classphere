@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { supabaseDB, supabaseAdmin } from "../../../lib/supabase";
 import { enrolExclusively, findConflictingEnrolment } from "../../../lib/batch-enrolment";
+import { syncExamTargetToBatch } from "../institutes.controller";
 import * as XLSX from "xlsx";
 
 // ─── Helper: resolve institute_id ─────────────────────────────────────────────
@@ -192,6 +193,10 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
 
     // ── Process each row ─────────────────────────────────────────────────────
     const result: ImportResult = { imported: 0, updated: 0, moved: 0, skipped: 0, errors: [], moves: [] };
+    // Every student newly enrolled or moved this run, grouped by the batch
+    // they landed in — synced once per batch after the loop rather than once
+    // per row, so a large roster doesn't cost an extra round trip per student.
+    const enrolledByBatch: Record<string, string[]> = {};
 
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
@@ -252,8 +257,10 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
         } else if (movedFrom) {
           result.moved++;
           result.moves.push(`${name} — ${movedFrom.batch_name} → ${batchName}`);
+          (enrolledByBatch[batchId] ??= []).push(existing.id);
         } else {
           result.updated++;
+          (enrolledByBatch[batchId] ??= []).push(existing.id);
         }
         continue;
       }
@@ -306,10 +313,20 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
 
       if (batchLinkErr) {
         result.errors.push(`${rowLabel}: Student created but failed to add to batch: ${batchLinkErr.message}`);
+      } else {
+        (enrolledByBatch[batchId] ??= []).push(newUser.id);
       }
 
       result.imported++;
     }
+
+    // Otherwise every imported/moved student's exam_target sits at its
+    // column default ("JEE") or their old batch's exam, regardless of which
+    // batch the sheet just placed them in — same gap as the single-student
+    // form, just for a whole roster at once.
+    await Promise.all(
+      Object.entries(enrolledByBatch).map(([batchId, studentIds]) => syncExamTargetToBatch(studentIds, batchId)),
+    );
 
     console.log(`[importStudents] Done: ${result.imported} imported, ${result.updated} updated, ${result.moved} moved, ${result.skipped} skipped, ${result.errors.length} errors`);
 
@@ -535,6 +552,13 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
       res.status(500).json({ success: false, message: `Student created but failed to link batch: ${linkErr}` });
       return;
     }
+
+    // A new student's exam_target otherwise sits at its column default
+    // ("JEE") regardless of which batch they were actually just enrolled
+    // into — a NEET admission created here would keep seeing JEE analytics
+    // and a /300 dashboard indefinitely, exactly like an existing student
+    // moved to a different-exam batch without this same call.
+    await syncExamTargetToBatch([studentId!], batch_id);
 
     res.status(200).json({
       success: true,

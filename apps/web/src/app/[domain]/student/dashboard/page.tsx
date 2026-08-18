@@ -73,10 +73,16 @@ export default function Dashboard() {
   }
 
   const { metrics, chartData, examTarget, batch } = stats || {};
-  // The most recent attempt's exam_code is the most reliable signal — it is
-  // recorded when the paper is taken. examTarget is the fallback for a student
-  // who has not sat anything yet.
-  const examCode = history[0]?.exam_code ?? examTarget;
+  // The most recent submitted attempt's exam_code is the most reliable
+  // signal — it is recorded when the paper is taken. Next is the student's
+  // current batch: institute-assigned and always in sync with what they're
+  // actually preparing for, unlike examTarget, which is a free-text field
+  // that defaulted to "JEE" at registration and is only ever updated when a
+  // batch-enrollment endpoint remembers to sync it. A student with no
+  // submitted attempts yet and a stale examTarget — exactly the case for
+  // anyone enrolled before that sync existed — would otherwise see the
+  // wrong exam's totals and subjects until they sat their first real test.
+  const examCode = history[0]?.exam_code ?? batch?.exam ?? examTarget;
 
   return (
     <>

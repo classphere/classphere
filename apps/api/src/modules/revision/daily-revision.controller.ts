@@ -9,9 +9,28 @@ const QUESTIONS_PER_TOPIC = 4;
 
 const QUESTION_FIELDS = "id, question_text, question_images, options, question_type, subject, chapter, topic, difficulty, content_blocks";
 
+/**
+ * The student's live batch assignment wins over exam_target, which defaulted
+ * to "JEE" at registration and is only ever updated when a batch-enrollment
+ * endpoint remembers to sync it — a student enrolled before that sync
+ * existed (or moved by some path that predates it) would otherwise get
+ * revision topics for the wrong exam indefinitely. Same reliability order as
+ * the student dashboard.
+ */
 async function resolveExamCode(studentId: string): Promise<string> {
-  const { data } = await supabaseAdmin.from("users").select("exam_target").eq("id", studentId).maybeSingle();
-  return data?.exam_target ?? "jee-main";
+  const [{ data: user }, { data: enrolment }] = await Promise.all([
+    supabaseAdmin.from("users").select("exam_target").eq("id", studentId).maybeSingle(),
+    supabaseAdmin
+      .from("batch_students")
+      .select("batches(exam)")
+      .eq("student_id", studentId)
+      .is("left_at", null)
+      .order("joined_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+  ]);
+  const batchExam = (enrolment as any)?.batches?.exam;
+  return batchExam ?? user?.exam_target ?? "jee-main";
 }
 
 /**

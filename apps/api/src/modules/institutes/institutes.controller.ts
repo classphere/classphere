@@ -41,7 +41,7 @@ function deriveExpiry(suggestedEndsAt: string | null, targetYear: number | null)
  * updated. A student moved into a NEET batch would otherwise keep seeing JEE
  * analytics indefinitely.
  */
-async function syncExamTargetToBatch(studentIds: string[], batchId: string): Promise<void> {
+export async function syncExamTargetToBatch(studentIds: string[], batchId: string): Promise<void> {
   if (studentIds.length === 0) return;
   const { data: batch } = await supabaseDB.from("batches").select("exam").eq("id", batchId).maybeSingle();
   if (!batch?.exam) return;
