@@ -317,7 +317,7 @@ export function QuestionReviewEditor({
         </div>
       )}
       {/* ── Header: Classification + Save ─────────────────────────────── */}
-      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3.5 rounded-t-xl">
+      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface2 px-5 py-3.5 rounded-t-xl">
         {/* Dropdowns get the full row to themselves — Chapter and Topic hold
             free text that runs long, and squeezing them beside the Save/Preview
             buttons in one row was what clipped them mid-word. */}
