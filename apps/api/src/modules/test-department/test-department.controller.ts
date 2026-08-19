@@ -486,6 +486,54 @@ export async function aiFixQuestionError(req: Request, res: Response): Promise<v
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
+/**
+ * Clears a shared bank question's ai_generated_unverified flag after a
+ * reviewer has actually checked an AI fix against the source.
+ *
+ * The equivalent step for institute-private content is just saving through
+ * updateReviewQuestion — but that endpoint deliberately refuses bank
+ * questions (aiFixQuestionError is the only thing allowed to touch their
+ * content), so without a dedicated action the flag could never be cleared
+ * for one once touched. This does exactly one thing and nothing else: it
+ * cannot change question_text, options, or any other content field, by
+ * construction — there is nothing in the request body it reads.
+ */
+export async function confirmBankQuestionFix(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.paperId, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (!["draft", "changes_requested", "needs_review"].includes(paper.workflow_status)) {
+      res.status(409).json({ success: false, message: "Published or approved papers are immutable. Create a revision instead." }); return;
+    }
+
+    const { data: link } = await supabaseDB.from("paper_questions").select("position").eq("paper_id", paper.id).eq("question_id", req.params.questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+    const { data: current, error: currentError } = await supabaseDB.from("questions").select("*").eq("id", req.params.questionId).eq("content_scope", "global").maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(404).json({ success: false, message: "Not a shared bank question." }); return; }
+
+    const currentFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    if (!currentFlags.includes("ai_generated_unverified")) {
+      res.status(400).json({ success: false, message: "This question has nothing pending confirmation." });
+      return;
+    }
+
+    const { data: updated, error } = await supabaseAdmin.from("questions").update({
+      source_reference: { ...(current.source_reference ?? {}), extraction_flags: currentFlags.filter((flag) => flag !== "ai_generated_unverified") },
+      content_version: current.content_version + 1,
+      updated_at: new Date().toISOString(),
+    }).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    if (error) throw error;
+    if (!updated) { res.status(409).json({ success: false, message: "Question was updated elsewhere. Reload before confirming." }); return; }
+
+    await supabaseDB.from("papers").update({ workflow_status: "draft", review_version: paper.review_version + 1 }).eq("id", paper.id);
+    await audit({ instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id, action: "bank_question_fix_confirmed", before: current, after: updated });
+
+    res.json({ success: true, data: { question: updated } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
 export async function updateReviewQuestion(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
@@ -496,21 +544,14 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     }
     const { data: link } = await supabaseDB.from("paper_questions").select("question_id").eq("paper_id", paper.id).eq("question_id", req.params.questionId).maybeSingle();
     if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
-    const { data: current, error: currentError } = await supabaseDB.from("questions").select("*").eq("id", req.params.questionId).maybeSingle();
+    // Deliberately institute-private only, unlike aiFixQuestionError above —
+    // a shared bank question can be *fixed* through AI (flagged, reviewable,
+    // logged), but never hand-edited directly by whoever happens to be
+    // reviewing a paper that picked it. Clearing the flag an AI fix leaves on
+    // a bank question is confirmBankQuestionFix's job, not this endpoint's.
+    const { data: current, error: currentError } = await supabaseDB.from("questions").select("*").eq("id", req.params.questionId).eq("institute_id", instituteId).eq("content_scope", "institute_private").maybeSingle();
     if (currentError) throw currentError;
-    if (!current) { res.status(404).json({ success: false, message: "Question not found." }); return; }
-    // Own draft content, or a shared bank question picked into this paper —
-    // same reasoning as aiFixQuestionError above. This is also what lets a
-    // reviewer actually clear the ai_generated_unverified flag an AI fix on
-    // a bank question just set: without this, that flag could never be
-    // cleared for a bank question, since the save that clears it would
-    // itself be blocked.
-    const isOwnPrivateQuestion = current.institute_id === instituteId && current.content_scope === "institute_private";
-    const isGlobalBankQuestion = current.content_scope === "global";
-    if (!isOwnPrivateQuestion && !isGlobalBankQuestion) {
-      res.status(403).json({ success: false, message: "This question cannot be edited from here." });
-      return;
-    }
+    if (!current) { res.status(403).json({ success: false, message: "Only institute-owned draft questions can be edited here." }); return; }
     if (req.body.content_version !== undefined && Number(req.body.content_version) !== current.content_version) {
       res.status(409).json({ success: false, message: "This question changed elsewhere. Reload before saving." }); return;
     }
@@ -544,16 +585,11 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     updates.content_version = current.content_version + 1;
     updates.review_status = "draft";
     updates.updated_at = new Date().toISOString();
-    const writeClient = isGlobalBankQuestion ? supabaseAdmin : supabaseDB;
-    const { data: updated, error } = await writeClient.from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    const { data: updated, error } = await supabaseDB.from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
     if (error) throw error;
     if (!updated) { res.status(409).json({ success: false, message: "Question was updated by another reviewer." }); return; }
     await supabaseDB.from("papers").update({ workflow_status: "draft", review_version: paper.review_version + 1 }).eq("id", paper.id);
-    await audit({
-      instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id,
-      action: isGlobalBankQuestion ? "bank_question_updated" : "question_updated",
-      reason: req.body.reason ?? null, before: current, after: updated,
-    });
+    await audit({ instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id, action: "question_updated", reason: req.body.reason ?? null, before: current, after: updated });
     res.json({ success: true, data: { question: updated } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }

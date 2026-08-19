@@ -58,6 +58,13 @@ export interface PaperReviewWorkspaceProps {
    * mismatched answer key or malformed options.
    */
   onAiFixError?: (question: any, errorMessage: string) => Promise<void>;
+  /**
+   * Clears a shared bank question's ai_generated_unverified flag once a
+   * reviewer has checked an AI fix against the source. Omitted where the
+   * surface never reaches a global-bank question (a global bank paper's own
+   * review, for instance, where every question already belongs to it).
+   */
+  onConfirmBankFix?: (question: any) => Promise<void>;
   /** Rendered beside the Validate button — the page's own workflow actions. */
   actions?: React.ReactNode;
 }
@@ -76,6 +83,7 @@ export function PaperReviewWorkspace({
   onValidate,
   onAiFillGap,
   onAiFixError,
+  onConfirmBankFix,
   actions,
 }: PaperReviewWorkspaceProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -392,6 +400,8 @@ export function PaperReviewWorkspace({
                 onSave={(payload) => onSaveQuestion(payload, question)}
                 onDelete={canEdit ? removeQuestion : undefined}
                 onAiFillGap={onAiFillGap}
+                onAiFixQuestion={onAiFixError}
+                onConfirmBankFix={onConfirmBankFix}
               />
             </div>
           ) : (

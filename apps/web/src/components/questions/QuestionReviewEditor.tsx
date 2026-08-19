@@ -135,6 +135,23 @@ interface QuestionReviewEditorProps {
    * (source_reference.extraction_flags includes "gap_placeholder").
    */
   onAiFillGap?: (question: Question) => Promise<void>;
+  /**
+   * Repairs the active question against a free-text description of what's
+   * wrong with it — the same action the validation panel's "Fix with AI"
+   * triggers from a structural error, but reachable here too because a
+   * reviewer often spots something the automated checks don't (a wrong
+   * diagram, an option that reads oddly) with nothing formal to point at.
+   *
+   * For a shared bank question (content_scope "global") this is the ONLY
+   * way its content can change at all — see isGlobalBankQuestion below.
+   */
+  onAiFixQuestion?: (question: Question, description: string) => Promise<void>;
+  /**
+   * Clears a shared bank question's ai_generated_unverified flag once a
+   * reviewer has checked an AI fix against the source. Bank questions never
+   * expose the normal Save path, so this is the only way that flag clears.
+   */
+  onConfirmBankFix?: (question: Question) => Promise<void>;
 }
 
 export function QuestionReviewEditor({
@@ -144,6 +161,8 @@ export function QuestionReviewEditor({
   examCode,
   onDelete,
   onAiFillGap,
+  onAiFixQuestion,
+  onConfirmBankFix,
 }: QuestionReviewEditorProps) {
   const [deleting, setDeleting] = useState(false);
   const [aiFilling, setAiFilling] = useState(false);
@@ -152,9 +171,23 @@ export function QuestionReviewEditor({
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [preview, setPreview] = useState(false); // student-preview mode
+  const [issueText, setIssueText] = useState("");
+  const [reportingIssue, setReportingIssue] = useState(false);
+  const [confirmingFix, setConfirmingFix] = useState(false);
 
   const isGapPlaceholder = Array.isArray(question?.source_reference?.extraction_flags)
     && question.source_reference.extraction_flags.includes("gap_placeholder");
+
+  // Shared bank content — never owned by whichever institute happens to be
+  // reviewing a paper that picked it. Editable only through AI, never by
+  // hand: the review flag + audit trail an AI fix leaves behind is what
+  // makes a wrong fix traceable and correctable; a free-text hand edit here
+  // would leave none of that for a question every other institute using the
+  // bank also depends on.
+  const isGlobalBankQuestion = question.content_scope === "global";
+  const canEditFields = canEdit && !isGlobalBankQuestion;
+  const hasPendingAiFix = Array.isArray(question?.source_reference?.extraction_flags)
+    && question.source_reference.extraction_flags.includes("ai_generated_unverified");
 
   // Sync when the parent switches to a different question
   useEffect(() => {
@@ -181,7 +214,7 @@ export function QuestionReviewEditor({
   const isSingle = !["mcq_multi", "msq"].includes(draft.question_type ?? "");
 
   const toggleAnswer = (id: string) => {
-    if (!canEdit) return;
+    if (!canEditFields) return;
     const cur = draft.correct_answer ?? [];
     set({
       correct_answer: isSingle
@@ -295,6 +328,33 @@ export function QuestionReviewEditor({
     }
   };
 
+  const runAiFixQuestion = async () => {
+    if (!onAiFixQuestion || !issueText.trim()) return;
+    setError(null);
+    setReportingIssue(true);
+    try {
+      await onAiFixQuestion(draft, issueText.trim());
+      setIssueText("");
+    } catch (e: any) {
+      setError(e?.message ?? "AI could not fix this.");
+    } finally {
+      setReportingIssue(false);
+    }
+  };
+
+  const runConfirmBankFix = async () => {
+    if (!onConfirmBankFix) return;
+    setError(null);
+    setConfirmingFix(true);
+    try {
+      await onConfirmBankFix(draft);
+    } catch (e: any) {
+      setError(e?.message ?? "Could not confirm this fix.");
+    } finally {
+      setConfirmingFix(false);
+    }
+  };
+
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col h-full">
@@ -316,6 +376,49 @@ export function QuestionReviewEditor({
           </button>
         </div>
       )}
+      {isGlobalBankQuestion && canEdit && (
+        <div className="shrink-0 border-b border-s-stroke2 bg-primary-01/5 px-5 py-2.5">
+          {hasPendingAiFix ? (
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm text-t-secondary">
+                <span className="font-semibold text-primary-01">Shared bank question, AI-fixed.</span> Check it
+                against the source before confirming — this question is used across other institutes too.
+              </p>
+              <button
+                type="button"
+                disabled={confirmingFix}
+                onClick={runConfirmBankFix}
+                className="flex h-9 shrink-0 items-center gap-1.5 rounded-md border border-primary-01/30 bg-b-surface1 px-3 text-sm font-semibold text-primary-01 transition-colors hover:border-primary-01/60 disabled:opacity-50"
+              >
+                <RiCheckLine size={15} />
+                {confirmingFix ? "Confirming…" : "Confirm fix is correct"}
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <p className="shrink-0 text-sm font-semibold text-primary-01">Shared bank question.</p>
+              <p className="text-sm text-t-secondary sm:hidden">
+                Can't be hand-edited — it's used across other institutes too. Describe the issue and AI will fix it.
+              </p>
+              <input
+                value={issueText}
+                onChange={(e) => setIssueText(e.target.value)}
+                placeholder="What's wrong with this question? e.g. option C repeats option A"
+                className="h-9 min-w-0 flex-1 rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none"
+              />
+              <button
+                type="button"
+                disabled={reportingIssue || !issueText.trim()}
+                onClick={runAiFixQuestion}
+                className="flex h-9 shrink-0 items-center gap-1.5 rounded-md border border-primary-01/30 bg-b-surface1 px-3 text-sm font-semibold text-primary-01 transition-colors hover:border-primary-01/60 disabled:opacity-50"
+              >
+                <RiRobot2Line size={15} />
+                {reportingIssue ? "Fixing…" : "Fix with AI"}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
       {/* ── Header: Classification + Save ─────────────────────────────── */}
       <div className="shrink-0 border-b border-s-stroke2 bg-b-surface2 px-5 py-3.5 rounded-t-xl">
         {/* Dropdowns get the full row to themselves — Chapter and Topic hold
@@ -327,14 +430,14 @@ export function QuestionReviewEditor({
             label="Subject"
             value={draft.subject ?? ""}
             options={subjectOptions}
-            disabled={!canEdit}
+            disabled={!canEditFields}
             onChange={(v) => set({ subject: v })}
           />
           <div>
             <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Chapter</label>
             <input
               value={draft.chapter ?? ""}
-              disabled={!canEdit}
+              disabled={!canEditFields}
               onChange={(e) => set({ chapter: e.target.value })}
               placeholder="Chapter name"
               className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
@@ -344,7 +447,7 @@ export function QuestionReviewEditor({
             <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Topic</label>
             <input
               value={draft.topic ?? ""}
-              disabled={!canEdit}
+              disabled={!canEditFields}
               onChange={(e) => set({ topic: e.target.value })}
               placeholder="Topic name"
               className="h-9 w-full rounded-md border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
@@ -355,7 +458,7 @@ export function QuestionReviewEditor({
             label="Difficulty"
             value={draft.difficulty ?? "medium"}
             options={DIFFICULTY_OPTIONS}
-            disabled={!canEdit}
+            disabled={!canEditFields}
             onChange={(v) => set({ difficulty: v })}
           />
         </div>
@@ -364,11 +467,11 @@ export function QuestionReviewEditor({
         {canEdit && (
           <div className="mt-3 flex items-center justify-between gap-3 border-t border-s-stroke2/60 pt-3">
             <div className="flex items-center gap-2.5 text-[11px]">
-              {error && <span className="text-primary-03 font-semibold">{error}</span>}
-              {!draft.correct_answer?.length && !error && (
+              {!isGlobalBankQuestion && error && <span className="text-primary-03 font-semibold">{error}</span>}
+              {!isGlobalBankQuestion && !draft.correct_answer?.length && !error && (
                 <span className="font-semibold text-amber-500">No answer set</span>
               )}
-              {savedAt && !error && (
+              {!isGlobalBankQuestion && savedAt && !error && (
                 <span className="text-t-tertiary">
                   Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
                 </span>
@@ -390,14 +493,16 @@ export function QuestionReviewEditor({
                 {preview ? <RiEditLine size={15} /> : <RiEyeLine size={15} />}
                 {preview ? "Edit" : "Preview"}
               </button>
-              <button
-                type="button"
-                disabled={saving}
-                onClick={saveAll}
-                className="btn btn-flat h-9 px-5 text-sm"
-              >
-                {saving ? "Saving…" : "Save"}
-              </button>
+              {!isGlobalBankQuestion && (
+                <button
+                  type="button"
+                  disabled={saving}
+                  onClick={saveAll}
+                  className="btn btn-flat h-9 px-5 text-sm"
+                >
+                  {saving ? "Saving…" : "Save"}
+                </button>
+              )}
             </div>
           </div>
         )}
@@ -489,10 +594,10 @@ export function QuestionReviewEditor({
             <TiptapMathField
               label="Question text"
               value={draft.question_text ?? ""}
-              disabled={!canEdit}
+              disabled={!canEditFields}
               onChange={(v: string) => set({ question_text: v, content_blocks: null })}
               placeholder="Type question text…"
-              onImageAdd={canEdit ? addFigure : undefined}
+              onImageAdd={canEditFields ? addFigure : undefined}
             />
 
             {/* The question's figures, beside the text that refers to them.
@@ -525,7 +630,7 @@ export function QuestionReviewEditor({
                     <div key={`${src.slice(0, 40)}-${i}`} className="group relative">
                       <img src={src} alt={`Figure ${i + 1}`}
                         className="max-h-44 max-w-full rounded-md border border-s-stroke2 bg-white object-contain p-1" />
-                      {canEdit && (
+                      {canEditFields && (
                         <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
                           <label title="Replace this figure"
                             className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
@@ -558,7 +663,7 @@ export function QuestionReviewEditor({
                 <input
                   type="text"
                   inputMode="decimal"
-                  disabled={!canEdit}
+                  disabled={!canEditFields}
                   value={(draft.correct_answer ?? []).join(", ")}
                   onChange={(e) =>
                     set({
@@ -582,7 +687,7 @@ export function QuestionReviewEditor({
                   Options
                   {isSingle ? " — select one correct" : " — select all correct"}
                 </p>
-                {canEdit && (draft.options?.length ?? 0) < 8 && (
+                {canEditFields && (draft.options?.length ?? 0) < 8 && (
                   <button
                     type="button"
                     onClick={() => {
@@ -613,7 +718,7 @@ export function QuestionReviewEditor({
                       {/* Correct-answer toggle */}
                       <button
                         type="button"
-                        disabled={!canEdit}
+                        disabled={!canEditFields}
                         onClick={() => toggleAnswer(opt.id)}
                         title={isCorrect ? "Marked correct" : "Mark as correct"}
                         className={[
@@ -621,7 +726,7 @@ export function QuestionReviewEditor({
                           isCorrect
                             ? "border-green-500 bg-green-500 text-white"
                             : "border-s-stroke2 bg-b-surface1 text-t-tertiary hover:border-primary-01/50",
-                          !canEdit && "cursor-default",
+                          !canEditFields && "cursor-default",
                         ].join(" ")}
                       >
                         {isCorrect ? <RiCheckLine size={13} /> : letter}
@@ -642,7 +747,7 @@ export function QuestionReviewEditor({
                               alt={`Option ${letter}`}
                               className="max-h-32 max-w-full rounded-[8px] border border-s-stroke2 bg-white object-contain p-1"
                             />
-                            {canEdit && (
+                            {canEditFields && (
                               <div className="absolute right-1 top-1 flex gap-1 opacity-0 transition-opacity group-hover/fig:opacity-100">
                                 <label title="Replace this option's image"
                                   className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-t-secondary hover:text-primary-01">
@@ -661,15 +766,15 @@ export function QuestionReviewEditor({
                         )}
                         <TiptapMathField
                           value={opt.text ?? ""}
-                          disabled={!canEdit}
+                          disabled={!canEditFields}
                           onChange={(v: string) => updateOptionText(i, v)}
                           placeholder={opt.image_url ? "Caption (optional)" : `Option ${letter}`}
-                          onImageAdd={canEdit && !opt.image_url ? (url: string) => setOptionImage(i, url) : undefined}
+                          onImageAdd={canEditFields && !opt.image_url ? (url: string) => setOptionImage(i, url) : undefined}
                         />
                       </div>
 
                       {/* Remove option */}
-                      {canEdit && (draft.options?.length ?? 0) > 2 && (
+                      {canEditFields && (draft.options?.length ?? 0) > 2 && (
                         <button
                           type="button"
                           onClick={() => removeOption(i)}
@@ -689,7 +794,7 @@ export function QuestionReviewEditor({
             <TiptapMathField
               label="Explanation"
               value={draft.explanation ?? ""}
-              disabled={!canEdit}
+              disabled={!canEditFields}
               onChange={(v: string) => set({ explanation: v })}
               placeholder="Solution / explanation…"
             />
@@ -697,8 +802,9 @@ export function QuestionReviewEditor({
         )}
       </div>
 
-      {/* Removal. Shared with every surface that imports this editor. */}
-      {canEdit && onDelete && (
+      {/* Removal. Shared with every surface that imports this editor — never
+          offered for a bank question, matching the backend restriction. */}
+      {canEditFields && onDelete && (
         <div className="flex shrink-0 items-center justify-between gap-3 border-t border-s-stroke2 px-5 py-2.5">
           <p className="text-[11px] text-t-tertiary">
             {!String(draft.question_text ?? "").trim()

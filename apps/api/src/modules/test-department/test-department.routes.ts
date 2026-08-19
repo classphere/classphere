@@ -2,7 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { aiFillGapQuestion, aiFixQuestionError, assignPaperToBatches, createDepartmentMember, deactivateDepartmentMember, deleteReviewQuestion, getReviewPaper, updateReviewPaper, listDepartmentMembers, listReviewPapers, transitionReviewPaper, updateReviewQuestion, validatePaper, uploadImage } from "./test-department.controller";
+import { aiFillGapQuestion, aiFixQuestionError, assignPaperToBatches, confirmBankQuestionFix, createDepartmentMember, deactivateDepartmentMember, deleteReviewQuestion, getReviewPaper, updateReviewPaper, listDepartmentMembers, listReviewPapers, transitionReviewPaper, updateReviewQuestion, validatePaper, uploadImage } from "./test-department.controller";
 
 const router = Router();
 
@@ -31,6 +31,7 @@ router.get("/papers/:id/validate", authenticate, requireRole("institute_admin", 
 router.patch("/papers/:paperId/questions/:questionId", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), updateReviewQuestion);
 router.post("/papers/:paperId/questions/:questionId/ai-fill-gap", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), aiFillGapQuestion);
 router.post("/papers/:paperId/questions/:questionId/ai-fix", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), aiFixQuestionError);
+router.post("/papers/:paperId/questions/:questionId/confirm-bank-fix", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), confirmBankQuestionFix);
 router.delete("/papers/:paperId/questions/:questionId", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), deleteReviewQuestion);
 router.post("/papers/:id/workflow", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), transitionReviewPaper);
 router.post("/papers/:id/assign", authenticate, requireRole("institute_admin", "test_department_head", "test_department_member"), assignPaperToBatches);
