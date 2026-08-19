@@ -418,7 +418,15 @@ export async function aiFixQuestionError(req: Request, res: Response): Promise<v
     if (Array.isArray(result.fixed.correct_answer)) updates.correct_answer = result.fixed.correct_answer;
     if (typeof result.fixed.question_type === "string") updates.question_type = result.fixed.question_type;
     if (Object.keys(updates).length === 0) {
-      res.status(502).json({ success: false, message: "AI did not return a usable fix for this error." });
+      // The model followed its own instructions and declined rather than
+      // invent unverifiable content — an honest outcome, not a failure, so
+      // it gets its own message instead of the generic "no usable fix" one.
+      const message = result.fixed.is_gap === true
+        ? (imageUrl
+          ? "AI checked the source image and still couldn't determine what this should say — it may need a closer manual read of the source PDF."
+          : "AI couldn't determine this from the question's text alone and this question has no saved source image to check against — fix it manually, or attach the source page.")
+        : "AI did not return a usable fix for this error.";
+      res.status(502).json({ success: false, message });
       return;
     }
     // A fixed option or answer key invalidates any block projection derived

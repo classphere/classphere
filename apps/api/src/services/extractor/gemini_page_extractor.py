@@ -583,6 +583,13 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
                 coerce_question_number(question)
                 question["_pages"] = [page_number]
                 question["_page_index"] = index
+                # The rendered page this question came from, relative to
+                # work_dir. Picked up by pdfExtractor.service.ts's
+                # finalizeQuestions and turned into source_crop_url, so a
+                # later AI-fix or gap-fill call can actually see how the
+                # question looked in print instead of guessing blind — the
+                # source page was already being discarded after every job.
+                question["_page_image"] = image_rel
                 question["extractor_version"] = "gemini-page-v1"
                 questions.append(question)
 
@@ -833,6 +840,10 @@ def _gap_placeholders(
                 ],
                 "_page_index": page_index,
                 "_pages": [page_index + 1],
+                # Same convention as extract_page's image_rel fallback — a gap
+                # slot's own page still rendered fine even though the model
+                # returned nothing for it, so gap-fill can use it too.
+                "_page_image": f"page_images/page_{page_index + 1:04d}.png",
             })
     return out
 

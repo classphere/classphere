@@ -123,6 +123,31 @@ function fileToBase64(filePath: string): string {
   return `data:${mimeType};base64,${bitmap.toString("base64")}`;
 }
 
+/**
+ * The whole rendered page a question came from (gemini_page_extractor.py's
+ * _page_image), as a base64 data URL — or null if the file is missing, which
+ * happens for a page whose render got cleaned up between passes.
+ *
+ * This is a full page, not a tight crop of just the one question: cropping to
+ * a question's own bounding box would need real layout detection, which the
+ * pipeline doesn't do. A full page is still exactly what a later AI-fix or
+ * gap-fill call needs to check a question against how it actually printed,
+ * which today it cannot do at all — the render is otherwise discarded the
+ * moment the extraction job finishes.
+ */
+function resolvePageImage(pageImageRel: unknown, workDir: string): string | null {
+  const rel = typeof pageImageRel === "string" ? pageImageRel.trim() : "";
+  if (!rel) return null;
+  const filePath = path.join(workDir, rel);
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    return fileToBase64(filePath);
+  } catch (err) {
+    console.warn(`[pdfExtractor] Could not read page image "${rel}":`, (err as Error)?.message ?? err);
+    return null;
+  }
+}
+
 function embedImagesInText(text: string, imagesDir: string): string {
   if (!text) return text;
   const re = /!\[image\]\(([^)]+)\)|\[image:\s*([^\]]+)\]/g;
@@ -187,7 +212,7 @@ function embedImageList(images: unknown, imagesDir: string): string[] {
   return embedded;
 }
 
-function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): ExtractionResult {
+function finalizeQuestions(jsonPath: string, imagesDir: string, workDir: string, suffix = ""): ExtractionResult {
   if (!fs.existsSync(jsonPath)) {
     return { success: false, message: "Pipeline completed but no output JSON was found.", questions: [] };
   }
@@ -211,6 +236,11 @@ function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): Ex
           opt.image_url = embedImagesInText(`![image](${opt.image_url})`, imagesDir)
             .replace(/^!\[image\]\(|\)$/g, "");
       }
+    }
+
+    if (!q.source_crop_url) {
+      const pageImage = resolvePageImage(q._page_image, workDir);
+      if (pageImage) q.source_crop_url = pageImage;
     }
   }
   if (!questions.length) {
@@ -327,7 +357,7 @@ export async function extractPDF(
     );
 
     // ── 4. Finalise & embed images ────────────────────────────────────────────
-    return finalizeQuestions(finalJson, imagesDir, ` [${MODEL} parallel page extraction]`);
+    return finalizeQuestions(finalJson, imagesDir, outputDir, ` [${MODEL} parallel page extraction]`);
 
   } catch (err: any) {
     console.error("[pdfExtractor] Pipeline error:", err);

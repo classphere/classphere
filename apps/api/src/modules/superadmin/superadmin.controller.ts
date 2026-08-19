@@ -450,17 +450,15 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
               ...opt,
               text: processedOptText,
               image_url: processedOptImageUrl,
-              ...(q.extractor_version === "v4" ? {
-                content_blocks: deriveLegacyContentBlocks({
-                  question_text: processedOptText,
-                  image_url: processedOptImageUrl,
-                  extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
-                  needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
-                  review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
-                  source_crop: opt.source_crop,
-                  source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
-                }),
-              } : {}),
+              content_blocks: deriveLegacyContentBlocks({
+                question_text: processedOptText,
+                image_url: processedOptImageUrl,
+                extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
+                needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
+                review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
+                source_crop: opt.source_crop,
+                source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
+              }),
             };
           })
         );
@@ -519,31 +517,28 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           // same question type differently needs it.
           marks:          q.marks ?? null,
           tags:           q.tags || [],
-          ...(q.extractor_version === "v4" ? {
-            content_blocks: deriveLegacyContentBlocks({
-              question_text: normalizedMedia.question_text,
-              image_url: normalizedMedia.image_url,
-              extraction_confidence: q.extraction_confidence,
-              needs_review: q.needs_review ?? q._needs_review,
-              review_reasons: q.review_reasons ?? q._defects,
-              source_crop: q.source_crop,
-              source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
-            }),
-            extraction_metadata: q.extraction_metadata ?? null,
-            extractor_version: "v4",
-            source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
-            source_reference: q.source_reference ?? {},
-          } : (q._ai_fix_note || q._needs_review) ? {
-            // Not from the AI extractor, so it never gets the v4 content_blocks
-            // treatment above — but it was still touched by the AI fix pass in
-            // step 2, or flagged unfixable, and that has to be visible to
-            // whoever reviews this draft rather than silently dropped.
-            extraction_metadata: {
-              ai_fixed: Boolean(q._ai_fix_note),
-              needs_review: Boolean(q._needs_review),
-              notes: [q._ai_fix_note, ...(Array.isArray(q._defects) ? q._defects : [])].filter(Boolean),
-            },
-          } : {}),
+          content_blocks: deriveLegacyContentBlocks({
+            question_text: normalizedMedia.question_text,
+            image_url: normalizedMedia.image_url,
+            extraction_confidence: q.extraction_confidence,
+            needs_review: q.needs_review ?? q._needs_review,
+            review_reasons: q.review_reasons ?? q._defects,
+            source_crop: q.source_crop,
+            source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
+          }),
+          // A real extraction_metadata wins when present. Otherwise, a
+          // manually-uploaded question with no such thing may still have been
+          // touched by the AI fix pass in step 2, or flagged unfixable — that
+          // has to be visible to whoever reviews this draft, not silently
+          // dropped just because it didn't come from the PDF extractor.
+          extraction_metadata: q.extraction_metadata ?? ((q._ai_fix_note || q._needs_review) ? {
+            ai_fixed: Boolean(q._ai_fix_note),
+            needs_review: Boolean(q._needs_review),
+            notes: [q._ai_fix_note, ...(Array.isArray(q._defects) ? q._defects : [])].filter(Boolean),
+          } : null),
+          extractor_version: q.extractor_version ?? "v4",
+          source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
+          source_reference: q.source_reference ?? {},
           content_scope:  "global",
           review_status:  reviewStatus,
           created_by:     req.user?.id ?? null,

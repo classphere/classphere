@@ -1274,7 +1274,12 @@ export const aiFixTestQuestionError = async (req: Request, res: Response): Promi
     if (Array.isArray(result.fixed.correct_answer)) updates.correct_answer = result.fixed.correct_answer;
     if (typeof result.fixed.question_type === "string") updates.question_type = result.fixed.question_type;
     if (Object.keys(updates).length === 0) {
-      res.status(502).json({ success: false, message: "AI did not return a usable fix for this error." });
+      const message = result.fixed.is_gap === true
+        ? (imageUrl
+          ? "AI checked the source image and still couldn't determine what this should say — it may need a closer manual read of the source PDF."
+          : "AI couldn't determine this from the question's text alone and this question has no saved source image to check against — fix it manually, or attach the source page.")
+        : "AI did not return a usable fix for this error.";
+      res.status(502).json({ success: false, message });
       return;
     }
     if (updates.options !== undefined || updates.correct_answer !== undefined) updates.content_blocks = null;
@@ -1981,17 +1986,15 @@ export const uploadTestController = async (req: Request, res: Response): Promise
               ...opt,
               text: processedOptText,
               image_url: processedOptImageUrl,
-              ...(q.extractor_version === "v4" ? {
-                content_blocks: deriveLegacyContentBlocks({
-                  question_text: processedOptText,
-                  image_url: processedOptImageUrl,
-                  extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
-                  needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
-                  review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
-                  source_crop: opt.source_crop,
-                  source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
-                }),
-              } : {}),
+              content_blocks: deriveLegacyContentBlocks({
+                question_text: processedOptText,
+                image_url: processedOptImageUrl,
+                extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
+                needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
+                review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
+                source_crop: opt.source_crop,
+                source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
+              }),
             };
           })
         );
@@ -2048,6 +2051,12 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           options: finalOptions,
         });
 
+        // The extraction pipeline hands this back as a base64 data URL (the
+        // whole rendered source page) — it needs the same trip to R2 the
+        // other figures already get, not to sit in the database row as raw
+        // base64.
+        const processedSourceCropUrl = await processBase64ImageUrl(q.source_crop?.url ?? q.source_crop_url ?? null);
+
         return {
           id:             randomUUID(),
           exam_id:        examId,
@@ -2069,20 +2078,18 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           explanation:    stripInlineImages(finalExplanation),
           explanation_images: figuresForStorage(finalExplanation, processedExplanationImages),
           tags:           q.tags || [],
-          ...(q.extractor_version === "v4" ? {
-            content_blocks: deriveLegacyContentBlocks({
-              question_text: normalizedMedia.question_text,
-              image_url: normalizedMedia.image_url,
-              extraction_confidence: q.extraction_confidence,
-              needs_review: q.needs_review ?? q._needs_review,
-              review_reasons: q.review_reasons ?? q._defects,
-              source_crop: q.source_crop,
-              source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
-            }),
-            extraction_metadata: q.extraction_metadata ?? null,
-            extractor_version: "v4",
-            source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
-          } : {}),
+          content_blocks: deriveLegacyContentBlocks({
+            question_text: normalizedMedia.question_text,
+            image_url: normalizedMedia.image_url,
+            extraction_confidence: q.extraction_confidence,
+            needs_review: q.needs_review ?? q._needs_review,
+            review_reasons: q.review_reasons ?? q._defects,
+            source_crop: q.source_crop,
+            source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
+          }),
+          extraction_metadata: q.extraction_metadata ?? null,
+          extractor_version: q.extractor_version ?? "v4",
+          source_crop_url: processedSourceCropUrl,
           institute_id:   req.user!.institute_id,
           content_scope:  "institute_private",
           review_status:  malformedMatching.some(({ index }: any) => index === idx) || correctAnswers.length === 0 ? "changes_requested" : "draft",
