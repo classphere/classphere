@@ -7,7 +7,6 @@ import Navbar from "@/components/layout/Navbar";
 import { PageWrapper } from "@/components/ui";
 import {
   RiArrowLeftLine,
-  RiArrowRightLine,
   RiBookmarkFill,
   RiTimerLine,
   RiTargetLine,
@@ -247,10 +246,6 @@ export default function ResultsPage() {
                 <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
                   <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
-                </button>
-                <button onClick={() => router.push("/pyqs")} className="btn btn-primary h-12 w-full justify-between px-6 text-[14px]">
-                  <span className="flex items-center gap-2"><RiArrowRightLine size={18} /> Back to PYQs</span>
-                  <span className="text-[12px] font-normal opacity-80">pick another paper</span>
                 </button>
               </div>
 

@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
-import path from "path";
-import fs from "fs";
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { supabaseDB } from "../../lib/supabase";
-import { PYQ_REGISTRY, ROOT } from "../pyqs/pyqs.service";
 import { analyzeAttempt } from "../analysis-engine/services/analysis.service";
 import { db } from "../analysis-engine/services/db.service";
 import { AttemptAnswer } from "../../../../../packages/types/src/analysis.types";
@@ -29,18 +26,10 @@ type LoadedPaper = {
   testType: string | null;
 };
 
-/** Fetch paper metadata + ordered questions from either PYQ files or Supabase */
+/** Fetch paper metadata + ordered questions from Supabase */
 async function loadPaperQuestions(paperId: string): Promise<LoadedPaper> {
-  // 1. Try local PYQ file registry
   const pyqPaperId = paperId.startsWith("pyq-") ? paperId.replace("pyq-", "") : paperId;
-  const paper = PYQ_REGISTRY.find((p) => p.id === pyqPaperId);
-  if (paper) {
-    const filePath = path.join(ROOT, paper.fileName);
-    const questions = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    return { questions, examCode: (paper as any).exam ?? "jee-main", markingScheme: null, testType: "pyq" };
-  }
 
-  // 2. Fallback: fetch from Supabase
   const { data: paperRow } = await supabaseDB
     .from("papers")
     .select("id, test_type, marking_scheme, exam_code:exams(code)")

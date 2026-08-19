@@ -9,7 +9,6 @@ import institutesRouter from "../modules/institutes/institutes.routes";
 import batchesRouter from "../modules/batches/batches.routes";
 import facultyRouter from "../modules/institutes/faculty/faculty.routes";
 import studentsRouter from "../modules/institutes/students/students.routes";
-import pyqsRouter from "../modules/pyqs/pyqs.routes";
 import superadminRouter from "../modules/superadmin/superadmin.routes";
 import dashboardRouter from "../modules/dashboard/dashboard.routes";
 import dppsRouter from "../modules/dpps/dpps.routes";
@@ -24,7 +23,6 @@ const router = Router();
 
 // ─── Public ──────────────────────────────────────────────────────────────────
 router.use("/auth", authRouter);
-router.use("/pyqs", pyqsRouter);
 router.use("/syllabus", syllabusRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
