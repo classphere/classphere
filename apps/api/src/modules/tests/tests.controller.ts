@@ -15,7 +15,7 @@ import { validatePaperQuestions } from "../../lib/paper-validation";
 import { derivePaperSections } from "../../lib/paper-sections";
 import { findSessionBreaks, splitAtBreaks } from "../../lib/paper-sessions";
 import { logAdminAction } from "../../lib/admin-audit";
-import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
+import { figuresForStorage, normalizeQuestionMedia, stripHtmlPasteDebris, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
 import { generateGapFillWithAI, fixQuestionWithAI } from "../../lib/question-ai-fix";
 
@@ -1973,15 +1973,15 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       try {
         return await Promise.all(
           extractionResult.questions.map(async (q: any, idx: number) => {
-        const processedText = await processBase64ImagesInText(q.question_text);
-        const processedExplanation = await processBase64ImagesInText(q.explanation);
+        const processedText = stripHtmlPasteDebris(await processBase64ImagesInText(q.question_text));
+        const processedExplanation = stripHtmlPasteDebris(await processBase64ImagesInText(q.explanation));
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
         const processedQuestionImages = await processBase64ImageList(q.question_images);
         const processedExplanationImages = await processBase64ImageList(q.explanation_images);
 
         const processedOptions = await Promise.all(
           (q.options ?? []).map(async (opt: any) => {
-            const processedOptText = await processBase64ImagesInText(opt.text);
+            const processedOptText = stripHtmlPasteDebris(await processBase64ImagesInText(opt.text));
             const processedOptImageUrl = await processBase64ImageUrl(opt.image_url);
             return {
               ...opt,

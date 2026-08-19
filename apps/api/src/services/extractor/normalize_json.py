@@ -206,6 +206,11 @@ def sanitize_text(text: str) -> str:
     text, _ = convert_mathml(text)
     text = _fix_literal_newlines(text)
     text = text.replace('\r\n', '\n').replace('\r', '\n').replace('\t', ' ')
+    # Word/Excel "paste as HTML" residue, e.g.
+    # <!--td {border:1px solid #ccc;}mso-data-placement:same-cell;}-->:
+    # invisible when a browser renders it, but visible as literal text in a
+    # WYSIWYG editor that doesn't parse HTML as HTML.
+    text = re.sub(r'<!--[\s\S]*?-->', '', text)
     text = _EMPTY_MATH_RE.sub(' ', text)
     text = merge_markdown_tables(text)
     text = re.sub(r'[  ]{2,}', ' ', text)             # collapse spaces, NOT newlines

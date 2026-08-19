@@ -69,6 +69,29 @@ export function stripInlineImages(text: string | null | undefined): string {
 }
 
 /**
+ * Strips HTML comments left behind when someone pastes a table straight out
+ * of Word or Excel into a JSON text field — "paste as HTML" embeds markup
+ * like `<!--td {border:1px solid #ccc;}br {mso-data-placement:same-cell;}-->`
+ * ahead of the actual cell text. A browser silently drops HTML comments when
+ * rendering, which is why this was invisible in the test engine but showed
+ * up as literal garbage text in the review editor (a WYSIWYG editor, not an
+ * HTML renderer) — an accident of one surface's rendering, not an actual fix.
+ *
+ * Deliberately narrow: only the unambiguous `<!--...-->` delimiter, never a
+ * general HTML-tag stripper. A naive `<[^>]+>` regex would mangle a real
+ * inequality like "2 < x and y > 3" by reading the unrelated `<` and `>` as
+ * a tag spanning everything between them.
+ */
+export function stripHtmlPasteDebris(text: string | null | undefined): string {
+  if (!text) return text ?? "";
+  return text
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/**
  * The figure list to store for a question.
  *
  * The processed text is authoritative: by the time it reaches here its inline
