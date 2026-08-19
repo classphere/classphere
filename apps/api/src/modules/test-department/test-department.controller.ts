@@ -324,6 +324,7 @@ export async function aiFillGapQuestion(req: Request, res: Response): Promise<vo
       .filter((entry): entry is { question_number: number; question_text: string; question_type: string | null } => entry !== null)
       .slice(0, 4);
 
+    const imageUrl = current.source_crop_url || (Array.isArray(current.question_images) ? current.question_images[0] : null) || null;
     const result = await generateGapFillWithAI({
       examCode: examRow?.code ?? "",
       subject: current.subject,
@@ -332,7 +333,7 @@ export async function aiFillGapQuestion(req: Request, res: Response): Promise<vo
       difficulty: current.difficulty,
       questionNumber: link.position ?? null,
       neighbors,
-    });
+    }, imageUrl);
     if (!result) {
       res.status(502).json({ success: false, message: "AI gap-fill did not return a usable draft. Try again, or type the question in manually." });
       return;

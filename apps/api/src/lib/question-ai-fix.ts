@@ -1,17 +1,22 @@
 import { env } from "../config/env";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
-// Matches gemini_page_extractor.py's own default — cheaper than DeepSeek's
-// per-token rate for the volume this runs at, and vision-capable, which
-// DeepSeek is not.
-const DEFAULT_MODEL = "google/gemini-3.1-flash-lite";
+// Two different jobs want two different models. Most repairs here are pure
+// text reasoning — a malformed options array, a missing correct_answer, a
+// blank field — and DeepSeek is cheaper than Gemini for that. Only a call
+// that actually has a source image to send benefits from paying Gemini's
+// rate for vision it would otherwise never use. GEMINI_MODEL is shared with
+// gemini_page_extractor.py's own override, so both stay in step.
+const TEXT_MODEL = env.LLM_MODEL || "deepseek/deepseek-v4-flash-0731";
+const VISION_MODEL = env.GEMINI_MODEL || "google/gemini-3.1-flash-lite";
 
 /**
  * A vision-capable user message when an image is available, a plain-text one
  * otherwise. fixQuestionWithAI is the one that actually has an image to send
  * in practice — an already-saved question commonly has source_crop_url from
- * extraction. generateGapFillWithAI's placeholder has no image today (a gap
- * has nothing to crop), but takes the same option for whenever it does.
+ * extraction, now that the extractor persists it (see pdfExtractor.service.ts's
+ * finalizeQuestions). generateGapFillWithAI gets one too where the gap's own
+ * page render survived.
  */
 function userMessage(text: string, imageUrl?: string | null) {
   if (!imageUrl) return { role: "user" as const, content: text };
@@ -88,7 +93,7 @@ export async function fixQuestionWithAI(
   const apiKey = env.OPENROUTER_API_KEY;
   if (!apiKey) return null;
 
-  const model = env.LLM_MODEL || DEFAULT_MODEL;
+  const model = imageUrl ? VISION_MODEL : TEXT_MODEL;
 
   try {
     const response = await fetch(OPENROUTER_URL, {
@@ -184,7 +189,7 @@ export async function generateGapFillWithAI(
   const apiKey = env.OPENROUTER_API_KEY;
   if (!apiKey) return null;
 
-  const model = env.LLM_MODEL || DEFAULT_MODEL;
+  const model = imageUrl ? VISION_MODEL : TEXT_MODEL;
   const userContent = JSON.stringify({
     exam: context.examCode,
     subject: context.subject ?? null,
