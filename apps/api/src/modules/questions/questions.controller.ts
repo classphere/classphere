@@ -374,6 +374,21 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
       return;
     }
 
+    // A manual save through this endpoint is the human check an AI-touched
+    // question needs (see the blocking "ai_unverified" issue in
+    // paper-validation.ts) — clear the flag here unless the caller already
+    // sent its own source_reference, in which case that's what they meant.
+    if (updates.source_reference === undefined) {
+      const { data: existing } = await supabaseAdmin.from("questions").select("source_reference").eq("id", id).maybeSingle();
+      const existingFlags: string[] = Array.isArray(existing?.source_reference?.extraction_flags) ? existing.source_reference.extraction_flags : [];
+      if (existingFlags.includes("ai_generated_unverified")) {
+        updates.source_reference = {
+          ...(existing?.source_reference ?? {}),
+          extraction_flags: existingFlags.filter((flag: string) => flag !== "ai_generated_unverified"),
+        };
+      }
+    }
+
     const { data: question, error } = await supabaseAdmin
       .from("questions")
       .update({ ...updates, updated_at: new Date().toISOString() })

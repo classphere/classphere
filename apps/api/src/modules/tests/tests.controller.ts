@@ -17,6 +17,7 @@ import { findSessionBreaks, splitAtBreaks } from "../../lib/paper-sessions";
 import { logAdminAction } from "../../lib/admin-audit";
 import { figuresForStorage, normalizeQuestionMedia, stripInlineImages } from "../../lib/question-media";
 import { deriveLegacyContentBlocks } from "../../lib/question-content";
+import { generateGapFillWithAI, fixQuestionWithAI } from "../../lib/question-ai-fix";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -1115,6 +1116,194 @@ export const deleteTestQuestion = async (req: Request, res: Response): Promise<v
 
     await logAdminAction(req.user?.id, "Question removed from paper", `Removed question ${questionId} from paper ${id}.`, "question_bank", "success");
     res.status(200).json({ success: true, data: { removed: questionId, total_questions: count ?? 0 } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/tests/:id/questions/:questionId/ai-fill-gap
+ * [super_admin only]
+ *
+ * The global-bank equivalent of test-department's aiFillGapQuestion — same
+ * job (draft a stand-in for a detected-but-unextracted question), same model
+ * call, just without institute scoping and gated on is_published instead of
+ * workflow_status, matching how the rest of this file treats a global paper.
+ */
+export const aiFillGapTestQuestion = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id, questionId } = req.params;
+    const { data: paper, error: paperError } = await supabaseDB
+      .from("papers").select("id, exam_id, test_type, is_published").eq("id", id).eq("is_active", true).maybeSingle();
+    if (paperError) throw paperError;
+    if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
+    if (paper.is_published) {
+      res.status(409).json({ success: false, message: "A published paper is immutable. Unpublish it first." });
+      return;
+    }
+    if (["pyq", "pyq-paper"].includes(String(paper.test_type ?? "").toLowerCase())) {
+      res.status(400).json({
+        success: false,
+        message: "AI gap-fill is disabled for previous-year-question papers — a generated question would misrepresent what was actually asked in the real exam. Open the source PDF and type it in.",
+      });
+      return;
+    }
+
+    const { data: link } = await supabaseDB
+      .from("paper_questions").select("position").eq("paper_id", id).eq("question_id", questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+    const { data: current, error: currentError } = await supabaseDB
+      .from("questions").select("*").eq("id", questionId).eq("is_active", true).maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(404).json({ success: false, message: "Question not found." }); return; }
+
+    const existingFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    if (!existingFlags.includes("gap_placeholder")) {
+      res.status(400).json({ success: false, message: "AI gap-fill only works on detected gap placeholders, not ordinary questions." });
+      return;
+    }
+
+    const { data: examRow } = await supabaseDB.from("exams").select("code").eq("id", paper.exam_id).maybeSingle();
+
+    const { data: nearby } = await supabaseDB
+      .from("paper_questions")
+      .select("position, questions(question_text, question_type, is_active)")
+      .eq("paper_id", id)
+      .gte("position", Math.max(1, (link.position ?? 1) - 3))
+      .lte("position", (link.position ?? 1) + 3)
+      .order("position", { ascending: true });
+
+    const neighbors = (nearby ?? [])
+      .map((row: any) => {
+        const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+        return q && q.is_active !== false && String(q.question_text ?? "").trim()
+          ? { question_number: row.position as number, question_text: String(q.question_text), question_type: q.question_type ?? null }
+          : null;
+      })
+      .filter((entry): entry is { question_number: number; question_text: string; question_type: string | null } => entry !== null)
+      .slice(0, 4);
+
+    const result = await generateGapFillWithAI({
+      examCode: examRow?.code ?? "",
+      subject: current.subject,
+      chapter: current.chapter,
+      topic: current.topic,
+      difficulty: current.difficulty,
+      questionNumber: link.position ?? null,
+      neighbors,
+    });
+    if (!result) {
+      res.status(502).json({ success: false, message: "AI gap-fill did not return a usable draft. Try again, or type the question in manually." });
+      return;
+    }
+
+    const updates: Record<string, unknown> = {
+      question_text: result.question_text,
+      question_type: result.question_type,
+      options: result.options,
+      correct_answer: result.correct_answer,
+      content_version: (current.content_version ?? 0) + 1,
+      updated_at: new Date().toISOString(),
+      source_reference: {
+        ...(current.source_reference ?? {}),
+        extraction_flags: [...new Set([...existingFlags, "ai_generated_unverified"])],
+      },
+      extraction_metadata: {
+        ...(current.extraction_metadata ?? {}),
+        needs_review: true,
+        review_reasons: [
+          ...(Array.isArray(current.extraction_metadata?.review_reasons) ? current.extraction_metadata.review_reasons : []),
+          result.note,
+        ],
+      },
+    };
+    const { data: updated, error } = await supabaseAdmin
+      .from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    if (error) throw error;
+    if (!updated) { res.status(409).json({ success: false, message: "Question was updated by another reviewer." }); return; }
+
+    await logAdminAction(req.user?.id, "Question AI gap-filled", `AI-drafted a stand-in for question ${current.id} in paper ${id}.`, "question_bank", "success");
+    res.json({ success: true, data: { question: updated, note: result.note } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/tests/:id/questions/:questionId/ai-fix
+ * [super_admin only]
+ *
+ * The global-bank equivalent of test-department's aiFixQuestionError — repairs
+ * an already-saved question against one specific validation error, including
+ * options/correct_answer where the error is about those (see
+ * fixQuestionWithAI's doc comment for why that's safe: the result is
+ * force-flagged unverified and blocks publish until a reviewer saves the
+ * question through the normal editor).
+ */
+export const aiFixTestQuestionError = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id, questionId } = req.params;
+    const { data: paper, error: paperError } = await supabaseDB
+      .from("papers").select("id, test_type, is_published").eq("id", id).eq("is_active", true).maybeSingle();
+    if (paperError) throw paperError;
+    if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
+    if (paper.is_published) {
+      res.status(409).json({ success: false, message: "A published paper is immutable. Unpublish it first." });
+      return;
+    }
+
+    const errorMessage = String(req.body?.error ?? "").trim();
+    if (!errorMessage) { res.status(400).json({ success: false, message: "error is required." }); return; }
+
+    const { data: link } = await supabaseDB
+      .from("paper_questions").select("position").eq("paper_id", id).eq("question_id", questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+    const { data: current, error: currentError } = await supabaseDB
+      .from("questions").select("*").eq("id", questionId).eq("is_active", true).maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(404).json({ success: false, message: "Question not found." }); return; }
+
+    const imageUrl = current.source_crop_url || (Array.isArray(current.question_images) ? current.question_images[0] : null) || null;
+    const result = await fixQuestionWithAI(current, errorMessage, imageUrl);
+    if (!result) { res.status(502).json({ success: false, message: "AI could not fix this — try again, or edit the question manually." }); return; }
+
+    const updates: Record<string, unknown> = {};
+    if (typeof result.fixed.question_text === "string") updates.question_text = result.fixed.question_text;
+    if (result.fixed.marks !== undefined) updates.marks = result.fixed.marks;
+    if (Array.isArray(result.fixed.options)) updates.options = result.fixed.options;
+    if (Array.isArray(result.fixed.correct_answer)) updates.correct_answer = result.fixed.correct_answer;
+    if (typeof result.fixed.question_type === "string") updates.question_type = result.fixed.question_type;
+    if (Object.keys(updates).length === 0) {
+      res.status(502).json({ success: false, message: "AI did not return a usable fix for this error." });
+      return;
+    }
+    if (updates.options !== undefined || updates.correct_answer !== undefined) updates.content_blocks = null;
+
+    const existingFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    Object.assign(updates, {
+      content_version: (current.content_version ?? 0) + 1,
+      updated_at: new Date().toISOString(),
+      source_reference: {
+        ...(current.source_reference ?? {}),
+        extraction_flags: [...new Set([...existingFlags, "ai_generated_unverified"])],
+      },
+      extraction_metadata: {
+        ...(current.extraction_metadata ?? {}),
+        needs_review: true,
+        review_reasons: [
+          ...(Array.isArray(current.extraction_metadata?.review_reasons) ? current.extraction_metadata.review_reasons : []),
+          result.note,
+        ],
+      },
+    });
+
+    const { data: updated, error } = await supabaseAdmin
+      .from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    if (error) throw error;
+    if (!updated) { res.status(409).json({ success: false, message: "Question was updated by another reviewer." }); return; }
+
+    await logAdminAction(req.user?.id, "Question AI fixed", `AI-repaired question ${current.id} in paper ${id}: ${errorMessage}`, "question_bank", "success");
+    res.json({ success: true, data: { question: updated, note: result.note } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

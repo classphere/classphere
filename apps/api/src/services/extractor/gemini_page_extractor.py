@@ -121,9 +121,50 @@ For each question return:
   and no image_url. A choice question must come back with every option it has —
   if the stem shows four and you can read only two, extract all four from the
   page images and set needs_review: true rather than returning empty ones.
-• Preserve matching tables and lists as Markdown; preserve meaningful newlines.
 • Numerical/Integer-type questions must have options: [].
 • Do not solve the question. correct_answer must stay [].
+
+════════════════════════════════════════════
+  MATCHING (question_type: "Matching") — READ CAREFULLY
+════════════════════════════════════════════
+A matching question prints TWO things, and they go in TWO different places.
+Confusing them is the single most common mistake on this question type:
+
+1. The List I / List II table itself — the pairs being matched, e.g.
+     Column I          Column II
+     A. Item one       1. Match one
+     B. Item two       2. Match two
+   This ENTIRE table belongs inside question_text, as a real Markdown pipe
+   table:
+     | Column I | Column II |
+     |---|---|
+     | A. Item one | 1. Match one |
+     | B. Item two | 2. Match two |
+   Every row needs the leading/trailing "|" and the "|---|---|" separator row
+   — without it, most Markdown renderers show none of it as a table, just a
+   run of unreadable text. Never leave the table as loose indented lines.
+
+2. The four actual answer choices — always printed AFTER the table, each one
+   a full combination such as "(A) A-3, B-1, C-4, D-2". THESE are options,
+   not the table's own row labels. Each option's text is the complete
+   combination string as printed (e.g. "A-3, B-1, C-4, D-2"), id is its
+   letter A-D.
+
+NEVER put the table's own numbers (1, 2, 3, 4 from List II) into the options
+array by themselves — "options": [{"id":"A","text":"1"}, ...] is always
+wrong for this question type; if that is genuinely all four options ever say,
+the four combination choices were missed and this question needs
+needs_review: true, not a guessed options array.
+
+════════════════════════════════════════════
+  ASSERTION-REASON (question_type: "Assertion-Reason")
+════════════════════════════════════════════
+The stem states an Assertion (A) and a Reason (R) — both go in question_text,
+each on its own line, labelled as printed. The four options are the paper's
+own wording for how A and R relate to each other (papers phrase these
+slightly differently — extract them exactly as printed, in their printed
+order, rather than assuming a fixed universal wording). Do not shorten them;
+a reviewer or student needs the full statement to tell the four apart.
 
 ════════════════════════════════════════════
   CLASSIFICATION (best-effort, do not skip questions for this)

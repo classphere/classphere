@@ -3,7 +3,7 @@ import { uploadDataUrlList, uploadOptionFigures } from "../../lib/question-figur
 import { isChoiceQuestion } from "../../lib/question-taxonomy";
 import { validatePaperQuestions } from "../../lib/paper-validation";
 import { validateMarkingScheme } from "../../lib/marking-scheme";
-import { generateGapFillWithAI } from "../../lib/question-ai-fix";
+import { generateGapFillWithAI, fixQuestionWithAI } from "../../lib/question-ai-fix";
 import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
@@ -370,6 +370,91 @@ export async function aiFillGapQuestion(req: Request, res: Response): Promise<vo
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
+/**
+ * Repairs an already-saved question against one specific validation error —
+ * the "Fix with AI" action next to an issue in the validation panel, as
+ * opposed to aiFillGapQuestion above (which drafts a whole question for an
+ * empty slot). This is where "matching" and "assertion_reason" questions
+ * actually get help: their most common failures are a mismatched answer key
+ * or malformed options, both of which fixQuestionWithAI can now touch — see
+ * its own doc comment for why that's safe here.
+ *
+ * Whatever it changes is force-flagged unverified (blocking publish per
+ * paper-validation.ts) until a reviewer saves the question through the
+ * normal editor, which is the human check this is standing in for.
+ */
+export async function aiFixQuestionError(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const paper = await getOwnedPaper(req.params.paperId, instituteId);
+    if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
+    if (!["draft", "changes_requested", "needs_review"].includes(paper.workflow_status)) {
+      res.status(409).json({ success: false, message: "Published or approved papers are immutable. Create a revision instead." }); return;
+    }
+
+    const errorMessage = String(req.body?.error ?? "").trim();
+    if (!errorMessage) { res.status(400).json({ success: false, message: "error is required." }); return; }
+
+    const { data: link } = await supabaseDB.from("paper_questions").select("position").eq("paper_id", paper.id).eq("question_id", req.params.questionId).maybeSingle();
+    if (!link) { res.status(404).json({ success: false, message: "Question is not part of this paper." }); return; }
+    const { data: current, error: currentError } = await supabaseDB.from("questions").select("*").eq("id", req.params.questionId).eq("institute_id", instituteId).eq("content_scope", "institute_private").maybeSingle();
+    if (currentError) throw currentError;
+    if (!current) { res.status(403).json({ success: false, message: "Only institute-owned draft questions can be edited here." }); return; }
+
+    // Whatever crop of the source page this question already has, if any —
+    // lets the model check a table/diagram-shaped question against how it
+    // actually looked in print instead of guessing from the JSON alone.
+    const imageUrl = current.source_crop_url || (Array.isArray(current.question_images) ? current.question_images[0] : null) || null;
+    const result = await fixQuestionWithAI(current, errorMessage, imageUrl);
+    if (!result) { res.status(502).json({ success: false, message: "AI could not fix this — try again, or edit the question manually." }); return; }
+
+    // Whitelisted here, not inside fixQuestionWithAI: this is the one caller
+    // that trusts options/correct_answer from the model, because it forces
+    // the unverified flag below rather than trusting the result outright.
+    const updates: Record<string, unknown> = {};
+    if (typeof result.fixed.question_text === "string") updates.question_text = result.fixed.question_text;
+    if (result.fixed.marks !== undefined) updates.marks = result.fixed.marks;
+    if (Array.isArray(result.fixed.options)) updates.options = result.fixed.options;
+    if (Array.isArray(result.fixed.correct_answer)) updates.correct_answer = result.fixed.correct_answer;
+    if (typeof result.fixed.question_type === "string") updates.question_type = result.fixed.question_type;
+    if (Object.keys(updates).length === 0) {
+      res.status(502).json({ success: false, message: "AI did not return a usable fix for this error." });
+      return;
+    }
+    // A fixed option or answer key invalidates any block projection derived
+    // from the old ones.
+    if (updates.options !== undefined || updates.correct_answer !== undefined) updates.content_blocks = null;
+
+    const existingFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    Object.assign(updates, {
+      content_version: current.content_version + 1,
+      review_status: "draft",
+      updated_at: new Date().toISOString(),
+      source_reference: {
+        ...(current.source_reference ?? {}),
+        extraction_flags: [...new Set([...existingFlags, "ai_generated_unverified"])],
+      },
+      extraction_metadata: {
+        ...(current.extraction_metadata ?? {}),
+        needs_review: true,
+        review_reasons: [
+          ...(Array.isArray(current.extraction_metadata?.review_reasons) ? current.extraction_metadata.review_reasons : []),
+          result.note,
+        ],
+      },
+    });
+
+    const { data: updated, error } = await supabaseDB.from("questions").update(updates).eq("id", current.id).eq("content_version", current.content_version).select().maybeSingle();
+    if (error) throw error;
+    if (!updated) { res.status(409).json({ success: false, message: "Question was updated by another reviewer." }); return; }
+
+    await supabaseDB.from("papers").update({ workflow_status: "draft", review_version: paper.review_version + 1 }).eq("id", paper.id);
+    await audit({ instituteId, paperId: paper.id, questionId: current.id, actorId: req.user!.id, action: "question_ai_fixed", reason: errorMessage, before: current, after: updated });
+
+    res.json({ success: true, data: { question: updated, note: result.note } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
 export async function updateReviewQuestion(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
@@ -399,6 +484,18 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     }
     if (updates.options !== undefined) updates.options = await uploadOptionFigures(updates.options);
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
+    // A manual save through this endpoint is the human check an AI-touched
+    // question needs — see the blocking "ai_unverified" issue in
+    // paper-validation.ts. Clear it here so the question that has now
+    // actually been reviewed can publish; a reviewer who wants a second look
+    // still has the original values in this question's history/audit log.
+    const currentFlags: string[] = Array.isArray(current.source_reference?.extraction_flags) ? current.source_reference.extraction_flags : [];
+    if (currentFlags.includes("ai_generated_unverified")) {
+      updates.source_reference = {
+        ...(current.source_reference ?? {}),
+        extraction_flags: currentFlags.filter((flag: string) => flag !== "ai_generated_unverified"),
+      };
+    }
     // No per-save content validation — "Validate paper" button handles structural checks.
     // validQuestion only runs at publish time (see transitionReviewPaper → publish).
     updates.content_version = current.content_version + 1;

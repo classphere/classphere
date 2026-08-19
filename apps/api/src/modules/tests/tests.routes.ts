@@ -19,6 +19,8 @@ import {
   uploadTestController,
   validateTest,
   deleteTestQuestion,
+  aiFillGapTestQuestion,
+  aiFixTestQuestionError,
 } from "./tests.controller";
 
 const router = Router();
@@ -108,6 +110,8 @@ router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlob
 // every role that can review a paper, since one function produces it.
 router.get("/:id/validate", authenticate, requireRole("super_admin", "institute_admin", "test_department_head", "test_department_member"), validateTest);
 router.delete("/:id/questions/:questionId", authenticate, requireRole("super_admin"), deleteTestQuestion);
+router.post("/:id/questions/:questionId/ai-fill-gap", authenticate, requireRole("super_admin"), aiFillGapTestQuestion);
+router.post("/:id/questions/:questionId/ai-fix", authenticate, requireRole("super_admin"), aiFixTestQuestionError);
 // Which batches this test went to, for the batch-analysis picker. Must be
 // declared before "/:id" so it is not swallowed by it.
 router.get("/:id/batches", authenticate, requireRole("super_admin", "institute_admin", "teacher", "test_department_head", "test_department_member"), listTestBatches);

@@ -1,6 +1,7 @@
 "use client";
 
-import { RiShieldCheckLine, RiErrorWarningLine, RiAlertLine } from "@remixicon/react";
+import { useState } from "react";
+import { RiShieldCheckLine, RiErrorWarningLine, RiAlertLine, RiRobot2Line } from "@remixicon/react";
 import { SUBJECT_COLOR } from "@/lib/exam-config";
 
 /**
@@ -49,19 +50,56 @@ export interface ValidationResult {
   questions?: QuestionReport[];
 }
 
+// Issue codes worth handing to AI. Deliberately excludes ones where an
+// automated "fix" would be wrong or pointless: text_mismatch (the whole point
+// is a human checking against the source PDF — an AI can't verify itself
+// against a page it never saw), ai_unverified (fixing it requires the same
+// human check that clears it, not another AI pass), missing_figure (nothing
+// to generate an image from), and no_subject/no_chapter (better hand-picked
+// by a reviewer who actually knows the paper than guessed).
+const AI_FIXABLE_CODES = new Set([
+  "empty_question", "no_answer", "too_few_options", "empty_option", "answer_count",
+  "options_not_array", "option_missing_id", "answer_not_array", "answer_not_scalar",
+  "answer_not_an_option", "unbalanced_math", "images_not_array", "image_not_a_url", "raw_mathml",
+  "matching_options_are_table_numbers",
+]);
+
 export function ValidationPanel({
   result,
   onClose,
   onJump,
+  onFixWithAI,
 }: {
   result: ValidationResult;
   onClose: () => void;
   /** Opens the question in the editor. The panel stays open — the reviewer is
    *  working through a list and closing it after the first fix loses their place. */
   onJump: (questionId: string) => void;
+  /**
+   * Asks AI to repair a question against its own validation errors — the
+   * option/answer-key problems "matching" and "assertion_reason" questions
+   * usually fail with, not just gap placeholders. Omitted where the surface
+   * has no AI fix wired up.
+   */
+  onFixWithAI?: (questionId: string, errorMessage: string) => Promise<void>;
 }) {
   const summary = result.summary;
   const reports = result.questions ?? [];
+  const [fixingId, setFixingId] = useState<string | null>(null);
+  const [fixError, setFixError] = useState<{ id: string; message: string } | null>(null);
+
+  const runFix = async (report: QuestionReport) => {
+    if (!onFixWithAI || fixingId) return;
+    setFixingId(report.question_id);
+    setFixError(null);
+    try {
+      await onFixWithAI(report.question_id, report.issues.map((i) => i.message).join(" "));
+    } catch (error: any) {
+      setFixError({ id: report.question_id, message: error?.message ?? "AI could not fix this." });
+    } finally {
+      setFixingId(null);
+    }
+  };
 
   return (
     <div className={`mb-3 shrink-0 overflow-hidden rounded-md border text-sm ${result.valid ? "border-green-500/30 bg-green-500/5" : "border-primary-03/30 bg-primary-03/5"}`}>
@@ -122,31 +160,62 @@ export function ValidationPanel({
       {/* Per question. Errors first, then paper order — worked top to bottom. */}
       {reports.length > 0 && (
         <div className="max-h-[260px] overflow-y-auto border-t border-s-stroke2/60 bg-b-surface1/40">
-          {reports.map((report) => (
-            <button
-              key={report.question_id}
-              type="button"
-              onClick={() => onJump(report.question_id)}
-              className="flex w-full items-start gap-3 border-b border-s-stroke2/40 px-4 py-2.5 text-left transition-colors last:border-b-0 hover:bg-b-surface2"
-            >
-              <span className={`mt-0.5 flex h-6 w-9 shrink-0 items-center justify-center rounded-sm text-[11px] font-bold ${
-                report.severity === "error" ? "bg-primary-03/15 text-primary-03" : "bg-amber-500/15 text-amber-600"
-              }`}>
-                Q{report.question_number}
-              </span>
-              <span className="min-w-0 flex-1">
-                {report.issues.map((issue, index) => (
-                  <span
-                    key={index}
-                    className={`block text-xs leading-relaxed ${issue.severity === "error" ? "text-primary-03" : "text-amber-600 dark:text-amber-400"}`}
-                  >
-                    {issue.message}
+          {reports.map((report) => {
+            const fixable = onFixWithAI && report.issues.some((issue) => AI_FIXABLE_CODES.has(issue.code));
+            const fixing = fixingId === report.question_id;
+            return (
+              <div
+                key={report.question_id}
+                className="flex w-full items-start gap-2 border-b border-s-stroke2/40 px-4 py-2.5 last:border-b-0 hover:bg-b-surface2"
+              >
+                <button
+                  type="button"
+                  onClick={() => onJump(report.question_id)}
+                  className="flex min-w-0 flex-1 items-start gap-3 text-left"
+                >
+                  <span className={`mt-0.5 flex h-6 w-9 shrink-0 items-center justify-center rounded-sm text-[11px] font-bold ${
+                    report.severity === "error" ? "bg-primary-03/15 text-primary-03" : "bg-amber-500/15 text-amber-600"
+                  }`}>
+                    Q{report.question_number}
                   </span>
-                ))}
-              </span>
-              <span className="mt-0.5 shrink-0 text-[11px] font-semibold text-t-tertiary">Open →</span>
-            </button>
-          ))}
+                  <span className="min-w-0 flex-1">
+                    {report.issues.map((issue, index) => (
+                      <span
+                        key={index}
+                        className={`block text-xs leading-relaxed ${issue.severity === "error" ? "text-primary-03" : "text-amber-600 dark:text-amber-400"}`}
+                      >
+                        {issue.message}
+                      </span>
+                    ))}
+                    {fixError?.id === report.question_id && (
+                      <span className="mt-1 block text-xs font-semibold text-primary-03">{fixError.message}</span>
+                    )}
+                  </span>
+                </button>
+                <div className="flex shrink-0 items-center gap-2">
+                  {fixable && (
+                    <button
+                      type="button"
+                      disabled={fixing}
+                      onClick={() => runFix(report)}
+                      title="Ask AI to repair this question against the errors above"
+                      className="flex items-center gap-1 rounded-md border border-primary-01/30 bg-primary-01/5 px-2 py-1 text-[11px] font-semibold text-primary-01 transition-colors hover:border-primary-01/60 disabled:opacity-50"
+                    >
+                      <RiRobot2Line size={12} />
+                      {fixing ? "Fixing…" : "Fix with AI"}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => onJump(report.question_id)}
+                    className="text-[11px] font-semibold text-t-tertiary hover:text-t-primary"
+                  >
+                    Open →
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
 

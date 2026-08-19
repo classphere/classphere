@@ -242,6 +242,16 @@ export default function ReviewPaperPage() {
     }));
   };
 
+  const aiFixError = async (question: any, errorMessage: string) => {
+    const response: any = await apiClient.post(
+      `/api/v1/test-department/papers/${params.id}/questions/${question.id}/ai-fix`, { error: errorMessage }, session!.access_token);
+    const saved = response.data?.question ?? question;
+    patchCache((previous) => ({
+      ...previous,
+      questions: previous.questions.map((q: any) => q.id === question.id ? { ...q, ...saved } : q),
+    }));
+  };
+
   const saveMarkingScheme = async (scheme: MarkingScheme) => {
     const response: any = await apiClient.patch(
       `/api/v1/test-department/papers/${params.id}`, { marking_scheme: scheme }, session!.access_token);
@@ -311,6 +321,7 @@ export default function ReviewPaperPage() {
           onSaveQuestion={saveQuestion}
           onDeleteQuestion={deleteQuestion}
           onAiFillGap={aiFillGap}
+          onAiFixError={aiFixError}
           onSaveMarkingScheme={saveMarkingScheme}
           onSavePaperDetails={savePaperDetails}
           onValidate={validate}

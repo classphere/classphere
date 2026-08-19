@@ -48,8 +48,16 @@ export interface PaperReviewWorkspaceProps {
    */
   onSavePaperDetails?: (details: Partial<PaperDetails>) => Promise<void>;
   onValidate: () => Promise<ValidationResult>;
-  /** Omitted where the surface has no AI gap-fill (only the institute PDF-upload review flow does). */
+  /** Wired up by every surface that reviews a PDF-extracted paper — Test Department, Institute Admin, and Superadmin's global bank alike. */
   onAiFillGap?: (question: any) => Promise<void>;
+  /**
+   * Asks AI to repair a question against a specific validation error —
+   * offered per-issue in the validation panel below, not just for gap
+   * placeholders. This is the one that can actually help "matching" and
+   * "assertion_reason" questions, whose most common failures are a
+   * mismatched answer key or malformed options.
+   */
+  onAiFixError?: (question: any, errorMessage: string) => Promise<void>;
   /** Rendered beside the Validate button — the page's own workflow actions. */
   actions?: React.ReactNode;
 }
@@ -67,6 +75,7 @@ export function PaperReviewWorkspace({
   onSavePaperDetails,
   onValidate,
   onAiFillGap,
+  onAiFixError,
   actions,
 }: PaperReviewWorkspaceProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -214,6 +223,19 @@ export function PaperReviewWorkspace({
       }
     : undefined;
 
+  const fixWithAI = onAiFixError
+    ? async (questionId: string, errorMessage: string) => {
+        const target = questions.find((q) => q.id === questionId);
+        if (!target) return;
+        await onAiFixError(target, errorMessage);
+        // Jump to it — the fix is unverified until a reviewer actually looks,
+        // and re-validate so the panel reflects the new (still-blocking,
+        // until saved) state instead of the error that's now gone.
+        setActiveId(questionId);
+        await validate();
+      }
+    : undefined;
+
   return (
     <>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
@@ -236,6 +258,7 @@ export function PaperReviewWorkspace({
           // The panel stays open on jump: the reviewer is working through a list
           // and closing it after the first fix would lose their place.
           onJump={(questionId) => setActiveId(questionId)}
+          onFixWithAI={fixWithAI}
         />
       )}
 

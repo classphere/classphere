@@ -11,8 +11,14 @@ import * as path from "path";
 export const EXTRACTOR_SCRIPT_DIR: string = __dirname;
 
 // ── OpenRouter model ID ──────────────────────────────────────────────────────
-// Override via environment variable if needed.
-const MODEL = process.env.GEMINI_MODEL || "google/gemini-2.5-flash";
+// Override via environment variable if needed. Must track
+// gemini_page_extractor.py's own DEFAULT_MODEL — this value is passed as
+// --model below, which overrides that script's default, so this file was
+// silently reverting every extraction back to the older, pricier
+// gemini-2.5-flash after the Python script's own default had already been
+// switched to gemini-3.1-flash-lite (cheaper, and matched the source page
+// exactly in a side-by-side test where 2.5-flash swapped two answer options).
+const MODEL = process.env.GEMINI_MODEL || "google/gemini-3.1-flash-lite";
 
 export type ExamCategory = "jee_main" | "jee_advanced" | "neet" | "other";
 

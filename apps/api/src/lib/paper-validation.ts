@@ -203,6 +203,18 @@ export function questionIssues(question: Record<string, any>): QuestionIssue[] {
     add("answer_count", `Single-correct question has ${answers.length} answers marked.`);
   }
 
+  // The extractor's most common mistake on this question type: the List I /
+  // List II table's own row numbers (1, 2, 3, 4) end up as "options" instead
+  // of the four printed combination choices (e.g. "A-3, B-1, C-4, D-2").
+  // Structurally this passes every other check — four options, each with an
+  // id and non-empty text — so nothing else here would catch it.
+  if (question.question_type === "matching" && options.length > 0
+      && options.every((o: any) => /^\d{1,2}$/.test(String(o?.text ?? "").trim()))) {
+    add("matching_options_are_table_numbers",
+      "Options are just numbers (1, 2, 3…), not the printed combination choices (e.g. \"A-3, B-1, C-4, D-2\"). " +
+      "The List I/List II table's own row numbers were likely extracted as the options by mistake — check the source page.");
+  }
+
   // The shapes Postgres cannot reject: an answer naming an option that does not
   // exist, options with no id to score by, and so on.
   for (const defect of questionShapeDefects(question)) {
@@ -237,12 +249,22 @@ export function questionIssues(question: Record<string, any>): QuestionIssue[] {
       `Worth a glance against the PDF.`, "warning");
   }
 
+  // An AI fix — gap-fill or the review workspace's "Fix with AI" — is a
+  // draft, not a confirmed answer key, so it blocks publish the same way an
+  // empty question does. Saving the question through the normal editor
+  // clears this flag (that save *is* the human check), so the block lifts
+  // the moment a reviewer has actually looked at it.
+  if (flags.includes("ai_generated_unverified")) {
+    add("ai_unverified", "AI drafted or repaired this question (possibly including its options or answer) and it has not been confirmed by a reviewer yet. Check it against the source, then save it to clear this.");
+  }
+
   for (const reason of (question.extraction_metadata?.review_reasons ?? []) as string[]) {
     add("extractor_flag", reason, "warning");
   }
   for (const flag of (question.source_reference?.extraction_flags ?? []) as string[]) {
     // Already put right by a reviewer since extraction.
     if (flag === "answer_key_missing" && answers.length > 0) continue;
+    if (flag === "ai_generated_unverified") continue; // reported above, blocking
     add("extractor_flag", String(flag).replace(/_/g, " "), "warning");
   }
 

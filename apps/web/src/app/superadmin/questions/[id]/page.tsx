@@ -59,6 +59,16 @@ export default function GlobalPaperReviewPage() {
     await load();
   };
 
+  const aiFillGap = async (question: any) => {
+    await apiClient.post(`/api/v1/tests/${params.id}/questions/${question.id}/ai-fill-gap`, {}, session!.access_token);
+    await load();
+  };
+
+  const aiFixError = async (question: any, errorMessage: string) => {
+    await apiClient.post(`/api/v1/tests/${params.id}/questions/${question.id}/ai-fix`, { error: errorMessage }, session!.access_token);
+    await load();
+  };
+
   const validate = async () => {
     const response: any = await apiClient.get(`/api/v1/tests/${params.id}/validate`, session!.access_token);
     return response.data;
@@ -100,6 +110,8 @@ export default function GlobalPaperReviewPage() {
           onDeleteQuestion={deleteQuestion}
           onSaveMarkingScheme={saveMarkingScheme}
           onValidate={validate}
+          onAiFillGap={aiFillGap}
+          onAiFixError={aiFixError}
           actions={
             <button
               type="button"
